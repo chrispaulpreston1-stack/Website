@@ -139,13 +139,62 @@ const OrderReport = () => {
     }
   };
 
+  const [checkoutError, setCheckoutError] = useState<string | null>(null);
+
   const onSubmit = async (data: OrderFormData) => {
     setIsSubmitting(true);
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    console.log("Order Data:", data);
-    setIsSubmitting(false);
-    navigate('/order-success');
+    setCheckoutError(null);
+
+    try {
+      // Send project details to Formspree (non-blocking)
+      fetch('https://formspree.io/f/xpwzgvkl', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          _subject: `New Report Order: ${reports.find(r => r.id === data.reportType)?.name}`,
+          name: data.fullName,
+          email: data.email,
+          phone: data.phone,
+          company: data.company || 'N/A',
+          report: reports.find(r => r.id === data.reportType)?.name,
+          address: data.address,
+          projectType: data.projectType,
+          description: data.description,
+          discountCode: appliedDiscount?.code || 'None',
+        }),
+      });
+
+      // Create Stripe Checkout session
+      const res = await fetch('/api/create-checkout-session', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          reportType: data.reportType,
+          email: data.email,
+          fullName: data.fullName,
+          discountCode: appliedDiscount?.code,
+          metadata: {
+            phone: data.phone,
+            company: data.company || '',
+            address: data.address,
+            projectType: data.projectType,
+            description: data.description,
+          },
+        }),
+      });
+
+      const result = await res.json();
+
+      if (!res.ok) {
+        throw new Error(result.error || 'Failed to create checkout session');
+      }
+
+      // Redirect to Stripe Checkout
+      window.location.href = result.url;
+    } catch (err: any) {
+      setCheckoutError(err.message || 'Something went wrong. Please try again.');
+      setIsSubmitting(false);
+    }
   };
 
   const nextStep = () => setStep(s => s + 1);
@@ -404,6 +453,10 @@ const OrderReport = () => {
                     </div>
                   </section>
 
+                  {checkoutError && (
+                    <p className="text-red-500 text-sm font-medium bg-red-50 p-4 rounded-xl">{checkoutError}</p>
+                  )}
+
                   <div className="flex gap-4">
                     <button
                       type="button"
@@ -420,7 +473,7 @@ const OrderReport = () => {
                       {isSubmitting ? (
                         <div className="w-6 h-6 border-2 border-brand-primary/30 border-t-brand-primary rounded-full animate-spin" />
                       ) : (
-                        <>Complete Order & Pay £{totalPrice} <ArrowRight size={20} /></>
+                        <>Pay £{totalPrice} via Stripe <ArrowRight size={20} /></>
                       )}
                     </button>
                   </div>
