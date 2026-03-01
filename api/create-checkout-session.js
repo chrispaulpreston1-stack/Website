@@ -1,6 +1,7 @@
 import Stripe from 'stripe';
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+const key = process.env.STRIPE_SECRET_KEY;
+const stripe = key ? new Stripe(key) : null;
 
 const REPORT_PRICES = {
   'site-feasibility-report': { name: 'Site Feasibility Report', price: 297 },
@@ -32,6 +33,10 @@ export default async function handler(req, res) {
   }
 
   try {
+    if (!stripe) {
+      return res.status(500).json({ error: 'Stripe not configured — STRIPE_SECRET_KEY is missing' });
+    }
+
     const { reportType, email, fullName, discountCode, metadata } = req.body;
 
     const report = REPORT_PRICES[reportType];
