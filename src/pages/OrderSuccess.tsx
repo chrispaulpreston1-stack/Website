@@ -3,11 +3,10 @@ import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { 
-  CheckCircle2, 
-  ArrowRight, 
-  Mail, 
-  Clock, 
-  Download,
+  CheckCircle2,
+  ArrowRight,
+  Mail,
+  Clock,
   FileText,
   Zap
 } from 'lucide-react';
@@ -74,9 +73,9 @@ const OrderSuccess = () => {
           <Link to="/site-intelligence" className="px-8 py-4 bg-brand-primary text-white rounded-xl font-bold hover:bg-brand-primary/90 transition-all flex items-center justify-center gap-2">
             Return to Hub <ArrowRight size={20} />
           </Link>
-          <button className="px-8 py-4 bg-white text-brand-primary border-2 border-brand-primary/5 rounded-xl font-bold hover:bg-brand-surface transition-all flex items-center justify-center gap-2">
-            Download Invoice <Download size={20} />
-          </button>
+          <Link to="/contact" className="px-8 py-4 bg-white text-brand-primary border-2 border-brand-primary/5 rounded-xl font-bold hover:bg-brand-surface transition-all flex items-center justify-center gap-2">
+            Contact Us <Mail size={20} />
+          </Link>
         </motion.div>
 
         <motion.div
