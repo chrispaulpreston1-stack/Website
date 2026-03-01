@@ -1,8 +1,3 @@
-import Stripe from 'stripe';
-
-const key = process.env.STRIPE_SECRET_KEY;
-const stripe = key ? new Stripe(key) : null;
-
 const REPORT_PRICES = {
   'site-feasibility-report': { name: 'Site Feasibility Report', price: 297 },
   'geotechnical-desk-study': { name: 'Geotechnical Desk Study', price: 297 },
@@ -32,12 +27,13 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  try {
-    if (!stripe) {
-      return res.status(500).json({ error: 'Stripe not configured — STRIPE_SECRET_KEY is missing' });
-    }
+  const stripeKey = process.env.STRIPE_SECRET_KEY;
+  if (!stripeKey) {
+    return res.status(500).json({ error: 'Stripe not configured' });
+  }
 
-    const { reportType, email, fullName, discountCode, metadata } = req.body;
+  try {
+    const { reportType, email, fullName, discountCode, metadata = {} } = req.body;
 
     const report = REPORT_PRICES[reportType];
     if (!report) {
@@ -57,35 +53,45 @@ export default async function handler(req, res) {
       }
     }
 
-    const session = await stripe.checkout.sessions.create({
-      payment_method_types: ['card'],
-      customer_email: email,
-      line_items: [
-        {
-          price_data: {
-            currency: 'gbp',
-            product_data: {
-              name: report.name,
-              description: `PF & Co Site Intelligence Report — ${report.name}`,
-            },
-            unit_amount: finalPrice * 100,
-          },
-          quantity: 1,
-        },
-      ],
-      mode: 'payment',
-      success_url: `${req.headers.origin}/order-success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${req.headers.origin}/order-report?report=${reportType}`,
-      metadata: {
-        reportType,
-        customerName: fullName,
-        ...metadata,
+    const origin = req.headers.origin || 'https://www.pfcoconstruction.co.uk';
+
+    // Call Stripe API directly via fetch
+    const params = new URLSearchParams();
+    params.append('payment_method_types[]', 'card');
+    params.append('customer_email', email);
+    params.append('line_items[0][price_data][currency]', 'gbp');
+    params.append('line_items[0][price_data][product_data][name]', report.name);
+    params.append('line_items[0][price_data][product_data][description]', `PF & Co Site Intelligence Report — ${report.name}`);
+    params.append('line_items[0][price_data][unit_amount]', String(finalPrice * 100));
+    params.append('line_items[0][quantity]', '1');
+    params.append('mode', 'payment');
+    params.append('success_url', `${origin}/order-success?session_id={CHECKOUT_SESSION_ID}`);
+    params.append('cancel_url', `${origin}/order-report?report=${reportType}`);
+    params.append('metadata[reportType]', reportType);
+    params.append('metadata[customerName]', fullName);
+    for (const [k, v] of Object.entries(metadata)) {
+      if (v) params.append(`metadata[${k}]`, String(v));
+    }
+
+    const stripeRes = await fetch('https://api.stripe.com/v1/checkout/sessions', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${stripeKey}`,
+        'Content-Type': 'application/x-www-form-urlencoded',
       },
+      body: params.toString(),
     });
+
+    const session = await stripeRes.json();
+
+    if (!stripeRes.ok) {
+      console.error('Stripe API error:', session);
+      return res.status(stripeRes.status).json({ error: session.error?.message || 'Stripe error' });
+    }
 
     res.status(200).json({ url: session.url });
   } catch (err) {
-    console.error('Stripe error:', err);
+    console.error('Checkout error:', err);
     res.status(500).json({ error: err.message || 'Failed to create checkout session' });
   }
 }
