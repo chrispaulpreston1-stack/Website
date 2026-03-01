@@ -84,7 +84,7 @@ const Navbar = () => {
           </div>
           <div className="flex flex-col leading-none">
             <span className={`font-display font-bold text-lg tracking-tight ${isAIInnovation && !isScrolled ? 'text-white' : 'text-brand-primary'}`}>PF & Co</span>
-            <span className={`text-[10px] uppercase tracking-[0.2em] opacity-60 font-mono ${isAIInnovation && !isScrolled ? 'text-white' : 'text-brand-primary'}`}>Construction</span>
+            <span className={`text-[10px] uppercase tracking-[0.2em] opacity-60 font-mono ${isAIInnovation && !isScrolled ? 'text-white' : 'text-brand-primary'}`}>Site Intelligence</span>
           </div>
         </Link>
 
@@ -285,7 +285,7 @@ const Footer = () => {
               </div>
               <div className="flex flex-col leading-none">
                 <span className="font-display font-bold text-lg tracking-tight">PF & Co</span>
-                <span className="text-[10px] uppercase tracking-[0.2em] opacity-60 font-mono">Construction</span>
+                <span className="text-[10px] uppercase tracking-[0.2em] opacity-60 font-mono">Site Intelligence</span>
               </div>
             </div>
             <p className="text-brand-primary/60 max-w-sm leading-relaxed mb-6">
