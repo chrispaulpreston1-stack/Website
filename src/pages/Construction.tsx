@@ -89,40 +89,30 @@ const Construction = () => {
           </div>
         </div>
       </section>
-      {/* Project Pulse / Live Status */}
+      {/* What We Build */}
       <section className="py-24 bg-brand-surface">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex items-center gap-4 mb-12">
-            <div className="w-3 h-3 bg-brand-accent rounded-full animate-pulse" />
-            <h2 className="text-4xl font-bold tracking-tight">Project Pulse</h2>
+          <div className="mb-12">
+            <span className="font-mono text-xs uppercase tracking-[0.3em] text-brand-accent font-bold mb-4 block">Specialist Builds</span>
+            <h2 className="text-4xl font-bold tracking-tight">What We Build</h2>
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { title: "Woking Extension", stage: "Superstructure", progress: 65, img: "https://images.unsplash.com/photo-1590069230002-70cc884606e2?auto=format&fit=crop&q=80&w=800" },
-              { title: "Chelsea Basement", stage: "Excavation", progress: 30, img: "https://images.unsplash.com/photo-1503387762-592dee58c460?auto=format&fit=crop&q=80&w=800" },
-              { title: "Richmond Loft", stage: "Steel Install", progress: 90, img: "https://images.unsplash.com/photo-1529307474719-3d0a417abb91?auto=format&fit=crop&q=80&w=800" }
-            ].map((project, i) => (
-              <div key={i} className="bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 group">
+              { title: "Extensions & Renovations", tag: "Residential", desc: "Single and double storey extensions, open-plan conversions, and full property renovations.", img: "https://images.unsplash.com/photo-1590069230002-70cc884606e2?auto=format&fit=crop&q=80&w=800" },
+              { title: "Basement & Substructure", tag: "Specialist", desc: "New-build basements, underpinning, and subterranean developments in urban environments.", img: "https://images.unsplash.com/photo-1517089596392-fb9a9033e05b?auto=format&fit=crop&q=80&w=800" },
+              { title: "Steel & Structural Install", tag: "Engineering", desc: "RSJ installation, load-bearing removals, and complex structural steel frameworks.", img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=800" }
+            ].map((item, i) => (
+              <div key={i} className="bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 group hover:shadow-md transition-all">
                 <div className="h-48 overflow-hidden">
-                  <img src={project.img} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" referrerPolicy="no-referrer" />
+                  <img src={item.img} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" loading="lazy" referrerPolicy="no-referrer" />
                 </div>
                 <div className="p-8">
                   <div className="flex justify-between items-center mb-4">
-                    <h4 className="font-bold text-xl">{project.title}</h4>
-                    <span className="text-[10px] font-mono uppercase tracking-widest bg-brand-surface px-2 py-1 rounded">{project.stage}</span>
+                    <h4 className="font-bold text-xl">{item.title}</h4>
+                    <span className="text-[10px] font-mono uppercase tracking-widest bg-brand-surface px-2 py-1 rounded text-brand-accent font-bold">{item.tag}</span>
                   </div>
-                  <div className="w-full h-1 bg-gray-100 rounded-full mb-2">
-                    <motion.div 
-                      initial={{ width: 0 }}
-                      whileInView={{ width: `${project.progress}%` }}
-                      className="h-full bg-brand-accent" 
-                    />
-                  </div>
-                  <div className="flex justify-between text-[10px] font-mono text-brand-primary/40">
-                    <span>Progress</span>
-                    <span>{project.progress}%</span>
-                  </div>
+                  <p className="text-brand-primary/60 text-sm leading-relaxed">{item.desc}</p>
                 </div>
               </div>
             ))}
