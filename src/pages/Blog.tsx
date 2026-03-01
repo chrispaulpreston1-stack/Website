@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Calendar, User, ArrowRight } from 'lucide-react';
+import { Calendar, User } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 
 const Blog = () => {
@@ -62,6 +62,7 @@ const Blog = () => {
                   src={post.image} 
                   alt={post.title} 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  loading="lazy"
                   referrerPolicy="no-referrer"
                 />
                 <div className="absolute top-6 left-6">
@@ -86,9 +87,9 @@ const Blog = () => {
               <p className="text-brand-primary/60 mb-8 leading-relaxed">
                 {post.excerpt}
               </p>
-              <button className="flex items-center gap-2 font-bold text-sm group-hover:gap-4 transition-all">
-                Read Article <ArrowRight size={16} className="text-brand-accent" />
-              </button>
+              <span className="font-bold text-sm text-brand-accent">
+                Coming Soon
+              </span>
             </motion.article>
           ))}
         </div>

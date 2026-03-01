@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Ruler, Building2, Layers, FileText, ChevronRight, ArrowRight } from 'lucide-react';
+import { Ruler, ChevronRight, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 
@@ -38,6 +38,7 @@ const StructuralEngineering = () => {
               src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&q=80&w=1000" 
               alt="London Engineering Project" 
               className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+              loading="lazy"
               referrerPolicy="no-referrer"
             />
           </div>

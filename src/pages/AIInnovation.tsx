@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'motion/react';
-import { Ruler, Zap, Shield, Cpu, BarChart3, Search, ArrowRight, Activity, Globe, Lock, Code, Terminal } from 'lucide-react';
+import { Zap, Shield, Cpu, BarChart3, Search, ArrowRight, Activity, Globe, Lock, Code, Terminal } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 
 const NeuralBackground = () => {
@@ -429,6 +429,7 @@ const AIInnovation = () => {
               src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=1000" 
               alt="Site Safety AI" 
               className="absolute inset-0 w-full h-full object-cover grayscale opacity-30 group-hover:scale-110 transition-transform duration-700"
+              loading="lazy"
               referrerPolicy="no-referrer"
             />
             <div className="relative z-20 h-full flex flex-col justify-end">

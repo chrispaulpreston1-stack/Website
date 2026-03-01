@@ -7,54 +7,54 @@ import { Helmet } from 'react-helmet-async';
 const Subscriptions = () => {
   const plans = [
     {
-      name: "Department Level 1",
-      price: "£190",
+      name: "The Studio",
+      price: "£288",
       period: "per month",
       desc: "Ideal for individual architects or small developers with steady project flow.",
       features: [
         "12 Credits per Year",
-        "Billed Monthly (£190/mo)",
+        "Billed Monthly (£288/mo)",
         "24-48h Turnaround",
         "White-label Engineering",
         "PI Insurance Included",
         "Top-up Bundles Available"
       ],
       cta: "Subscribe",
-      link: "https://pay.gocardless.com/BRT0004FEC14R5H",
+      link: "https://pay.gocardless.com/BRT0004FEC14R5H", // TODO: Update with correct GoCardless link
       highlight: false
     },
     {
-      name: "Department Level 2",
-      price: "£350",
+      name: "The Practice",
+      price: "£390",
       period: "per month",
       desc: "Our most popular level for active architectural practices and building firms.",
       features: [
         "24 Credits per Year",
-        "Billed Monthly (£350/mo)",
+        "Billed Monthly (£390/mo)",
         "Priority 24h Turnaround",
         "Dedicated Account Engineer",
         "Full PI Liability Cover",
         "Universal Credit Usage"
       ],
       cta: "Subscribe",
-      link: "https://pay.gocardless.com/BRT0004FECABCGT",
+      link: "https://pay.gocardless.com/BRT0004FECABCGT", // TODO: Update with correct GoCardless link
       highlight: true
     },
     {
-      name: "Department Level 3",
-      price: "£650",
+      name: "The Associate",
+      price: "£510",
       period: "per month",
       desc: "For high-volume developers requiring a constant engineering partner.",
       features: [
         "48 Credits per Year",
-        "Billed Monthly (£650/mo)",
+        "Billed Monthly (£510/mo)",
         "Instant Priority Access",
         "Monthly Site Consultations",
         "Custom API Integration",
         "Unlimited Technical Advice"
       ],
       cta: "Subscribe",
-      link: "https://pay.gocardless.com/BRT0004FECDYPA0",
+      link: "https://pay.gocardless.com/BRT0004FECDYPA0", // TODO: Update with correct GoCardless link
       highlight: false
     }
   ];

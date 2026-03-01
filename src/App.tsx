@@ -7,13 +7,12 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { HelmetProvider, Helmet } from 'react-helmet-async';
-import { 
-  Menu, 
-  X, 
-  Phone, 
-  Mail, 
+import {
+  Menu,
+  X,
+  Phone,
+  Mail,
   MapPin,
-  ChevronRight,
   ArrowRight,
   Zap,
   Facebook,
@@ -158,6 +157,30 @@ const Navbar = () => {
 };
 
 const ContactSection = () => {
+  const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setFormStatus('submitting');
+    const form = e.currentTarget;
+    try {
+      // TODO: Replace with your real Formspree form ID from https://formspree.io
+      const res = await fetch('https://formspree.io/f/xpwzgvkl', {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' },
+      });
+      if (res.ok) {
+        setFormStatus('success');
+        form.reset();
+      } else {
+        setFormStatus('error');
+      }
+    } catch {
+      setFormStatus('error');
+    }
+  };
+
   return (
     <section id="contact" className="py-24 bg-brand-surface">
       <div className="max-w-7xl mx-auto px-6">
@@ -168,7 +191,7 @@ const ContactSection = () => {
             <p className="text-white/70 text-lg mb-12 relative z-10">
               Get a fixed quote within 24 hours. Our engineers are ready to discuss your next project.
             </p>
-            
+
             <div className="space-y-8 relative z-10">
               <div className="flex items-center gap-6">
                 <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center">
@@ -176,7 +199,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <p className="text-xs font-mono uppercase tracking-widest opacity-50">Call Us</p>
-                  <p className="text-xl font-bold">01483 123456</p>
+                  <p className="text-xl font-bold">01483 363210</p>
                 </div>
               </div>
               <div className="flex items-center gap-6">
@@ -185,7 +208,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <p className="text-xs font-mono uppercase tracking-widest opacity-50">Email Us</p>
-                  <p className="text-xl font-bold">hello@pfco.co.uk</p>
+                  <p className="text-xl font-bold">info@pfcoconstruction.co.uk</p>
                 </div>
               </div>
               <div className="flex items-center gap-6">
@@ -194,41 +217,55 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <p className="text-xs font-mono uppercase tracking-widest opacity-50">Office</p>
-                  <p className="text-xl font-bold">Guildford, Surrey</p>
+                  <p className="text-xl font-bold">Surrey, London & the South East</p>
                 </div>
               </div>
             </div>
           </div>
-          
+
           <div className="lg:w-1/2 p-12 lg:p-20">
-            <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <label htmlFor="contact-name" className="text-xs font-bold uppercase tracking-wider opacity-60">Full Name</label>
-                  <input id="contact-name" type="text" className="w-full bg-brand-surface border-none rounded-xl p-4 focus:ring-2 focus:ring-brand-accent outline-none" placeholder="John Doe" />
+            {formStatus === 'success' ? (
+              <div className="flex flex-col items-center justify-center h-full text-center">
+                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
+                  <Zap className="text-green-600" size={32} />
+                </div>
+                <h3 className="text-2xl font-bold mb-3">Message Sent!</h3>
+                <p className="text-brand-primary/60 mb-6">We'll get back to you within 24 hours.</p>
+                <button onClick={() => setFormStatus('idle')} className="text-brand-accent font-bold text-sm hover:underline">Send another message</button>
+              </div>
+            ) : (
+              <form className="space-y-6" onSubmit={handleSubmit}>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <label htmlFor="contact-name" className="text-xs font-bold uppercase tracking-wider opacity-60">Full Name</label>
+                    <input id="contact-name" name="name" type="text" required className="w-full bg-brand-surface border-none rounded-xl p-4 focus:ring-2 focus:ring-brand-accent outline-none" placeholder="John Doe" />
+                  </div>
+                  <div className="space-y-2">
+                    <label htmlFor="contact-email" className="text-xs font-bold uppercase tracking-wider opacity-60">Email Address</label>
+                    <input id="contact-email" name="email" type="email" required className="w-full bg-brand-surface border-none rounded-xl p-4 focus:ring-2 focus:ring-brand-accent outline-none" placeholder="john@example.com" />
+                  </div>
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="contact-email" className="text-xs font-bold uppercase tracking-wider opacity-60">Email Address</label>
-                  <input id="contact-email" type="email" className="w-full bg-brand-surface border-none rounded-xl p-4 focus:ring-2 focus:ring-brand-accent outline-none" placeholder="john@example.com" />
+                  <label htmlFor="contact-project" className="text-xs font-bold uppercase tracking-wider opacity-60">Project Type</label>
+                  <select id="contact-project" name="project_type" className="w-full bg-brand-surface border-none rounded-xl p-4 focus:ring-2 focus:ring-brand-accent outline-none appearance-none">
+                    <option>Structural Design</option>
+                    <option>Home Extension</option>
+                    <option>Civil Engineering</option>
+                    <option>Other</option>
+                  </select>
                 </div>
-              </div>
-              <div className="space-y-2">
-                <label htmlFor="contact-project" className="text-xs font-bold uppercase tracking-wider opacity-60">Project Type</label>
-                <select id="contact-project" className="w-full bg-brand-surface border-none rounded-xl p-4 focus:ring-2 focus:ring-brand-accent outline-none appearance-none">
-                  <option>Structural Design</option>
-                  <option>Home Extension</option>
-                  <option>Civil Engineering</option>
-                  <option>Other</option>
-                </select>
-              </div>
-              <div className="space-y-2">
-                <label htmlFor="contact-message" className="text-xs font-bold uppercase tracking-wider opacity-60">Message</label>
-                <textarea id="contact-message" rows={4} className="w-full bg-brand-surface border-none rounded-xl p-4 focus:ring-2 focus:ring-brand-accent outline-none" placeholder="Tell us about your project..."></textarea>
-              </div>
-              <button type="submit" className="w-full bg-brand-primary text-white py-5 rounded-xl font-bold text-lg hover:bg-brand-primary/90 transition-all shadow-xl shadow-brand-primary/20">
-                Send Message
-              </button>
-            </form>
+                <div className="space-y-2">
+                  <label htmlFor="contact-message" className="text-xs font-bold uppercase tracking-wider opacity-60">Message</label>
+                  <textarea id="contact-message" name="message" rows={4} required className="w-full bg-brand-surface border-none rounded-xl p-4 focus:ring-2 focus:ring-brand-accent outline-none" placeholder="Tell us about your project..."></textarea>
+                </div>
+                {formStatus === 'error' && (
+                  <p className="text-red-500 text-sm font-medium">Something went wrong. Please try again or email us directly.</p>
+                )}
+                <button type="submit" disabled={formStatus === 'submitting'} className="w-full bg-brand-primary text-white py-5 rounded-xl font-bold text-lg hover:bg-brand-primary/90 transition-all shadow-xl shadow-brand-primary/20 disabled:opacity-60">
+                  {formStatus === 'submitting' ? 'Sending...' : 'Send Message'}
+                </button>
+              </form>
+            )}
           </div>
         </div>
       </div>
@@ -298,8 +335,8 @@ const Footer = () => {
             © 2020–2026 PF & Co Construction Ltd. All Rights Reserved.
           </p>
           <div className="flex gap-8 text-xs text-brand-primary/40 font-mono uppercase tracking-widest">
-            <a href="#" className="hover:text-brand-accent">Privacy Policy</a>
-            <a href="#" className="hover:text-brand-accent">Terms of Service</a>
+            <span>Privacy Policy</span>
+            <span>Terms of Service</span>
           </div>
         </div>
       </div>
@@ -314,12 +351,33 @@ export default function App() {
         <div className="min-h-screen selection:bg-brand-accent/30">
           <Helmet>
             <title>PF & Co | AI-Powered Structural Engineering & Construction</title>
-            <meta name="description" content="Precision structural engineering and construction services in Surrey and London, powered by advanced AI optimization. Fixed quotes in 24hrs." />
-            <meta name="keywords" content="structural engineer surrey, structural calculations guildford, construction company london, basement impact assessment, site feasibility report" />
+            <meta name="description" content="Precision structural engineering and construction services across Surrey, London and the South East. AI-optimised design, fixed quotes in 24hrs. ICE registered, PI insured." />
+            <meta name="keywords" content="structural engineer surrey, structural calculations guildford, construction company london, basement impact assessment, site feasibility report, AI structural engineering" />
+            <link rel="canonical" href="https://www.pfcoconstruction.co.uk" />
             <meta property="og:title" content="PF & Co | Engineering-Led Construction" />
             <meta property="og:description" content="Engineering-led construction & structural design across Surrey & London. We don't just follow plans - we understand the physics." />
             <meta property="og:type" content="website" />
+            <meta property="og:url" content="https://www.pfcoconstruction.co.uk" />
+            <meta property="og:image" content="https://www.pfcoconstruction.co.uk/og-image.png" />
             <meta name="twitter:card" content="summary_large_image" />
+            <script type="application/ld+json">{`
+              {
+                "@context": "https://schema.org",
+                "@type": "LocalBusiness",
+                "name": "PF & Co Construction",
+                "description": "AI-powered structural engineering and construction services across Surrey, London and the South East.",
+                "url": "https://www.pfcoconstruction.co.uk",
+                "telephone": "01483 363210",
+                "email": "info@pfcoconstruction.co.uk",
+                "areaServed": ["Surrey", "London", "South East England"],
+                "serviceType": ["Structural Engineering", "Construction", "Site Intelligence"],
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressRegion": "Surrey",
+                  "addressCountry": "GB"
+                }
+              }
+            `}</script>
           </Helmet>
           <Navbar />
           <main>
@@ -349,6 +407,17 @@ export default function App() {
               <Route path="/order-report" element={<OrderReport />} />
               <Route path="/order-success" element={<OrderSuccess />} />
               <Route path="/contact" element={<ContactSection />} />
+              <Route path="*" element={
+                <div className="min-h-screen flex items-center justify-center bg-brand-surface">
+                  <div className="text-center px-6">
+                    <h1 className="text-8xl font-display font-bold text-brand-primary mb-4">404</h1>
+                    <p className="text-xl text-brand-primary/60 mb-8">Page not found</p>
+                    <Link to="/" className="bg-brand-primary text-white px-8 py-4 rounded-full font-bold hover:scale-105 transition-transform inline-flex items-center gap-2">
+                      Back to Home <ArrowRight size={18} />
+                    </Link>
+                  </div>
+                </div>
+              } />
             </Routes>
           </main>
           <Footer />
