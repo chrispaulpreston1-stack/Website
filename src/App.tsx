@@ -7,6 +7,7 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { HelmetProvider, Helmet } from 'react-helmet-async';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import {
   Menu,
   X,
@@ -427,6 +428,7 @@ export default function App() {
           <elevenlabs-convai agent-id="agent_3001kjn17zm4fz7at5e3vekc9ryv"></elevenlabs-convai>
         </div>
       </Router>
+      <SpeedInsights />
     </HelmetProvider>
   );
 }
