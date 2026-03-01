@@ -64,7 +64,7 @@ const OrderReport = () => {
 
   const initialReport = searchParams.get('report') as OrderFormData['reportType'] || 'site-feasibility-report';
 
-  const { register, handleSubmit, setValue, watch, formState: { errors } } = useForm<OrderFormData>({
+  const { register, handleSubmit, setValue, watch, trigger, formState: { errors } } = useForm<OrderFormData>({
     resolver: zodResolver(orderSchema),
     defaultValues: {
       reportType: initialReport,
@@ -73,6 +73,15 @@ const OrderReport = () => {
 
   const selectedReport = watch('reportType');
   const discountCode = watch('discountCode');
+
+  const validateAndNext = async () => {
+    const fieldsPerStep: Record<number, (keyof OrderFormData)[]> = {
+      1: ['reportType', 'address'],
+      2: ['projectType', 'description'],
+    };
+    const valid = await trigger(fieldsPerStep[step]);
+    if (valid) setStep(s => s + 1);
+  };
 
   const reports = [
     { 
@@ -197,7 +206,6 @@ const OrderReport = () => {
     }
   };
 
-  const nextStep = () => setStep(s => s + 1);
   const prevStep = () => setStep(s => s - 1);
 
   return (
@@ -298,7 +306,7 @@ const OrderReport = () => {
 
                   <button
                     type="button"
-                    onClick={nextStep}
+                    onClick={validateAndNext}
                     className="w-full py-5 bg-brand-primary text-white rounded-2xl font-bold text-lg hover:bg-brand-primary/90 transition-all flex items-center justify-center gap-2 shadow-xl shadow-brand-primary/20"
                   >
                     Next: Project Context <ArrowRight size={20} />
@@ -356,7 +364,7 @@ const OrderReport = () => {
                     </button>
                     <button
                       type="button"
-                      onClick={nextStep}
+                      onClick={validateAndNext}
                       className="flex-grow py-5 bg-brand-primary text-white rounded-2xl font-bold text-lg hover:bg-brand-primary/90 transition-all flex items-center justify-center gap-2 shadow-xl shadow-brand-primary/20"
                     >
                       Next: Checkout <ArrowRight size={20} />
@@ -453,14 +461,8 @@ const OrderReport = () => {
                     </div>
                   </section>
 
-                  {/* Show validation errors from previous steps */}
-                  {Object.keys(errors).length > 0 && (
-                    <div className="bg-red-50 border border-red-200 rounded-xl p-4 space-y-1">
-                      <p className="text-red-600 text-sm font-bold">Please complete all required fields:</p>
-                      {Object.entries(errors).map(([key, err]) => (
-                        <p key={key} className="text-red-500 text-xs">{(err as any)?.message || `${key} is required`}</p>
-                      ))}
-                    </div>
+                  {checkoutError && (
+                    <p className="text-red-500 text-sm font-medium bg-red-50 p-4 rounded-xl">{checkoutError}</p>
                   )}
 
                   <div className="flex gap-4">
