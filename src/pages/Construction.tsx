@@ -22,8 +22,9 @@ const Construction = () => {
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
           <div className="order-2 lg:order-1 aspect-video rounded-[3rem] overflow-hidden shadow-2xl">
             <img 
-              src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&q=80&w=1200" 
-              alt="London Construction Site" 
+              src="https://images.unsplash.com/photo-1520986606214-8b456906c813?auto=format&fit=crop&q=80&w=1200"
+              alt="London City Construction"
+              loading="lazy" 
               className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
               referrerPolicy="no-referrer"
             />
@@ -99,9 +100,9 @@ const Construction = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { title: "Extensions & Renovations", tag: "Residential", desc: "Single and double storey extensions, open-plan conversions, and full property renovations.", img: "https://images.unsplash.com/photo-1590069230002-70cc884606e2?auto=format&fit=crop&q=80&w=800" },
-              { title: "Basement & Substructure", tag: "Specialist", desc: "New-build basements, underpinning, and subterranean developments in urban environments.", img: "https://images.unsplash.com/photo-1517089596392-fb9a9033e05b?auto=format&fit=crop&q=80&w=800" },
-              { title: "Steel & Structural Install", tag: "Engineering", desc: "RSJ installation, load-bearing removals, and complex structural steel frameworks.", img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=800" }
+              { title: "Extensions & Renovations", tag: "Residential", desc: "Single and double storey extensions, open-plan conversions, and full property renovations.", img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=800" },
+              { title: "Basement & Substructure", tag: "Specialist", desc: "New-build basements, underpinning, and subterranean developments in urban environments.", img: "https://images.unsplash.com/photo-1572981779307-38b8cabb2407?auto=format&fit=crop&q=80&w=800" },
+              { title: "Steel & Structural Install", tag: "Engineering", desc: "RSJ installation, load-bearing removals, and complex structural steel frameworks.", img: "https://images.unsplash.com/photo-1574362848149-11496d93a7c7?auto=format&fit=crop&q=80&w=800" }
             ].map((item, i) => (
               <div key={i} className="bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 group hover:shadow-md transition-all">
                 <div className="h-48 overflow-hidden">
