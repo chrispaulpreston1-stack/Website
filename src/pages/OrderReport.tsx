@@ -453,8 +453,14 @@ const OrderReport = () => {
                     </div>
                   </section>
 
-                  {checkoutError && (
-                    <p className="text-red-500 text-sm font-medium bg-red-50 p-4 rounded-xl">{checkoutError}</p>
+                  {/* Show validation errors from previous steps */}
+                  {Object.keys(errors).length > 0 && (
+                    <div className="bg-red-50 border border-red-200 rounded-xl p-4 space-y-1">
+                      <p className="text-red-600 text-sm font-bold">Please complete all required fields:</p>
+                      {Object.entries(errors).map(([key, err]) => (
+                        <p key={key} className="text-red-500 text-xs">{(err as any)?.message || `${key} is required`}</p>
+                      ))}
+                    </div>
                   )}
 
                   <div className="flex gap-4">
@@ -487,20 +493,20 @@ const OrderReport = () => {
             <div className="sticky top-32 space-y-6">
               <div className="bg-white rounded-[2rem] p-8 border border-brand-primary/5 shadow-sm">
                 <h3 className="text-lg font-bold mb-6">Order Summary</h3>
-                <div className="space-y-4 mb-8">
-                  <div className="flex justify-between items-start">
-                    <div className="text-sm font-medium text-brand-primary/60">Report Type</div>
-                    <div className="text-sm font-bold text-right max-w-[120px]">
+                <div className="space-y-5 mb-8">
+                  <div className="flex justify-between items-start gap-4">
+                    <div className="text-sm font-medium text-brand-primary/60 shrink-0">Report</div>
+                    <div className="text-sm font-bold text-right">
                       {reports.find(r => r.id === selectedReport)?.name}
                     </div>
                   </div>
-                  <div className="flex justify-between">
+                  <div className="flex justify-between items-center gap-4">
                     <div className="text-sm font-medium text-brand-primary/60">Turnaround</div>
                     <div className="text-sm font-bold">48 Hours</div>
                   </div>
-                  <div className="flex justify-between">
+                  <div className="flex justify-between items-center gap-4">
                     <div className="text-sm font-medium text-brand-primary/60">Delivery</div>
-                    <div className="text-sm font-bold">Digital (PDF/Word)</div>
+                    <div className="text-sm font-bold">PDF / Word</div>
                   </div>
                   {appliedDiscount && (
                     <div className="flex justify-between text-brand-accent">
