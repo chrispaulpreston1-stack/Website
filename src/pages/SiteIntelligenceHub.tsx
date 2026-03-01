@@ -1,0 +1,461 @@
+import React from 'react';
+import { motion } from 'motion/react';
+import { Search, ShieldAlert, BarChart3, ArrowRight, Check, X, Database, Clock, Users, Zap, FileText } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
+import VideoExplainer from '../components/VideoExplainer';
+
+const SiteIntelligenceHub = () => {
+  const products = [
+    {
+      title: "Site Feasibility Report",
+      desc: "The broadest screen. Checks 22+ planning, environmental, and ground risk constraints for any UK property address.",
+      icon: <Search className="text-teal-500" size={32} />,
+      link: "/site-intelligence/site-feasibility-report",
+      accent: "border-teal-500",
+      price: 297,
+      rrp: 795,
+      features: ["Planning constraints & PD rights", "Flood & drainage risk", "Heritage & conservation", "Ecology & biodiversity", "Planning Friction Score (0-100)"]
+    },
+    {
+      title: "Geotechnical Desk Study",
+      desc: "Deep dive into ground conditions. Analyses geology, groundwater, contamination history, and foundation risk.",
+      icon: <Database className="text-amber-600" size={32} />,
+      link: "/site-intelligence/geotechnical-desk-study",
+      accent: "border-amber-600",
+      price: 297,
+      rrp: 795,
+      features: ["BGS geological mapping", "Borehole & trial pit data", "Shrink-swell clay analysis", "Contamination risk screen", "Foundation recommendations"]
+    },
+    {
+      title: "Flood Risk Assessment",
+      desc: "Planning-ready FRA with Decision Risk Scores. Covers fluvial, surface water, groundwater, and sewer flood risk.",
+      icon: <ShieldAlert className="text-blue-500" size={32} />,
+      link: "/site-intelligence/flood-risk-assessment",
+      accent: "border-blue-500",
+      price: 297,
+      rrp: 795,
+      features: ["4 Decision Risk Scores (0-10)", "Climate change allowances", "Sequential & Exception Tests", "Mitigation & SuDS strategy", "Planning-ready format"]
+    }
+  ];
+
+  const stats = [
+    { num: "300+", label: "Projects Delivered" },
+    { num: "15+", label: "Authoritative Data Sources" },
+    { num: "48hr", label: "Typical Turnaround" }
+  ];
+
+  return (
+    <div className="pt-32 pb-24">
+      <Helmet>
+        <title>Site Intelligence | Data-Driven Pre-Construction Screening | PF & Co</title>
+        <meta name="description" content="Interrogate 15+ authoritative data sources to identify planning, flood, and ground risks before you commit to a site." />
+      </Helmet>
+
+      {/* Hero */}
+      <section className="max-w-7xl mx-auto px-6 mb-24 relative">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="max-w-2xl">
+            <motion.span 
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              className="font-mono text-xs uppercase tracking-[0.3em] text-brand-accent font-bold mb-4 block"
+            >
+              A PF & Co Construction Service
+            </motion.span>
+            <motion.h1 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              className="text-6xl md:text-7xl font-bold mb-8 leading-[1.1]"
+            >
+              Site <span className="text-brand-accent">Intelligence</span>
+            </motion.h1>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="text-xl text-brand-primary/60 leading-relaxed mb-8"
+            >
+              Data-driven pre-construction screening. We interrogate 15+ authoritative data sources and translate raw data into engineering decisions — so you know what you're building on before you commit.
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+              className="flex flex-wrap gap-4"
+            >
+              <Link to="/contact" className="px-8 py-4 bg-brand-primary text-white rounded-xl font-bold hover:bg-brand-primary/90 transition-all flex items-center gap-2">
+                Get Started <ArrowRight size={20} />
+              </Link>
+              <div className="flex items-center gap-2 px-6 py-4 bg-brand-surface border border-brand-primary/5 rounded-xl text-sm font-bold">
+                <Clock size={18} className="text-brand-accent" />
+                48hr Turnaround
+              </div>
+            </motion.div>
+          </div>
+          
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.4, duration: 0.8 }}
+            className="relative aspect-square"
+          >
+            <div className="absolute inset-0 bg-brand-accent/5 rounded-[4rem] rotate-3" />
+            <div className="absolute inset-0 bg-brand-primary/5 rounded-[4rem] -rotate-3" />
+            <div className="relative h-full w-full bg-white border border-brand-primary/10 rounded-[4rem] shadow-2xl overflow-hidden p-12 flex flex-col justify-center">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-brand-accent to-transparent animate-scan" />
+              
+              <div className="space-y-8 relative z-10">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-brand-accent/10 rounded-xl flex items-center justify-center text-brand-accent">
+                    <Search size={24} />
+                  </div>
+                  <div>
+                    <div className="text-xs font-mono uppercase tracking-widest text-brand-primary/40">Scanning Site</div>
+                    <div className="font-bold">GU21 4LY, Woking</div>
+                  </div>
+                </div>
+
+                <div className="space-y-4">
+                  {[
+                    { label: "Planning Constraints", val: "High Friction", color: "text-red-500" },
+                    { label: "Flood Risk", val: "Zone 1 (Low)", color: "text-green-500" },
+                    { label: "Ground Stability", val: "Clay (Moderate)", color: "text-amber-500" }
+                  ].map((item, i) => (
+                    <motion.div 
+                      key={i}
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.6 + (i * 0.1) }}
+                      className="flex justify-between items-center p-4 bg-brand-surface rounded-2xl border border-brand-primary/5"
+                    >
+                      <span className="text-sm font-medium">{item.label}</span>
+                      <span className={`text-sm font-bold ${item.color}`}>{item.val}</span>
+                    </motion.div>
+                  ))}
+                </div>
+
+                <div className="pt-4 border-t border-brand-primary/5">
+                  <div className="flex justify-between items-end">
+                    <div>
+                      <div className="text-[10px] font-mono uppercase tracking-widest text-brand-primary/40">Intelligence Score</div>
+                      <div className="text-4xl font-bold">84<span className="text-sm text-brand-primary/40">/100</span></div>
+                    </div>
+                    <div className="text-xs font-bold text-brand-accent">Analysis Complete</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      <VideoExplainer 
+        title="Site Intelligence"
+        accentColor="brand-accent"
+        description="Watch our masterclass on how we interrogate 15+ authoritative data sources to identify planning, flood, and ground risks before you commit to a site. We'll show you how to read our reports and translate raw data into engineering decisions."
+        thumbnailUrl="https://picsum.photos/seed/intelligence/1280/720"
+        duration="3:45"
+      />
+
+      {/* Problem Section */}
+      <section className="bg-brand-primary text-white py-24 mb-24 rounded-[3rem] mx-6">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <h2 className="text-4xl font-bold mb-6">The Problem We Solve</h2>
+              <p className="text-white/60 text-lg leading-relaxed mb-8">
+                Every construction project sits on a web of constraints — planning restrictions, flood zones, heritage listings, contaminated land, ecological designations, ground risk. Most people discover these <span className="text-brand-accent italic">after</span> they've committed. Site Intelligence finds them <span className="text-brand-accent italic">before</span>.
+              </p>
+              <div className="grid sm:grid-cols-3 gap-8">
+                {stats.map((stat, i) => (
+                  <div key={i}>
+                    <div className="text-3xl font-bold text-brand-accent">{stat.num}</div>
+                    <div className="text-xs uppercase tracking-wider text-white/40 mt-1">{stat.label}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="grid gap-6">
+              {[
+                { title: "Architects", desc: "Screen the site before you pick up a pencil. Avoid wasted fees and frustrated clients." },
+                { title: "Homeowners", desc: "Know what you're buying before you exchange. Identify flood risk and TPOs early." },
+                { title: "Developers", desc: "Screen multiple sites quickly. Identify deal-breakers in 48 hours before tying up capital." }
+              ].map((item, i) => (
+                <div key={i} className="bg-white/5 border border-white/10 p-6 rounded-2xl">
+                  <h4 className="font-bold text-lg mb-2">{item.title}</h4>
+                  <p className="text-white/50 text-sm">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Product Cards */}
+      <section className="max-w-7xl mx-auto px-6 mb-24">
+        <h2 className="text-4xl font-bold mb-12 text-center">Three Core Reports. Complete Site Picture.</h2>
+        <div className="grid lg:grid-cols-3 gap-8 mb-16">
+          {products.map((product, i) => (
+            <motion.div 
+              key={i}
+              whileHover={{ y: -10 }}
+              className={`bg-white border-2 ${product.accent} p-8 rounded-[2.5rem] flex flex-col shadow-sm relative overflow-hidden`}
+            >
+              <div className="absolute top-4 right-4 bg-brand-accent/10 text-brand-accent text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">
+                Introductory Offer
+              </div>
+              <div className="mb-6">{product.icon}</div>
+              <h3 className="text-2xl font-bold mb-4">{product.title}</h3>
+              <p className="text-brand-primary/60 text-sm mb-8 flex-grow">{product.desc}</p>
+              
+              <div className="mb-8">
+                <div className="text-[10px] font-bold uppercase tracking-widest text-brand-primary/40 mb-1">Fixed Fee</div>
+                <div className="flex items-baseline gap-2">
+                  <span className="text-3xl font-bold text-brand-primary">£{product.price}</span>
+                  <span className="text-sm text-brand-primary/40 line-through">RRP £{product.rrp}</span>
+                </div>
+              </div>
+
+              <ul className="space-y-3 mb-8">
+                {product.features.map((feature, j) => (
+                  <li key={j} className="flex items-start gap-3 text-sm">
+                    <Check size={16} className="text-brand-accent mt-0.5 shrink-0" />
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="flex flex-col gap-3">
+                <Link 
+                  to={`${product.link}`}
+                  className="w-full py-4 bg-brand-surface text-brand-primary border border-brand-primary/5 rounded-xl font-bold text-center hover:bg-brand-primary/5 transition-colors flex items-center justify-center gap-2"
+                >
+                  Learn More <ArrowRight size={18} />
+                </Link>
+                <div className="grid grid-cols-2 gap-3">
+                  <button className="py-4 bg-white text-brand-primary border border-brand-primary/10 rounded-xl font-bold text-center hover:bg-brand-surface transition-colors flex items-center justify-center gap-2 text-sm">
+                    Sample <FileText size={16} className="text-brand-accent" />
+                  </button>
+                  <Link 
+                    to={`/order-report?report=${product.link.split('/').pop()}`}
+                    className="py-4 bg-brand-primary text-white rounded-xl font-bold text-center hover:bg-brand-primary/90 transition-colors flex items-center justify-center gap-2 shadow-lg shadow-brand-primary/10 text-sm"
+                  >
+                    Order <Zap size={16} className="text-brand-accent" />
+                  </Link>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Full Product Suite Section */}
+        <div className="mt-32">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">The Full Site Intelligence Suite</h2>
+            <p className="text-brand-primary/60 max-w-2xl mx-auto">Specialist reports for every stage of the planning and pre-construction process.</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                cat: "Planning & Strategy",
+                items: [
+                  { name: "Planning Statement", link: "/site-intelligence/planning-statement", desc: "Submission-ready policy evidence." },
+                  { name: "Pre-Application Advice", link: "/site-intelligence/pre-application-advice", desc: "Targeted enquiry packs." },
+                  { name: "Design & Access Statement", link: "/site-intelligence/design-and-access-statement", desc: "Design rationale & accessibility." },
+                  { name: "Feasibility Study", link: "/site-intelligence/feasibility-study", desc: "In-depth development appraisal." }
+                ]
+              },
+              {
+                cat: "Environmental & Ecology",
+                items: [
+                  { name: "Biodiversity Net Gain", link: "/site-intelligence/biodiversity-net-gain", desc: "BNG assessment & strategy." },
+                  { name: "Energy Statement", link: "/site-intelligence/energy-statement", desc: "Sustainability & carbon analysis." },
+                  { name: "Flood Risk Assessment", link: "/site-intelligence/flood-risk-assessment", desc: "Planning-ready FRA." },
+                  { name: "Geotechnical Desk Study", link: "/site-intelligence/geotechnical-desk-study", desc: "Ground condition analysis." }
+                ]
+              },
+              {
+                cat: "Specialist Surveys",
+                items: [
+                  { name: "Heritage Impact Assessment", link: "/site-intelligence/heritage-impact-assessment", desc: "Listed building & CA analysis." },
+                  { name: "Tree Survey (BS 5837)", link: "/site-intelligence/tree-survey", desc: "Arboricultural reports." },
+                  { name: "Transport Statement", link: "/site-intelligence/transport-statement", desc: "Highways & accessibility." },
+                  { name: "Parking Survey", link: "/site-intelligence/parking-survey", desc: "Evidence-based provision." }
+                ]
+              },
+              {
+                cat: "Construction Readiness",
+                items: [
+                  { name: "Construction Management Plan", link: "/site-intelligence/construction-management-plan", desc: "Logistics & safety strategy." },
+                  { name: "Design Readiness Review", link: "/site-intelligence/pre-construction-design-review", desc: "95-check coordination review." }
+                ]
+              }
+            ].map((category, i) => (
+              <div key={i} className="bg-brand-surface rounded-3xl p-8 border border-brand-primary/5">
+                <h3 className="text-xs font-mono uppercase tracking-widest text-brand-accent font-bold mb-8 border-b border-brand-primary/5 pb-4">
+                  {category.cat}
+                </h3>
+                <div className="space-y-6">
+                  {category.items.map((item, j) => (
+                    <Link key={j} to={item.link} className="group block">
+                      <div className="flex justify-between items-start mb-1">
+                        <h4 className="font-bold text-brand-primary group-hover:text-brand-accent transition-colors">{item.name}</h4>
+                        <ArrowRight size={14} className="opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all text-brand-accent" />
+                      </div>
+                      <p className="text-xs text-brand-primary/40 font-light">{item.desc}</p>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Bundle Offer */}
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="bg-brand-primary rounded-[3rem] p-8 md:p-16 text-white relative overflow-hidden shadow-2xl"
+        >
+          <div className="absolute top-0 right-0 w-96 h-96 bg-brand-accent/10 blur-[100px] -translate-y-1/2 translate-x-1/2" />
+          <div className="relative z-10 grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-accent text-brand-primary text-[10px] font-bold uppercase tracking-widest mb-6">
+                <Zap size={14} />
+                Maximum Intelligence Bundle
+              </div>
+              <h2 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+                The Triple Threat <br />
+                <span className="text-brand-accent italic font-serif font-light">Site Screen.</span>
+              </h2>
+              <p className="text-white/60 text-lg mb-8 font-light max-w-xl">
+                Get the complete picture. We combine all three reports into a single, comprehensive site intelligence dossier. Eliminate planning, ground, and flood risk in one go.
+              </p>
+              <ul className="grid md:grid-cols-2 gap-4 mb-10">
+                {["Site Feasibility Report", "Geotechnical Desk Study", "Flood Risk Assessment", "Integrated Risk Summary"].map((item, i) => (
+                  <li key={i} className="flex items-center gap-3 text-sm text-white/80">
+                    <Check size={18} className="text-brand-accent" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-[2.5rem] p-10 flex flex-col items-center text-center">
+              <div className="text-sm font-bold uppercase tracking-widest text-white/40 mb-2">Bundle Price</div>
+              <div className="flex items-baseline gap-3 mb-2">
+                <span className="text-6xl font-bold text-white">£830</span>
+                <span className="text-xl text-white/40 line-through">RRP £2,385</span>
+              </div>
+              <div className="text-brand-accent text-sm font-bold mb-8 italic">Save £1,555 (Introductory Offer)</div>
+              
+              <Link 
+                to="/order-report?report=full-bundle"
+                className="w-full py-5 bg-brand-accent text-brand-primary rounded-2xl font-bold text-lg hover:scale-[1.02] transition-all flex items-center justify-center gap-2 shadow-xl shadow-brand-accent/20"
+              >
+                Order Full Bundle <Zap size={20} />
+              </Link>
+              <p className="mt-6 text-xs text-white/40 font-light">
+                Includes all 3 reports delivered within 48-72 hours.
+              </p>
+            </div>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* The PF&Co Advantage - Condensed Comparison */}
+      <section className="max-w-7xl mx-auto px-6 mb-32">
+        <div className="text-center mb-16">
+          <h2 className="text-5xl font-bold mb-6 tracking-tight">Why Our Reports <span className="text-brand-accent italic font-serif font-light">Win.</span></h2>
+          <p className="text-brand-primary/60 max-w-2xl mx-auto font-light text-lg">
+            We don't just provide data; we provide engineering interpretation. See how we compare to traditional consultants and automated searches.
+          </p>
+        </div>
+
+        <div className="bg-brand-surface border border-brand-primary/5 rounded-[4rem] p-8 md:p-20 overflow-hidden shadow-2xl shadow-brand-primary/5">
+          <div className="overflow-x-auto">
+            <table className="w-full text-left border-collapse min-w-[800px]">
+              <thead>
+                <tr className="border-b border-brand-primary/10">
+                  <th className="py-8 font-mono text-[10px] uppercase tracking-[0.3em] text-brand-primary/40 w-[40%]">Capability</th>
+                  <th className="py-8 font-mono text-[10px] uppercase tracking-[0.3em] text-brand-primary/40 text-center w-[20%]">Traditional Consultant</th>
+                  <th className="py-8 font-mono text-[10px] uppercase tracking-[0.3em] text-brand-primary/40 text-center w-[20%]">Online Map Check</th>
+                  <th className="py-8 font-mono text-[10px] uppercase tracking-[0.3em] text-brand-accent text-center bg-brand-primary/5 rounded-t-3xl w-[20%]">Site Intelligence</th>
+                </tr>
+              </thead>
+              <tbody className="text-sm">
+                {[
+                  { cap: "Planning constraint analysis", trad: true, map: false, si: true },
+                  { cap: "Flood risk (all sources)", trad: true, map: "Partial", si: true },
+                  { cap: "Ground conditions & geology", trad: true, map: false, si: true },
+                  { cap: "Heritage & ecology screening", trad: "Sometimes", map: false, si: true },
+                  { cap: "Engineer interpretation", trad: true, map: false, si: true },
+                  { cap: "Turnaround", trad: "2-4 weeks", map: "Instant", si: "48 hours" },
+                  { cap: "Typical cost", trad: "£1,500-£5,000+", map: "Free-£50", si: "From £297 (Inc. VAT)" },
+                ].map((row, i) => (
+                  <tr key={i} className="border-b border-brand-primary/5 hover:bg-brand-primary/5 transition-colors group">
+                    <td className="py-6 font-bold text-brand-primary/80 group-hover:text-brand-primary transition-colors">{row.cap}</td>
+                    <td className="py-6 text-center text-brand-primary/60">
+                      <div className="flex justify-center">
+                        {row.trad === true ? <Check size={20} className="text-green-600" /> : row.trad === false ? <X size={20} className="text-red-400" /> : <span className="text-xs font-medium italic opacity-60">{row.trad}</span>}
+                      </div>
+                    </td>
+                    <td className="py-6 text-center text-brand-primary/60">
+                      <div className="flex justify-center">
+                        {row.map === true ? <Check size={20} className="text-green-600" /> : row.map === false ? <X size={20} className="text-red-400" /> : <span className="text-xs font-medium italic opacity-60">{row.map}</span>}
+                      </div>
+                    </td>
+                    <td className="py-6 text-center font-bold text-brand-primary bg-brand-primary/5 border-x border-brand-primary/5">
+                      <div className="flex justify-center">
+                        {row.si === true ? <Check size={20} className="text-brand-accent" /> : <span className="text-brand-accent">{row.si}</span>}
+                      </div>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          
+          <div className="mt-12 flex flex-col md:flex-row items-center justify-between gap-8 p-8 bg-brand-primary rounded-3xl text-white relative overflow-hidden">
+            <div className="absolute inset-0 opacity-10 engineering-grid" />
+            <div className="relative z-10 flex items-center gap-6">
+              <div className="w-16 h-16 bg-brand-accent rounded-2xl flex items-center justify-center shadow-xl shadow-brand-accent/20">
+                <Users size={32} className="text-brand-primary" />
+              </div>
+              <div>
+                <h4 className="text-xl font-bold mb-1">Business-to-Business Partners</h4>
+                <p className="text-white/60 text-sm font-light">Preferential rates and volume discounts available for architects, developers, and planners.</p>
+              </div>
+            </div>
+            <Link to="/contact" className="relative z-10 px-8 py-4 bg-white text-brand-primary rounded-xl font-bold hover:scale-105 transition-all shadow-xl">
+              Partner With Us
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="max-w-7xl mx-auto px-6">
+        <div className="bg-brand-accent rounded-[3rem] p-12 text-center relative overflow-hidden">
+          <div className="absolute inset-0 opacity-10 engineering-grid" />
+          <div className="relative z-10">
+            <h2 className="text-4xl font-bold mb-4">Request a Site Intelligence Report</h2>
+            <p className="text-brand-primary/80 text-lg mb-8 max-w-2xl mx-auto">
+              Send us a property address and we'll tell you what's underneath it, around it, and restricting it — typically within 48 hours.
+            </p>
+            <Link 
+              to="/contact"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-brand-primary text-white rounded-xl font-bold hover:bg-brand-primary/90 transition-all"
+            >
+              Get Started <ArrowRight size={20} />
+            </Link>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default SiteIntelligenceHub;
