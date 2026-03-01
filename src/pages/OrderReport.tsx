@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion } from 'motion/react';
 import { Helmet } from 'react-helmet-async';
 import { 
   Check, 
@@ -236,15 +236,7 @@ const OrderReport = () => {
         <form onSubmit={handleSubmit(onSubmit)} className="grid lg:grid-cols-3 gap-12">
           {/* Main Form Area */}
           <div className="lg:col-span-2">
-            <AnimatePresence mode="wait">
-              {step === 1 && (
-                <motion.div
-                  key="step1"
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: 20 }}
-                  className="space-y-8"
-                >
+              <div className={step === 1 ? 'space-y-8' : 'hidden'}>
                   <section>
                     <h2 className="text-2xl font-bold mb-6">Select Your Report</h2>
                     <div className="grid gap-4">
@@ -311,17 +303,9 @@ const OrderReport = () => {
                   >
                     Next: Project Context <ArrowRight size={20} />
                   </button>
-                </motion.div>
-              )}
+              </div>
 
-              {step === 2 && (
-                <motion.div
-                  key="step2"
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: 20 }}
-                  className="space-y-8"
-                >
+              <div className={step === 2 ? 'space-y-8' : 'hidden'}>
                   <section>
                     <h2 className="text-2xl font-bold mb-6">Project Context</h2>
                     <div className="space-y-6">
@@ -370,17 +354,9 @@ const OrderReport = () => {
                       Next: Checkout <ArrowRight size={20} />
                     </button>
                   </div>
-                </motion.div>
-              )}
+              </div>
 
-              {step === 3 && (
-                <motion.div
-                  key="step3"
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: 20 }}
-                  className="space-y-8"
-                >
+              <div className={step === 3 ? 'space-y-8' : 'hidden'}>
                   <section>
                     <h2 className="text-2xl font-bold mb-6">Contact Details</h2>
                     <div className="grid md:grid-cols-2 gap-6">
@@ -485,9 +461,7 @@ const OrderReport = () => {
                       )}
                     </button>
                   </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
+              </div>
           </div>
 
           {/* Sidebar / Summary */}
