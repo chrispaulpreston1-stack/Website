@@ -33,44 +33,71 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { reportType, email, fullName, discountCode, metadata = {} } = req.body;
+    // Support both single reportType (legacy) and multiple reportTypes
+    const { reportType, reportTypes, email, fullName, discountCode, metadata = {} } = req.body;
 
-    const report = REPORT_PRICES[reportType];
-    if (!report) {
-      return res.status(400).json({ error: 'Invalid report type' });
+    const types = reportTypes || (reportType ? [reportType] : []);
+    if (types.length === 0) {
+      return res.status(400).json({ error: 'No reports selected' });
     }
 
-    let finalPrice = report.price;
+    // Validate all report types and calculate total
+    const lineItems = [];
+    let totalPrice = 0;
 
+    for (const rt of types) {
+      const report = REPORT_PRICES[rt];
+      if (!report) {
+        return res.status(400).json({ error: `Invalid report type: ${rt}` });
+      }
+      totalPrice += report.price;
+      lineItems.push({ name: report.name, price: report.price, id: rt });
+    }
+
+    // Apply discount to the total
     if (discountCode) {
       const discount = DISCOUNT_CODES[discountCode.toUpperCase()];
       if (discount) {
         if (discount.type === 'percent') {
-          finalPrice = Math.round(finalPrice * (1 - discount.value / 100));
+          totalPrice = Math.round(totalPrice * (1 - discount.value / 100));
         } else {
-          finalPrice = Math.max(0, finalPrice - discount.value);
+          totalPrice = Math.max(0, totalPrice - discount.value);
         }
       }
     }
 
     const origin = req.headers.origin || 'https://www.pfcoconstruction.co.uk';
 
-    // Call Stripe API directly via fetch
+    // Build Stripe API params with multiple line items
     const params = new URLSearchParams();
     params.append('payment_method_types[]', 'card');
     params.append('customer_email', email);
-    params.append('line_items[0][price_data][currency]', 'gbp');
-    params.append('line_items[0][price_data][product_data][name]', report.name);
-    params.append('line_items[0][price_data][product_data][description]', `PF & Co Site Intelligence Report — ${report.name}`);
-    params.append('line_items[0][price_data][unit_amount]', String(finalPrice * 100));
-    params.append('line_items[0][quantity]', '1');
     params.append('mode', 'payment');
     params.append('success_url', `${origin}/order-success?session_id={CHECKOUT_SESSION_ID}`);
-    params.append('cancel_url', `${origin}/order-report?report=${reportType}`);
-    params.append('metadata[reportType]', reportType);
+    params.append('cancel_url', `${origin}/order-report`);
+    params.append('metadata[reportTypes]', types.join(','));
     params.append('metadata[customerName]', fullName);
     for (const [k, v] of Object.entries(metadata)) {
       if (v) params.append(`metadata[${k}]`, String(v));
+    }
+
+    // If discount applied, send as single combined line item
+    if (discountCode && DISCOUNT_CODES[discountCode.toUpperCase()]) {
+      const names = lineItems.map(li => li.name).join(' + ');
+      params.append('line_items[0][price_data][currency]', 'gbp');
+      params.append('line_items[0][price_data][product_data][name]', names);
+      params.append('line_items[0][price_data][product_data][description]', `PF & Co Site Intelligence Reports (discount applied)`);
+      params.append('line_items[0][price_data][unit_amount]', String(totalPrice * 100));
+      params.append('line_items[0][quantity]', '1');
+    } else {
+      // Individual line items
+      lineItems.forEach((li, i) => {
+        params.append(`line_items[${i}][price_data][currency]`, 'gbp');
+        params.append(`line_items[${i}][price_data][product_data][name]`, li.name);
+        params.append(`line_items[${i}][price_data][product_data][description]`, `PF & Co Site Intelligence Report`);
+        params.append(`line_items[${i}][price_data][unit_amount]`, String(li.price * 100));
+        params.append(`line_items[${i}][quantity]`, '1');
+      });
     }
 
     const stripeRes = await fetch('https://api.stripe.com/v1/checkout/sessions', {
