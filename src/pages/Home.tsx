@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { ArrowRight, Ruler, Construction, Zap, MapPin, Search } from 'lucide-react';
+import { ArrowRight, Ruler, Construction, Zap, Search } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 
@@ -16,8 +16,8 @@ const Home = () => {
         {/* Video Background Concept */}
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&q=80&w=2000" 
-            alt="London Construction Background" 
+            src="https://images.unsplash.com/photo-1606836576983-8b458e75221d?auto=format&fit=crop&q=80&w=2000"
+            alt="London Skyline with Construction" 
             className="w-full h-full object-cover grayscale opacity-20"
             referrerPolicy="no-referrer"
           />
@@ -77,8 +77,8 @@ const Home = () => {
           >
             <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl relative group border-8 border-white">
               <img 
-                src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&q=80&w=1200"
-                alt="Steel Frame Construction" 
+                src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=1200"
+                alt="Professional Construction Site" 
                 className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 group-hover:scale-110"
                 referrerPolicy="no-referrer"
               />
@@ -229,29 +229,29 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Live Activity Feed */}
+      {/* How We Work */}
       <section className="py-24 bg-brand-primary text-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex items-center gap-4 mb-12">
-            <div className="w-3 h-3 bg-red-500 rounded-full animate-pulse" />
-            <span className="font-mono text-xs uppercase tracking-widest font-bold">Live Project Activity</span>
+          <div className="mb-16">
+            <span className="font-mono text-xs uppercase tracking-[0.3em] text-brand-accent font-bold mb-4 block">Our Process</span>
+            <h2 className="text-5xl font-bold">From Brief to Build.</h2>
           </div>
-          
+
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { time: "12m ago", loc: "Guildford, GU1", action: "Steel Beam Calculation Approved", status: "Engineering" },
-              { time: "45m ago", loc: "Chelsea, SW3", action: "Site Survey Completed", status: "Survey" },
-              { time: "2h ago", loc: "Richmond, TW9", action: "Foundation Pour Commenced", status: "Construction" }
+              { step: "01", title: "Consult & Quote", desc: "Share your plans and we'll provide a fixed-price quote within 24 hours. No hidden costs, no surprises." },
+              { step: "02", title: "Design & Calculate", desc: "Our engineers produce full structural calculations and design packs, optimised by AI for material efficiency." },
+              { step: "03", title: "Build & Deliver", desc: "From foundations to frame, we manage the build with engineering precision. Every beam placed with purpose." }
             ].map((item, i) => (
-              <div key={i} className="p-8 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm">
-                <div className="flex justify-between items-start mb-6">
-                  <span className="text-[10px] font-mono text-brand-accent">{item.time}</span>
-                  <span className="px-3 py-1 rounded-full bg-white/10 text-[10px] font-bold uppercase tracking-widest">{item.status}</span>
+              <div key={i} className="p-10 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm relative group hover:border-brand-accent/30 transition-colors">
+                <span className="text-6xl font-display font-bold text-brand-accent/10 absolute top-6 right-8">{item.step}</span>
+                <div className="relative z-10">
+                  <div className="w-12 h-12 bg-brand-accent/10 rounded-xl flex items-center justify-center mb-8">
+                    <span className="text-brand-accent font-bold font-mono text-sm">{item.step}</span>
+                  </div>
+                  <h4 className="text-2xl font-bold mb-4">{item.title}</h4>
+                  <p className="text-white/50 leading-relaxed">{item.desc}</p>
                 </div>
-                <h4 className="text-xl font-bold mb-2">{item.action}</h4>
-                <p className="text-white/40 text-sm flex items-center gap-2">
-                  <MapPin size={14} /> {item.loc}
-                </p>
               </div>
             ))}
           </div>
