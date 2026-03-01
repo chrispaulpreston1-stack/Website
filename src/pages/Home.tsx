@@ -77,8 +77,8 @@ const Home = () => {
           >
             <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl relative group border-8 border-white">
               <img 
-                src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=1200"
-                alt="Professional Construction Site" 
+                src="https://images.unsplash.com/photo-1529655683826-aba9b3e77383?auto=format&fit=crop&q=80&w=1200"
+                alt="London Skyline at Dusk" 
                 className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 group-hover:scale-110"
                 referrerPolicy="no-referrer"
               />
@@ -138,7 +138,7 @@ const Home = () => {
               </div>
             </Link>
             <Link to="/construction" className="group relative h-[450px] rounded-[3rem] overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=1000" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" loading="lazy" referrerPolicy="no-referrer" />
+              <img src="https://images.unsplash.com/photo-1517089596392-fb9a9033e05b?auto=format&fit=crop&q=80&w=1000" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" loading="lazy" referrerPolicy="no-referrer" />
               <div className="absolute inset-0 bg-brand-primary/60 group-hover:bg-brand-primary/40 transition-colors" />
               <div className="absolute inset-0 p-10 flex flex-col justify-end text-white">
                 <Construction className="text-brand-accent mb-4" size={32} />
