@@ -106,9 +106,9 @@ const GeotechnicalDeskStudy = () => {
               <Link to="/order-report?report=geotechnical-desk-study" className="px-12 py-5 bg-brand-primary text-white rounded-full font-bold hover:bg-brand-primary/90 transition-all shadow-2xl flex items-center gap-2">
                 Buy Now <Zap size={20} className="text-brand-accent" />
               </Link>
-              <button className="px-12 py-5 bg-white/10 backdrop-blur-md text-brand-primary border border-brand-primary/20 rounded-full font-bold hover:bg-white/20 transition-all flex items-center gap-2">
+              <a href="/samples/geotechnical-desk-study-sample.pdf" target="_blank" rel="noopener noreferrer" className="px-12 py-5 bg-white/10 backdrop-blur-md text-brand-primary border border-brand-primary/20 rounded-full font-bold hover:bg-white/20 transition-all flex items-center gap-2">
                 Sample Report <FileText size={20} className="text-amber-700" />
-              </button>
+              </a>
               <div className="flex flex-col">
                 <span className="text-[10px] uppercase tracking-widest text-amber-700 font-bold mb-1">Introductory Offer</span>
                 <div className="flex items-baseline gap-2">
@@ -309,9 +309,9 @@ const GeotechnicalDeskStudy = () => {
               >
                 Request a Quote
               </Link>
-              <button className="px-12 py-6 bg-white/5 backdrop-blur-md text-white border border-white/20 rounded-full font-bold hover:bg-white/10 transition-all flex items-center gap-2">
+              <a href="/samples/geotechnical-desk-study-sample.pdf" target="_blank" rel="noopener noreferrer" className="px-12 py-6 bg-white/5 backdrop-blur-md text-white border border-white/20 rounded-full font-bold hover:bg-white/10 transition-all flex items-center gap-2">
                 Sample Report <FileText size={20} />
-              </button>
+              </a>
               <div className="flex flex-col items-start">
                 <span className="text-[10px] uppercase tracking-widest text-white/40 font-bold">Typical Delivery</span>
                 <span className="text-lg font-serif italic text-amber-500">48 Hours</span>

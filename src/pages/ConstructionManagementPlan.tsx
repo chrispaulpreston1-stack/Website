@@ -86,9 +86,9 @@ const ConstructionManagementPlan = () => {
               <Link to="/order-report?report=construction-management-plan" className="px-10 py-5 bg-slate-600 text-white rounded-full font-bold hover:bg-slate-700 transition-all shadow-xl shadow-slate-500/20 flex items-center gap-2">
                 Buy Now <Zap size={20} className="text-slate-200" />
               </Link>
-              <button className="px-10 py-5 bg-white/10 backdrop-blur-md text-white border border-white/20 rounded-full font-bold hover:bg-white/20 transition-all flex items-center gap-2">
+              <a href="/samples/construction-management-plan-sample.pdf" target="_blank" rel="noopener noreferrer" className="px-10 py-5 bg-white/10 backdrop-blur-md text-white border border-white/20 rounded-full font-bold hover:bg-white/20 transition-all flex items-center gap-2">
                 Sample Report <FileText size={20} className="text-slate-400" />
-              </button>
+              </a>
               <div className="flex flex-col">
                 <span className="text-[10px] uppercase tracking-widest text-slate-400 font-bold mb-1">Introductory Offer</span>
                 <div className="flex items-baseline gap-2">
@@ -305,9 +305,9 @@ const ConstructionManagementPlan = () => {
               >
                 Request a Quote
               </Link>
-              <button className="px-12 py-6 bg-slate-700/50 backdrop-blur-md text-white border border-white/20 rounded-full font-bold hover:bg-slate-800/50 transition-all flex items-center gap-2">
+              <a href="/samples/construction-management-plan-sample.pdf" target="_blank" rel="noopener noreferrer" className="px-12 py-6 bg-slate-700/50 backdrop-blur-md text-white border border-white/20 rounded-full font-bold hover:bg-slate-800/50 transition-all flex items-center gap-2">
                 Sample Report <FileText size={20} />
-              </button>
+              </a>
               <div className="flex items-center gap-3 px-8 py-6 bg-slate-700/50 backdrop-blur-md rounded-full border border-white/10 text-sm font-bold">
                 <Clock size={18} />
                 48hr Delivery

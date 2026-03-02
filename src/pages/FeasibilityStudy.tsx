@@ -86,9 +86,9 @@ const FeasibilityStudy = () => {
               <Link to="/order-report?report=feasibility-study" className="px-10 py-5 bg-violet-600 text-white rounded-full font-bold hover:bg-violet-700 transition-all shadow-xl shadow-violet-500/20 flex items-center gap-2">
                 Buy Now <Zap size={20} className="text-violet-200" />
               </Link>
-              <button className="px-10 py-5 bg-white/10 backdrop-blur-md text-white border border-white/20 rounded-full font-bold hover:bg-white/20 transition-all flex items-center gap-2">
+              <a href="/samples/feasibility-study-sample.pdf" target="_blank" rel="noopener noreferrer" className="px-10 py-5 bg-white/10 backdrop-blur-md text-white border border-white/20 rounded-full font-bold hover:bg-white/20 transition-all flex items-center gap-2">
                 Sample Report <FileText size={20} className="text-violet-400" />
-              </button>
+              </a>
               <div className="flex flex-col">
                 <span className="text-[10px] uppercase tracking-widest text-violet-400 font-bold mb-1">Introductory Offer</span>
                 <div className="flex items-baseline gap-2">
@@ -162,11 +162,11 @@ const FeasibilityStudy = () => {
         </div>
       </section>
 
-      <VideoExplainer 
+      <VideoExplainer
         title="Feasibility Study"
         accentColor="violet-500"
         description="Watch our walkthrough to see how we compare three design options side-by-side with real costs and planning routes, helping you brief your architect with confidence."
-        thumbnailUrl="https://picsum.photos/seed/feasibility/1280/720"
+        videoUrl="/videos/feasibility-study-demo.mp4"
         duration="4:15"
       />
 
@@ -304,9 +304,9 @@ const FeasibilityStudy = () => {
               >
                 Get Your Feasibility Study
               </Link>
-              <button className="px-12 py-6 bg-violet-700/50 backdrop-blur-md text-white border border-white/20 rounded-full font-bold hover:bg-violet-800/50 transition-all flex items-center gap-2">
+              <a href="/samples/feasibility-study-sample.pdf" target="_blank" rel="noopener noreferrer" className="px-12 py-6 bg-violet-700/50 backdrop-blur-md text-white border border-white/20 rounded-full font-bold hover:bg-violet-800/50 transition-all flex items-center gap-2">
                 Sample Report <FileText size={20} />
-              </button>
+              </a>
               <div className="flex items-center gap-3 px-8 py-6 bg-violet-700/50 backdrop-blur-md rounded-full border border-white/10 text-sm font-bold">
                 <Clock size={18} />
                 48hr Delivery

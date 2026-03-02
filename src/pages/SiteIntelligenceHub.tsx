@@ -243,9 +243,9 @@ const SiteIntelligenceHub = () => {
                   Learn More <ArrowRight size={18} />
                 </Link>
                 <div className="grid grid-cols-2 gap-3">
-                  <button className="py-4 bg-white text-brand-primary border border-brand-primary/10 rounded-xl font-bold text-center hover:bg-brand-surface transition-colors flex items-center justify-center gap-2 text-sm">
+                  <a href={`/samples/${product.link.split('/').pop()}-sample.pdf`} target="_blank" rel="noopener noreferrer" className="py-4 bg-white text-brand-primary border border-brand-primary/10 rounded-xl font-bold text-center hover:bg-brand-surface transition-colors flex items-center justify-center gap-2 text-sm">
                     Sample <FileText size={16} className="text-brand-accent" />
-                  </button>
+                  </a>
                   <Link 
                     to={`/order-report?report=${product.link.split('/').pop()}`}
                     className="py-4 bg-brand-primary text-white rounded-xl font-bold text-center hover:bg-brand-primary/90 transition-colors flex items-center justify-center gap-2 shadow-lg shadow-brand-primary/10 text-sm"
@@ -360,12 +360,15 @@ const SiteIntelligenceHub = () => {
               </div>
               <div className="text-brand-accent text-sm font-bold mb-8 italic">Save £1,555 (Introductory Offer)</div>
               
-              <Link 
+              <Link
                 to="/order-report?report=full-bundle"
                 className="w-full py-5 bg-brand-accent text-brand-primary rounded-2xl font-bold text-lg hover:scale-[1.02] transition-all flex items-center justify-center gap-2 shadow-xl shadow-brand-accent/20"
               >
                 Order Full Bundle <Zap size={20} />
               </Link>
+              <a href="/samples/full-bundle-sample.pdf" target="_blank" rel="noopener noreferrer" className="w-full py-4 mt-3 bg-white/10 backdrop-blur-md text-white border border-white/20 rounded-2xl font-bold hover:bg-white/20 transition-all flex items-center justify-center gap-2">
+                Sample Report <FileText size={16} />
+              </a>
               <p className="mt-6 text-xs text-white/40 font-light">
                 Includes all 3 reports delivered within 48-72 hours.
               </p>

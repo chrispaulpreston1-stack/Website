@@ -34,6 +34,9 @@ Data-driven pre-construction screening reports interrogating 15+ authoritative d
 - Full Site Intelligence Bundle (£830)
 URL: https://www.pfcoconstruction.co.uk/site-intelligence
 Order: https://www.pfcoconstruction.co.uk/order-report
+Sample reports (illustrative PDFs with fictional data) are available for every product:
+  https://www.pfcoconstruction.co.uk/samples/{slug}-sample.pdf
+  Slugs: site-feasibility, geotechnical-desk-study, flood-risk-assessment, biodiversity-net-gain, construction-management-plan, design-and-access-statement, energy-statement, feasibility-study, heritage-impact-assessment, parking-survey, planning-statement, transport-statement, pre-construction-design-review, tree-survey, pre-application-advice, full-bundle
 
 ### AI Innovation
 54-agent AI workforce and generative structural design tools that optimise safety and reduce material waste.

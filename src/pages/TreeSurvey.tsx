@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { TreePine, Check, ArrowRight, Info, HelpCircle, Clock, Zap, ShieldCheck, Leaf } from 'lucide-react';
+import { TreePine, Check, ArrowRight, Info, HelpCircle, Clock, Zap, ShieldCheck, Leaf, FileText } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import PageSEO from '../components/PageSEO';
 import ComparisonTable from '../components/ComparisonTable';
@@ -86,6 +86,9 @@ const TreeSurvey = () => {
               <Link to="/order-report?report=tree-survey" className="px-10 py-5 bg-emerald-600 text-white rounded-full font-bold hover:bg-emerald-700 transition-all shadow-xl shadow-emerald-500/20 flex items-center gap-2">
                 Buy Now <Zap size={20} className="text-emerald-200" />
               </Link>
+              <a href="/samples/tree-survey-sample.pdf" target="_blank" rel="noopener noreferrer" className="px-10 py-5 bg-white/10 backdrop-blur-md text-white border border-white/20 rounded-full font-bold hover:bg-white/20 transition-all flex items-center gap-2">
+                Sample Report <FileText size={20} className="text-emerald-400" />
+              </a>
               <div className="flex flex-col">
                 <span className="text-[10px] uppercase tracking-widest text-emerald-400 font-bold mb-1">Introductory Offer</span>
                 <div className="flex items-baseline gap-2">
@@ -295,12 +298,15 @@ const TreeSurvey = () => {
               Get the BS 5837 evidence you need. Send us the site address and we'll confirm the tree context — no obligation.
             </p>
             <div className="flex flex-wrap justify-center gap-6">
-              <Link 
+              <Link
                 to="/contact"
                 className="px-12 py-6 bg-white text-emerald-600 rounded-full font-bold hover:scale-105 transition-all shadow-xl"
               >
                 Order Tree Survey
               </Link>
+              <a href="/samples/tree-survey-sample.pdf" target="_blank" rel="noopener noreferrer" className="px-12 py-6 bg-emerald-700/50 backdrop-blur-md text-white border border-white/20 rounded-full font-bold hover:bg-emerald-800/50 transition-all flex items-center gap-2">
+                Sample Report <FileText size={20} />
+              </a>
               <div className="flex items-center gap-3 px-8 py-6 bg-emerald-700/50 backdrop-blur-md rounded-full border border-white/10 text-sm font-bold">
                 <Clock size={18} />
                 48hr Delivery
