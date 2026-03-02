@@ -3,7 +3,6 @@ import { Truck, Check, ArrowRight, Info, HelpCircle, Clock, Zap, ShieldCheck, Na
 import { Link } from 'react-router-dom';
 import PageSEO from '../components/PageSEO';
 import ComparisonTable from '../components/ComparisonTable';
-import VideoExplainer from '../components/VideoExplainer';
 
 const TransportStatement = () => {
   const features = [
@@ -63,9 +62,9 @@ const TransportStatement = () => {
       <section className="relative min-h-screen flex items-center overflow-hidden bg-brand-primary text-white">
         <div className="absolute inset-0 z-0 opacity-20">
           <div className="absolute inset-0 bg-gradient-to-b from-brand-primary via-transparent to-brand-primary" />
-          <h1 className="text-[30vw] font-display uppercase leading-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 select-none opacity-10">
+          <div aria-hidden="true" className="text-[30vw] font-display uppercase leading-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 select-none opacity-10">
             TRANSPORT
-          </h1>
+          </div>
         </div>
 
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center relative z-10 w-full">
@@ -92,8 +91,8 @@ const TransportStatement = () => {
               <div className="flex flex-col">
                 <span className="text-[10px] uppercase tracking-widest text-blue-400 font-bold mb-1">Introductory Offer</span>
                 <div className="flex items-baseline gap-2">
-                  <span className="text-2xl font-mono font-bold text-white">£675</span>
-                  <span className="text-sm text-white/40 line-through">RRP £1,350</span>
+                  <span className="text-2xl font-mono font-bold text-white">£345</span>
+                  <span className="text-sm text-white/60 line-through">RRP £675</span>
                 </div>
               </div>
             </div>
@@ -114,7 +113,7 @@ const TransportStatement = () => {
                     <Truck size={32} className="text-white" />
                   </div>
                   <div className="text-right">
-                    <div className="text-[10px] font-mono uppercase tracking-widest text-white/40">Highways Status</div>
+                    <div className="text-[10px] font-mono uppercase tracking-widest text-white/60">Highways Status</div>
                     <div className="text-sm font-bold text-blue-400 flex items-center gap-2 justify-end">
                       <ShieldCheck size={16} /> TRICS Verified
                     </div>
@@ -150,8 +149,8 @@ const TransportStatement = () => {
 
               <div className="relative z-10 pt-8 border-t border-white/10 flex justify-between items-end">
                 <div>
-                  <div className="text-[10px] font-mono uppercase tracking-widest text-white/40 mb-1">Transport Context</div>
-                  <div className="text-lg font-bold">Sustainable Hub <span className="text-xs font-normal opacity-40">(Low Impact)</span></div>
+                  <div className="text-[10px] font-mono uppercase tracking-widest text-white/60 mb-1">Transport Context</div>
+                  <div className="text-lg font-bold">Sustainable Hub <span className="text-xs font-normal opacity-60">(Low Impact)</span></div>
                 </div>
                 <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center animate-float">
                   <Navigation size={20} className="text-blue-400" />
@@ -162,14 +161,6 @@ const TransportStatement = () => {
         </div>
       </section>
 
-      <VideoExplainer 
-        title="Transport Statement"
-        accentColor="blue-500"
-        description="Watch our walkthrough to see how we use TRICS data and accessibility mapping to demonstrate that your development will not have an unacceptable impact on the highways network."
-        thumbnailUrl="https://picsum.photos/seed/transport/1280/720"
-        duration="3:45"
-      />
-
       {/* Editorial Content Section */}
       <section className="py-32 bg-white">
         <div className="max-w-7xl mx-auto px-6">
@@ -177,7 +168,7 @@ const TransportStatement = () => {
             <div className="lg:col-span-5">
               <span className="text-blue-500 font-bold text-sm uppercase tracking-widest mb-4 block">The Core Analysis</span>
               <h2 className="text-5xl font-bold mb-8 leading-tight text-brand-primary">Why Transport Impact <br /><span className="font-accent italic font-light text-blue-600">Matters.</span></h2>
-              <p className="text-brand-primary/60 text-lg leading-relaxed mb-12 font-light text-brand-primary">
+              <p className="text-brand-primary/60 text-lg leading-relaxed mb-12 font-light">
                 Highways impact is a major concern for councils and residents. A Transport Statement provides the data to show that your proposal is safe, sustainable, and manageable.
               </p>
               <div className="space-y-4">
@@ -186,7 +177,7 @@ const TransportStatement = () => {
                     <div className="w-6 h-6 rounded-full bg-blue-500 flex-shrink-0 flex items-center justify-center text-white text-[10px] font-bold">{i+1}</div>
                     <div>
                       <h4 className="font-bold mb-1 text-brand-primary">{f.title}</h4>
-                      <p className="text-sm text-brand-primary/50 font-light">{f.desc}</p>
+                      <p className="text-sm text-brand-primary/60 font-light">{f.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -206,7 +197,7 @@ const TransportStatement = () => {
               
               <div className="mt-16 p-12 bg-brand-primary rounded-[3rem] text-white relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/20 blur-[80px]" />
-                <h3 className="text-3xl font-bold mb-6 relative z-10">48hr Turnaround <br /><span className="text-emerald-400 italic font-accent font-light">Guaranteed.</span></h3>
+                <h3 className="text-3xl font-bold mb-6 relative z-10">48hr Turnaround <br /><span className="text-blue-400 italic font-accent font-light">Guaranteed.</span></h3>
                 <p className="text-white/60 mb-8 relative z-10 font-light">
                   Time is the biggest risk in any development. We deliver our Tier 1 assessments within 48 hours of instruction, so you can make decisions at the speed of the market.
                 </p>
@@ -253,7 +244,7 @@ const TransportStatement = () => {
                 <div>
                   <div className="text-[10px] font-mono uppercase tracking-widest text-blue-500 font-bold mb-4">Scenario 0{i+1}</div>
                   <h4 className="text-xl font-bold mb-2 text-brand-primary">{row.s}</h4>
-                  <p className="text-xs text-brand-primary/40 uppercase tracking-wider font-bold mb-6">{row.r}</p>
+                  <p className="text-xs text-brand-primary/60 uppercase tracking-wider font-bold mb-6">{row.r}</p>
                 </div>
                 <p className="text-sm text-brand-primary/60 italic font-accent font-light">{row.c}</p>
               </div>
@@ -265,7 +256,7 @@ const TransportStatement = () => {
       {/* FAQ - Minimal Editorial */}
       <section className="py-32 bg-brand-surface">
         <div className="max-w-3xl mx-auto px-6">
-          <h2 className="text-4xl font-bold mb-16 text-center font-accent italic text-brand-primary text-blue-600">Common Inquiries</h2>
+          <h2 className="text-4xl font-bold mb-16 text-center font-accent italic text-blue-600">Common Inquiries</h2>
           <div className="space-y-12">
             {[
               { q: "What is the difference between a Transport Statement and Assessment?", a: "A Transport Statement is for smaller developments with lower impacts. A Transport Assessment is for larger schemes that require more detailed junction modeling and impact analysis." },

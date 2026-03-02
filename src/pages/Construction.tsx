@@ -115,7 +115,7 @@ const Construction = () => {
             ].map((item, i) => (
               <div key={i} className="bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 group hover:shadow-md transition-all">
                 <div className="h-48 overflow-hidden">
-                  <img src={item.img} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" loading="lazy" referrerPolicy="no-referrer" />
+                  <img src={item.img} alt={item.title} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" loading="lazy" referrerPolicy="no-referrer" />
                 </div>
                 <div className="p-8">
                   <div className="flex justify-between items-center mb-4">

@@ -20,6 +20,9 @@ import {
   Instagram
 } from 'lucide-react';
 
+// Components
+import PageSEO from './components/PageSEO';
+
 // Pages
 import Home from './pages/Home';
 import StructuralEngineering from './pages/StructuralEngineering';
@@ -168,7 +171,6 @@ const ContactSection = () => {
     setFormStatus('submitting');
     const form = e.currentTarget;
     try {
-      // TODO: Replace with your real Formspree form ID from https://formspree.io
       const res = await fetch('https://formspree.io/f/xpwzgvkl', {
         method: 'POST',
         body: new FormData(form),
@@ -415,7 +417,7 @@ export default function App() {
               <Route path="/order-success" element={<OrderSuccess />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route path="/terms-of-service" element={<TermsOfService />} />
-              <Route path="/contact" element={<ContactSection />} />
+              <Route path="/contact" element={<><PageSEO title="Contact Us | PF & Co Construction" description="Get in touch with PF & Co for structural engineering, construction, and site intelligence services across Surrey, London, and the South East." path="/contact" /><ContactSection /></>} />
               <Route path="*" element={
                 <div className="min-h-screen flex items-center justify-center bg-brand-surface">
                   <div className="text-center px-6">

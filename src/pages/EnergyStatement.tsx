@@ -63,9 +63,9 @@ const EnergyStatement = () => {
       <section className="relative min-h-screen flex items-center overflow-hidden bg-brand-primary text-white">
         <div className="absolute inset-0 z-0 opacity-20">
           <div className="absolute inset-0 bg-gradient-to-b from-brand-primary via-transparent to-brand-primary" />
-          <h1 className="text-[30vw] font-display uppercase leading-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 select-none opacity-10">
+          <div aria-hidden="true" className="text-[30vw] font-display uppercase leading-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 select-none opacity-10">
             ENERGY
-          </h1>
+          </div>
         </div>
 
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center relative z-10 w-full">
@@ -92,8 +92,8 @@ const EnergyStatement = () => {
               <div className="flex flex-col">
                 <span className="text-[10px] uppercase tracking-widest text-amber-400 font-bold mb-1">Introductory Offer</span>
                 <div className="flex items-baseline gap-2">
-                  <span className="text-2xl font-mono font-bold text-white">£375</span>
-                  <span className="text-sm text-white/40 line-through">RRP £750</span>
+                  <span className="text-2xl font-mono font-bold text-white">£345</span>
+                  <span className="text-sm text-white/60 line-through">RRP £445</span>
                 </div>
               </div>
             </div>
@@ -114,7 +114,7 @@ const EnergyStatement = () => {
                     <Sun size={32} className="text-white" />
                   </div>
                   <div className="text-right">
-                    <div className="text-[10px] font-mono uppercase tracking-widest text-white/40">Efficiency Status</div>
+                    <div className="text-[10px] font-mono uppercase tracking-widest text-white/60">Efficiency Status</div>
                     <div className="text-sm font-bold text-amber-400 flex items-center gap-2 justify-end">
                       <ShieldCheck size={16} /> Part L Compliant
                     </div>
@@ -150,8 +150,8 @@ const EnergyStatement = () => {
 
               <div className="relative z-10 pt-8 border-t border-white/10 flex justify-between items-end">
                 <div>
-                  <div className="text-[10px] font-mono uppercase tracking-widest text-white/40 mb-1">Sustainability Context</div>
-                  <div className="text-lg font-bold">Climate SPD <span className="text-xs font-normal opacity-40">(Gateway Requirement)</span></div>
+                  <div className="text-[10px] font-mono uppercase tracking-widest text-white/60 mb-1">Sustainability Context</div>
+                  <div className="text-lg font-bold">Climate SPD <span className="text-xs font-normal opacity-60">(Gateway Requirement)</span></div>
                 </div>
                 <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center animate-float">
                   <Info size={20} className="text-amber-400" />
@@ -187,7 +187,7 @@ const EnergyStatement = () => {
                     <div className="w-6 h-6 rounded-full bg-amber-500 flex-shrink-0 flex items-center justify-center text-white text-[10px] font-bold">{i+1}</div>
                     <div>
                       <h4 className="font-bold mb-1 text-brand-primary">{f.title}</h4>
-                      <p className="text-sm text-brand-primary/50 font-light">{f.desc}</p>
+                      <p className="text-sm text-brand-primary/60 font-light">{f.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -254,7 +254,7 @@ const EnergyStatement = () => {
                 <div>
                   <div className="text-[10px] font-mono uppercase tracking-widest text-amber-500 font-bold mb-4">Scenario 0{i+1}</div>
                   <h4 className="text-xl font-bold mb-2 text-brand-primary">{row.s}</h4>
-                  <p className="text-xs text-brand-primary/40 uppercase tracking-wider font-bold mb-6">{row.r}</p>
+                  <p className="text-xs text-brand-primary/60 uppercase tracking-wider font-bold mb-6">{row.r}</p>
                 </div>
                 <p className="text-sm text-brand-primary/60 italic font-accent font-light">{row.c}</p>
               </div>
@@ -266,7 +266,7 @@ const EnergyStatement = () => {
       {/* FAQ - Minimal Editorial */}
       <section className="py-32 bg-brand-surface">
         <div className="max-w-3xl mx-auto px-6">
-          <h2 className="text-4xl font-bold mb-16 text-center font-accent italic text-brand-primary text-amber-600">Common Inquiries</h2>
+          <h2 className="text-4xl font-bold mb-16 text-center font-accent italic text-amber-600">Common Inquiries</h2>
           <div className="space-y-12">
             {[
               { q: "Do I need an Energy Statement for an extension?", a: "It depends on your council. A growing number of LPAs require sustainability evidence even for householder applications, particularly where they've adopted a Climate Change SPD. We can check your council's requirements for you." },
@@ -305,7 +305,7 @@ const EnergyStatement = () => {
               >
                 Get Your Energy Statement
               </Link>
-              <a href="/samples/energy-statement-sample.pdf" target="_blank" rel="noopener noreferrer" className="px-12 py-6 bg-amber-700/50 backdrop-blur-md text-white border border-white/20 rounded-full font-bold hover:bg-white/80 transition-all flex items-center gap-2">
+              <a href="/samples/energy-statement-sample.pdf" target="_blank" rel="noopener noreferrer" className="px-12 py-6 bg-amber-700/50 backdrop-blur-md text-white border border-white/20 rounded-full font-bold hover:bg-amber-800/50 transition-all flex items-center gap-2">
                 Sample Report <FileText size={20} />
               </a>
               <div className="flex items-center gap-3 px-8 py-6 bg-amber-700/50 backdrop-blur-md rounded-full border border-white/10 text-sm font-bold">

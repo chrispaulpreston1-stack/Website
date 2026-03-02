@@ -3,7 +3,6 @@ import { Database, Check, ArrowRight, HelpCircle, Clock, X, Zap, FileText } from
 import { Link } from 'react-router-dom';
 import PageSEO from '../components/PageSEO';
 import ComparisonTable from '../components/ComparisonTable';
-import VideoExplainer from '../components/VideoExplainer';
 
 const GeotechnicalDeskStudy = () => {
   const features = [
@@ -76,7 +75,7 @@ const GeotechnicalDeskStudy = () => {
           name: 'Geotechnical Desk Study',
           description: 'Comprehensive desktop ground investigation analyzing geology, groundwater, contamination history, and foundation risk.',
           brand: { '@type': 'Organization', name: 'PF & Co Construction' },
-          offers: { '@type': 'Offer', price: '345', priceCurrency: 'GBP' },
+          offers: { '@type': 'Offer', price: '297', priceCurrency: 'GBP' },
         }}
       />
 
@@ -113,7 +112,7 @@ const GeotechnicalDeskStudy = () => {
                 <span className="text-[10px] uppercase tracking-widest text-amber-700 font-bold mb-1">Introductory Offer</span>
                 <div className="flex items-baseline gap-2">
                   <span className="text-2xl font-mono font-bold text-brand-primary">£297</span>
-                  <span className="text-sm text-brand-primary/40 line-through">RRP £795</span>
+                  <span className="text-sm text-brand-primary/60 line-through">RRP £345</span>
                 </div>
               </div>
             </div>
@@ -132,7 +131,7 @@ const GeotechnicalDeskStudy = () => {
                     <Database size={24} />
                   </div>
                   <div>
-                    <div className="text-[10px] font-mono uppercase tracking-widest text-brand-primary/40">Ground Risk Profile</div>
+                    <div className="text-[10px] font-mono uppercase tracking-widest text-brand-primary/60">Ground Risk Profile</div>
                     <div className="font-bold text-brand-primary">Site ID: GDS-2024-08</div>
                   </div>
                 </div>
@@ -157,7 +156,7 @@ const GeotechnicalDeskStudy = () => {
                           className={`h-full ${item.color}`}
                         />
                       </div>
-                      <p className="text-[10px] text-brand-primary/40 font-medium">{item.desc}</p>
+                      <p className="text-[10px] text-brand-primary/60 font-medium">{item.desc}</p>
                     </div>
                   ))}
                 </div>
@@ -166,14 +165,6 @@ const GeotechnicalDeskStudy = () => {
           </motion.div>
         </div>
       </section>
-
-      <VideoExplainer 
-        title="Geotechnical Desk Study"
-        accentColor="amber-600"
-        description="See how our engineers interpret BGS geological mapping and historical borehole data to provide foundation recommendations and contamination risk screening."
-        thumbnailUrl="https://picsum.photos/seed/geology/1280/720"
-        duration="3:10"
-      />
 
       {/* Strata Section - Vertical Editorial */}
       <section className="py-32 bg-white">
@@ -246,7 +237,7 @@ const GeotechnicalDeskStudy = () => {
                   {i+1}
                 </div>
                 <h4 className="text-xl font-bold mb-4">{row.s}</h4>
-                <p className="text-xs text-white/40 uppercase tracking-widest font-bold mb-6">{row.r}</p>
+                <p className="text-xs text-white/60 uppercase tracking-widest font-bold mb-6">{row.r}</p>
                 <p className="text-sm text-amber-500 italic font-serif">{row.c}</p>
               </div>
             ))}
@@ -313,7 +304,7 @@ const GeotechnicalDeskStudy = () => {
                 Sample Report <FileText size={20} />
               </a>
               <div className="flex flex-col items-start">
-                <span className="text-[10px] uppercase tracking-widest text-white/40 font-bold">Typical Delivery</span>
+                <span className="text-[10px] uppercase tracking-widest text-white/60 font-bold">Typical Delivery</span>
                 <span className="text-lg font-serif italic text-amber-500">48 Hours</span>
               </div>
             </div>

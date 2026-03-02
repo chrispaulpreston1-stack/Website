@@ -103,7 +103,7 @@ const ComparisonTable: React.FC<ComparisonTableProps> = ({
           </tbody>
         </table>
       </div>
-      <p className="mt-8 text-[10px] text-brand-primary/40 leading-relaxed max-w-4xl italic">
+      <p className="mt-8 text-[10px] text-brand-primary/60 leading-relaxed max-w-4xl italic">
         {footerNote}
       </p>
     </div>

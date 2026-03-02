@@ -106,17 +106,17 @@ const Home = () => {
           <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
             <div className="flex flex-col items-center gap-1">
               <span className="font-display font-bold text-xl text-brand-primary">PI Insured</span>
-              <span className="text-[10px] uppercase tracking-widest text-brand-primary/40 font-mono">Full Indemnity Cover</span>
+              <span className="text-[10px] uppercase tracking-widest text-brand-primary/60 font-mono">Full Indemnity Cover</span>
             </div>
             <div className="w-px h-8 bg-brand-primary/10 hidden md:block" />
             <div className="flex flex-col items-center gap-1">
               <span className="font-display font-bold text-xl text-brand-primary">300+</span>
-              <span className="text-[10px] uppercase tracking-widest text-brand-primary/40 font-mono">Projects Delivered</span>
+              <span className="text-[10px] uppercase tracking-widest text-brand-primary/60 font-mono">Projects Delivered</span>
             </div>
             <div className="w-px h-8 bg-brand-primary/10 hidden md:block" />
             <div className="flex flex-col items-center gap-1">
               <span className="font-display font-bold text-xl text-brand-primary">AI-Powered</span>
-              <span className="text-[10px] uppercase tracking-widest text-brand-primary/40 font-mono">Optimised Design</span>
+              <span className="text-[10px] uppercase tracking-widest text-brand-primary/60 font-mono">Optimised Design</span>
             </div>
           </div>
         </div>
@@ -127,7 +127,7 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-3 gap-8">
             <Link to="/structural-engineering" className="group relative h-[450px] rounded-[3rem] overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1000" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" loading="lazy" referrerPolicy="no-referrer" />
+              <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1000" alt="Structural engineering steel framework" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" loading="lazy" referrerPolicy="no-referrer" />
               <div className="absolute inset-0 bg-brand-primary/60 group-hover:bg-brand-primary/40 transition-colors" />
               <div className="absolute inset-0 p-10 flex flex-col justify-end text-white">
                 <Ruler className="text-brand-accent mb-4" size={32} />
@@ -139,7 +139,7 @@ const Home = () => {
               </div>
             </Link>
             <Link to="/construction" className="group relative h-[450px] rounded-[3rem] overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1517089596392-fb9a9033e05b?auto=format&fit=crop&q=80&w=1000" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" loading="lazy" referrerPolicy="no-referrer" />
+              <img src="https://images.unsplash.com/photo-1517089596392-fb9a9033e05b?auto=format&fit=crop&q=80&w=1000" alt="Residential construction project" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" loading="lazy" referrerPolicy="no-referrer" />
               <div className="absolute inset-0 bg-brand-primary/60 group-hover:bg-brand-primary/40 transition-colors" />
               <div className="absolute inset-0 p-10 flex flex-col justify-end text-white">
                 <Construction className="text-brand-accent mb-4" size={32} />
@@ -151,7 +151,7 @@ const Home = () => {
               </div>
             </Link>
             <Link to="/site-intelligence" className="group relative h-[450px] rounded-[3rem] overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&q=80&w=1000" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" loading="lazy" referrerPolicy="no-referrer" />
+              <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&q=80&w=1000" alt="Aerial view of development site" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" loading="lazy" referrerPolicy="no-referrer" />
               <div className="absolute inset-0 bg-brand-primary/60 group-hover:bg-brand-primary/40 transition-colors" />
               <div className="absolute inset-0 p-10 flex flex-col justify-end text-white">
                 <Search className="text-brand-accent mb-4" size={32} />
@@ -251,7 +251,7 @@ const Home = () => {
                     <span className="text-brand-accent font-bold font-mono text-sm">{item.step}</span>
                   </div>
                   <h4 className="text-2xl font-bold mb-4">{item.title}</h4>
-                  <p className="text-white/50 leading-relaxed">{item.desc}</p>
+                  <p className="text-white/70 leading-relaxed">{item.desc}</p>
                 </div>
               </div>
             ))}

@@ -55,7 +55,7 @@ const FeasibilityStudy = () => {
           name: 'Feasibility Study',
           description: 'Pre-design concept feasibility study — understand what is possible, what it costs, and which route to take.',
           brand: { '@type': 'Organization', name: 'PF & Co Construction' },
-          offers: { '@type': 'Offer', price: '895', priceCurrency: 'GBP' },
+          offers: { '@type': 'Offer', price: '795', priceCurrency: 'GBP' },
         }}
       />
 
@@ -63,9 +63,9 @@ const FeasibilityStudy = () => {
       <section className="relative min-h-screen flex items-center overflow-hidden bg-brand-primary text-white">
         <div className="absolute inset-0 z-0 opacity-20">
           <div className="absolute inset-0 bg-gradient-to-b from-brand-primary via-transparent to-brand-primary" />
-          <h1 className="text-[30vw] font-display uppercase leading-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 select-none opacity-10">
+          <div aria-hidden="true" className="text-[30vw] font-display uppercase leading-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 select-none opacity-10">
             FEASIBILITY
-          </h1>
+          </div>
         </div>
 
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center relative z-10 w-full">
@@ -92,8 +92,8 @@ const FeasibilityStudy = () => {
               <div className="flex flex-col">
                 <span className="text-[10px] uppercase tracking-widest text-violet-400 font-bold mb-1">Introductory Offer</span>
                 <div className="flex items-baseline gap-2">
-                  <span className="text-2xl font-mono font-bold text-white">£875</span>
-                  <span className="text-sm text-white/40 line-through">RRP £1,750</span>
+                  <span className="text-2xl font-mono font-bold text-white">£795</span>
+                  <span className="text-sm text-white/60 line-through">RRP £895</span>
                 </div>
               </div>
             </div>
@@ -114,7 +114,7 @@ const FeasibilityStudy = () => {
                     <Ruler size={32} className="text-white" />
                   </div>
                   <div className="text-right">
-                    <div className="text-[10px] font-mono uppercase tracking-widest text-white/40">Design Status</div>
+                    <div className="text-[10px] font-mono uppercase tracking-widest text-white/60">Design Status</div>
                     <div className="text-sm font-bold text-violet-400 flex items-center gap-2 justify-end">
                       <ShieldCheck size={16} /> Brief Validated
                     </div>
@@ -150,8 +150,8 @@ const FeasibilityStudy = () => {
 
               <div className="relative z-10 pt-8 border-t border-white/10 flex justify-between items-end">
                 <div>
-                  <div className="text-[10px] font-mono uppercase tracking-widest text-white/40 mb-1">Project Context</div>
-                  <div className="text-lg font-bold">Concept Stage <span className="text-xs font-normal opacity-40">(Pre-Architect)</span></div>
+                  <div className="text-[10px] font-mono uppercase tracking-widest text-white/60 mb-1">Project Context</div>
+                  <div className="text-lg font-bold">Concept Stage <span className="text-xs font-normal opacity-60">(Pre-Architect)</span></div>
                 </div>
                 <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center animate-float">
                   <Info size={20} className="text-violet-400" />
@@ -166,6 +166,7 @@ const FeasibilityStudy = () => {
         title="Feasibility Study"
         accentColor="violet-500"
         description="Watch our walkthrough to see how we compare three design options side-by-side with real costs and planning routes, helping you brief your architect with confidence."
+        thumbnailUrl="/videos/feasibility-study-thumb.jpg"
         videoUrl="/videos/feasibility-study-demo.mp4"
         duration="4:15"
       />
@@ -186,7 +187,7 @@ const FeasibilityStudy = () => {
                     <div className="w-6 h-6 rounded-full bg-violet-500 flex-shrink-0 flex items-center justify-center text-white text-[10px] font-bold">{i+1}</div>
                     <div>
                       <h4 className="font-bold mb-1 text-brand-primary">{f.title}</h4>
-                      <p className="text-sm text-brand-primary/50 font-light">{f.desc}</p>
+                      <p className="text-sm text-brand-primary/60 font-light">{f.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -253,7 +254,7 @@ const FeasibilityStudy = () => {
                 <div>
                   <div className="text-[10px] font-mono uppercase tracking-widest text-violet-500 font-bold mb-4">Scenario 0{i+1}</div>
                   <h4 className="text-xl font-bold mb-2 text-brand-primary">{row.s}</h4>
-                  <p className="text-xs text-brand-primary/40 uppercase tracking-wider font-bold mb-6">{row.r}</p>
+                  <p className="text-xs text-brand-primary/60 uppercase tracking-wider font-bold mb-6">{row.r}</p>
                 </div>
                 <p className="text-sm text-brand-primary/60 italic font-accent font-light">{row.c}</p>
               </div>
@@ -265,7 +266,7 @@ const FeasibilityStudy = () => {
       {/* FAQ - Minimal Editorial */}
       <section className="py-32 bg-brand-surface">
         <div className="max-w-3xl mx-auto px-6">
-          <h2 className="text-4xl font-bold mb-16 text-center font-accent italic text-brand-primary text-violet-600">Common Inquiries</h2>
+          <h2 className="text-4xl font-bold mb-16 text-center font-accent italic text-violet-600">Common Inquiries</h2>
           <div className="space-y-12">
             {[
               { q: "Do I still need an architect after this?", a: "Yes. A Feasibility Study is pre-design — it tells you what's possible and what it costs. Once you've chosen an option, you'll appoint an architect to develop it into technical drawings with far more clarity." },

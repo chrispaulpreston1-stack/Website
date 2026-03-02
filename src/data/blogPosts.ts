@@ -70,7 +70,7 @@ const blogPosts: BlogPost[] = [
       title: 'Site Feasibility Report',
       path: '/site-intelligence/site-feasibility-report',
       orderSlug: 'site-feasibility-report',
-      price: '495',
+      price: '297',
     },
   },
   {
@@ -139,7 +139,7 @@ const blogPosts: BlogPost[] = [
       title: 'Geotechnical Desk Study',
       path: '/site-intelligence/geotechnical-desk-study',
       orderSlug: 'geotechnical-desk-study',
-      price: '345',
+      price: '297',
     },
   },
   {
@@ -179,7 +179,7 @@ const blogPosts: BlogPost[] = [
       title: 'BNG Screening & Feasibility',
       path: '/site-intelligence/biodiversity-net-gain',
       orderSlug: 'biodiversity-net-gain',
-      price: '345',
+      price: '325',
     },
   },
   {

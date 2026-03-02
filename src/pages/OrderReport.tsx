@@ -54,7 +54,7 @@ const reports = [
   {
     id: 'flood-risk-assessment',
     name: 'Flood Risk Assessment',
-    price: 297,
+    price: 295,
     icon: <ShieldAlert className="text-blue-500" />,
     color: 'border-blue-500 bg-blue-50/30'
   },
@@ -66,18 +66,18 @@ const reports = [
     color: 'border-brand-accent bg-brand-accent/10',
     isBundle: true
   },
-  { id: 'biodiversity-net-gain', name: 'Biodiversity Net Gain', price: 495, icon: <Zap className="text-emerald-500" />, color: 'border-emerald-500 bg-emerald-50/30' },
-  { id: 'construction-management-plan', name: 'Construction Management Plan', price: 595, icon: <Zap className="text-brand-primary" />, color: 'border-brand-primary bg-brand-primary/5' },
+  { id: 'biodiversity-net-gain', name: 'Biodiversity Net Gain', price: 325, icon: <Zap className="text-emerald-500" />, color: 'border-emerald-500 bg-emerald-50/30' },
+  { id: 'construction-management-plan', name: 'Construction Management Plan', price: 345, icon: <Zap className="text-brand-primary" />, color: 'border-brand-primary bg-brand-primary/5' },
   { id: 'design-and-access-statement', name: 'Design & Access Statement', price: 395, icon: <Zap className="text-brand-accent" />, color: 'border-brand-accent bg-brand-accent/5' },
-  { id: 'energy-statement', name: 'Energy Statement', price: 445, icon: <Zap className="text-cyan-500" />, color: 'border-cyan-500 bg-cyan-50/30' },
+  { id: 'energy-statement', name: 'Energy Statement', price: 345, icon: <Zap className="text-cyan-500" />, color: 'border-cyan-500 bg-cyan-50/30' },
   { id: 'feasibility-study', name: 'Feasibility Study', price: 795, icon: <Zap className="text-brand-primary" />, color: 'border-brand-primary bg-brand-primary/5' },
-  { id: 'heritage-impact-assessment', name: 'Heritage Impact Assessment', price: 545, icon: <Zap className="text-amber-500" />, color: 'border-amber-500 bg-amber-50/30' },
-  { id: 'parking-survey', name: 'Parking Survey', price: 345, icon: <Zap className="text-rose-500" />, color: 'border-rose-500 bg-rose-50/30' },
-  { id: 'planning-statement', name: 'Planning Statement', price: 495, icon: <Zap className="text-emerald-500" />, color: 'border-emerald-500 bg-emerald-50/30' },
+  { id: 'heritage-impact-assessment', name: 'Heritage Impact Assessment', price: 445, icon: <Zap className="text-amber-500" />, color: 'border-amber-500 bg-amber-50/30' },
+  { id: 'parking-survey', name: 'Parking Survey', price: 245, icon: <Zap className="text-rose-500" />, color: 'border-rose-500 bg-rose-50/30' },
+  { id: 'planning-statement', name: 'Planning Statement', price: 445, icon: <Zap className="text-emerald-500" />, color: 'border-emerald-500 bg-emerald-50/30' },
   { id: 'pre-application-advice', name: 'Pre-Application Advice', price: 245, icon: <Zap className="text-cyan-500" />, color: 'border-cyan-500 bg-cyan-50/30' },
-  { id: 'pre-construction-design-review', name: 'Design Readiness Review', price: 895, icon: <Zap className="text-brand-primary" />, color: 'border-brand-primary bg-brand-primary/5' },
-  { id: 'transport-statement', name: 'Transport Statement', price: 495, icon: <Zap className="text-blue-500" />, color: 'border-blue-500 bg-blue-50/30' },
-  { id: 'tree-survey', name: 'Tree Survey (BS 5837)', price: 575, icon: <Zap className="text-emerald-500" />, color: 'border-emerald-500 bg-emerald-50/30' }
+  { id: 'pre-construction-design-review', name: 'Design Readiness Review', price: 425, icon: <Zap className="text-brand-primary" />, color: 'border-brand-primary bg-brand-primary/5' },
+  { id: 'transport-statement', name: 'Transport Statement', price: 345, icon: <Zap className="text-blue-500" />, color: 'border-blue-500 bg-blue-50/30' },
+  { id: 'tree-survey', name: 'Tree Survey (BS 5837)', price: 395, icon: <Zap className="text-emerald-500" />, color: 'border-emerald-500 bg-emerald-50/30' }
 ];
 
 const OrderReport = () => {
@@ -223,7 +223,7 @@ const OrderReport = () => {
           offers: {
             '@type': 'AggregateOffer',
             lowPrice: '245',
-            highPrice: '895',
+            highPrice: '830',
             priceCurrency: 'GBP',
           },
         }}
@@ -286,7 +286,7 @@ const OrderReport = () => {
                             <div className="flex items-center gap-3">
                               <div className="text-right">
                                 <div className="font-mono font-bold text-brand-primary">£{r.price}</div>
-                                {r.isBundle && <div className="text-[10px] text-brand-primary/40 line-through">RRP £891</div>}
+                                {r.isBundle && <div className="text-[10px] text-brand-primary/40 line-through">RRP £1,137</div>}
                               </div>
                               <div className={`w-6 h-6 rounded-lg border-2 flex items-center justify-center transition-colors ${isSelected ? 'bg-brand-primary border-brand-primary' : 'border-brand-primary/10'}`}>
                                 {isSelected && <Check size={14} className="text-white" />}
@@ -524,7 +524,7 @@ const OrderReport = () => {
                     <span>Total</span>
                     <span className="text-brand-accent">£{totalPrice.toFixed(2)}</span>
                   </div>
-                  <p className="text-[10px] text-brand-primary/40">No VAT applicable</p>
+                  <p className="text-[10px] text-brand-primary/40"></p>
                 </div>
               </div>
 

@@ -96,6 +96,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.pfcoconstruction.co.uk/order-report</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.pfcoconstruction.co.uk/subscriptions</loc>
     <lastmod>2026-03-02</lastmod>
     <priority>0.7</priority>

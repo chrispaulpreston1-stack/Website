@@ -3,7 +3,6 @@ import { motion } from 'motion/react';
 import { Search, ShieldAlert, BarChart3, ArrowRight, Check, X, Database, Clock, Users, Zap, FileText } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import PageSEO from '../components/PageSEO';
-import VideoExplainer from '../components/VideoExplainer';
 
 const SiteIntelligenceHub = () => {
   const products = [
@@ -14,7 +13,7 @@ const SiteIntelligenceHub = () => {
       link: "/site-intelligence/site-feasibility-report",
       accent: "border-teal-500",
       price: 297,
-      rrp: 795,
+      rrp: 495,
       features: ["Planning constraints & PD rights", "Flood & drainage risk", "Heritage & conservation", "Ecology & biodiversity", "Planning Friction Score (0-100)"]
     },
     {
@@ -24,7 +23,7 @@ const SiteIntelligenceHub = () => {
       link: "/site-intelligence/geotechnical-desk-study",
       accent: "border-amber-600",
       price: 297,
-      rrp: 795,
+      rrp: 345,
       features: ["BGS geological mapping", "Borehole & trial pit data", "Shrink-swell clay analysis", "Contamination risk screen", "Foundation recommendations"]
     },
     {
@@ -33,8 +32,8 @@ const SiteIntelligenceHub = () => {
       icon: <ShieldAlert className="text-blue-500" size={32} />,
       link: "/site-intelligence/flood-risk-assessment",
       accent: "border-blue-500",
-      price: 297,
-      rrp: 795,
+      price: 295,
+      rrp: 297,
       features: ["4 Decision Risk Scores (0-10)", "Climate change allowances", "Sequential & Exception Tests", "Mitigation & SuDS strategy", "Planning-ready format"]
     }
   ];
@@ -159,14 +158,6 @@ const SiteIntelligenceHub = () => {
           </motion.div>
         </div>
       </section>
-
-      <VideoExplainer 
-        title="Site Intelligence"
-        accentColor="brand-accent"
-        description="Watch our masterclass on how we interrogate 15+ authoritative data sources to identify planning, flood, and ground risks before you commit to a site. We'll show you how to read our reports and translate raw data into engineering decisions."
-        thumbnailUrl="https://picsum.photos/seed/intelligence/1280/720"
-        duration="3:45"
-      />
 
       {/* Problem Section */}
       <section className="bg-brand-primary text-white py-24 mb-24 rounded-[3rem] mx-6">
@@ -356,9 +347,9 @@ const SiteIntelligenceHub = () => {
               <div className="text-sm font-bold uppercase tracking-widest text-white/40 mb-2">Bundle Price</div>
               <div className="flex items-baseline gap-3 mb-2">
                 <span className="text-6xl font-bold text-white">£830</span>
-                <span className="text-xl text-white/40 line-through">RRP £2,385</span>
+                <span className="text-xl text-white/40 line-through">RRP £1,137</span>
               </div>
-              <div className="text-brand-accent text-sm font-bold mb-8 italic">Save £1,555 (Introductory Offer)</div>
+              <div className="text-brand-accent text-sm font-bold mb-8 italic">Save £307 (Introductory Offer)</div>
               
               <Link
                 to="/order-report?report=full-bundle"
@@ -405,7 +396,7 @@ const SiteIntelligenceHub = () => {
                   { cap: "Heritage & ecology screening", trad: "Sometimes", map: false, si: true },
                   { cap: "Engineer interpretation", trad: true, map: false, si: true },
                   { cap: "Turnaround", trad: "2-4 weeks", map: "Instant", si: "48 hours" },
-                  { cap: "Typical cost", trad: "£1,500-£5,000+", map: "Free-£50", si: "From £297 (Inc. VAT)" },
+                  { cap: "Typical cost", trad: "£1,500-£5,000+", map: "Free-£50", si: "From £245" },
                 ].map((row, i) => (
                   <tr key={i} className="border-b border-brand-primary/5 hover:bg-brand-primary/5 transition-colors group">
                     <td className="py-6 font-bold text-brand-primary/80 group-hover:text-brand-primary transition-colors">{row.cap}</td>

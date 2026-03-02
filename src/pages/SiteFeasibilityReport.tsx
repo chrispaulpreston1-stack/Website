@@ -3,7 +3,6 @@ import { Search, Check, ArrowRight, HelpCircle, AlertTriangle, Building2, Map, Z
 import { Link } from 'react-router-dom';
 import PageSEO from '../components/PageSEO';
 import ComparisonTable from '../components/ComparisonTable';
-import VideoExplainer from '../components/VideoExplainer';
 
 const SiteFeasibilityReport = () => {
   const features = [
@@ -95,7 +94,7 @@ const SiteFeasibilityReport = () => {
           name: 'Site Feasibility Report',
           description: 'Data-driven pre-construction screening report checking 22+ planning, environmental, and ground risk constraints.',
           brand: { '@type': 'Organization', name: 'PF & Co Construction' },
-          offers: { '@type': 'Offer', price: '495', priceCurrency: 'GBP' },
+          offers: { '@type': 'Offer', price: '297', priceCurrency: 'GBP' },
         }}
       />
 
@@ -121,17 +120,17 @@ const SiteFeasibilityReport = () => {
               The broadest screen available. We interrogate 22+ planning, environmental, and ground risk constraints for any UK property address in 48 hours.
             </p>
             <div className="flex flex-wrap gap-6 items-center">
-              <Link to="/order-report?report=site-feasibility" className="px-10 py-5 bg-teal-600 text-white rounded-2xl font-bold hover:bg-teal-700 transition-all shadow-xl shadow-teal-600/20 flex items-center gap-2">
+              <Link to="/order-report?report=site-feasibility-report" className="px-10 py-5 bg-teal-600 text-white rounded-full font-bold hover:bg-teal-700 transition-all shadow-xl shadow-teal-600/20 flex items-center gap-2">
                 Buy Now <Zap size={20} className="text-teal-200" />
               </Link>
-              <a href="/samples/site-feasibility-report-sample.pdf" target="_blank" rel="noopener noreferrer" className="px-10 py-5 bg-white/10 backdrop-blur-md text-teal-600 border border-teal-100 rounded-2xl font-bold hover:bg-teal-50 transition-all flex items-center gap-2">
+              <a href="/samples/site-feasibility-report-sample.pdf" target="_blank" rel="noopener noreferrer" className="px-10 py-5 bg-white/10 backdrop-blur-md text-teal-600 border border-teal-100 rounded-full font-bold hover:bg-teal-50 transition-all flex items-center gap-2">
                 Sample Report <FileText size={20} className="text-teal-400" />
               </a>
               <div className="flex flex-col">
                 <span className="text-[10px] uppercase tracking-widest text-teal-600 font-bold mb-1">Introductory Offer</span>
                 <div className="flex items-baseline gap-2">
                   <span className="text-2xl font-mono font-bold text-brand-primary">£297</span>
-                  <span className="text-sm text-brand-primary/40 line-through">RRP £795</span>
+                  <span className="text-sm text-brand-primary/60 line-through">RRP £495</span>
                 </div>
               </div>
             </div>
@@ -180,13 +179,6 @@ const SiteFeasibilityReport = () => {
           </motion.div>
         </div>
       </section>
-
-      <VideoExplainer 
-        title="Site Feasibility Report"
-        accentColor="teal-500"
-        description="Watch our 2-minute walkthrough to see how we analyze 22+ planning and environmental constraints to give you a definitive Planning Friction Score."
-        thumbnailUrl="https://picsum.photos/seed/planning/1280/720"
-      />
 
       {/* Feature Grid - Brutalist Editorial */}
       <section className="py-32 bg-brand-primary text-white">
@@ -302,14 +294,14 @@ const SiteFeasibilityReport = () => {
             <div className="flex flex-wrap justify-center gap-6">
               <Link 
                 to="/contact"
-                className="px-12 py-6 bg-brand-primary text-white rounded-2xl font-bold hover:scale-105 transition-all shadow-xl"
+                className="px-12 py-6 bg-brand-primary text-white rounded-full font-bold hover:scale-105 transition-all shadow-xl"
               >
                 Request a Report
               </Link>
-              <a href="/samples/site-feasibility-report-sample.pdf" target="_blank" rel="noopener noreferrer" className="px-12 py-6 bg-teal-700/50 backdrop-blur-md text-white border border-white/20 rounded-2xl font-bold hover:bg-teal-800/50 transition-all flex items-center gap-2">
+              <a href="/samples/site-feasibility-report-sample.pdf" target="_blank" rel="noopener noreferrer" className="px-12 py-6 bg-teal-700/50 backdrop-blur-md text-white border border-white/20 rounded-full font-bold hover:bg-teal-800/50 transition-all flex items-center gap-2">
                 Sample Report <FileText size={20} />
               </a>
-              <div className="flex items-center gap-3 px-8 py-6 bg-teal-700/50 backdrop-blur-md rounded-2xl border border-white/10 text-sm font-bold">
+              <div className="flex items-center gap-3 px-8 py-6 bg-teal-700/50 backdrop-blur-md rounded-full border border-white/10 text-sm font-bold">
                 <Clock size={18} />
                 48hr Delivery
               </div>

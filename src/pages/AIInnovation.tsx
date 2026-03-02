@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'motion/react';
 import { Zap, Shield, Cpu, BarChart3, Search, ArrowRight, Activity, Globe, Lock, Code, Terminal } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import PageSEO from '../components/PageSEO';
 
 const NeuralBackground = () => {
@@ -314,9 +315,9 @@ const AIInnovation = () => {
                 We don't just use AI; we've rebuilt the structural engineering workflow around it. Combining human intuition with machine precision to deliver the impossible.
               </p>
               <div className="flex flex-wrap gap-6 mb-12">
-                <button className="px-10 py-5 bg-brand-accent text-brand-primary rounded-full font-bold text-lg hover:scale-105 transition-all shadow-[0_0_40px_rgba(245,158,11,0.2)]">
+                <Link to="/contact" className="px-10 py-5 bg-brand-accent text-brand-primary rounded-full font-bold text-lg hover:scale-105 transition-all shadow-[0_0_40px_rgba(245,158,11,0.2)]">
                   Explore the Swarm
-                </button>
+                </Link>
                 <div className="flex items-center gap-4 px-8 py-5 rounded-full border border-white/10 text-white/60 font-medium">
                   <Activity size={20} className="text-brand-accent" />
                   Live System Status: Optimal
@@ -458,9 +459,9 @@ const AIInnovation = () => {
             <p className="text-brand-primary/60 text-xl mb-12 max-w-2xl mx-auto font-light leading-relaxed">
               Join the architects and developers who are already using our AI-integrated workflow to deliver safer, faster, and more sustainable projects.
             </p>
-            <button className="px-12 py-6 bg-brand-primary text-white rounded-full font-bold text-xl hover:scale-105 transition-all shadow-2xl flex items-center gap-3 mx-auto">
+            <Link to="/contact" className="px-12 py-6 bg-brand-primary text-white rounded-full font-bold text-xl hover:scale-105 transition-all shadow-2xl flex items-center gap-3 mx-auto">
               Get a Quote <ArrowRight size={24} className="text-brand-accent" />
-            </button>
+            </Link>
           </div>
         </div>
       </section>

@@ -3,7 +3,6 @@ import { Search, Check, ArrowRight, Info, HelpCircle, Clock, Zap, ShieldCheck, C
 import { Link } from 'react-router-dom';
 import PageSEO from '../components/PageSEO';
 import ComparisonTable from '../components/ComparisonTable';
-import VideoExplainer from '../components/VideoExplainer';
 
 const PreConstructionDesignReview = () => {
   const features = [
@@ -55,7 +54,7 @@ const PreConstructionDesignReview = () => {
           name: 'Pre-Construction Design Review',
           description: 'Systematic 95-check review of your drawing package — catching clashes, gaps, and missing information.',
           brand: { '@type': 'Organization', name: 'PF & Co Construction' },
-          offers: { '@type': 'Offer', price: '545', priceCurrency: 'GBP' },
+          offers: { '@type': 'Offer', price: '425', priceCurrency: 'GBP' },
         }}
       />
 
@@ -63,9 +62,9 @@ const PreConstructionDesignReview = () => {
       <section className="relative min-h-screen flex items-center overflow-hidden bg-brand-primary text-white">
         <div className="absolute inset-0 z-0 opacity-20">
           <div className="absolute inset-0 bg-gradient-to-b from-brand-primary via-transparent to-brand-primary" />
-          <h1 className="text-[30vw] font-display uppercase leading-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 select-none opacity-10">
+          <div aria-hidden="true" className="text-[30vw] font-display uppercase leading-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 select-none opacity-10">
             REVIEW
-          </h1>
+          </div>
         </div>
 
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center relative z-10 w-full">
@@ -87,13 +86,13 @@ const PreConstructionDesignReview = () => {
                 Buy Now <Zap size={20} className="text-rose-200" />
               </Link>
               <a href="/samples/pre-construction-design-review-sample.pdf" target="_blank" rel="noopener noreferrer" className="px-10 py-5 bg-white/10 backdrop-blur-md text-white border border-white/20 rounded-full font-bold hover:bg-white/20 transition-all flex items-center gap-2">
-                Sample Report <FileText size={20} className="text-slate-400" />
+                Sample Report <FileText size={20} className="text-rose-400" />
               </a>
               <div className="flex flex-col">
                 <span className="text-[10px] uppercase tracking-widest text-rose-400 font-bold mb-1">Introductory Offer</span>
                 <div className="flex items-baseline gap-2">
                   <span className="text-2xl font-mono font-bold text-white">£425</span>
-                  <span className="text-sm text-white/40 line-through">RRP £850</span>
+                  <span className="text-sm text-white/60 line-through">RRP £895</span>
                 </div>
               </div>
             </div>
@@ -114,7 +113,7 @@ const PreConstructionDesignReview = () => {
                     <Search size={32} className="text-white" />
                   </div>
                   <div className="text-right">
-                    <div className="text-[10px] font-mono uppercase tracking-widest text-white/40">Package Status</div>
+                    <div className="text-[10px] font-mono uppercase tracking-widest text-white/60">Package Status</div>
                     <div className="text-sm font-bold text-rose-400 flex items-center gap-2 justify-end">
                       <ShieldCheck size={16} /> 95-Check Verified
                     </div>
@@ -150,8 +149,8 @@ const PreConstructionDesignReview = () => {
 
               <div className="relative z-10 pt-8 border-t border-white/10 flex justify-between items-end">
                 <div>
-                  <div className="text-[10px] font-mono uppercase tracking-widest text-white/40 mb-1">Review Context</div>
-                  <div className="text-lg font-bold">Pre-Tender <span className="text-xs font-normal opacity-40">(Variation Mitigation)</span></div>
+                  <div className="text-[10px] font-mono uppercase tracking-widest text-white/60 mb-1">Review Context</div>
+                  <div className="text-lg font-bold">Pre-Tender <span className="text-xs font-normal opacity-60">(Variation Mitigation)</span></div>
                 </div>
                 <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center animate-float">
                   <ClipboardCheck size={20} className="text-rose-400" />
@@ -161,14 +160,6 @@ const PreConstructionDesignReview = () => {
           </motion.div>
         </div>
       </section>
-
-      <VideoExplainer 
-        title="Pre-Construction Design Review"
-        accentColor="rose-500"
-        description="Watch our walkthrough to see how we systematically examine drawing packages across 9 categories, helping you catch clashes and missing information before they become costly variations on site."
-        thumbnailUrl="https://picsum.photos/seed/review/1280/720"
-        duration="3:30"
-      />
 
       {/* Editorial Content Section */}
       <section className="py-32 bg-white">
@@ -186,7 +177,7 @@ const PreConstructionDesignReview = () => {
                     <div className="w-6 h-6 rounded-full bg-rose-500 flex-shrink-0 flex items-center justify-center text-white text-[10px] font-bold">{i+1}</div>
                     <div>
                       <h4 className="font-bold mb-1 text-brand-primary">{f.title}</h4>
-                      <p className="text-sm text-brand-primary/50 font-light">{f.desc}</p>
+                      <p className="text-sm text-brand-primary/60 font-light">{f.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -206,7 +197,7 @@ const PreConstructionDesignReview = () => {
               
               <div className="mt-16 p-12 bg-brand-primary rounded-[3rem] text-white relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-64 h-64 bg-rose-500/20 blur-[80px]" />
-                <h3 className="text-3xl font-bold mb-6 relative z-10">48hr Turnaround <br /><span className="text-emerald-400 italic font-accent font-light">Guaranteed.</span></h3>
+                <h3 className="text-3xl font-bold mb-6 relative z-10">48hr Turnaround <br /><span className="text-rose-400 italic font-accent font-light">Guaranteed.</span></h3>
                 <p className="text-white/60 mb-8 relative z-10 font-light">
                   Time is the biggest risk in any development. We deliver our Tier 1 assessments within 48 hours of instruction, so you can make decisions at the speed of the market.
                 </p>
@@ -253,7 +244,7 @@ const PreConstructionDesignReview = () => {
                 <div>
                   <div className="text-[10px] font-mono uppercase tracking-widest text-rose-500 font-bold mb-4">Scenario 0{i+1}</div>
                   <h4 className="text-xl font-bold mb-2 text-brand-primary">{row.s}</h4>
-                  <p className="text-xs text-brand-primary/40 uppercase tracking-wider font-bold mb-6">{row.r}</p>
+                  <p className="text-xs text-brand-primary/60 uppercase tracking-wider font-bold mb-6">{row.r}</p>
                 </div>
                 <p className="text-sm text-brand-primary/60 italic font-accent font-light">{row.c}</p>
               </div>
@@ -265,7 +256,7 @@ const PreConstructionDesignReview = () => {
       {/* FAQ - Minimal Editorial */}
       <section className="py-32 bg-brand-surface">
         <div className="max-w-3xl mx-auto px-6">
-          <h2 className="text-4xl font-bold mb-16 text-center font-accent italic text-brand-primary text-slate-600">Common Inquiries</h2>
+          <h2 className="text-4xl font-bold mb-16 text-center font-accent italic text-rose-600">Common Inquiries</h2>
           <div className="space-y-12">
             {[
               { q: "What drawings do you need from me?", a: "We need the full set you intend to issue for construction: architectural plans/sections, structural GA and details, drainage layout, and any specialist drawings (fire, M&E)." },

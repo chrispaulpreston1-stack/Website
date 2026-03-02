@@ -3,7 +3,6 @@ import { FileText, Check, ArrowRight, Info, HelpCircle, Clock, Zap, ShieldCheck,
 import { Link } from 'react-router-dom';
 import PageSEO from '../components/PageSEO';
 import ComparisonTable from '../components/ComparisonTable';
-import VideoExplainer from '../components/VideoExplainer';
 
 const PlanningStatement = () => {
   const features = [
@@ -63,9 +62,9 @@ const PlanningStatement = () => {
       <section className="relative min-h-screen flex items-center overflow-hidden bg-brand-primary text-white">
         <div className="absolute inset-0 z-0 opacity-20">
           <div className="absolute inset-0 bg-gradient-to-b from-brand-primary via-transparent to-brand-primary" />
-          <h1 className="text-[30vw] font-display uppercase leading-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 select-none opacity-10">
+          <div aria-hidden="true" className="text-[30vw] font-display uppercase leading-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 select-none opacity-10">
             PLANNING
-          </h1>
+          </div>
         </div>
 
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center relative z-10 w-full">
@@ -92,8 +91,8 @@ const PlanningStatement = () => {
               <div className="flex flex-col">
                 <span className="text-[10px] uppercase tracking-widest text-emerald-400 font-bold mb-1">Introductory Offer</span>
                 <div className="flex items-baseline gap-2">
-                  <span className="text-2xl font-mono font-bold text-white">£625</span>
-                  <span className="text-sm text-white/40 line-through">RRP £1,250</span>
+                  <span className="text-2xl font-mono font-bold text-white">£445</span>
+                  <span className="text-sm text-white/60 line-through">RRP £625</span>
                 </div>
               </div>
             </div>
@@ -114,7 +113,7 @@ const PlanningStatement = () => {
                     <FileText size={32} className="text-white" />
                   </div>
                   <div className="text-right">
-                    <div className="text-[10px] font-mono uppercase tracking-widest text-white/40">Policy Status</div>
+                    <div className="text-[10px] font-mono uppercase tracking-widest text-white/60">Policy Status</div>
                     <div className="text-sm font-bold text-emerald-400 flex items-center gap-2 justify-end">
                       <ShieldCheck size={16} /> Submission Ready
                     </div>
@@ -150,8 +149,8 @@ const PlanningStatement = () => {
 
               <div className="relative z-10 pt-8 border-t border-white/10 flex justify-between items-end">
                 <div>
-                  <div className="text-[10px] font-mono uppercase tracking-widest text-white/40 mb-1">Regulatory Context</div>
-                  <div className="text-lg font-bold">NPPF Dec 2024 <span className="text-xs font-normal opacity-40">(Latest Framework)</span></div>
+                  <div className="text-[10px] font-mono uppercase tracking-widest text-white/60 mb-1">Regulatory Context</div>
+                  <div className="text-lg font-bold">NPPF Dec 2024 <span className="text-xs font-normal opacity-60">(Latest Framework)</span></div>
                 </div>
                 <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center animate-float">
                   <Scale size={20} className="text-emerald-400" />
@@ -161,14 +160,6 @@ const PlanningStatement = () => {
           </motion.div>
         </div>
       </section>
-
-      <VideoExplainer 
-        title="Planning Statement"
-        accentColor="emerald-500"
-        description="Watch our walkthrough to see how we map your proposal against every relevant policy in the local plan, helping you present a professional planning balance that officers can adopt."
-        thumbnailUrl="https://picsum.photos/seed/planning/1280/720"
-        duration="4:00"
-      />
 
       {/* Editorial Content Section */}
       <section className="py-32 bg-white">
@@ -186,7 +177,7 @@ const PlanningStatement = () => {
                     <div className="w-6 h-6 rounded-full bg-emerald-500 flex-shrink-0 flex items-center justify-center text-white text-[10px] font-bold">{i+1}</div>
                     <div>
                       <h4 className="font-bold mb-1 text-brand-primary">{f.title}</h4>
-                      <p className="text-sm text-brand-primary/50 font-light">{f.desc}</p>
+                      <p className="text-sm text-brand-primary/60 font-light">{f.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -253,7 +244,7 @@ const PlanningStatement = () => {
                 <div>
                   <div className="text-[10px] font-mono uppercase tracking-widest text-emerald-500 font-bold mb-4">Scenario 0{i+1}</div>
                   <h4 className="text-xl font-bold mb-2 text-brand-primary">{row.s}</h4>
-                  <p className="text-xs text-brand-primary/40 uppercase tracking-wider font-bold mb-6">{row.r}</p>
+                  <p className="text-xs text-brand-primary/60 uppercase tracking-wider font-bold mb-6">{row.r}</p>
                 </div>
                 <p className="text-sm text-brand-primary/60 italic font-accent font-light">{row.c}</p>
               </div>
@@ -265,7 +256,7 @@ const PlanningStatement = () => {
       {/* FAQ - Minimal Editorial */}
       <section className="py-32 bg-brand-surface">
         <div className="max-w-3xl mx-auto px-6">
-          <h2 className="text-4xl font-bold mb-16 text-center font-accent italic text-brand-primary text-emerald-600">Common Inquiries</h2>
+          <h2 className="text-4xl font-bold mb-16 text-center font-accent italic text-emerald-600">Common Inquiries</h2>
           <div className="space-y-12">
             {[
               { q: "Is this different from a Design and Access Statement?", a: "Yes. A Planning Statement addresses policy compliance — why it should be approved. A DAS addresses the design process and accessibility — how it was designed." },

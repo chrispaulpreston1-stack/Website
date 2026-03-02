@@ -20,7 +20,7 @@ const Subscriptions = () => {
         "Top-up Bundles Available"
       ],
       cta: "Subscribe",
-      link: "https://pay.gocardless.com/BRT0004FEC14R5H", // TODO: Update with correct GoCardless link
+      link: "https://pay.gocardless.com/BRT0004FEC14R5H",
       highlight: false
     },
     {
@@ -37,7 +37,7 @@ const Subscriptions = () => {
         "Universal Credit Usage"
       ],
       cta: "Subscribe",
-      link: "https://pay.gocardless.com/BRT0004FECABCGT", // TODO: Update with correct GoCardless link
+      link: "https://pay.gocardless.com/BRT0004FECABCGT",
       highlight: true
     },
     {
@@ -54,7 +54,7 @@ const Subscriptions = () => {
         "Unlimited Technical Advice"
       ],
       cta: "Subscribe",
-      link: "https://pay.gocardless.com/BRT0004FECDYPA0", // TODO: Update with correct GoCardless link
+      link: "https://pay.gocardless.com/BRT0004FECDYPA0",
       highlight: false
     }
   ];
@@ -70,6 +70,12 @@ const Subscriptions = () => {
           name: 'Structural Design Subscription',
           description: 'Engineering as a Service — unlimited structural calculations and priority design support for a fixed monthly fee.',
           brand: { '@type': 'Organization', name: 'PF & Co Construction' },
+          offers: {
+            '@type': 'AggregateOffer',
+            lowPrice: '288',
+            highPrice: '510',
+            priceCurrency: 'GBP',
+          },
         }}
       />
       <section className="max-w-7xl mx-auto px-6">

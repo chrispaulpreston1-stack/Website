@@ -57,7 +57,7 @@ const BiodiversityNetGain = () => {
           name: 'Biodiversity Net Gain Screening',
           description: 'BNG screening and feasibility assessment — find out whether BNG applies and which surveys you need.',
           brand: { '@type': 'Organization', name: 'PF & Co Construction' },
-          offers: { '@type': 'Offer', price: '345', priceCurrency: 'GBP' },
+          offers: { '@type': 'Offer', price: '325', priceCurrency: 'GBP' },
         }}
       />
 
@@ -65,9 +65,9 @@ const BiodiversityNetGain = () => {
       <section className="relative min-h-screen flex items-center overflow-hidden bg-brand-primary text-white">
         <div className="absolute inset-0 z-0 opacity-20">
           <div className="absolute inset-0 bg-gradient-to-b from-brand-primary via-transparent to-brand-primary" />
-          <h1 className="text-[30vw] font-display uppercase leading-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 select-none opacity-10">
+          <div aria-hidden="true" className="text-[30vw] font-display uppercase leading-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 select-none opacity-10">
             BNG
-          </h1>
+          </div>
         </div>
 
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center relative z-10 w-full">
@@ -95,7 +95,7 @@ const BiodiversityNetGain = () => {
                 <span className="text-[10px] uppercase tracking-widest text-emerald-400 font-bold mb-1">Introductory Offer</span>
                 <div className="flex items-baseline gap-2">
                   <span className="text-2xl font-mono font-bold text-white">£325</span>
-                  <span className="text-sm text-white/40 line-through">RRP £650</span>
+                  <span className="text-sm text-white/60 line-through">RRP £495</span>
                 </div>
               </div>
             </div>
@@ -116,7 +116,7 @@ const BiodiversityNetGain = () => {
                     <Leaf size={32} className="text-white" />
                   </div>
                   <div className="text-right">
-                    <div className="text-[10px] font-mono uppercase tracking-widest text-white/40">Compliance Status</div>
+                    <div className="text-[10px] font-mono uppercase tracking-widest text-white/60">Compliance Status</div>
                     <div className="text-sm font-bold text-emerald-400 flex items-center gap-2 justify-end">
                       <ShieldCheck size={16} /> Verified
                     </div>
@@ -152,8 +152,8 @@ const BiodiversityNetGain = () => {
 
               <div className="relative z-10 pt-8 border-t border-white/10 flex justify-between items-end">
                 <div>
-                  <div className="text-[10px] font-mono uppercase tracking-widest text-white/40 mb-1">Ecological Context</div>
-                  <div className="text-lg font-bold">Low Impact <span className="text-xs font-normal opacity-40">(Likely Exempt)</span></div>
+                  <div className="text-[10px] font-mono uppercase tracking-widest text-white/60 mb-1">Ecological Context</div>
+                  <div className="text-lg font-bold">Low Impact <span className="text-xs font-normal opacity-60">(Likely Exempt)</span></div>
                 </div>
                 <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center animate-float">
                   <Info size={20} className="text-emerald-400" />
@@ -189,7 +189,7 @@ const BiodiversityNetGain = () => {
                     <div className="w-6 h-6 rounded-full bg-emerald-500 flex-shrink-0 flex items-center justify-center text-white text-[10px] font-bold">{i+1}</div>
                     <div>
                       <h4 className="font-bold mb-1 text-brand-primary">{f.title}</h4>
-                      <p className="text-sm text-brand-primary/50 font-light">{f.desc}</p>
+                      <p className="text-sm text-brand-primary/60 font-light">{f.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -256,7 +256,7 @@ const BiodiversityNetGain = () => {
                 <div>
                   <div className="text-[10px] font-mono uppercase tracking-widest text-emerald-500 font-bold mb-4">Scenario 0{i+1}</div>
                   <h4 className="text-xl font-bold mb-2 text-brand-primary">{row.s}</h4>
-                  <p className="text-xs text-brand-primary/40 uppercase tracking-wider font-bold mb-6">{row.r}</p>
+                  <p className="text-xs text-brand-primary/60 uppercase tracking-wider font-bold mb-6">{row.r}</p>
                 </div>
                 <p className="text-sm text-brand-primary/60 italic font-accent font-light">{row.c}</p>
               </div>
@@ -268,7 +268,7 @@ const BiodiversityNetGain = () => {
       {/* FAQ - Minimal Editorial */}
       <section className="py-32 bg-brand-surface">
         <div className="max-w-3xl mx-auto px-6">
-          <h2 className="text-4xl font-bold mb-16 text-center font-accent italic text-brand-primary text-emerald-600">Common Inquiries</h2>
+          <h2 className="text-4xl font-bold mb-16 text-center font-accent italic text-emerald-600">Common Inquiries</h2>
           <div className="space-y-12">
             {[
               { q: "Is my project exempt from BNG?", a: "It depends on the application type, not just the project size. Householder applications and self-builds are often exempt. However, Full Planning applications for single dwellings usually trigger BNG. Our screening checks all five statutory exemptions systematically." },
