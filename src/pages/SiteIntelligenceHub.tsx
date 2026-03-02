@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { Search, ShieldAlert, BarChart3, ArrowRight, Check, X, Database, Clock, Users, Zap, FileText } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import PageSEO from '../components/PageSEO';
+import VideoExplainer from '../components/VideoExplainer';
 
 const SiteIntelligenceHub = () => {
   const products = [
@@ -50,14 +51,26 @@ const SiteIntelligenceHub = () => {
         title="PF & Co Site Intelligence | Data-Driven Pre-Construction Screening | PF & Co"
         description="Interrogate 25+ authoritative data sources to identify planning, flood, and ground risks before you commit to a site."
         path="/site-intelligence"
-        jsonLd={{
-          '@type': 'Service',
-          name: 'Site Intelligence',
-          description: 'Data-driven pre-construction screening interrogating 25+ authoritative data sources to identify planning, flood, and ground risks.',
-          provider: { '@type': 'Organization', name: 'PF & Co Site Intelligence' },
-          areaServed: ['Surrey', 'London', 'South East England'],
-          serviceType: 'Site Intelligence',
-        }}
+        jsonLd={[
+          {
+            '@type': 'Service',
+            name: 'Site Intelligence',
+            description: 'Data-driven pre-construction screening interrogating 25+ authoritative data sources to identify planning, flood, and ground risks.',
+            provider: { '@type': 'Organization', name: 'PF & Co Site Intelligence' },
+            areaServed: ['Surrey', 'London', 'South East England'],
+            serviceType: 'Site Intelligence',
+          },
+          {
+            '@type': 'VideoObject',
+            name: 'PF & Co Site Intelligence — The Complete Process',
+            description: 'See the complete Site Intelligence process from order to delivery. Learn how we interrogate 25+ authoritative data sources and translate raw data into engineering decisions for planning, flood, and ground risk screening.',
+            thumbnailUrl: 'https://www.pfcoconstruction.co.uk/videos/site-intelligence-demo-thumb.jpg',
+            contentUrl: 'https://www.pfcoconstruction.co.uk/videos/site-intelligence-demo.mp4',
+            uploadDate: '2026-03-02',
+            duration: 'PT2M32S',
+            publisher: { '@type': 'Organization', name: 'PF & Co Construction', url: 'https://www.pfcoconstruction.co.uk' },
+          }
+        ]}
       />
 
       {/* Hero */}
@@ -186,6 +199,15 @@ const SiteIntelligenceHub = () => {
           </motion.div>
         </div>
       </section>
+
+      <VideoExplainer
+        title="PF & Co Site Intelligence"
+        accentColor="brand-accent"
+        description="See the complete process — from order to delivery. Learn how we interrogate 25+ authoritative data sources and translate raw data into engineering decisions, typically within 48 hours."
+        thumbnailUrl="/videos/site-intelligence-demo-thumb.jpg"
+        videoUrl="/videos/site-intelligence-demo.mp4"
+        duration="2:32"
+      />
 
       {/* White Label & Professional Partners */}
       <section className="max-w-7xl mx-auto px-6 mb-24">
