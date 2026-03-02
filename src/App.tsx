@@ -168,7 +168,7 @@ const ContactSection = () => {
     setFormStatus('submitting');
     const form = e.currentTarget;
     try {
-      const res = await fetch('https://formspree.io/f/xpwzgvkl', {
+      const res = await fetch('https://formspree.io/f/xdalrdyj', {
         method: 'POST',
         body: new FormData(form),
         headers: { Accept: 'application/json' },
