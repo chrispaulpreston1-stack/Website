@@ -40,7 +40,7 @@ const SiteIntelligenceHub = () => {
 
   const stats = [
     { num: "300+", label: "Projects Delivered" },
-    { num: "15+", label: "Authoritative Data Sources" },
+    { num: "25+", label: "Authoritative Data Sources" },
     { num: "48hr", label: "Typical Turnaround" }
   ];
 
@@ -48,12 +48,12 @@ const SiteIntelligenceHub = () => {
     <div className="pt-32 pb-24">
       <PageSEO
         title="PF & Co Site Intelligence | Data-Driven Pre-Construction Screening | PF & Co"
-        description="Interrogate 15+ authoritative data sources to identify planning, flood, and ground risks before you commit to a site."
+        description="Interrogate 25+ authoritative data sources to identify planning, flood, and ground risks before you commit to a site."
         path="/site-intelligence"
         jsonLd={{
           '@type': 'Service',
           name: 'Site Intelligence',
-          description: 'Data-driven pre-construction screening interrogating 15+ authoritative data sources to identify planning, flood, and ground risks.',
+          description: 'Data-driven pre-construction screening interrogating 25+ authoritative data sources to identify planning, flood, and ground risks.',
           provider: { '@type': 'Organization', name: 'PF & Co Site Intelligence' },
           areaServed: ['Surrey', 'London', 'South East England'],
           serviceType: 'Site Intelligence',
@@ -93,7 +93,7 @@ const SiteIntelligenceHub = () => {
               transition={{ delay: 0.2 }}
               className="text-xl text-brand-primary/60 leading-relaxed mb-8"
             >
-              Welcome to Early Access. You're among the first to use PF & Co Site Intelligence — data-driven pre-construction screening that interrogates 15+ authoritative data sources. Lock in discounted pricing today and help shape the product before V1 launch.
+              Welcome to Early Access. You're among the first to use PF & Co Site Intelligence — data-driven pre-construction screening that interrogates 25+ authoritative data sources. Lock in discounted pricing today and help shape the product before V1 launch.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -117,6 +117,18 @@ const SiteIntelligenceHub = () => {
             >
               Early Access pricing is temporary. Price increases upon the final V1 release.
             </motion.p>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5 }}
+              className="mt-6 p-4 bg-brand-surface border border-brand-primary/5 rounded-xl max-w-lg"
+            >
+              <p className="text-sm text-brand-primary/70">
+                <span className="inline-block bg-brand-primary/10 text-brand-primary text-[9px] font-bold uppercase tracking-widest px-2 py-0.5 rounded mr-2">Coming Soon</span>
+                White-label, non-branded reports delivered under your practice's identity.{' '}
+                <Link to="/contact" className="text-brand-accent font-bold hover:underline">Register your interest</Link>
+              </p>
+            </motion.div>
           </div>
           
           <motion.div 

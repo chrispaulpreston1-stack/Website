@@ -218,7 +218,7 @@ const TransportStatement = () => {
             subtitle="What you get vs a typical transport consultant"
             columns={["Feature", "PF&Co Site Intelligence", "Typical Consultant", "Basic Advice"]}
             categories={comparisonCategories}
-            footerNote="Comparison based on typical UK transport consultancy practices. PF&Co Transport Statement pulls data from 15+ authoritative sources and uses TRICS for standardised trip generation."
+            footerNote="Comparison based on typical UK transport consultancy practices. PF&Co Transport Statement pulls data from 25+ authoritative sources and uses TRICS for standardised trip generation."
             accentColor="text-blue-500"
           />
         </div>

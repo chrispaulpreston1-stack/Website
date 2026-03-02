@@ -240,7 +240,7 @@ const EnergyStatement = () => {
             subtitle="What you get vs a typical consultant"
             columns={["Feature", "PF&Co Site Intelligence", "Typical Consultant", "Basic Mention"]}
             categories={comparisonCategories}
-            footerNote="Comparison based on typical UK sustainability consultancy practices. PF&Co Energy Statement pulls data from 15+ authoritative sources and references the latest Part L 2021 and Part O 2021 requirements."
+            footerNote="Comparison based on typical UK sustainability consultancy practices. PF&Co Energy Statement pulls data from 25+ authoritative sources and references the latest Part L 2021 and Part O 2021 requirements."
             accentColor="text-amber-500"
           />
         </div>

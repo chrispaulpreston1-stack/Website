@@ -200,7 +200,7 @@ const GeotechnicalDeskStudy = () => {
               </p>
               <div className="grid grid-cols-2 gap-8">
                 <div className="p-8 rounded-3xl bg-brand-surface border border-brand-primary/5">
-                  <div className="text-4xl font-serif italic text-amber-700 mb-2">15+</div>
+                  <div className="text-4xl font-serif italic text-amber-700 mb-2">25+</div>
                   <div className="text-[10px] uppercase tracking-widest font-bold opacity-40">Data Sources</div>
                 </div>
                 <div className="p-8 rounded-3xl bg-brand-surface border border-brand-primary/5">

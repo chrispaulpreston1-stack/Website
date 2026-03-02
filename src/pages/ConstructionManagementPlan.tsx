@@ -240,7 +240,7 @@ const ConstructionManagementPlan = () => {
             subtitle="What you get vs a typical planning consultant"
             columns={["Feature", "PF&Co Site Intelligence", "Typical Consultant", "Basic Summary"]}
             categories={comparisonCategories}
-            footerNote="Comparison based on typical UK planning consultancy practices. PF&Co CMP pulls data from 15+ authoritative sources and references the latest LPA validation requirements."
+            footerNote="Comparison based on typical UK planning consultancy practices. PF&Co CMP pulls data from 25+ authoritative sources and references the latest LPA validation requirements."
             accentColor="text-slate-500"
           />
         </div>

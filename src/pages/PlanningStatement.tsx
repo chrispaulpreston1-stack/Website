@@ -218,7 +218,7 @@ const PlanningStatement = () => {
             subtitle="What you get vs a typical planning consultant"
             columns={["Feature", "PF&Co Site Intelligence", "Typical Consultant", "Basic Cover Letter"]}
             categories={comparisonCategories}
-            footerNote="Comparison based on typical UK planning consultancy practices. PF&Co Planning Statement pulls data from 15+ authoritative sources and references the latest NPPF (Dec 2024) and local plan policies."
+            footerNote="Comparison based on typical UK planning consultancy practices. PF&Co Planning Statement pulls data from 25+ authoritative sources and references the latest NPPF (Dec 2024) and local plan policies."
             accentColor="text-emerald-500"
           />
         </div>

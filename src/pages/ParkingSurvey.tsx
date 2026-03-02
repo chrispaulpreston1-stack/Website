@@ -218,7 +218,7 @@ const ParkingSurvey = () => {
             subtitle="What you get vs a typical transport consultant"
             columns={["Feature", "PF&Co Site Intelligence", "Typical Consultant", "Basic Advice"]}
             categories={comparisonCategories}
-            footerNote="Comparison based on typical UK transport consultancy practices. PF&Co Parking Survey pulls data from 15+ authoritative sources including the latest Census car ownership tables."
+            footerNote="Comparison based on typical UK transport consultancy practices. PF&Co Parking Survey pulls data from 25+ authoritative sources including the latest Census car ownership tables."
             accentColor="text-rose-500"
           />
         </div>

@@ -247,7 +247,7 @@ const SiteFeasibilityReport = () => {
             <div className="aspect-square bg-brand-primary rounded-[3rem] p-12 relative overflow-hidden flex items-center justify-center">
               <div className="absolute inset-0 opacity-10 engineering-grid" />
               <div className="relative z-10 text-center">
-                <div className="text-8xl font-bold text-teal-400 mb-4">15+</div>
+                <div className="text-8xl font-bold text-teal-400 mb-4">25+</div>
                 <div className="text-xs font-mono uppercase tracking-[0.4em] text-white/40">Real-Time Connections</div>
               </div>
               <div className="absolute inset-0 border-[20px] border-white/5 rounded-[3rem]" />
