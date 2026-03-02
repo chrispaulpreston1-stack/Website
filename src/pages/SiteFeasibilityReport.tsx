@@ -124,7 +124,7 @@ const SiteFeasibilityReport = () => {
               <Link to="/order-report?report=site-feasibility" className="px-10 py-5 bg-teal-600 text-white rounded-2xl font-bold hover:bg-teal-700 transition-all shadow-xl shadow-teal-600/20 flex items-center gap-2">
                 Buy Now <Zap size={20} className="text-teal-200" />
               </Link>
-              <a href="/samples/site-feasibility-sample.pdf" target="_blank" rel="noopener noreferrer" className="px-10 py-5 bg-white/10 backdrop-blur-md text-teal-600 border border-teal-100 rounded-2xl font-bold hover:bg-teal-50 transition-all flex items-center gap-2">
+              <a href="/samples/site-feasibility-report-sample.pdf" target="_blank" rel="noopener noreferrer" className="px-10 py-5 bg-white/10 backdrop-blur-md text-teal-600 border border-teal-100 rounded-2xl font-bold hover:bg-teal-50 transition-all flex items-center gap-2">
                 Sample Report <FileText size={20} className="text-teal-400" />
               </a>
               <div className="flex flex-col">
@@ -306,7 +306,7 @@ const SiteFeasibilityReport = () => {
               >
                 Request a Report
               </Link>
-              <a href="/samples/site-feasibility-sample.pdf" target="_blank" rel="noopener noreferrer" className="px-12 py-6 bg-teal-700/50 backdrop-blur-md text-white border border-white/20 rounded-2xl font-bold hover:bg-teal-800/50 transition-all flex items-center gap-2">
+              <a href="/samples/site-feasibility-report-sample.pdf" target="_blank" rel="noopener noreferrer" className="px-12 py-6 bg-teal-700/50 backdrop-blur-md text-white border border-white/20 rounded-2xl font-bold hover:bg-teal-800/50 transition-all flex items-center gap-2">
                 Sample Report <FileText size={20} />
               </a>
               <div className="flex items-center gap-3 px-8 py-6 bg-teal-700/50 backdrop-blur-md rounded-2xl border border-white/10 text-sm font-bold">
