@@ -285,6 +285,7 @@ const OrderReport = () => {
                         </div>
                         <div className="flex items-center gap-3">
                           <div className="text-right">
+                            <div className="font-mono font-bold text-brand-primary text-sm">From</div>
                             <div className="font-mono font-bold text-brand-primary">£{r.price}</div>
                             {r.isBundle && <div className="text-[10px] text-brand-primary/40 line-through">RRP £1,137</div>}
                           </div>
@@ -521,10 +522,12 @@ const OrderReport = () => {
 
                 <div className="pt-6 border-t border-brand-primary/5 space-y-2">
                   <div className="flex justify-between text-xl font-bold">
-                    <span>Total</span>
+                    <span>Est. Total*</span>
                     <span className="text-brand-accent">£{totalPrice.toFixed(2)}</span>
                   </div>
-                  <p className="text-[10px] text-brand-primary/40"></p>
+                  <p className="text-[10px] text-brand-primary/50 leading-relaxed mt-4">
+                    *Prices shown are our typical fixed fees for standard residential extensions and single dwellings. For complex, large-scale, or multi-unit commercial developments, we reserve the right to review the project scope and provide a revised fixed-fee quote before proceeding.
+                  </p>
                 </div>
               </div>
 
