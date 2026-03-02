@@ -155,6 +155,16 @@ const CILLiabilityAssessment = () => {
                 </div>
             </section>
 
+            {/* Video Explainer Section */}
+            <VideoExplainer
+                title="CIL Assessments Explained"
+                description="Watch how we calculate your exact liability, check every available exemption, and formulate a strategy to reduce your Community Infrastructure Levy exposure."
+                videoUrl="/videos/cil-liability-assessment-demo.mp4"
+                thumbnailUrl="/videos/cil-liability-assessment-thumb.jpg"
+                duration="1:23"
+                accentColor="bg-emerald-500"
+            />
+
             {/* Editorial Content Section */}
             <section className="py-32 bg-white">
                 <div className="max-w-7xl mx-auto px-6">
@@ -287,16 +297,6 @@ const CILLiabilityAssessment = () => {
                     </div>
                 </div>
             </section>
-
-            {/* Video Explainer Section */}
-            <VideoExplainer
-                title="CIL Assessments Explained"
-                description="Watch how we calculate your exact liability, check every available exemption, and formulate a strategy to reduce your Community Infrastructure Levy exposure."
-                videoUrl="/videos/cil-liability-assessment-demo.mp4"
-                thumbnailUrl="/videos/cil-liability-assessment-thumb.jpg"
-                duration="1:23"
-                accentColor="bg-emerald-500"
-            />
 
             {/* Sources */}
             <section className="py-12 bg-emerald-900 text-emerald-50">
