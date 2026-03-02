@@ -3,6 +3,7 @@ import { Truck, Check, ArrowRight, Info, HelpCircle, Clock, Zap, ShieldCheck, Na
 import { Link } from 'react-router-dom';
 import PageSEO from '../components/PageSEO';
 import ComparisonTable from '../components/ComparisonTable';
+import VideoExplainer from '../components/VideoExplainer';
 
 const TransportStatement = () => {
   const features = [
@@ -55,6 +56,23 @@ const TransportStatement = () => {
           description: 'Professional transport statement covering trip generation, accessibility, and highways safety.',
           brand: { '@type': 'Organization', name: 'PF & Co Construction' },
           offers: { '@type': 'Offer', price: '345', priceCurrency: 'GBP' },
+          subjectOf: {
+            '@type': 'VideoObject',
+            name: 'Transport Statement Explainer',
+            description: 'Learn how our Transport Statements analyze trip generation, accessibility, and highways safety for planning applications.',
+            thumbnailUrl: 'https://www.pfcoconstruction.co.uk/videos/transport-statement-thumb.jpg',
+            contentUrl: 'https://www.pfcoconstruction.co.uk/videos/transport-statement-demo.mp4',
+            uploadDate: new Date().toISOString().split('T')[0],
+            duration: 'PT1M36S',
+            publisher: {
+              '@type': 'Organization',
+              name: 'PF & Co Construction',
+              logo: {
+                '@type': 'ImageObject',
+                url: 'https://www.pfcoconstruction.co.uk/logo.png'
+              }
+            }
+          }
         }}
       />
 
@@ -106,7 +124,7 @@ const TransportStatement = () => {
           >
             <div className="aspect-[4/5] bg-white/5 backdrop-blur-xl rounded-[4rem] border border-white/10 p-12 flex flex-col justify-between shadow-2xl relative overflow-hidden group">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-              
+
               <div className="relative z-10">
                 <div className="flex justify-between items-start mb-12">
                   <div className="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center shadow-lg shadow-blue-500/40">
@@ -121,7 +139,7 @@ const TransportStatement = () => {
                 </div>
 
                 <h3 className="text-2xl font-bold mb-8 font-accent italic">Accessibility Profile</h3>
-                
+
                 <div className="space-y-6">
                   {[
                     { label: "Trip Generation", score: 4, color: "bg-blue-400" },
@@ -135,7 +153,7 @@ const TransportStatement = () => {
                         <span>{item.score}/10</span>
                       </div>
                       <div className="h-1 bg-white/10 rounded-full overflow-hidden">
-                        <motion.div 
+                        <motion.div
                           initial={{ width: 0 }}
                           animate={{ width: `${item.score * 10}%` }}
                           transition={{ delay: 0.8 + (i * 0.1), duration: 1.5, ease: "easeOut" }}
@@ -161,6 +179,16 @@ const TransportStatement = () => {
         </div>
       </section>
 
+      {/* Video Explainer Section */}
+      <VideoExplainer
+        title="Transport Statements Explained"
+        description="Watch how we analyze trip generation, sustainable accessibility, and local highways safety data to give your development the best chance of planning approval."
+        videoUrl="/videos/transport-statement-demo.mp4"
+        thumbnailUrl="/videos/transport-statement-thumb.jpg"
+        duration="1:36"
+        accentColor="bg-blue-500"
+      />
+
       {/* Editorial Content Section */}
       <section className="py-32 bg-white">
         <div className="max-w-7xl mx-auto px-6">
@@ -174,7 +202,7 @@ const TransportStatement = () => {
               <div className="space-y-4">
                 {features.slice(0, 4).map((f, i) => (
                   <div key={i} className="flex gap-4 p-6 rounded-2xl bg-brand-surface border border-brand-primary/5">
-                    <div className="w-6 h-6 rounded-full bg-blue-500 flex-shrink-0 flex items-center justify-center text-white text-[10px] font-bold">{i+1}</div>
+                    <div className="w-6 h-6 rounded-full bg-blue-500 flex-shrink-0 flex items-center justify-center text-white text-[10px] font-bold">{i + 1}</div>
                     <div>
                       <h4 className="font-bold mb-1 text-brand-primary">{f.title}</h4>
                       <p className="text-sm text-brand-primary/60 font-light">{f.desc}</p>
@@ -183,7 +211,7 @@ const TransportStatement = () => {
                 ))}
               </div>
             </div>
-            
+
             <div className="lg:col-span-7">
               <div className="grid sm:grid-cols-2 gap-8">
                 {features.slice(4).map((f, i) => (
@@ -194,7 +222,7 @@ const TransportStatement = () => {
                   </div>
                 ))}
               </div>
-              
+
               <div className="mt-16 p-12 bg-brand-primary rounded-[3rem] text-white relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/20 blur-[80px]" />
                 <h3 className="text-3xl font-bold mb-6 relative z-10">48hr Turnaround <br /><span className="text-blue-400 italic font-accent font-light">Guaranteed.</span></h3>
@@ -213,7 +241,7 @@ const TransportStatement = () => {
       {/* Comparison Table Section */}
       <section className="py-32 bg-brand-surface">
         <div className="max-w-7xl mx-auto px-6">
-          <ComparisonTable 
+          <ComparisonTable
             title="Transport Statement"
             subtitle="What you get vs a typical transport consultant"
             columns={["Feature", "PF&Co Site Intelligence", "Typical Consultant", "Basic Advice"]}
@@ -231,7 +259,7 @@ const TransportStatement = () => {
             <h2 className="text-5xl font-bold mb-4 tracking-tight text-brand-primary">When You Need <span className="font-accent italic font-light text-blue-600">Certainty.</span></h2>
             <p className="text-brand-primary/60 max-w-2xl mx-auto font-light">Critical scenarios where a Transport Statement is essential for planning.</p>
           </div>
-          
+
           <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-px bg-brand-primary/10 border border-brand-primary/10 rounded-[2rem] overflow-hidden">
             {[
               { s: "Small-Medium Dev", r: "Core use case", c: "Residential or commercial schemes below assessment threshold" },
@@ -242,7 +270,7 @@ const TransportStatement = () => {
             ].map((row, i) => (
               <div key={i} className="bg-white p-8 hover:bg-brand-surface transition-colors flex flex-col justify-between min-h-[250px]">
                 <div>
-                  <div className="text-[10px] font-mono uppercase tracking-widest text-blue-500 font-bold mb-4">Scenario 0{i+1}</div>
+                  <div className="text-[10px] font-mono uppercase tracking-widest text-blue-500 font-bold mb-4">Scenario 0{i + 1}</div>
                   <h4 className="text-xl font-bold mb-2 text-brand-primary">{row.s}</h4>
                   <p className="text-xs text-brand-primary/60 uppercase tracking-wider font-bold mb-6">{row.r}</p>
                 </div>
@@ -282,14 +310,14 @@ const TransportStatement = () => {
         <div className="bg-blue-600 rounded-[4rem] p-16 md:p-24 text-center text-white relative overflow-hidden shadow-2xl shadow-blue-600/20">
           <div className="absolute inset-0 opacity-10 engineering-grid" />
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-1 bg-gradient-to-r from-transparent via-white to-transparent animate-scan" />
-          
+
           <div className="relative z-10">
             <h2 className="text-5xl md:text-6xl font-bold mb-8 tracking-tighter">Highways Concerns <br />on Your Site?</h2>
             <p className="text-white/80 text-xl mb-12 max-w-2xl mx-auto font-light">
               Get the data to address them. Send us the site address and proposal details — no obligation.
             </p>
             <div className="flex flex-wrap justify-center gap-6">
-              <Link 
+              <Link
                 to="/contact"
                 className="px-12 py-6 bg-white text-blue-600 rounded-full font-bold hover:scale-105 transition-all shadow-xl"
               >
