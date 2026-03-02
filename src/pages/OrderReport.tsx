@@ -160,7 +160,7 @@ const OrderReport = () => {
 
     try {
       // Send project details to Formspree (non-blocking)
-      fetch('https://formspree.io/f/xpwzgvkl', {
+      fetch('https://formspree.io/f/xdalrdyj', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
@@ -251,240 +251,240 @@ const OrderReport = () => {
         <form onSubmit={handleSubmit(onSubmit)} className="grid lg:grid-cols-3 gap-12">
           {/* Main Form Area */}
           <div className="lg:col-span-2">
-              {/* Step 1: Report Selection & Site */}
-              <div className={step === 1 ? 'space-y-8' : 'hidden'}>
-                  <section>
-                    <h2 className="text-2xl font-bold mb-2">Select Your Reports</h2>
-                    <p className="text-sm text-brand-primary/50 mb-6">Choose one or more reports for your site.</p>
-                    {selectionError && <p className="text-red-500 text-xs mb-4 font-bold">{selectionError}</p>}
-                    <div className="grid gap-4">
-                      {reports.map((r) => {
-                        const isSelected = selectedReports.includes(r.id);
-                        return (
-                          <button
-                            key={r.id}
-                            type="button"
-                            onClick={() => toggleReport(r.id)}
-                            className={`p-6 rounded-2xl border-2 text-left transition-all flex items-center justify-between group relative overflow-hidden ${isSelected ? r.color : 'border-brand-primary/5 bg-white hover:border-brand-primary/20'}`}
-                          >
-                            {r.isBundle && (
-                              <div className="absolute top-0 right-0 bg-brand-accent text-brand-primary text-[10px] font-bold px-3 py-1 rounded-bl-xl uppercase tracking-widest">
-                                Best Value
-                              </div>
-                            )}
-                            <div className="flex items-center gap-4">
-                              <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-sm">
-                                {r.icon}
-                              </div>
-                              <div>
-                                <div className="font-bold text-brand-primary">{r.name}</div>
-                                <div className="text-xs text-brand-primary/40">
-                                  {r.isBundle ? 'All 3 Reports Included' : '48hr Turnaround'}
-                                </div>
-                              </div>
-                            </div>
-                            <div className="flex items-center gap-3">
-                              <div className="text-right">
-                                <div className="font-mono font-bold text-brand-primary">£{r.price}</div>
-                                {r.isBundle && <div className="text-[10px] text-brand-primary/40 line-through">RRP £1,137</div>}
-                              </div>
-                              <div className={`w-6 h-6 rounded-lg border-2 flex items-center justify-center transition-colors ${isSelected ? 'bg-brand-primary border-brand-primary' : 'border-brand-primary/10'}`}>
-                                {isSelected && <Check size={14} className="text-white" />}
-                              </div>
-                            </div>
-                          </button>
-                        );
-                      })}
-                    </div>
-                  </section>
-
-                  <section>
-                    <h2 className="text-2xl font-bold mb-6">Site Location</h2>
-                    <div className="space-y-4">
-                      <div className="relative">
-                        <MapPin className="absolute left-4 top-4 text-brand-primary/30" size={20} />
-                        <textarea
-                          {...register('address')}
-                          rows={3}
-                          className="w-full bg-white border-2 border-brand-primary/5 rounded-2xl p-4 pl-12 focus:border-brand-accent outline-none transition-colors"
-                          placeholder="Project Address or What3Words location..."
-                        />
-                        {errors.address && <p className="text-red-500 text-xs mt-2 font-bold">{errors.address.message}</p>}
-                      </div>
-                      <p className="text-[10px] text-brand-primary/40 font-medium italic">
-                        Tip: What3Words (e.g. ///filled.count.soap) is the most accurate way to identify a development site.
-                      </p>
-                    </div>
-                  </section>
-
-                  <button
-                    type="button"
-                    onClick={validateAndNext}
-                    className="w-full py-5 bg-brand-primary text-white rounded-2xl font-bold text-lg hover:bg-brand-primary/90 transition-all flex items-center justify-center gap-2 shadow-xl shadow-brand-primary/20"
-                  >
-                    Next: Project Context <ArrowRight size={20} />
-                  </button>
-              </div>
-
-              {/* Step 2: Project Context */}
-              <div className={step === 2 ? 'space-y-8' : 'hidden'}>
-                  <section>
-                    <h2 className="text-2xl font-bold mb-6">Project Context</h2>
-                    <div className="space-y-6">
-                      <div className="space-y-2">
-                        <label className="text-[10px] font-bold uppercase tracking-widest text-brand-primary/40">Project Type</label>
-                        <select
-                          {...register('projectType')}
-                          className="w-full bg-white border-2 border-brand-primary/5 rounded-2xl p-4 focus:border-brand-accent outline-none appearance-none font-medium"
-                        >
-                          <option value="">Select type...</option>
-                          <option value="residential-extension">Residential Extension</option>
-                          <option value="new-build-house">New Build House</option>
-                          <option value="commercial-development">Commercial Development</option>
-                          <option value="land-acquisition">Land Acquisition Screening</option>
-                          <option value="other">Other</option>
-                        </select>
-                        {errors.projectType && <p className="text-red-500 text-xs mt-1 font-bold">{errors.projectType.message}</p>}
-                      </div>
-
-                      <div className="space-y-2">
-                        <label className="text-[10px] font-bold uppercase tracking-widest text-brand-primary/40">Proposed Works</label>
-                        <textarea
-                          {...register('description')}
-                          rows={5}
-                          className="w-full bg-white border-2 border-brand-primary/5 rounded-2xl p-4 focus:border-brand-accent outline-none transition-colors"
-                          placeholder="Briefly describe what you are planning to build..."
-                        />
-                        {errors.description && <p className="text-red-500 text-xs mt-1 font-bold">{errors.description.message}</p>}
-                      </div>
-                    </div>
-                  </section>
-
-                  <div className="flex gap-4">
-                    <button
-                      type="button"
-                      onClick={prevStep}
-                      className="px-8 py-5 bg-white text-brand-primary rounded-2xl font-bold border-2 border-brand-primary/5 hover:bg-brand-surface transition-all flex items-center gap-2"
-                    >
-                      <ChevronLeft size={20} /> Back
-                    </button>
-                    <button
-                      type="button"
-                      onClick={validateAndNext}
-                      className="flex-grow py-5 bg-brand-primary text-white rounded-2xl font-bold text-lg hover:bg-brand-primary/90 transition-all flex items-center justify-center gap-2 shadow-xl shadow-brand-primary/20"
-                    >
-                      Next: Checkout <ArrowRight size={20} />
-                    </button>
-                  </div>
-              </div>
-
-              {/* Step 3: Contact & Payment */}
-              <div className={step === 3 ? 'space-y-8' : 'hidden'}>
-                  <section>
-                    <h2 className="text-2xl font-bold mb-6">Contact Details</h2>
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <div className="space-y-2">
-                        <label className="text-[10px] font-bold uppercase tracking-widest text-brand-primary/40">Full Name</label>
-                        <div className="relative">
-                          <User className="absolute left-4 top-1/2 -translate-y-1/2 text-brand-primary/30" size={18} />
-                          <input {...register('fullName')} className="w-full bg-white border-2 border-brand-primary/5 rounded-2xl p-4 pl-12 focus:border-brand-accent outline-none" placeholder="John Smith" />
-                        </div>
-                        {errors.fullName && <p className="text-red-500 text-xs mt-1 font-bold">{errors.fullName.message}</p>}
-                      </div>
-                      <div className="space-y-2">
-                        <label className="text-[10px] font-bold uppercase tracking-widest text-brand-primary/40">Email Address</label>
-                        <div className="relative">
-                          <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-brand-primary/30" size={18} />
-                          <input {...register('email')} className="w-full bg-white border-2 border-brand-primary/5 rounded-2xl p-4 pl-12 focus:border-brand-accent outline-none" placeholder="john@example.com" />
-                        </div>
-                        {errors.email && <p className="text-red-500 text-xs mt-1 font-bold">{errors.email.message}</p>}
-                      </div>
-                      <div className="space-y-2">
-                        <label className="text-[10px] font-bold uppercase tracking-widest text-brand-primary/40">Phone Number</label>
-                        <div className="relative">
-                          <Phone className="absolute left-4 top-1/2 -translate-y-1/2 text-brand-primary/30" size={18} />
-                          <input {...register('phone')} className="w-full bg-white border-2 border-brand-primary/5 rounded-2xl p-4 pl-12 focus:border-brand-accent outline-none" placeholder="07700 900000" />
-                        </div>
-                        {errors.phone && <p className="text-red-500 text-xs mt-1 font-bold">{errors.phone.message}</p>}
-                      </div>
-                      <div className="space-y-2">
-                        <label className="text-[10px] font-bold uppercase tracking-widest text-brand-primary/40">Company (Optional)</label>
-                        <div className="relative">
-                          <Building2 className="absolute left-4 top-1/2 -translate-y-1/2 text-brand-primary/30" size={18} />
-                          <input {...register('company')} className="w-full bg-white border-2 border-brand-primary/5 rounded-2xl p-4 pl-12 focus:border-brand-accent outline-none" placeholder="Architects Ltd" />
-                        </div>
-                      </div>
-                    </div>
-                  </section>
-
-                  <section className="p-8 bg-brand-primary rounded-3xl text-white relative overflow-hidden">
-                    <div className="absolute inset-0 opacity-10 engineering-grid" />
-                    <div className="relative z-10">
-                      <div className="flex items-center gap-3 mb-6">
-                        <CreditCard className="text-brand-accent" />
-                        <h3 className="text-xl font-bold">Secure Payment</h3>
-                      </div>
-
-                      {/* Discount Code Field */}
-                      <div className="mb-8">
-                        <label className="text-[10px] font-bold uppercase tracking-widest text-white/40 block mb-2">Discount Code</label>
-                        <div className="flex gap-2">
-                          <input
-                            {...register('discountCode')}
-                            className="flex-grow bg-white/10 border border-white/20 rounded-xl p-3 text-sm outline-none focus:border-brand-accent transition-colors"
-                            placeholder="Enter code..."
-                          />
-                          <button
-                            type="button"
-                            onClick={handleApplyDiscount}
-                            className="px-6 py-3 bg-brand-accent text-brand-primary rounded-xl font-bold text-sm hover:scale-105 transition-all"
-                          >
-                            Apply
-                          </button>
-                        </div>
-                        {discountError && <p className="text-red-400 text-[10px] mt-2 font-bold">{discountError}</p>}
-                        {appliedDiscount && (
-                          <div className="mt-2 flex items-center gap-2 text-brand-accent text-[10px] font-bold uppercase tracking-widest">
-                            <Check size={12} /> Code {appliedDiscount.code} Applied (-£{discountAmount.toFixed(2)})
+            {/* Step 1: Report Selection & Site */}
+            <div className={step === 1 ? 'space-y-8' : 'hidden'}>
+              <section>
+                <h2 className="text-2xl font-bold mb-2">Select Your Reports</h2>
+                <p className="text-sm text-brand-primary/50 mb-6">Choose one or more reports for your site.</p>
+                {selectionError && <p className="text-red-500 text-xs mb-4 font-bold">{selectionError}</p>}
+                <div className="grid gap-4">
+                  {reports.map((r) => {
+                    const isSelected = selectedReports.includes(r.id);
+                    return (
+                      <button
+                        key={r.id}
+                        type="button"
+                        onClick={() => toggleReport(r.id)}
+                        className={`p-6 rounded-2xl border-2 text-left transition-all flex items-center justify-between group relative overflow-hidden ${isSelected ? r.color : 'border-brand-primary/5 bg-white hover:border-brand-primary/20'}`}
+                      >
+                        {r.isBundle && (
+                          <div className="absolute top-0 right-0 bg-brand-accent text-brand-primary text-[10px] font-bold px-3 py-1 rounded-bl-xl uppercase tracking-widest">
+                            Best Value
                           </div>
                         )}
-                      </div>
+                        <div className="flex items-center gap-4">
+                          <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-sm">
+                            {r.icon}
+                          </div>
+                          <div>
+                            <div className="font-bold text-brand-primary">{r.name}</div>
+                            <div className="text-xs text-brand-primary/40">
+                              {r.isBundle ? 'All 3 Reports Included' : '48hr Turnaround'}
+                            </div>
+                          </div>
+                        </div>
+                        <div className="flex items-center gap-3">
+                          <div className="text-right">
+                            <div className="font-mono font-bold text-brand-primary">£{r.price}</div>
+                            {r.isBundle && <div className="text-[10px] text-brand-primary/40 line-through">RRP £1,137</div>}
+                          </div>
+                          <div className={`w-6 h-6 rounded-lg border-2 flex items-center justify-center transition-colors ${isSelected ? 'bg-brand-primary border-brand-primary' : 'border-brand-primary/10'}`}>
+                            {isSelected && <Check size={14} className="text-white" />}
+                          </div>
+                        </div>
+                      </button>
+                    );
+                  })}
+                </div>
+              </section>
 
-                      <p className="text-white/60 text-sm mb-8 font-light">
-                        Payment is processed securely via Stripe. You will be redirected to complete your purchase.
-                      </p>
-                      <div className="flex items-center gap-4 text-[10px] font-bold uppercase tracking-widest text-white/40">
-                        <div className="flex items-center gap-1"><ShieldCheck size={14} className="text-brand-accent" /> SSL Encrypted</div>
-                        <div className="flex items-center gap-1"><ShieldCheck size={14} className="text-brand-accent" /> PCI Compliant</div>
-                      </div>
-                    </div>
-                  </section>
-
-                  {checkoutError && (
-                    <p className="text-red-500 text-sm font-medium bg-red-50 p-4 rounded-xl">{checkoutError}</p>
-                  )}
-
-                  <div className="flex gap-4">
-                    <button
-                      type="button"
-                      onClick={prevStep}
-                      className="px-8 py-5 bg-white text-brand-primary rounded-2xl font-bold border-2 border-brand-primary/5 hover:bg-brand-surface transition-all flex items-center gap-2"
-                    >
-                      <ChevronLeft size={20} /> Back
-                    </button>
-                    <button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className="flex-grow py-5 bg-brand-accent text-brand-primary rounded-2xl font-bold text-lg hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2 shadow-xl shadow-brand-accent/20 disabled:opacity-50 disabled:cursor-not-allowed"
-                    >
-                      {isSubmitting ? (
-                        <div className="w-6 h-6 border-2 border-brand-primary/30 border-t-brand-primary rounded-full animate-spin" />
-                      ) : (
-                        <>Pay £{totalPrice.toFixed(2)} via Stripe <ArrowRight size={20} /></>
-                      )}
-                    </button>
+              <section>
+                <h2 className="text-2xl font-bold mb-6">Site Location</h2>
+                <div className="space-y-4">
+                  <div className="relative">
+                    <MapPin className="absolute left-4 top-4 text-brand-primary/30" size={20} />
+                    <textarea
+                      {...register('address')}
+                      rows={3}
+                      className="w-full bg-white border-2 border-brand-primary/5 rounded-2xl p-4 pl-12 focus:border-brand-accent outline-none transition-colors"
+                      placeholder="Project Address or What3Words location..."
+                    />
+                    {errors.address && <p className="text-red-500 text-xs mt-2 font-bold">{errors.address.message}</p>}
                   </div>
+                  <p className="text-[10px] text-brand-primary/40 font-medium italic">
+                    Tip: What3Words (e.g. ///filled.count.soap) is the most accurate way to identify a development site.
+                  </p>
+                </div>
+              </section>
+
+              <button
+                type="button"
+                onClick={validateAndNext}
+                className="w-full py-5 bg-brand-primary text-white rounded-2xl font-bold text-lg hover:bg-brand-primary/90 transition-all flex items-center justify-center gap-2 shadow-xl shadow-brand-primary/20"
+              >
+                Next: Project Context <ArrowRight size={20} />
+              </button>
+            </div>
+
+            {/* Step 2: Project Context */}
+            <div className={step === 2 ? 'space-y-8' : 'hidden'}>
+              <section>
+                <h2 className="text-2xl font-bold mb-6">Project Context</h2>
+                <div className="space-y-6">
+                  <div className="space-y-2">
+                    <label className="text-[10px] font-bold uppercase tracking-widest text-brand-primary/40">Project Type</label>
+                    <select
+                      {...register('projectType')}
+                      className="w-full bg-white border-2 border-brand-primary/5 rounded-2xl p-4 focus:border-brand-accent outline-none appearance-none font-medium"
+                    >
+                      <option value="">Select type...</option>
+                      <option value="residential-extension">Residential Extension</option>
+                      <option value="new-build-house">New Build House</option>
+                      <option value="commercial-development">Commercial Development</option>
+                      <option value="land-acquisition">Land Acquisition Screening</option>
+                      <option value="other">Other</option>
+                    </select>
+                    {errors.projectType && <p className="text-red-500 text-xs mt-1 font-bold">{errors.projectType.message}</p>}
+                  </div>
+
+                  <div className="space-y-2">
+                    <label className="text-[10px] font-bold uppercase tracking-widest text-brand-primary/40">Proposed Works</label>
+                    <textarea
+                      {...register('description')}
+                      rows={5}
+                      className="w-full bg-white border-2 border-brand-primary/5 rounded-2xl p-4 focus:border-brand-accent outline-none transition-colors"
+                      placeholder="Briefly describe what you are planning to build..."
+                    />
+                    {errors.description && <p className="text-red-500 text-xs mt-1 font-bold">{errors.description.message}</p>}
+                  </div>
+                </div>
+              </section>
+
+              <div className="flex gap-4">
+                <button
+                  type="button"
+                  onClick={prevStep}
+                  className="px-8 py-5 bg-white text-brand-primary rounded-2xl font-bold border-2 border-brand-primary/5 hover:bg-brand-surface transition-all flex items-center gap-2"
+                >
+                  <ChevronLeft size={20} /> Back
+                </button>
+                <button
+                  type="button"
+                  onClick={validateAndNext}
+                  className="flex-grow py-5 bg-brand-primary text-white rounded-2xl font-bold text-lg hover:bg-brand-primary/90 transition-all flex items-center justify-center gap-2 shadow-xl shadow-brand-primary/20"
+                >
+                  Next: Checkout <ArrowRight size={20} />
+                </button>
               </div>
+            </div>
+
+            {/* Step 3: Contact & Payment */}
+            <div className={step === 3 ? 'space-y-8' : 'hidden'}>
+              <section>
+                <h2 className="text-2xl font-bold mb-6">Contact Details</h2>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <label className="text-[10px] font-bold uppercase tracking-widest text-brand-primary/40">Full Name</label>
+                    <div className="relative">
+                      <User className="absolute left-4 top-1/2 -translate-y-1/2 text-brand-primary/30" size={18} />
+                      <input {...register('fullName')} className="w-full bg-white border-2 border-brand-primary/5 rounded-2xl p-4 pl-12 focus:border-brand-accent outline-none" placeholder="John Smith" />
+                    </div>
+                    {errors.fullName && <p className="text-red-500 text-xs mt-1 font-bold">{errors.fullName.message}</p>}
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-[10px] font-bold uppercase tracking-widest text-brand-primary/40">Email Address</label>
+                    <div className="relative">
+                      <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-brand-primary/30" size={18} />
+                      <input {...register('email')} className="w-full bg-white border-2 border-brand-primary/5 rounded-2xl p-4 pl-12 focus:border-brand-accent outline-none" placeholder="john@example.com" />
+                    </div>
+                    {errors.email && <p className="text-red-500 text-xs mt-1 font-bold">{errors.email.message}</p>}
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-[10px] font-bold uppercase tracking-widest text-brand-primary/40">Phone Number</label>
+                    <div className="relative">
+                      <Phone className="absolute left-4 top-1/2 -translate-y-1/2 text-brand-primary/30" size={18} />
+                      <input {...register('phone')} className="w-full bg-white border-2 border-brand-primary/5 rounded-2xl p-4 pl-12 focus:border-brand-accent outline-none" placeholder="07700 900000" />
+                    </div>
+                    {errors.phone && <p className="text-red-500 text-xs mt-1 font-bold">{errors.phone.message}</p>}
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-[10px] font-bold uppercase tracking-widest text-brand-primary/40">Company (Optional)</label>
+                    <div className="relative">
+                      <Building2 className="absolute left-4 top-1/2 -translate-y-1/2 text-brand-primary/30" size={18} />
+                      <input {...register('company')} className="w-full bg-white border-2 border-brand-primary/5 rounded-2xl p-4 pl-12 focus:border-brand-accent outline-none" placeholder="Architects Ltd" />
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section className="p-8 bg-brand-primary rounded-3xl text-white relative overflow-hidden">
+                <div className="absolute inset-0 opacity-10 engineering-grid" />
+                <div className="relative z-10">
+                  <div className="flex items-center gap-3 mb-6">
+                    <CreditCard className="text-brand-accent" />
+                    <h3 className="text-xl font-bold">Secure Payment</h3>
+                  </div>
+
+                  {/* Discount Code Field */}
+                  <div className="mb-8">
+                    <label className="text-[10px] font-bold uppercase tracking-widest text-white/40 block mb-2">Discount Code</label>
+                    <div className="flex gap-2">
+                      <input
+                        {...register('discountCode')}
+                        className="flex-grow bg-white/10 border border-white/20 rounded-xl p-3 text-sm outline-none focus:border-brand-accent transition-colors"
+                        placeholder="Enter code..."
+                      />
+                      <button
+                        type="button"
+                        onClick={handleApplyDiscount}
+                        className="px-6 py-3 bg-brand-accent text-brand-primary rounded-xl font-bold text-sm hover:scale-105 transition-all"
+                      >
+                        Apply
+                      </button>
+                    </div>
+                    {discountError && <p className="text-red-400 text-[10px] mt-2 font-bold">{discountError}</p>}
+                    {appliedDiscount && (
+                      <div className="mt-2 flex items-center gap-2 text-brand-accent text-[10px] font-bold uppercase tracking-widest">
+                        <Check size={12} /> Code {appliedDiscount.code} Applied (-£{discountAmount.toFixed(2)})
+                      </div>
+                    )}
+                  </div>
+
+                  <p className="text-white/60 text-sm mb-8 font-light">
+                    Payment is processed securely via Stripe. You will be redirected to complete your purchase.
+                  </p>
+                  <div className="flex items-center gap-4 text-[10px] font-bold uppercase tracking-widest text-white/40">
+                    <div className="flex items-center gap-1"><ShieldCheck size={14} className="text-brand-accent" /> SSL Encrypted</div>
+                    <div className="flex items-center gap-1"><ShieldCheck size={14} className="text-brand-accent" /> PCI Compliant</div>
+                  </div>
+                </div>
+              </section>
+
+              {checkoutError && (
+                <p className="text-red-500 text-sm font-medium bg-red-50 p-4 rounded-xl">{checkoutError}</p>
+              )}
+
+              <div className="flex gap-4">
+                <button
+                  type="button"
+                  onClick={prevStep}
+                  className="px-8 py-5 bg-white text-brand-primary rounded-2xl font-bold border-2 border-brand-primary/5 hover:bg-brand-surface transition-all flex items-center gap-2"
+                >
+                  <ChevronLeft size={20} /> Back
+                </button>
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="flex-grow py-5 bg-brand-accent text-brand-primary rounded-2xl font-bold text-lg hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2 shadow-xl shadow-brand-accent/20 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {isSubmitting ? (
+                    <div className="w-6 h-6 border-2 border-brand-primary/30 border-t-brand-primary rounded-full animate-spin" />
+                  ) : (
+                    <>Pay £{totalPrice.toFixed(2)} via Stripe <ArrowRight size={20} /></>
+                  )}
+                </button>
+              </div>
+            </div>
           </div>
 
           {/* Sidebar / Summary */}
