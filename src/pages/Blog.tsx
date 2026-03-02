@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Calendar, User, ArrowRight } from 'lucide-react';
+import { Calendar, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import blogPosts from '../data/blogPosts';
@@ -9,17 +9,17 @@ const Blog = () => {
   return (
     <div className="pt-32 pb-24">
       <Helmet>
-        <title>Engineering Insights | PF & Co Blog</title>
-        <meta name="description" content="Read the latest insights on structural engineering, AI in construction, and home extension guides from PF & Co." />
+        <title>Engineering Insights | PF & Co</title>
+        <meta name="description" content="Expert advice and technical insights on structural engineering, AI in construction, and site intelligence from PF & Co." />
       </Helmet>
       <section className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
           <div className="max-w-2xl">
-            <span className="font-mono text-xs uppercase tracking-[0.3em] text-brand-accent font-bold mb-4 block">Insights & News</span>
+            <span className="font-mono text-xs uppercase tracking-[0.3em] text-brand-accent font-bold mb-4 block">Insights</span>
             <h1 className="text-6xl font-bold">Engineering Journal</h1>
           </div>
           <p className="text-brand-primary/60 max-w-sm leading-relaxed">
-            Expert advice, industry news, and technical insights from our team of structural engineers and master builders.
+            Technical insights and practical guidance from our engineering team.
           </p>
         </div>
 
@@ -37,7 +37,7 @@ const Blog = () => {
                   <img
                     src={post.image}
                     alt={post.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     loading="lazy"
                     referrerPolicy="no-referrer"
                   />
@@ -47,23 +47,17 @@ const Blog = () => {
                     </span>
                   </div>
                 </div>
-                <div className="flex items-center gap-6 text-xs font-mono text-brand-primary/40 mb-4">
-                  <div className="flex items-center gap-2">
-                    <Calendar size={14} />
-                    <span>{post.date}</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <User size={14} />
-                    <span>{post.author}</span>
-                  </div>
+                <div className="flex items-center gap-2 text-xs font-mono text-brand-primary/40 mb-4">
+                  <Calendar size={14} />
+                  <span>{post.date}</span>
                 </div>
-                <h3 className="text-2xl font-bold mb-4 group-hover:text-brand-accent transition-colors leading-tight">
+                <h3 className="text-2xl font-bold mb-3 group-hover:text-brand-accent transition-colors leading-tight">
                   {post.title}
                 </h3>
-                <p className="text-brand-primary/60 mb-8 leading-relaxed">
+                <p className="text-brand-primary/50 mb-6 leading-relaxed text-sm">
                   {post.excerpt}
                 </p>
-                <span className="font-bold text-sm text-brand-accent flex items-center gap-2">
+                <span className="font-bold text-sm text-brand-accent flex items-center gap-2 group-hover:gap-3 transition-all">
                   Read Insight <ArrowRight size={16} />
                 </span>
               </Link>
