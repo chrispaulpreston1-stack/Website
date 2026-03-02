@@ -162,12 +162,13 @@ const DesignAndAccessStatement = () => {
         </div>
       </section>
 
-      <VideoExplainer 
+      <VideoExplainer
         title="Design & Access Statement"
         accentColor="indigo-500"
         description="Watch our walkthrough to see how we address the five statutory design aspects, helping you demonstrate a rational design process that planning officers can adopt."
-        thumbnailUrl="https://picsum.photos/seed/design/1280/720"
-        duration="3:30"
+        thumbnailUrl="/videos/das-demo-thumb.jpg"
+        videoUrl="/videos/das-demo.mp4"
+        duration="1:28"
       />
 
       {/* Editorial Content Section */}
