@@ -50,13 +50,25 @@ const FeasibilityStudy = () => {
         title="Feasibility Study | Pre-Design Concept Options | PF & Co"
         description="Understand what's possible, what it costs, and which route to take — before you spend a penny on architect fees. Three concept options compared."
         path="/site-intelligence/feasibility-study"
-        jsonLd={{
-          '@type': 'Product',
-          name: 'Feasibility Study',
-          description: 'Pre-design concept feasibility study — understand what is possible, what it costs, and which route to take.',
-          brand: { '@type': 'Organization', name: 'PF & Co Construction' },
-          offers: { '@type': 'Offer', price: '795', priceCurrency: 'GBP' },
-        }}
+        jsonLd={[
+          {
+            '@type': 'Product',
+            name: 'Feasibility Study',
+            description: 'Pre-design concept feasibility study — understand what is possible, what it costs, and which route to take.',
+            brand: { '@type': 'Organization', name: 'PF & Co Construction' },
+            offers: { '@type': 'Offer', price: '795', priceCurrency: 'GBP' },
+          },
+          {
+            '@type': 'VideoObject',
+            name: 'Feasibility Study — What\'s Inside Your Report',
+            description: 'A walkthrough of the PF & Co Feasibility Study, showing how we compare three design options side-by-side with real costs and planning routes to help you brief your architect with confidence.',
+            thumbnailUrl: 'https://www.pfcoconstruction.co.uk/videos/feasibility-study-thumb.jpg',
+            contentUrl: 'https://www.pfcoconstruction.co.uk/videos/feasibility-study-demo.mp4',
+            uploadDate: '2026-03-02',
+            duration: 'PT4M15S',
+            publisher: { '@type': 'Organization', name: 'PF & Co Construction', url: 'https://www.pfcoconstruction.co.uk' },
+          }
+        ]}
       />
 
       {/* Editorial Hero */}

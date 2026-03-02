@@ -50,13 +50,25 @@ const ConstructionManagementPlan = () => {
         title="Construction Management Plan (CMP) | Planning Conditions | PF & Co"
         description="Satisfy CMP planning conditions and demonstrate responsible construction management — dust, noise, traffic, and neighbour protection in one document."
         path="/site-intelligence/construction-management-plan"
-        jsonLd={{
-          '@type': 'Product',
-          name: 'Construction Management Plan',
-          description: 'Satisfy CMP planning conditions — dust, noise, traffic, and neighbour protection in one document.',
-          brand: { '@type': 'Organization', name: 'PF & Co Construction' },
-          offers: { '@type': 'Offer', price: '345', priceCurrency: 'GBP' },
-        }}
+        jsonLd={[
+          {
+            '@type': 'Product',
+            name: 'Construction Management Plan',
+            description: 'Satisfy CMP planning conditions — dust, noise, traffic, and neighbour protection in one document.',
+            brand: { '@type': 'Organization', name: 'PF & Co Construction' },
+            offers: { '@type': 'Offer', price: '345', priceCurrency: 'GBP' },
+          },
+          {
+            '@type': 'VideoObject',
+            name: 'Construction Management Plan — What\'s Inside Your Report',
+            description: 'A walkthrough of the PF & Co Construction Management Plan, showing how we address all 12 sections of a comprehensive CMP to help you discharge pre-commencement conditions and manage neighbour expectations.',
+            thumbnailUrl: 'https://www.pfcoconstruction.co.uk/videos/cmp-demo-thumb.jpg',
+            contentUrl: 'https://www.pfcoconstruction.co.uk/videos/cmp-demo.mp4',
+            uploadDate: '2026-03-02',
+            duration: 'PT1M26S',
+            publisher: { '@type': 'Organization', name: 'PF & Co Construction', url: 'https://www.pfcoconstruction.co.uk' },
+          }
+        ]}
       />
 
       {/* Editorial Hero */}

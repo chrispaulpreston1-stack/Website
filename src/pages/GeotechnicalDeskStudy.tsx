@@ -71,13 +71,25 @@ const GeotechnicalDeskStudy = () => {
         title="Geotechnical Desk Study | Ground Investigation | PF & Co"
         description="Comprehensive desktop ground investigation analyzing geology, groundwater, contamination history, and foundation risk before you break ground."
         path="/site-intelligence/geotechnical-desk-study"
-        jsonLd={{
-          '@type': 'Product',
-          name: 'Geotechnical Desk Study',
-          description: 'Comprehensive desktop ground investigation analyzing geology, groundwater, contamination history, and foundation risk.',
-          brand: { '@type': 'Organization', name: 'PF & Co Construction' },
-          offers: { '@type': 'Offer', price: '297', priceCurrency: 'GBP' },
-        }}
+        jsonLd={[
+          {
+            '@type': 'Product',
+            name: 'Geotechnical Desk Study',
+            description: 'Comprehensive desktop ground investigation analyzing geology, groundwater, contamination history, and foundation risk.',
+            brand: { '@type': 'Organization', name: 'PF & Co Site Intelligence' },
+            offers: { '@type': 'Offer', price: '297', priceCurrency: 'GBP' },
+          },
+          {
+            '@type': 'VideoObject',
+            name: 'Geotechnical Desk Study — What\'s Inside Your Report',
+            description: 'A walkthrough of the PF & Co Geotechnical Desk Study, covering BGS borehole data, geological mapping, contamination history, and how the report delivers clear foundation guidance before you break ground.',
+            thumbnailUrl: 'https://www.pfcoconstruction.co.uk/videos/geotechnical-desk-study-thumb.jpg',
+            contentUrl: 'https://www.pfcoconstruction.co.uk/videos/geotechnical-desk-study-demo.mp4',
+            uploadDate: '2026-03-02',
+            duration: 'PT1M23S',
+            publisher: { '@type': 'Organization', name: 'PF & Co Construction', url: 'https://www.pfcoconstruction.co.uk' },
+          }
+        ]}
       />
 
       {/* Prestige Hero */}

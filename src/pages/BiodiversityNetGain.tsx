@@ -52,13 +52,25 @@ const BiodiversityNetGain = () => {
         title="Biodiversity Net Gain (BNG) | Screening & Feasibility | PF & Co"
         description="Find out whether BNG applies to your project, what it will cost, and which surveys you need before you submit your planning application."
         path="/site-intelligence/biodiversity-net-gain"
-        jsonLd={{
-          '@type': 'Product',
-          name: 'Biodiversity Net Gain Screening',
-          description: 'BNG screening and feasibility assessment — find out whether BNG applies and which surveys you need.',
-          brand: { '@type': 'Organization', name: 'PF & Co Construction' },
-          offers: { '@type': 'Offer', price: '325', priceCurrency: 'GBP' },
-        }}
+        jsonLd={[
+          {
+            '@type': 'Product',
+            name: 'Biodiversity Net Gain Screening',
+            description: 'BNG screening and feasibility assessment — find out whether BNG applies and which surveys you need.',
+            brand: { '@type': 'Organization', name: 'PF & Co Construction' },
+            offers: { '@type': 'Offer', price: '325', priceCurrency: 'GBP' },
+          },
+          {
+            '@type': 'VideoObject',
+            name: 'Biodiversity Net Gain Screening — What\'s Inside Your Report',
+            description: 'A walkthrough of the PF & Co BNG Screening, showing how we check for BNG exemptions and estimate baseline biodiversity value to help you avoid seasonal survey delays and budget surprises.',
+            thumbnailUrl: 'https://www.pfcoconstruction.co.uk/videos/bng-screening-thumb.jpg',
+            contentUrl: 'https://www.pfcoconstruction.co.uk/videos/bng-screening-demo.mp4',
+            uploadDate: '2026-03-02',
+            duration: 'PT1M37S',
+            publisher: { '@type': 'Organization', name: 'PF & Co Construction', url: 'https://www.pfcoconstruction.co.uk' },
+          }
+        ]}
       />
 
       {/* Editorial Hero */}

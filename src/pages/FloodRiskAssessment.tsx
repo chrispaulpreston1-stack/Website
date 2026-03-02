@@ -80,13 +80,25 @@ const FloodRiskAssessment = () => {
         title="Flood Risk Assessment | Planning-Ready Reports | PF & Co"
         description="Tier 1 Desktop Flood Risk Assessment evaluating fluvial, surface water, groundwater, and sewer flood risk with Decision Risk Scores."
         path="/site-intelligence/flood-risk-assessment"
-        jsonLd={{
-          '@type': 'Product',
-          name: 'Flood Risk Assessment',
-          description: 'Tier 1 Desktop Flood Risk Assessment evaluating fluvial, surface water, groundwater, and sewer flood risk.',
-          brand: { '@type': 'Organization', name: 'PF & Co Construction' },
-          offers: { '@type': 'Offer', price: '295', priceCurrency: 'GBP' },
-        }}
+        jsonLd={[
+          {
+            '@type': 'Product',
+            name: 'Flood Risk Assessment',
+            description: 'Tier 1 Desktop Flood Risk Assessment evaluating fluvial, surface water, groundwater, and sewer flood risk.',
+            brand: { '@type': 'Organization', name: 'PF & Co Construction' },
+            offers: { '@type': 'Offer', price: '295', priceCurrency: 'GBP' },
+          },
+          {
+            '@type': 'VideoObject',
+            name: 'Flood Risk Assessment — What\'s Inside Your Report',
+            description: 'A walkthrough of the PF & Co Flood Risk Assessment, showing how we translate complex hydrological data into 4 Decision Risk Scores to help you understand planning risk and mitigation complexity.',
+            thumbnailUrl: 'https://www.pfcoconstruction.co.uk/videos/fra-demo-thumb.jpg',
+            contentUrl: 'https://www.pfcoconstruction.co.uk/videos/fra-demo.mp4',
+            uploadDate: '2026-03-02',
+            duration: 'PT1M31S',
+            publisher: { '@type': 'Organization', name: 'PF & Co Construction', url: 'https://www.pfcoconstruction.co.uk' },
+          }
+        ]}
       />
 
       {/* Editorial Hero */}

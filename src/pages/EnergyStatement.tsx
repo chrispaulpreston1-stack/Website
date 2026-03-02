@@ -50,13 +50,25 @@ const EnergyStatement = () => {
         title="Energy Statement | Sustainability Evidence | PF & Co"
         description="Desktop sustainability and energy evidence for your planning application — covering Part L compliance, renewable energy feasibility, and overheating risk."
         path="/site-intelligence/energy-statement"
-        jsonLd={{
-          '@type': 'Product',
-          name: 'Energy Statement',
-          description: 'Desktop sustainability and energy evidence covering Part L compliance, renewable energy feasibility, and overheating risk.',
-          brand: { '@type': 'Organization', name: 'PF & Co Construction' },
-          offers: { '@type': 'Offer', price: '345', priceCurrency: 'GBP' },
-        }}
+        jsonLd={[
+          {
+            '@type': 'Product',
+            name: 'Energy Statement',
+            description: 'Desktop sustainability and energy evidence covering Part L compliance, renewable energy feasibility, and overheating risk.',
+            brand: { '@type': 'Organization', name: 'PF & Co Construction' },
+            offers: { '@type': 'Offer', price: '345', priceCurrency: 'GBP' },
+          },
+          {
+            '@type': 'VideoObject',
+            name: 'Energy Statement — What\'s Inside Your Report',
+            description: 'A walkthrough of the PF & Co Energy Statement, showing how we pull real PVGIS solar yield data and assess Part L compliance to help you satisfy council sustainability requirements.',
+            thumbnailUrl: 'https://www.pfcoconstruction.co.uk/videos/energy-demo-thumb.jpg',
+            contentUrl: 'https://www.pfcoconstruction.co.uk/videos/energy-demo.mp4',
+            uploadDate: '2026-03-02',
+            duration: 'PT1M34S',
+            publisher: { '@type': 'Organization', name: 'PF & Co Construction', url: 'https://www.pfcoconstruction.co.uk' },
+          }
+        ]}
       />
 
       {/* Editorial Hero */}

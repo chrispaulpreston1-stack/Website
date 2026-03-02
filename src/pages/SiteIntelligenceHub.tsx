@@ -449,6 +449,10 @@ const SiteIntelligenceHub = () => {
               <div>
                 <h4 className="text-xl font-bold mb-1">White Label & Professional Partners</h4>
                 <p className="text-white/60 text-sm font-light">White label solutions for architectural practices and developers. Bespoke and tiered rates available for multiple report orders.</p>
+                <p className="text-white/60 text-sm font-light mt-2">
+                  <span className="inline-block bg-white/10 text-white/80 text-[9px] font-bold uppercase tracking-widest px-2 py-0.5 rounded mr-2">Coming Soon</span>
+                  Non-branded reports delivered under your practice's identity. Register your interest.
+                </p>
               </div>
             </div>
             <Link to="/contact" className="relative z-10 px-8 py-4 bg-white text-brand-primary rounded-xl font-bold hover:scale-105 transition-all shadow-xl">

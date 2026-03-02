@@ -50,13 +50,25 @@ const DesignAndAccessStatement = () => {
         title="Design and Access Statement (DAS) | Planning Submission | PF & Co"
         description="A submission-ready Design and Access Statement covering the five statutory aspects of design and access analysis — compliant with DMPO 2015 Article 9."
         path="/site-intelligence/design-and-access-statement"
-        jsonLd={{
-          '@type': 'Product',
-          name: 'Design and Access Statement',
-          description: 'Submission-ready DAS covering the five statutory aspects of design and access analysis — DMPO 2015 Article 9 compliant.',
-          brand: { '@type': 'Organization', name: 'PF & Co Construction' },
-          offers: { '@type': 'Offer', price: '395', priceCurrency: 'GBP' },
-        }}
+        jsonLd={[
+          {
+            '@type': 'Product',
+            name: 'Design and Access Statement',
+            description: 'Submission-ready DAS covering the five statutory aspects of design and access analysis — DMPO 2015 Article 9 compliant.',
+            brand: { '@type': 'Organization', name: 'PF & Co Construction' },
+            offers: { '@type': 'Offer', price: '395', priceCurrency: 'GBP' },
+          },
+          {
+            '@type': 'VideoObject',
+            name: 'Design & Access Statement — What\'s Inside Your Report',
+            description: 'A walkthrough of the PF & Co Design & Access Statement, showing how we address the five statutory design aspects to help you demonstrate a rational design process that planning officers can adopt.',
+            thumbnailUrl: 'https://www.pfcoconstruction.co.uk/videos/das-demo-thumb.jpg',
+            contentUrl: 'https://www.pfcoconstruction.co.uk/videos/das-demo.mp4',
+            uploadDate: '2026-03-02',
+            duration: 'PT1M28S',
+            publisher: { '@type': 'Organization', name: 'PF & Co Construction', url: 'https://www.pfcoconstruction.co.uk' },
+          }
+        ]}
       />
 
       {/* Editorial Hero */}
