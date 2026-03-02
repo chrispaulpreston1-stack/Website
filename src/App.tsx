@@ -7,7 +7,6 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { HelmetProvider, Helmet } from 'react-helmet-async';
-import { SpeedInsights } from '@vercel/speed-insights/react';
 import {
   Menu,
   X,
@@ -98,14 +97,13 @@ const Navbar = () => {
         {/* Desktop Nav */}
         <div className="hidden lg:flex items-center gap-8">
           {navLinks.map((link) => (
-            <Link 
-              key={link.name} 
-              to={link.href} 
-              className={`relative text-sm font-medium hover:text-brand-accent transition-colors ${
-                location.pathname === link.href 
-                  ? 'text-brand-accent' 
+            <Link
+              key={link.name}
+              to={link.href}
+              className={`relative text-sm font-medium hover:text-brand-accent transition-colors ${location.pathname === link.href
+                  ? 'text-brand-accent'
                   : (isAIInnovation && !isScrolled ? 'text-white/80' : 'text-brand-primary')
-              }`}
+                }`}
             >
               {link.name}
               {link.name === 'AI Innovation' && (
@@ -134,21 +132,19 @@ const Navbar = () => {
       {/* Mobile Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className={`absolute top-full left-0 right-0 border-t p-6 flex flex-col gap-4 lg:hidden shadow-xl ${
-              isAIInnovation ? 'bg-brand-primary text-white border-white/10' : 'bg-white text-brand-primary border-gray-100'
-            }`}
+            className={`absolute top-full left-0 right-0 border-t p-6 flex flex-col gap-4 lg:hidden shadow-xl ${isAIInnovation ? 'bg-brand-primary text-white border-white/10' : 'bg-white text-brand-primary border-gray-100'
+              }`}
           >
             {navLinks.map((link) => (
-              <Link 
-                key={link.name} 
-                to={link.href} 
-                className={`text-lg font-medium py-2 border-b ${
-                  isAIInnovation ? 'border-white/5 hover:text-brand-accent' : 'border-gray-50 hover:text-brand-accent'
-                }`}
+              <Link
+                key={link.name}
+                to={link.href}
+                className={`text-lg font-medium py-2 border-b ${isAIInnovation ? 'border-white/5 hover:text-brand-accent' : 'border-gray-50 hover:text-brand-accent'
+                  }`}
               >
                 {link.name}
               </Link>
@@ -298,17 +294,17 @@ const Footer = () => {
               Engineering-led construction and structural design across Surrey and London. We don't just follow plans - we understand the physics.
             </p>
             <div className="flex gap-4">
-              <a 
-                href="https://www.facebook.com/profile.php?id=61551576285072" 
-                target="_blank" 
+              <a
+                href="https://www.facebook.com/profile.php?id=61551576285072"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-brand-surface flex items-center justify-center text-brand-primary hover:bg-brand-accent hover:text-brand-primary transition-all"
               >
                 <Facebook size={18} />
               </a>
-              <a 
-                href="https://www.instagram.com/pf_codevelopment?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D" 
-                target="_blank" 
+              <a
+                href="https://www.instagram.com/pf_codevelopment?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-brand-surface flex items-center justify-center text-brand-primary hover:bg-brand-accent hover:text-brand-primary transition-all"
               >
@@ -316,7 +312,7 @@ const Footer = () => {
               </a>
             </div>
           </div>
-          
+
           <div>
             <h4 className="font-bold mb-6">Services</h4>
             <ul className="space-y-4 text-sm text-brand-primary/60">
@@ -327,7 +323,7 @@ const Footer = () => {
               <li><Link to="/ai-innovation" className="hover:text-brand-accent transition-colors">AI Innovation</Link></li>
             </ul>
           </div>
-          
+
           <div>
             <h4 className="font-bold mb-6">Company</h4>
             <ul className="space-y-4 text-sm text-brand-primary/60">
@@ -337,7 +333,7 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        
+
         <div className="pt-10 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-xs text-brand-primary/40 font-mono">
             © 2020–2026 PF & Co Construction Ltd. All Rights Reserved.
@@ -432,13 +428,12 @@ export default function App() {
             </Routes>
           </main>
           <Footer />
-          
+
           {/* ElevenLabs Conversational AI Widget */}
           {/* @ts-ignore */}
           <elevenlabs-convai agent-id="agent_3001kjn17zm4fz7at5e3vekc9ryv"></elevenlabs-convai>
         </div>
       </Router>
-      <SpeedInsights />
     </HelmetProvider>
   );
 }
