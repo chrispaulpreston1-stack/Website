@@ -156,11 +156,12 @@ const BiodiversityNetGain = () => {
         </div>
       </section>
 
-      <VideoExplainer 
+      <VideoExplainer
         title="Biodiversity Net Gain"
         accentColor="emerald-500"
         description="Watch our walkthrough to see how we systematically check for BNG exemptions and estimate baseline biodiversity value, helping you avoid seasonal survey delays and budget surprises."
-        thumbnailUrl="https://picsum.photos/seed/biodiversity/1280/720"
+        thumbnailUrl="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=1280"
+        videoUrl="/videos/bng-screening-demo.mp4"
         duration="3:15"
       />
 
