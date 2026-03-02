@@ -47,14 +47,14 @@ const SiteIntelligenceHub = () => {
   return (
     <div className="pt-32 pb-24">
       <PageSEO
-        title="Site Intelligence | Data-Driven Pre-Construction Screening | PF & Co"
+        title="PF & Co Site Intelligence | Data-Driven Pre-Construction Screening | PF & Co"
         description="Interrogate 15+ authoritative data sources to identify planning, flood, and ground risks before you commit to a site."
         path="/site-intelligence"
         jsonLd={{
           '@type': 'Service',
           name: 'Site Intelligence',
           description: 'Data-driven pre-construction screening interrogating 15+ authoritative data sources to identify planning, flood, and ground risks.',
-          provider: { '@type': 'Organization', name: 'PF & Co Construction' },
+          provider: { '@type': 'Organization', name: 'PF & Co Site Intelligence' },
           areaServed: ['Surrey', 'London', 'South East England'],
           serviceType: 'Site Intelligence',
         }}
@@ -69,23 +69,31 @@ const SiteIntelligenceHub = () => {
               animate={{ opacity: 1, x: 0 }}
               className="font-mono text-xs uppercase tracking-[0.3em] text-brand-accent font-bold mb-4 block"
             >
-              A PF & Co Construction Service
+              PF & Co Site Intelligence — A PF & Co Holdings Product
             </motion.span>
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-6xl md:text-7xl font-bold mb-8 leading-[1.1]"
+              className="text-6xl md:text-7xl font-bold mb-4 leading-[1.1]"
             >
-              Site <span className="text-brand-accent">Intelligence</span>
+              Get the Data <span className="text-brand-accent">Before the Market Does</span>
             </motion.h1>
-            <motion.p 
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.15 }}
+              className="text-2xl font-bold text-brand-accent mb-6"
+            >
+              Early Access Now Open.
+            </motion.p>
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
               className="text-xl text-brand-primary/60 leading-relaxed mb-8"
             >
-              Data-driven pre-construction screening. We interrogate 15+ authoritative data sources and translate raw data into engineering decisions — so you know what you're building on before you commit.
+              Welcome to Early Access. You're among the first to use PF & Co Site Intelligence — data-driven pre-construction screening that interrogates 15+ authoritative data sources. Lock in discounted pricing today and help shape the product before V1 launch.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -94,13 +102,21 @@ const SiteIntelligenceHub = () => {
               className="flex flex-wrap gap-4"
             >
               <Link to="/contact" className="px-8 py-4 bg-brand-primary text-white rounded-xl font-bold hover:bg-brand-primary/90 transition-all flex items-center gap-2">
-                Get Started <ArrowRight size={20} />
+                Unlock Early Access <ArrowRight size={20} />
               </Link>
               <div className="flex items-center gap-2 px-6 py-4 bg-brand-surface border border-brand-primary/5 rounded-xl text-sm font-bold">
                 <Clock size={18} className="text-brand-accent" />
                 48hr Turnaround
               </div>
             </motion.div>
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4 }}
+              className="text-xs text-brand-primary/40 mt-4 italic"
+            >
+              Early Access pricing is temporary. Price increases upon the final V1 release.
+            </motion.p>
           </div>
           
           <motion.div 
@@ -195,7 +211,7 @@ const SiteIntelligenceHub = () => {
 
       {/* Product Cards */}
       <section className="max-w-7xl mx-auto px-6 mb-24">
-        <h2 className="text-4xl font-bold mb-12 text-center">Three Core Reports. Complete Site Picture.</h2>
+        <h2 className="text-4xl font-bold mb-12 text-center">Three Core Reports. Early Access Pricing.</h2>
         <div className="grid lg:grid-cols-3 gap-8 mb-16">
           {products.map((product, i) => (
             <motion.div 
@@ -204,14 +220,14 @@ const SiteIntelligenceHub = () => {
               className={`bg-white border-2 ${product.accent} p-8 rounded-[2.5rem] flex flex-col shadow-sm relative overflow-hidden`}
             >
               <div className="absolute top-4 right-4 bg-brand-accent/10 text-brand-accent text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">
-                Introductory Offer
+                Early Access
               </div>
               <div className="mb-6">{product.icon}</div>
               <h3 className="text-2xl font-bold mb-4">{product.title}</h3>
               <p className="text-brand-primary/60 text-sm mb-8 flex-grow">{product.desc}</p>
               
               <div className="mb-8">
-                <div className="text-[10px] font-bold uppercase tracking-widest text-brand-primary/40 mb-1">Fixed Fee</div>
+                <div className="text-[10px] font-bold uppercase tracking-widest text-brand-primary/40 mb-1">Early Access Price</div>
                 <div className="flex items-baseline gap-2">
                   <span className="text-3xl font-bold text-brand-primary">£{product.price}</span>
                   <span className="text-sm text-brand-primary/40 line-through">RRP £{product.rrp}</span>
@@ -241,7 +257,7 @@ const SiteIntelligenceHub = () => {
                     to={`/order-report?report=${product.link.split('/').pop()}`}
                     className="py-4 bg-brand-primary text-white rounded-xl font-bold text-center hover:bg-brand-primary/90 transition-colors flex items-center justify-center gap-2 shadow-lg shadow-brand-primary/10 text-sm"
                   >
-                    Order <Zap size={16} className="text-brand-accent" />
+                    Claim Early Bird Price <Zap size={16} className="text-brand-accent" />
                   </Link>
                 </div>
               </div>
@@ -349,18 +365,21 @@ const SiteIntelligenceHub = () => {
                 <span className="text-6xl font-bold text-white">£830</span>
                 <span className="text-xl text-white/40 line-through">RRP £1,137</span>
               </div>
-              <div className="text-brand-accent text-sm font-bold mb-8 italic">Save £307 (Introductory Offer)</div>
+              <div className="text-brand-accent text-sm font-bold mb-8 italic">Save £307 (Early Access)</div>
               
               <Link
                 to="/order-report?report=full-bundle"
                 className="w-full py-5 bg-brand-accent text-brand-primary rounded-2xl font-bold text-lg hover:scale-[1.02] transition-all flex items-center justify-center gap-2 shadow-xl shadow-brand-accent/20"
               >
-                Order Full Bundle <Zap size={20} />
+                Unlock Full Bundle — Early Access <Zap size={20} />
               </Link>
               <a href="/samples/full-bundle-sample.pdf" target="_blank" rel="noopener noreferrer" className="w-full py-4 mt-3 bg-white/10 backdrop-blur-md text-white border border-white/20 rounded-2xl font-bold hover:bg-white/20 transition-all flex items-center justify-center gap-2">
                 Sample Report <FileText size={16} />
               </a>
-              <p className="mt-6 text-xs text-white/40 font-light">
+              <p className="mt-4 text-xs text-white/40 font-light italic">
+                Early Access pricing is temporary.
+              </p>
+              <p className="mt-2 text-xs text-white/40 font-light">
                 Includes all 3 reports delivered within 48-72 hours.
               </p>
             </div>
@@ -428,12 +447,12 @@ const SiteIntelligenceHub = () => {
                 <Users size={32} className="text-brand-primary" />
               </div>
               <div>
-                <h4 className="text-xl font-bold mb-1">Business-to-Business Partners</h4>
-                <p className="text-white/60 text-sm font-light">Preferential rates and volume discounts available for architects, developers, and planners.</p>
+                <h4 className="text-xl font-bold mb-1">White Label & Professional Partners</h4>
+                <p className="text-white/60 text-sm font-light">White label solutions for architectural practices and developers. Bespoke and tiered rates available for multiple report orders.</p>
               </div>
             </div>
             <Link to="/contact" className="relative z-10 px-8 py-4 bg-white text-brand-primary rounded-xl font-bold hover:scale-105 transition-all shadow-xl">
-              Partner With Us
+              Discuss Professional Rates
             </Link>
           </div>
         </div>
@@ -444,15 +463,15 @@ const SiteIntelligenceHub = () => {
         <div className="bg-brand-accent rounded-[3rem] p-12 text-center relative overflow-hidden">
           <div className="absolute inset-0 opacity-10 engineering-grid" />
           <div className="relative z-10">
-            <h2 className="text-4xl font-bold mb-4">Request a Site Intelligence Report</h2>
+            <h2 className="text-4xl font-bold mb-4">Request Early Access — PF & Co Site Intelligence</h2>
             <p className="text-brand-primary/80 text-lg mb-8 max-w-2xl mx-auto">
               Send us a property address and we'll tell you what's underneath it, around it, and restricting it — typically within 48 hours.
             </p>
-            <Link 
+            <Link
               to="/contact"
               className="inline-flex items-center gap-2 px-8 py-4 bg-brand-primary text-white rounded-xl font-bold hover:bg-brand-primary/90 transition-all"
             >
-              Get Started <ArrowRight size={20} />
+              Unlock Early Access <ArrowRight size={20} />
             </Link>
           </div>
         </div>

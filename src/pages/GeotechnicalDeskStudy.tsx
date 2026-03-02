@@ -3,6 +3,7 @@ import { Database, Check, ArrowRight, HelpCircle, Clock, X, Zap, FileText } from
 import { Link } from 'react-router-dom';
 import PageSEO from '../components/PageSEO';
 import ComparisonTable from '../components/ComparisonTable';
+import VideoExplainer from '../components/VideoExplainer';
 
 const GeotechnicalDeskStudy = () => {
   const features = [
@@ -165,6 +166,15 @@ const GeotechnicalDeskStudy = () => {
           </motion.div>
         </div>
       </section>
+
+      <VideoExplainer
+        title="Geotechnical Desk Study"
+        accentColor="amber-600"
+        description="Watch our walkthrough to see how we analyse BGS borehole data, geological mapping, and contamination history to give you clear foundation guidance before you break ground."
+        thumbnailUrl="/videos/geotechnical-desk-study-thumb.jpg"
+        videoUrl="/videos/geotechnical-desk-study-demo.mp4"
+        duration="1:23"
+      />
 
       {/* Strata Section - Vertical Editorial */}
       <section className="py-32 bg-white">
