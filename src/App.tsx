@@ -25,6 +25,7 @@ import Home from './pages/Home';
 import StructuralEngineering from './pages/StructuralEngineering';
 import Construction from './pages/Construction';
 import Blog from './pages/Blog';
+import BlogArticle from './pages/BlogArticle';
 import AIInnovation from './pages/AIInnovation';
 import Subscriptions from './pages/Subscriptions';
 import SiteIntelligenceHub from './pages/SiteIntelligenceHub';
@@ -404,6 +405,7 @@ export default function App() {
               <Route path="/site-intelligence/tree-survey" element={<TreeSurvey />} />
               <Route path="/subscriptions" element={<Subscriptions />} />
               <Route path="/blog" element={<Blog />} />
+              <Route path="/insights/:slug" element={<BlogArticle />} />
               <Route path="/ai-innovation" element={<AIInnovation />} />
               <Route path="/order-report" element={<OrderReport />} />
               <Route path="/order-success" element={<OrderSuccess />} />
