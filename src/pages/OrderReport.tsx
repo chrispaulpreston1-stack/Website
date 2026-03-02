@@ -67,6 +67,7 @@ const reports = [
     isBundle: true
   },
   { id: 'biodiversity-net-gain', name: 'Biodiversity Net Gain', price: 325, icon: <Zap className="text-emerald-500" />, color: 'border-emerald-500 bg-emerald-50/30' },
+  { id: 'cil-liability-assessment', name: 'CIL Liability Assessment', price: 300, icon: <Zap className="text-emerald-600" />, color: 'border-emerald-600 bg-emerald-50/30' },
   { id: 'construction-management-plan', name: 'Construction Management Plan', price: 345, icon: <Zap className="text-brand-primary" />, color: 'border-brand-primary bg-brand-primary/5' },
   { id: 'design-and-access-statement', name: 'Design & Access Statement', price: 395, icon: <Zap className="text-brand-accent" />, color: 'border-brand-accent bg-brand-accent/5' },
   { id: 'energy-statement', name: 'Energy Statement', price: 345, icon: <Zap className="text-cyan-500" />, color: 'border-cyan-500 bg-cyan-50/30' },

@@ -3,6 +3,7 @@ import { Search, Check, ArrowRight, Info, Clock, Zap, ShieldAlert, FileText, Che
 import { Link } from 'react-router-dom';
 import PageSEO from '../components/PageSEO';
 import ComparisonTable from '../components/ComparisonTable';
+import VideoExplainer from '../components/VideoExplainer';
 
 const CILLiabilityAssessment = () => {
     const features = [
@@ -56,6 +57,23 @@ const CILLiabilityAssessment = () => {
                     description: 'Professional Community Infrastructure Levy assessment including liability calculation, exemption checks, challenge strategy, and pre-filled CIL forms.',
                     provider: { '@type': 'Organization', name: 'PF & Co Construction' },
                     offers: { '@type': 'Offer', price: '300', priceCurrency: 'GBP' },
+                    subjectOf: {
+                        '@type': 'VideoObject',
+                        name: 'CIL Liability Assessment Explainer',
+                        description: 'Learn how our Community Infrastructure Levy assessments protect your project from unexpected liability and secure your exemptions.',
+                        thumbnailUrl: 'https://www.pfcoconstruction.co.uk/videos/cil-liability-assessment-thumb.jpg',
+                        contentUrl: 'https://www.pfcoconstruction.co.uk/videos/cil-liability-assessment-demo.mp4',
+                        uploadDate: new Date().toISOString().split('T')[0],
+                        duration: 'PT1M23S',
+                        publisher: {
+                            '@type': 'Organization',
+                            name: 'PF & Co Construction',
+                            logo: {
+                                '@type': 'ImageObject',
+                                url: 'https://www.pfcoconstruction.co.uk/logo.png'
+                            }
+                        }
+                    }
                 }}
             />
 
@@ -270,29 +288,15 @@ const CILLiabilityAssessment = () => {
                 </div>
             </section>
 
-            {/* How it Works */}
-            <section className="py-24 bg-white">
-                <div className="max-w-7xl mx-auto px-6">
-                    <h2 className="text-4xl font-bold text-center mb-16 text-brand-primary">How It Works</h2>
-                    <div className="grid md:grid-cols-4 gap-8">
-                        {[
-                            { step: 1, title: "Share Your Project Details", desc: "Send us your planning reference, site address, and architectural drawings showing the proposed floor areas. We need the drawings to verify gross internal area figures." },
-                            { step: 2, title: "We Research & Calculate", desc: "We pull your LPA's charging schedule, check the CIL zone, apply the current BCIS index, and calculate the chargeable area after existing use credit." },
-                            { step: 3, title: "Assessment Report Delivered", desc: "You receive a branded CIL Liability Assessment report with the full calculation workings, exemption analysis, and confidence-banded liability range." },
-                            { step: 4, title: "Forms & Strategy Pack", desc: "If CIL applies, we deliver pre-filled CIL forms and an exemption pack. If the charge looks wrong, we draft a challenge letter you can send to the authority." }
-                        ].map((item, i) => (
-                            <div key={i} className="relative">
-                                {i < 3 && <div className="hidden md:block absolute top-8 left-1/2 w-full h-px border-t-2 border-dashed border-emerald-500/30" />}
-                                <div className="relative z-10 w-16 h-16 bg-emerald-500 text-white rounded-full flex items-center justify-center text-xl font-bold mb-6 shadow-lg shadow-emerald-500/30">
-                                    {item.step}
-                                </div>
-                                <h4 className="text-xl font-bold mb-3 text-brand-primary">{item.title}</h4>
-                                <p className="text-brand-primary/60 text-sm leading-relaxed">{item.desc}</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
+            {/* Video Explainer Section */}
+            <VideoExplainer
+                title="CIL Assessments Explained"
+                description="Watch how we calculate your exact liability, check every available exemption, and formulate a strategy to reduce your Community Infrastructure Levy exposure."
+                videoUrl="/videos/cil-liability-assessment-demo.mp4"
+                thumbnailUrl="/videos/cil-liability-assessment-thumb.jpg"
+                duration="1:23"
+                accentColor="bg-emerald-500"
+            />
 
             {/* Sources */}
             <section className="py-12 bg-emerald-900 text-emerald-50">
