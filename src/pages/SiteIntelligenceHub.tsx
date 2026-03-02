@@ -187,6 +187,34 @@ const SiteIntelligenceHub = () => {
         </div>
       </section>
 
+      {/* White Label & Professional Partners */}
+      <section className="max-w-7xl mx-auto px-6 mb-24">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="flex flex-col md:flex-row items-center justify-between gap-8 p-10 bg-brand-primary rounded-[2rem] text-white relative overflow-hidden shadow-2xl"
+        >
+          <div className="absolute inset-0 opacity-10 engineering-grid" />
+          <div className="relative z-10 flex items-center gap-6">
+            <div className="w-16 h-16 bg-brand-accent rounded-2xl flex items-center justify-center shadow-xl shadow-brand-accent/20 shrink-0">
+              <Users size={32} className="text-brand-primary" />
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold mb-2">White Label & Professional Partners</h3>
+              <p className="text-white/60 text-sm font-light">White label solutions for architectural practices and developers. Bespoke and tiered rates available for multiple report orders.</p>
+              <p className="text-white/60 text-sm font-light mt-2">
+                <span className="inline-block bg-white/10 text-white/80 text-[9px] font-bold uppercase tracking-widest px-2 py-0.5 rounded mr-2">Coming Soon</span>
+                Non-branded reports delivered under your practice's identity. Register your interest.
+              </p>
+            </div>
+          </div>
+          <Link to="/contact" className="relative z-10 px-8 py-4 bg-white text-brand-primary rounded-xl font-bold hover:scale-105 transition-all shadow-xl shrink-0">
+            Discuss Professional Rates
+          </Link>
+        </motion.div>
+      </section>
+
       {/* Problem Section */}
       <section className="bg-brand-primary text-white py-24 mb-24 rounded-[3rem] mx-6">
         <div className="max-w-7xl mx-auto px-6">
@@ -452,25 +480,6 @@ const SiteIntelligenceHub = () => {
             </table>
           </div>
           
-          <div className="mt-12 flex flex-col md:flex-row items-center justify-between gap-8 p-8 bg-brand-primary rounded-3xl text-white relative overflow-hidden">
-            <div className="absolute inset-0 opacity-10 engineering-grid" />
-            <div className="relative z-10 flex items-center gap-6">
-              <div className="w-16 h-16 bg-brand-accent rounded-2xl flex items-center justify-center shadow-xl shadow-brand-accent/20">
-                <Users size={32} className="text-brand-primary" />
-              </div>
-              <div>
-                <h4 className="text-xl font-bold mb-1">White Label & Professional Partners</h4>
-                <p className="text-white/60 text-sm font-light">White label solutions for architectural practices and developers. Bespoke and tiered rates available for multiple report orders.</p>
-                <p className="text-white/60 text-sm font-light mt-2">
-                  <span className="inline-block bg-white/10 text-white/80 text-[9px] font-bold uppercase tracking-widest px-2 py-0.5 rounded mr-2">Coming Soon</span>
-                  Non-branded reports delivered under your practice's identity. Register your interest.
-                </p>
-              </div>
-            </div>
-            <Link to="/contact" className="relative z-10 px-8 py-4 bg-white text-brand-primary rounded-xl font-bold hover:scale-105 transition-all shadow-xl">
-              Discuss Professional Rates
-            </Link>
-          </div>
         </div>
       </section>
 
