@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { motion } from 'motion/react';
 import PageSEO from '../components/PageSEO';
-import { Calendar, ArrowLeft, ArrowRight } from 'lucide-react';
+import { Calendar, ArrowLeft, ArrowRight, FileText, Zap } from 'lucide-react';
 import blogPosts from '../data/blogPosts';
 
 const BlogArticle = () => {
@@ -95,8 +95,42 @@ const BlogArticle = () => {
           ))}
         </motion.div>
 
+        {/* Report CTA */}
+        {post.relatedReport && (
+          <div className="max-w-3xl mx-auto mt-16">
+            <div className="bg-brand-surface border border-brand-primary/10 rounded-[2rem] p-10 relative overflow-hidden">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-brand-accent/10 rounded-2xl flex items-center justify-center flex-shrink-0">
+                    <FileText size={24} className="text-brand-accent" />
+                  </div>
+                  <div>
+                    <div className="text-[10px] font-mono uppercase tracking-widest text-brand-primary/40 font-bold mb-1">Related Report</div>
+                    <h3 className="text-lg font-bold text-brand-primary mb-1">{post.relatedReport.title}</h3>
+                    <p className="text-sm text-brand-primary/50">Planning-ready report from <span className="font-bold text-brand-accent">{'\u00A3'}{post.relatedReport.price}</span> — delivered within 48hrs</p>
+                  </div>
+                </div>
+                <div className="flex gap-3 w-full sm:w-auto">
+                  <Link
+                    to={post.relatedReport.path}
+                    className="px-6 py-3 bg-white border border-brand-primary/10 text-brand-primary rounded-xl font-bold text-sm hover:border-brand-accent transition-all whitespace-nowrap"
+                  >
+                    Learn More
+                  </Link>
+                  <Link
+                    to={`/order-report?report=${post.relatedReport.orderSlug}`}
+                    className="px-6 py-3 bg-brand-primary text-white rounded-xl font-bold text-sm hover:bg-brand-primary/90 transition-all whitespace-nowrap flex items-center gap-2"
+                  >
+                    Order Now <Zap size={16} />
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* CTA */}
-        <div className="max-w-3xl mx-auto mt-16">
+        <div className="max-w-3xl mx-auto mt-8">
           <div className="bg-brand-primary rounded-[2rem] p-10 text-white relative overflow-hidden">
             <div className="absolute inset-0 opacity-10 engineering-grid" />
             <div className="relative z-10 flex flex-col sm:flex-row items-center justify-between gap-6">

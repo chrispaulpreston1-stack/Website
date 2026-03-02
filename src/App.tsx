@@ -320,6 +320,8 @@ const Footer = () => {
             <ul className="space-y-4 text-sm text-brand-primary/60">
               <li><Link to="/structural-engineering" className="hover:text-brand-accent transition-colors">Structural Design</Link></li>
               <li><Link to="/construction" className="hover:text-brand-accent transition-colors">Construction</Link></li>
+              <li><Link to="/site-intelligence" className="hover:text-brand-accent transition-colors">Site Intelligence</Link></li>
+              <li><Link to="/order-report" className="hover:text-brand-accent transition-colors">Order Reports</Link></li>
               <li><Link to="/ai-innovation" className="hover:text-brand-accent transition-colors">AI Innovation</Link></li>
             </ul>
           </div>

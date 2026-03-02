@@ -7,6 +7,12 @@ export interface BlogPost {
   category: string;
   image: string;
   content: string[];
+  relatedReport?: {
+    title: string;
+    path: string;
+    orderSlug: string;
+    price: string;
+  };
 }
 
 const blogPosts: BlogPost[] = [
@@ -60,6 +66,12 @@ const blogPosts: BlogPost[] = [
       'The construction management aspect is equally important. Basement construction in residential areas involves heavy machinery, lorry movements, noise, and vibration over an extended period. Your submission should include a Construction Management Plan detailing how these impacts will be minimised, including working hours, traffic management, noise monitoring, and dust suppression measures.',
       'At PF & Co, we have delivered Basement Impact Assessments across most London boroughs. We understand the specific requirements of each authority and can guide you through the process from initial feasibility through to planning approval. Our reports are prepared to the standards expected by planning officers and are supported by the technical rigour that comes from our structural engineering background.',
     ],
+    relatedReport: {
+      title: 'Site Feasibility Report',
+      path: '/site-intelligence/site-feasibility-report',
+      orderSlug: 'site-feasibility-report',
+      price: '495',
+    },
   },
   {
     slug: 'flood-risk-assessments-explained',
@@ -77,6 +89,12 @@ const blogPosts: BlogPost[] = [
       'Mitigation measures are where good engineering makes a real difference. Finished floor levels, flood-resilient construction, SuDS drainage design, and safe access and egress routes can all be designed to reduce residual risk to acceptable levels. The key is proportionality — the mitigation should match the actual risk, not a worst-case assumption that adds unnecessary cost to the project.',
       'At PF & Co, we deliver desktop Flood Risk Assessments within 48 hours. Each report is tailored to your specific site and the requirements of your local planning authority, with clear recommendations that planning officers can adopt directly. If a site-specific survey or detailed hydraulic modelling is needed, we will tell you — but in our experience, a well-researched desktop assessment is sufficient for the majority of planning applications.',
     ],
+    relatedReport: {
+      title: 'Flood Risk Assessment',
+      path: '/site-intelligence/flood-risk-assessment',
+      orderSlug: 'flood-risk-assessment',
+      price: '295',
+    },
   },
   {
     slug: 'planning-conditions-pre-commencement',
@@ -94,6 +112,12 @@ const blogPosts: BlogPost[] = [
       'Discharge applications have their own fee — currently £43 per condition in England — and their own validation requirements. A poorly prepared submission will be returned, adding further delay. Each document needs to specifically address the wording of the condition, reference the correct planning application number, and demonstrate compliance with the relevant planning policies and technical standards.',
       'At PF & Co, we regularly help clients discharge pre-commencement conditions across Surrey, London, and the South East. Our site intelligence reports are specifically structured to satisfy common planning conditions, and we can typically turn around most documents within a week. If you have just received planning permission and are staring at a page of conditions, get in touch — the sooner you start, the sooner you can build.',
     ],
+    relatedReport: {
+      title: 'Full Site Intelligence Bundle',
+      path: '/site-intelligence',
+      orderSlug: 'full-bundle',
+      price: '830',
+    },
   },
   {
     slug: 'geotechnical-desk-study-guide',
@@ -111,6 +135,12 @@ const blogPosts: BlogPost[] = [
       'Foundation design is directly informed by the desk study findings. On straightforward sites with competent bearing strata at shallow depth, standard strip or trench-fill foundations may be appropriate. Where ground conditions are more challenging — deep made ground, soft compressible soils, high water tables, or proximity to trees on shrinkable clay — engineered solutions such as piled foundations or raft foundations may be necessary. Knowing this upfront avoids the nightmare scenario of discovering bad ground after construction has started.',
       'Our geotechnical desk studies at PF & Co interrogate all relevant data sources and present the findings in a clear, engineering-focused format. Each report includes a preliminary foundation risk assessment with indicative foundation recommendations, so you have actionable information from day one. If intrusive investigation is genuinely needed, we will tell you exactly what scope of work to commission — no more, no less.',
     ],
+    relatedReport: {
+      title: 'Geotechnical Desk Study',
+      path: '/site-intelligence/geotechnical-desk-study',
+      orderSlug: 'geotechnical-desk-study',
+      price: '345',
+    },
   },
   {
     slug: 'loft-conversions-structural-considerations',
@@ -145,6 +175,12 @@ const blogPosts: BlogPost[] = [
       'Timing is critical and this is where many projects get caught out. If your site contains habitats that might support protected species — breeding birds, bats, great crested newts — the ecological surveys can only be carried out at specific times of year. Bat surveys, for instance, are restricted to May through September. Miss the survey window and your application could be delayed by up to a year. A BNG screening assessment early in the process identifies these timing constraints before they become programme risks.',
       'At PF & Co, our BNG Screening and Feasibility report gives you a clear picture of whether BNG applies, what your likely baseline score is, and what surveys and mitigation measures you will need. We use the latest DEFRA Biodiversity Metric and cross-reference with MAGIC Map data, priority habitat inventories, and local nature recovery strategies. The aim is simple: give you the information you need to plan your project without seasonal survey delays blowing your programme.',
     ],
+    relatedReport: {
+      title: 'BNG Screening & Feasibility',
+      path: '/site-intelligence/biodiversity-net-gain',
+      orderSlug: 'biodiversity-net-gain',
+      price: '345',
+    },
   },
   {
     slug: 'construction-management-plans-explained',
@@ -162,6 +198,12 @@ const blogPosts: BlogPost[] = [
       'Dust and noise management have become increasingly important, particularly in Air Quality Management Areas. The Greater London Authority requires all major construction sites to follow the GLA SPG on dust control, and many outer London boroughs apply similar standards. Your CMP should reference the relevant guidance and set out specific measures: wheel washing, covered stockpiles, damping down, hoarding height, plant silencing, and vibration monitoring where appropriate.',
       'At PF & Co, our Construction Management Plans are written to discharge conditions, not just tick a box. Each plan is tailored to the specific site, referencing the actual road network, nearby sensitive receptors, and the relevant council\'s validation requirements. We produce them as branded Word documents that can be submitted directly as part of a condition discharge application — typically within a week of instruction.',
     ],
+    relatedReport: {
+      title: 'Construction Management Plan',
+      path: '/site-intelligence/construction-management-plan',
+      orderSlug: 'construction-management-plan',
+      price: '345',
+    },
   },
 ];
 
