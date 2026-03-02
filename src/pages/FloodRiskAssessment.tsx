@@ -190,12 +190,13 @@ const FloodRiskAssessment = () => {
         </div>
       </section>
 
-      <VideoExplainer 
+      <VideoExplainer
         title="Flood Risk Assessment"
         accentColor="blue-500"
         description="Watch our walkthrough to see how we translate complex hydrological data into 4 Decision Risk Scores, helping you understand planning risk and mitigation complexity in minutes."
-        thumbnailUrl="https://picsum.photos/seed/flood/1280/720"
-        duration="2:45"
+        thumbnailUrl="/videos/fra-demo-thumb.jpg"
+        videoUrl="/videos/fra-demo.mp4"
+        duration="1:31"
       />
 
       {/* Editorial Content Section */}
