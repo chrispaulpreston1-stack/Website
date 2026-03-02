@@ -8,7 +8,7 @@ interface PageSEOProps {
   path: string;
   ogImage?: string;
   ogType?: string;
-  jsonLd?: Record<string, unknown>;
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
 
 export default function PageSEO({
@@ -37,11 +37,11 @@ export default function PageSEO({
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={ogImage} />
-      {jsonLd && (
-        <script type="application/ld+json">
-          {JSON.stringify({ '@context': 'https://schema.org', ...jsonLd })}
+      {jsonLd && (Array.isArray(jsonLd) ? jsonLd : [jsonLd]).map((ld, i) => (
+        <script key={i} type="application/ld+json">
+          {JSON.stringify({ '@context': 'https://schema.org', ...ld })}
         </script>
-      )}
+      ))}
     </Helmet>
   );
 }

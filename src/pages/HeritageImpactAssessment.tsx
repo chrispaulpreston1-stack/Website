@@ -3,6 +3,7 @@ import { Landmark, Check, ArrowRight, Info, HelpCircle, Clock, Zap, ShieldCheck,
 import { Link } from 'react-router-dom';
 import PageSEO from '../components/PageSEO';
 import ComparisonTable from '../components/ComparisonTable';
+import VideoExplainer from '../components/VideoExplainer';
 
 const HeritageImpactAssessment = () => {
   const features = [
@@ -49,13 +50,25 @@ const HeritageImpactAssessment = () => {
         title="Heritage Impact Assessment (HIA) | Heritage Statements | PF & Co"
         description="A proportionate, evidence-based heritage statement for planning applications affecting listed buildings, conservation areas, and scheduled monuments."
         path="/site-intelligence/heritage-impact-assessment"
-        jsonLd={{
-          '@type': 'Product',
-          name: 'Heritage Impact Assessment',
-          description: 'Evidence-based heritage statement for planning applications affecting listed buildings, conservation areas, and scheduled monuments.',
-          brand: { '@type': 'Organization', name: 'PF & Co Construction' },
-          offers: { '@type': 'Offer', price: '445', priceCurrency: 'GBP' },
-        }}
+        jsonLd={[
+          {
+            '@type': 'Product',
+            name: 'Heritage Impact Assessment',
+            description: 'Evidence-based heritage statement for planning applications affecting listed buildings, conservation areas, and scheduled monuments.',
+            brand: { '@type': 'Organization', name: 'PF & Co Construction' },
+            offers: { '@type': 'Offer', price: '445', priceCurrency: 'GBP' },
+          },
+          {
+            '@type': 'VideoObject',
+            name: 'Heritage Impact Assessment — What\'s Inside Your Report',
+            description: 'A walkthrough of the PF & Co Heritage Impact Assessment, covering HEAN 12 significance analysis, GPA 3 setting assessment, NPPF heritage balance tests, and how the report supports your planning application for sites near listed buildings, conservation areas, and scheduled monuments.',
+            thumbnailUrl: 'https://www.pfcoconstruction.co.uk/videos/heritage-demo-thumb.jpg',
+            contentUrl: 'https://www.pfcoconstruction.co.uk/videos/heritage-demo.mp4',
+            uploadDate: '2026-03-02',
+            duration: 'PT1M26S',
+            publisher: { '@type': 'Organization', name: 'PF & Co Construction', url: 'https://www.pfcoconstruction.co.uk' },
+          }
+        ]}
       />
 
       {/* Editorial Hero */}
@@ -160,6 +173,15 @@ const HeritageImpactAssessment = () => {
           </motion.div>
         </div>
       </section>
+
+      <VideoExplainer
+        title="Heritage Impact Assessment"
+        accentColor="amber-500"
+        description="See how we assess significance against the four HEAN 12 interests — architectural, historic, archaeological, and artistic — and apply the correct NPPF heritage balance test for your planning application."
+        thumbnailUrl="/videos/heritage-demo-thumb.jpg"
+        videoUrl="/videos/heritage-demo.mp4"
+        duration="1:26"
+      />
 
       {/* Editorial Content Section */}
       <section className="py-32 bg-white">
