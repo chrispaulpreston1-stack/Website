@@ -46,6 +46,7 @@ import PreApplicationAdvice from './pages/PreApplicationAdvice';
 import PreConstructionDesignReview from './pages/PreConstructionDesignReview';
 import TransportStatement from './pages/TransportStatement';
 import TreeSurvey from './pages/TreeSurvey';
+import CILLiabilityAssessment from './pages/CILLiabilityAssessment';
 import OrderReport from './pages/OrderReport';
 import OrderSuccess from './pages/OrderSuccess';
 import PrivacyPolicy from './pages/PrivacyPolicy';
@@ -101,8 +102,8 @@ const Navbar = () => {
               key={link.name}
               to={link.href}
               className={`relative text-sm font-medium hover:text-brand-accent transition-colors ${location.pathname === link.href
-                  ? 'text-brand-accent'
-                  : (isAIInnovation && !isScrolled ? 'text-white/80' : 'text-brand-primary')
+                ? 'text-brand-accent'
+                : (isAIInnovation && !isScrolled ? 'text-white/80' : 'text-brand-primary')
                 }`}
             >
               {link.name}
@@ -405,6 +406,7 @@ export default function App() {
               <Route path="/site-intelligence/pre-construction-design-review" element={<PreConstructionDesignReview />} />
               <Route path="/site-intelligence/transport-statement" element={<TransportStatement />} />
               <Route path="/site-intelligence/tree-survey" element={<TreeSurvey />} />
+              <Route path="/site-intelligence/cil-liability-assessment" element={<CILLiabilityAssessment />} />
               <Route path="/subscriptions" element={<Subscriptions />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/insights/:slug" element={<BlogArticle />} />

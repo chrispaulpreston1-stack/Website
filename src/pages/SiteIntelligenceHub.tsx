@@ -77,14 +77,14 @@ const SiteIntelligenceHub = () => {
       <section className="max-w-7xl mx-auto px-6 mb-24 relative">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="max-w-2xl">
-            <motion.span 
+            <motion.span
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               className="font-mono text-xs uppercase tracking-[0.3em] text-brand-accent font-bold mb-4 block"
             >
               PF & Co Site Intelligence — A PF & Co Holdings Product
             </motion.span>
-            <motion.h1 
+            <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
@@ -143,8 +143,8 @@ const SiteIntelligenceHub = () => {
               </p>
             </motion.div>
           </div>
-          
-          <motion.div 
+
+          <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.4, duration: 0.8 }}
@@ -154,7 +154,7 @@ const SiteIntelligenceHub = () => {
             <div className="absolute inset-0 bg-brand-primary/5 rounded-[4rem] -rotate-3" />
             <div className="relative h-full w-full bg-white border border-brand-primary/10 rounded-[4rem] shadow-2xl overflow-hidden p-12 flex flex-col justify-center">
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-brand-accent to-transparent animate-scan" />
-              
+
               <div className="space-y-8 relative z-10">
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-brand-accent/10 rounded-xl flex items-center justify-center text-brand-accent">
@@ -172,7 +172,7 @@ const SiteIntelligenceHub = () => {
                     { label: "Flood Risk", val: "Zone 1 (Low)", color: "text-green-500" },
                     { label: "Ground Stability", val: "Clay (Moderate)", color: "text-amber-500" }
                   ].map((item, i) => (
-                    <motion.div 
+                    <motion.div
                       key={i}
                       initial={{ opacity: 0, x: 20 }}
                       animate={{ opacity: 1, x: 0 }}
@@ -276,7 +276,7 @@ const SiteIntelligenceHub = () => {
         <h2 className="text-4xl font-bold mb-12 text-center">Three Core Reports. Early Access Pricing.</h2>
         <div className="grid lg:grid-cols-3 gap-8 mb-16">
           {products.map((product, i) => (
-            <motion.div 
+            <motion.div
               key={i}
               whileHover={{ y: -10 }}
               className={`bg-white border-2 ${product.accent} p-8 rounded-[2.5rem] flex flex-col shadow-sm relative overflow-hidden`}
@@ -287,7 +287,7 @@ const SiteIntelligenceHub = () => {
               <div className="mb-6">{product.icon}</div>
               <h3 className="text-2xl font-bold mb-4">{product.title}</h3>
               <p className="text-brand-primary/60 text-sm mb-8 flex-grow">{product.desc}</p>
-              
+
               <div className="mb-8">
                 <div className="text-[10px] font-bold uppercase tracking-widest text-brand-primary/40 mb-1">Early Access Price</div>
                 <div className="flex items-baseline gap-2">
@@ -305,7 +305,7 @@ const SiteIntelligenceHub = () => {
                 ))}
               </ul>
               <div className="flex flex-col gap-3">
-                <Link 
+                <Link
                   to={`${product.link}`}
                   className="w-full py-4 bg-brand-surface text-brand-primary border border-brand-primary/5 rounded-xl font-bold text-center hover:bg-brand-primary/5 transition-colors flex items-center justify-center gap-2"
                 >
@@ -315,7 +315,7 @@ const SiteIntelligenceHub = () => {
                   <a href={`/samples/${product.link.split('/').pop()}-sample.pdf`} target="_blank" rel="noopener noreferrer" className="py-4 bg-white text-brand-primary border border-brand-primary/10 rounded-xl font-bold text-center hover:bg-brand-surface transition-colors flex items-center justify-center gap-2 text-sm">
                     Sample <FileText size={16} className="text-brand-accent" />
                   </a>
-                  <Link 
+                  <Link
                     to={`/order-report?report=${product.link.split('/').pop()}`}
                     className="py-4 bg-brand-primary text-white rounded-xl font-bold text-center hover:bg-brand-primary/90 transition-colors flex items-center justify-center gap-2 shadow-lg shadow-brand-primary/10 text-sm"
                   >
@@ -339,6 +339,7 @@ const SiteIntelligenceHub = () => {
               {
                 cat: "Planning & Strategy",
                 items: [
+                  { name: "CIL Liability Assessment", link: "/site-intelligence/cil-liability-assessment", desc: "Exemption checks & liability calculation." },
                   { name: "Planning Statement", link: "/site-intelligence/planning-statement", desc: "Submission-ready policy evidence." },
                   { name: "Pre-Application Advice", link: "/site-intelligence/pre-application-advice", desc: "Targeted enquiry packs." },
                   { name: "Design & Access Statement", link: "/site-intelligence/design-and-access-statement", desc: "Design rationale & accessibility." },
@@ -392,7 +393,7 @@ const SiteIntelligenceHub = () => {
         </div>
 
         {/* Bundle Offer */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -428,7 +429,7 @@ const SiteIntelligenceHub = () => {
                 <span className="text-xl text-white/40 line-through">RRP £1,137</span>
               </div>
               <div className="text-brand-accent text-sm font-bold mb-8 italic">Save £307 (Early Access)</div>
-              
+
               <Link
                 to="/order-report?report=full-bundle"
                 className="w-full py-5 bg-brand-accent text-brand-primary rounded-2xl font-bold text-lg hover:scale-[1.02] transition-all flex items-center justify-center gap-2 shadow-xl shadow-brand-accent/20"
@@ -501,7 +502,7 @@ const SiteIntelligenceHub = () => {
               </tbody>
             </table>
           </div>
-          
+
         </div>
       </section>
 
