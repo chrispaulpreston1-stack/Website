@@ -162,12 +162,13 @@ const EnergyStatement = () => {
         </div>
       </section>
 
-      <VideoExplainer 
+      <VideoExplainer
         title="Energy Statement"
         accentColor="amber-500"
         description="Watch our walkthrough to see how we pull real PVGIS solar yield data and assess Part L compliance, helping you satisfy council sustainability requirements without over-engineering."
-        thumbnailUrl="https://picsum.photos/seed/energy/1280/720"
-        duration="3:00"
+        thumbnailUrl="/videos/energy-demo-thumb.jpg"
+        videoUrl="/videos/energy-demo.mp4"
+        duration="1:34"
       />
 
       {/* Editorial Content Section */}
