@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { Search, Check, ArrowRight, Info, HelpCircle, Clock, Zap, ShieldCheck, ClipboardCheck, FileText } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import PageSEO from '../components/PageSEO';
 import ComparisonTable from '../components/ComparisonTable';
 import VideoExplainer from '../components/VideoExplainer';
 
@@ -46,10 +46,18 @@ const PreConstructionDesignReview = () => {
 
   return (
     <div className="pt-20">
-      <Helmet>
-        <title>Pre-Construction Design Review | Project Readiness | PF & Co</title>
-        <meta name="description" content="A systematic 95-check review of your drawing package — catching clashes, gaps, and missing information on paper, not on site." />
-      </Helmet>
+      <PageSEO
+        title="Pre-Construction Design Review | Project Readiness | PF & Co"
+        description="A systematic 95-check review of your drawing package — catching clashes, gaps, and missing information on paper, not on site."
+        path="/site-intelligence/pre-construction-design-review"
+        jsonLd={{
+          '@type': 'Product',
+          name: 'Pre-Construction Design Review',
+          description: 'Systematic 95-check review of your drawing package — catching clashes, gaps, and missing information.',
+          brand: { '@type': 'Organization', name: 'PF & Co Construction' },
+          offers: { '@type': 'Offer', price: '545', priceCurrency: 'GBP' },
+        }}
+      />
 
       {/* Editorial Hero */}
       <section className="relative min-h-screen flex items-center overflow-hidden bg-brand-primary text-white">

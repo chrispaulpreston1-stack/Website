@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { Ruler, ChevronRight, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import PageSEO from '../components/PageSEO';
 
 const StructuralEngineering = () => {
   const services = [
@@ -14,10 +14,19 @@ const StructuralEngineering = () => {
 
   return (
     <div className="pt-32 pb-24">
-      <Helmet>
-        <title>Structural Engineering & Calculations | PF & Co Surrey & London</title>
-        <meta name="description" content="Professional structural engineering services including beam calculations, residential design, and basement impact assessments. 24h turnaround available." />
-      </Helmet>
+      <PageSEO
+        title="Structural Engineering & Calculations | PF & Co Surrey & London"
+        description="Professional structural engineering services including beam calculations, residential design, and basement impact assessments. 24h turnaround available."
+        path="/structural-engineering"
+        jsonLd={{
+          '@type': 'Service',
+          name: 'Structural Engineering Services',
+          description: 'Professional structural engineering services including beam calculations, residential design, and basement impact assessments.',
+          provider: { '@type': 'Organization', name: 'PF & Co Construction' },
+          areaServed: ['Surrey', 'London', 'South East England'],
+          serviceType: 'Structural Engineering',
+        }}
+      />
       <section className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
           <motion.div

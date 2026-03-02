@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { TreePine, Check, ArrowRight, Info, HelpCircle, Clock, Zap, ShieldCheck, Leaf } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import PageSEO from '../components/PageSEO';
 import ComparisonTable from '../components/ComparisonTable';
 import VideoExplainer from '../components/VideoExplainer';
 
@@ -46,10 +46,18 @@ const TreeSurvey = () => {
 
   return (
     <div className="pt-20">
-      <Helmet>
-        <title>Tree Survey | BS 5837 Arboricultural Reports | PF & Co</title>
-        <meta name="description" content="A professional BS 5837:2012 compliant tree survey and arboricultural impact assessment for planning applications." />
-      </Helmet>
+      <PageSEO
+        title="Tree Survey | BS 5837 Arboricultural Reports | PF & Co"
+        description="A professional BS 5837:2012 compliant tree survey and arboricultural impact assessment for planning applications."
+        path="/site-intelligence/tree-survey"
+        jsonLd={{
+          '@type': 'Product',
+          name: 'Tree Survey',
+          description: 'BS 5837:2012 compliant tree survey and arboricultural impact assessment for planning applications.',
+          brand: { '@type': 'Organization', name: 'PF & Co Construction' },
+          offers: { '@type': 'Offer', price: '395', priceCurrency: 'GBP' },
+        }}
+      />
 
       {/* Editorial Hero */}
       <section className="relative min-h-screen flex items-center overflow-hidden bg-brand-primary text-white">

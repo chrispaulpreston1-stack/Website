@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { Car, Check, ArrowRight, Info, HelpCircle, Clock, Zap, ShieldCheck, MapPin, FileText } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import PageSEO from '../components/PageSEO';
 import ComparisonTable from '../components/ComparisonTable';
 import VideoExplainer from '../components/VideoExplainer';
 
@@ -46,10 +46,18 @@ const ParkingSurvey = () => {
 
   return (
     <div className="pt-20">
-      <Helmet>
-        <title>Parking Survey | Parking Provision Statements | PF & Co</title>
-        <meta name="description" content="An evidence-based parking provision statement for planning applications where parking falls below council standards — built on Census data and NPPF compliance." />
-      </Helmet>
+      <PageSEO
+        title="Parking Survey | Parking Provision Statements | PF & Co"
+        description="An evidence-based parking provision statement for planning applications where parking falls below council standards — built on Census data and NPPF compliance."
+        path="/site-intelligence/parking-survey"
+        jsonLd={{
+          '@type': 'Product',
+          name: 'Parking Survey',
+          description: 'Evidence-based parking provision statement built on Census data and NPPF compliance.',
+          brand: { '@type': 'Organization', name: 'PF & Co Construction' },
+          offers: { '@type': 'Offer', price: '245', priceCurrency: 'GBP' },
+        }}
+      />
 
       {/* Editorial Hero */}
       <section className="relative min-h-screen flex items-center overflow-hidden bg-brand-primary text-white">

@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { Leaf, Check, ArrowRight, Info, HelpCircle, Clock, Zap, ShieldCheck, FileText } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import PageSEO from '../components/PageSEO';
 import ComparisonTable from '../components/ComparisonTable';
 import VideoExplainer from '../components/VideoExplainer';
 
@@ -48,10 +48,18 @@ const BiodiversityNetGain = () => {
 
   return (
     <div className="pt-20">
-      <Helmet>
-        <title>Biodiversity Net Gain (BNG) | Screening & Feasibility | PF & Co</title>
-        <meta name="description" content="Find out whether BNG applies to your project, what it will cost, and which surveys you need before you submit your planning application." />
-      </Helmet>
+      <PageSEO
+        title="Biodiversity Net Gain (BNG) | Screening & Feasibility | PF & Co"
+        description="Find out whether BNG applies to your project, what it will cost, and which surveys you need before you submit your planning application."
+        path="/site-intelligence/biodiversity-net-gain"
+        jsonLd={{
+          '@type': 'Product',
+          name: 'Biodiversity Net Gain Screening',
+          description: 'BNG screening and feasibility assessment — find out whether BNG applies and which surveys you need.',
+          brand: { '@type': 'Organization', name: 'PF & Co Construction' },
+          offers: { '@type': 'Offer', price: '345', priceCurrency: 'GBP' },
+        }}
+      />
 
       {/* Editorial Hero */}
       <section className="relative min-h-screen flex items-center overflow-hidden bg-brand-primary text-white">
@@ -162,7 +170,7 @@ const BiodiversityNetGain = () => {
         description="Watch our walkthrough to see how we systematically check for BNG exemptions and estimate baseline biodiversity value, helping you avoid seasonal survey delays and budget surprises."
         thumbnailUrl="/videos/bng-screening-thumb.jpg"
         videoUrl="/videos/bng-screening-demo.mp4"
-        duration="3:15"
+        duration="1:37"
       />
 
       {/* Editorial Content Section */}

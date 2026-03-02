@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { Helmet } from 'react-helmet-async';
+import PageSEO from '../components/PageSEO';
 import {
   Check,
   ArrowRight,
@@ -211,9 +211,23 @@ const OrderReport = () => {
 
   return (
     <div className="pt-32 pb-24 bg-brand-surface min-h-screen">
-      <Helmet>
-        <title>Order Report | Site Intelligence | PF & Co</title>
-      </Helmet>
+      <PageSEO
+        title="Order Report | Site Intelligence | PF & Co"
+        description="Order planning-ready site intelligence reports from PF & Co. Choose from 16 professional reports or save with the Full Site Intelligence Bundle."
+        path="/order-report"
+        jsonLd={{
+          '@type': 'Product',
+          name: 'Site Intelligence Reports',
+          description: 'Planning-ready site intelligence reports — from flood risk and geotechnical studies to planning statements and feasibility reports.',
+          brand: { '@type': 'Organization', name: 'PF & Co Construction' },
+          offers: {
+            '@type': 'AggregateOffer',
+            lowPrice: '245',
+            highPrice: '895',
+            priceCurrency: 'GBP',
+          },
+        }}
+      />
 
       <div className="max-w-4xl mx-auto px-6">
         {/* Progress Bar */}

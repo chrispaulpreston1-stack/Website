@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'motion/react';
 import { Zap, Shield, Cpu, BarChart3, Search, ArrowRight, Activity, Globe, Lock, Code, Terminal } from 'lucide-react';
-import { Helmet } from 'react-helmet-async';
+import PageSEO from '../components/PageSEO';
 
 const NeuralBackground = () => {
   return (
@@ -288,10 +288,11 @@ const AIInnovation = () => {
 
   return (
     <div className="bg-brand-primary min-h-screen selection:bg-brand-accent/30 selection:text-white" ref={containerRef}>
-      <Helmet>
-        <title>AI Innovation | PF & Co Structural Engineering</title>
-        <meta name="description" content="Explore our 54-agent AI workforce and generative structural design tools that optimize safety and cost." />
-      </Helmet>
+      <PageSEO
+        title="AI Innovation | PF & Co Structural Engineering"
+        description="Explore our 54-agent AI workforce and generative structural design tools that optimize safety and cost."
+        path="/ai-innovation"
+      />
 
       <NeuralBackground />
 

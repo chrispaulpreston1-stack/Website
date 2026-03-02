@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { Database, Check, ArrowRight, HelpCircle, Clock, X, Zap, FileText } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import PageSEO from '../components/PageSEO';
 import ComparisonTable from '../components/ComparisonTable';
 import VideoExplainer from '../components/VideoExplainer';
 
@@ -67,10 +67,18 @@ const GeotechnicalDeskStudy = () => {
 
   return (
     <div className="pt-20 bg-[#f5f2ed]">
-      <Helmet>
-        <title>Geotechnical Desk Study | Ground Investigation | PF & Co</title>
-        <meta name="description" content="Comprehensive desktop ground investigation analyzing geology, groundwater, contamination history, and foundation risk before you break ground." />
-      </Helmet>
+      <PageSEO
+        title="Geotechnical Desk Study | Ground Investigation | PF & Co"
+        description="Comprehensive desktop ground investigation analyzing geology, groundwater, contamination history, and foundation risk before you break ground."
+        path="/site-intelligence/geotechnical-desk-study"
+        jsonLd={{
+          '@type': 'Product',
+          name: 'Geotechnical Desk Study',
+          description: 'Comprehensive desktop ground investigation analyzing geology, groundwater, contamination history, and foundation risk.',
+          brand: { '@type': 'Organization', name: 'PF & Co Construction' },
+          offers: { '@type': 'Offer', price: '345', priceCurrency: 'GBP' },
+        }}
+      />
 
       {/* Prestige Hero */}
       <section className="relative min-h-screen flex items-center bg-[#f5f2ed] overflow-hidden">

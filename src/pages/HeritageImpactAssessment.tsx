@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { Landmark, Check, ArrowRight, Info, HelpCircle, Clock, Zap, ShieldCheck, History, FileText } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import PageSEO from '../components/PageSEO';
 import ComparisonTable from '../components/ComparisonTable';
 import VideoExplainer from '../components/VideoExplainer';
 
@@ -46,10 +46,18 @@ const HeritageImpactAssessment = () => {
 
   return (
     <div className="pt-20">
-      <Helmet>
-        <title>Heritage Impact Assessment (HIA) | Heritage Statements | PF & Co</title>
-        <meta name="description" content="A proportionate, evidence-based heritage statement for planning applications affecting listed buildings, conservation areas, and scheduled monuments." />
-      </Helmet>
+      <PageSEO
+        title="Heritage Impact Assessment (HIA) | Heritage Statements | PF & Co"
+        description="A proportionate, evidence-based heritage statement for planning applications affecting listed buildings, conservation areas, and scheduled monuments."
+        path="/site-intelligence/heritage-impact-assessment"
+        jsonLd={{
+          '@type': 'Product',
+          name: 'Heritage Impact Assessment',
+          description: 'Evidence-based heritage statement for planning applications affecting listed buildings, conservation areas, and scheduled monuments.',
+          brand: { '@type': 'Organization', name: 'PF & Co Construction' },
+          offers: { '@type': 'Offer', price: '445', priceCurrency: 'GBP' },
+        }}
+      />
 
       {/* Editorial Hero */}
       <section className="relative min-h-screen flex items-center overflow-hidden bg-brand-primary text-white">

@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { PenTool, Check, ArrowRight, Info, HelpCircle, Clock, Zap, ShieldCheck, FileText } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import PageSEO from '../components/PageSEO';
 import ComparisonTable from '../components/ComparisonTable';
 import VideoExplainer from '../components/VideoExplainer';
 
@@ -46,10 +46,18 @@ const DesignAndAccessStatement = () => {
 
   return (
     <div className="pt-20">
-      <Helmet>
-        <title>Design and Access Statement (DAS) | Planning Submission | PF & Co</title>
-        <meta name="description" content="A submission-ready Design and Access Statement covering the five statutory aspects of design and access analysis — compliant with DMPO 2015 Article 9." />
-      </Helmet>
+      <PageSEO
+        title="Design and Access Statement (DAS) | Planning Submission | PF & Co"
+        description="A submission-ready Design and Access Statement covering the five statutory aspects of design and access analysis — compliant with DMPO 2015 Article 9."
+        path="/site-intelligence/design-and-access-statement"
+        jsonLd={{
+          '@type': 'Product',
+          name: 'Design and Access Statement',
+          description: 'Submission-ready DAS covering the five statutory aspects of design and access analysis — DMPO 2015 Article 9 compliant.',
+          brand: { '@type': 'Organization', name: 'PF & Co Construction' },
+          offers: { '@type': 'Offer', price: '445', priceCurrency: 'GBP' },
+        }}
+      />
 
       {/* Editorial Hero */}
       <section className="relative min-h-screen flex items-center overflow-hidden bg-brand-primary text-white">

@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
 Sitemap: https://www.pfcoconstruction.co.uk/sitemap.xml
+Llms-Txt: https://www.pfcoconstruction.co.uk/llms.txt

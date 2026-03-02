@@ -46,6 +46,8 @@ import TransportStatement from './pages/TransportStatement';
 import TreeSurvey from './pages/TreeSurvey';
 import OrderReport from './pages/OrderReport';
 import OrderSuccess from './pages/OrderSuccess';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfService from './pages/TermsOfService';
 
 // --- Global Components ---
 
@@ -337,8 +339,8 @@ const Footer = () => {
             © 2020–2026 PF & Co Construction Ltd. All Rights Reserved.
           </p>
           <div className="flex gap-8 text-xs text-brand-primary/40 font-mono uppercase tracking-widest">
-            <span>Privacy Policy</span>
-            <span>Terms of Service</span>
+            <Link to="/privacy-policy" className="hover:text-brand-accent transition-colors">Privacy Policy</Link>
+            <Link to="/terms-of-service" className="hover:text-brand-accent transition-colors">Terms of Service</Link>
           </div>
         </div>
       </div>
@@ -409,6 +411,8 @@ export default function App() {
               <Route path="/ai-innovation" element={<AIInnovation />} />
               <Route path="/order-report" element={<OrderReport />} />
               <Route path="/order-success" element={<OrderSuccess />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="/terms-of-service" element={<TermsOfService />} />
               <Route path="/contact" element={<ContactSection />} />
               <Route path="*" element={
                 <div className="min-h-screen flex items-center justify-center bg-brand-surface">

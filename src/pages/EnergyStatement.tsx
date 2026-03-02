@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { Zap, Check, ArrowRight, Info, HelpCircle, Clock, ShieldCheck, Sun, FileText } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import PageSEO from '../components/PageSEO';
 import ComparisonTable from '../components/ComparisonTable';
 import VideoExplainer from '../components/VideoExplainer';
 
@@ -46,10 +46,18 @@ const EnergyStatement = () => {
 
   return (
     <div className="pt-20">
-      <Helmet>
-        <title>Energy Statement | Sustainability Evidence | PF & Co</title>
-        <meta name="description" content="Desktop sustainability and energy evidence for your planning application — covering Part L compliance, renewable energy feasibility, and overheating risk." />
-      </Helmet>
+      <PageSEO
+        title="Energy Statement | Sustainability Evidence | PF & Co"
+        description="Desktop sustainability and energy evidence for your planning application — covering Part L compliance, renewable energy feasibility, and overheating risk."
+        path="/site-intelligence/energy-statement"
+        jsonLd={{
+          '@type': 'Product',
+          name: 'Energy Statement',
+          description: 'Desktop sustainability and energy evidence covering Part L compliance, renewable energy feasibility, and overheating risk.',
+          brand: { '@type': 'Organization', name: 'PF & Co Construction' },
+          offers: { '@type': 'Offer', price: '345', priceCurrency: 'GBP' },
+        }}
+      />
 
       {/* Editorial Hero */}
       <section className="relative min-h-screen flex items-center overflow-hidden bg-brand-primary text-white">

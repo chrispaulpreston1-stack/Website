@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { Layout, Check, ArrowRight, Info, HelpCircle, Clock, Zap, ShieldCheck, Ruler, FileText } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import PageSEO from '../components/PageSEO';
 import ComparisonTable from '../components/ComparisonTable';
 import VideoExplainer from '../components/VideoExplainer';
 
@@ -46,10 +46,18 @@ const FeasibilityStudy = () => {
 
   return (
     <div className="pt-20">
-      <Helmet>
-        <title>Feasibility Study | Pre-Design Concept Options | PF & Co</title>
-        <meta name="description" content="Understand what's possible, what it costs, and which route to take — before you spend a penny on architect fees. Three concept options compared." />
-      </Helmet>
+      <PageSEO
+        title="Feasibility Study | Pre-Design Concept Options | PF & Co"
+        description="Understand what's possible, what it costs, and which route to take — before you spend a penny on architect fees. Three concept options compared."
+        path="/site-intelligence/feasibility-study"
+        jsonLd={{
+          '@type': 'Product',
+          name: 'Feasibility Study',
+          description: 'Pre-design concept feasibility study — understand what is possible, what it costs, and which route to take.',
+          brand: { '@type': 'Organization', name: 'PF & Co Construction' },
+          offers: { '@type': 'Offer', price: '895', priceCurrency: 'GBP' },
+        }}
+      />
 
       {/* Editorial Hero */}
       <section className="relative min-h-screen flex items-center overflow-hidden bg-brand-primary text-white">

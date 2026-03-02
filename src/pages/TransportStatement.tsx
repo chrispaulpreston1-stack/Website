@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { Truck, Check, ArrowRight, Info, HelpCircle, Clock, Zap, ShieldCheck, Navigation, FileText } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import PageSEO from '../components/PageSEO';
 import ComparisonTable from '../components/ComparisonTable';
 import VideoExplainer from '../components/VideoExplainer';
 
@@ -46,10 +46,18 @@ const TransportStatement = () => {
 
   return (
     <div className="pt-20">
-      <Helmet>
-        <title>Transport Statement | Highways & Accessibility | PF & Co</title>
-        <meta name="description" content="A professional transport statement for planning applications — covering trip generation, accessibility, and highways safety." />
-      </Helmet>
+      <PageSEO
+        title="Transport Statement | Highways & Accessibility | PF & Co"
+        description="A professional transport statement for planning applications — covering trip generation, accessibility, and highways safety."
+        path="/site-intelligence/transport-statement"
+        jsonLd={{
+          '@type': 'Product',
+          name: 'Transport Statement',
+          description: 'Professional transport statement covering trip generation, accessibility, and highways safety.',
+          brand: { '@type': 'Organization', name: 'PF & Co Construction' },
+          offers: { '@type': 'Offer', price: '345', priceCurrency: 'GBP' },
+        }}
+      />
 
       {/* Editorial Hero */}
       <section className="relative min-h-screen flex items-center overflow-hidden bg-brand-primary text-white">

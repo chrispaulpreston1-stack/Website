@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { Construction as ConstructionIcon, HardHat, Hammer, ShieldCheck, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import PageSEO from '../components/PageSEO';
 
 const Construction = () => {
   const capabilities = [
@@ -14,10 +14,19 @@ const Construction = () => {
 
   return (
     <div className="pt-32 pb-24">
-      <Helmet>
-        <title>Precision Construction | PF & Co Surrey & London</title>
-        <meta name="description" content="Expert construction services led by engineers. We specialize in structural alterations, extensions, and basement builds in the UK." />
-      </Helmet>
+      <PageSEO
+        title="Precision Construction | PF & Co Surrey & London"
+        description="Expert construction services led by engineers. We specialize in structural alterations, extensions, and basement builds in the UK."
+        path="/construction"
+        jsonLd={{
+          '@type': 'Service',
+          name: 'Precision Construction Services',
+          description: 'Expert construction services led by engineers, specializing in structural alterations, extensions, and basement builds.',
+          provider: { '@type': 'Organization', name: 'PF & Co Construction' },
+          areaServed: ['Surrey', 'London', 'South East England'],
+          serviceType: 'Construction',
+        }}
+      />
       <section className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
           <div className="order-2 lg:order-1 aspect-video rounded-[3rem] overflow-hidden shadow-2xl">

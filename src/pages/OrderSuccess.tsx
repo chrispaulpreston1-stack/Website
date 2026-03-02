@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import PageSEO from '../components/PageSEO';
 import { 
   CheckCircle2,
   ArrowRight,
@@ -14,9 +14,11 @@ import {
 const OrderSuccess = () => {
   return (
     <div className="pt-32 pb-24 bg-brand-surface min-h-screen flex items-center justify-center">
-      <Helmet>
-        <title>Order Successful | PF & Co</title>
-      </Helmet>
+      <PageSEO
+        title="Order Successful | PF & Co"
+        description="Your site intelligence report order has been confirmed. You will receive your report via email."
+        path="/order-success"
+      />
 
       <div className="max-w-2xl mx-auto px-6 text-center">
         <motion.div

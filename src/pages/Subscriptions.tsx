@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { Check, Zap, Ruler, Shield, Clock, BarChart } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import PageSEO from '../components/PageSEO';
 
 const Subscriptions = () => {
   const plans = [
@@ -61,10 +61,17 @@ const Subscriptions = () => {
 
   return (
     <div className="pt-32 pb-24">
-      <Helmet>
-        <title>Structural Design Subscriptions | PF & Co Engineering</title>
-        <meta name="description" content="Engineering as a Service. Get unlimited structural calculations and priority design support for a fixed monthly fee." />
-      </Helmet>
+      <PageSEO
+        title="Structural Design Subscriptions | PF & Co Engineering"
+        description="Engineering as a Service. Get unlimited structural calculations and priority design support for a fixed monthly fee."
+        path="/subscriptions"
+        jsonLd={{
+          '@type': 'Product',
+          name: 'Structural Design Subscription',
+          description: 'Engineering as a Service — unlimited structural calculations and priority design support for a fixed monthly fee.',
+          brand: { '@type': 'Organization', name: 'PF & Co Construction' },
+        }}
+      />
       <section className="max-w-7xl mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto mb-20">
           <span className="font-mono text-xs uppercase tracking-[0.3em] text-brand-accent font-bold mb-4 block">Engineering as a Service</span>

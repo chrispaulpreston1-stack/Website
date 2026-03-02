@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { ShieldAlert, Check, ArrowRight, Info, HelpCircle, Clock, X, Zap, FileText } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import PageSEO from '../components/PageSEO';
 import ComparisonTable from '../components/ComparisonTable';
 import VideoExplainer from '../components/VideoExplainer';
 
@@ -76,10 +76,18 @@ const FloodRiskAssessment = () => {
 
   return (
     <div className="pt-20">
-      <Helmet>
-        <title>Flood Risk Assessment | Planning-Ready Reports | PF & Co</title>
-        <meta name="description" content="Tier 1 Desktop Flood Risk Assessment evaluating fluvial, surface water, groundwater, and sewer flood risk with Decision Risk Scores." />
-      </Helmet>
+      <PageSEO
+        title="Flood Risk Assessment | Planning-Ready Reports | PF & Co"
+        description="Tier 1 Desktop Flood Risk Assessment evaluating fluvial, surface water, groundwater, and sewer flood risk with Decision Risk Scores."
+        path="/site-intelligence/flood-risk-assessment"
+        jsonLd={{
+          '@type': 'Product',
+          name: 'Flood Risk Assessment',
+          description: 'Tier 1 Desktop Flood Risk Assessment evaluating fluvial, surface water, groundwater, and sewer flood risk.',
+          brand: { '@type': 'Organization', name: 'PF & Co Construction' },
+          offers: { '@type': 'Offer', price: '295', priceCurrency: 'GBP' },
+        }}
+      />
 
       {/* Editorial Hero */}
       <section className="relative min-h-screen flex items-center overflow-hidden bg-brand-primary text-white">

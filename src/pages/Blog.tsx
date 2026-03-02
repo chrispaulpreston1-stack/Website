@@ -2,16 +2,17 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { Calendar, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import PageSEO from '../components/PageSEO';
 import blogPosts from '../data/blogPosts';
 
 const Blog = () => {
   return (
     <div className="pt-32 pb-24">
-      <Helmet>
-        <title>Engineering Insights | PF & Co</title>
-        <meta name="description" content="Expert advice and technical insights on structural engineering, AI in construction, and site intelligence from PF & Co." />
-      </Helmet>
+      <PageSEO
+        title="Engineering Insights | PF & Co"
+        description="Expert advice and technical insights on structural engineering, AI in construction, and site intelligence from PF & Co."
+        path="/blog"
+      />
       <section className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
           <div className="max-w-2xl">

@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { MessageSquare, Check, ArrowRight, Info, HelpCircle, Clock, Zap, ShieldCheck, FileText } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import PageSEO from '../components/PageSEO';
 import ComparisonTable from '../components/ComparisonTable';
 import VideoExplainer from '../components/VideoExplainer';
 
@@ -46,10 +46,18 @@ const PreApplicationAdvice = () => {
 
   return (
     <div className="pt-20">
-      <Helmet>
-        <title>Pre-Application Advice | Planning Enquiry Packs | PF & Co</title>
-        <meta name="description" content="Ask the right questions before you commit to a full planning application — and get answers that actually shape your scheme." />
-      </Helmet>
+      <PageSEO
+        title="Pre-Application Advice | Planning Enquiry Packs | PF & Co"
+        description="Ask the right questions before you commit to a full planning application — and get answers that actually shape your scheme."
+        path="/site-intelligence/pre-application-advice"
+        jsonLd={{
+          '@type': 'Product',
+          name: 'Pre-Application Advice Pack',
+          description: 'Ask the right questions before committing to a full planning application.',
+          brand: { '@type': 'Organization', name: 'PF & Co Construction' },
+          offers: { '@type': 'Offer', price: '345', priceCurrency: 'GBP' },
+        }}
+      />
 
       {/* Editorial Hero */}
       <section className="relative min-h-screen flex items-center overflow-hidden bg-brand-primary text-white">

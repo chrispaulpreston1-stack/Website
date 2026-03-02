@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { FileText, Check, ArrowRight, Info, HelpCircle, Clock, Zap, ShieldCheck, Scale } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import PageSEO from '../components/PageSEO';
 import ComparisonTable from '../components/ComparisonTable';
 import VideoExplainer from '../components/VideoExplainer';
 
@@ -46,10 +46,18 @@ const PlanningStatement = () => {
 
   return (
     <div className="pt-20">
-      <Helmet>
-        <title>Planning Statement | Submission-Ready Policy Evidence | PF & Co</title>
-        <meta name="description" content="A submission-ready document that demonstrates exactly how your proposal complies with planning policy — so the officer doesn't have to guess." />
-      </Helmet>
+      <PageSEO
+        title="Planning Statement | Submission-Ready Policy Evidence | PF & Co"
+        description="A submission-ready document that demonstrates exactly how your proposal complies with planning policy — so the officer doesn't have to guess."
+        path="/site-intelligence/planning-statement"
+        jsonLd={{
+          '@type': 'Product',
+          name: 'Planning Statement',
+          description: 'Submission-ready document demonstrating how your proposal complies with planning policy.',
+          brand: { '@type': 'Organization', name: 'PF & Co Construction' },
+          offers: { '@type': 'Offer', price: '445', priceCurrency: 'GBP' },
+        }}
+      />
 
       {/* Editorial Hero */}
       <section className="relative min-h-screen flex items-center overflow-hidden bg-brand-primary text-white">

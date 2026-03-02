@@ -2,15 +2,16 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight, Ruler, Construction, Zap, Search } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import PageSEO from '../components/PageSEO';
 
 const Home = () => {
   return (
     <div className="selection:bg-brand-accent/30">
-      <Helmet>
-        <title>PF & Co | AI-Powered Structural Engineering & Construction</title>
-        <meta name="description" content="Surrey and London's leading AI-powered structural engineering and construction firm. Precision calculations, fixed quotes, and 24h turnaround." />
-      </Helmet>
+      <PageSEO
+        title="PF & Co | AI-Powered Structural Engineering & Construction"
+        description="Surrey and London's leading AI-powered structural engineering and construction firm. Precision calculations, fixed quotes, and 24h turnaround."
+        path="/"
+      />
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
         {/* Video Background Concept */}

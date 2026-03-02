@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { Helmet } from 'react-helmet-async';
+import PageSEO from '../components/PageSEO';
 import { Calendar, ArrowLeft, ArrowRight } from 'lucide-react';
 import blogPosts from '../data/blogPosts';
 
@@ -17,10 +17,21 @@ const BlogArticle = () => {
 
   return (
     <div className="pt-32 pb-24">
-      <Helmet>
-        <title>{post.title} | PF & Co Insights</title>
-        <meta name="description" content={post.excerpt} />
-      </Helmet>
+      <PageSEO
+        title={`${post.title} | PF & Co Insights`}
+        description={post.excerpt}
+        path={`/insights/${post.slug}`}
+        ogType="article"
+        jsonLd={{
+          '@type': 'Article',
+          headline: post.title,
+          description: post.excerpt,
+          image: post.image,
+          datePublished: post.date,
+          author: { '@type': 'Organization', name: 'PF & Co Construction' },
+          publisher: { '@type': 'Organization', name: 'PF & Co Construction' },
+        }}
+      />
 
       <article className="max-w-4xl mx-auto px-6">
         {/* Back link */}

@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { HardHat, Check, ArrowRight, Info, HelpCircle, Clock, Zap, ShieldCheck, FileText } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import PageSEO from '../components/PageSEO';
 import ComparisonTable from '../components/ComparisonTable';
 import VideoExplainer from '../components/VideoExplainer';
 
@@ -46,10 +46,18 @@ const ConstructionManagementPlan = () => {
 
   return (
     <div className="pt-20">
-      <Helmet>
-        <title>Construction Management Plan (CMP) | Planning Conditions | PF & Co</title>
-        <meta name="description" content="Satisfy CMP planning conditions and demonstrate responsible construction management — dust, noise, traffic, and neighbour protection in one document." />
-      </Helmet>
+      <PageSEO
+        title="Construction Management Plan (CMP) | Planning Conditions | PF & Co"
+        description="Satisfy CMP planning conditions and demonstrate responsible construction management — dust, noise, traffic, and neighbour protection in one document."
+        path="/site-intelligence/construction-management-plan"
+        jsonLd={{
+          '@type': 'Product',
+          name: 'Construction Management Plan',
+          description: 'Satisfy CMP planning conditions — dust, noise, traffic, and neighbour protection in one document.',
+          brand: { '@type': 'Organization', name: 'PF & Co Construction' },
+          offers: { '@type': 'Offer', price: '345', priceCurrency: 'GBP' },
+        }}
+      />
 
       {/* Editorial Hero */}
       <section className="relative min-h-screen flex items-center overflow-hidden bg-brand-primary text-white">
@@ -154,12 +162,13 @@ const ConstructionManagementPlan = () => {
         </div>
       </section>
 
-      <VideoExplainer 
+      <VideoExplainer
         title="Construction Management Plan"
         accentColor="slate-500"
         description="Watch our walkthrough to see how we address all 12 sections of a comprehensive CMP, helping you discharge pre-commencement conditions and manage neighbour expectations."
-        thumbnailUrl="https://picsum.photos/seed/construction/1280/720"
-        duration="3:45"
+        thumbnailUrl="/videos/cmp-demo-thumb.jpg"
+        videoUrl="/videos/cmp-demo.mp4"
+        duration="1:26"
       />
 
       {/* Editorial Content Section */}

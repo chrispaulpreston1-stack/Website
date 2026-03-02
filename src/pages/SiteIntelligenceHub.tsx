@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { Search, ShieldAlert, BarChart3, ArrowRight, Check, X, Database, Clock, Users, Zap, FileText } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import PageSEO from '../components/PageSEO';
 import VideoExplainer from '../components/VideoExplainer';
 
 const SiteIntelligenceHub = () => {
@@ -47,10 +47,19 @@ const SiteIntelligenceHub = () => {
 
   return (
     <div className="pt-32 pb-24">
-      <Helmet>
-        <title>Site Intelligence | Data-Driven Pre-Construction Screening | PF & Co</title>
-        <meta name="description" content="Interrogate 15+ authoritative data sources to identify planning, flood, and ground risks before you commit to a site." />
-      </Helmet>
+      <PageSEO
+        title="Site Intelligence | Data-Driven Pre-Construction Screening | PF & Co"
+        description="Interrogate 15+ authoritative data sources to identify planning, flood, and ground risks before you commit to a site."
+        path="/site-intelligence"
+        jsonLd={{
+          '@type': 'Service',
+          name: 'Site Intelligence',
+          description: 'Data-driven pre-construction screening interrogating 15+ authoritative data sources to identify planning, flood, and ground risks.',
+          provider: { '@type': 'Organization', name: 'PF & Co Construction' },
+          areaServed: ['Surrey', 'London', 'South East England'],
+          serviceType: 'Site Intelligence',
+        }}
+      />
 
       {/* Hero */}
       <section className="max-w-7xl mx-auto px-6 mb-24 relative">

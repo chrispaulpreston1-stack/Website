@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { Search, Check, ArrowRight, HelpCircle, AlertTriangle, Building2, Map, Zap, Clock, X, FileText } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import PageSEO from '../components/PageSEO';
 import ComparisonTable from '../components/ComparisonTable';
 import VideoExplainer from '../components/VideoExplainer';
 
@@ -86,10 +86,18 @@ const SiteFeasibilityReport = () => {
 
   return (
     <div className="pt-20">
-      <Helmet>
-        <title>Site Feasibility Report | Pre-Construction Screening | PF & Co</title>
-        <meta name="description" content="A data-driven pre-construction screening report checking 22+ planning, environmental, and ground risk constraints before you commit." />
-      </Helmet>
+      <PageSEO
+        title="Site Feasibility Report | Pre-Construction Screening | PF & Co"
+        description="A data-driven pre-construction screening report checking 22+ planning, environmental, and ground risk constraints before you commit."
+        path="/site-intelligence/site-feasibility-report"
+        jsonLd={{
+          '@type': 'Product',
+          name: 'Site Feasibility Report',
+          description: 'Data-driven pre-construction screening report checking 22+ planning, environmental, and ground risk constraints.',
+          brand: { '@type': 'Organization', name: 'PF & Co Construction' },
+          offers: { '@type': 'Offer', price: '495', priceCurrency: 'GBP' },
+        }}
+      />
 
       {/* SaaS Style Hero */}
       <section className="relative min-h-screen flex items-center bg-white overflow-hidden">
