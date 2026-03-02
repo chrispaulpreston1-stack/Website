@@ -12,6 +12,21 @@ const Blog = () => {
         title="Engineering Insights | PF & Co"
         description="Expert advice and technical insights on structural engineering, AI in construction, and site intelligence from PF & Co."
         path="/blog"
+        jsonLd={{
+          '@type': 'CollectionPage',
+          name: 'Engineering Insights',
+          description: 'Expert advice and technical insights on structural engineering, AI in construction, and site intelligence from PF & Co.',
+          publisher: { '@type': 'Organization', name: 'PF & Co Construction' },
+          mainEntity: {
+            '@type': 'ItemList',
+            itemListElement: blogPosts.map((post, i) => ({
+              '@type': 'ListItem',
+              position: i + 1,
+              url: `https://www.pfcoconstruction.co.uk/insights/${post.slug}`,
+              name: post.title,
+            })),
+          },
+        }}
       />
       <section className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
