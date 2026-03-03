@@ -159,7 +159,7 @@ const BuildingControl = () => {
                 title="Building Control Explained"
                 accentColor="slate-500"
                 description="A clear walkthrough of what Building Control is, when it's required, and the steps to get your project signed off legally."
-                thumbnailUrl="https://images.unsplash.com/photo-1541888086925-920a0fbaea31?auto=format&fit=crop&q=80&w=800"
+                thumbnailUrl="https://images.unsplash.com/photo-1547683905-f686c993aae5?auto=format&fit=crop&q=80&w=800"
                 videoUrl="/videos/building-control.mp4"
                 duration="1:55"
             />
@@ -169,7 +169,7 @@ const BuildingControl = () => {
                 title="Building Control — What You Actually Need"
                 accentColor="slate-400"
                 description="A practical guide detailing the exact documentation, inspections, and requirements you need to successfully navigate Building Control."
-                thumbnailUrl="https://images.unsplash.com/photo-1504307651254-35680f356f58?auto=format&fit=crop&q=80&w=800"
+                thumbnailUrl="https://images.unsplash.com/photo-1578662996442-48f60103fc96?auto=format&fit=crop&q=80&w=800"
                 videoUrl="/videos/building-control-need.mp4"
                 duration="2:10"
             />
@@ -207,7 +207,7 @@ const BuildingControl = () => {
                     <div className="relative">
                         <div className="aspect-[4/3] rounded-[3rem] overflow-hidden shadow-2xl">
                             <img
-                                src="https://images.unsplash.com/photo-1541888086925-920a0fbaea31?auto=format&fit=crop&q=80&w=800"
+                                src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=800"
                                 alt="Building Control Inspection"
                                 className="w-full h-full object-cover"
                                 loading="lazy"
