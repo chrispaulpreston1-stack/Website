@@ -87,7 +87,7 @@ const Home = () => {
               <div className="absolute bottom-8 left-8 right-8">
                 <div className="glass p-6 rounded-2xl">
                   <p className="text-sm font-mono uppercase tracking-widest mb-2 opacity-60">Featured Innovation</p>
-                  <h3 className="text-xl font-bold">AI-Optimized Steel Framework</h3>
+                  <h3 className="text-xl font-bold">AI-Optimised Steel Framework</h3>
                   <Link to="/ai-innovation" className="flex items-center gap-2 mt-4 text-brand-accent">
                     <span className="text-xs font-bold">Learn More</span>
                     <ArrowRight size={14} />
@@ -177,9 +177,9 @@ const Home = () => {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <span className="font-mono text-xs uppercase tracking-[0.3em] text-brand-accent font-bold mb-4 block">The AI Advantage</span>
-              <h2 className="text-5xl font-bold mb-8">Material Optimization <br />in Real-Time.</h2>
+              <h2 className="text-5xl font-bold mb-8">Material Optimisation <br />in Real-Time.</h2>
               <p className="text-lg text-brand-primary/60 mb-6 leading-relaxed">
-                Our proprietary AI algorithms analyze structural loads instantly to find the "Perfect Beam" — minimizing material waste while maximizing safety. See the difference in weight and cost.
+                Our proprietary AI algorithms analyse structural loads instantly to find the "Perfect Beam" — minimising material waste while maximising safety. See the difference in weight and cost.
               </p>
               <div className="bg-brand-surface/50 border border-brand-accent/20 p-5 rounded-2xl mb-10">
                 <h4 className="font-bold text-brand-primary flex items-center gap-2 mb-2">
@@ -187,7 +187,7 @@ const Home = () => {
                   Human-in-the-Loop Safety
                 </h4>
                 <p className="text-sm text-brand-primary/70">
-                  AI generates the optimized framework, but **we never trust it blindly**. Every single calculation is rigorously reviewed, stamped, and approved by our in-house, qualified Structural Engineers. You get the speed of AI with the cast-iron safety of experienced human oversight.
+                  AI generates the optimised framework, but **we never trust it blindly**. Every single calculation is rigorously reviewed, stamped, and approved by our in-house, qualified Structural Engineers. You get the speed of AI with the cast-iron safety of experienced human oversight.
                 </p>
               </div>
 
@@ -203,7 +203,7 @@ const Home = () => {
                 </div>
                 <div className="p-6 rounded-2xl bg-brand-primary text-white shadow-xl shadow-brand-primary/20">
                   <div className="flex justify-between items-center mb-4">
-                    <span className="font-bold">PF & Co AI Optimized</span>
+                    <span className="font-bold">PF & Co AI Optimised</span>
                     <span className="text-sm font-mono text-brand-accent">980kg Steel (-21%)</span>
                   </div>
                   <div className="w-full h-2 bg-white/10 rounded-full overflow-hidden">
@@ -234,7 +234,7 @@ const Home = () => {
                     <div className="bg-brand-accent text-brand-primary p-6 rounded-2xl font-mono text-xs font-bold shadow-2xl">
                       RUNNING ANALYSIS...<br />
                       LOAD: 45.2kN/m<br />
-                      OPTIMIZING MESH...
+                      OPTIMISING MESH...
                     </div>
                   </div>
                 </div>

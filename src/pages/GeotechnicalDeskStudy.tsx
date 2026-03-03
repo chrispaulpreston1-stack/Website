@@ -69,13 +69,13 @@ const GeotechnicalDeskStudy = () => {
     <div className="pt-20 bg-[#f5f2ed]">
       <PageSEO
         title="Geotechnical Desk Study | Ground Investigation | PF & Co"
-        description="Comprehensive desktop ground investigation analyzing geology, groundwater, contamination history, and foundation risk before you break ground."
+        description="Comprehensive desktop ground investigation analysing geology, groundwater, contamination history, and foundation risk before you break ground."
         path="/site-intelligence/geotechnical-desk-study"
         jsonLd={[
           {
             '@type': 'Product',
             name: 'Geotechnical Desk Study',
-            description: 'Comprehensive desktop ground investigation analyzing geology, groundwater, contamination history, and foundation risk.',
+            description: 'Comprehensive desktop ground investigation analysing geology, groundwater, contamination history, and foundation risk.',
             brand: { '@type': 'Organization', name: 'PF & Co Site Intelligence' },
             offers: { '@type': 'Offer', price: '297', priceCurrency: 'GBP' },
           },
@@ -112,7 +112,7 @@ const GeotechnicalDeskStudy = () => {
               <span className="italic text-amber-700">Desk Study.</span>
             </h1>
             <p className="text-xl text-brand-primary/60 leading-relaxed mb-12 max-w-xl font-light">
-              A definitive desktop investigation into the geological DNA of your site. We analyze history, hydrology, and strata to eliminate ground-related risk before you break ground.
+              A definitive desktop investigation into the geological DNA of your site. We analyse history, hydrology, and strata to eliminate ground-related risk before you break ground.
             </p>
             <div className="flex flex-wrap gap-8 items-center">
               <Link to="/order-report?report=geotechnical-desk-study" className="px-12 py-5 bg-brand-primary text-white rounded-full font-bold hover:bg-brand-primary/90 transition-all shadow-2xl flex items-center gap-2">
@@ -162,7 +162,7 @@ const GeotechnicalDeskStudy = () => {
                         <span className="text-sm font-serif italic text-amber-700">{item.score}/10</span>
                       </div>
                       <div className="h-1 bg-brand-primary/5 rounded-full overflow-hidden mb-2">
-                        <motion.div 
+                        <motion.div
                           initial={{ width: 0 }}
                           animate={{ width: `${item.score * 10}%` }}
                           transition={{ delay: 1 + (i * 0.1), duration: 1.5 }}
@@ -212,7 +212,7 @@ const GeotechnicalDeskStudy = () => {
 
             <div className="space-y-12">
               {features.map((f, i) => (
-                <motion.div 
+                <motion.div
                   key={i}
                   initial={{ opacity: 0, x: 20 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -221,7 +221,7 @@ const GeotechnicalDeskStudy = () => {
                 >
                   <div className="absolute left-0 top-0 bottom-0 w-px bg-brand-primary/10 group-hover:bg-amber-600 transition-colors" />
                   <div className="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-brand-primary/20 group-hover:bg-amber-600 transition-colors" />
-                  
+
                   <h4 className="text-2xl font-serif italic mb-4 text-brand-primary group-hover:text-amber-700 transition-colors">{f.title}</h4>
                   <p className="text-brand-primary/60 leading-relaxed font-light">{f.desc}</p>
                 </motion.div>
@@ -256,7 +256,7 @@ const GeotechnicalDeskStudy = () => {
             ].map((row, i) => (
               <div key={i} className="p-8 rounded-[2rem] bg-white/5 border border-white/10 hover:bg-white/10 transition-all group">
                 <div className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-[10px] font-bold mb-8 group-hover:bg-amber-500 group-hover:border-amber-500 transition-all">
-                  {i+1}
+                  {i + 1}
                 </div>
                 <h4 className="text-xl font-bold mb-4">{row.s}</h4>
                 <p className="text-xs text-white/60 uppercase tracking-widest font-bold mb-6">{row.r}</p>
@@ -270,7 +270,7 @@ const GeotechnicalDeskStudy = () => {
       {/* Comparison Table Section */}
       <section className="py-32 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <ComparisonTable 
+          <ComparisonTable
             title="Geotechnical Desk Study"
             subtitle="What you get vs a traditional geotechnical consultancy or data report"
             columns={["Feature", "PF&Co Site Intelligence", "Traditional Geo Consultancy", "Envirocheck / Data Report"]}
@@ -292,7 +292,7 @@ const GeotechnicalDeskStudy = () => {
               { q: "How does this relate to structural calculations?", a: "The desk study feeds directly into foundation design. Your structural engineer uses the geology, bearing capacity, and shrinkage data to specify foundation type, depth, and reinforcement." }
             ].map((item, i) => (
               <div key={i} className="relative">
-                <div className="text-sm font-serif italic text-amber-700 mb-4">Inquiry 0{i+1}</div>
+                <div className="text-sm font-serif italic text-amber-700 mb-4">Inquiry 0{i + 1}</div>
                 <h4 className="text-2xl font-serif font-bold mb-6 text-brand-primary leading-tight">{item.q}</h4>
                 <p className="text-brand-primary/60 leading-relaxed font-light text-lg">
                   {item.a}
@@ -308,7 +308,7 @@ const GeotechnicalDeskStudy = () => {
         <div className="bg-brand-primary rounded-[4rem] p-16 md:p-24 text-center text-white relative overflow-hidden">
           <div className="absolute inset-0 opacity-10 engineering-grid" />
           <div className="absolute top-0 right-0 w-96 h-96 bg-amber-600/20 blur-[120px]" />
-          
+
           <div className="relative z-10">
             <span className="font-mono text-[10px] uppercase tracking-[0.5em] text-amber-500 font-bold mb-8 block">Instruct Your Report</span>
             <h2 className="text-6xl md:text-7xl font-serif font-light mb-10 tracking-tight">Know Your <span className="italic text-amber-500">Ground.</span></h2>
@@ -316,7 +316,7 @@ const GeotechnicalDeskStudy = () => {
               Send us your site address and we'll provide a definitive ground risk profile typically within 24 hours. No obligation.
             </p>
             <div className="flex flex-wrap justify-center gap-8 items-center">
-              <Link 
+              <Link
                 to="/contact"
                 className="px-12 py-6 bg-amber-600 text-white rounded-full font-bold hover:scale-105 transition-all shadow-2xl"
               >

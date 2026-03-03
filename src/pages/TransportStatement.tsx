@@ -59,7 +59,7 @@ const TransportStatement = () => {
           subjectOf: {
             '@type': 'VideoObject',
             name: 'Transport Statement Explainer',
-            description: 'Learn how our Transport Statements analyze trip generation, accessibility, and highways safety for planning applications.',
+            description: 'Learn how our Transport Statements analyse trip generation, accessibility, and highways safety for planning applications.',
             thumbnailUrl: 'https://www.pfcoconstruction.co.uk/videos/transport-statement-thumb.jpg',
             contentUrl: 'https://www.pfcoconstruction.co.uk/videos/transport-statement-demo.mp4',
             uploadDate: new Date().toISOString().split('T')[0],
@@ -182,7 +182,7 @@ const TransportStatement = () => {
       {/* Video Explainer Section */}
       <VideoExplainer
         title="Transport Statements Explained"
-        description="Watch how we analyze trip generation, sustainable accessibility, and local highways safety data to give your development the best chance of planning approval."
+        description="Watch how we analyse trip generation, sustainable accessibility, and local highways safety data to give your development the best chance of planning approval."
         videoUrl="/videos/transport-statement-demo.mp4"
         thumbnailUrl="/videos/transport-statement-thumb.jpg"
         duration="1:36"

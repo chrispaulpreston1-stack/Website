@@ -55,9 +55,9 @@ const LiveOperationsLog = () => {
     "Initializing Swarm Node 0x4F...",
     "Load Analyst: Calculating beam deflection for GU21...",
     "Eurocode Bot: Cross-referencing BS EN 1993-1-1...",
-    "Steel Optimizer: Material reduction achieved: 14.2%",
+    "Steel Optimiser: Material reduction achieved: 14.2%",
     "Safety Sentinel: Stress point 42b within tolerance.",
-    "Neural Engine: Optimizing connection topology...",
+    "Neural Engine: Optimising connection topology...",
     "Data Sync: 54/54 agents reporting optimal status.",
     "Audit: Design sign-off pending final verification.",
     "Predictive AI: Weather delay probability: 4%",
@@ -99,11 +99,11 @@ const AIAgentSwarm = () => {
   const agents = [
     { id: '01', name: 'Load Analyst', task: 'Calculating kN/m forces...', icon: <Activity size={14} /> },
     { id: '04', name: 'Eurocode Bot', task: 'Verifying compliance...', icon: <Shield size={14} /> },
-    { id: '12', name: 'Steel Optimizer', task: 'Reducing material waste...', icon: <Zap size={14} /> },
+    { id: '12', name: 'Steel Optimiser', task: 'Reducing material waste...', icon: <Zap size={14} /> },
     { id: '19', name: 'Safety Sentinel', task: 'Monitoring stress points...', icon: <Lock size={14} /> },
-    { id: '22', name: 'Logistics AI', task: 'Optimizing delivery routes...', icon: <Globe size={14} /> },
+    { id: '22', name: 'Logistics AI', task: 'Optimising delivery routes...', icon: <Globe size={14} /> },
     { id: '38', name: 'Carbon Tracker', task: 'Measuring embodied carbon...', icon: <BarChart3 size={14} /> },
-    { id: '45', name: 'Thermal Modeler', task: 'Analyzing heat loss...', icon: <Search size={14} /> },
+    { id: '45', name: 'Thermal Modeller', task: 'Analysing heat loss...', icon: <Search size={14} /> },
     { id: '54', name: 'Final Auditor', task: 'Signing off design...', icon: <Cpu size={14} /> },
   ];
 
@@ -119,19 +119,19 @@ const AIAgentSwarm = () => {
   return (
     <div className="relative bg-brand-primary/40 backdrop-blur-xl border border-white/10 rounded-[4rem] p-8 lg:p-20 overflow-hidden group">
       <div className="absolute inset-0 bg-gradient-to-br from-brand-accent/5 to-transparent pointer-events-none" />
-      
+
       <div className="relative z-10 grid lg:grid-cols-2 gap-16 items-center">
         <div className="order-2 lg:order-1">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-accent/10 border border-brand-accent/20 text-brand-accent text-[10px] font-bold uppercase tracking-widest mb-8">
             <Terminal size={12} />
             Live Swarm Intelligence
           </div>
-          
+
           <h2 className="text-5xl md:text-6xl font-display font-bold text-white mb-8 leading-tight">
             The <span className="text-brand-accent italic font-serif font-light">54-Agent</span> <br />
             Workforce.
           </h2>
-          
+
           <div className="space-y-4 mb-12">
             <AnimatePresence mode="wait">
               <motion.div
@@ -206,11 +206,10 @@ const AIAgentSwarm = () => {
                     scale: isActive ? 1.2 : 1,
                     opacity: isActive ? 1 : 0.3,
                   }}
-                  className={`absolute w-12 h-12 rounded-xl flex items-center justify-center border transition-all duration-500 z-30 ${
-                    isActive 
-                      ? 'bg-brand-accent border-brand-accent text-brand-primary shadow-[0_0_20px_rgba(245,158,11,0.4)]' 
+                  className={`absolute w-12 h-12 rounded-xl flex items-center justify-center border transition-all duration-500 z-30 ${isActive
+                      ? 'bg-brand-accent border-brand-accent text-brand-primary shadow-[0_0_20px_rgba(245,158,11,0.4)]'
                       : 'bg-white/5 border-white/10 text-white/40'
-                  }`}
+                    }`}
                 >
                   {agent.icon}
                   {isActive && (
@@ -265,7 +264,7 @@ const AIInnovation = () => {
       title: "Generative Structural Design",
       desc: "Iterating through thousands of structural configurations to find the most efficient, material-saving design.",
       icon: <Code className="text-brand-accent" />,
-      tag: "Optimization"
+      tag: "Optimisation"
     },
     {
       title: "Automated Compliance",
@@ -275,7 +274,7 @@ const AIInnovation = () => {
     },
     {
       title: "Predictive Project Management",
-      desc: "Machine learning models that analyze site data to predict potential delays before they happen.",
+      desc: "Machine learning models that analyse site data to predict potential delays before they happen.",
       icon: <BarChart3 className="text-brand-accent" />,
       tag: "Intelligence"
     },
@@ -291,7 +290,7 @@ const AIInnovation = () => {
     <div className="bg-brand-primary min-h-screen selection:bg-brand-accent/30 selection:text-white" ref={containerRef}>
       <PageSEO
         title="AI Innovation | PF & Co Structural Engineering"
-        description="Explore our 54-agent AI workforce and generative structural design tools that optimize safety and cost."
+        description="Explore our 54-agent AI workforce and generative structural design tools that optimise safety and cost."
         path="/ai-innovation"
       />
 
@@ -333,7 +332,7 @@ const AIInnovation = () => {
               </div>
             </motion.div>
           </div>
-          
+
           <div className="lg:col-span-5 pt-12">
             <div className="grid grid-cols-2 gap-4">
               {[
@@ -371,7 +370,7 @@ const AIInnovation = () => {
 
         <div className="grid lg:grid-cols-3 gap-6">
           {/* Large Feature */}
-          <motion.div 
+          <motion.div
             whileHover={{ y: -10, borderColor: "rgba(245,158,11,0.5)" }}
             className="lg:col-span-2 bg-white/5 border border-white/10 rounded-[3rem] p-12 relative overflow-hidden group transition-colors duration-500"
           >
@@ -385,14 +384,14 @@ const AIInnovation = () => {
                 Our proprietary algorithms iterate through thousands of structural configurations in parallel. We don't just find a solution; we find the <span className="text-brand-accent italic">mathematically optimal</span> one, reducing material waste by an average of 20%.
               </p>
               <div className="flex gap-4">
-                <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-widest text-white/40">Optimization</span>
+                <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-widest text-white/40">Optimisation</span>
                 <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-widest text-white/40">Sustainability</span>
               </div>
             </div>
           </motion.div>
 
           {/* Small Feature */}
-          <motion.div 
+          <motion.div
             whileHover={{ y: -10, scale: 1.02 }}
             className="bg-brand-accent rounded-[3rem] p-12 flex flex-col justify-between group shadow-[0_0_50px_rgba(245,158,11,0.1)] hover:shadow-[0_0_50px_rgba(245,158,11,0.3)] transition-all duration-500"
           >
@@ -408,7 +407,7 @@ const AIInnovation = () => {
           </motion.div>
 
           {/* Small Feature */}
-          <motion.div 
+          <motion.div
             whileHover={{ y: -10, borderColor: "rgba(245,158,11,0.5)" }}
             className="bg-white/5 border border-white/10 rounded-[3rem] p-12 group transition-colors duration-500"
           >
@@ -422,14 +421,14 @@ const AIInnovation = () => {
           </motion.div>
 
           {/* Large Feature */}
-          <motion.div 
+          <motion.div
             whileHover={{ y: -10, borderColor: "rgba(245,158,11,0.5)" }}
             className="lg:col-span-2 bg-white/5 border border-white/10 rounded-[3rem] p-12 relative overflow-hidden group transition-colors duration-500"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-brand-primary to-transparent z-10" />
-            <img 
-              src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=1000" 
-              alt="Site Safety AI" 
+            <img
+              src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=1000"
+              alt="Site Safety AI"
               className="absolute inset-0 w-full h-full object-cover grayscale opacity-30 group-hover:scale-110 transition-transform duration-700"
               loading="lazy"
               referrerPolicy="no-referrer"
