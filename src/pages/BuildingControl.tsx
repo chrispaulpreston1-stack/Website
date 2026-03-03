@@ -159,7 +159,7 @@ const BuildingControl = () => {
                 title="Building Control Explained"
                 accentColor="slate-500"
                 description="A clear walkthrough of what Building Control is, when it's required, and the steps to get your project signed off legally."
-                thumbnailUrl="/videos/building-control-thumb.jpg"
+                thumbnailUrl="https://images.unsplash.com/photo-1541888086925-920a0fbaea31?auto=format&fit=crop&q=80&w=800"
                 videoUrl="/videos/building-control.mp4"
                 duration="1:55"
             />
@@ -169,7 +169,7 @@ const BuildingControl = () => {
                 title="Building Control — What You Actually Need"
                 accentColor="slate-400"
                 description="A practical guide detailing the exact documentation, inspections, and requirements you need to successfully navigate Building Control."
-                thumbnailUrl="/videos/building-control-thumb.jpg"
+                thumbnailUrl="https://images.unsplash.com/photo-1504307651254-35680f356f58?auto=format&fit=crop&q=80&w=800"
                 videoUrl="/videos/building-control-need.mp4"
                 duration="2:10"
             />
@@ -246,7 +246,7 @@ const BuildingControl = () => {
                 title="What You Actually Need"
                 accentColor="emerald-600"
                 description="A deeper dive into the specific deliverables, compliance calculations, and technical documents required for your project."
-                thumbnailUrl="/videos/building-control-thumb.jpg"
+                thumbnailUrl="https://images.unsplash.com/photo-1504307651254-35680f356f58?auto=format&fit=crop&q=80&w=800"
                 videoUrl="/videos/building-control-need.mp4"
                 duration="1:20"
             />
