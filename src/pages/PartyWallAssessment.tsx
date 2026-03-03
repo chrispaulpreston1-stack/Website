@@ -152,7 +152,7 @@ const PartyWallAssessment = () => {
                 title="Party Wall Notice — Adjoining Neighbour Guide"
                 accentColor="indigo-500"
                 description="A friendly, reassuring guide for adjoining neighbours on what to expect when a Party Wall Notice is served. There's no need to worry—we explain the protections in place for your home."
-                thumbnailUrl="/videos/party-wall-thumb.jpg"
+                thumbnailUrl="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=800"
                 videoUrl="/videos/party-wall-neighbor.mp4"
             />
 
@@ -161,7 +161,7 @@ const PartyWallAssessment = () => {
                 title="Party Wall — Building Owner Guide"
                 accentColor="slate-500"
                 description="A supportive guide for building owners planning works near a boundary. Learn how the Party Wall process works and how our engineering-led approach helps smooth the way with your neighbours."
-                thumbnailUrl="/videos/party-wall-thumb.jpg"
+                thumbnailUrl="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=800"
                 videoUrl="/videos/party-wall-owner.mp4"
             />
 
