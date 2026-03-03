@@ -329,9 +329,9 @@ const SiteIntelligenceHub = () => {
 
         {/* Full Product Suite Section */}
         <div className="mt-32">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">The Full Site Intelligence Suite</h2>
-            <p className="text-brand-primary/60 max-w-2xl mx-auto">Specialist reports for every stage of the planning and pre-construction process.</p>
+          <div className="text-center mb-20">
+            <h2 className="text-5xl font-bold mb-6 tracking-tighter">The Full Site Intelligence <span className="text-brand-accent italic font-serif font-light">Suite.</span></h2>
+            <p className="text-brand-primary/60 max-w-2xl mx-auto text-lg font-light">Specialist reports for every stage of the planning and pre-construction process.</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -400,7 +400,7 @@ const SiteIntelligenceHub = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-brand-primary rounded-[3rem] p-8 md:p-16 text-white relative overflow-hidden shadow-2xl"
+          className="bg-brand-primary rounded-[3rem] p-8 md:p-16 text-white relative overflow-hidden shadow-2xl mt-32"
         >
           <div className="absolute top-0 right-0 w-96 h-96 bg-brand-accent/10 blur-[100px] -translate-y-1/2 translate-x-1/2" />
           <div className="relative z-10 grid lg:grid-cols-2 gap-12 items-center">
