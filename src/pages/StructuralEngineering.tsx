@@ -43,9 +43,9 @@ const StructuralEngineering = () => {
             </div>
           </motion.div>
           <div className="aspect-square rounded-[3rem] overflow-hidden shadow-2xl">
-            <img 
-              src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&q=80&w=1000" 
-              alt="London Engineering Project" 
+            <img
+              src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&q=80&w=1000"
+              alt="London Engineering Project"
               className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
               loading="lazy"
               referrerPolicy="no-referrer"
@@ -88,7 +88,7 @@ const StructuralEngineering = () => {
               Starting with engineering ensures that the construction phase is predictable. We eliminate guesswork, reducing on-site delays and unexpected costs.
             </p>
             <ul className="space-y-4">
-              {["Fixed Price Quotes", "24h Turnaround", "Professional Indemnity", "Building Regs Approved"].map(check => (
+              {["Fixed Price Quotes", "24h Turnaround", "Full PI Indemnity Cover", "Part A Building Regs Compliant", "100% Human-Engineer Verified"].map(check => (
                 <li key={check} className="flex items-center gap-3 text-sm font-bold">
                   <div className="w-5 h-5 bg-brand-accent rounded-full flex items-center justify-center text-brand-primary">
                     <ChevronRight size={12} />
@@ -110,7 +110,7 @@ const StructuralEngineering = () => {
               <h2 className="text-3xl font-bold mb-4">Eliminate Site Risk Early</h2>
               <p className="text-white/60">Our Site Intelligence reports screen for 22+ planning and ground constraints before you commit to a design.</p>
             </div>
-            <Link 
+            <Link
               to="/site-intelligence"
               className="px-8 py-4 bg-brand-accent text-brand-primary rounded-xl font-bold hover:bg-brand-accent/90 transition-all flex items-center gap-2 whitespace-nowrap"
             >

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { ArrowRight, Ruler, Construction, Zap, Search } from 'lucide-react';
+import { ArrowRight, Ruler, Construction, Zap, Search, ShieldAlert } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import PageSEO from '../components/PageSEO';
 
@@ -99,24 +99,29 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Trust Bar */}
-      <section className="py-16 bg-brand-surface border-y border-gray-100">
+      {/* Trust & Compliance Bar */}
+      <section className="py-16 bg-brand-surface border-y border-brand-primary/10">
         <div className="max-w-7xl mx-auto px-6">
-          <p className="text-center text-[10px] uppercase tracking-[0.4em] font-bold text-brand-primary/40 mb-8">Why Clients Trust PF & Co</p>
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+          <p className="text-center text-[10px] uppercase tracking-[0.4em] font-bold text-brand-primary/40 mb-8">Fully Compliant & Regulated</p>
+          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 lg:gap-16">
             <div className="flex flex-col items-center gap-1">
-              <span className="font-display font-bold text-xl text-brand-primary">PI Insured</span>
-              <span className="text-[10px] uppercase tracking-widest text-brand-primary/60 font-mono">Full Indemnity Cover</span>
+              <span className="font-display font-bold text-lg lg:text-xl text-brand-primary">Part A Compliant</span>
+              <span className="text-[10px] uppercase tracking-widest text-brand-primary/60 font-mono text-center">UK Building Regs</span>
             </div>
             <div className="w-px h-8 bg-brand-primary/10 hidden md:block" />
             <div className="flex flex-col items-center gap-1">
-              <span className="font-display font-bold text-xl text-brand-primary">300+</span>
-              <span className="text-[10px] uppercase tracking-widest text-brand-primary/60 font-mono">Projects Delivered</span>
+              <span className="font-display font-bold text-lg lg:text-xl text-brand-primary">Human Verified</span>
+              <span className="text-[10px] uppercase tracking-widest text-brand-primary/60 font-mono text-center">Engineer Approved</span>
             </div>
             <div className="w-px h-8 bg-brand-primary/10 hidden md:block" />
             <div className="flex flex-col items-center gap-1">
-              <span className="font-display font-bold text-xl text-brand-primary">AI-Powered</span>
-              <span className="text-[10px] uppercase tracking-widest text-brand-primary/60 font-mono">Optimised Design</span>
+              <span className="font-display font-bold text-lg lg:text-xl text-brand-primary">British Standards</span>
+              <span className="text-[10px] uppercase tracking-widest text-brand-primary/60 font-mono text-center">Eurocode Design</span>
+            </div>
+            <div className="w-px h-8 bg-brand-primary/10 hidden md:block" />
+            <div className="flex flex-col items-center gap-1">
+              <span className="font-display font-bold text-lg lg:text-xl text-brand-primary">PI Insured</span>
+              <span className="text-[10px] uppercase tracking-widest text-brand-primary/60 font-mono text-center">Full Indemnity Cover</span>
             </div>
           </div>
         </div>
@@ -173,9 +178,18 @@ const Home = () => {
             <div>
               <span className="font-mono text-xs uppercase tracking-[0.3em] text-brand-accent font-bold mb-4 block">The AI Advantage</span>
               <h2 className="text-5xl font-bold mb-8">Material Optimization <br />in Real-Time.</h2>
-              <p className="text-lg text-brand-primary/60 mb-10 leading-relaxed">
-                Our proprietary AI algorithms analyze structural loads to find the "Perfect Beam" — minimizing material waste while maximizing safety. See the difference in weight and cost.
+              <p className="text-lg text-brand-primary/60 mb-6 leading-relaxed">
+                Our proprietary AI algorithms analyze structural loads instantly to find the "Perfect Beam" — minimizing material waste while maximizing safety. See the difference in weight and cost.
               </p>
+              <div className="bg-brand-surface/50 border border-brand-accent/20 p-5 rounded-2xl mb-10">
+                <h4 className="font-bold text-brand-primary flex items-center gap-2 mb-2">
+                  <ShieldAlert size={18} className="text-brand-accent" />
+                  Human-in-the-Loop Safety
+                </h4>
+                <p className="text-sm text-brand-primary/70">
+                  AI generates the optimized framework, but **we never trust it blindly**. Every single calculation is rigorously reviewed, stamped, and approved by our in-house, qualified Structural Engineers. You get the speed of AI with the cast-iron safety of experienced human oversight.
+                </p>
+              </div>
 
               <div className="space-y-6">
                 <div className="p-6 rounded-2xl bg-brand-surface border border-gray-100">
