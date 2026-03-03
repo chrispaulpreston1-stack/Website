@@ -8,12 +8,13 @@ const Subscriptions = () => {
   const plans = [
     {
       name: "The Studio",
-      price: "£288",
+      price: "£228",
       period: "per month",
       desc: "Ideal for individual architects or small developers with steady project flow.",
       features: [
-        "12 Credits per Year",
-        "Billed Monthly (£288/mo)",
+        "30 Credits per Year",
+        "1 Active Slot",
+        "Billed Monthly (£228/mo)",
         "24-48h Turnaround",
         "White-label Engineering",
         "PI Insurance Included",
@@ -29,7 +30,8 @@ const Subscriptions = () => {
       period: "per month",
       desc: "Our most popular level for active architectural practices and building firms.",
       features: [
-        "24 Credits per Year",
+        "60 Credits per Year",
+        "2 Active Slots",
         "Billed Monthly (£390/mo)",
         "Priority 24h Turnaround",
         "Dedicated Account Engineer",
@@ -46,7 +48,8 @@ const Subscriptions = () => {
       period: "per month",
       desc: "For high-volume developers requiring a constant engineering partner.",
       features: [
-        "48 Credits per Year",
+        "85 Credits per Year",
+        "3 Active Slots",
         "Billed Monthly (£510/mo)",
         "Instant Priority Access",
         "Monthly Site Consultations",
