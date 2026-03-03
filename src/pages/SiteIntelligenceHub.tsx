@@ -372,18 +372,21 @@ const SiteIntelligenceHub = () => {
                 ]
               }
             ].map((category, i) => (
-              <div key={i} className="bg-brand-surface rounded-3xl p-8 border border-brand-primary/5">
-                <h3 className="text-xs font-mono uppercase tracking-widest text-brand-accent font-bold mb-8 border-b border-brand-primary/5 pb-4">
-                  {category.cat}
-                </h3>
+              <div key={i} className="bg-white rounded-3xl p-8 border-2 border-brand-primary/5 hover:border-brand-accent/20 shadow-xl shadow-brand-primary/5 hover:shadow-2xl transition-all duration-500 premium-card group/card">
+                <div className="flex items-center gap-3 mb-8 border-b border-brand-primary/10 pb-4">
+                  <div className="w-2 h-2 rounded-full bg-brand-accent shadow-lg shadow-brand-accent/50 group-hover/card:scale-150 transition-transform duration-500" />
+                  <h3 className="text-xs font-mono uppercase tracking-widest text-brand-accent font-bold">
+                    {category.cat}
+                  </h3>
+                </div>
                 <div className="space-y-6">
                   {category.items.map((item, j) => (
-                    <Link key={j} to={item.link} className="group block">
+                    <Link key={j} to={item.link} className="group block p-3 -mx-3 rounded-xl hover:bg-brand-surface transition-colors">
                       <div className="flex justify-between items-start mb-1">
                         <h4 className="font-bold text-brand-primary group-hover:text-brand-accent transition-colors">{item.name}</h4>
-                        <ArrowRight size={14} className="opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all text-brand-accent" />
+                        <ArrowRight size={16} className="opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all text-brand-accent" />
                       </div>
-                      <p className="text-xs text-brand-primary/40 font-light">{item.desc}</p>
+                      <p className="text-xs text-brand-primary/60 font-medium">{item.desc}</p>
                     </Link>
                   ))}
                 </div>
