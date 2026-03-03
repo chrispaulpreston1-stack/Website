@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LinkedIn Assets — PF & Co Holdings</title>
+
+  <!-- Critical Fix: Actually import Playfair Display from Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    /* Maintainability Improvement: Extracted colors to variables */
+    :root {
+      --bg-page: #1e1e1e;
+      --bg-asset: #0F172A;
+      --brand-accent: #F59E0B;
+      --text-white: #FFF;
+      --text-gray-light: #ccc;
+      --text-gray-medium: #94A3B8;
+      --text-gray-dark: #64748B;
+      --text-gray-dim: #888;
+      --bg-panel: #2a2a2a;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background: var(--bg-page);
+      padding: 40px;
+      font-family: system-ui, -apple-system, sans-serif;
+      color: var(--text-gray-light);
+    }
+
+    h2 {
+      margin: 40px 0 12px;
+      font-size: 16px;
+      color: var(--brand-accent);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    p.spec {
+      margin: 0 0 16px;
+      font-size: 13px;
+      color: var(--text-gray-dim);
+    }
+
+    .asset {
+      display: inline-block;
+      border: 1px dashed #333;
+    }
+
+    /* ---- PROFILE LOGO 300x300 ---- */
+    .logo {
+      width: 300px;
+      height: 300px;
+      background: var(--bg-asset);
+      border-radius: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .logo::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--brand-accent);
+    }
+
+    .logo .pf {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 88px;
+      font-weight: 700;
+      color: var(--brand-accent);
+      letter-spacing: -2px;
+      line-height: 1;
+    }
+
+    .logo .divider {
+      width: 120px;
+      height: 1.5px;
+      background: var(--brand-accent);
+      opacity: 0.4;
+      margin: 14px 0;
+    }
+
+    .logo .co {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--text-white);
+      letter-spacing: 6px;
+    }
+
+    .logo .si {
+      font-size: 11px;
+      color: var(--brand-accent);
+      letter-spacing: 4px;
+      opacity: 0.8;
+      margin-top: 12px;
+    }
+
+    /* ---- BANNER 1128x191 ---- */
+    .banner {
+      width: 1128px;
+      height: 191px;
+      background: var(--bg-asset);
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 0 114px;
+    }
+
+    .banner::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--brand-accent);
+    }
+
+    .banner .left {
+      flex-shrink: 0;
+    }
+
+    .banner .left .pf {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 42px;
+      font-weight: 700;
+      color: var(--brand-accent);
+      letter-spacing: -1px;
+    }
+
+    .banner .left .co {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-white);
+      letter-spacing: 5px;
+      margin-top: 2px;
+    }
+
+    .banner .sep {
+      width: 1px;
+      height: 110px;
+      background: var(--brand-accent);
+      opacity: 0.3;
+      margin: 0 50px;
+      flex-shrink: 0;
+    }
+
+    .banner .centre {
+      flex: 1;
+      text-align: center;
+    }
+
+    .banner .centre .headline {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--text-white);
+      letter-spacing: -0.5px;
+    }
+
+    .banner .centre .sub {
+      font-size: 14px;
+      color: var(--text-gray-medium);
+      margin-top: 8px;
+      letter-spacing: 1px;
+    }
+
+    .banner .centre .stats {
+      display: flex;
+      justify-content: center;
+      gap: 80px;
+      margin-top: 20px;
+      border-top: 1px solid rgba(245, 158, 11, 0.2);
+      padding-top: 14px;
+    }
+
+    .banner .centre .stats .stat-num {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--brand-accent);
+    }
+
+    .banner .centre .stats .stat-label {
+      font-size: 9px;
+      color: var(--text-gray-dark);
+      letter-spacing: 1.5px;
+      margin-top: 2px;
+    }
+
+    .banner .right {
+      flex-shrink: 0;
+      text-align: right;
+    }
+
+    .banner .right .url {
+      font-size: 10px;
+      color: var(--text-gray-dark);
+      letter-spacing: 2px;
+    }
+
+    .instructions {
+      background: var(--bg-panel);
+      padding: 20px 24px;
+      border-radius: 12px;
+      margin: 40px 0;
+      max-width: 700px;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .instructions strong {
+      color: var(--brand-accent);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="instructions">
+    <strong>How to export these as PNGs:</strong><br>
+    1. Right-click the image below → <strong>Inspect</strong><br>
+    2. In DevTools, right-click the highlighted element → <strong>Capture node screenshot</strong><br>
+    3. It saves a pixel-perfect PNG at the exact dimensions<br><br>
+    Or simply <strong>screenshot</strong> each one — they're rendered at the correct LinkedIn pixel sizes.
+  </div>
+
+  <h2>Profile Logo</h2>
+  <p class="spec">300 × 300 px — upload as Company Logo</p>
+  <div class="asset">
+    <div class="logo">
+      <div class="pf">PF</div>
+      <div class="divider"></div>
+      <div class="co">& CO HOLDINGS</div>
+      <div class="si">SITE INTELLIGENCE</div>
+    </div>
+  </div>
+
+  <h2>Banner / Cover Image</h2>
+  <p class="spec">1128 × 191 px — upload as Company Cover Image</p>
+  <div class="asset">
+    <div class="banner">
+      <div class="left">
+        <div class="pf">PF</div>
+        <div class="co">& CO HOLDINGS</div>
+      </div>
+      <div class="sep"></div>
+      <div class="centre">
+        <div class="headline">Site Intelligence</div>
+        <div class="sub">Know the risk before you break ground.</div>
+        <div class="stats">
+          <div>
+            <div class="stat-num">25+</div>
+            <div class="stat-label">DATA SOURCES</div>
+          </div>
+          <div>
+            <div class="stat-num">48hr</div>
+            <div class="stat-label">DELIVERY</div>
+          </div>
+          <div>
+            <div class="stat-num">15</div>
+            <div class="stat-label">REPORT TYPES</div>
+          </div>
+        </div>
+      </div>
+      <div class="right">
+        <div class="url">PFCOCONSTRUCTION.CO.UK</div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

@@ -105,17 +105,19 @@ const VideoExplainer: React.FC<VideoExplainerProps> = ({
 
                   {/* Play Button Overlay */}
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className={`w-24 h-24 bg-white rounded-full flex items-center justify-center shadow-2xl transition-all duration-500 group-hover:scale-110 ${colors.hoverBg} group-hover:text-white`}>
-                      <Play size={32} fill="currentColor" className="ml-1" />
+                    <div className="w-16 h-16 md:w-24 md:h-24 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center group-hover:scale-110 group-hover:bg-white/30 transition-all duration-300">
+                      <Play className="text-white w-8 h-8 md:w-12 md:h-12 ml-2" />
                     </div>
                   </div>
 
-                  {/* Video Info Badge */}
-                  <div className="absolute bottom-8 left-8 right-8 flex justify-between items-center">
-                    <div className="px-4 py-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-white text-[10px] font-bold uppercase tracking-widest">
-                      Sample Report Walkthrough
+                  {/* Video Info Overlay */}
+                  <div className="absolute bottom-4 left-4 right-4 md:bottom-8 md:left-8 md:right-8 flex flex-col sm:flex-row justify-between items-start sm:items-end gap-2 sm:gap-0">
+                    <div>
+                      <h3 className="text-white text-lg md:text-2xl font-bold mb-1 md:mb-2">{title}</h3>
+                      <p className="text-white/80 text-xs md:text-sm max-w-md line-clamp-2 md:line-clamp-none">{description}</p>
                     </div>
-                    <div className="px-4 py-2 bg-brand-primary text-white rounded-full text-[10px] font-bold uppercase tracking-widest">
+                    <div className="flex items-center gap-2 bg-black/50 backdrop-blur-md px-3 py-1 md:px-4 md:py-2 rounded-full text-white text-xs md:text-sm font-bold">
+                      <div className={`w-2 h-2 rounded-full bg-${accentColor} animate-pulse`} />
                       {duration}
                     </div>
                   </div>

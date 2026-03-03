@@ -38,7 +38,7 @@ const ComparisonTable: React.FC<ComparisonTableProps> = ({
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full max-w-full">
       <div className="mb-12">
         <h2 className="text-4xl font-bold mb-4 tracking-tight">{title}</h2>
         <p className="text-brand-primary/60 font-light">{subtitle}</p>

@@ -287,7 +287,7 @@ const AIInnovation = () => {
   ];
 
   return (
-    <div className="bg-brand-primary min-h-screen selection:bg-brand-accent/30 selection:text-white" ref={containerRef}>
+    <div className="pt-20 bg-brand-primary text-white overflow-x-hidden" ref={containerRef}>
       <PageSEO
         title="AI Innovation | PF & Co Structural Engineering"
         description="Explore our 54-agent AI workforce and generative structural design tools that optimise safety and cost."

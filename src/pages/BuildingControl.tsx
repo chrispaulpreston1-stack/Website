@@ -154,13 +154,24 @@ const BuildingControl = () => {
             </section>
 
             {/* Video Explainer Placeholder */}
+            {/* First Video */}
             <VideoExplainer
                 title="Building Control Explained"
-                accentColor="emerald-600"
-                description="Watch how we bridge the gap between architectural vision and regulatory reality, ensuring a smooth path to your Completion Certificate."
+                accentColor="slate-500"
+                description="A clear walkthrough of what Building Control is, when it's required, and the steps to get your project signed off legally."
                 thumbnailUrl="/videos/building-control-thumb.jpg"
                 videoUrl="/videos/building-control.mp4"
-                duration="3:15"
+                duration="1:55"
+            />
+
+            {/* Second Video */}
+            <VideoExplainer
+                title="Building Control — What You Actually Need"
+                accentColor="slate-400"
+                description="A practical guide detailing the exact documentation, inspections, and requirements you need to successfully navigate Building Control."
+                thumbnailUrl="/videos/building-control-thumb.jpg"
+                videoUrl="/videos/building-control-need.mp4"
+                duration="2:10"
             />
 
             {/* Features List */}
@@ -196,8 +207,8 @@ const BuildingControl = () => {
                     <div className="relative">
                         <div className="aspect-[4/3] rounded-[3rem] overflow-hidden shadow-2xl">
                             <img
-                                src="https://images.unsplash.com/photo-1541888086425-d81bb19240f5?auto=format&fit=crop&q=80&w=1200"
-                                alt="Construction site"
+                                src="https://images.unsplash.com/photo-1541888086925-920a0fbaea31?auto=format&fit=crop&q=80&w=800"
+                                alt="Building Control Inspection"
                                 className="w-full h-full object-cover"
                                 loading="lazy"
                             />
@@ -229,6 +240,16 @@ const BuildingControl = () => {
                     </div>
                 </div>
             </section>
+
+            {/* Second Video Explainer */}
+            <VideoExplainer
+                title="What You Actually Need"
+                accentColor="emerald-600"
+                description="A deeper dive into the specific deliverables, compliance calculations, and technical documents required for your project."
+                thumbnailUrl="/videos/building-control-need-thumb.jpg"
+                videoUrl="/videos/building-control-need.mp4"
+                duration="1:20"
+            />
 
             {/* Final CTA */}
             <section className="bg-brand-primary text-white py-24 my-24 rounded-[3rem] mx-6 relative overflow-hidden">

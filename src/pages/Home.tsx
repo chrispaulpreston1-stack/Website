@@ -274,38 +274,38 @@ const Home = () => {
       </section>
 
       {/* Subscriptions Teaser */}
-      <section className="py-32 bg-brand-surface">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="bg-brand-primary rounded-[3rem] p-12 lg:p-20 text-white relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-96 h-96 bg-brand-accent/20 blur-[120px]" />
-            <div className="relative z-10 grid lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <span className="font-mono text-xs uppercase tracking-[0.3em] text-brand-accent font-bold mb-4 block">New: Engineering as a Service</span>
-                <h2 className="text-5xl font-bold mb-6">Structural Design Subscriptions</h2>
-                <p className="text-white/70 text-lg mb-10">
-                  Stop waiting for quotes. Get unlimited structural calculations and priority design support for a fixed monthly fee.
-                </p>
-                <Link to="/subscriptions" className="bg-brand-accent text-brand-primary px-8 py-4 rounded-full font-bold inline-flex items-center gap-2 hover:scale-105 transition-transform">
-                  View Subscription Plans <ArrowRight size={18} />
-                </Link>
+      <section className="py-24 bg-white relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="bg-brand-primary rounded-[3rem] p-8 md:p-16 flex flex-col lg:flex-row items-center justify-between gap-12 overflow-hidden relative shadow-2xl">
+            <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-slate-500/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3" />
+
+            <div className="max-w-2xl relative z-10">
+              <span className="text-slate-400 font-bold tracking-widest uppercase text-sm mb-4 block">New: Engineering as a Service</span>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white leading-tight">Structural Design <br /><span className="text-slate-400 italic font-accent font-light">Subscriptions</span></h2>
+              <p className="text-brand-primary/20 text-white/80 text-lg mb-8 leading-relaxed max-w-xl font-light">
+                For architects and busy developers. A dedicated structural engineering team on a fixed monthly retainer.
+                Priority turnarounds, infinite revisions, and zero project-by-project quoting delays.
+              </p>
+              <Link to="/subscriptions" className="inline-flex items-center gap-2 font-bold text-white hover:text-slate-300 transition-colors group">
+                View Subscription Plans <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform" />
+              </Link>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-white/10">
+                <h4 className="font-bold text-brand-accent mb-2">24h</h4>
+                <p className="text-xs text-white/60 uppercase tracking-widest">Turnaround</p>
               </div>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-white/10">
-                  <h4 className="font-bold text-brand-accent mb-2">24h</h4>
-                  <p className="text-xs text-white/60 uppercase tracking-widest">Turnaround</p>
-                </div>
-                <div className="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-white/10">
-                  <h4 className="font-bold text-brand-accent mb-2">Unlimited</h4>
-                  <p className="text-xs text-white/60 uppercase tracking-widest">Calculations</p>
-                </div>
-                <div className="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-white/10">
-                  <h4 className="font-bold text-brand-accent mb-2">Priority</h4>
-                  <p className="text-xs text-white/60 uppercase tracking-widest">Support</p>
-                </div>
-                <div className="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-white/10">
-                  <h4 className="font-bold text-brand-accent mb-2">Fixed</h4>
-                  <p className="text-xs text-white/60 uppercase tracking-widest">Monthly Cost</p>
-                </div>
+              <div className="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-white/10">
+                <h4 className="font-bold text-brand-accent mb-2">Unlimited</h4>
+                <p className="text-xs text-white/60 uppercase tracking-widest">Calculations</p>
+              </div>
+              <div className="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-white/10">
+                <h4 className="font-bold text-brand-accent mb-2">Priority</h4>
+                <p className="text-xs text-white/60 uppercase tracking-widest">Support</p>
+              </div>
+              <div className="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-white/10">
+                <h4 className="font-bold text-brand-accent mb-2">Fixed</h4>
+                <p className="text-xs text-white/60 uppercase tracking-widest">Monthly Cost</p>
               </div>
             </div>
           </div>

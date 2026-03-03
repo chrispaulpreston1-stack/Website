@@ -82,12 +82,17 @@ const Subscriptions = () => {
         }}
       />
       <section className="max-w-7xl mx-auto px-6">
-        <div className="text-center max-w-3xl mx-auto mb-20">
-          <span className="font-mono text-xs uppercase tracking-[0.3em] text-brand-accent font-bold mb-4 block">Engineering as a Service</span>
-          <h1 className="text-6xl font-bold mb-8">Structural Subscriptions</h1>
-          <p className="text-xl text-brand-primary/70 leading-relaxed">
-            Stop waiting weeks for calculations. Get on-demand structural engineering that scales with your project volume. Fixed monthly costs, zero overhead.
-          </p>
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+          <div>
+            <span className="font-mono text-xs uppercase tracking-[0.3em] pl-1 mb-4 block opacity-60 font-bold">New Subscriptions</span>
+            <h1 className="text-5xl md:text-[5.5rem] leading-[0.9] font-bold mb-8 tracking-[-0.02em]">
+              Retained <br />
+              <span className="italic font-accent font-light text-slate-400">Engineering.</span>
+            </h1>
+            <p className="text-xl text-brand-primary/70 leading-relaxed">
+              Stop waiting weeks for calculations. Get on-demand structural engineering that scales with your project volume. Fixed monthly costs, zero overhead.
+            </p>
+          </div>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8 mb-24">
