@@ -189,7 +189,7 @@ const blogPosts: BlogPost[] = [
     date: 'Dec 28, 2025',
     author: 'PF & Co',
     category: 'Guides',
-    image: 'https://images.unsplash.com/photo-1541888086925-920a0fbaea31?auto=format&fit=crop&q=80&w=1200',
+    image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200',
     content: [
       'A Construction Management Plan is one of the most commonly attached planning conditions in urban and suburban areas. Its purpose is to demonstrate to the local planning authority that you have thought through the practical impacts of your construction project — noise, dust, traffic, waste, and neighbour disruption — and have a credible plan to manage them. The problem is that many CMPs are written as generic documents that fail to address the specific characteristics of the site, leading to rejection and delay.',
       'Planning officers review CMPs against the wording of the condition and the relevant local plan policies. Most conditions follow a similar pattern: they require details of construction traffic routing, loading and unloading arrangements, storage of materials, working hours, dust and noise mitigation, and measures to prevent mud and debris on the public highway. Some boroughs add specific requirements for Construction Logistics Plans, Non-Road Mobile Machinery registers, or Direct Vision Standard compliance for construction vehicles.',

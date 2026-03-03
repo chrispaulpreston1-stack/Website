@@ -305,7 +305,7 @@ const AIInnovation = () => {
               transition={{ duration: 0.8 }}
             >
               <span className="font-mono text-xs uppercase tracking-[0.5em] text-brand-accent font-bold mb-8 block">Intelligence Integrated / 04</span>
-              <h1 className="text-7xl md:text-9xl font-display font-bold text-white leading-[0.85] mb-12 tracking-tighter">
+              <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-display font-bold text-white leading-[0.9] sm:leading-[0.85] mb-8 sm:mb-12 tracking-tighter">
                 AI <br />
                 <span className="text-brand-accent italic font-serif font-light">Integrated</span> <br />
                 Engineering.
