@@ -117,9 +117,9 @@ const Subscriptions = () => {
                   </li>
                 ))}
               </ul>
-              <a 
-                href={plan.link} 
-                target="_blank" 
+              <a
+                href={plan.link}
+                target="_blank"
                 rel="noopener noreferrer"
                 className={`block w-full py-4 rounded-2xl font-bold transition-all text-center ${plan.highlight ? 'bg-brand-accent text-brand-primary hover:scale-105' : 'bg-brand-surface text-brand-primary hover:bg-gray-200'}`}
               >
@@ -167,9 +167,9 @@ const Subscriptions = () => {
             </div>
           </div>
           <div className="aspect-square rounded-[2rem] overflow-hidden shadow-2xl">
-            <img 
-              src="https://images.unsplash.com/photo-1503387762-592dee58c460?auto=format&fit=crop&q=80&w=1000" 
-              alt="Engineering Office" 
+            <img
+              src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200"
+              alt="Engineering Office"
               className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
               referrerPolicy="no-referrer"
             />

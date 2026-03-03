@@ -9,11 +9,14 @@
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 
   /* Premium Brand Colors */
-  --color-brand-primary: #0F172A; /* Deep Navy */
+  --color-brand-primary: #0F172A;
+  /* Deep Navy */
   --color-brand-secondary: #334155;
-  --color-brand-accent: #F59E0B;  /* Amber/Construction Gold */
-  --color-brand-surface: #FAFAFB; /* Very subtle off-white */
-  
+  --color-brand-accent: #F59E0B;
+  /* Amber/Construction Gold */
+  --color-brand-surface: #FAFAFB;
+  /* Very subtle off-white */
+
   /* Semantic Tokens */
   --color-success: #10B981;
   --color-error: #EF4444;
@@ -21,20 +24,45 @@
   --color-info: #3B82F6;
 
   @keyframes scan {
-    0% { transform: translateY(-100%); }
-    100% { transform: translateY(1000%); }
+    0% {
+      transform: translateY(-100%);
+    }
+
+    100% {
+      transform: translateY(1000%);
+    }
   }
+
   @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-20px);
+    }
   }
+
   @keyframes shimmer {
-    0% { background-position: -200% 0; }
-    100% { background-position: 200% 0; }
+    0% {
+      background-position: -200% 0;
+    }
+
+    100% {
+      background-position: 200% 0;
+    }
   }
+
   @keyframes border-beam {
-    0% { offset-distance: 0%; }
-    100% { offset-distance: 100%; }
+    0% {
+      offset-distance: 0%;
+    }
+
+    100% {
+      offset-distance: 100%;
+    }
   }
 
   --animate-scan: scan 3s linear infinite;
@@ -56,25 +84,31 @@
     @apply bg-brand-primary/10 text-brand-primary;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-display tracking-tight text-brand-primary;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display tracking-tight;
   }
 }
 
 @layer components {
+
   /* iOS/macOS Level Frosted Glass */
   .glass {
-    @apply backdrop-blur-2xl saturate-150 bg-white/70 border border-white/40 shadow-[0_8px_32px_rgba(0,0,0,0.04)];
+    @apply backdrop-blur-2xl saturate-150 bg-white/70 border border-white/40 shadow-[0_8px_32px_rgba(0, 0, 0, 0.04)];
   }
 
   /* Apple-style spring physics hover effect */
   .premium-card {
-    @apply transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)];
+    @apply transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0, 0, 0, 0.06)];
     transition-timing-function: cubic-bezier(0.32, 0.72, 0, 1);
   }
 
   .hover-glow {
-    @apply transition-shadow duration-500 hover:shadow-[0_0_30px_rgba(245,158,11,0.2)];
+    @apply transition-shadow duration-500 hover:shadow-[0_0_30px_rgba(245, 158, 11, 0.2)];
     transition-timing-function: cubic-bezier(0.32, 0.72, 0, 1);
   }
 

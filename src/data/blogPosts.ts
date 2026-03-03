@@ -40,7 +40,7 @@ const blogPosts: BlogPost[] = [
     date: 'Feb 15, 2026',
     author: 'PF & Co',
     category: 'Guides',
-    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=1200',
+    image: 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&q=80&w=1200',
     content: [
       'If you are planning a home extension or knocking through a load-bearing wall, you will almost certainly need RSJ calculations. RSJ stands for Rolled Steel Joist — the steel beams that carry the load of the structure above when a wall is removed. Getting these calculations right is not just important; it is a legal requirement and a matter of structural safety.',
       'The process begins with a structural engineer assessing the loads that the existing wall carries. This includes the weight of the floors above, the roof structure, any walls sitting on top, and what engineers call "imposed loads" — the weight of furniture, people, and anything else the building needs to support in everyday use. All of these forces need to be transferred safely through the new steel beam and down into the foundations.',
@@ -189,7 +189,7 @@ const blogPosts: BlogPost[] = [
     date: 'Dec 28, 2025',
     author: 'PF & Co',
     category: 'Guides',
-    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=1200',
+    image: 'https://images.unsplash.com/photo-1541888086225-ee594b1509a2?auto=format&fit=crop&q=80&w=1200',
     content: [
       'A Construction Management Plan is one of the most commonly attached planning conditions in urban and suburban areas. Its purpose is to demonstrate to the local planning authority that you have thought through the practical impacts of your construction project — noise, dust, traffic, waste, and neighbour disruption — and have a credible plan to manage them. The problem is that many CMPs are written as generic documents that fail to address the specific characteristics of the site, leading to rejection and delay.',
       'Planning officers review CMPs against the wording of the condition and the relevant local plan policies. Most conditions follow a similar pattern: they require details of construction traffic routing, loading and unloading arrangements, storage of materials, working hours, dust and noise mitigation, and measures to prevent mud and debris on the public highway. Some boroughs add specific requirements for Construction Logistics Plans, Non-Road Mobile Machinery registers, or Direct Vision Standard compliance for construction vehicles.',
