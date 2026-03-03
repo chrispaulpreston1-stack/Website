@@ -17,6 +17,54 @@ export interface BlogPost {
 
 const blogPosts: BlogPost[] = [
   {
+    slug: 'engineering-as-a-service-structural-design-subscriptions',
+    title: 'Engineering as a Service: Why Structural Design Subscriptions Are the Future',
+    excerpt: 'Explore how structural design subscriptions provide predictable costs, priority access, and seamless collaboration for ongoing development projects.',
+    date: 'Mar 3, 2026',
+    author: 'PF & Co',
+    category: 'Innovation',
+    image: 'https://images.unsplash.com/photo-1517581177682-a085bb7ffb15?auto=format&fit=crop&q=80&w=1200',
+    content: [
+      'Traditional structural engineering procurement can be frustrating. For proactive property developers, serial flippers, and busy architectural practices, constantly requesting quotes, negotiating fees, and waiting for availability on every single project creates unnecessary bottlenecks.',
+      'Enter "Engineering as a Service." By shifting to a subscription-based model, developers secure dedicated monthly structural design capacity. This means predictable costs, priority scheduling, and a completely frictionless workflow where your engineering team feels like an in-house department rather than a distant external consultant.',
+      'We leverage advanced technology and streamlined internal processes to manage these workloads efficiently. However, the core of this service remains deeply human. Every calculation, structural drawing, and site query is personally verified and signed off by our qualified structural engineers. The technology simply removes the administrative delays, allowing our engineers to focus purely on high-quality design.',
+      'The momentum this model creates for our partners is remarkable. By eliminating the periods usually spent waiting for fee proposals and project onboarding, developments transition from architectural concepts to build-ready technical drawings significantly faster. This continuous, agile momentum directly translates to completing projects and getting them to market sooner.',
+      'A structural design subscription aligns our success with yours. It is an ongoing partnership built on trust, rapid delivery, and the unwavering assurance of expert human verification at every critical stage.'
+    ]
+  },
+  {
+    slug: 'navigating-party-wall-agreements-owners-neighbours-guide',
+    title: 'Navigating Party Wall Agreements: A Guide for Both Owners and Neighbours',
+    excerpt: 'Demystify the Party Wall Act with our clear, supportive guide to resolving notices smoothly, whether you are building an extension or adjoining one.',
+    date: 'Mar 3, 2026',
+    author: 'PF & Co',
+    category: 'Guides',
+    image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=1200',
+    content: [
+      'Receiving or serving a Party Wall Notice often sparks unnecessary anxiety. The legislation sounds formal and intimidating, but the reality is that the Party Wall etc. Act 1996 exists simply to protect both the homeowner undertaking the work and their neighbours. It provides a structured, fair framework for everyone involved.',
+      'If you are the "Building Owner" planning an extension or loft conversion, serving a notice is a legal requirement before cutting into shared walls or excavating near boundaries. Transparent communication is your best tool. Discussing your plans with your neighbours before the formal notice arrives often sets a collaborative tone, preventing immediate disputes.',
+      'If you are the "Adjoining Owner" receiving a notice, it is reassuring to know you have rights. The notice is not a demand to endure damage; it is a request to perform nearby work safely. You have the right to request a Schedule of Condition—a detailed photographic record of your property taken before any work begins, ensuring you are fully protected.',
+      'At PF & Co, we have developed comprehensive video guides to help both parties seamlessly navigate this process. Our approach combines structured technological frameworks with essential human mediation. While modern systems can assist in drafting documents rapidly, it is the empathetic, expert human surveyors and engineers who interpret the nuances of the Act and ensure that awards are fair and disputes are avoided.',
+      'By engaging experienced professionals to manage your Party Wall matters, you ensure the process is handled efficiently. The impact of getting this right early on is a much smoother overall project timeline and preserved neighbourly relations—a vastly preferable outcome to the stress and delays of a stalled build.'
+    ]
+  },
+  {
+    slug: 'hidden-value-site-intelligence-desktop-ground-investigation',
+    title: 'The Hidden Value of Site Intelligence: Why Desktop Ground Investigations Save Budgets',
+    excerpt: 'Discover how a Desktop Ground Investigation unearths hidden site risks before you break ground, protecting your budget and timeline.',
+    date: 'Mar 3, 2026',
+    author: 'PF & Co',
+    category: 'Site Intelligence',
+    image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200',
+    content: [
+      'Groundworks are notoriously the highest-risk phase of any construction project. Developers and homeowners often do not truly know what lies beneath their site until they literally break ground—at which point, discovering an unexpected problem can drastically inflate foundation costs and delay schedules.',
+      'This is where "Site Intelligence" changes the game. By conducting a comprehensive Desktop Ground Investigation (DGI) before purchasing land or finalizing designs, we uncover critical historical data, geological maps, and flood risk profiles. It is about having foresight rather than hindsight.',
+      'Modern analysis tools allow us to process vast amounts of geological and environmental data quickly. However, raw data alone is never enough to base structural decisions upon. The true value and safety comes when this compiled information is meticulously analysed, interpreted, and verified by our experienced human structural and geotechnical engineers. They understand the site-specific nuances, confirming whether a historical clay pit or a nearby watercourse genuinely threatens your specific foundation design.',
+      'The impact of this upfront investigation is profound. We have seen projects completely avoid costly, over-engineered foundation solutions because our early analysis provided confidence in the ground conditions. While we cannot quantify the exact hours saved on every single project, the vast efficiency gained during the planning and design phases keeps your project moving seamlessly and protects your overall budget from sudden, nasty surprises.',
+      'A strategic Desktop Ground Investigation is not just an administrative checkbox; it is a vital risk-management tool. It empowers you and your architectural team to design with absolute certainty, built on a solid foundation of both advanced data gathering and rigorous human engineering oversight.'
+    ]
+  },
+  {
     slug: 'ai-in-modern-structural-engineering',
     title: 'The Role of AI in Modern Structural Engineering',
     excerpt: 'How we are using machine learning to deliver faster, more accurate site assessments and structural designs.',
