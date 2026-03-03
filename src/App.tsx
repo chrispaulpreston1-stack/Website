@@ -25,6 +25,8 @@ import PageSEO from './components/PageSEO';
 // Pages
 import Home from './pages/Home';
 import StructuralEngineering from './pages/StructuralEngineering';
+import BuildingControl from './pages/BuildingControl';
+import PartyWallAssessment from './pages/PartyWallAssessment';
 import Construction from './pages/Construction';
 import Blog from './pages/Blog';
 import BlogArticle from './pages/BlogArticle';
@@ -320,6 +322,8 @@ const Footer = () => {
               <li><Link to="/structural-engineering" className="hover:text-brand-accent transition-colors">Structural Design</Link></li>
               <li><Link to="/construction" className="hover:text-brand-accent transition-colors">Construction</Link></li>
               <li><Link to="/site-intelligence" className="hover:text-brand-accent transition-colors">Site Intelligence</Link></li>
+              <li><Link to="/building-control" className="hover:text-brand-accent transition-colors">Building Control</Link></li>
+              <li><Link to="/party-wall" className="hover:text-brand-accent transition-colors">Party Wall</Link></li>
               <li><Link to="/order-report" className="hover:text-brand-accent transition-colors">Order Reports</Link></li>
               <li><Link to="/ai-innovation" className="hover:text-brand-accent transition-colors">AI Innovation</Link></li>
             </ul>
@@ -389,6 +393,8 @@ export default function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/structural-engineering" element={<StructuralEngineering />} />
+              <Route path="/building-control" element={<BuildingControl />} />
+              <Route path="/party-wall" element={<PartyWallAssessment />} />
               <Route path="/construction" element={<Construction />} />
               <Route path="/site-intelligence" element={<SiteIntelligenceHub />} />
               <Route path="/site-intelligence/flood-risk-assessment" element={<FloodRiskAssessment />} />

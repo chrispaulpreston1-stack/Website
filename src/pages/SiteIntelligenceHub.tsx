@@ -237,6 +237,37 @@ const SiteIntelligenceHub = () => {
         </motion.div>
       </section>
 
+      {/* Human Safety Leap */}
+      <section className="max-w-7xl mx-auto px-6 mb-24">
+        <div className="bg-brand-surface border border-brand-accent/20 rounded-[3rem] p-12 lg:p-20 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-brand-accent/5 blur-[100px] rounded-full" />
+          <div className="relative z-10 grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <div className="w-16 h-16 bg-brand-accent/10 flex items-center justify-center text-brand-accent rounded-2xl mb-8">
+                <ShieldAlert size={32} />
+              </div>
+              <h2 className="text-4xl font-display font-bold text-brand-primary mb-6">The Human Safety Leap.</h2>
+              <p className="text-xl font-bold text-brand-primary/80 leading-relaxed mb-6">
+                Data accelerates our intelligence, but human expertise secures it.
+              </p>
+              <p className="text-brand-primary/60 leading-relaxed max-w-lg">
+                Every API call, geospatial analysis, and data-driven insight gathered in our Site Intelligence reports is rigorously reviewed, interpreted, and verified by our qualified human engineers. We don't just hand you raw, unchecked outputs; we deliver actionable, deeply verified engineering intelligence with zero room for error.
+              </p>
+            </div>
+            <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
+              <img
+                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200"
+                alt="Engineer reviewing data"
+                className="absolute inset-0 w-full h-full object-cover"
+                loading="lazy"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute inset-0 bg-brand-primary/10" />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Problem Section */}
       <section className="bg-brand-primary text-white py-24 mb-24 rounded-[3rem] mx-6">
         <div className="max-w-7xl mx-auto px-6">

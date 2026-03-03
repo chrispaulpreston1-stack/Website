@@ -207,8 +207,8 @@ const AIAgentSwarm = () => {
                     opacity: isActive ? 1 : 0.3,
                   }}
                   className={`absolute w-12 h-12 rounded-xl flex items-center justify-center border transition-all duration-500 z-30 ${isActive
-                      ? 'bg-brand-accent border-brand-accent text-brand-primary shadow-[0_0_20px_rgba(245,158,11,0.4)]'
-                      : 'bg-white/5 border-white/10 text-white/40'
+                    ? 'bg-brand-accent border-brand-accent text-brand-primary shadow-[0_0_20px_rgba(245,158,11,0.4)]'
+                    : 'bg-white/5 border-white/10 text-white/40'
                     }`}
                 >
                   {agent.icon}
@@ -267,8 +267,8 @@ const AIInnovation = () => {
       tag: "Optimisation"
     },
     {
-      title: "Automated Compliance",
-      desc: "AI-powered checking of structural calculations against the latest Building Regulations and Eurocodes.",
+      title: "The Human Safety Leap",
+      desc: "AI accelerates the design, but human expertise secures it. Every calculation is rigorously verified and stamped by qualified engineers.",
       icon: <Shield className="text-brand-accent" />,
       tag: "Verification"
     },
@@ -399,10 +399,10 @@ const AIInnovation = () => {
               <div className="w-16 h-16 bg-brand-primary rounded-2xl flex items-center justify-center mb-12 text-brand-accent">
                 <Shield size={32} />
               </div>
-              <h3 className="text-3xl font-display font-bold text-brand-primary mb-6 leading-tight">Automated Compliance</h3>
+              <h3 className="text-3xl font-display font-bold text-brand-primary mb-6 leading-tight">The Human Safety Leap</h3>
             </div>
             <p className="text-brand-primary/70 font-medium">
-              Real-time verification against Eurocodes and UK Building Regs. Zero room for error.
+              AI accelerates the design, but human expertise secures it. Every calculation is rigorously verified and stamped by our qualified structural engineers. Zero room for error.
             </p>
           </motion.div>
 
