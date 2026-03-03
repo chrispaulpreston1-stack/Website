@@ -401,6 +401,13 @@ const SiteIntelligenceHub = () => {
                   { name: "Construction Management Plan", link: "/site-intelligence/construction-management-plan", desc: "Logistics & safety strategy." },
                   { name: "Design Readiness Review", link: "/site-intelligence/pre-construction-design-review", desc: "95-check coordination review." }
                 ]
+              },
+              {
+                cat: "Compliance & Legal",
+                items: [
+                  { name: "Building Control", link: "/building-control", desc: "Part A calculations & drawings." },
+                  { name: "Party Wall Assessment", link: "/party-wall", desc: "Engineering-led legal resolution." }
+                ]
               }
             ].map((category, i) => (
               <div key={i} className="bg-white rounded-3xl p-8 border-2 border-brand-primary/5 hover:border-brand-accent/20 shadow-xl shadow-brand-primary/5 hover:shadow-2xl transition-all duration-500 premium-card group/card">
