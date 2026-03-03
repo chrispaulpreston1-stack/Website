@@ -12,16 +12,16 @@ interface VideoExplainerProps {
 }
 
 const colorMap: Record<string, { text: string; bgLight: string; hoverBg: string }> = {
-  'teal-500':     { text: 'text-teal-500',     bgLight: 'bg-teal-500/10',     hoverBg: 'group-hover:bg-teal-500' },
-  'blue-500':     { text: 'text-blue-500',     bgLight: 'bg-blue-500/10',     hoverBg: 'group-hover:bg-blue-500' },
-  'emerald-500':  { text: 'text-emerald-500',  bgLight: 'bg-emerald-500/10',  hoverBg: 'group-hover:bg-emerald-500' },
-  'slate-500':    { text: 'text-slate-500',    bgLight: 'bg-slate-500/10',    hoverBg: 'group-hover:bg-slate-500' },
-  'amber-500':    { text: 'text-amber-500',    bgLight: 'bg-amber-500/10',    hoverBg: 'group-hover:bg-amber-500' },
-  'amber-600':    { text: 'text-amber-600',    bgLight: 'bg-amber-600/10',    hoverBg: 'group-hover:bg-amber-600' },
-  'indigo-500':   { text: 'text-indigo-500',   bgLight: 'bg-indigo-500/10',   hoverBg: 'group-hover:bg-indigo-500' },
-  'violet-500':   { text: 'text-violet-500',   bgLight: 'bg-violet-500/10',   hoverBg: 'group-hover:bg-violet-500' },
-  'rose-500':     { text: 'text-rose-500',     bgLight: 'bg-rose-500/10',     hoverBg: 'group-hover:bg-rose-500' },
-  'cyan-500':     { text: 'text-cyan-500',     bgLight: 'bg-cyan-500/10',     hoverBg: 'group-hover:bg-cyan-500' },
+  'teal-500': { text: 'text-teal-500', bgLight: 'bg-teal-500/10', hoverBg: 'group-hover:bg-teal-500' },
+  'blue-500': { text: 'text-blue-500', bgLight: 'bg-blue-500/10', hoverBg: 'group-hover:bg-blue-500' },
+  'emerald-500': { text: 'text-emerald-500', bgLight: 'bg-emerald-500/10', hoverBg: 'group-hover:bg-emerald-500' },
+  'slate-500': { text: 'text-slate-500', bgLight: 'bg-slate-500/10', hoverBg: 'group-hover:bg-slate-500' },
+  'amber-500': { text: 'text-amber-500', bgLight: 'bg-amber-500/10', hoverBg: 'group-hover:bg-amber-500' },
+  'amber-600': { text: 'text-amber-600', bgLight: 'bg-amber-600/10', hoverBg: 'group-hover:bg-amber-600' },
+  'indigo-500': { text: 'text-indigo-500', bgLight: 'bg-indigo-500/10', hoverBg: 'group-hover:bg-indigo-500' },
+  'violet-500': { text: 'text-violet-500', bgLight: 'bg-violet-500/10', hoverBg: 'group-hover:bg-violet-500' },
+  'rose-500': { text: 'text-rose-500', bgLight: 'bg-rose-500/10', hoverBg: 'group-hover:bg-rose-500' },
+  'cyan-500': { text: 'text-cyan-500', bgLight: 'bg-cyan-500/10', hoverBg: 'group-hover:bg-cyan-500' },
   'brand-accent': { text: 'text-brand-accent', bgLight: 'bg-brand-accent/10', hoverBg: 'group-hover:bg-brand-accent' },
 };
 
@@ -145,6 +145,8 @@ const VideoExplainer: React.FC<VideoExplainerProps> = ({
               src={videoUrl}
               controls
               autoPlay
+              playsInline
+              preload="metadata"
               className="w-full rounded-2xl shadow-2xl"
             >
               Your browser does not support the video tag.

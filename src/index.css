@@ -1,16 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=JetBrains+Mono:wght@400;500&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Playfair Display", serif;
+  /* Apple-Tier Typography System */
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Outfit", -apple-system, BlinkMacSystemFont, sans-serif;
   --font-accent: "Cormorant Garamond", serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 
+  /* Premium Brand Colors */
   --color-brand-primary: #0F172A; /* Deep Navy */
   --color-brand-secondary: #334155;
   --color-brand-accent: #F59E0B;  /* Amber/Construction Gold */
-  --color-brand-surface: #F8FAFC;
+  --color-brand-surface: #FAFAFB; /* Very subtle off-white */
   
   /* Semantic Tokens */
   --color-success: #10B981;
@@ -43,26 +45,37 @@
 @layer base {
   body {
     @apply font-sans bg-brand-surface text-brand-primary antialiased;
-    /* Avoid pure black on pure white */
     color: #1A1A1A;
+    /* Optical rendering tweaks for premium feel */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    @apply bg-brand-primary/10 text-brand-primary;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-display tracking-tight;
+    @apply font-display tracking-tight text-brand-primary;
   }
 }
 
 @layer components {
+  /* iOS/macOS Level Frosted Glass */
   .glass {
-    @apply backdrop-blur-[12px] saturate-[180%] bg-white/80 border border-white/20;
+    @apply backdrop-blur-2xl saturate-150 bg-white/70 border border-white/40 shadow-[0_8px_32px_rgba(0,0,0,0.04)];
   }
 
+  /* Apple-style spring physics hover effect */
   .premium-card {
-    @apply transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:scale-[1.02] hover:-translate-y-1 hover:shadow-lg;
+    @apply transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)];
+    transition-timing-function: cubic-bezier(0.32, 0.72, 0, 1);
   }
 
   .hover-glow {
-    @apply transition-shadow duration-300 hover:shadow-[0_0_20px_rgba(245,158,11,0.3)];
+    @apply transition-shadow duration-500 hover:shadow-[0_0_30px_rgba(245,158,11,0.2)];
+    transition-timing-function: cubic-bezier(0.32, 0.72, 0, 1);
   }
 
   .shimmer {

@@ -13,12 +13,12 @@ const Home = () => {
         path="/"
       />
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+      <section className="relative min-h-screen flex items-center pt-32 pb-24 overflow-hidden">
         {/* Video Background Concept */}
         <div className="absolute inset-0 z-0">
-          <img 
+          <img
             src="https://images.unsplash.com/photo-1606836576983-8b458e75221d?auto=format&fit=crop&q=80&w=2000"
-            alt="London Skyline with Construction" 
+            alt="London Skyline with Construction"
             className="w-full h-full object-cover grayscale opacity-20"
             referrerPolicy="no-referrer"
           />
@@ -35,9 +35,9 @@ const Home = () => {
               <Zap size={16} />
               <span className="text-xs font-bold uppercase tracking-wider">AI-Powered Structural Engineering</span>
             </div>
-            <h1 className="text-6xl md:text-8xl font-bold leading-[0.9] mb-8">
+            <h1 className="text-6xl md:text-8xl font-bold leading-[0.9] mb-8 tracking-tighter">
               Engineering the <br />
-              <span className="text-brand-accent italic">Foundations</span> <br />
+              <span className="text-brand-accent italic font-accent font-medium">Foundations</span> <br />
               of Tomorrow.
             </h1>
             <p className="text-xl text-brand-primary/70 max-w-lg mb-10 leading-relaxed">
@@ -51,7 +51,7 @@ const Home = () => {
                 View Our Work
               </Link>
             </div>
-            
+
             <div className="mt-12 flex items-center gap-8 opacity-60">
               <div className="flex flex-col">
                 <span className="font-display font-bold text-2xl">300+</span>
@@ -77,9 +77,9 @@ const Home = () => {
             className="relative"
           >
             <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl relative group border-8 border-white">
-              <img 
+              <img
                 src="https://images.unsplash.com/photo-1529655683826-aba9b3e77383?auto=format&fit=crop&q=80&w=1200"
-                alt="London Skyline at Dusk" 
+                alt="London Skyline at Dusk"
                 className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 group-hover:scale-110"
                 referrerPolicy="no-referrer"
               />
@@ -100,7 +100,7 @@ const Home = () => {
       </section>
 
       {/* Trust Bar */}
-      <section className="py-12 bg-brand-surface border-y border-gray-100">
+      <section className="py-16 bg-brand-surface border-y border-gray-100">
         <div className="max-w-7xl mx-auto px-6">
           <p className="text-center text-[10px] uppercase tracking-[0.4em] font-bold text-brand-primary/40 mb-8">Why Clients Trust PF & Co</p>
           <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
@@ -123,7 +123,7 @@ const Home = () => {
       </section>
 
       {/* Quick Links / Services Overview */}
-      <section className="py-24 bg-white">
+      <section className="py-32 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-3 gap-8">
             <Link to="/structural-engineering" className="group relative h-[450px] rounded-[3rem] overflow-hidden">
@@ -167,7 +167,7 @@ const Home = () => {
       </section>
 
       {/* AI Optimization Interactive Section */}
-      <section className="py-24 bg-white overflow-hidden">
+      <section className="py-32 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -176,7 +176,7 @@ const Home = () => {
               <p className="text-lg text-brand-primary/60 mb-10 leading-relaxed">
                 Our proprietary AI algorithms analyze structural loads to find the "Perfect Beam" — minimizing material waste while maximizing safety. See the difference in weight and cost.
               </p>
-              
+
               <div className="space-y-6">
                 <div className="p-6 rounded-2xl bg-brand-surface border border-gray-100">
                   <div className="flex justify-between items-center mb-4">
@@ -193,21 +193,21 @@ const Home = () => {
                     <span className="text-sm font-mono text-brand-accent">980kg Steel (-21%)</span>
                   </div>
                   <div className="w-full h-2 bg-white/10 rounded-full overflow-hidden">
-                    <motion.div 
+                    <motion.div
                       initial={{ width: 0 }}
                       whileInView={{ width: '79%' }}
                       transition={{ duration: 1.5, ease: "easeOut" }}
-                      className="h-full bg-brand-accent" 
+                      className="h-full bg-brand-accent"
                     />
                   </div>
                 </div>
               </div>
             </div>
-            
+
             <div className="relative">
               <div className="aspect-square rounded-[3rem] overflow-hidden bg-brand-primary p-1 flex items-center justify-center">
                 <div className="w-full h-full rounded-[2.8rem] overflow-hidden relative">
-                  <img 
+                  <img
                     src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=1000"
                     alt="Structural Analysis"
                     className="w-full h-full object-cover opacity-50"
@@ -231,7 +231,7 @@ const Home = () => {
       </section>
 
       {/* How We Work */}
-      <section className="py-24 bg-brand-primary text-white overflow-hidden">
+      <section className="py-32 bg-brand-primary text-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <div className="mb-16">
             <span className="font-mono text-xs uppercase tracking-[0.3em] text-brand-accent font-bold mb-4 block">Our Process</span>
@@ -260,7 +260,7 @@ const Home = () => {
       </section>
 
       {/* Subscriptions Teaser */}
-      <section className="py-24 bg-brand-surface">
+      <section className="py-32 bg-brand-surface">
         <div className="max-w-7xl mx-auto px-6">
           <div className="bg-brand-primary rounded-[3rem] p-12 lg:p-20 text-white relative overflow-hidden">
             <div className="absolute top-0 right-0 w-96 h-96 bg-brand-accent/20 blur-[120px]" />
