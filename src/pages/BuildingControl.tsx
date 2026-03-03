@@ -241,15 +241,6 @@ const BuildingControl = () => {
                 </div>
             </section>
 
-            {/* Second Video Explainer */}
-            <VideoExplainer
-                title="What You Actually Need"
-                accentColor="emerald-600"
-                description="A deeper dive into the specific deliverables, compliance calculations, and technical documents required for your project."
-                thumbnailUrl="https://images.unsplash.com/photo-1504307651254-35680f356f58?auto=format&fit=crop&q=80&w=800"
-                videoUrl="/videos/building-control-need.mp4"
-                duration="1:20"
-            />
 
             {/* Final CTA */}
             <section className="bg-brand-primary text-white py-24 my-24 rounded-[3rem] mx-6 relative overflow-hidden">
