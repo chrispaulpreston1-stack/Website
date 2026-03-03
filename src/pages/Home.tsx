@@ -275,13 +275,13 @@ const Home = () => {
 
       {/* Subscriptions Teaser */}
       <section className="py-24 bg-white relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="bg-brand-primary rounded-[3rem] p-8 md:p-16 flex flex-col lg:flex-row items-center justify-between gap-12 overflow-hidden relative shadow-2xl">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 relative z-10">
+          <div className="bg-brand-primary rounded-[3rem] p-6 lg:p-16 flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 overflow-hidden relative shadow-2xl">
             <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-slate-500/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3" />
 
             <div className="max-w-2xl relative z-10">
-              <span className="text-slate-400 font-bold tracking-widest uppercase text-sm mb-4 block">New: Engineering as a Service</span>
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white leading-tight">Structural Design <br /><span className="text-slate-400 italic font-accent font-light">Subscriptions</span></h2>
+              <span className="text-slate-400 font-bold tracking-widest uppercase text-xs sm:text-sm mb-4 block">New: Engineering as a Service</span>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-white leading-tight">Structural Design <br /><span className="text-slate-400 italic font-accent font-light">Subscriptions</span></h2>
               <p className="text-brand-primary/20 text-white/80 text-lg mb-8 leading-relaxed max-w-xl font-light">
                 For architects and busy developers. A dedicated structural engineering team on a fixed monthly retainer.
                 Priority turnarounds, infinite revisions, and zero project-by-project quoting delays.

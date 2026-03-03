@@ -102,7 +102,7 @@ const Subscriptions = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
-              className={`relative p-10 rounded-[3rem] border ${plan.highlight ? 'bg-brand-primary text-white border-brand-primary shadow-2xl scale-105 z-10' : 'bg-white border-gray-100 shadow-sm'}`}
+              className={`relative p-8 lg:p-10 rounded-[3rem] border ${plan.highlight ? 'bg-brand-primary text-white border-brand-primary shadow-2xl lg:scale-105 z-10' : 'bg-white border-gray-100 shadow-sm'}`}
             >
               {plan.highlight && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-accent text-brand-primary px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">

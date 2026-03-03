@@ -246,7 +246,7 @@ const BuildingControl = () => {
                 title="What You Actually Need"
                 accentColor="emerald-600"
                 description="A deeper dive into the specific deliverables, compliance calculations, and technical documents required for your project."
-                thumbnailUrl="/videos/building-control-need-thumb.jpg"
+                thumbnailUrl="/videos/building-control-thumb.jpg"
                 videoUrl="/videos/building-control-need.mp4"
                 duration="1:20"
             />
