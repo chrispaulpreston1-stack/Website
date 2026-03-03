@@ -464,10 +464,10 @@ const SiteIntelligenceHub = () => {
             <table className="w-full text-left border-collapse min-w-[800px]">
               <thead>
                 <tr className="border-b border-brand-primary/10">
-                  <th className="py-8 font-mono text-[10px] uppercase tracking-[0.3em] text-brand-primary/40 w-[40%]">Capability</th>
-                  <th className="py-8 font-mono text-[10px] uppercase tracking-[0.3em] text-brand-primary/40 text-center w-[20%]">Traditional Consultant</th>
-                  <th className="py-8 font-mono text-[10px] uppercase tracking-[0.3em] text-brand-primary/40 text-center w-[20%]">Online Map Check</th>
-                  <th className="py-8 font-mono text-[10px] uppercase tracking-[0.3em] text-brand-accent text-center bg-brand-primary/5 rounded-t-3xl w-[20%]">Site Intelligence</th>
+                  <th className="py-8 font-mono text-xs uppercase tracking-[0.3em] text-brand-primary/60 border-b border-brand-primary/10 w-[40%]">Capability</th>
+                  <th className="py-8 font-mono text-xs uppercase tracking-[0.3em] text-brand-primary/60 text-center border-b border-brand-primary/10 w-[20%]">Traditional Consultant</th>
+                  <th className="py-8 font-mono text-xs uppercase tracking-[0.3em] text-brand-primary/60 text-center border-b border-brand-primary/10 w-[20%]">Online Map Check</th>
+                  <th className="py-8 font-mono text-xs uppercase tracking-[0.3em] text-brand-accent text-center bg-brand-primary text-white rounded-t-3xl border-b border-brand-primary/10 w-[20%]">Site Intelligence</th>
                 </tr>
               </thead>
               <tbody className="text-sm">
@@ -484,17 +484,17 @@ const SiteIntelligenceHub = () => {
                     <td className="py-6 font-bold text-brand-primary/80 group-hover:text-brand-primary transition-colors">{row.cap}</td>
                     <td className="py-6 text-center text-brand-primary/60">
                       <div className="flex justify-center">
-                        {row.trad === true ? <Check size={20} className="text-green-600" /> : row.trad === false ? <X size={20} className="text-red-400" /> : <span className="text-xs font-medium italic opacity-60">{row.trad}</span>}
+                        {row.trad === true ? <Check size={24} strokeWidth={3} className="text-green-600" /> : row.trad === false ? <X size={24} strokeWidth={3} className="text-red-400" /> : <span className="text-sm font-bold italic opacity-80">{row.trad}</span>}
                       </div>
                     </td>
                     <td className="py-6 text-center text-brand-primary/60">
                       <div className="flex justify-center">
-                        {row.map === true ? <Check size={20} className="text-green-600" /> : row.map === false ? <X size={20} className="text-red-400" /> : <span className="text-xs font-medium italic opacity-60">{row.map}</span>}
+                        {row.map === true ? <Check size={24} strokeWidth={3} className="text-green-600" /> : row.map === false ? <X size={24} strokeWidth={3} className="text-red-400" /> : <span className="text-sm font-bold italic opacity-80">{row.map}</span>}
                       </div>
                     </td>
                     <td className="py-6 text-center font-bold text-brand-primary bg-brand-primary/5 border-x border-brand-primary/5">
                       <div className="flex justify-center">
-                        {row.si === true ? <Check size={20} className="text-brand-accent" /> : <span className="text-brand-accent">{row.si}</span>}
+                        {row.si === true ? <Check size={24} strokeWidth={3} className="text-brand-accent" /> : <span className="text-sm font-bold italic text-brand-accent">{row.si}</span>}
                       </div>
                     </td>
                   </tr>
