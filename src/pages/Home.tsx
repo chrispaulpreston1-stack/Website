@@ -9,7 +9,7 @@ const Home = () => {
     <div className="selection:bg-brand-accent/30">
       <PageSEO
         title="PF & Co | AI-Powered Structural Engineering & Construction"
-        description="Surrey and London's leading AI-powered structural engineering and construction firm. Precision calculations, fixed quotes, and 24h turnaround."
+        description="Nationwide AI-powered structural engineering and construction firm. Precision calculations, fixed quotes, and 24h turnaround."
         path="/"
       />
       {/* Hero Section */}
@@ -41,7 +41,7 @@ const Home = () => {
               of Tomorrow.
             </h1>
             <p className="text-xl text-brand-primary/70 max-w-lg mb-10 leading-relaxed">
-              We combine advanced AI integration with decades of structural expertise to deliver precision-engineered solutions across Surrey and London.
+              We combine advanced AI integration with decades of structural expertise to deliver precision-engineered solutions across England and Wales.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link to="/contact" className="bg-brand-primary text-white px-8 py-4 rounded-full font-bold flex items-center gap-2 hover:scale-105 transition-transform">

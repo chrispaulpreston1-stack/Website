@@ -15,7 +15,7 @@ const Construction = () => {
   return (
     <div className="pt-32 pb-24">
       <PageSEO
-        title="Precision Construction | PF & Co Surrey & London"
+        title="Precision Construction | PF & Co Nationwide"
         description="Expert construction services led by engineers. We specialize in structural alterations, extensions, and basement builds in the UK."
         path="/construction"
         jsonLd={{
@@ -23,17 +23,17 @@ const Construction = () => {
           name: 'Precision Construction Services',
           description: 'Expert construction services led by engineers, specializing in structural alterations, extensions, and basement builds.',
           provider: { '@type': 'Organization', name: 'PF & Co Construction' },
-          areaServed: ['Surrey', 'London', 'South East England'],
+          areaServed: ['England', 'Wales', 'UK'],
           serviceType: 'Construction',
         }}
       />
       <section className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
           <div className="order-2 lg:order-1 aspect-video rounded-[3rem] overflow-hidden shadow-2xl">
-            <img 
+            <img
               src="https://images.unsplash.com/photo-1520986606214-8b456906c813?auto=format&fit=crop&q=80&w=1200"
               alt="London City Construction"
-              loading="lazy" 
+              loading="lazy"
               className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
               referrerPolicy="no-referrer"
             />
@@ -139,7 +139,7 @@ const Construction = () => {
               <h2 className="text-3xl font-bold mb-4">Eliminate Site Risk Early</h2>
               <p className="text-white/60">Our Site Intelligence reports screen for 22+ planning and ground constraints before you commit to a design.</p>
             </div>
-            <Link 
+            <Link
               to="/site-intelligence"
               className="px-8 py-4 bg-brand-accent text-brand-primary rounded-xl font-bold hover:bg-brand-accent/90 transition-all flex items-center gap-2 whitespace-nowrap"
             >

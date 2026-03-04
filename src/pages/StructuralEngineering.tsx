@@ -15,7 +15,7 @@ const StructuralEngineering = () => {
   return (
     <div className="pt-32 pb-24">
       <PageSEO
-        title="Structural Engineering & Calculations | PF & Co Surrey & London"
+        title="Structural Engineering & Calculations | PF & Co Nationwide"
         description="Professional structural engineering services including beam calculations, residential design, and basement impact assessments. 24h turnaround available."
         path="/structural-engineering"
         jsonLd={{
@@ -23,7 +23,7 @@ const StructuralEngineering = () => {
           name: 'Structural Engineering Services',
           description: 'Professional structural engineering services including beam calculations, residential design, and basement impact assessments.',
           provider: { '@type': 'Organization', name: 'PF & Co Construction' },
-          areaServed: ['Surrey', 'London', 'South East England'],
+          areaServed: ['England', 'Wales', 'UK'],
           serviceType: 'Structural Engineering',
         }}
       />

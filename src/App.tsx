@@ -53,6 +53,7 @@ import OrderReport from './pages/OrderReport';
 import OrderSuccess from './pages/OrderSuccess';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
+import ReportPackages from './pages/ReportPackages';
 
 // --- Global Components ---
 
@@ -222,7 +223,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <p className="text-xs font-mono uppercase tracking-widest opacity-50">Office</p>
-                  <p className="text-xl font-bold">Surrey, London & the South East</p>
+                  <p className="text-xl font-bold">Nationwide across England & Wales</p>
                 </div>
               </div>
             </div>
@@ -294,7 +295,7 @@ const Footer = () => {
               </div>
             </div>
             <p className="text-brand-primary/60 max-w-sm leading-relaxed mb-6">
-              Engineering-led construction and structural design across Surrey and London. We don't just follow plans - we understand the physics.
+              Engineering-led construction and structural design across England and Wales. We don't just follow plans - we understand the physics.
             </p>
             <div className="flex gap-4">
               <a
@@ -360,11 +361,11 @@ export default function App() {
         <div className="min-h-screen selection:bg-brand-accent/30">
           <Helmet>
             <title>PF & Co | AI-Powered Structural Engineering & Construction</title>
-            <meta name="description" content="Precision structural engineering and construction services across Surrey, London and the South East. AI-optimised design, fixed quotes in 24hrs. ICE registered, PI insured." />
-            <meta name="keywords" content="structural engineer surrey, structural calculations guildford, construction company london, basement impact assessment, site feasibility report, AI structural engineering" />
+            <meta name="description" content="Precision structural engineering and construction services nationwide across England and Wales. AI-optimised design, fixed quotes in 24hrs. ICE registered, PI insured." />
+            <meta name="keywords" content="structural engineer nationwide, structural calculations uk, basement impact assessment, site feasibility report, AI structural engineering" />
             <link rel="canonical" href="https://www.pfcoconstruction.co.uk" />
             <meta property="og:title" content="PF & Co | Engineering-Led Construction" />
-            <meta property="og:description" content="Engineering-led construction & structural design across Surrey & London. We don't just follow plans - we understand the physics." />
+            <meta property="og:description" content="Engineering-led construction & structural design across England and Wales. We don't just follow plans - we understand the physics." />
             <meta property="og:type" content="website" />
             <meta property="og:url" content="https://www.pfcoconstruction.co.uk" />
             <meta property="og:image" content="https://www.pfcoconstruction.co.uk/og-image.png" />
@@ -374,11 +375,11 @@ export default function App() {
                 "@context": "https://schema.org",
                 "@type": "LocalBusiness",
                 "name": "PF & Co Construction",
-                "description": "AI-powered structural engineering and construction services across Surrey, London and the South East.",
+                "description": "AI-powered structural engineering and construction services nationwide across England and Wales.",
                 "url": "https://www.pfcoconstruction.co.uk",
                 "telephone": "01483 363210",
                 "email": "info@pfcoconstruction.co.uk",
-                "areaServed": ["Surrey", "London", "South East England"],
+                "areaServed": ["England", "Wales", "UK"],
                 "serviceType": ["Structural Engineering", "Construction", "Site Intelligence"],
                 "address": {
                   "@type": "PostalAddress",
@@ -414,6 +415,7 @@ export default function App() {
               <Route path="/site-intelligence/tree-survey" element={<TreeSurvey />} />
               <Route path="/site-intelligence/cil-liability-assessment" element={<CILLiabilityAssessment />} />
               <Route path="/subscriptions" element={<Subscriptions />} />
+              <Route path="/report-packages" element={<ReportPackages />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/insights/:slug" element={<BlogArticle />} />
               <Route path="/ai-innovation" element={<AIInnovation />} />
@@ -421,7 +423,7 @@ export default function App() {
               <Route path="/order-success" element={<OrderSuccess />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route path="/terms-of-service" element={<TermsOfService />} />
-              <Route path="/contact" element={<><PageSEO title="Contact Us | PF & Co Construction" description="Get in touch with PF & Co for structural engineering, construction, and site intelligence services across Surrey, London, and the South East." path="/contact" /><ContactSection /></>} />
+              <Route path="/contact" element={<><PageSEO title="Contact Us | PF & Co Construction" description="Get in touch with PF & Co for structural engineering, construction, and site intelligence services nationwide across England and Wales." path="/contact" /><ContactSection /></>} />
               <Route path="*" element={
                 <div className="min-h-screen flex items-center justify-center bg-brand-surface">
                   <div className="text-center px-6">

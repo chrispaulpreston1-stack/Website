@@ -57,7 +57,7 @@ const SiteIntelligenceHub = () => {
             name: 'Site Intelligence',
             description: 'Data-driven pre-construction screening interrogating 25+ authoritative data sources to identify planning, flood, and ground risks.',
             provider: { '@type': 'Organization', name: 'PF & Co Site Intelligence' },
-            areaServed: ['Surrey', 'London', 'South East England'],
+            areaServed: ['England', 'Wales', 'UK'],
             serviceType: 'Site Intelligence',
           },
           {
