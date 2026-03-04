@@ -15,7 +15,8 @@ const SiteIntelligenceHub = () => {
       accent: "border-teal-500",
       price: "1,500",
       rrp: "2,500",
-      features: ["Planning constraints & PD rights", "Flood & drainage risk", "Heritage & conservation", "Ecology & biodiversity", "Planning Friction Score (0-100)"]
+      features: ["Planning constraints & PD rights", "Flood & drainage risk", "Heritage & conservation", "Ecology & biodiversity", "Planning Friction Score (0-100)"],
+      sample: "/samples/site-feasibility-report-sample.pdf"
     },
     {
       title: "Geotechnical Desk Study",
@@ -25,7 +26,8 @@ const SiteIntelligenceHub = () => {
       accent: "border-amber-600",
       price: "900",
       rrp: "1,500",
-      features: ["BGS geological mapping", "Borehole & trial pit data", "Shrink-swell clay analysis", "Contamination risk screen", "Foundation recommendations"]
+      features: ["BGS geological mapping", "Borehole & trial pit data", "Shrink-swell clay analysis", "Contamination risk screen", "Foundation recommendations"],
+      sample: null
     },
     {
       title: "Flood Risk Assessment",
@@ -35,7 +37,8 @@ const SiteIntelligenceHub = () => {
       accent: "border-blue-500",
       price: "375",
       rrp: "600",
-      features: ["4 Decision Risk Scores (0-10)", "Climate change allowances", "Sequential & Exception Tests", "Mitigation & SuDS strategy", "Planning-ready format"]
+      features: ["4 Decision Risk Scores (0-10)", "Climate change allowances", "Sequential & Exception Tests", "Mitigation & SuDS strategy", "Planning-ready format"],
+      sample: null
     }
   ];
 
