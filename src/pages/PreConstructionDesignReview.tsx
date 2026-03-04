@@ -56,7 +56,7 @@ const PreConstructionDesignReview = () => {
             name: 'Pre-Construction Design Review',
             description: 'Systematic 95-check review of your drawing package — catching clashes, gaps, and missing information.',
             brand: { '@type': 'Organization', name: 'PF & Co Construction' },
-            offers: { '@type': 'Offer', price: '375', priceCurrency: 'GBP' },
+            offers: { '@type': 'Offer', price: '425', priceCurrency: 'GBP' },
           },
           {
             '@type': 'VideoObject',
@@ -103,7 +103,7 @@ const PreConstructionDesignReview = () => {
               </a>
               <div className="flex flex-col">
                 <div className="inline-block px-3 py-1 bg-brand-accent/20 border border-brand-accent/30 rounded-full text-brand-accent text-[10px] uppercase tracking-widest font-bold mb-3 self-start">
-                  Early Access Pricing - 40% off all reports.
+                  Early Access Pricing - 50% off this report.
                 </div>
                 <div className="flex items-baseline gap-3 mb-1">
                   <span className="text-3xl font-mono font-bold text-white">Early Access: £425</span>
@@ -222,7 +222,7 @@ const PreConstructionDesignReview = () => {
 
               <div className="mt-16 p-12 bg-brand-primary rounded-[3rem] text-white relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-64 h-64 bg-rose-500/20 blur-[80px]" />
-                <h3 className="text-3xl font-bold mb-6 relative z-10">48hr Turnaround <br /><span className="text-rose-400 italic font-accent font-light">Guaranteed.</span></h3>
+                <h3 className="text-3xl font-bold mb-6 relative z-10">48hr Turnaround <br /><span className="text-rose-400 italic font-accent font-light">Typical.</span></h3>
                 <p className="text-white/60 mb-8 relative z-10 font-light">
                   Time is the biggest risk in any development. We deliver our Tier 1 assessments within 48 hours of instruction, so you can make decisions at the speed of the market.
                 </p>

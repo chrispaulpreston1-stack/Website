@@ -38,8 +38,18 @@ const StructuralEngineering = () => {
             <p className="text-xl text-brand-primary/70 leading-relaxed mb-8">
               Our engineering team provides the technical backbone for every project. We combine traditional physics with modern computational tools to ensure safety, efficiency, and architectural integrity.
             </p>
-            <div className="flex gap-4">
+            <div className="flex flex-wrap gap-4 items-center">
               <Link to="/contact" className="bg-brand-primary text-white px-8 py-4 rounded-full font-bold hover:scale-105 transition-transform">Request Calculations</Link>
+              <div className="flex flex-col">
+                <div className="inline-block px-3 py-1 bg-brand-accent/20 border border-brand-accent/30 rounded-full text-brand-accent text-[10px] uppercase tracking-widest font-bold mb-2 self-start">
+                  Early Access Pricing
+                </div>
+                <div className="flex items-baseline gap-3 mb-1">
+                  <span className="text-2xl font-mono font-bold text-brand-primary">From £375</span>
+                  <span className="text-base text-brand-primary/50 line-through font-medium">Was £600</span>
+                </div>
+                <span className="text-xs text-brand-primary/50 italic">Standard residential projects — complex schemes quoted individually</span>
+              </div>
             </div>
           </motion.div>
           <div className="aspect-square rounded-[3rem] overflow-hidden shadow-2xl">

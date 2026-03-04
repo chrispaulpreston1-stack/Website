@@ -522,7 +522,7 @@ const SiteIntelligenceHub = () => {
                   { cap: "Heritage & ecology screening", trad: "Sometimes", map: false, si: true },
                   { cap: "Engineer interpretation", trad: true, map: false, si: true },
                   { cap: "Turnaround", trad: "2-4 weeks", map: "Instant", si: "48 hours" },
-                  { cap: "Typical cost", trad: "£1,500-£5,000+", map: "Free-£50", si: "From £245" },
+                  { cap: "Typical cost", trad: "£1,500-£5,000+", map: "Free-£50", si: "From £150" },
                 ].map((row, i) => (
                   <tr key={i} className="border-b border-brand-primary/5 hover:bg-brand-primary/5 transition-colors group">
                     <td className="py-6 font-bold text-brand-primary/80 group-hover:text-brand-primary transition-colors">{row.cap}</td>

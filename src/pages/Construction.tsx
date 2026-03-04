@@ -72,7 +72,7 @@ const Construction = () => {
 
         <div className="mt-24 bg-brand-surface rounded-[3rem] p-12 lg:p-20 border border-gray-100">
           <div className="max-w-3xl">
-            <h2 className="text-4xl font-bold mb-8">The Build Quality Guarantee</h2>
+            <h2 className="text-4xl font-bold mb-8">Our Build Quality Commitment</h2>
             <p className="text-brand-primary/60 text-lg mb-12">
               Every PF & Co build is subject to rigorous internal engineering audits. We don't just wait for building control; we set our own higher standards for structural integrity and finish quality.
             </p>

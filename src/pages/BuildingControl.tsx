@@ -292,7 +292,7 @@ const BuildingControl = () => {
                 <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
                     <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">Don't fail your building inspection.</h2>
                     <p className="text-xl text-white/70 mb-10 max-w-2xl mx-auto">
-                        Get the expert structural calculations and regulatory drawings you need to guarantee compliance and keep your project on track.
+                        Get the expert structural calculations and regulatory drawings you need to achieve compliance and keep your project on track.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <Link to="/contact" className="px-8 py-4 bg-emerald-600 text-white font-bold rounded-xl hover:bg-emerald-700 transition-colors inline-block">

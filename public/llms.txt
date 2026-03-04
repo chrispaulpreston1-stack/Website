@@ -2,7 +2,7 @@
 > AI-powered structural engineering, construction, and site intelligence services across Surrey, London, and the South East of England.
 
 ## About
-PF & Co Construction is an engineering-led construction firm specialising in structural design, precision construction, and data-driven site intelligence. We combine AI-optimised design tools with hands-on engineering expertise to deliver safer, faster, and more cost-effective outcomes. ICE registered, PI insured, with 24-hour turnaround on quotes.
+PF & Co Construction is an engineering-led construction firm specialising in structural design, precision construction, and data-driven site intelligence. We combine AI-optimised design tools with hands-on engineering expertise to deliver safer, faster, and more cost-effective outcomes. PI insured, with 24-hour turnaround on quotes.
 
 ## Services
 
@@ -16,38 +16,57 @@ URL: https://www.pfcoconstruction.co.uk/construction
 
 ### Site Intelligence
 Data-driven pre-construction screening reports interrogating 15+ authoritative data sources. Reports include:
-- Flood Risk Assessment (£295)
-- Geotechnical Desk Study (£345)
-- Site Feasibility Report (£495)
-- Biodiversity Net Gain Screening (£345)
-- Construction Management Plan (£345)
-- Design and Access Statement (£445)
-- Energy Statement (£345)
-- Feasibility Study (£895)
-- Heritage Impact Assessment (£445)
-- Parking Survey (£245)
-- Planning Statement (£445)
-- Pre-Application Advice Pack (£345)
-- Pre-Construction Design Review (£545)
-- Transport Statement (£345)
-- Tree Survey (£395)
-- Full Site Intelligence Bundle (£830)
+- Site Feasibility Report (£1,500)
+- Geotechnical Desk Study (£900)
+- Flood Risk Assessment (£375)
+- Planning Statement (£900)
+- Heritage Impact Assessment (£725)
+- Design & Access Statement (£600)
+- Transport Statement (£600)
+- Sustainability / Energy Statement (£550)
+- CIL Liability Assessment (£500)
+- Construction Management Plan (£425)
+- Party Wall Pre-Assessment (£425)
+- Pre-Construction Design Review (£425)
+- Parking Provision Statement (£375)
+- Biodiversity Net Gain Screening (£300)
+- Concept Feasibility Study (£1,200)
+- Pre-Application Advice Pack (£1,100)
+- BC Readiness Check (£150)
+- Full Site Intelligence Bundle (£2,375)
+All prices are Early Access pricing (approximately 40% off RRP). Prices exclude VAT.
 URL: https://www.pfcoconstruction.co.uk/site-intelligence
 Order: https://www.pfcoconstruction.co.uk/order-report
 Sample reports (illustrative PDFs with fictional data) are available for every product:
   https://www.pfcoconstruction.co.uk/samples/{slug}-sample.pdf
-  Slugs: site-feasibility, geotechnical-desk-study, flood-risk-assessment, biodiversity-net-gain, construction-management-plan, design-and-access-statement, energy-statement, feasibility-study, heritage-impact-assessment, parking-survey, planning-statement, transport-statement, pre-construction-design-review, tree-survey, pre-application-advice, full-bundle
+  Slugs: site-feasibility, geotechnical-desk-study, flood-risk-assessment, biodiversity-net-gain, construction-management-plan, design-and-access-statement, energy-statement, feasibility-study, heritage-impact-assessment, parking-survey, planning-statement, transport-statement, pre-construction-design-review, pre-application-advice, cil-liability-assessment, party-wall-assessment, building-control, full-bundle
+
+### Report Packages
+Pre-construction diligence bundles at additional savings:
+- Pre-Planning Pack (4 reports): £3,025
+- Triple Threat (3 reports): £2,375
+- Site Acquisition Pack (5 reports): £2,900
+- Architect Support Pack (5 reports): £2,625
+- Self-Build Starter (4 reports): £3,050
+- Land Buyer Screening (5 reports): £3,500
+URL: https://www.pfcoconstruction.co.uk/report-packages
 
 ### AI Innovation
-54-agent AI workforce and generative structural design tools that optimise safety and reduce material waste.
+AI-powered structural design tools that optimise safety and reduce material waste.
 URL: https://www.pfcoconstruction.co.uk/ai-innovation
 
 ### Subscriptions
-Engineering as a Service — unlimited structural calculations and priority design support for a fixed monthly fee.
+Engineering as a Service — structural calculations and priority design support for a fixed monthly fee.
+- Starter: £595/mo
+- Professional: £1,495/mo
+- Enterprise: £2,995/mo
 URL: https://www.pfcoconstruction.co.uk/subscriptions
 
 ## Insights / Blog
 Expert articles on structural engineering, planning, and site intelligence:
+- Engineering as a Service — Structural Design Subscriptions: https://www.pfcoconstruction.co.uk/insights/engineering-as-a-service-structural-design-subscriptions
+- Navigating Party Wall Agreements: https://www.pfcoconstruction.co.uk/insights/navigating-party-wall-agreements-owners-neighbours-guide
+- The Hidden Value of Site Intelligence: https://www.pfcoconstruction.co.uk/insights/hidden-value-site-intelligence-desktop-ground-investigation
 - The Role of AI in Modern Structural Engineering: https://www.pfcoconstruction.co.uk/insights/ai-in-modern-structural-engineering
 - Understanding RSJ Calculations for Home Extensions: https://www.pfcoconstruction.co.uk/insights/rsj-calculations-home-extensions
 - Basement Impact Assessments — What You Need to Know: https://www.pfcoconstruction.co.uk/insights/basement-impact-assessments-london

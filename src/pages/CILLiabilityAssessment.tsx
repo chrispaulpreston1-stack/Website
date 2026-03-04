@@ -211,7 +211,7 @@ const CILLiabilityAssessment = () => {
 
                             <div className="mt-16 p-12 bg-[#0c1a14] rounded-[3rem] text-white relative overflow-hidden">
                                 <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/20 blur-[80px]" />
-                                <h3 className="text-3xl font-bold mb-6 relative z-10">48hr Turnaround <br /><span className="text-emerald-400 italic font-accent font-light">Guaranteed.</span></h3>
+                                <h3 className="text-3xl font-bold mb-6 relative z-10">48hr Turnaround <br /><span className="text-emerald-400 italic font-accent font-light">Typical.</span></h3>
                                 <p className="text-white/60 mb-8 relative z-10 font-light">
                                     Time is the biggest risk in any development. We deliver our Tier 1 assessments within 48 hours of instruction, so you can make decisions at the speed of the market.
                                 </p>
@@ -232,9 +232,9 @@ const CILLiabilityAssessment = () => {
 
                         <div className="text-center mb-10">
                             <h2 className="text-3xl font-bold text-brand-primary mb-2">CIL Liability Assessment</h2>
-                            <div className="text-lg text-slate-400 line-through mb-2 font-mono">Typical market rate £500 – £1,500</div>
-                            <div className="text-6xl font-bold text-emerald-500 font-display">From £300</div>
-                            <p className="text-sm text-slate-400 mt-2 italic">Based on standard residential extensions and single dwellings</p>
+                            <div className="text-lg text-slate-400 line-through mb-2 font-mono">Typical market rate £800+</div>
+                            <div className="text-6xl font-bold text-emerald-500 font-display">£500</div>
+                            <p className="text-sm text-slate-400 mt-2 italic">Early Access pricing — fixed fee for standard residential projects</p>
                         </div>
 
                         <div className="grid md:grid-cols-2 gap-x-8 gap-y-4 mb-12">
@@ -261,7 +261,7 @@ const CILLiabilityAssessment = () => {
                         </div>
 
                         <div className="mt-10 pt-8 border-t border-brand-primary/5 text-sm text-brand-primary/60 font-light text-center">
-                            <p className="mb-2">£300 for most residential projects (extensions, loft conversions, single dwellings, self-builds).</p>
+                            <p className="mb-2">£500 for most residential projects (extensions, loft conversions, single dwellings, self-builds).</p>
                             <p>Larger or multi-dwelling developments are quoted individually based on site complexity. We'll need your architectural drawings and planning reference to get started.</p>
                         </div>
                     </div>
@@ -276,7 +276,7 @@ const CILLiabilityAssessment = () => {
                         subtitle="And What They Don't Include"
                         columns={["Feature", "PF&Co Construction", "Typical Planning Consultant", "Specialist CIL Firm"]}
                         categories={comparisonCategories}
-                        footerNote="Comparison based on typical UK planning consultancy models. We built our assessment as a standalone product starting at £300 to ensure every project can afford to know its CIL position before work starts."
+                        footerNote="Comparison based on typical UK planning consultancy models. We built our assessment as a standalone product at £500 to ensure every project can afford to know its CIL position before work starts."
                         accentColor="text-emerald-500"
                     />
                 </div>
@@ -380,7 +380,7 @@ const CILLiabilityAssessment = () => {
                                 to="/contact"
                                 className="px-12 py-6 bg-orange-500 text-white rounded-full font-bold hover:scale-105 hover:bg-orange-600 transition-all shadow-xl"
                             >
-                                Get Started — From £300
+                                Get Started — £500
                             </Link>
                             <a href="/samples/cil-liability-assessment-sample.pdf" target="_blank" rel="noopener noreferrer" className="px-12 py-6 bg-emerald-900/40 backdrop-blur-md text-emerald-400 border border-emerald-500/30 rounded-full font-bold hover:bg-emerald-900/60 transition-all flex items-center gap-2">
                                 Sample Report <FileText size={20} />

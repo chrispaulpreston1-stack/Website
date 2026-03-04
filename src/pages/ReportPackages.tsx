@@ -116,7 +116,7 @@ const ReportPackages = () => {
           Report <span className="italic font-accent font-light text-brand-primary/60">Packages.</span>
         </h1>
         <p className="text-xl text-brand-primary/70 leading-relaxed max-w-3xl mx-auto">
-          Pre-construction diligence is cheaper when bundled. These "grab and go" packages save you up to 33% compared to commissioning reports individually. Delivered with our signature 48-hour turnaround.
+          Pre-construction diligence is cheaper when bundled. These "grab and go" packages save you up to 49% compared to commissioning reports individually. Delivered with our signature 48-hour turnaround.
         </p>
       </section>
 

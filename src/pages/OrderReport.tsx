@@ -246,7 +246,7 @@ const OrderReport = () => {
                       >
                         {r.isBundle && (
                           <div className="absolute top-0 right-0 bg-brand-accent text-brand-primary text-[10px] font-bold px-3 py-1 rounded-bl-xl uppercase tracking-widest">
-                            Best Value
+                            Most Popular
                           </div>
                         )}
                         <div className="flex items-center gap-4">
@@ -513,7 +513,7 @@ const OrderReport = () => {
                 <div className="relative z-10 space-y-6">
                   <div className="flex items-center gap-3">
                     <ShieldCheck className="text-brand-accent" size={20} />
-                    <span className="text-sm font-bold">PF&Co Guarantee</span>
+                    <span className="text-sm font-bold">Our Commitment</span>
                   </div>
                   <div className="space-y-4">
                     <div className="flex items-start gap-3">
@@ -522,7 +522,7 @@ const OrderReport = () => {
                     </div>
                     <div className="flex items-start gap-3">
                       <Clock size={16} className="text-brand-accent mt-1 shrink-0" />
-                      <p className="text-xs text-white/60 leading-relaxed">Guaranteed delivery within 2 working days.</p>
+                      <p className="text-xs text-white/60 leading-relaxed">We aim to deliver within 2 working days.</p>
                     </div>
                   </div>
                 </div>

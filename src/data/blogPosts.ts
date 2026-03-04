@@ -119,7 +119,7 @@ const blogPosts: BlogPost[] = [
       title: 'Site Feasibility Report',
       path: '/site-intelligence/site-feasibility-report',
       orderSlug: 'site-feasibility-report',
-      price: '297',
+      price: '1500',
     },
   },
   {
@@ -142,7 +142,7 @@ const blogPosts: BlogPost[] = [
       title: 'Flood Risk Assessment',
       path: '/site-intelligence/flood-risk-assessment',
       orderSlug: 'flood-risk-assessment',
-      price: '295',
+      price: '375',
     },
   },
   {
@@ -165,7 +165,7 @@ const blogPosts: BlogPost[] = [
       title: 'Full Site Intelligence Bundle',
       path: '/site-intelligence',
       orderSlug: 'full-bundle',
-      price: '830',
+      price: '2375',
     },
   },
   {
@@ -188,7 +188,7 @@ const blogPosts: BlogPost[] = [
       title: 'Geotechnical Desk Study',
       path: '/site-intelligence/geotechnical-desk-study',
       orderSlug: 'geotechnical-desk-study',
-      price: '297',
+      price: '900',
     },
   },
   {
@@ -228,7 +228,7 @@ const blogPosts: BlogPost[] = [
       title: 'BNG Screening & Feasibility',
       path: '/site-intelligence/biodiversity-net-gain',
       orderSlug: 'biodiversity-net-gain',
-      price: '325',
+      price: '300',
     },
   },
   {
@@ -251,7 +251,7 @@ const blogPosts: BlogPost[] = [
       title: 'Construction Management Plan',
       path: '/site-intelligence/construction-management-plan',
       orderSlug: 'construction-management-plan',
-      price: '345',
+      price: '425',
     },
   },
 ];
