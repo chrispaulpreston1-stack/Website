@@ -24,17 +24,16 @@ const ReportPackages = () => {
     {
       target: "For Homeowners",
       name: "The Triple Threat",
-      price: "£3,125",
-      rrp: "£6,000",
-      saving: "Save £2,875 (48%)",
-      desc: "Site assessment, structural feasibility, and engineering design securely bundled.",
+      price: "£2,375",
+      rrp: "£4,600",
+      saving: "Save £2,225 (48%)",
+      desc: "Site Feasibility, Geotechnical analysis, and Flood Risk securely bundled.",
       features: [
         "Site Feasibility Report",
-        "Structural Engineering Design Package",
-        "Building Control Submission Package",
-        "Party Wall Pre-Assessment",
-        "CIL Liability Assessment"
+        "Geotechnical Desk Study",
+        "Flood Risk Assessment"
       ],
+      link: "/order-report?report=triple-threat",
       popular: true,
     },
     {
@@ -168,7 +167,7 @@ const ReportPackages = () => {
               </ul>
 
               <Link
-                to="/contact"
+                to={bundle.link || "/contact"}
                 className={`block w-full py-4 rounded-xl font-bold transition-all text-center mt-auto ${bundle.popular ? 'bg-brand-accent text-brand-primary hover:scale-105 shadow-xl shadow-brand-accent/20' : 'bg-brand-surface text-brand-primary hover:bg-gray-100'}`}
               >
                 Request Package

@@ -466,13 +466,13 @@ const SiteIntelligenceHub = () => {
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-[2.5rem] p-10 flex flex-col items-center text-center">
               <div className="text-sm font-bold uppercase tracking-widest text-white/40 mb-2">Bundle Price</div>
               <div className="flex flex-col sm:flex-row items-center sm:items-baseline justify-center gap-2 sm:gap-3 mb-2">
-                <span className="text-5xl md:text-6xl font-bold text-white">£2,350</span>
+                <span className="text-5xl md:text-6xl font-bold text-white">£2,375</span>
                 <span className="text-lg md:text-xl text-white/40 line-through">RRP £4,600</span>
               </div>
-              <div className="text-brand-accent text-xs md:text-sm font-bold mb-8 italic">Save £2,250 (Early Access)</div>
+              <div className="text-brand-accent text-xs md:text-sm font-bold mb-8 italic">Save £2,225 (Early Access)</div>
 
               <Link
-                to="/order-report?report=full-bundle"
+                to="/order-report?report=triple-threat"
                 className="w-full py-5 bg-brand-accent text-brand-primary rounded-2xl font-bold text-lg hover:scale-[1.02] transition-all flex items-center justify-center gap-2 shadow-xl shadow-brand-accent/20"
               >
                 Unlock Full Bundle — Early Access <Zap size={20} />
