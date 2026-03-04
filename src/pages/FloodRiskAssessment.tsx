@@ -86,7 +86,7 @@ const FloodRiskAssessment = () => {
             name: 'Flood Risk Assessment',
             description: 'Tier 1 Desktop Flood Risk Assessment evaluating fluvial, surface water, groundwater, and sewer flood risk.',
             brand: { '@type': 'Organization', name: 'PF & Co Construction' },
-            offers: { '@type': 'Offer', price: '295', priceCurrency: 'GBP' },
+            offers: { '@type': 'Offer', price: '375', priceCurrency: 'GBP' },
           },
           {
             '@type': 'VideoObject',
@@ -132,11 +132,14 @@ const FloodRiskAssessment = () => {
                 Sample Report <FileText size={20} className="text-blue-400" />
               </a>
               <div className="flex flex-col">
-                <span className="text-[10px] uppercase tracking-widest text-blue-400 font-bold mb-1">Introductory Offer</span>
-                <div className="flex items-baseline gap-2">
-                  <span className="text-2xl font-mono font-bold text-white">£295</span>
-                  <span className="text-sm text-white/60 line-through">RRP £297</span>
+                <div className="inline-block px-3 py-1 bg-brand-accent/20 border border-brand-accent/30 rounded-full text-brand-accent text-[10px] uppercase tracking-widest font-bold mb-3 self-start">
+                  Early Access Pricing - 40% off all reports.
                 </div>
+                <div className="flex items-baseline gap-3 mb-1">
+                  <span className="text-3xl font-mono font-bold text-white">Early Access: £375</span>
+                  <span className="text-base text-white/50 line-through font-medium">Was £600</span>
+                </div>
+                <span className="text-xs text-white/70 italic">First 50 reports at early access pricing</span>
               </div>
             </div>
           </motion.div>
@@ -324,6 +327,21 @@ const FloodRiskAssessment = () => {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      
+      {/* MEGA PILLAR CROSS-LINK */}
+      <section className="max-w-4xl mx-auto px-6 pb-24 -mt-8">
+        <div className="bg-brand-surface border-2 border-brand-accent/20 rounded-[2rem] p-8 md:p-10 text-center shadow-xl shadow-brand-primary/5 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-32 h-32 bg-brand-accent/10 blur-[50px] rounded-full" />
+          <p className="text-brand-primary/90 font-medium text-lg md:text-xl relative z-10 leading-relaxed">
+            Not sure which reports you need? <br className="hidden sm:block" />
+            See our complete engineering guide: <br className="hidden sm:block" />
+            <a href="/blog/what-reports-do-you-need-for-planning-permission/" className="text-brand-accent font-bold hover:underline decoration-2 underline-offset-4 mt-2 inline-block">
+              What Reports Do You Need for Planning Permission? &rarr;
+            </a>
+          </p>
         </div>
       </section>
 

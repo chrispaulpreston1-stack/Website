@@ -13,8 +13,8 @@ const SiteIntelligenceHub = () => {
       icon: <Search className="text-teal-500" size={32} />,
       link: "/site-intelligence/site-feasibility-report",
       accent: "border-teal-500",
-      price: 297,
-      rrp: 495,
+      price: "1,500",
+      rrp: "2,500",
       features: ["Planning constraints & PD rights", "Flood & drainage risk", "Heritage & conservation", "Ecology & biodiversity", "Planning Friction Score (0-100)"]
     },
     {
@@ -23,8 +23,8 @@ const SiteIntelligenceHub = () => {
       icon: <Database className="text-amber-600" size={32} />,
       link: "/site-intelligence/geotechnical-desk-study",
       accent: "border-amber-600",
-      price: 297,
-      rrp: 345,
+      price: "900",
+      rrp: "1,500",
       features: ["BGS geological mapping", "Borehole & trial pit data", "Shrink-swell clay analysis", "Contamination risk screen", "Foundation recommendations"]
     },
     {
@@ -33,8 +33,8 @@ const SiteIntelligenceHub = () => {
       icon: <ShieldAlert className="text-blue-500" size={32} />,
       link: "/site-intelligence/flood-risk-assessment",
       accent: "border-blue-500",
-      price: 295,
-      rrp: 297,
+      price: "375",
+      rrp: "600",
       features: ["4 Decision Risk Scores (0-10)", "Climate change allowances", "Sequential & Exception Tests", "Mitigation & SuDS strategy", "Planning-ready format"]
     }
   ];
@@ -466,10 +466,10 @@ const SiteIntelligenceHub = () => {
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-[2.5rem] p-10 flex flex-col items-center text-center">
               <div className="text-sm font-bold uppercase tracking-widest text-white/40 mb-2">Bundle Price</div>
               <div className="flex flex-col sm:flex-row items-center sm:items-baseline justify-center gap-2 sm:gap-3 mb-2">
-                <span className="text-5xl md:text-6xl font-bold text-white">£830</span>
-                <span className="text-lg md:text-xl text-white/40 line-through">RRP £1,137</span>
+                <span className="text-5xl md:text-6xl font-bold text-white">£2,350</span>
+                <span className="text-lg md:text-xl text-white/40 line-through">RRP £4,600</span>
               </div>
-              <div className="text-brand-accent text-xs md:text-sm font-bold mb-8 italic">Save £307 (Early Access)</div>
+              <div className="text-brand-accent text-xs md:text-sm font-bold mb-8 italic">Save £2,250 (Early Access)</div>
 
               <Link
                 to="/order-report?report=full-bundle"

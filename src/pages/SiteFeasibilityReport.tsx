@@ -94,14 +94,14 @@ const SiteFeasibilityReport = () => {
           name: 'Site Feasibility Report',
           description: 'Data-driven pre-construction screening report checking 22+ planning, environmental, and ground risk constraints.',
           brand: { '@type': 'Organization', name: 'PF & Co Construction' },
-          offers: { '@type': 'Offer', price: '297', priceCurrency: 'GBP' },
+          offers: { '@type': 'Offer', price: '1500', priceCurrency: 'GBP' },
         }}
       />
 
       {/* SaaS Style Hero */}
       <section className="relative min-h-screen flex items-center bg-white overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-teal-50/50 -skew-x-6 translate-x-24" />
-        
+
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center relative z-10 w-full">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -127,11 +127,14 @@ const SiteFeasibilityReport = () => {
                 Sample Report <FileText size={20} className="text-teal-400" />
               </a>
               <div className="flex flex-col">
-                <span className="text-[10px] uppercase tracking-widest text-teal-600 font-bold mb-1">Introductory Offer</span>
-                <div className="flex items-baseline gap-2">
-                  <span className="text-2xl font-mono font-bold text-brand-primary">£297</span>
-                  <span className="text-sm text-brand-primary/60 line-through">RRP £495</span>
+                <div className="inline-block px-3 py-1 bg-brand-accent/20 border border-brand-accent/30 rounded-full text-brand-accent text-[10px] uppercase tracking-widest font-bold mb-3 self-start">
+                  Early Access Pricing - 40% off all reports.
                 </div>
+                <div className="flex items-baseline gap-3 mb-1">
+                  <span className="text-3xl font-mono font-bold text-brand-primary">Early Access: £1,500</span>
+                  <span className="text-base text-brand-primary/60 line-through font-medium">Was £2,500</span>
+                </div>
+                <span className="text-xs text-brand-primary/70 italic">First 50 reports at early access pricing</span>
               </div>
             </div>
           </motion.div>
@@ -145,7 +148,7 @@ const SiteFeasibilityReport = () => {
             <div className="bg-white rounded-[3rem] shadow-2xl border border-teal-100 p-1 overflow-hidden">
               <div className="bg-brand-surface rounded-[2.8rem] p-10 relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-teal-500 to-transparent animate-scan" />
-                
+
                 <div className="flex justify-between items-center mb-12">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 bg-teal-600 rounded-xl flex items-center justify-center text-white font-bold shadow-lg shadow-teal-600/30">SFR</div>
@@ -194,7 +197,7 @@ const SiteFeasibilityReport = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 border border-white/10 rounded-[2rem] overflow-hidden">
             {features.map((f, i) => (
               <div key={i} className="p-10 bg-brand-primary hover:bg-white/5 transition-colors min-h-[300px] flex flex-col">
-                <div className="text-4xl font-bold text-teal-400/20 mb-8">0{i+1}</div>
+                <div className="text-4xl font-bold text-teal-400/20 mb-8">0{i + 1}</div>
                 <h4 className="text-xl font-bold mb-4">{f.title}</h4>
                 <p className="text-sm text-white/50 leading-relaxed font-light">{f.desc}</p>
               </div>
@@ -206,7 +209,7 @@ const SiteFeasibilityReport = () => {
       {/* Comparison Table Section */}
       <section className="py-32 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <ComparisonTable 
+          <ComparisonTable
             title="Site Feasibility Report"
             subtitle="What you get vs a typical planning consultant or automated data search"
             columns={["Feature", "PF&Co Site Intelligence", "Typical Planning Consultant", "Groundsure / Envirocheck"]}
@@ -280,19 +283,34 @@ const SiteFeasibilityReport = () => {
         </div>
       </section>
 
+      
+      {/* MEGA PILLAR CROSS-LINK */}
+      <section className="max-w-4xl mx-auto px-6 pb-24 -mt-8">
+        <div className="bg-brand-surface border-2 border-brand-accent/20 rounded-[2rem] p-8 md:p-10 text-center shadow-xl shadow-brand-primary/5 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-32 h-32 bg-brand-accent/10 blur-[50px] rounded-full" />
+          <p className="text-brand-primary/90 font-medium text-lg md:text-xl relative z-10 leading-relaxed">
+            Not sure which reports you need? <br className="hidden sm:block" />
+            See our complete engineering guide: <br className="hidden sm:block" />
+            <a href="/blog/what-reports-do-you-need-for-planning-permission/" className="text-brand-accent font-bold hover:underline decoration-2 underline-offset-4 mt-2 inline-block">
+              What Reports Do You Need for Planning Permission? &rarr;
+            </a>
+          </p>
+        </div>
+      </section>
+
       {/* Final CTA - SaaS High Conversion */}
       <section className="max-w-7xl mx-auto px-6 pb-24">
         <div className="bg-teal-600 rounded-[4rem] p-16 md:p-24 text-center text-white relative overflow-hidden shadow-2xl shadow-teal-600/20">
           <div className="absolute inset-0 opacity-10 engineering-grid" />
           <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 blur-[120px] -translate-y-1/2 translate-x-1/2" />
-          
+
           <div className="relative z-10">
             <h2 className="text-5xl md:text-6xl font-bold mb-8 tracking-tighter">Screen Your Site <br />in 48 Hours.</h2>
             <p className="text-white/80 text-xl mb-12 max-w-2xl mx-auto font-light">
               Don't commit to a site or a design without knowing the constraints. Get a definitive feasibility screen for a fixed fee.
             </p>
             <div className="flex flex-wrap justify-center gap-6">
-              <Link 
+              <Link
                 to="/contact"
                 className="px-12 py-6 bg-brand-primary text-white rounded-full font-bold hover:scale-105 transition-all shadow-xl"
               >

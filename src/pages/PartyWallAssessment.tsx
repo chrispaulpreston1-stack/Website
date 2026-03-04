@@ -206,7 +206,22 @@ const PartyWallAssessment = () => {
                 </div>
             </section>
 
-            {/* Final CTA */}
+            
+      {/* MEGA PILLAR CROSS-LINK */}
+      <section className="max-w-4xl mx-auto px-6 pb-24 -mt-8">
+        <div className="bg-brand-surface border-2 border-brand-accent/20 rounded-[2rem] p-8 md:p-10 text-center shadow-xl shadow-brand-primary/5 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-32 h-32 bg-brand-accent/10 blur-[50px] rounded-full" />
+          <p className="text-brand-primary/90 font-medium text-lg md:text-xl relative z-10 leading-relaxed">
+            Not sure which reports you need? <br className="hidden sm:block" />
+            See our complete engineering guide: <br className="hidden sm:block" />
+            <a href="/blog/what-reports-do-you-need-for-planning-permission/" className="text-brand-accent font-bold hover:underline decoration-2 underline-offset-4 mt-2 inline-block">
+              What Reports Do You Need for Planning Permission? &rarr;
+            </a>
+          </p>
+        </div>
+      </section>
+
+      {/* Final CTA */}
             <section className="bg-brand-primary text-white py-24 my-24 rounded-[3rem] mx-6 relative overflow-hidden">
                 <div className="absolute inset-0 engineering-grid opacity-10" />
                 <div className="max-w-4xl mx-auto px-6 text-center relative z-10">

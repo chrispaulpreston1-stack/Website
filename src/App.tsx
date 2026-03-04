@@ -80,7 +80,7 @@ const Navbar = () => {
     { name: 'Site Intelligence', href: '/site-intelligence' },
     { name: 'Subscriptions', href: '/subscriptions' },
     { name: 'AI Innovation', href: '/ai-innovation' },
-    { name: 'Insights', href: '/blog' },
+    { name: 'Insights', href: '/blog/', isExternal: true },
   ];
 
   const isAIInnovation = location.pathname === '/ai-innovation';
@@ -101,22 +101,35 @@ const Navbar = () => {
         {/* Desktop Nav */}
         <div className="hidden lg:flex items-center gap-8">
           {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              to={link.href}
-              className={`relative text-sm font-medium hover:text-brand-accent transition-colors ${location.pathname === link.href
-                ? 'text-brand-accent'
-                : (isAIInnovation && !isScrolled ? 'text-white/80' : 'text-brand-primary')
-                }`}
-            >
-              {link.name}
-              {link.name === 'AI Innovation' && (
-                <span className="absolute -top-1 -right-3 flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-accent opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-accent"></span>
-                </span>
-              )}
-            </Link>
+            link.isExternal ? (
+              <a
+                key={link.name}
+                href={link.href}
+                className={`relative text-sm font-medium hover:text-brand-accent transition-colors ${location.pathname.startsWith(link.href)
+                  ? 'text-brand-accent'
+                  : (isAIInnovation && !isScrolled ? 'text-white/80' : 'text-brand-primary')
+                  }`}
+              >
+                {link.name}
+              </a>
+            ) : (
+              <Link
+                key={link.name}
+                to={link.href}
+                className={`relative text-sm font-medium hover:text-brand-accent transition-colors ${location.pathname === link.href
+                  ? 'text-brand-accent'
+                  : (isAIInnovation && !isScrolled ? 'text-white/80' : 'text-brand-primary')
+                  }`}
+              >
+                {link.name}
+                {link.name === 'AI Innovation' && (
+                  <span className="absolute -top-1 -right-3 flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-accent opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-accent"></span>
+                  </span>
+                )}
+              </Link>
+            )
           ))}
           <Link to="/contact" className="bg-brand-primary text-white px-6 py-2.5 rounded-full text-sm font-bold hover:scale-105 transition-transform shadow-lg shadow-brand-primary/20 flex items-center gap-2 border border-white/10">
             Get a Quote <ArrowRight size={16} />
@@ -144,14 +157,25 @@ const Navbar = () => {
               }`}
           >
             {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                to={link.href}
-                className={`text-lg font-medium py-2 border-b ${isAIInnovation ? 'border-white/5 hover:text-brand-accent' : 'border-gray-50 hover:text-brand-accent'
-                  }`}
-              >
-                {link.name}
-              </Link>
+              link.isExternal ? (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className={`text-lg font-medium py-2 border-b ${isAIInnovation ? 'border-white/5 hover:text-brand-accent' : 'border-gray-50 hover:text-brand-accent'
+                    }`}
+                >
+                  {link.name}
+                </a>
+              ) : (
+                <Link
+                  key={link.name}
+                  to={link.href}
+                  className={`text-lg font-medium py-2 border-b ${isAIInnovation ? 'border-white/5 hover:text-brand-accent' : 'border-gray-50 hover:text-brand-accent'
+                    }`}
+                >
+                  {link.name}
+                </Link>
+              )
             ))}
             <Link to="/contact" className="bg-brand-primary text-white w-full py-4 rounded-xl font-bold mt-4 text-center border border-white/10">
               Get a Quote
@@ -334,7 +358,7 @@ const Footer = () => {
             <h4 className="font-bold mb-6">Company</h4>
             <ul className="space-y-4 text-sm text-brand-primary/60">
               <li><Link to="/" className="hover:text-brand-accent transition-colors">Home</Link></li>
-              <li><Link to="/blog" className="hover:text-brand-accent transition-colors">Insights</Link></li>
+              <li><a href="/blog/" className="hover:text-brand-accent transition-colors">Insights</a></li>
               <li><Link to="/contact" className="hover:text-brand-accent transition-colors">Contact</Link></li>
             </ul>
           </div>

@@ -9,8 +9,9 @@ const ReportPackages = () => {
     {
       target: "For Homeowners & Architects",
       name: "The Pre-Planning Pack",
-      price: "£3,495",
-      saving: "Save 26%",
+      price: "£3,025",
+      rrp: "£5,900",
+      saving: "Save £2,875 (49%)",
       desc: "For anyone about to submit a planning application.",
       features: [
         "Site Intelligence Report",
@@ -23,8 +24,9 @@ const ReportPackages = () => {
     {
       target: "For Homeowners",
       name: "The Triple Threat",
-      price: "£4,495",
-      saving: "Save 29%",
+      price: "£3,125",
+      rrp: "£6,000",
+      saving: "Save £2,875 (48%)",
       desc: "Site assessment, structural feasibility, and engineering design securely bundled.",
       features: [
         "Site Feasibility Report",
@@ -38,8 +40,9 @@ const ReportPackages = () => {
     {
       target: "For Developers & Investors",
       name: "The Site Acquisition Pack",
-      price: "£3,995",
-      saving: "Save 33%",
+      price: "£2,900",
+      rrp: "£5,600",
+      saving: "Save £2,700 (48%)",
       desc: "Everything a developer needs for due diligence before buying a site.",
       features: [
         "Site Intelligence Report",
@@ -53,8 +56,9 @@ const ReportPackages = () => {
     {
       target: "For Architects (B2B)",
       name: "The Architect Support Pack",
-      price: "£3,795",
-      saving: "Save 31%",
+      price: "£2,625",
+      rrp: "£5,100",
+      saving: "Save £2,475 (49%)",
       desc: "Supporting technical documents for a planning application. Can be white-labelled.",
       features: [
         "Planning Statement",
@@ -68,14 +72,31 @@ const ReportPackages = () => {
     {
       target: "For Self-Builders",
       name: "The Self-Build Starter",
-      price: "£4,295",
-      saving: "Save 30%",
+      price: "£3,050",
+      rrp: "£5,900",
+      saving: "Save £2,850 (48%)",
       desc: "Evaluating a plot before your first architect meeting.",
       features: [
         "Site Intelligence Report",
         "Concept Feasibility Study",
         "CIL Liability Assessment",
         "BC Thermal Compliance Check"
+      ],
+      popular: false,
+    },
+    {
+      target: "For Land Buyers",
+      name: "The Land Buyer Screening",
+      price: "£3,500",
+      rrp: "£6,800",
+      saving: "Save £3,300 (49%)",
+      desc: "Comprehensive diligence for anyone buying a building plot.",
+      features: [
+        "Site Intelligence Report (full constraint screening)",
+        "Flood Risk Screening",
+        "Heritage Screening",
+        "BNG Screening",
+        "Concept Feasibility Study"
       ],
       popular: false,
     }
@@ -88,7 +109,7 @@ const ReportPackages = () => {
         description="Pre-construction diligence is cheaper when bundled. Get everything required for planning, site acquisition, or structural design in one fixed-price package."
         path="/report-packages"
       />
-      
+
       {/* Hero */}
       <section className="max-w-7xl mx-auto px-6 mb-20 text-center">
         <span className="font-mono text-xs uppercase tracking-[0.3em] font-bold text-brand-accent mb-4 block">Commercial Plans</span>
@@ -116,24 +137,27 @@ const ReportPackages = () => {
                   Most Popular
                 </div>
               )}
-              
+
               <span className={`text-[10px] uppercase tracking-widest font-bold mb-4 block ${bundle.popular ? 'text-brand-accent' : 'text-brand-primary/50'}`}>
                 {bundle.target}
               </span>
-              
+
               <h3 className="text-2xl font-bold mb-6">{bundle.name}</h3>
-              
-              <div className="flex items-end gap-3 mb-6 pb-6 border-b border-brand-primary/10">
-                <span className="text-5xl font-bold tracking-tighter">{bundle.price}</span>
-                <span className={`px-2 py-1 rounded text-xs font-bold ${bundle.popular ? 'bg-emerald-500/20 text-emerald-400' : 'bg-emerald-100 text-emerald-600'}`}>
-                   {bundle.saving}
-                </span>
+
+              <div className="flex flex-col gap-1 mb-6 pb-6 border-b border-brand-primary/10">
+                <span className="text-xl text-gray-400 line-through font-medium">RRP: {bundle.rrp}</span>
+                <div className="flex items-end gap-3">
+                  <span className="text-5xl font-bold tracking-tighter">{bundle.price}</span>
+                  <span className={`px-2 py-1 rounded text-xs font-bold ${bundle.popular ? 'bg-emerald-500/20 text-emerald-400' : 'bg-emerald-100 text-emerald-600'}`}>
+                    {bundle.saving}
+                  </span>
+                </div>
               </div>
-              
+
               <p className={`text-sm mb-8 leading-relaxed ${bundle.popular ? 'text-white/70' : 'text-brand-primary/70'}`}>
                 {bundle.desc}
               </p>
-              
+
               <ul className="space-y-4 mb-10">
                 {bundle.features.map((feature, j) => (
                   <li key={j} className="flex items-start gap-3 text-sm">
@@ -142,7 +166,7 @@ const ReportPackages = () => {
                   </li>
                 ))}
               </ul>
-              
+
               <Link
                 to="/contact"
                 className={`block w-full py-4 rounded-xl font-bold transition-all text-center mt-auto ${bundle.popular ? 'bg-brand-accent text-brand-primary hover:scale-105 shadow-xl shadow-brand-accent/20' : 'bg-brand-surface text-brand-primary hover:bg-gray-100'}`}

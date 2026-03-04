@@ -56,7 +56,7 @@ const CILLiabilityAssessment = () => {
                     name: 'CIL Liability Assessment',
                     description: 'Professional Community Infrastructure Levy assessment including liability calculation, exemption checks, challenge strategy, and pre-filled CIL forms.',
                     provider: { '@type': 'Organization', name: 'PF & Co Construction' },
-                    offers: { '@type': 'Offer', price: '300', priceCurrency: 'GBP' },
+                    offers: { '@type': 'Offer', price: '500', priceCurrency: 'GBP' },
                     subjectOf: {
                         '@type': 'VideoObject',
                         name: 'CIL Liability Assessment Explainer',
@@ -339,7 +339,22 @@ const CILLiabilityAssessment = () => {
                 </div>
             </section>
 
-            {/* Final CTA - High Impact */}
+            
+      {/* MEGA PILLAR CROSS-LINK */}
+      <section className="max-w-4xl mx-auto px-6 pb-24 -mt-8">
+        <div className="bg-brand-surface border-2 border-brand-accent/20 rounded-[2rem] p-8 md:p-10 text-center shadow-xl shadow-brand-primary/5 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-32 h-32 bg-brand-accent/10 blur-[50px] rounded-full" />
+          <p className="text-brand-primary/90 font-medium text-lg md:text-xl relative z-10 leading-relaxed">
+            Not sure which reports you need? <br className="hidden sm:block" />
+            See our complete engineering guide: <br className="hidden sm:block" />
+            <a href="/blog/what-reports-do-you-need-for-planning-permission/" className="text-brand-accent font-bold hover:underline decoration-2 underline-offset-4 mt-2 inline-block">
+              What Reports Do You Need for Planning Permission? &rarr;
+            </a>
+          </p>
+        </div>
+      </section>
+
+      {/* Final CTA - High Impact */}
             <section className="max-w-7xl mx-auto px-6 pb-24">
                 <div className="bg-[#0c1a14] rounded-[4rem] p-16 md:p-24 text-center text-white relative overflow-hidden shadow-2xl shadow-[#0c1a14]/20 border border-emerald-900/40">
                     <div className="absolute inset-0 opacity-10 engineering-grid" />
