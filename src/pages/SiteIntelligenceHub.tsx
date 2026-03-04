@@ -475,7 +475,7 @@ const SiteIntelligenceHub = () => {
               <div className="text-brand-accent text-xs md:text-sm font-bold mb-8 italic">Save £2,225 (Early Access)</div>
 
               <Link
-                to="/order-report?report=triple-threat"
+                to="/order-report?report=full-bundle"
                 className="w-full py-5 bg-brand-accent text-brand-primary rounded-2xl font-bold text-lg hover:scale-[1.02] transition-all flex items-center justify-center gap-2 shadow-xl shadow-brand-accent/20"
               >
                 Unlock Full Bundle — Early Access <Zap size={20} />

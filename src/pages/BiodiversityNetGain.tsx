@@ -69,6 +69,14 @@ const BiodiversityNetGain = () => {
             uploadDate: '2026-03-02',
             duration: 'PT1M37S',
             publisher: { '@type': 'Organization', name: 'PF & Co Construction', url: 'https://www.pfcoconstruction.co.uk' },
+          },
+          {
+            '@type': 'FAQPage',
+            mainEntity: [
+              { '@type': 'Question', name: 'Is my project exempt from BNG?', acceptedAnswer: { '@type': 'Answer', text: 'It depends on the application type, not just the project size. Householder applications and self-builds are often exempt. However, Full Planning applications for single dwellings usually trigger BNG. Our screening checks all five statutory exemptions systematically.' } },
+              { '@type': 'Question', name: 'What is the 10% net gain requirement?', acceptedAnswer: { '@type': 'Answer', text: 'The Environment Act 2021 requires most new developments to deliver a measurable 10% increase in biodiversity value compared to the baseline. This can be delivered on-site, off-site, or through statutory credits.' } },
+              { '@type': 'Question', name: 'How much does BNG compliance cost?', acceptedAnswer: { '@type': 'Answer', text: 'Costs vary significantly. Simple on-site planting might cost a few hundred pounds. Off-site units typically cost £20k–£30k per unit. Our screening gives you proportionate cost guidance for your specific situation.' } },
+            ]
           }
         ]}
       />
@@ -312,7 +320,7 @@ const BiodiversityNetGain = () => {
           <p className="text-brand-primary/90 font-medium text-lg md:text-xl relative z-10 leading-relaxed">
             Not sure which reports you need? <br className="hidden sm:block" />
             See our complete engineering guide: <br className="hidden sm:block" />
-            <a href="/blog/what-reports-do-you-need-for-planning-permission/" className="text-brand-accent font-bold hover:underline decoration-2 underline-offset-4 mt-2 inline-block">
+            <a href="/insights/what-reports-do-you-need-for-planning-permission" className="text-brand-accent font-bold hover:underline decoration-2 underline-offset-4 mt-2 inline-block">
               What Reports Do You Need for Planning Permission? &rarr;
             </a>
           </p>

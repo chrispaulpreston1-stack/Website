@@ -73,6 +73,9 @@ const PartyWallAssessment = () => {
                             <Link to="/order-report?report=party-wall-assessment" className="px-8 py-4 bg-indigo-600 text-white rounded-full font-bold hover:bg-indigo-700 transition-all shadow-xl shadow-indigo-500/20 flex items-center gap-2">
                                 Order Pre-Assessment <Zap size={20} className="text-indigo-200" />
                             </Link>
+                            <a href="/samples/party-wall-assessment-sample.pdf" target="_blank" rel="noopener noreferrer" className="px-8 py-4 bg-white/10 backdrop-blur-md text-white border border-white/20 rounded-full font-bold hover:bg-white/20 transition-all flex items-center gap-2">
+                                Sample Report <Scale size={20} className="text-indigo-400" />
+                            </a>
                             <div className="flex flex-col">
                                 <div className="inline-block px-3 py-1 bg-indigo-500/20 border border-indigo-500/30 rounded-full text-indigo-400 text-[10px] uppercase tracking-widest font-bold mb-3 self-start">
                                     Early Access Pricing - 40% off all reports.
@@ -198,7 +201,7 @@ const PartyWallAssessment = () => {
                     </div>
 
                     <div>
-                        <h2 className="text-4xl font-display font-bold text-brand-primary mb-6">Why an Engineer makes the best Surveyor</h2>
+                        <h2 className="text-4xl font-display font-bold text-brand-primary mb-6">Why an Engineer makes an excellent Surveyor</h2>
                         <p className="text-xl text-brand-primary/60 mb-8">
                             The vast majority of Party Wall disputes arise from a misunderstanding of the proposed works, not out of neighbourly malice.
                         </p>
@@ -231,7 +234,7 @@ const PartyWallAssessment = () => {
           <p className="text-brand-primary/90 font-medium text-lg md:text-xl relative z-10 leading-relaxed">
             Not sure which reports you need? <br className="hidden sm:block" />
             See our complete engineering guide: <br className="hidden sm:block" />
-            <a href="/blog/what-reports-do-you-need-for-planning-permission/" className="text-brand-accent font-bold hover:underline decoration-2 underline-offset-4 mt-2 inline-block">
+            <a href="/insights/what-reports-do-you-need-for-planning-permission" className="text-brand-accent font-bold hover:underline decoration-2 underline-offset-4 mt-2 inline-block">
               What Reports Do You Need for Planning Permission? &rarr;
             </a>
           </p>

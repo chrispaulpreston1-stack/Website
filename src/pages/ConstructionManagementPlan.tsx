@@ -67,6 +67,14 @@ const ConstructionManagementPlan = () => {
             uploadDate: '2026-03-02',
             duration: 'PT1M26S',
             publisher: { '@type': 'Organization', name: 'PF & Co Construction', url: 'https://www.pfcoconstruction.co.uk' },
+          },
+          {
+            '@type': 'FAQPage',
+            mainEntity: [
+              { '@type': 'Question', name: 'What is a pre-commencement condition?', acceptedAnswer: { '@type': 'Answer', text: 'It\'s a planning condition that must be formally approved by the council before any work begins on site. If your approval includes a pre-commencement CMP condition, you cannot legally start construction until the council has approved your plan.' } },
+              { '@type': 'Question', name: 'Do I need a CMP for a house extension?', acceptedAnswer: { '@type': 'Answer', text: 'It depends on the context. Most straightforward extensions don\'t need one. However, if you\'re near a school, listed building, or have constrained access, the council may require a proportionate 2\u20134 page plan.' } },
+              { '@type': 'Question', name: 'What\'s the difference between Outline and Detailed?', acceptedAnswer: { '@type': 'Answer', text: 'An Outline CMP is submitted with the application to show principles. A Detailed CMP is for condition discharge and includes specific method statements, named contacts, and confirmed delivery routes.' } },
+            ]
           }
         ]}
       />
@@ -310,7 +318,7 @@ const ConstructionManagementPlan = () => {
           <p className="text-brand-primary/90 font-medium text-lg md:text-xl relative z-10 leading-relaxed">
             Not sure which reports you need? <br className="hidden sm:block" />
             See our complete engineering guide: <br className="hidden sm:block" />
-            <a href="/blog/what-reports-do-you-need-for-planning-permission/" className="text-brand-accent font-bold hover:underline decoration-2 underline-offset-4 mt-2 inline-block">
+            <a href="/insights/what-reports-do-you-need-for-planning-permission" className="text-brand-accent font-bold hover:underline decoration-2 underline-offset-4 mt-2 inline-block">
               What Reports Do You Need for Planning Permission? &rarr;
             </a>
           </p>

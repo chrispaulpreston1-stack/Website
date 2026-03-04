@@ -89,13 +89,23 @@ const SiteFeasibilityReport = () => {
         title="Site Feasibility Report | Pre-Construction Screening | PF & Co"
         description="A data-driven pre-construction screening report checking 22+ planning, environmental, and ground risk constraints before you commit."
         path="/site-intelligence/site-feasibility-report"
-        jsonLd={{
-          '@type': 'Product',
-          name: 'Site Feasibility Report',
-          description: 'Data-driven pre-construction screening report checking 22+ planning, environmental, and ground risk constraints.',
-          brand: { '@type': 'Organization', name: 'PF & Co Construction' },
-          offers: { '@type': 'Offer', price: '1500', priceCurrency: 'GBP' },
-        }}
+        jsonLd={[
+          {
+            '@type': 'Product',
+            name: 'Site Feasibility Report',
+            description: 'Data-driven pre-construction screening report checking 22+ planning, environmental, and ground risk constraints.',
+            brand: { '@type': 'Organization', name: 'PF & Co Construction' },
+            offers: { '@type': 'Offer', price: '1500', priceCurrency: 'GBP' },
+          },
+          {
+            '@type': 'FAQPage',
+            mainEntity: [
+              { '@type': 'Question', name: 'Is this the same as a planning application?', acceptedAnswer: { '@type': 'Answer', text: 'No. A Site Feasibility Report is a pre-planning check — it identifies constraints and risks before you submit. It informs your planning strategy but does not replace the application itself.' } },
+              { '@type': 'Question', name: 'Do I still need a planning consultant?', acceptedAnswer: { '@type': 'Answer', text: 'The report informs strategy but does not replace the advice of a planning consultant. It gives your planner a comprehensive constraint picture to work from.' } },
+              { '@type': 'Question', name: 'What if my site has significant constraints?', acceptedAnswer: { '@type': 'Answer', text: 'The report identifies constraints and suggests mitigation routes. Some constraints are deal-breakers, but most can be managed with the right approach and design adjustments.' } },
+            ]
+          }
+        ]}
       />
 
       {/* SaaS Style Hero */}
@@ -291,7 +301,7 @@ const SiteFeasibilityReport = () => {
           <p className="text-brand-primary/90 font-medium text-lg md:text-xl relative z-10 leading-relaxed">
             Not sure which reports you need? <br className="hidden sm:block" />
             See our complete engineering guide: <br className="hidden sm:block" />
-            <a href="/blog/what-reports-do-you-need-for-planning-permission/" className="text-brand-accent font-bold hover:underline decoration-2 underline-offset-4 mt-2 inline-block">
+            <a href="/insights/what-reports-do-you-need-for-planning-permission" className="text-brand-accent font-bold hover:underline decoration-2 underline-offset-4 mt-2 inline-block">
               What Reports Do You Need for Planning Permission? &rarr;
             </a>
           </p>

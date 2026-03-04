@@ -78,8 +78,8 @@ const Navbar = () => {
     { name: 'Engineering', href: '/structural-engineering' },
     { name: 'Construction', href: '/construction' },
     { name: 'Site Intelligence', href: '/site-intelligence' },
-    { name: 'Subscriptions', href: '/subscriptions' },
-    { name: 'AI Innovation', href: '/ai-innovation' },
+    { name: 'Building Control', href: '/building-control' },
+    { name: 'Party Wall', href: '/party-wall' },
     { name: 'Insights', href: '/blog/', isExternal: true },
   ];
 
@@ -307,8 +307,8 @@ const Footer = () => {
   return (
     <footer className="bg-white pt-20 pb-10 border-t border-gray-100">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid md:grid-cols-4 gap-12 mb-20">
-          <div className="col-span-2">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 lg:gap-12 mb-20">
+          <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-2 mb-6">
               <div className="w-10 h-10 bg-brand-primary flex items-center justify-center rounded-lg">
                 <span className="text-brand-accent font-display font-bold text-xl">PF</span>
@@ -318,8 +318,8 @@ const Footer = () => {
                 <span className="text-[10px] uppercase tracking-[0.2em] opacity-60 font-mono">Site Intelligence</span>
               </div>
             </div>
-            <p className="text-brand-primary/60 max-w-sm leading-relaxed mb-6">
-              Engineering-led construction and structural design across England and Wales. We don't just follow plans - we understand the physics.
+            <p className="text-brand-primary/60 max-w-sm leading-relaxed mb-6 text-sm">
+              Engineering-led construction and structural design across England and Wales.
             </p>
             <div className="flex gap-4">
               <a
@@ -343,23 +343,42 @@ const Footer = () => {
 
           <div>
             <h4 className="font-bold mb-6">Services</h4>
-            <ul className="space-y-4 text-sm text-brand-primary/60">
-              <li><Link to="/structural-engineering" className="hover:text-brand-accent transition-colors">Structural Design</Link></li>
+            <ul className="space-y-3 text-sm text-brand-primary/60">
+              <li><Link to="/structural-engineering" className="hover:text-brand-accent transition-colors">Structural Engineering</Link></li>
               <li><Link to="/construction" className="hover:text-brand-accent transition-colors">Construction</Link></li>
               <li><Link to="/site-intelligence" className="hover:text-brand-accent transition-colors">Site Intelligence</Link></li>
               <li><Link to="/building-control" className="hover:text-brand-accent transition-colors">Building Control</Link></li>
               <li><Link to="/party-wall" className="hover:text-brand-accent transition-colors">Party Wall</Link></li>
-              <li><Link to="/order-report" className="hover:text-brand-accent transition-colors">Order Reports</Link></li>
-              <li><Link to="/ai-innovation" className="hover:text-brand-accent transition-colors">AI Innovation</Link></li>
+              <li><Link to="/report-packages" className="hover:text-brand-accent transition-colors">Report Packages</Link></li>
+              <li><Link to="/subscriptions" className="hover:text-brand-accent transition-colors">Subscriptions</Link></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-bold mb-6">Reports</h4>
+            <ul className="space-y-3 text-sm text-brand-primary/60">
+              <li><Link to="/site-intelligence/site-feasibility-report" className="hover:text-brand-accent transition-colors">Site Feasibility</Link></li>
+              <li><Link to="/site-intelligence/geotechnical-desk-study" className="hover:text-brand-accent transition-colors">Geotechnical Study</Link></li>
+              <li><Link to="/site-intelligence/flood-risk-assessment" className="hover:text-brand-accent transition-colors">Flood Risk</Link></li>
+              <li><Link to="/site-intelligence/planning-statement" className="hover:text-brand-accent transition-colors">Planning Statement</Link></li>
+              <li><Link to="/site-intelligence/heritage-impact-assessment" className="hover:text-brand-accent transition-colors">Heritage Statement</Link></li>
+              <li><Link to="/site-intelligence/biodiversity-net-gain" className="hover:text-brand-accent transition-colors">BNG Screening</Link></li>
+              <li><Link to="/site-intelligence/cil-liability-assessment" className="hover:text-brand-accent transition-colors">CIL Assessment</Link></li>
+              <li><Link to="/site-intelligence/energy-statement" className="hover:text-brand-accent transition-colors">Energy Statement</Link></li>
+              <li><Link to="/order-report" className="hover:text-brand-accent transition-colors font-medium text-brand-accent">Order Reports</Link></li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-bold mb-6">Company</h4>
-            <ul className="space-y-4 text-sm text-brand-primary/60">
+            <ul className="space-y-3 text-sm text-brand-primary/60">
               <li><Link to="/" className="hover:text-brand-accent transition-colors">Home</Link></li>
               <li><a href="/blog/" className="hover:text-brand-accent transition-colors">Insights</a></li>
+              <li><Link to="/insights/what-reports-do-you-need-for-planning-permission" className="hover:text-brand-accent transition-colors">Planning Guide</Link></li>
+              <li><Link to="/ai-innovation" className="hover:text-brand-accent transition-colors">AI Innovation</Link></li>
               <li><Link to="/contact" className="hover:text-brand-accent transition-colors">Contact</Link></li>
+              <li><Link to="/privacy-policy" className="hover:text-brand-accent transition-colors">Privacy Policy</Link></li>
+              <li><Link to="/terms-of-service" className="hover:text-brand-accent transition-colors">Terms of Service</Link></li>
             </ul>
           </div>
         </div>

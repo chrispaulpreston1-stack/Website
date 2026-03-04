@@ -67,6 +67,14 @@ const DesignAndAccessStatement = () => {
             uploadDate: '2026-03-02',
             duration: 'PT1M28S',
             publisher: { '@type': 'Organization', name: 'PF & Co Construction', url: 'https://www.pfcoconstruction.co.uk' },
+          },
+          {
+            '@type': 'FAQPage',
+            mainEntity: [
+              { '@type': 'Question', name: 'Do I need a DAS for a house extension?', acceptedAnswer: { '@type': 'Answer', text: 'In most cases, no. Householder applications outside conservation areas don\'t typically need one. However, if you\'re in a conservation area or applying for listed building consent, it\'s usually required.' } },
+              { '@type': 'Question', name: 'What\'s the difference between a DAS and a Planning Statement?', acceptedAnswer: { '@type': 'Answer', text: 'A Planning Statement focuses on policy compliance. A DAS focuses on the design process, addressing the five statutory aspects (amount, layout, scale, landscaping, appearance) and inclusive access.' } },
+              { '@type': 'Question', name: 'What are the five statutory aspects?', acceptedAnswer: { '@type': 'Answer', text: 'Under DMPO 2015, a DAS must explain design principles in relation to: amount (how much), layout (arrangement), scale (size relative to surroundings), landscaping (open spaces), and appearance (visual character).' } },
+            ]
           }
         ]}
       />
@@ -310,7 +318,7 @@ const DesignAndAccessStatement = () => {
           <p className="text-brand-primary/90 font-medium text-lg md:text-xl relative z-10 leading-relaxed">
             Not sure which reports you need? <br className="hidden sm:block" />
             See our complete engineering guide: <br className="hidden sm:block" />
-            <a href="/blog/what-reports-do-you-need-for-planning-permission/" className="text-brand-accent font-bold hover:underline decoration-2 underline-offset-4 mt-2 inline-block">
+            <a href="/insights/what-reports-do-you-need-for-planning-permission" className="text-brand-accent font-bold hover:underline decoration-2 underline-offset-4 mt-2 inline-block">
               What Reports Do You Need for Planning Permission? &rarr;
             </a>
           </p>

@@ -67,6 +67,14 @@ const FeasibilityStudy = () => {
             uploadDate: '2026-03-02',
             duration: 'PT1M15S',
             publisher: { '@type': 'Organization', name: 'PF & Co Construction', url: 'https://www.pfcoconstruction.co.uk' },
+          },
+          {
+            '@type': 'FAQPage',
+            mainEntity: [
+              { '@type': 'Question', name: 'Do I still need an architect after this?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. A Concept Feasibility Study is pre-design \u2014 it tells you what\'s possible and what it costs. Once you\'ve chosen an option, you\'ll appoint an architect to develop it into technical drawings with far more clarity.' } },
+              { '@type': 'Question', name: 'How accurate are the cost estimates?', acceptedAnswer: { '@type': 'Answer', text: 'We provide indicative costs with +/- 15\u201320% confidence bands based on current regional rates. They are intended for decision-making and budget validation, not for tendering.' } },
+              { '@type': 'Question', name: 'Can I use the floor plans for planning?', acceptedAnswer: { '@type': 'Answer', text: 'No. The hand-sketch plans are concept-stage illustrations to help you understand spatial layout. They are not measured drawings for Planning or Building Control.' } },
+            ]
           }
         ]}
       />
@@ -310,7 +318,7 @@ const FeasibilityStudy = () => {
           <p className="text-brand-primary/90 font-medium text-lg md:text-xl relative z-10 leading-relaxed">
             Not sure which reports you need? <br className="hidden sm:block" />
             See our complete engineering guide: <br className="hidden sm:block" />
-            <a href="/blog/what-reports-do-you-need-for-planning-permission/" className="text-brand-accent font-bold hover:underline decoration-2 underline-offset-4 mt-2 inline-block">
+            <a href="/insights/what-reports-do-you-need-for-planning-permission" className="text-brand-accent font-bold hover:underline decoration-2 underline-offset-4 mt-2 inline-block">
               What Reports Do You Need for Planning Permission? &rarr;
             </a>
           </p>

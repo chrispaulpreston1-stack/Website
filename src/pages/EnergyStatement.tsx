@@ -67,6 +67,14 @@ const EnergyStatement = () => {
             uploadDate: '2026-03-02',
             duration: 'PT1M34S',
             publisher: { '@type': 'Organization', name: 'PF & Co Construction', url: 'https://www.pfcoconstruction.co.uk' },
+          },
+          {
+            '@type': 'FAQPage',
+            mainEntity: [
+              { '@type': 'Question', name: 'Do I need an Energy Statement for an extension?', acceptedAnswer: { '@type': 'Answer', text: 'It depends on your council. A growing number of LPAs require sustainability evidence even for householder applications, particularly where they\'ve adopted a Climate Change SPD. We can check your council\'s requirements for you.' } },
+              { '@type': 'Question', name: 'Is this the same as a SAP calculation?', acceptedAnswer: { '@type': 'Answer', text: 'No. A SAP calculation is a Building Control requirement used to demonstrate Part L compliance through a detailed model. Our Energy Statement is a planning-stage document that demonstrates your approach at a strategic level.' } },
+              { '@type': 'Question', name: 'What renewable technologies do you assess?', acceptedAnswer: { '@type': 'Answer', text: 'We assess Solar PV, Air Source Heat Pumps, MVHR, enhanced glazing, and EV charging. Each assessment is site-specific, looking at orientation, space, and cost-effectiveness.' } },
+            ]
           }
         ]}
       />
@@ -310,7 +318,7 @@ const EnergyStatement = () => {
           <p className="text-brand-primary/90 font-medium text-lg md:text-xl relative z-10 leading-relaxed">
             Not sure which reports you need? <br className="hidden sm:block" />
             See our complete engineering guide: <br className="hidden sm:block" />
-            <a href="/blog/what-reports-do-you-need-for-planning-permission/" className="text-brand-accent font-bold hover:underline decoration-2 underline-offset-4 mt-2 inline-block">
+            <a href="/insights/what-reports-do-you-need-for-planning-permission" className="text-brand-accent font-bold hover:underline decoration-2 underline-offset-4 mt-2 inline-block">
               What Reports Do You Need for Planning Permission? &rarr;
             </a>
           </p>

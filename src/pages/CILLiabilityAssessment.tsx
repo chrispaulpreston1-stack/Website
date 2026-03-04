@@ -51,7 +51,8 @@ const CILLiabilityAssessment = () => {
                 title="CIL Liability Assessment | £500 | PF & Co Construction"
                 description="Know your CIL exposure before you start. CIL Liability Assessment for £500. Exemption checks, index-linked calculations & challenge strategy included."
                 path="/site-intelligence/cil-liability-assessment"
-                jsonLd={{
+                jsonLd={[
+                  {
                     '@type': 'Service',
                     name: 'CIL Liability Assessment',
                     description: 'Professional Community Infrastructure Levy assessment including liability calculation, exemption checks, challenge strategy, and pre-filled CIL forms.',
@@ -68,13 +69,23 @@ const CILLiabilityAssessment = () => {
                         publisher: {
                             '@type': 'Organization',
                             name: 'PF & Co Construction',
-                            logo: {
-                                '@type': 'ImageObject',
-                                url: 'https://www.pfcoconstruction.co.uk/logo.png'
-                            }
+                            logo: { '@type': 'ImageObject', url: 'https://www.pfcoconstruction.co.uk/logo.png' }
                         }
                     }
-                }}
+                  },
+                  {
+                    '@type': 'FAQPage',
+                    mainEntity: [
+                      { '@type': 'Question', name: 'What is the Community Infrastructure Levy (CIL)?', acceptedAnswer: { '@type': 'Answer', text: 'CIL is a charge that local planning authorities can levy on new development to fund local infrastructure — schools, roads, health facilities, open spaces. It is calculated based on the net additional gross internal area (GIA) of your development, multiplied by an indexed rate set by your local authority. Approximately half of English LPAs have adopted it.' } },
+                      { '@type': 'Question', name: 'Do I have to pay CIL on a loft conversion or extension?', acceptedAnswer: { '@type': 'Answer', text: 'It depends. CIL is triggered when a development creates 100 square metres or more of net additional floor area, OR when it creates one or more new dwellings. Most standard loft conversions and rear extensions fall below the 100 sqm threshold, so they are often not liable — but there are exceptions, particularly in London where Mayoral CIL applies.' } },
+                      { '@type': 'Question', name: 'What happens if I start work without claiming my CIL exemption?', acceptedAnswer: { '@type': 'Answer', text: 'You lose the exemption permanently. Under the CIL Regulations, exemptions must be claimed and approved by the collecting authority before commencement of development. Even preliminary groundworks can count as commencement. If you start without claiming, the full CIL charge becomes payable — plus a surcharge.' } },
+                      { '@type': 'Question', name: 'What is the self-build exemption?', acceptedAnswer: { '@type': 'Answer', text: 'If you are building or converting a property that you intend to occupy as your sole or main residence, you may be exempt from CIL. You must claim before commencement using CIL Forms 2 and 7 (Part 1), and you must not sell or let the property within 3 years of completion.' } },
+                      { '@type': 'Question', name: 'I have received a CIL Liability Notice and the figure seems wrong. What can I do?', acceptedAnswer: { '@type': 'Answer', text: 'You can request a review under Regulation 113, or appeal to the Valuation Office Agency. Common grounds include incorrect zone assignment, wrong floor area measurement, or timing arguments.' } },
+                      { '@type': 'Question', name: 'Does Guildford Borough Council charge CIL?', acceptedAnswer: { '@type': 'Answer', text: 'No. As of March 2026, Guildford is the only Surrey borough that has not adopted CIL. Every other Surrey LPA has adopted CIL with varying rate schedules.' } },
+                      { '@type': 'Question', name: 'How long does the assessment take?', acceptedAnswer: { '@type': 'Answer', text: 'Typical turnaround is 48 hours from receiving your project details and architectural drawings. Complex sites (multiple zones, phased developments) may take longer and are quoted individually.' } },
+                    ]
+                  }
+                ]}
             />
 
             {/* Editorial Hero */}
@@ -357,7 +368,7 @@ const CILLiabilityAssessment = () => {
           <p className="text-brand-primary/90 font-medium text-lg md:text-xl relative z-10 leading-relaxed">
             Not sure which reports you need? <br className="hidden sm:block" />
             See our complete engineering guide: <br className="hidden sm:block" />
-            <a href="/blog/what-reports-do-you-need-for-planning-permission/" className="text-brand-accent font-bold hover:underline decoration-2 underline-offset-4 mt-2 inline-block">
+            <a href="/insights/what-reports-do-you-need-for-planning-permission" className="text-brand-accent font-bold hover:underline decoration-2 underline-offset-4 mt-2 inline-block">
               What Reports Do You Need for Planning Permission? &rarr;
             </a>
           </p>
