@@ -37,48 +37,24 @@ const orderSchema = z.object({
 type OrderFormData = z.infer<typeof orderSchema>;
 
 const reports = [
-  {
-    id: 'site-feasibility-report',
-    name: 'Site Feasibility Report',
-    price: 297,
-    icon: <Search className="text-teal-500" />,
-    color: 'border-teal-500 bg-teal-50/30'
-  },
-  {
-    id: 'geotechnical-desk-study',
-    name: 'Geotechnical Desk Study',
-    price: 297,
-    icon: <Database className="text-amber-600" />,
-    color: 'border-amber-600 bg-amber-50/30'
-  },
-  {
-    id: 'flood-risk-assessment',
-    name: 'Flood Risk Assessment',
-    price: 295,
-    icon: <ShieldAlert className="text-blue-500" />,
-    color: 'border-blue-500 bg-blue-50/30'
-  },
-  {
-    id: 'full-bundle',
-    name: 'Full Site Intelligence Bundle',
-    price: 830,
-    icon: <Zap className="text-brand-accent" />,
-    color: 'border-brand-accent bg-brand-accent/10',
-    isBundle: true
-  },
-  { id: 'biodiversity-net-gain', name: 'Biodiversity Net Gain', price: 325, icon: <Zap className="text-emerald-500" />, color: 'border-emerald-500 bg-emerald-50/30' },
-  { id: 'cil-liability-assessment', name: 'CIL Liability Assessment', price: 300, icon: <Zap className="text-emerald-600" />, color: 'border-emerald-600 bg-emerald-50/30' },
-  { id: 'construction-management-plan', name: 'Construction Management Plan', price: 345, icon: <Zap className="text-brand-primary" />, color: 'border-brand-primary bg-brand-primary/5' },
-  { id: 'design-and-access-statement', name: 'Design & Access Statement', price: 395, icon: <Zap className="text-brand-accent" />, color: 'border-brand-accent bg-brand-accent/5' },
-  { id: 'energy-statement', name: 'Energy Statement', price: 345, icon: <Zap className="text-cyan-500" />, color: 'border-cyan-500 bg-cyan-50/30' },
-  { id: 'feasibility-study', name: 'Feasibility Study', price: 795, icon: <Zap className="text-brand-primary" />, color: 'border-brand-primary bg-brand-primary/5' },
-  { id: 'heritage-impact-assessment', name: 'Heritage Impact Assessment', price: 445, icon: <Zap className="text-amber-500" />, color: 'border-amber-500 bg-amber-50/30' },
-  { id: 'parking-survey', name: 'Parking Survey', price: 245, icon: <Zap className="text-rose-500" />, color: 'border-rose-500 bg-rose-50/30' },
-  { id: 'planning-statement', name: 'Planning Statement', price: 445, icon: <Zap className="text-emerald-500" />, color: 'border-emerald-500 bg-emerald-50/30' },
-  { id: 'pre-application-advice', name: 'Pre-Application Advice', price: 245, icon: <Zap className="text-cyan-500" />, color: 'border-cyan-500 bg-cyan-50/30' },
-  { id: 'pre-construction-design-review', name: 'Design Readiness Review', price: 425, icon: <Zap className="text-brand-primary" />, color: 'border-brand-primary bg-brand-primary/5' },
-  { id: 'transport-statement', name: 'Transport Statement', price: 345, icon: <Zap className="text-blue-500" />, color: 'border-blue-500 bg-blue-50/30' },
-  { id: 'tree-survey', name: 'Tree Survey (BS 5837)', price: 395, icon: <Zap className="text-emerald-500" />, color: 'border-emerald-500 bg-emerald-50/30' }
+  { id: 'site-feasibility-report', name: 'Site Feasibility Report', price: 1500, rrp: 2500, icon: <Search className="text-teal-500" />, color: 'border-teal-500 bg-teal-50/30' },
+  { id: 'geotechnical-desk-study', name: 'Geotechnical Desk Study', price: 900, rrp: 1500, icon: <Database className="text-amber-600" />, color: 'border-amber-600 bg-amber-50/30' },
+  { id: 'flood-risk-assessment', name: 'Flood Risk Assessment', price: 375, rrp: 600, icon: <ShieldAlert className="text-blue-500" />, color: 'border-blue-500 bg-blue-50/30' },
+  { id: 'full-bundle', name: 'Full Site Intelligence Bundle', price: 2375, rrp: 4600, icon: <Zap className="text-brand-accent" />, color: 'border-brand-accent bg-brand-accent/10', isBundle: true },
+  { id: 'biodiversity-net-gain', name: 'Biodiversity Net Gain', price: 300, rrp: 500, icon: <Zap className="text-emerald-500" />, color: 'border-emerald-500 bg-emerald-50/30' },
+  { id: 'cil-liability-assessment', name: 'CIL Liability Assessment', price: 500, rrp: 800, icon: <Zap className="text-emerald-600" />, color: 'border-emerald-600 bg-emerald-50/30' },
+  { id: 'construction-management-plan', name: 'Construction Management Plan', price: 425, rrp: 700, icon: <Zap className="text-brand-primary" />, color: 'border-brand-primary bg-brand-primary/5' },
+  { id: 'design-and-access-statement', name: 'Design & Access Statement', price: 600, rrp: 1000, icon: <Zap className="text-brand-accent" />, color: 'border-brand-accent bg-brand-accent/5' },
+  { id: 'energy-statement', name: 'Energy Statement', price: 550, rrp: 900, icon: <Zap className="text-cyan-500" />, color: 'border-cyan-500 bg-cyan-50/30' },
+  { id: 'feasibility-study', name: 'Concept Feasibility Study', price: 1200, rrp: 2000, icon: <Zap className="text-brand-primary" />, color: 'border-brand-primary bg-brand-primary/5' },
+  { id: 'heritage-impact-assessment', name: 'Heritage Impact Assessment', price: 725, rrp: 1200, icon: <Zap className="text-amber-500" />, color: 'border-amber-500 bg-amber-50/30' },
+  { id: 'parking-survey', name: 'Parking Survey', price: 375, rrp: 600, icon: <Zap className="text-rose-500" />, color: 'border-rose-500 bg-rose-50/30' },
+  { id: 'planning-statement', name: 'Planning Statement', price: 900, rrp: 1500, icon: <Zap className="text-emerald-500" />, color: 'border-emerald-500 bg-emerald-50/30' },
+  { id: 'pre-application-advice', name: 'Pre-Application Advice', price: 1100, rrp: 1800, icon: <Zap className="text-cyan-500" />, color: 'border-cyan-500 bg-cyan-50/30' },
+  { id: 'pre-construction-design-review', name: 'Design Readiness Review', price: 425, rrp: 850, icon: <Zap className="text-brand-primary" />, color: 'border-brand-primary bg-brand-primary/5' },
+  { id: 'transport-statement', name: 'Transport Statement', price: 600, rrp: 1000, icon: <Zap className="text-blue-500" />, color: 'border-blue-500 bg-blue-50/30' },
+  { id: 'party-wall-assessment', name: 'Party Wall Pre-Assessment', price: 425, rrp: 700, icon: <Zap className="text-indigo-500" />, color: 'border-indigo-500 bg-indigo-50/30' },
+  { id: 'building-control', name: 'BC Readiness Check', price: 150, rrp: 250, icon: <Zap className="text-emerald-600" />, color: 'border-emerald-600 bg-emerald-50/30' }
 ];
 
 const OrderReport = () => {
@@ -223,8 +199,8 @@ const OrderReport = () => {
           brand: { '@type': 'Organization', name: 'PF & Co Construction' },
           offers: {
             '@type': 'AggregateOffer',
-            lowPrice: '245',
-            highPrice: '830',
+            lowPrice: '150',
+            highPrice: '2375',
             priceCurrency: 'GBP',
           },
         }}
@@ -287,8 +263,8 @@ const OrderReport = () => {
                         <div className="flex items-center gap-3">
                           <div className="text-right">
                             <div className="font-mono font-bold text-brand-primary text-sm">From</div>
-                            <div className="font-mono font-bold text-brand-primary">£{r.price}</div>
-                            {r.isBundle && <div className="text-[10px] text-brand-primary/40 line-through">RRP £1,137</div>}
+                            <div className="font-mono font-bold text-brand-primary">£{r.price.toLocaleString()}</div>
+                            {r.rrp && <div className="text-[10px] text-brand-primary/40 line-through">RRP £{r.rrp.toLocaleString()}</div>}
                           </div>
                           <div className={`w-6 h-6 rounded-lg border-2 flex items-center justify-center transition-colors ${isSelected ? 'bg-brand-primary border-brand-primary' : 'border-brand-primary/10'}`}>
                             {isSelected && <Check size={14} className="text-white" />}
@@ -447,7 +423,7 @@ const OrderReport = () => {
                     {discountError && <p className="text-red-400 text-[10px] mt-2 font-bold">{discountError}</p>}
                     {appliedDiscount && (
                       <div className="mt-2 flex items-center gap-2 text-brand-accent text-[10px] font-bold uppercase tracking-widest">
-                        <Check size={12} /> Code {appliedDiscount.code} Applied (-£{discountAmount.toFixed(2)})
+                        <Check size={12} /> Code {appliedDiscount.code} Applied (-£{discountAmount.toLocaleString('en-GB', { minimumFractionDigits: 2, maximumFractionDigits: 2 })})
                       </div>
                     )}
                   </div>
@@ -482,7 +458,7 @@ const OrderReport = () => {
                   {isSubmitting ? (
                     <div className="w-6 h-6 border-2 border-brand-primary/30 border-t-brand-primary rounded-full animate-spin" />
                   ) : (
-                    <>Pay £{totalPrice.toFixed(2)} via Stripe <ArrowRight size={20} /></>
+                    <>Pay £{totalPrice.toLocaleString('en-GB', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} via Stripe <ArrowRight size={20} /></>
                   )}
                 </button>
               </div>
@@ -501,7 +477,7 @@ const OrderReport = () => {
                     selectedReportObjects.map(r => (
                       <div key={r.id} className="flex justify-between items-start gap-4">
                         <div className="text-sm font-medium text-brand-primary/80">{r.name}</div>
-                        <div className="text-sm font-bold shrink-0">£{r.price}</div>
+                        <div className="text-sm font-bold shrink-0">£{r.price.toLocaleString()}</div>
                       </div>
                     ))
                   )}
@@ -516,7 +492,7 @@ const OrderReport = () => {
                   {appliedDiscount && (
                     <div className="flex justify-between text-brand-accent">
                       <div className="text-sm font-medium">Discount ({appliedDiscount.code})</div>
-                      <div className="text-sm font-bold">-£{discountAmount.toFixed(2)}</div>
+                      <div className="text-sm font-bold">-£{discountAmount.toLocaleString('en-GB', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</div>
                     </div>
                   )}
                 </div>
@@ -524,7 +500,7 @@ const OrderReport = () => {
                 <div className="pt-6 border-t border-brand-primary/5 space-y-2">
                   <div className="flex justify-between text-xl font-bold">
                     <span>Est. Total*</span>
-                    <span className="text-brand-accent">£{totalPrice.toFixed(2)}</span>
+                    <span className="text-brand-accent">£{totalPrice.toLocaleString('en-GB', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
                   </div>
                   <p className="text-[10px] text-brand-primary/50 leading-relaxed mt-4">
                     *Prices shown are our typical fixed fees for standard residential extensions and single dwellings. For complex, large-scale, or multi-unit commercial developments, we reserve the right to review the project scope and provide a revised fixed-fee quote before proceeding.

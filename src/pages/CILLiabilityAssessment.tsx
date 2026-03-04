@@ -39,7 +39,7 @@ const CILLiabilityAssessment = () => {
         {
             title: "Pricing & Speed",
             rows: [
-                { feature: "Pricing Model", pfco: "Fixed fee from £300", competitor1: "Hourly rate (£75–£250)", competitor2: "Case-by-case quote" },
+                { feature: "Pricing Model", pfco: "Fixed fee £500", competitor1: "Hourly rate (£75–£250)", competitor2: "Case-by-case quote" },
                 { feature: "Turnaround", pfco: "48 hours typical", competitor1: "2–4 weeks", competitor2: "1–2 weeks" }
             ]
         }
@@ -48,8 +48,8 @@ const CILLiabilityAssessment = () => {
     return (
         <div className="pt-20">
             <PageSEO
-                title="CIL Liability Assessment | From £300 | PF & Co Construction"
-                description="Know your CIL exposure before you start. CIL Liability Assessment from £300. Exemption checks, index-linked calculations & challenge strategy included."
+                title="CIL Liability Assessment | £500 | PF & Co Construction"
+                description="Know your CIL exposure before you start. CIL Liability Assessment for £500. Exemption checks, index-linked calculations & challenge strategy included."
                 path="/site-intelligence/cil-liability-assessment"
                 jsonLd={{
                     '@type': 'Service',
@@ -101,12 +101,22 @@ const CILLiabilityAssessment = () => {
                             Know your Community Infrastructure Levy exposure before you break ground. We calculate the actual figure, check every exemption, and give you a strategy to reduce it — or challenge it.
                         </p>
                         <div className="flex flex-wrap gap-6 items-center">
-                            <Link to="/contact" className="px-10 py-5 bg-orange-500 text-white rounded-full font-bold hover:bg-orange-600 transition-all shadow-xl shadow-orange-500/20 flex items-center gap-2">
+                            <Link to="/order-report?report=cil-liability-assessment" className="px-10 py-5 bg-orange-500 text-white rounded-full font-bold hover:bg-orange-600 transition-all shadow-xl shadow-orange-500/20 flex items-center gap-2">
                                 Request Assessment <Zap size={20} className="text-orange-200" />
                             </Link>
                             <a href="/samples/cil-liability-assessment-sample.pdf" target="_blank" rel="noopener noreferrer" className="px-10 py-5 bg-white/10 backdrop-blur-md text-emerald-400 border border-emerald-500/30 rounded-full font-bold hover:bg-white/20 transition-all flex items-center gap-2">
                                 View Sample Report <FileText size={20} className="text-emerald-400" />
                             </a>
+                            <div className="flex flex-col">
+                                <div className="inline-block px-3 py-1 bg-emerald-500/20 border border-emerald-500/30 rounded-full text-emerald-400 text-[10px] uppercase tracking-widest font-bold mb-3 self-start">
+                                    Early Access Pricing - 40% off all reports.
+                                </div>
+                                <div className="flex items-baseline gap-3 mb-1">
+                                    <span className="text-3xl font-mono font-bold text-white">Early Access: £500</span>
+                                    <span className="text-base text-white/50 line-through font-medium">Was £800</span>
+                                </div>
+                                <span className="text-xs text-white/70 italic">First 50 reports at early access pricing</span>
+                            </div>
                         </div>
                     </motion.div>
 

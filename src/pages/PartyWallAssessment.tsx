@@ -31,9 +31,16 @@ const PartyWallAssessment = () => {
     return (
         <div className="pt-20">
             <PageSEO
-                title="Party Wall Surveying & Awards | PF & Co"
-                description="Premium Party Wall Surveyor services for complex structural engineering projects. We handle the legal boundary so you can focus on the build."
+                title="Party Wall Pre-Assessment | PF & Co"
+                description="Premium Party Wall Surveyor services and pre-assessments. Offering legally compliant boundaries starting at £425."
                 path="/party-wall"
+                jsonLd={{
+                    '@type': 'Product',
+                    name: 'Party Wall Pre-Assessment',
+                    description: 'Premium Party Wall Assessment and Notice service for structural engineering projects.',
+                    brand: { '@type': 'Organization', name: 'PF & Co Construction' },
+                    offers: { '@type': 'Offer', price: '425', priceCurrency: 'GBP' }
+                }}
             />
 
             {/* Editorial Hero */}
@@ -63,9 +70,19 @@ const PartyWallAssessment = () => {
                             Let's be clear: we are a high-end structural engineering practice, not a volume party wall surveying factory. We step in when the engineering complexity demands a surveyor who truly understands the structural mechanics behind the legal notices.
                         </p>
                         <div className="flex flex-wrap gap-6 items-center">
-                            <Link to="/contact" className="px-8 py-4 bg-indigo-600 text-white rounded-full font-bold hover:bg-indigo-700 transition-all shadow-xl shadow-indigo-500/20 flex items-center gap-2">
-                                Consult a Surveyor <Zap size={20} className="text-indigo-200" />
+                            <Link to="/order-report?report=party-wall-assessment" className="px-8 py-4 bg-indigo-600 text-white rounded-full font-bold hover:bg-indigo-700 transition-all shadow-xl shadow-indigo-500/20 flex items-center gap-2">
+                                Order Pre-Assessment <Zap size={20} className="text-indigo-200" />
                             </Link>
+                            <div className="flex flex-col">
+                                <div className="inline-block px-3 py-1 bg-indigo-500/20 border border-indigo-500/30 rounded-full text-indigo-400 text-[10px] uppercase tracking-widest font-bold mb-3 self-start">
+                                    Early Access Pricing - 40% off all reports.
+                                </div>
+                                <div className="flex items-baseline gap-3 mb-1">
+                                    <span className="text-3xl font-mono font-bold text-white">Early Access: £425</span>
+                                    <span className="text-base text-white/50 line-through font-medium">Was £700</span>
+                                </div>
+                                <span className="text-xs text-white/70 italic">First 50 reports at early access pricing</span>
+                            </div>
                         </div>
                     </motion.div>
 

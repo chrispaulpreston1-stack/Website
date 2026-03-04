@@ -19,8 +19,15 @@ const BuildingControl = () => {
     return (
         <div className="pt-20">
             <PageSEO
-                title="Building Control & Regulations | PF & Co"
-                description="Dedicated Building Control service — structural calculations, regulatory drawings, and inspection liaison to secure your completion certificate."
+                title="BC Readiness Check | £150 | PF & Co"
+                jsonLd={{
+                    '@type': 'Product',
+                    name: 'BC Readiness Check',
+                    description: 'Ensure your proposals comply with building regulations before submission.',
+                    brand: { '@type': 'Organization', name: 'PF & Co Construction' },
+                    offers: { '@type': 'Offer', price: '150', priceCurrency: 'GBP' }
+                }}
+                description="Dedicated BC Readiness Check — ensure your proposals comply with building regs before submission for £150."
                 path="/building-control"
             />
 
@@ -41,8 +48,8 @@ const BuildingControl = () => {
                     >
                         <span className="font-mono text-xs uppercase tracking-[0.4em] text-emerald-400 font-bold mb-6 block">Structural Engineering / Compliance</span>
                         <h1 className="text-6xl md:text-8xl font-bold leading-[0.85] mb-8 tracking-tighter text-white">
-                            Building <br />
-                            <span className="text-emerald-400 italic font-accent font-light">Control</span>
+                            BC Readiness <br />
+                            <span className="text-emerald-400 italic font-accent font-light">Check</span>
                         </h1>
                         <p className="text-xl text-white/60 leading-relaxed mb-6 max-w-lg font-light">
                             Done Right. Done Once.
@@ -51,9 +58,19 @@ const BuildingControl = () => {
                             Securing Building Regulations approval shouldn't be a gamble. We provide the comprehensive structural calculations, detailed drawings, and expert liaison needed to satisfy inspectors and secure your Completion Certificate, stress-free.
                         </p>
                         <div className="flex flex-wrap gap-6 items-center">
-                            <Link to="/contact" className="px-8 py-4 bg-emerald-600 text-white rounded-full font-bold hover:bg-emerald-700 transition-all shadow-xl shadow-emerald-500/20 flex items-center gap-2">
-                                Get Compliant <Zap size={20} className="text-emerald-200" />
+                            <Link to="/order-report?report=building-control" className="px-8 py-4 bg-emerald-600 text-white rounded-full font-bold hover:bg-emerald-700 transition-all shadow-xl shadow-emerald-500/20 flex items-center gap-2">
+                                Order Readiness Check <Zap size={20} className="text-emerald-200" />
                             </Link>
+                            <div className="flex flex-col">
+                                <div className="inline-block px-3 py-1 bg-emerald-500/20 border border-emerald-500/30 rounded-full text-emerald-400 text-[10px] uppercase tracking-widest font-bold mb-3 self-start">
+                                    Early Access Pricing - 40% off all reports.
+                                </div>
+                                <div className="flex items-baseline gap-3 mb-1">
+                                    <span className="text-3xl font-mono font-bold text-white">Early Access: £150</span>
+                                    <span className="text-base text-white/50 line-through font-medium">Was £250</span>
+                                </div>
+                                <span className="text-xs text-white/70 italic">First 50 reports at early access pricing</span>
+                            </div>
                         </div>
                     </motion.div>
 
@@ -241,7 +258,19 @@ const BuildingControl = () => {
                 </div>
             </section>
 
-
+            {/* Pre-Construction Design Review Cross-Link */}
+            <section className="bg-emerald-900 text-white py-16 my-12 rounded-[3rem] mx-6 lg:mx-auto max-w-7xl relative overflow-hidden">
+                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1541888086425-d81bb19240f5?auto=format&fit=crop&q=80&w=1200')] bg-cover bg-center opacity-20 mix-blend-overlay" />
+                <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
+                    <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">Looking for a full design audit before going to tender?</h2>
+                    <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
+                        Ensure every detail is technically sound, cost-effective, and clash-free before construction begins.
+                    </p>
+                    <Link to="/site-intelligence/pre-construction-design-review" className="px-8 py-4 bg-white text-emerald-900 font-bold rounded-xl hover:bg-emerald-50 transition-colors inline-block shadow-lg shadow-black/10">
+                        Explore Pre-Construction Design Review &rarr;
+                    </Link>
+                </div>
+            </section>
             
       {/* MEGA PILLAR CROSS-LINK */}
       <section className="max-w-4xl mx-auto px-6 pb-24 -mt-8">

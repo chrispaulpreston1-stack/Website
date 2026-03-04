@@ -106,8 +106,8 @@ const PreConstructionDesignReview = () => {
                   Early Access Pricing - 40% off all reports.
                 </div>
                 <div className="flex items-baseline gap-3 mb-1">
-                  <span className="text-3xl font-mono font-bold text-white">Early Access: £375</span>
-                  <span className="text-base text-white/50 line-through font-medium">Was £600</span>
+                  <span className="text-3xl font-mono font-bold text-white">Early Access: £425</span>
+                  <span className="text-base text-white/50 line-through font-medium">Was £850</span>
                 </div>
                 <span className="text-xs text-white/70 italic">First 50 reports at early access pricing</span>
               </div>

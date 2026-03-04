@@ -377,7 +377,7 @@ const SiteIntelligenceHub = () => {
                   { name: "Planning Statement", link: "/site-intelligence/planning-statement", desc: "Submission-ready policy evidence." },
                   { name: "Pre-Application Advice", link: "/site-intelligence/pre-application-advice", desc: "Targeted enquiry packs." },
                   { name: "Design & Access Statement", link: "/site-intelligence/design-and-access-statement", desc: "Design rationale & accessibility." },
-                  { name: "Feasibility Study", link: "/site-intelligence/feasibility-study", desc: "In-depth development appraisal." }
+                  { name: "Concept Feasibility Study", link: "/site-intelligence/feasibility-study", desc: "In-depth development appraisal." }
                 ]
               },
               {
@@ -393,7 +393,7 @@ const SiteIntelligenceHub = () => {
                 cat: "Specialist Surveys",
                 items: [
                   { name: "Heritage Impact Assessment", link: "/site-intelligence/heritage-impact-assessment", desc: "Listed building & CA analysis." },
-                  { name: "Tree Survey (BS 5837)", link: "/site-intelligence/tree-survey", desc: "Arboricultural reports." },
+
                   { name: "Transport Statement", link: "/site-intelligence/transport-statement", desc: "Highways & accessibility." },
                   { name: "Parking Survey", link: "/site-intelligence/parking-survey", desc: "Evidence-based provision." }
                 ]
