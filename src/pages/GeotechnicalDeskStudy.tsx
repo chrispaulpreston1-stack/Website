@@ -203,7 +203,7 @@ const GeotechnicalDeskStudy = () => {
               </p>
               <div className="grid grid-cols-2 gap-8">
                 <div className="p-8 rounded-3xl bg-brand-surface border border-brand-primary/5">
-                  <div className="text-4xl font-serif italic text-amber-700 mb-2">25+</div>
+                  <div className="text-4xl font-serif italic text-amber-700 mb-2">44</div>
                   <div className="text-[10px] uppercase tracking-widest font-bold opacity-40">Data Sources</div>
                 </div>
                 <div className="p-8 rounded-3xl bg-brand-surface border border-brand-primary/5">
@@ -278,7 +278,7 @@ const GeotechnicalDeskStudy = () => {
             subtitle="What you get vs a traditional geotechnical consultancy or data report"
             columns={["Feature", "PF&Co Site Intelligence", "Traditional Geo Consultancy", "Envirocheck / Data Report"]}
             categories={comparisonCategories}
-            footerNote="Comparison based on publicly available product information from Earth Environmental, Southern Testing, SOCOTEC, RSK Geosciences, Landmark Envirocheck, and typical UK geotechnical consultancies. Features may vary by provider. Traditional geotechnical consultancies typically charge £600-800+VAT and require a physical site walkover. PF&Co Geotechnical Desk Study is a desktop product consulting 18+ authoritative data sources, suitable for planning and Building Control submissions."
+            footerNote="Comparison based on publicly available product information from Earth Environmental, Southern Testing, SOCOTEC, RSK Geosciences, Landmark Envirocheck, and typical UK geotechnical consultancies. Features may vary by provider. Traditional geotechnical consultancies typically charge £600-800+VAT and require a physical site walkover. PF&Co Geotechnical Desk Study is a desktop product consulting 44 authoritative data sources, suitable for planning and Building Control submissions."
             accentColor="text-amber-700"
           />
         </div>

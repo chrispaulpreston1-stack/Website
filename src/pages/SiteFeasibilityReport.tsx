@@ -224,7 +224,7 @@ const SiteFeasibilityReport = () => {
             subtitle="What you get vs a typical planning consultant or automated data search"
             columns={["Feature", "PF&Co Site Intelligence", "Typical Planning Consultant", "Groundsure / Envirocheck"]}
             categories={comparisonCategories}
-            footerNote="Comparison based on publicly available product information from Groundsure Avista, Landmark Envirocheck, and typical UK planning consultancy appraisals. Features may vary by provider and product tier. PF&Co Site Feasibility Report checks 22+ constraint categories from 21 authoritative data sources."
+            footerNote="Comparison based on publicly available product information from Groundsure Avista, Landmark Envirocheck, and typical UK planning consultancy appraisals. Features may vary by provider and product tier. PF&Co Site Feasibility Report checks 22+ constraint categories from 44 authoritative data sources."
             accentColor="text-teal-500"
           />
         </div>
@@ -260,7 +260,7 @@ const SiteFeasibilityReport = () => {
             <div className="aspect-square bg-brand-primary rounded-[3rem] p-12 relative overflow-hidden flex items-center justify-center">
               <div className="absolute inset-0 opacity-10 engineering-grid" />
               <div className="relative z-10 text-center">
-                <div className="text-8xl font-bold text-teal-400 mb-4">25+</div>
+                <div className="text-8xl font-bold text-teal-400 mb-4">44</div>
                 <div className="text-xs font-mono uppercase tracking-[0.4em] text-white/40">Real-Time Connections</div>
               </div>
               <div className="absolute inset-0 border-[20px] border-white/5 rounded-[3rem]" />

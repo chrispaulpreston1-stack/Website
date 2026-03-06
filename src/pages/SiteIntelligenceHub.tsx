@@ -44,7 +44,7 @@ const SiteIntelligenceHub = () => {
 
   const stats = [
     { num: "300+", label: "Projects Delivered" },
-    { num: "25+", label: "Authoritative Data Sources" },
+    { num: "44", label: "Authoritative Data Sources" },
     { num: "48hr", label: "Typical Turnaround" }
   ];
 
@@ -52,13 +52,13 @@ const SiteIntelligenceHub = () => {
     <div className="pt-32 pb-24">
       <PageSEO
         title="PF & Co Site Intelligence | Data-Driven Pre-Construction Screening | PF & Co"
-        description="Interrogate 25+ authoritative data sources to identify planning, flood, and ground risks before you commit to a site."
+        description="Interrogate 44 authoritative data sources to identify planning, flood, and ground risks before you commit to a site."
         path="/site-intelligence"
         jsonLd={[
           {
             '@type': 'Service',
             name: 'Site Intelligence',
-            description: 'Data-driven pre-construction screening interrogating 25+ authoritative data sources to identify planning, flood, and ground risks.',
+            description: 'Data-driven pre-construction screening interrogating 44 authoritative data sources to identify planning, flood, and ground risks.',
             provider: { '@type': 'Organization', name: 'PF & Co Site Intelligence' },
             areaServed: ['England', 'Wales', 'UK'],
             serviceType: 'Site Intelligence',
@@ -66,7 +66,7 @@ const SiteIntelligenceHub = () => {
           {
             '@type': 'VideoObject',
             name: 'PF & Co Site Intelligence — The Complete Process',
-            description: 'See the complete Site Intelligence process from order to delivery. Learn how we interrogate 25+ authoritative data sources and translate raw data into engineering decisions for planning, flood, and ground risk screening.',
+            description: 'See the complete Site Intelligence process from order to delivery. Learn how we interrogate 44 authoritative data sources and translate raw data into engineering decisions for planning, flood, and ground risk screening.',
             thumbnailUrl: 'https://www.pfcoconstruction.co.uk/videos/site-intelligence-demo-thumb.jpg',
             contentUrl: 'https://www.pfcoconstruction.co.uk/videos/site-intelligence-demo.mp4',
             uploadDate: '2026-03-02',
@@ -109,7 +109,7 @@ const SiteIntelligenceHub = () => {
               transition={{ delay: 0.2 }}
               className="text-xl text-brand-primary/60 leading-relaxed mb-8"
             >
-              Welcome to Early Access. You're among the first to use PF & Co Site Intelligence — data-driven pre-construction screening that interrogates 25+ authoritative data sources. Lock in discounted pricing today and help shape the product before V1 launch.
+              Welcome to Early Access. You're among the first to use PF & Co Site Intelligence — data-driven pre-construction screening that interrogates 44 authoritative data sources. Lock in discounted pricing today and help shape the product before V1 launch.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -206,7 +206,7 @@ const SiteIntelligenceHub = () => {
       <VideoExplainer
         title="PF & Co Site Intelligence"
         accentColor="brand-accent"
-        description="See the complete process — from order to delivery. Learn how we interrogate 25+ authoritative data sources and translate raw data into engineering decisions, typically within 48 hours."
+        description="See the complete process — from order to delivery. Learn how we interrogate 44 authoritative data sources and translate raw data into engineering decisions, typically within 48 hours."
         thumbnailUrl="/videos/site-intelligence-demo-thumb.jpg"
         videoUrl="/videos/site-intelligence-demo.mp4"
         duration="2:32"
