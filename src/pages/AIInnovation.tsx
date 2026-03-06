@@ -76,20 +76,20 @@ const LiveOperationsLog = () => {
   const [logs, setLogs] = useState<string[]>([]);
   const logMessages = [
     "Initializing Swarm Node 0x4F...",
-    "Load Analyst: Calculating beam deflection for GU21...",
-    "Eurocode Bot: Cross-referencing BS EN 1993-1-1...",
-    "Steel Optimiser: Material reduction achieved: 14.2%",
-    "Safety Sentinel: Stress point 42b within tolerance.",
-    "Infrastructure Scanner: 400kV pylon route detected 820m...",
+    "Structural Analysis: Calculating beam deflection...",
+    "Compliance Check: Cross-referencing BS EN 1993-1-1...",
+    "Optimisation: Material reduction achieved: 14.2%",
+    "Safety Check: Stress point 42b within tolerance.",
+    "Data Acquisition: Infrastructure proximity scan complete.",
     `Data Sync: ${TOTAL_AGENTS}/${TOTAL_AGENTS} agents reporting optimal status.`,
     "Audit: Design sign-off pending final verification.",
     "Predictive AI: Weather delay probability: 4%",
-    "Vision AI: PPE compliance verified on Site B.",
-    "Market Intelligence: Land Registry benchmark delta: -1.8pp...",
-    "BNG Screener: 5 statutory exemption checks complete.",
-    "Flood Zone Mapper: Zone 3a identified — FRA triggered.",
-    "Planning Friction Scorer: Score 68/100 — Moderate.",
-    "IPS Calculator: Infrastructure Proximity Score: -8.2%...",
+    "Computer Vision: PPE compliance verified on Site B.",
+    "Market Intelligence: Benchmark delta calculated: -1.8pp...",
+    "Ecology Screening: Statutory exemption checks complete.",
+    "Flood Analysis: Zone 3a identified — FRA triggered.",
+    "Risk Scoring: Planning friction score calculated.",
+    "Analysis Complete: All agents reporting.",
   ];
 
   useEffect(() => {
@@ -124,28 +124,18 @@ const LiveOperationsLog = () => {
 };
 
 const AIAgentSwarm = () => {
-  // Pick representative agents from each category for the orbital display
-  const orbitAgents = [
-    agents.find(a => a.name === 'Planning Constraint Screener')!,
-    agents.find(a => a.name === 'Flood Zone Mapper')!,
-    agents.find(a => a.name === 'Infrastructure Impact Scorer')!,
-    agents.find(a => a.name === 'Planning Friction Scorer')!,
-    agents.find(a => a.name === 'Load Analyst')!,
-    agents.find(a => a.name === 'Steel Optimiser')!,
-    agents.find(a => a.name === 'Report Compiler')!,
-    agents.find(a => a.name === 'PPE Compliance Monitor')!,
-    agents.find(a => a.name === 'Cost Estimator')!,
-    agents.find(a => a.name === 'Land Registry Benchmark Analyst')!,
-  ];
-
-  const [activeAgent, setActiveAgent] = useState(0);
+  const categories = Object.entries(AGENT_CATEGORIES) as [AgentCategory, { label: string; description: string }][];
+  const [activeCategory, setActiveCategory] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setActiveAgent((prev) => (prev + 1) % orbitAgents.length);
+      setActiveCategory((prev) => (prev + 1) % categories.length);
     }, 3000);
     return () => clearInterval(interval);
   }, []);
+
+  const [currentKey, currentCat] = categories[activeCategory];
+  const catAgentCount = agents.filter(a => a.category === currentKey).length;
 
   return (
     <div className="relative bg-brand-primary/40 backdrop-blur-xl border border-white/10 rounded-[4rem] p-8 lg:p-20 overflow-hidden group">
@@ -166,7 +156,7 @@ const AIAgentSwarm = () => {
           <div className="space-y-4 mb-12">
             <AnimatePresence mode="wait">
               <motion.div
-                key={activeAgent}
+                key={activeCategory}
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: 20 }}
@@ -174,15 +164,15 @@ const AIAgentSwarm = () => {
               >
                 <div className="flex items-center gap-4 mb-6">
                   <div className="w-12 h-12 bg-brand-accent rounded-2xl flex items-center justify-center text-brand-primary shadow-[0_0_30px_rgba(245,158,11,0.3)]">
-                    {CATEGORY_ICONS[orbitAgents[activeAgent].category]}
+                    {CATEGORY_ICONS[currentKey as AgentCategory]}
                   </div>
                   <div>
-                    <h4 className="font-bold text-xl text-white">{orbitAgents[activeAgent].name}</h4>
-                    <p className="text-[10px] text-brand-accent font-mono uppercase tracking-[0.2em]">Agent ID: {orbitAgents[activeAgent].id} / {AGENT_CATEGORIES[orbitAgents[activeAgent].category].label}</p>
+                    <h4 className="font-bold text-xl text-white">{currentCat.label}</h4>
+                    <p className="text-[10px] text-brand-accent font-mono uppercase tracking-[0.2em]">{catAgentCount} Specialised Agents</p>
                   </div>
                 </div>
                 <p className="text-white/60 leading-relaxed mb-6 font-light">
-                  {orbitAgents[activeAgent].role}
+                  {currentCat.description}
                 </p>
                 <div className="flex items-center gap-6">
                   <div className="flex-grow h-1 bg-white/10 rounded-full overflow-hidden">
@@ -224,17 +214,17 @@ const AIAgentSwarm = () => {
               <Cpu size={48} className="text-brand-accent" />
             </div>
 
-            {/* Orbiting Nodes */}
-            {orbitAgents.map((agent, i) => {
-              const angle = (i / orbitAgents.length) * Math.PI * 2;
+            {/* Orbiting Nodes — one per category */}
+            {categories.map(([key], i) => {
+              const angle = (i / categories.length) * Math.PI * 2;
               const radius = 160;
               const x = Math.cos(angle) * radius;
               const y = Math.sin(angle) * radius;
-              const isActive = activeAgent === i;
+              const isActive = activeCategory === i;
 
               return (
                 <motion.div
-                  key={agent.id}
+                  key={key}
                   animate={{
                     x,
                     y,
@@ -246,7 +236,7 @@ const AIAgentSwarm = () => {
                     : 'bg-white/5 border-white/10 text-white/40'
                     }`}
                 >
-                  {CATEGORY_ICONS[agent.category]}
+                  {CATEGORY_ICONS[key as AgentCategory]}
                   {isActive && (
                     <motion.div
                       layoutId="pulse-ring"
@@ -259,8 +249,8 @@ const AIAgentSwarm = () => {
 
             {/* Connection Lines */}
             <svg className="absolute inset-0 w-full h-full pointer-events-none z-10" viewBox="0 0 400 400">
-              {orbitAgents.map((_, i) => {
-                const angle = (i / orbitAgents.length) * Math.PI * 2;
+              {categories.map((_, i) => {
+                const angle = (i / categories.length) * Math.PI * 2;
                 const radius = 160;
                 const x2 = 200 + Math.cos(angle) * radius;
                 const y2 = 200 + Math.sin(angle) * radius;
@@ -272,10 +262,10 @@ const AIAgentSwarm = () => {
                     x2={x2}
                     y2={y2}
                     stroke="currentColor"
-                    className={`${activeAgent === i ? 'text-brand-accent opacity-50' : 'text-white/5'}`}
-                    strokeWidth={activeAgent === i ? "2" : "1"}
-                    strokeDasharray={activeAgent === i ? "0" : "4 4"}
-                    animate={{ opacity: activeAgent === i ? 0.5 : 0.05 }}
+                    className={`${activeCategory === i ? 'text-brand-accent opacity-50' : 'text-white/5'}`}
+                    strokeWidth={activeCategory === i ? "2" : "1"}
+                    strokeDasharray={activeCategory === i ? "0" : "4 4"}
+                    animate={{ opacity: activeCategory === i ? 0.5 : 0.05 }}
                   />
                 );
               })}
@@ -294,7 +284,7 @@ const AgentCatalogue = () => {
     <section className="max-w-7xl mx-auto px-6 pb-32">
       <div className="text-center mb-20">
         <h2 className="text-5xl md:text-6xl font-display font-bold text-white mb-6">
-          Full Agent <span className="text-brand-accent italic font-serif font-light">Catalogue.</span>
+          {TOTAL_AGENTS} Agents. <span className="text-brand-accent italic font-serif font-light">{categories.length} Domains.</span>
         </h2>
         <p className="text-white/40 max-w-2xl mx-auto text-lg font-light">
           {TOTAL_AGENTS} specialised agents across {categories.length} operational domains, interrogating {TOTAL_DATA_SOURCES} authoritative data sources to produce {TOTAL_REPORTS} report types.
@@ -319,18 +309,7 @@ const AgentCatalogue = () => {
                   <span className="text-[10px] font-mono text-brand-accent uppercase tracking-widest">{catAgents.length} agents</span>
                 </div>
               </div>
-              <p className="text-white/40 text-xs mb-6 font-light">{cat.description}</p>
-              <div className="space-y-2 max-h-64 overflow-y-auto pr-2">
-                {catAgents.map((agent) => (
-                  <div key={agent.id} className="flex items-start gap-3 p-2 rounded-lg hover:bg-white/5 transition-colors">
-                    <span className="text-[10px] font-mono text-brand-accent/60 mt-0.5 shrink-0 w-5">{agent.id}</span>
-                    <div>
-                      <div className="text-xs font-bold text-white/80">{agent.name}</div>
-                      <div className="text-[10px] text-white/30 font-light">{agent.role}</div>
-                    </div>
-                  </div>
-                ))}
-              </div>
+              <p className="text-white/40 text-xs font-light">{cat.description}</p>
             </motion.div>
           );
         })}
