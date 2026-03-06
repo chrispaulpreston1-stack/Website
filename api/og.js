@@ -47,7 +47,7 @@ export default async function handler(req) {
     pfcoconstruction.co.uk
   </text>
   <text x="1120" y="590" fill="#4b5563" font-family="system-ui,-apple-system,sans-serif" font-size="16" text-anchor="end">
-    44 Data Sources | 84 AI Agents | 48hr Delivery
+    58 Data Sources | 112 AI Agents | 48hr Delivery
   </text>
 </svg>`;
 

@@ -335,7 +335,7 @@ const AIInnovation = () => {
           '@type': 'SoftwareApplication',
           name: 'PF & Co AI Swarm',
           applicationCategory: 'EngineeringApplication',
-          description: 'Multi-agent AI system for structural engineering and site intelligence, orchestrating data acquisition, analysis, and report generation across 44 authoritative data sources.',
+          description: 'Multi-agent AI system for structural engineering and site intelligence, orchestrating data acquisition, analysis, and report generation across 58 authoritative data sources.',
           operatingSystem: 'Web',
           offers: {
             '@type': 'Offer',

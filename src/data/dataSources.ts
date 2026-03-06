@@ -16,7 +16,9 @@ export type DataSourceCategory =
   | 'mapping-spatial'
   | 'climate-energy'
   | 'safety-risk'
-  | 'market-infrastructure';
+  | 'market-infrastructure'
+  | 'transport-accessibility'
+  | 'amenity-services';
 
 export const DATA_SOURCE_CATEGORIES: Record<DataSourceCategory, string> = {
   'geology-ground': 'Geology & Ground Conditions',
@@ -28,6 +30,8 @@ export const DATA_SOURCE_CATEGORIES: Record<DataSourceCategory, string> = {
   'climate-energy': 'Climate & Energy',
   'safety-risk': 'Safety & Risk',
   'market-infrastructure': 'Market & Infrastructure',
+  'transport-accessibility': 'Transport & Accessibility',
+  'amenity-services': 'Amenity & Services',
 };
 
 export const dataSources: DataSource[] = [
@@ -92,6 +96,28 @@ export const dataSources: DataSource[] = [
   { id: 42, name: 'EA Permitted Waste Sites', organisation: 'Environment Agency', category: 'market-infrastructure', description: 'Active, closed, and historic landfill sites and waste treatment facilities.', usedBy: ['SFR', 'CFS'] },
   { id: 43, name: 'NSIP Register', organisation: 'Planning Inspectorate', category: 'market-infrastructure', description: 'Nationally Significant Infrastructure Projects register and decision tracker.', usedBy: ['SFR', 'CFS'] },
   { id: 44, name: 'OpenStreetMap', organisation: 'OpenStreetMap Foundation', category: 'market-infrastructure', description: 'Base mapping layer for infrastructure proximity visualisations.', usedBy: ['SFR', 'CFS'] },
+
+  // ── Transport & Accessibility ─────────────────────────────────────
+  { id: 45, name: 'NaPTAN', organisation: 'DfT', category: 'transport-accessibility', description: 'National public transport access nodes — 350k+ bus, rail, tram, and ferry stop locations.', usedBy: ['TS', 'SFR', 'DAS'] },
+  { id: 46, name: 'BODS (Bus Open Data)', organisation: 'DfT', category: 'transport-accessibility', description: 'All bus timetables in England — service frequencies per stop for PTAL calculation.', usedBy: ['TS'] },
+  { id: 47, name: 'National Rail Timetables', organisation: 'Rail Data Marketplace', category: 'transport-accessibility', description: 'Rail station service frequencies and timetable data via Darwin/SCHEDULE feeds.', usedBy: ['TS'] },
+  { id: 48, name: 'DfT Road Traffic Statistics', organisation: 'DfT', category: 'transport-accessibility', description: 'Annual Average Daily Flow (AADF) traffic volumes at 1,000+ monitoring points.', usedBy: ['TS'] },
+  { id: 49, name: 'CycleStreets', organisation: 'CycleStreets', category: 'transport-accessibility', description: 'Cycle route planning, isochrone mapping, collision data, and cycle infrastructure audit.', usedBy: ['TS', 'DAS'] },
+
+  // ── Amenity & Services ────────────────────────────────────────────
+  { id: 50, name: 'GIAS Schools Data', organisation: 'DfE', category: 'amenity-services', description: 'All 65k schools in England — name, type, capacity, age range, Ofsted rating, and location.', usedBy: ['SFR', 'CFS', 'DAS'] },
+  { id: 51, name: 'CQC Healthcare Register', organisation: 'CQC', category: 'amenity-services', description: 'Every GP surgery, hospital, dentist, care home, and pharmacy in England with CQC ratings.', usedBy: ['SFR', 'CFS', 'DAS'] },
+  { id: 52, name: 'Geolytix Retail Points', organisation: 'Geolytix', category: 'amenity-services', description: 'All major supermarket and convenience store locations, rooftop-geocoded.', usedBy: ['SFR', 'CFS'] },
+  { id: 53, name: 'FSA Food Hygiene Ratings', organisation: 'FSA', category: 'amenity-services', description: 'All food businesses — shops, restaurants, cafes — as a proxy for local retail and services.', usedBy: ['SFR'] },
+  { id: 54, name: 'NHSBSA Pharmacy Data', organisation: 'NHS BSA', category: 'amenity-services', description: 'All pharmacy contractor locations across England.', usedBy: ['SFR'] },
+
+  // ── Climate & Energy (expanded) ───────────────────────────────────
+  { id: 55, name: 'DNO Capacity Heatmaps', organisation: '6 x DNOs', category: 'climate-energy', description: 'Primary substation demand headroom and RAG-rated grid capacity from all six distribution network operators.', usedBy: ['ES', 'SFR', 'CFS'] },
+  { id: 56, name: 'DNO Embedded Capacity Registers', organisation: '6 x DNOs', category: 'climate-energy', description: 'Existing generation and storage connections (heat pumps, EV chargers, solar) at each substation.', usedBy: ['ES', 'SFR'] },
+
+  // ── Market & Infrastructure (expanded) ────────────────────────────
+  { id: 57, name: 'UK House Price Index', organisation: 'HM Land Registry', category: 'market-infrastructure', description: 'Area-level index values, average prices by property type, monthly/annual percentage change, and sales volumes.', usedBy: ['SFR', 'CFS'] },
+  { id: 58, name: 'Ofcom Connected Nations', organisation: 'Ofcom', category: 'market-infrastructure', description: 'Premises-level broadband availability — FTTP, FTTC, cable speeds, and provider coverage.', usedBy: ['SFR', 'CFS'] },
 ];
 
 export const TOTAL_DATA_SOURCES = dataSources.length;

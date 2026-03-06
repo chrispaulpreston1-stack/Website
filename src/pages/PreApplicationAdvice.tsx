@@ -272,7 +272,7 @@ const PreApplicationAdvice = () => {
             subtitle="What you get vs a DIY submission"
             columns={["Feature", "PF&Co Site Intelligence", "DIY Submission", "Basic Email"]}
             categories={comparisonCategories}
-            footerNote="Comparison based on typical DIY pre-application submissions. PF&Co Pre-App Pack pulls data from 44 authoritative sources and frames questions within the relevant local policy context."
+            footerNote="Comparison based on typical DIY pre-application submissions. PF&Co Pre-App Pack pulls data from 58 authoritative sources and frames questions within the relevant local policy context."
             accentColor="text-cyan-500"
           />
         </div>

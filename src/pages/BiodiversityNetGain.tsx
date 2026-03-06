@@ -253,7 +253,7 @@ const BiodiversityNetGain = () => {
             subtitle="What you get vs a typical ecology consultant"
             columns={["Feature", "PF&Co Site Intelligence", "Typical Consultant", "Basic Map Check"]}
             categories={comparisonCategories}
-            footerNote="Comparison based on typical UK ecology consultancy practices. PF&Co BNG Screening pulls data from 44 authoritative sources and references the latest Environment Act 2021 statutory guidance."
+            footerNote="Comparison based on typical UK ecology consultancy practices. PF&Co BNG Screening pulls data from 58 authoritative sources and references the latest Environment Act 2021 statutory guidance."
             accentColor="text-emerald-500"
           />
         </div>

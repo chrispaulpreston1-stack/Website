@@ -73,15 +73,15 @@ const svg = `<svg width="${WIDTH}" height="${HEIGHT}" xmlns="http://www.w3.org/2
   <rect x="80" y="480" width="1" height="40" fill="#374151"/>
 
   <!-- Stat 1 -->
-  <text x="100" y="498" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="28" fill="#f59e0b">44</text>
+  <text x="100" y="498" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="28" fill="#f59e0b">58</text>
   <text x="140" y="498" font-family="system-ui, -apple-system, sans-serif" font-weight="400" font-size="16" fill="#6b7280">Data Sources</text>
 
   <!-- Divider -->
   <rect x="300" y="480" width="1" height="40" fill="#374151"/>
 
   <!-- Stat 2 -->
-  <text x="320" y="498" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="28" fill="#f59e0b">84</text>
-  <text x="360" y="498" font-family="system-ui, -apple-system, sans-serif" font-weight="400" font-size="16" fill="#6b7280">AI Agents</text>
+  <text x="320" y="498" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="28" fill="#f59e0b">112</text>
+  <text x="370" y="498" font-family="system-ui, -apple-system, sans-serif" font-weight="400" font-size="16" fill="#6b7280">AI Agents</text>
 
   <!-- Divider -->
   <rect x="500" y="480" width="1" height="40" fill="#374151"/>

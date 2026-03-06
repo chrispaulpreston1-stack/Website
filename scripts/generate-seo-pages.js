@@ -50,7 +50,7 @@ const routes = [
   {
     path: '/site-intelligence',
     title: 'PF & Co Site Intelligence | Data-Driven Pre-Construction Screening',
-    description: 'Interrogate 44 authoritative data sources across 9 constraint categories. Planning Friction Score, risk profiling, and buildability ratings — delivered in 48 hours.',
+    description: 'Interrogate 58 authoritative data sources across 11 constraint categories. Planning Friction Score, risk profiling, and buildability ratings — delivered in 48 hours.',
   },
   {
     path: '/site-intelligence/site-feasibility-report',
@@ -171,7 +171,7 @@ const routes = [
   {
     path: '/ai-innovation',
     title: 'AI Innovation | PF & Co Structural Engineering',
-    description: 'Explore our multi-agent AI system and generative structural design tools that optimise safety and reduce material waste across 44 data sources.',
+    description: 'Explore our multi-agent AI system and generative structural design tools that optimise safety and reduce material waste across 58 data sources.',
   },
   {
     path: '/blog',

@@ -172,6 +172,12 @@ export const agents: Agent[] = [
   { id: '106', name: 'Lighting Impact Assessor', role: 'ILP environmental zones, obtrusive light limits, bat corridors', category: 'analysis-scoring' },
   { id: '107', name: 'Development Viability Assessor', role: 'Residual land value, GDV, BCIS costs, viability screening', category: 'market-intelligence' },
   { id: '108', name: 'Conditions Discharge Manager', role: 'Post-permission condition tracking and discharge management', category: 'platform-operations' },
+
+  // ── Data Enrichment Agents (109–112) ────────────────────────────
+  { id: '109', name: 'Transport Accessibility Scorer', role: 'Calculates nationwide PTAL-equivalent score from NaPTAN stop locations, BODS bus timetables, and National Rail service frequencies', category: 'data-acquisition', triggeredBy: ['TS', 'SFR', 'DAS'] },
+  { id: '110', name: 'Amenity Proximity Engine', role: 'Measures walking distances to nearest schools, GP surgeries, pharmacies, supermarkets, and convenience stores with RAG ratings against NPPF sustainability thresholds', category: 'data-acquisition', triggeredBy: ['SFR', 'CFS', 'PS', 'DAS'] },
+  { id: '111', name: 'Grid Capacity Assessor', role: 'Queries DNO open data portals to assess electricity substation headroom, heat pump/EV charging capacity, and connection feasibility', category: 'data-acquisition', triggeredBy: ['ES', 'SFR', 'CFS'] },
+  { id: '112', name: 'Market Data Enricher', role: 'Cross-references UK House Price Index trends with EPC floor areas and Land Registry transactions to calculate local price-per-sqft and market direction', category: 'market-intelligence', triggeredBy: ['CFS', 'SFR'] },
 ];
 
 export const TOTAL_AGENTS = agents.length;

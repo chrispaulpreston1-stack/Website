@@ -2,7 +2,7 @@
 > AI-powered structural engineering, construction, and site intelligence services nationwide across England and Wales.
 
 ## About
-PF & Co Construction is an engineering-led construction firm specialising in structural design, precision construction, and data-driven site intelligence. We combine AI-optimised design tools with hands-on engineering expertise to deliver safer, faster, and more cost-effective outcomes. PI insured, with 24-hour turnaround on quotes. Our multi-agent AI system interrogates 44 authoritative data sources across 9 constraint categories to produce planning-ready reports in 48 hours.
+PF & Co Construction is an engineering-led construction firm specialising in structural design, precision construction, and data-driven site intelligence. We combine AI-optimised design tools with hands-on engineering expertise to deliver safer, faster, and more cost-effective outcomes. PI insured, with 24-hour turnaround on quotes. Our multi-agent AI system interrogates 58 authoritative data sources across 11 constraint categories to produce planning-ready reports in 48 hours.
 
 ## Services
 
@@ -15,7 +15,7 @@ Engineering-led construction services including structural alterations, extensio
 URL: https://www.pfcoconstruction.co.uk/construction
 
 ### Site Intelligence
-Data-driven pre-construction screening reports interrogating 44 authoritative data sources across 9 constraint categories. Reports include:
+Data-driven pre-construction screening reports interrogating 58 authoritative data sources across 11 constraint categories. Reports include:
 - Site Feasibility Report — 22+ constraint screening, Planning Friction Score (EA £1,500 / Stripe £297)
 - Geotechnical Desk Study — BGS geology, contamination, foundation risk (EA £900 / Stripe £197)
 - Flood Risk Assessment — 7 flood sources, Decision Risk Scores (EA £375 / Stripe £147)
@@ -53,7 +53,7 @@ URL: https://www.pfcoconstruction.co.uk/report-packages
 Plans & Pricing Roadmap: https://www.pfcoconstruction.co.uk/how-it-works
 
 ### AI Innovation
-Multi-agent AI system with 84 specialised agents across 7 categories (Data Acquisition, Analysis & Scoring, Market Intelligence, Structural Engineering, Construction & Project, Platform & Operations, Computer Vision). Interrogates 44 authoritative data sources including BGS, Environment Agency, Historic England, Natural England, Land Registry, and National Grid.
+Multi-agent AI system with 112 specialised agents across 7 categories (Data Acquisition, Analysis & Scoring, Market Intelligence, Structural Engineering, Construction & Project, Platform & Operations, Computer Vision). Interrogates 58 authoritative data sources across 11 constraint categories including BGS, Environment Agency, Historic England, Natural England, Land Registry, National Grid, NaPTAN, CQC, GIAS, DNO capacity heatmaps, and UK House Price Index.
 URL: https://www.pfcoconstruction.co.uk/ai-innovation
 
 ### Subscriptions
