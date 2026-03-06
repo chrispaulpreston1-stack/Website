@@ -137,7 +137,7 @@ const blogPosts: BlogPost[] = [
     date: 'Mar 4, 2026',
     author: 'Chris Preston',
     category: 'Planning & Reports',
-    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=1200',
+    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200',
     content: [
       'If you are planning an extension, loft conversion, new build, or any project that needs planning permission, you will almost certainly need to submit supporting reports alongside your application. The problem? Most people have no idea which ones they actually need — and submitting the wrong documents (or missing one entirely) is one of the most common reasons applications get invalidated or refused.',
       'In fact, 45% of planning applications are invalidated by some councils because of missing or incomplete documents. That is not a refusal — it is your application being sent back before anyone even looks at it. Weeks of work wasted because a report was missing from the checklist.',
