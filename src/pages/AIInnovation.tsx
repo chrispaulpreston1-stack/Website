@@ -1,8 +1,31 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence, useScroll, useTransform } from 'motion/react';
-import { Zap, Shield, Cpu, BarChart3, Search, ArrowRight, Activity, Globe, Lock, Code, Terminal } from 'lucide-react';
+import { motion, AnimatePresence, useScroll } from 'motion/react';
+import { Zap, Shield, Cpu, BarChart3, Search, ArrowRight, Activity, Globe, Lock, Code, Terminal, Database, Eye, MapPin, TrendingUp, Layers } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import PageSEO from '../components/PageSEO';
+import { agents, AGENT_CATEGORIES, TOTAL_AGENTS, type AgentCategory } from '../data/agents';
+import { TOTAL_DATA_SOURCES } from '../data/dataSources';
+import { TOTAL_REPORTS } from '../data/reports';
+
+const CATEGORY_ICONS: Record<AgentCategory, React.ReactNode> = {
+  'data-acquisition': <Database size={14} />,
+  'analysis-scoring': <BarChart3 size={14} />,
+  'market-intelligence': <TrendingUp size={14} />,
+  'structural-engineering': <Layers size={14} />,
+  'construction-project': <Activity size={14} />,
+  'platform-operations': <Cpu size={14} />,
+  'computer-vision': <Eye size={14} />,
+};
+
+const CATEGORY_COLORS: Record<AgentCategory, string> = {
+  'data-acquisition': 'text-teal-400',
+  'analysis-scoring': 'text-blue-400',
+  'market-intelligence': 'text-orange-400',
+  'structural-engineering': 'text-brand-accent',
+  'construction-project': 'text-green-400',
+  'platform-operations': 'text-purple-400',
+  'computer-vision': 'text-red-400',
+};
 
 const NeuralBackground = () => {
   return (
@@ -57,11 +80,16 @@ const LiveOperationsLog = () => {
     "Eurocode Bot: Cross-referencing BS EN 1993-1-1...",
     "Steel Optimiser: Material reduction achieved: 14.2%",
     "Safety Sentinel: Stress point 42b within tolerance.",
-    "Neural Engine: Optimising connection topology...",
-    "Data Sync: 54/54 agents reporting optimal status.",
+    "Infrastructure Scanner: 400kV pylon route detected 820m...",
+    `Data Sync: ${TOTAL_AGENTS}/${TOTAL_AGENTS} agents reporting optimal status.`,
     "Audit: Design sign-off pending final verification.",
     "Predictive AI: Weather delay probability: 4%",
     "Vision AI: PPE compliance verified on Site B.",
+    "Market Intelligence: Land Registry benchmark delta: -1.8pp...",
+    "BNG Screener: 5 statutory exemption checks complete.",
+    "Flood Zone Mapper: Zone 3a identified — FRA triggered.",
+    "Planning Friction Scorer: Score 68/100 — Moderate.",
+    "IPS Calculator: Infrastructure Proximity Score: -8.2%...",
   ];
 
   useEffect(() => {
@@ -96,22 +124,25 @@ const LiveOperationsLog = () => {
 };
 
 const AIAgentSwarm = () => {
-  const agents = [
-    { id: '01', name: 'Load Analyst', task: 'Calculating kN/m forces...', icon: <Activity size={14} /> },
-    { id: '04', name: 'Eurocode Bot', task: 'Verifying compliance...', icon: <Shield size={14} /> },
-    { id: '12', name: 'Steel Optimiser', task: 'Reducing material waste...', icon: <Zap size={14} /> },
-    { id: '19', name: 'Safety Sentinel', task: 'Monitoring stress points...', icon: <Lock size={14} /> },
-    { id: '22', name: 'Logistics AI', task: 'Optimising delivery routes...', icon: <Globe size={14} /> },
-    { id: '38', name: 'Carbon Tracker', task: 'Measuring embodied carbon...', icon: <BarChart3 size={14} /> },
-    { id: '45', name: 'Thermal Modeller', task: 'Analysing heat loss...', icon: <Search size={14} /> },
-    { id: '54', name: 'Final Auditor', task: 'Signing off design...', icon: <Cpu size={14} /> },
+  // Pick representative agents from each category for the orbital display
+  const orbitAgents = [
+    agents.find(a => a.name === 'Planning Constraint Screener')!,
+    agents.find(a => a.name === 'Flood Zone Mapper')!,
+    agents.find(a => a.name === 'Infrastructure Impact Scorer')!,
+    agents.find(a => a.name === 'Planning Friction Scorer')!,
+    agents.find(a => a.name === 'Load Analyst')!,
+    agents.find(a => a.name === 'Steel Optimiser')!,
+    agents.find(a => a.name === 'Report Compiler')!,
+    agents.find(a => a.name === 'PPE Compliance Monitor')!,
+    agents.find(a => a.name === 'Cost Estimator')!,
+    agents.find(a => a.name === 'Land Registry Benchmark Analyst')!,
   ];
 
   const [activeAgent, setActiveAgent] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setActiveAgent((prev) => (prev + 1) % agents.length);
+      setActiveAgent((prev) => (prev + 1) % orbitAgents.length);
     }, 3000);
     return () => clearInterval(interval);
   }, []);
@@ -128,7 +159,7 @@ const AIAgentSwarm = () => {
           </div>
 
           <h2 className="text-5xl md:text-6xl font-display font-bold text-white mb-8 leading-tight">
-            The <span className="text-brand-accent italic font-serif font-light">54-Agent</span> <br />
+            The <span className="text-brand-accent italic font-serif font-light">{TOTAL_AGENTS}-Agent</span> <br />
             Workforce.
           </h2>
 
@@ -143,15 +174,15 @@ const AIAgentSwarm = () => {
               >
                 <div className="flex items-center gap-4 mb-6">
                   <div className="w-12 h-12 bg-brand-accent rounded-2xl flex items-center justify-center text-brand-primary shadow-[0_0_30px_rgba(245,158,11,0.3)]">
-                    {agents[activeAgent].icon}
+                    {CATEGORY_ICONS[orbitAgents[activeAgent].category]}
                   </div>
                   <div>
-                    <h4 className="font-bold text-xl text-white">{agents[activeAgent].name}</h4>
-                    <p className="text-[10px] text-brand-accent font-mono uppercase tracking-[0.2em]">Agent ID: {agents[activeAgent].id}</p>
+                    <h4 className="font-bold text-xl text-white">{orbitAgents[activeAgent].name}</h4>
+                    <p className="text-[10px] text-brand-accent font-mono uppercase tracking-[0.2em]">Agent ID: {orbitAgents[activeAgent].id} / {AGENT_CATEGORIES[orbitAgents[activeAgent].category].label}</p>
                   </div>
                 </div>
                 <p className="text-white/60 leading-relaxed mb-6 font-light">
-                  {agents[activeAgent].task}
+                  {orbitAgents[activeAgent].role}
                 </p>
                 <div className="flex items-center gap-6">
                   <div className="flex-grow h-1 bg-white/10 rounded-full overflow-hidden">
@@ -167,10 +198,14 @@ const AIAgentSwarm = () => {
             </AnimatePresence>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-3 gap-4">
             <div className="p-6 rounded-2xl bg-white/5 border border-white/10 group-hover:border-brand-accent/30 transition-colors">
-              <div className="text-3xl font-display font-bold text-white mb-1">54</div>
-              <div className="text-[10px] uppercase tracking-widest text-white/40">Parallel Nodes</div>
+              <div className="text-3xl font-display font-bold text-white mb-1">{TOTAL_AGENTS}</div>
+              <div className="text-[10px] uppercase tracking-widest text-white/40">Parallel Agents</div>
+            </div>
+            <div className="p-6 rounded-2xl bg-white/5 border border-white/10 group-hover:border-brand-accent/30 transition-colors">
+              <div className="text-3xl font-display font-bold text-white mb-1">{TOTAL_DATA_SOURCES}</div>
+              <div className="text-[10px] uppercase tracking-widest text-white/40">Data Sources</div>
             </div>
             <div className="p-6 rounded-2xl bg-white/5 border border-white/10 group-hover:border-brand-accent/30 transition-colors">
               <div className="text-3xl font-display font-bold text-white mb-1">0.4s</div>
@@ -190,8 +225,8 @@ const AIAgentSwarm = () => {
             </div>
 
             {/* Orbiting Nodes */}
-            {agents.map((agent, i) => {
-              const angle = (i / agents.length) * Math.PI * 2;
+            {orbitAgents.map((agent, i) => {
+              const angle = (i / orbitAgents.length) * Math.PI * 2;
               const radius = 160;
               const x = Math.cos(angle) * radius;
               const y = Math.sin(angle) * radius;
@@ -211,7 +246,7 @@ const AIAgentSwarm = () => {
                     : 'bg-white/5 border-white/10 text-white/40'
                     }`}
                 >
-                  {agent.icon}
+                  {CATEGORY_ICONS[agent.category]}
                   {isActive && (
                     <motion.div
                       layoutId="pulse-ring"
@@ -224,8 +259,8 @@ const AIAgentSwarm = () => {
 
             {/* Connection Lines */}
             <svg className="absolute inset-0 w-full h-full pointer-events-none z-10" viewBox="0 0 400 400">
-              {agents.map((_, i) => {
-                const angle = (i / agents.length) * Math.PI * 2;
+              {orbitAgents.map((_, i) => {
+                const angle = (i / orbitAgents.length) * Math.PI * 2;
                 const radius = 160;
                 const x2 = 200 + Math.cos(angle) * radius;
                 const y2 = 200 + Math.sin(angle) * radius;
@@ -252,6 +287,58 @@ const AIAgentSwarm = () => {
   );
 };
 
+const AgentCatalogue = () => {
+  const categories = Object.entries(AGENT_CATEGORIES) as [AgentCategory, { label: string; description: string }][];
+
+  return (
+    <section className="max-w-7xl mx-auto px-6 pb-32">
+      <div className="text-center mb-20">
+        <h2 className="text-5xl md:text-6xl font-display font-bold text-white mb-6">
+          Full Agent <span className="text-brand-accent italic font-serif font-light">Catalogue.</span>
+        </h2>
+        <p className="text-white/40 max-w-2xl mx-auto text-lg font-light">
+          {TOTAL_AGENTS} specialised agents across {categories.length} operational domains, interrogating {TOTAL_DATA_SOURCES} authoritative data sources to produce {TOTAL_REPORTS} report types.
+        </p>
+      </div>
+
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {categories.map(([key, cat]) => {
+          const catAgents = agents.filter(a => a.category === key);
+          return (
+            <motion.div
+              key={key}
+              whileHover={{ y: -5 }}
+              className="bg-white/5 border border-white/10 rounded-[2rem] p-8 hover:border-brand-accent/20 transition-all duration-500"
+            >
+              <div className="flex items-center gap-3 mb-6">
+                <div className={`w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center ${CATEGORY_COLORS[key]}`}>
+                  {CATEGORY_ICONS[key]}
+                </div>
+                <div>
+                  <h3 className="font-bold text-white text-sm">{cat.label}</h3>
+                  <span className="text-[10px] font-mono text-brand-accent uppercase tracking-widest">{catAgents.length} agents</span>
+                </div>
+              </div>
+              <p className="text-white/40 text-xs mb-6 font-light">{cat.description}</p>
+              <div className="space-y-2 max-h-64 overflow-y-auto pr-2">
+                {catAgents.map((agent) => (
+                  <div key={agent.id} className="flex items-start gap-3 p-2 rounded-lg hover:bg-white/5 transition-colors">
+                    <span className="text-[10px] font-mono text-brand-accent/60 mt-0.5 shrink-0 w-5">{agent.id}</span>
+                    <div>
+                      <div className="text-xs font-bold text-white/80">{agent.name}</div>
+                      <div className="text-[10px] text-white/30 font-light">{agent.role}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          );
+        })}
+      </div>
+    </section>
+  );
+};
+
 const AIInnovation = () => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -259,38 +346,11 @@ const AIInnovation = () => {
     offset: ["start start", "end end"]
   });
 
-  const features = [
-    {
-      title: "Generative Structural Design",
-      desc: "Iterating through thousands of structural configurations to find the most efficient, material-saving design.",
-      icon: <Code className="text-brand-accent" />,
-      tag: "Optimisation"
-    },
-    {
-      title: "The Human Safety Leap",
-      desc: "AI accelerates the design, but human expertise secures it. Every calculation is rigorously verified and stamped by qualified engineers.",
-      icon: <Shield className="text-brand-accent" />,
-      tag: "Verification"
-    },
-    {
-      title: "Predictive Project Management",
-      desc: "Machine learning models that analyse site data to predict potential delays before they happen.",
-      icon: <BarChart3 className="text-brand-accent" />,
-      tag: "Intelligence"
-    },
-    {
-      title: "Computer Vision Site Safety",
-      desc: "Real-time monitoring of site safety protocols using advanced visual recognition AI.",
-      icon: <Search className="text-brand-accent" />,
-      tag: "Safety"
-    }
-  ];
-
   return (
     <div className="pt-20 bg-brand-primary text-white overflow-x-hidden" ref={containerRef}>
       <PageSEO
         title="AI Innovation | PF & Co Structural Engineering"
-        description="Explore our 54-agent AI workforce and generative structural design tools that optimise safety and cost."
+        description={`Explore our ${TOTAL_AGENTS}-agent AI workforce and generative structural design tools that optimise safety and cost.`}
         path="/ai-innovation"
       />
 
@@ -311,7 +371,7 @@ const AIInnovation = () => {
                 Engineering.
               </h1>
               <p className="text-2xl text-white/60 leading-relaxed mb-12 max-w-2xl font-light">
-                We don't just use AI; we've rebuilt the structural engineering workflow around it. Combining human intuition with machine precision to deliver the impossible.
+                We don't just use AI; we've rebuilt the structural engineering workflow around it. {TOTAL_AGENTS} specialised agents interrogating {TOTAL_DATA_SOURCES} authoritative data sources. Human intuition meets machine precision.
               </p>
               <div className="flex flex-wrap gap-6 mb-12">
                 <Link to="/contact" className="px-10 py-5 bg-brand-accent text-brand-primary rounded-full font-bold text-lg hover:scale-105 transition-all shadow-[0_0_40px_rgba(245,158,11,0.2)]">
@@ -360,6 +420,9 @@ const AIInnovation = () => {
       <section className="max-w-7xl mx-auto px-6 mb-32">
         <AIAgentSwarm />
       </section>
+
+      {/* Full Agent Catalogue */}
+      <AgentCatalogue />
 
       {/* Bento Grid Features */}
       <section className="max-w-7xl mx-auto px-6 pb-48">
@@ -412,11 +475,11 @@ const AIInnovation = () => {
             className="bg-white/5 border border-white/10 rounded-[3rem] p-12 group transition-colors duration-500"
           >
             <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mb-12 text-brand-accent">
-              <BarChart3 size={32} />
+              <TrendingUp size={32} />
             </div>
-            <h3 className="text-3xl font-display font-bold text-white mb-6 leading-tight">Predictive Timelines</h3>
+            <h3 className="text-3xl font-display font-bold text-white mb-6 leading-tight">Market Intelligence</h3>
             <p className="text-white/40 font-light">
-              Machine learning models that predict site delays with 94% accuracy.
+              Infrastructure proximity scoring, Land Registry benchmarking, and development pipeline analysis backed by peer-reviewed academic evidence.
             </p>
           </motion.div>
 
