@@ -57,9 +57,9 @@ const phaseReports: Record<string, PhaseReport[]> = {
 };
 
 const phaseBundles: Record<string, string[]> = {
-  assessment: ['developer-due-diligence', 'triple-threat'],
+  assessment: ['developer-due-diligence', 'triple-threat', 'self-build-starter'],
   strategy: [],
-  application: ['full-planning-suite', 'appeal-ready-pack'],
+  application: ['full-planning-suite', 'appeal-ready-pack', 'architect-support-pack'],
   'post-permission': ['construction-readiness'],
   construction: [],
 };
@@ -171,10 +171,15 @@ function PhaseSection({ phaseId, index }: { phaseId: string; index: number }) {
 
         {/* Report Cards (mobile-friendly card layout instead of table) */}
         <div className="space-y-4 mb-8">
-          <h3 className="text-lg font-bold text-brand-primary flex items-center gap-2">
-            <FileText size={18} className={phase.accentColor} />
-            Reports in This Phase
-          </h3>
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+            <h3 className="text-lg font-bold text-brand-primary flex items-center gap-2">
+              <FileText size={18} className={phase.accentColor} />
+              Reports in This Phase
+            </h3>
+            {!isConstructionPhase && (
+              <span className="text-[10px] text-brand-primary/40 font-medium">Prices shown are Early Access — final checkout price at payment</span>
+            )}
+          </div>
           <div className="grid gap-4">
             {reportList.map((pr) => {
               const report = getReportBySlug(pr.slug);
@@ -207,14 +212,10 @@ function PhaseSection({ phaseId, index }: { phaseId: string; index: number }) {
                       {!isConstructionPhase ? (
                         <>
                           <div className="text-right">
-                            <div className="text-[10px] uppercase tracking-widest text-brand-primary/30 font-bold">EA Price</div>
-                            <div className="font-bold text-brand-primary text-lg">{formatPrice(report.earlyAccessPrice)}</div>
-                          </div>
-                          <div className="text-right hidden sm:block">
-                            <div className="text-[10px] uppercase tracking-widest text-brand-accent/60 font-bold">You Pay</div>
+                            <div className="text-[10px] uppercase tracking-widest text-brand-accent/60 font-bold">Our Price</div>
                             <div className="font-bold text-brand-accent text-lg">{formatPrice(report.stripePrice)}</div>
                           </div>
-                          <div className="text-right hidden lg:block">
+                          <div className="text-right hidden sm:block">
                             <div className="text-[10px] uppercase tracking-widest text-brand-primary/20 font-bold">Mid-Market</div>
                             <div className="text-brand-primary/30 text-sm line-through">{pr.midMarket}</div>
                           </div>
@@ -401,10 +402,10 @@ const HowItWorks = () => {
             className="flex flex-wrap justify-center gap-8 md:gap-16"
           >
             {[
-              { value: '16', label: 'Reports' },
+              { value: '18', label: 'Reports' },
               { value: '8', label: 'Bundles' },
               { value: '48hr', label: 'Turnaround' },
-              { value: '108', label: 'AI Agents' },
+              { value: '44', label: 'Data Sources' },
             ].map((stat, i) => (
               <div key={i} className="text-center">
                 <div className="text-3xl md:text-4xl font-bold text-brand-accent">{stat.value}</div>
@@ -437,7 +438,10 @@ const HowItWorks = () => {
             <div>
               <h3 className="font-bold text-brand-primary mb-2 text-lg">Appeal-Ready from Day One — SI 2026/122</h3>
               <p className="text-sm text-brand-primary/70 leading-relaxed">
-                From 1 April 2026, planning appeals no longer accept new evidence. The application you submit is the case the Inspector decides.
+                {new Date() >= new Date('2026-04-01')
+                  ? 'Since 1 April 2026, planning appeals no longer accept new evidence.'
+                  : 'From 1 April 2026, planning appeals will no longer accept new evidence.'
+                }{' '}The application you submit is the case the Inspector decides.
                 Our reports are built to be appeal-ready from day one — every data source cited, every policy referenced, every constraint evidenced.
               </p>
             </div>
@@ -524,7 +528,7 @@ const HowItWorks = () => {
             { who: 'Homeowner', desc: 'Planning an extension or new build?', before: 'Sees 16 reports, doesn\'t know where to start.', after: 'Sees "Start with SFR" and follows 5 clear steps.', icon: MapPin, gradient: 'from-teal-500 to-cyan-600' },
             { who: 'Architect', desc: 'Need evidence documents for a submission?', before: 'Unsure which evidence docs they need for submission.', after: 'Phase 3 shows exactly what supports their drawings.', icon: Ruler, gradient: 'from-violet-500 to-purple-600' },
             { who: 'Developer', desc: 'Evaluating a site for acquisition?', before: 'Has to figure out which bundle fits their stage.', after: 'Phase 1 bundles are clearly labelled "before you buy".', icon: TrendingUp, gradient: 'from-blue-500 to-indigo-600' },
-            { who: 'Self-Builder', desc: 'From plot to build — all the reports you need.', before: 'Overwhelmed by options.', after: 'Self-Build Starter highlighted at Phase 1, Construction Readiness at Phase 4.', icon: Hammer, gradient: 'from-amber-500 to-orange-600' },
+            { who: 'Self-Builder', desc: 'From plot to build — all the reports you need.', before: 'Overwhelmed by options, no clear starting point.', after: 'Self-Build Starter at Phase 1, Construction Readiness at Phase 4 — a clear path.', icon: Hammer, gradient: 'from-amber-500 to-orange-600' },
           ].map((item, i) => (
             <motion.div
               key={i}
