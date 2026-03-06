@@ -23,7 +23,7 @@ const REPORT_PRICES = {
   'pre-application-advice': { name: 'Pre-Application Advice', price: 245 },
   'pre-construction-design-review': { name: 'Design Readiness Review', price: 895 },
   'transport-statement': { name: 'Transport Statement', price: 495 },
-  'tree-survey': { name: 'Tree Survey (BS 5837)', price: 575 },
+  'tree-survey': { name: 'Arboricultural Desk Study', price: 575 },
   'cil-liability-assessment': { name: 'CIL Liability Assessment', price: 295 },
 };
 

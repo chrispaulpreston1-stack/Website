@@ -32,7 +32,7 @@ Data-driven pre-construction screening reports interrogating 58 authoritative da
 - Biodiversity Net Gain Screening — BNG applicability, 10% metric (EA £300 / Stripe £97)
 - Concept Feasibility Study — GDV, cost appraisal, viability (EA £1,200 / Stripe £247)
 - Pre-Application Advice Pack — LPA pre-submission engagement (EA £1,100 / Stripe £247)
-- Tree Survey (BS 5837) — Categorisation, RPAs, impact assessment (EA £575 / Stripe £147)
+- Arboricultural Desk Study — Desktop tree categorisation, RPAs, impact assessment (EA £575 / Stripe £575)
 - BC Readiness Check — Building Control submission readiness (EA £150 / Stripe £47)
 EA = Early Access price shown on website. Stripe = actual checkout price. All prices exclude VAT.
 URL: https://www.pfcoconstruction.co.uk/site-intelligence

@@ -13,7 +13,7 @@ function formatPrice(price: number) {
   return `£${price.toLocaleString()}`;
 }
 
-function BundleCard({ bundle, variant = 'default' }: { bundle: ReportBundle; variant?: 'default' | 'popular' }) {
+function BundleCard({ bundle, variant = 'default', key }: { bundle: ReportBundle; variant?: 'default' | 'popular'; key?: string }) {
   const includedReports = getBundleReports(bundle);
   const isPopular = bundle.isMostPopular;
 
@@ -133,7 +133,7 @@ const ReportPackages = () => {
       {/* Phase Guide CTA */}
       <section className="max-w-4xl mx-auto px-6 mb-20">
         <Link
-          to="/how-it-works"
+          to="/plans-and-pricing"
           className="block p-6 rounded-2xl bg-white border border-brand-primary/10 shadow-sm hover:shadow-md transition-all group"
         >
           <div className="flex items-center justify-between">

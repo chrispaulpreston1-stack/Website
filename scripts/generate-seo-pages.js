@@ -138,9 +138,9 @@ const routes = [
   },
   {
     path: '/site-intelligence/tree-survey',
-    title: 'Tree Survey (BS 5837) | Arboricultural Assessment | PF & Co',
-    description: 'BS 5837 tree survey with categorisation, root protection areas, and arboricultural impact assessment for planning applications.',
-    jsonLd: { '@type': 'Product', name: 'Tree Survey', brand: { '@type': 'Organization', name: 'PF & Co Construction' }, offers: { '@type': 'Offer', price: '147', priceCurrency: 'GBP', availability: 'https://schema.org/InStock' } },
+    title: 'Arboricultural Desk Study | Desktop Tree Assessment | PF & Co',
+    description: 'Desktop arboricultural assessment using LiDAR canopy modelling and TPO register data. BS 5837 categorisation and RPA mapping for planning applications.',
+    jsonLd: { '@type': 'Product', name: 'Arboricultural Desk Study', brand: { '@type': 'Organization', name: 'PF & Co Construction' }, offers: { '@type': 'Offer', price: '575', priceCurrency: 'GBP', availability: 'https://schema.org/InStock' } },
   },
   {
     path: '/site-intelligence/cil-liability-assessment',

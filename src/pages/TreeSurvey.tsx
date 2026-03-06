@@ -7,22 +7,22 @@ import ComparisonTable from '../components/ComparisonTable';
 const TreeSurvey = () => {
   const features = [
     { title: "TPO & Conservation Area Check", desc: "Identification of all Tree Preservation Orders and Conservation Area protections affecting the site and adjacent land." },
-    { title: "BS 5837 Categorisation", desc: "Each tree assessed and categorised A (high), B (moderate), C (low), or U (unsuitable for retention) per BS 5837:2012." },
-    { title: "Root Protection Area Mapping", desc: "RPA calculated from stem diameter measurements and plotted on site plans with construction exclusion zones." },
-    { title: "Arboricultural Impact Assessment", desc: "Assessment of the development's impact on retained trees including canopy, roots, and growing space." },
-    { title: "Tree Constraints Plan", desc: "Scaled plan showing RPAs, canopy spreads, and shade patterns overlaid on the proposed development layout." },
-    { title: "Hedgerow Assessment", desc: "Hedgerows assessed for significance under the Hedgerows Regulations 1997 with species identification." },
+    { title: "BS 5837 Categorisation", desc: "Trees assessed and categorised A (high), B (moderate), C (low), or U (unsuitable for retention) using LiDAR canopy modelling and aerial imagery per BS 5837:2012." },
+    { title: "Root Protection Area Mapping", desc: "RPAs estimated from canopy spread analysis and plotted on site plans with construction exclusion zones." },
+    { title: "Arboricultural Impact Assessment", desc: "Desktop assessment of the development's likely impact on retained trees including canopy, roots, and growing space." },
+    { title: "Tree Constraints Plan", desc: "Scaled plan showing estimated RPAs, canopy spreads, and shade patterns overlaid on the proposed development layout." },
+    { title: "Hedgerow Assessment", desc: "Hedgerows assessed for significance under the Hedgerows Regulations 1997 using aerial imagery analysis." },
     { title: "Ancient Woodland Screening", desc: "15-metre buffer zone assessment per NPPF paragraph 186(c) for irreplaceable habitat protection." },
-    { title: "Mitigation Recommendations", desc: "Specific tree protection measures, replacement planting ratios, and arboricultural method statements." }
+    { title: "Mitigation Recommendations", desc: "Specific tree protection measures, replacement planting ratios, and arboricultural method statements. Physical survey recommended where Category A trees are identified." }
   ];
 
   const comparisonCategories = [
     {
-      title: "Survey & Data",
+      title: "Desktop Analysis",
       rows: [
         { feature: "BS 5837:2012 compliant categorisation", pfco: true, competitor1: true, competitor2: "Partial" },
         { feature: "TPO register check + Conservation Area status", pfco: true, competitor1: "Sometimes", competitor2: false },
-        { feature: "Root Protection Area calculations and mapping", pfco: true, competitor1: true, competitor2: "Basic" },
+        { feature: "LiDAR canopy height modelling for RPA estimates", pfco: true, competitor1: false, competitor2: false },
       ]
     },
     {
@@ -38,7 +38,7 @@ const TreeSurvey = () => {
       rows: [
         { feature: "Branded, submission-ready Word document", pfco: true, competitor1: "PDF only", competitor2: "Email only" },
         { feature: "Tree Constraints Plan (scaled drawing)", pfco: true, competitor1: true, competitor2: false },
-        { feature: "Typical turnaround under 5 working days", pfco: true, competitor1: "2-4 weeks", competitor2: "Variable" },
+        { feature: "72-hour turnaround (desk-based)", pfco: true, competitor1: "2-4 weeks", competitor2: "Variable" },
       ]
     }
   ];
@@ -46,14 +46,14 @@ const TreeSurvey = () => {
   return (
     <div className="pt-20">
       <PageSEO
-        title="Tree Survey (BS 5837) | Arboricultural Assessment | PF & Co"
-        description="BS 5837 tree survey with categorisation, root protection area mapping, and arboricultural impact assessment for planning applications across England and Wales."
+        title="Arboricultural Desk Study | Desktop Tree Assessment | PF & Co"
+        description="Desktop arboricultural assessment using LiDAR canopy modelling, TPO register data, and aerial imagery. BS 5837 categorisation and RPA mapping for planning applications across England and Wales."
         path="/site-intelligence/tree-survey"
         jsonLd={[
           {
             '@type': 'Product',
-            name: 'Tree Survey (BS 5837)',
-            description: 'BS 5837 compliant tree survey with categorisation, RPA mapping, and arboricultural impact assessment.',
+            name: 'Arboricultural Desk Study',
+            description: 'Desktop arboricultural assessment with BS 5837 categorisation, LiDAR canopy analysis, and RPA mapping.',
             brand: { '@type': 'Organization', name: 'PF & Co Construction' },
             offers: { '@type': 'Offer', price: '575', priceCurrency: 'GBP' },
           },
@@ -65,7 +65,7 @@ const TreeSurvey = () => {
                 name: 'Is this a physical site visit?',
                 acceptedAnswer: {
                   '@type': 'Answer',
-                  text: 'Our desktop tree survey uses LiDAR canopy height modelling, aerial imagery, and TPO register data to produce BS 5837-compliant assessments remotely. For complex sites or where Category A trees are suspected, we may recommend a physical site visit as a follow-up.'
+                  text: 'No — this is a desktop study, not a physical site visit. We use LiDAR canopy height modelling, aerial imagery, and TPO register data to produce BS 5837-compliant categorisation remotely. For complex sites or where Category A trees are identified, we recommend commissioning a physical arboricultural survey as a follow-up.'
                 }
               },
               {
@@ -106,11 +106,11 @@ const TreeSurvey = () => {
           >
             <span className="font-mono text-xs uppercase tracking-[0.4em] text-emerald-400 font-bold mb-6 block">Site Intelligence / Product 12</span>
             <h1 className="text-7xl md:text-8xl font-bold leading-[0.85] mb-8 tracking-tighter">
-              Tree <br />
-              <span className="text-emerald-400 italic font-accent font-light">Survey</span>
+              Arboricultural <br />
+              <span className="text-emerald-400 italic font-accent font-light">Desk Study</span>
             </h1>
             <p className="text-xl text-white/60 leading-relaxed mb-10 max-w-lg font-light">
-              BS 5837 tree survey, categorisation, and arboricultural impact assessment — the essential evidence to protect trees and unlock your planning consent.
+              Desktop arboricultural assessment using LiDAR canopy modelling, TPO register data, and aerial imagery — BS 5837 categorisation and RPA mapping to support your planning application.
             </p>
             <div className="flex flex-wrap gap-6 items-center">
               <Link to="/order-report?report=tree-survey" className="px-10 py-5 bg-emerald-600 text-white rounded-full font-bold hover:bg-emerald-700 transition-all shadow-xl shadow-emerald-500/20 flex items-center gap-2">
@@ -203,7 +203,7 @@ const TreeSurvey = () => {
               <span className="text-emerald-500 font-bold text-sm uppercase tracking-widest mb-4 block">The Core Analysis</span>
               <h2 className="text-5xl font-bold mb-8 leading-tight text-brand-primary">Trees Are a Material <br /><span className="font-accent italic font-light text-emerald-600">Planning Consideration.</span></h2>
               <p className="text-brand-primary/60 text-lg leading-relaxed mb-12 font-light">
-                Councils routinely refuse applications that fail to properly assess the impact on trees. A BS 5837 survey is the accepted standard — without one, your application is incomplete.
+                Councils routinely refuse applications that fail to properly assess the impact on trees. Our desktop arboricultural study identifies constraints early — before you commit to a physical survey.
               </p>
               <div className="space-y-4">
                 {features.slice(0, 4).map((f, i) => (
@@ -233,7 +233,7 @@ const TreeSurvey = () => {
                 <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/20 blur-[80px]" />
                 <h3 className="text-3xl font-bold mb-6 relative z-10">72hr Turnaround <br /><span className="text-emerald-400 italic font-accent font-light">Typical.</span></h3>
                 <p className="text-white/60 mb-8 relative z-10 font-light">
-                  Our desktop tree survey combines LiDAR canopy height modelling with TPO register data and aerial imagery analysis to deliver comprehensive arboricultural evidence within 72 hours.
+                  Our desk study combines LiDAR canopy height modelling with TPO register data and aerial imagery analysis. No site visit required — comprehensive arboricultural evidence delivered within 72 hours.
                 </p>
                 <Link to="/contact" className="inline-flex items-center gap-2 font-bold text-emerald-400 hover:gap-4 transition-all relative z-10">
                   Instruct a Report <ArrowRight size={18} />
@@ -248,11 +248,11 @@ const TreeSurvey = () => {
       <section className="py-32 bg-brand-surface">
         <div className="max-w-7xl mx-auto px-6">
           <ComparisonTable
-            title="Tree Survey (BS 5837)"
+            title="Arboricultural Desk Study"
             subtitle="What you get vs a typical arboricultural consultant"
-            columns={["Feature", "PF&Co Site Intelligence", "Typical Consultant", "Basic Report"]}
+            columns={["Feature", "PF&Co Desk Study", "Typical Consultant", "Basic Report"]}
             categories={comparisonCategories}
-            footerNote="Comparison based on typical UK arboricultural consultancy practices. PF&Co Tree Survey combines desktop analysis with LiDAR canopy modelling for rapid, evidence-based assessment."
+            footerNote="This is a desktop study, not a physical site survey. PF&Co Arboricultural Desk Study uses LiDAR canopy modelling and remote data sources for rapid, evidence-based assessment. A physical survey may be recommended for complex sites."
             accentColor="text-emerald-500"
           />
         </div>
@@ -263,7 +263,7 @@ const TreeSurvey = () => {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-20">
             <h2 className="text-5xl font-bold mb-4 tracking-tight text-brand-primary">When You Need <span className="font-accent italic font-light text-emerald-600">This Report.</span></h2>
-            <p className="text-brand-primary/60 max-w-2xl mx-auto font-light">Critical scenarios where a BS 5837 tree survey is essential for planning.</p>
+            <p className="text-brand-primary/60 max-w-2xl mx-auto font-light">Critical scenarios where a desktop arboricultural assessment saves time and money before committing to a full site survey.</p>
           </div>
 
           <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-px bg-brand-primary/10 border border-brand-primary/10 rounded-[2rem] overflow-hidden">
@@ -293,9 +293,9 @@ const TreeSurvey = () => {
           <h2 className="text-4xl font-bold mb-16 text-center font-accent italic text-emerald-600">Common Inquiries</h2>
           <div className="space-y-12">
             {[
-              { q: "Is this a physical site visit?", a: "Our desktop tree survey uses LiDAR canopy height modelling, aerial imagery, and TPO register data to produce BS 5837-compliant assessments remotely. For complex sites or where Category A trees are suspected, we may recommend a physical site visit as a follow-up." },
+              { q: "Is this a physical site visit?", a: "No — this is a desktop study. We use LiDAR canopy height modelling, aerial imagery, and TPO register data to produce BS 5837-compliant categorisation remotely. For complex sites or where Category A trees are identified, we recommend commissioning a physical arboricultural survey as a follow-up." },
               { q: "What is BS 5837?", a: "BS 5837:2012 is the British Standard for Trees in relation to design, demolition and construction. It sets out the methodology for surveying and categorising trees, calculating root protection areas, and assessing the arboricultural impact of development proposals." },
-              { q: "Do I need this for a householder application?", a: "If your site has significant trees, TPO-protected trees, or is in a Conservation Area, yes. Many councils now require arboricultural information even for householder applications where trees could be affected by foundations, access routes, or construction activity." }
+              { q: "Do I need this for a householder application?", a: "If your site has significant trees, TPO-protected trees, or is in a Conservation Area, a desktop study identifies the constraints upfront. Many councils now require arboricultural information even for householder applications. Our desk study tells you whether a full physical survey will be needed." }
             ].map((item, i) => (
               <div key={i} className="group">
                 <h4 className="text-xl font-bold mb-4 flex items-center gap-4 text-brand-primary">
@@ -334,14 +334,14 @@ const TreeSurvey = () => {
           <div className="relative z-10">
             <h2 className="text-5xl md:text-6xl font-bold mb-8 tracking-tighter">Trees on Your <br />Development Site?</h2>
             <p className="text-white/80 text-xl mb-12 max-w-2xl mx-auto font-light">
-              Get the arboricultural evidence your planning application needs. Send us the site address and proposal details — no obligation.
+              Get a desktop arboricultural assessment before committing to a full site survey. Send us the site address and proposal details — no obligation.
             </p>
             <div className="flex flex-wrap justify-center gap-6">
               <Link
                 to="/contact"
                 className="px-12 py-6 bg-white text-emerald-600 rounded-full font-bold hover:scale-105 transition-all shadow-xl"
               >
-                Order Tree Survey
+                Order Desk Study
               </Link>
               <a href="/samples/tree-survey-sample.pdf" target="_blank" rel="noopener noreferrer" className="px-12 py-6 bg-emerald-700/50 backdrop-blur-md text-white border border-white/20 rounded-full font-bold hover:bg-emerald-800/50 transition-all flex items-center gap-2">
                 Sample Report <FileText size={20} />

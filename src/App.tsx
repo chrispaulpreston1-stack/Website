@@ -353,7 +353,7 @@ const Footer = () => {
               <li><Link to="/building-control" className="hover:text-brand-accent transition-colors">Building Control</Link></li>
               <li><Link to="/party-wall" className="hover:text-brand-accent transition-colors">Party Wall</Link></li>
               <li><Link to="/report-packages" className="hover:text-brand-accent transition-colors">Report Packages</Link></li>
-              <li><Link to="/how-it-works" className="hover:text-brand-accent transition-colors">Plans & Pricing</Link></li>
+              <li><Link to="/plans-and-pricing" className="hover:text-brand-accent transition-colors">Plans & Pricing</Link></li>
               <li><Link to="/subscriptions" className="hover:text-brand-accent transition-colors">Subscriptions</Link></li>
             </ul>
           </div>
@@ -464,7 +464,7 @@ export default function App() {
               <Route path="/site-intelligence/cil-liability-assessment" element={<CILLiabilityAssessment />} />
               <Route path="/subscriptions" element={<Subscriptions />} />
               <Route path="/report-packages" element={<ReportPackages />} />
-              <Route path="/how-it-works" element={<HowItWorks />} />
+              <Route path="/plans-and-pricing" element={<HowItWorks />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/insights/:slug" element={<BlogArticle />} />
               <Route path="/ai-innovation" element={<AIInnovation />} />
