@@ -144,6 +144,34 @@ export const agents: Agent[] = [
   { id: '82', name: 'Defect Spotter', role: 'Visual defect identification', category: 'computer-vision' },
   { id: '83', name: 'Material Delivery Verifier', role: 'Delivery confirmation from site imagery', category: 'computer-vision' },
   { id: '84', name: 'Exclusion Zone Monitor', role: 'Safety zone breach detection', category: 'computer-vision' },
+
+  // ── Amenity & Planning Merit (85–91) — Tier 1 ───────────────────
+  { id: '85', name: 'Daylight & Sunlight Assessor', role: 'BRE 209 daylight/sunlight impact assessment (VSC, APSH, NSL)', category: 'analysis-scoring' },
+  { id: '86', name: 'Privacy & Overlooking Assessor', role: 'Window-to-window distance and privacy impact analysis', category: 'analysis-scoring' },
+  { id: '87', name: 'Overbearing Impact Assessor', role: '45-degree rule, height-to-distance ratio, enclosure assessment', category: 'analysis-scoring' },
+  { id: '88', name: 'Noise Impact Assessor', role: 'BS 4142/BS 8233/ProPG noise screening and impact assessment', category: 'analysis-scoring' },
+  { id: '89', name: 'Arboricultural Screener', role: 'TPO identification, canopy mapping, RPA calculation, BS 5837', category: 'data-acquisition' },
+  { id: '90', name: 'Design Policy Compliance Checker', role: 'Local design codes, SPDs, National Design Guide compliance', category: 'analysis-scoring' },
+  { id: '91', name: 'Fallback Position Analyst', role: 'GPDO PD envelope calculation and Mansell v Tonbridge fallback', category: 'analysis-scoring' },
+
+  // ── Planning & Environmental Depth (92–105) — Tier 2 ────────────
+  { id: '92', name: 'EIA Screening Assessor', role: 'Schedule 1/2 EIA threshold screening', category: 'analysis-scoring' },
+  { id: '93', name: 'S106 Obligations Analyst', role: 'Predicted S106 heads of terms and contribution estimates', category: 'analysis-scoring' },
+  { id: '94', name: 'Highways Geometry Assessor', role: 'Visibility splays, STATS19 collision data, access geometry', category: 'data-acquisition' },
+  { id: '95', name: 'Overheating Risk Assessor', role: 'Part O / TM59 overheating screening and future climate risk', category: 'analysis-scoring' },
+  { id: '96', name: 'Waste & Servicing Assessor', role: 'Bin storage, drag distances, collection vehicle access', category: 'analysis-scoring' },
+  { id: '97', name: 'Utilities Capacity Screener', role: 'DNO electricity, water/sewer capacity, broadband, EV charging', category: 'data-acquisition' },
+  { id: '98', name: 'Accessibility Compliance Checker', role: 'NDSS floor areas, Part M M4(1)/M4(2)/M4(3) requirements', category: 'analysis-scoring' },
+  { id: '99', name: 'Air Quality Screener', role: 'AQMA proximity, IAQM/EPUK screening, construction dust risk', category: 'data-acquisition' },
+  { id: '100', name: 'Landscape & Visual Impact Assessor', role: 'GLVIA3 landscape sensitivity, ZTV mapping, visual receptors', category: 'analysis-scoring' },
+  { id: '101', name: 'Planning Policy Compliance Assessor', role: 'Development plan mapping, planning balance, tilted balance', category: 'analysis-scoring' },
+  { id: '102', name: 'Archaeological Risk Assessor', role: 'HER queries, archaeological potential screening, DBA-level', category: 'data-acquisition' },
+  { id: '103', name: 'Drainage Strategy Designer', role: 'SuDS hierarchy, foul drainage feasibility, attenuation design', category: 'analysis-scoring' },
+  { id: '104', name: 'Open Space & Amenity Calculator', role: 'Private/public amenity space provision per FIT/LPA standards', category: 'analysis-scoring' },
+  { id: '105', name: 'Ecological Impact Assessor', role: 'PEA structure, Phase 2 survey scoping, HRA screening, BNG metric', category: 'analysis-scoring' },
+  { id: '106', name: 'Lighting Impact Assessor', role: 'ILP environmental zones, obtrusive light limits, bat corridors', category: 'analysis-scoring' },
+  { id: '107', name: 'Development Viability Assessor', role: 'Residual land value, GDV, BCIS costs, viability screening', category: 'market-intelligence' },
+  { id: '108', name: 'Conditions Discharge Manager', role: 'Post-permission condition tracking and discharge management', category: 'platform-operations' },
 ];
 
 export const TOTAL_AGENTS = agents.length;
