@@ -47,6 +47,7 @@ import PlanningStatement from './pages/PlanningStatement';
 import PreApplicationAdvice from './pages/PreApplicationAdvice';
 import PreConstructionDesignReview from './pages/PreConstructionDesignReview';
 import TransportStatement from './pages/TransportStatement';
+import TreeSurvey from './pages/TreeSurvey';
 
 import CILLiabilityAssessment from './pages/CILLiabilityAssessment';
 import OrderReport from './pages/OrderReport';
@@ -455,6 +456,7 @@ export default function App() {
               <Route path="/site-intelligence/pre-application-advice" element={<PreApplicationAdvice />} />
               <Route path="/site-intelligence/pre-construction-design-review" element={<PreConstructionDesignReview />} />
               <Route path="/site-intelligence/transport-statement" element={<TransportStatement />} />
+              <Route path="/site-intelligence/tree-survey" element={<TreeSurvey />} />
 
               <Route path="/site-intelligence/cil-liability-assessment" element={<CILLiabilityAssessment />} />
               <Route path="/subscriptions" element={<Subscriptions />} />
