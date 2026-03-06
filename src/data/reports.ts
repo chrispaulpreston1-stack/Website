@@ -30,7 +30,7 @@ export const REPORT_CATEGORIES: Record<ReportCategory, string> = {
 };
 
 export const reports: Report[] = [
-  // ── Core Intelligence ─────────────────────────────────────────────
+  // -- Core Intelligence --
   {
     slug: 'site-feasibility-report',
     name: 'Site Feasibility Report',
@@ -71,7 +71,7 @@ export const reports: Report[] = [
     samplePath: '/samples/flood-risk-assessment-sample.pdf',
   },
 
-  // ── Planning & Strategy ───────────────────────────────────────────
+  // -- Planning & Strategy --
   {
     slug: 'planning-statement',
     name: 'Planning Statement',
@@ -138,7 +138,7 @@ export const reports: Report[] = [
     samplePath: '/samples/cil-liability-assessment-sample.pdf',
   },
 
-  // ── Environmental & Ecology ───────────────────────────────────────
+  // -- Environmental & Ecology --
   {
     slug: 'biodiversity-net-gain',
     name: 'Biodiversity Net Gain Screening',
@@ -166,7 +166,7 @@ export const reports: Report[] = [
     samplePath: '/samples/energy-statement-sample.pdf',
   },
 
-  // ── Specialist Surveys ────────────────────────────────────────────
+  // -- Specialist Surveys --
   {
     slug: 'heritage-impact-assessment',
     name: 'Heritage Impact Assessment',
@@ -220,7 +220,7 @@ export const reports: Report[] = [
     samplePath: '/samples/tree-survey-sample.pdf',
   },
 
-  // ── Construction Readiness ────────────────────────────────────────
+  // -- Construction Readiness --
   {
     slug: 'construction-management-plan',
     name: 'Construction Management Plan',
@@ -248,7 +248,7 @@ export const reports: Report[] = [
     samplePath: '/samples/pre-construction-design-review-sample.pdf',
   },
 
-  // ── Compliance & Legal ────────────────────────────────────────────
+  // -- Compliance & Legal --
   {
     slug: 'building-control',
     name: 'Building Control',
@@ -283,63 +283,151 @@ export const PURCHASABLE_REPORTS = reports.filter(r => r.stripePrice > 0);
 export interface ReportBundle {
   slug: string;
   name: string;
+  tagline: string;
+  target: string;
   earlyAccessPrice: number;
   rrp: number;
   savings: number;
+  savingsPercent: number;
   includedReports: string[];
   isMostPopular?: boolean;
+  isPremium?: boolean;
+  isNew?: boolean;
 }
 
 export const bundles: ReportBundle[] = [
+  // -- Premium Tier --
+  {
+    slug: 'complete-intelligence',
+    name: 'The Complete Intelligence',
+    tagline: 'Every report. One price. Zero gaps.',
+    target: 'For Developers & Professionals',
+    earlyAccessPrice: 6995,
+    rrp: 15625,
+    savings: 8630,
+    savingsPercent: 55,
+    includedReports: [
+      'site-feasibility-report', 'geotechnical-desk-study', 'flood-risk-assessment',
+      'planning-statement', 'pre-application-advice', 'design-and-access-statement',
+      'feasibility-study', 'cil-liability-assessment',
+      'biodiversity-net-gain', 'energy-statement',
+      'heritage-impact-assessment', 'transport-statement', 'parking-survey', 'tree-survey',
+      'construction-management-plan', 'pre-construction-design-review',
+    ],
+    isPremium: true,
+    isNew: true,
+  },
+
+  // -- Mid Tier (New bundles) --
+  {
+    slug: 'full-planning-suite',
+    name: 'The Full Planning Suite',
+    tagline: 'Every supporting document your planning application needs — except the drawings.',
+    target: 'For Architects & Planning Consultants',
+    earlyAccessPrice: 3495,
+    rrp: 7285,
+    savings: 3790,
+    savingsPercent: 52,
+    includedReports: [
+      'site-feasibility-report', 'planning-statement', 'design-and-access-statement',
+      'heritage-impact-assessment', 'biodiversity-net-gain', 'energy-statement', 'transport-statement',
+    ],
+    isNew: true,
+  },
+  {
+    slug: 'developer-due-diligence',
+    name: 'The Developer Due Diligence',
+    tagline: 'Everything you need to know before you sign.',
+    target: 'For Developers & Investors',
+    earlyAccessPrice: 3095,
+    rrp: 6415,
+    savings: 3320,
+    savingsPercent: 52,
+    includedReports: [
+      'site-feasibility-report', 'geotechnical-desk-study', 'flood-risk-assessment',
+      'feasibility-study', 'cil-liability-assessment',
+    ],
+    isNew: true,
+  },
+  {
+    slug: 'construction-readiness',
+    name: 'The Construction Readiness Pack',
+    tagline: 'Permission granted. Now make sure you\'re actually ready to build.',
+    target: 'For Self-Builders & Contractors',
+    earlyAccessPrice: 1195,
+    rrp: 2480,
+    savings: 1285,
+    savingsPercent: 52,
+    includedReports: [
+      'pre-construction-design-review', 'construction-management-plan',
+    ],
+    isNew: true,
+  },
+
+  // -- Established Bundles --
   {
     slug: 'triple-threat',
     name: 'The Triple Threat',
+    tagline: 'The essential trio — site, ground, and flood risk in one.',
+    target: 'For Homeowners',
     earlyAccessPrice: 2375,
     rrp: 4600,
     savings: 2225,
+    savingsPercent: 48,
     includedReports: ['site-feasibility-report', 'geotechnical-desk-study', 'flood-risk-assessment'],
     isMostPopular: true,
   },
   {
-    slug: 'pre-planning-pack',
-    name: 'The Pre-Planning Pack',
-    earlyAccessPrice: 3025,
-    rrp: 5900,
-    savings: 2875,
-    includedReports: ['site-feasibility-report', 'planning-statement', 'design-and-access-statement', 'biodiversity-net-gain'],
-  },
-  {
-    slug: 'site-acquisition-pack',
-    name: 'The Site Acquisition Pack',
-    earlyAccessPrice: 2900,
-    rrp: 5600,
-    savings: 2700,
-    includedReports: ['site-feasibility-report', 'geotechnical-desk-study', 'flood-risk-assessment', 'feasibility-study'],
-  },
-  {
-    slug: 'architect-support-pack',
-    name: 'The Architect Support Pack',
-    earlyAccessPrice: 2625,
-    rrp: 5100,
-    savings: 2475,
-    includedReports: ['site-feasibility-report', 'design-and-access-statement', 'planning-statement', 'energy-statement'],
+    slug: 'appeal-ready-pack',
+    name: 'The Appeal-Ready Pack',
+    tagline: 'Built for SI 2026/122 — your evidence, airtight from day one.',
+    target: 'For Planning Appeals',
+    earlyAccessPrice: 2735,
+    rrp: 5335,
+    savings: 2600,
+    savingsPercent: 49,
+    includedReports: [
+      'site-feasibility-report', 'planning-statement', 'design-and-access-statement', 'pre-application-advice',
+    ],
   },
   {
     slug: 'self-build-starter',
     name: 'The Self-Build Starter',
+    tagline: 'From finding your plot to breaking ground — covered.',
+    target: 'For Self-Builders',
     earlyAccessPrice: 3050,
     rrp: 5900,
     savings: 2850,
-    includedReports: ['site-feasibility-report', 'geotechnical-desk-study', 'flood-risk-assessment', 'construction-management-plan'],
+    savingsPercent: 48,
+    includedReports: [
+      'site-feasibility-report', 'geotechnical-desk-study', 'flood-risk-assessment', 'construction-management-plan',
+    ],
   },
   {
-    slug: 'appeal-ready-pack',
-    name: 'The Appeal-Ready Pack',
-    earlyAccessPrice: 2735,
-    rrp: 5335,
-    savings: 2600,
-    includedReports: ['site-feasibility-report', 'planning-statement', 'design-and-access-statement', 'pre-application-advice'],
+    slug: 'architect-support-pack',
+    name: 'The Architect Support Pack',
+    tagline: 'The technical evidence to back your design.',
+    target: 'For Architects (B2B)',
+    earlyAccessPrice: 2625,
+    rrp: 5100,
+    savings: 2475,
+    savingsPercent: 49,
+    includedReports: [
+      'site-feasibility-report', 'design-and-access-statement', 'planning-statement', 'energy-statement',
+    ],
   },
 ];
 
 export const TOTAL_BUNDLES = bundles.length;
+
+// Helper to get a report by slug
+export function getReportBySlug(slug: string): Report | undefined {
+  return reports.find(r => r.slug === slug);
+}
+
+// Helper to get bundle's included report objects
+export function getBundleReports(bundle: ReportBundle): Report[] {
+  return bundle.includedReports
+    .map(slug => reports.find(r => r.slug === slug))
+    .filter((r): r is Report => r !== undefined);
+}
