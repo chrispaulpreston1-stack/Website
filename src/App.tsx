@@ -80,6 +80,7 @@ const Navbar = () => {
     { name: 'Engineering', href: '/structural-engineering' },
     { name: 'Construction', href: '/construction' },
     { name: 'Site Intelligence', href: '/site-intelligence' },
+    { name: 'How It Works', href: '/how-it-works' },
     { name: 'Building Control', href: '/building-control' },
     { name: 'Party Wall', href: '/party-wall' },
     { name: 'Insights', href: '/blog/', isExternal: true },

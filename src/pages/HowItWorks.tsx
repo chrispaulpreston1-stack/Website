@@ -3,18 +3,19 @@ import { motion } from 'motion/react';
 import {
   ArrowRight, Check, Search, Layers, FileText, Award, HardHat,
   ChevronRight, Crown, AlertTriangle, MapPin, Shield, Clock,
-  Landmark, Droplets, TreePine, Zap, Scale
+  Landmark, Droplets, TreePine, Zap, Scale, ArrowDown,
+  Building2, Ruler, Target, TrendingUp, Compass, Hammer
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import PageSEO from '../components/PageSEO';
 import { bundles, reports, getReportBySlug, type ReportBundle } from '../data/reports';
 
 const phases = [
-  { id: 'assessment', label: 'Site Assessment', shortLabel: 'Assessment', icon: Search, stage: '0-1' },
-  { id: 'strategy', label: 'Strategy', shortLabel: 'Strategy', icon: Layers, stage: '1' },
-  { id: 'application', label: 'Planning Application', shortLabel: 'Planning', icon: FileText, stage: '2-3' },
-  { id: 'post-permission', label: 'Post-Permission', shortLabel: 'Post-Perm', icon: Award, stage: '4' },
-  { id: 'construction', label: 'Construction', shortLabel: 'Building', icon: HardHat, stage: '5' },
+  { id: 'assessment', label: 'Site Assessment', shortLabel: 'Assessment', icon: Search, stage: '0-1', color: 'from-teal-500 to-cyan-600', lightBg: 'bg-teal-50', accentColor: 'text-teal-600', borderColor: 'border-teal-200' },
+  { id: 'strategy', label: 'Strategy', shortLabel: 'Strategy', icon: Compass, stage: '1', color: 'from-violet-500 to-purple-600', lightBg: 'bg-violet-50', accentColor: 'text-violet-600', borderColor: 'border-violet-200' },
+  { id: 'application', label: 'Planning Application', shortLabel: 'Planning', icon: FileText, stage: '2-3', color: 'from-blue-500 to-indigo-600', lightBg: 'bg-blue-50', accentColor: 'text-blue-600', borderColor: 'border-blue-200' },
+  { id: 'post-permission', label: 'Post-Permission', shortLabel: 'Post-Perm', icon: Award, stage: '4', color: 'from-amber-500 to-orange-600', lightBg: 'bg-amber-50', accentColor: 'text-amber-600', borderColor: 'border-amber-200' },
+  { id: 'construction', label: 'Construction', shortLabel: 'Building', icon: Hammer, stage: '5', color: 'from-rose-500 to-red-600', lightBg: 'bg-rose-50', accentColor: 'text-rose-600', borderColor: 'border-rose-200' },
 ];
 
 interface PhaseReport {
@@ -63,34 +64,39 @@ const phaseBundles: Record<string, string[]> = {
   construction: [],
 };
 
-const phaseContent: Record<string, { title: string; when: string; who: string; note?: string; afterNote?: string }> = {
+const phaseContent: Record<string, { title: string; subtitle: string; when: string; who: string; note?: string; afterNote?: string }> = {
   assessment: {
-    title: 'SHOULD I BUY THIS SITE?',
+    title: 'Should I Buy This Site?',
+    subtitle: 'Constraint screening, ground risk, and viability — before you commit.',
     when: 'Before you commit to a site, before you exchange, before you tie up capital.',
     who: 'Developers, land buyers, investors, self-builders, homeowners considering a plot.',
     afterNote: 'Start here: The SFR is the entry point for every project. It screens your site against 22+ constraint categories and tells you what other reports you need.',
   },
   strategy: {
-    title: 'WHAT CAN I BUILD?',
+    title: 'What Can I Build?',
+    subtitle: 'Pre-application engagement and levy assessment — before design fees.',
     when: 'Before your architect starts drawing, before you invest in design fees.',
     who: 'Anyone with a site who wants to understand what\'s achievable before committing to design.',
     note: 'Pre-application engagement with the council is the single most effective way to avoid refusal. Know your CIL liability before you design — it affects viability.',
   },
   application: {
-    title: 'PREPARING THE PLANNING APPLICATION',
+    title: 'Preparing the Application',
+    subtitle: 'The technical evidence documents your planning submission needs.',
     when: 'Your architect is designing the scheme. You need the supporting evidence documents.',
     who: 'Architects, planning consultants, homeowners, developers preparing to submit.',
     note: 'We produce the technical evidence documents. Your architect produces the drawings.',
     afterNote: 'Not sure which you need? Your SFR from Phase 1 tells you exactly which reports are required for your site. No guesswork, no missing documents, no invalid applications.',
   },
   'post-permission': {
-    title: 'PERMISSION GRANTED — NOW WHAT?',
+    title: 'Permission Granted — Now What?',
+    subtitle: 'Design coordination and construction planning — before breaking ground.',
     when: 'You have planning permission. Pre-commencement conditions need discharging.',
     who: 'Self-builders, developers, contractors, project managers.',
     afterNote: 'Just received planning permission? Congratulations. Here\'s what you need before breaking ground.',
   },
   construction: {
-    title: 'BUILDING',
+    title: 'Building',
+    subtitle: 'Structural engineering and party wall services — bespoke to your project.',
     when: 'Construction is about to start or is underway.',
     who: 'Self-builders, developers, contractors.',
     note: 'These are project-dependent services — contact us for a quote. Unlike our standardised reports, these require bespoke engineering work tailored to your specific project.',
@@ -113,127 +119,183 @@ function PhaseSection({ phaseId, index }: { phaseId: string; index: number }) {
   const isApplicationPhase = phaseId === 'application';
 
   return (
-    <section id={`phase-${phaseId}`} className="scroll-mt-32 mb-24">
+    <section id={`phase-${phaseId}`} className="scroll-mt-32 mb-32">
       <motion.div
-        initial={{ opacity: 0, y: 24 }}
+        initial={{ opacity: 0, y: 32 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: '-100px' }}
+        viewport={{ once: true, margin: '-80px' }}
+        transition={{ duration: 0.5 }}
       >
-        {/* Phase Header */}
-        <div className="flex items-center gap-4 mb-6">
-          <div className="w-12 h-12 rounded-2xl bg-brand-accent/10 flex items-center justify-center">
-            <span className="text-brand-accent font-bold text-lg">{index + 1}</span>
-          </div>
-          <div>
-            <span className="text-[10px] uppercase tracking-widest font-bold text-brand-accent block">Phase {index + 1}</span>
-            <h2 className="text-2xl md:text-3xl font-bold text-brand-primary">{content.title}</h2>
-          </div>
-        </div>
+        {/* Phase Hero Card */}
+        <div className={`rounded-[2.5rem] overflow-hidden mb-10 relative ${phase.lightBg}`}>
+          <div className={`absolute inset-0 bg-gradient-to-br ${phase.color} opacity-[0.07]`} />
+          <div className="relative z-10 p-8 md:p-12">
+            <div className="flex items-center gap-4 mb-6">
+              <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${phase.color} flex items-center justify-center shadow-lg`}>
+                <phase.icon size={28} className="text-white" />
+              </div>
+              <div>
+                <span className={`text-[10px] uppercase tracking-widest font-bold ${phase.accentColor} block`}>Phase {index + 1} — RIBA Stage {phase.stage}</span>
+                <h2 className="text-3xl md:text-4xl font-bold text-brand-primary">{content.title}</h2>
+              </div>
+            </div>
+            <p className="text-lg text-brand-primary/60 font-light max-w-2xl mb-8">{content.subtitle}</p>
 
-        {/* When / Who */}
-        <div className="grid md:grid-cols-2 gap-4 mb-8">
-          <div className="p-4 rounded-2xl bg-white border border-brand-primary/5">
-            <span className="text-[10px] uppercase tracking-widest font-bold text-brand-primary/40 block mb-1">When</span>
-            <p className="text-sm text-brand-primary/70">{content.when}</p>
-          </div>
-          <div className="p-4 rounded-2xl bg-white border border-brand-primary/5">
-            <span className="text-[10px] uppercase tracking-widest font-bold text-brand-primary/40 block mb-1">Who</span>
-            <p className="text-sm text-brand-primary/70">{content.who}</p>
+            <div className="grid md:grid-cols-2 gap-4">
+              <div className={`p-5 rounded-2xl bg-white/80 backdrop-blur-sm border ${phase.borderColor}`}>
+                <div className="flex items-center gap-2 mb-2">
+                  <Clock size={14} className={phase.accentColor} />
+                  <span className="text-[10px] uppercase tracking-widest font-bold text-brand-primary/40">When</span>
+                </div>
+                <p className="text-sm text-brand-primary/70">{content.when}</p>
+              </div>
+              <div className={`p-5 rounded-2xl bg-white/80 backdrop-blur-sm border ${phase.borderColor}`}>
+                <div className="flex items-center gap-2 mb-2">
+                  <Target size={14} className={phase.accentColor} />
+                  <span className="text-[10px] uppercase tracking-widest font-bold text-brand-primary/40">Who</span>
+                </div>
+                <p className="text-sm text-brand-primary/70">{content.who}</p>
+              </div>
+            </div>
           </div>
         </div>
 
         {content.note && (
-          <div className="p-4 rounded-2xl bg-brand-accent/5 border border-brand-accent/20 mb-8">
-            <p className="text-sm text-brand-primary/80 font-medium">{content.note}</p>
+          <div className={`p-5 rounded-2xl border mb-8 ${phase.lightBg} ${phase.borderColor}`}>
+            <div className="flex items-start gap-3">
+              <Zap size={18} className={`${phase.accentColor} shrink-0 mt-0.5`} />
+              <p className="text-sm text-brand-primary/80 font-medium">{content.note}</p>
+            </div>
           </div>
         )}
 
-        {/* Report Table */}
-        <div className="overflow-x-auto mb-8">
-          <table className="w-full text-sm">
-            <thead>
-              <tr className="border-b-2 border-brand-primary/10">
-                <th className="text-left py-3 pr-4 font-bold text-brand-primary">Report</th>
-                <th className="text-left py-3 px-4 font-bold text-brand-primary hidden md:table-cell">What It Tells You</th>
-                <th className="text-right py-3 px-4 font-bold text-brand-primary">EA Price</th>
-                <th className="text-right py-3 px-4 font-bold text-brand-primary hidden sm:table-cell">Stripe</th>
-                <th className="text-right py-3 px-4 font-bold text-brand-primary hidden lg:table-cell">Mid-Market</th>
-                {isApplicationPhase && (
-                  <th className="text-center py-3 pl-4 font-bold text-brand-primary hidden lg:table-cell">Required?</th>
-                )}
-              </tr>
-            </thead>
-            <tbody>
-              {reportList.map((pr) => {
-                const report = getReportBySlug(pr.slug);
-                if (!report) return null;
-                return (
-                  <tr key={pr.slug} className="border-b border-brand-primary/5 hover:bg-brand-accent/5 transition-colors">
-                    <td className="py-4 pr-4">
-                      <Link to={report.path} className="font-bold text-brand-primary hover:text-brand-accent transition-colors">
+        {/* Report Cards (mobile-friendly card layout instead of table) */}
+        <div className="space-y-4 mb-8">
+          <h3 className="text-lg font-bold text-brand-primary flex items-center gap-2">
+            <FileText size={18} className={phase.accentColor} />
+            Reports in This Phase
+          </h3>
+          <div className="grid gap-4">
+            {reportList.map((pr) => {
+              const report = getReportBySlug(pr.slug);
+              if (!report) return null;
+              return (
+                <motion.div
+                  key={pr.slug}
+                  initial={{ opacity: 0, x: -12 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  className="p-5 rounded-2xl bg-white border border-brand-primary/5 shadow-sm hover:shadow-md hover:border-brand-accent/30 transition-all group"
+                >
+                  <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                    <div className="flex-grow">
+                      <Link to={report.path} className="font-bold text-brand-primary group-hover:text-brand-accent transition-colors text-lg">
                         {report.name}
                       </Link>
-                      <p className="text-xs text-brand-primary/40 mt-1 md:hidden">{pr.whatItTellsYou}</p>
-                    </td>
-                    <td className="py-4 px-4 text-brand-primary/60 hidden md:table-cell">{pr.whatItTellsYou}</td>
-                    <td className="text-right py-4 px-4 font-bold text-brand-primary whitespace-nowrap">
-                      {isConstructionPhase ? 'Project' : formatPrice(report.earlyAccessPrice)}
-                    </td>
-                    <td className="text-right py-4 px-4 font-bold text-brand-accent whitespace-nowrap hidden sm:table-cell">
-                      {isConstructionPhase ? '—' : formatPrice(report.stripePrice)}
-                    </td>
-                    <td className="text-right py-4 px-4 text-brand-primary/40 whitespace-nowrap hidden lg:table-cell">
-                      {pr.midMarket}
-                    </td>
-                    {isApplicationPhase && (
-                      <td className="text-center py-4 pl-4 hidden lg:table-cell">
-                        {pr.required && (
-                          <span className={`inline-block px-2 py-1 rounded-full text-[10px] font-bold ${
-                            pr.required === 'Usually yes' || pr.required === 'Often yes' || pr.required === 'Mandatory (most)'
-                              ? 'bg-brand-accent/10 text-brand-accent'
-                              : 'bg-brand-primary/5 text-brand-primary/50'
-                          }`}>
-                            {pr.required}
-                          </span>
-                        )}
-                      </td>
-                    )}
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
+                      <p className="text-sm text-brand-primary/50 mt-1 leading-relaxed">{pr.whatItTellsYou}</p>
+                      {isApplicationPhase && pr.required && (
+                        <span className={`inline-block mt-2 px-3 py-1 rounded-full text-[10px] font-bold ${
+                          pr.required === 'Usually yes' || pr.required === 'Often yes' || pr.required === 'Mandatory (most)'
+                            ? `${phase.lightBg} ${phase.accentColor}`
+                            : 'bg-brand-primary/5 text-brand-primary/50'
+                        }`}>
+                          {pr.required}
+                        </span>
+                      )}
+                    </div>
+                    <div className="flex items-center gap-6 md:gap-8 shrink-0">
+                      {!isConstructionPhase ? (
+                        <>
+                          <div className="text-right">
+                            <div className="text-[10px] uppercase tracking-widest text-brand-primary/30 font-bold">EA Price</div>
+                            <div className="font-bold text-brand-primary text-lg">{formatPrice(report.earlyAccessPrice)}</div>
+                          </div>
+                          <div className="text-right hidden sm:block">
+                            <div className="text-[10px] uppercase tracking-widest text-brand-accent/60 font-bold">You Pay</div>
+                            <div className="font-bold text-brand-accent text-lg">{formatPrice(report.stripePrice)}</div>
+                          </div>
+                          <div className="text-right hidden lg:block">
+                            <div className="text-[10px] uppercase tracking-widest text-brand-primary/20 font-bold">Mid-Market</div>
+                            <div className="text-brand-primary/30 text-sm line-through">{pr.midMarket}</div>
+                          </div>
+                        </>
+                      ) : (
+                        <div className="text-right">
+                          <div className="text-[10px] uppercase tracking-widest text-brand-primary/30 font-bold">Pricing</div>
+                          <div className="font-bold text-brand-primary">Project-based</div>
+                        </div>
+                      )}
+                      <Link
+                        to={report.path}
+                        className="w-10 h-10 rounded-xl bg-brand-surface flex items-center justify-center group-hover:bg-brand-accent/10 transition-colors"
+                      >
+                        <ChevronRight size={18} className="text-brand-primary/30 group-hover:text-brand-accent transition-colors" />
+                      </Link>
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
         </div>
 
         {content.afterNote && (
-          <div className="p-4 rounded-2xl bg-emerald-50 border border-emerald-200 mb-8">
-            <p className="text-sm text-emerald-800 font-medium">{content.afterNote}</p>
+          <div className="p-5 rounded-2xl bg-emerald-50 border border-emerald-200 mb-8">
+            <div className="flex items-start gap-3">
+              <Check size={18} className="text-emerald-600 shrink-0 mt-0.5" />
+              <p className="text-sm text-emerald-800 font-medium">{content.afterNote}</p>
+            </div>
           </div>
         )}
 
         {/* Bundle Callouts */}
         {phaseBundleList.length > 0 && (
-          <div className="grid md:grid-cols-2 gap-6">
-            {phaseBundleList.map((bundle) => (
-              <Link
-                key={bundle.slug}
-                to={`/order-report?report=${bundle.slug}`}
-                className="group p-6 rounded-2xl bg-brand-primary text-white hover:scale-[1.02] transition-all shadow-lg"
-              >
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-[10px] uppercase tracking-widest font-bold text-brand-accent">
-                    {bundle.isNew ? 'New Bundle' : bundle.isMostPopular ? 'Most Popular' : 'Bundle'}
-                  </span>
-                  <ArrowRight size={16} className="text-white/40 group-hover:text-brand-accent transition-colors" />
-                </div>
-                <h4 className="text-lg font-bold mb-1">{bundle.name}</h4>
-                <p className="text-white/50 text-sm mb-4">{bundle.tagline}</p>
-                <div className="flex items-end gap-3">
-                  <span className="text-2xl font-bold">{formatPrice(bundle.earlyAccessPrice)}</span>
-                  <span className="text-emerald-400 text-xs font-bold">saves {formatPrice(bundle.savings)} vs RRP</span>
-                </div>
-              </Link>
-            ))}
+          <div>
+            <h3 className="text-lg font-bold text-brand-primary flex items-center gap-2 mb-4">
+              <Zap size={18} className="text-brand-accent" />
+              Save with a Bundle
+            </h3>
+            <div className="grid md:grid-cols-2 gap-6">
+              {phaseBundleList.map((bundle) => (
+                <Link
+                  key={bundle.slug}
+                  to={`/order-report?report=${bundle.slug}`}
+                  className="group relative p-6 rounded-2xl bg-gradient-to-br from-brand-primary to-slate-800 text-white hover:scale-[1.02] transition-all shadow-lg overflow-hidden"
+                >
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-brand-accent/10 blur-[60px]" />
+                  <div className="relative z-10">
+                    <div className="flex items-center justify-between mb-3">
+                      <span className="text-[10px] uppercase tracking-widest font-bold text-brand-accent">
+                        {bundle.isNew ? 'New Bundle' : bundle.isMostPopular ? 'Most Popular' : 'Bundle'}
+                      </span>
+                      <ArrowRight size={16} className="text-white/40 group-hover:text-brand-accent transition-colors" />
+                    </div>
+                    <h4 className="text-xl font-bold mb-1">{bundle.name}</h4>
+                    <p className="text-white/50 text-sm mb-4">{bundle.tagline}</p>
+                    <div className="flex items-end gap-3 mb-3">
+                      <span className="text-3xl font-bold">{formatPrice(bundle.earlyAccessPrice)}</span>
+                      <span className="text-white/30 line-through text-sm">RRP {formatPrice(bundle.rrp)}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="bg-emerald-500/20 text-emerald-400 px-3 py-1 rounded-full text-xs font-bold">
+                        Save {formatPrice(bundle.savings)} ({bundle.savingsPercent}%)
+                      </span>
+                      <span className="text-white/30 text-xs">{bundle.includedReports.length} reports</span>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Visual Connector */}
+        {index < phases.length - 1 && (
+          <div className="flex justify-center mt-16">
+            <div className="flex flex-col items-center gap-2 text-brand-primary/20">
+              <div className="w-px h-8 bg-brand-primary/10" />
+              <ArrowDown size={20} />
+            </div>
           </div>
         )}
       </motion.div>
@@ -243,7 +305,6 @@ function PhaseSection({ phaseId, index }: { phaseId: string; index: number }) {
 
 const HowItWorks = () => {
   const [activePhase, setActivePhase] = useState('assessment');
-  const stickyRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -270,80 +331,149 @@ const HowItWorks = () => {
   };
 
   return (
-    <div className="pt-32 pb-24 bg-brand-surface min-h-screen">
+    <div className="min-h-screen">
       <PageSEO
         title="How It Works — Your Project Roadmap | PF & Co Engineering"
         description="From finding a site to breaking ground — your complete project roadmap. See exactly which reports you need at each stage and what they cost."
         path="/how-it-works"
       />
 
-      {/* Hero */}
-      <section className="max-w-5xl mx-auto px-6 mb-16 text-center">
-        <span className="font-mono text-xs uppercase tracking-[0.3em] font-bold text-brand-accent mb-4 block">Project Roadmap</span>
-        <h1 className="text-5xl md:text-7xl font-bold mb-8 text-brand-primary tracking-tight">
-          Your Project. <span className="italic font-accent font-light text-brand-primary/60">Our Intelligence.</span>
-        </h1>
-        <p className="text-xl text-brand-primary/70 leading-relaxed max-w-3xl mx-auto mb-12">
-          From finding a site to breaking ground — here's exactly where we help, what you need, and what it costs.
-        </p>
+      {/* Hero — Full Bleed Dark */}
+      <section className="relative bg-gradient-to-br from-brand-primary via-brand-primary to-slate-900 text-white overflow-hidden">
+        {/* Decorative Elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-brand-accent/10 rounded-full blur-[100px]" />
+          <div className="absolute bottom-10 right-10 w-96 h-96 bg-teal-500/10 rounded-full blur-[120px]" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500/5 rounded-full blur-[150px]" />
+          {/* Grid Pattern */}
+          <div className="absolute inset-0 opacity-[0.03]" style={{
+            backgroundImage: 'linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px)',
+            backgroundSize: '60px 60px'
+          }} />
+        </div>
 
-        {/* Phase Buttons */}
-        <div className="flex flex-wrap justify-center gap-3">
-          {phases.map((phase, i) => (
-            <button
-              key={phase.id}
-              onClick={() => scrollToPhase(phase.id)}
-              className="flex items-center gap-2 px-5 py-3 rounded-full bg-white border border-brand-primary/10 text-sm font-bold text-brand-primary hover:border-brand-accent hover:text-brand-accent transition-all shadow-sm"
-            >
-              <phase.icon size={16} />
-              <span className="hidden sm:inline">{phase.label}</span>
-              <span className="sm:hidden">{phase.shortLabel}</span>
-            </button>
-          ))}
+        <div className="relative z-10 pt-40 pb-24 max-w-6xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <span className="font-mono text-xs uppercase tracking-[0.3em] font-bold text-brand-accent mb-6 block">Project Roadmap</span>
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 tracking-tight leading-[0.9]">
+              Your Project.<br />
+              <span className="italic font-accent font-light text-white/50">Our Intelligence.</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-white/50 leading-relaxed max-w-3xl mx-auto font-light">
+              From finding a site to breaking ground — here's exactly where we help, what you need, and what it costs.
+            </p>
+          </motion.div>
+
+          {/* Phase Journey Visual */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="grid grid-cols-5 gap-3 md:gap-4 max-w-4xl mx-auto mb-16"
+          >
+            {phases.map((phase, i) => (
+              <button
+                key={phase.id}
+                onClick={() => scrollToPhase(phase.id)}
+                className="group flex flex-col items-center gap-3 p-4 md:p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/30 hover:bg-white/10 transition-all"
+              >
+                <div className={`w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-gradient-to-br ${phase.color} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform`}>
+                  <phase.icon size={22} className="text-white" />
+                </div>
+                <div className="text-center">
+                  <span className="text-[10px] md:text-xs font-bold text-white/80 block">{i + 1}</span>
+                  <span className="text-[9px] md:text-[10px] uppercase tracking-widest text-white/40 hidden sm:block">{phase.shortLabel}</span>
+                </div>
+              </button>
+            ))}
+          </motion.div>
+
+          {/* Stats Row */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="flex flex-wrap justify-center gap-8 md:gap-16"
+          >
+            {[
+              { value: '16', label: 'Reports' },
+              { value: '8', label: 'Bundles' },
+              { value: '48hr', label: 'Turnaround' },
+              { value: '108', label: 'AI Agents' },
+            ].map((stat, i) => (
+              <div key={i} className="text-center">
+                <div className="text-3xl md:text-4xl font-bold text-brand-accent">{stat.value}</div>
+                <div className="text-[10px] uppercase tracking-widest text-white/30 font-bold">{stat.label}</div>
+              </div>
+            ))}
+          </motion.div>
+        </div>
+
+        {/* Bottom wave transition */}
+        <div className="absolute bottom-0 left-0 right-0">
+          <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
+            <path d="M0 80L60 68.7C120 57.3 240 34.7 360 26.7C480 18.7 600 25.3 720 34.7C840 44 960 56 1080 58.7C1200 61.3 1320 54.7 1380 51.3L1440 48V80H1380C1320 80 1200 80 1080 80C960 80 840 80 720 80C600 80 480 80 360 80C240 80 120 80 60 80H0Z" className="fill-brand-surface"/>
+          </svg>
         </div>
       </section>
 
       {/* Appeal Readiness Banner */}
-      <section className="max-w-5xl mx-auto px-6 mb-16">
-        <div className="p-6 rounded-2xl bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200">
+      <section className="max-w-5xl mx-auto px-6 -mt-4 mb-16 relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="p-6 md:p-8 rounded-2xl bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 shadow-lg shadow-amber-100/50"
+        >
           <div className="flex items-start gap-4">
-            <AlertTriangle className="text-amber-500 shrink-0 mt-1" size={24} />
+            <div className="w-12 h-12 rounded-2xl bg-amber-100 flex items-center justify-center shrink-0">
+              <AlertTriangle className="text-amber-600" size={22} />
+            </div>
             <div>
-              <h3 className="font-bold text-brand-primary mb-2">Appeal-Ready from Day One — SI 2026/122</h3>
+              <h3 className="font-bold text-brand-primary mb-2 text-lg">Appeal-Ready from Day One — SI 2026/122</h3>
               <p className="text-sm text-brand-primary/70 leading-relaxed">
                 From 1 April 2026, planning appeals no longer accept new evidence. The application you submit is the case the Inspector decides.
                 Our reports are built to be appeal-ready from day one — every data source cited, every policy referenced, every constraint evidenced.
               </p>
             </div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Sticky Phase Selector */}
-      <div ref={stickyRef} className="sticky top-16 z-40 bg-brand-surface/95 backdrop-blur-md border-b border-brand-primary/5 mb-16">
+      <div className="sticky top-16 z-40 bg-brand-surface/95 backdrop-blur-md border-b border-brand-primary/5 mb-16">
         <div className="max-w-5xl mx-auto px-6">
-          <div className="flex gap-1 overflow-x-auto py-3 scrollbar-hide">
-            {phases.map((phase, i) => (
-              <button
-                key={phase.id}
-                onClick={() => scrollToPhase(phase.id)}
-                className={`flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap transition-all ${
-                  activePhase === phase.id
-                    ? 'bg-brand-primary text-white shadow-md'
-                    : 'bg-white text-brand-primary/50 hover:text-brand-primary border border-brand-primary/5'
-                }`}
-              >
-                <span>{i + 1}.</span>
-                <span className="hidden sm:inline">{phase.label}</span>
-                <span className="sm:hidden">{phase.shortLabel}</span>
-              </button>
-            ))}
+          <div className="flex gap-2 overflow-x-auto py-3 scrollbar-hide">
+            {phases.map((phase, i) => {
+              const isActive = activePhase === phase.id;
+              return (
+                <button
+                  key={phase.id}
+                  onClick={() => scrollToPhase(phase.id)}
+                  className={`flex items-center gap-2 px-4 py-2.5 rounded-full text-xs font-bold whitespace-nowrap transition-all ${
+                    isActive
+                      ? `bg-gradient-to-r ${phase.color} text-white shadow-md`
+                      : 'bg-white text-brand-primary/50 hover:text-brand-primary border border-brand-primary/5'
+                  }`}
+                >
+                  <phase.icon size={14} />
+                  <span>{i + 1}.</span>
+                  <span className="hidden sm:inline">{phase.label}</span>
+                  <span className="sm:hidden">{phase.shortLabel}</span>
+                </button>
+              );
+            })}
           </div>
         </div>
       </div>
 
       {/* Phase Sections */}
-      <div className="max-w-5xl mx-auto px-6">
+      <div className="max-w-5xl mx-auto px-6 bg-brand-surface">
         {phases.map((phase, i) => (
           <PhaseSection key={phase.id} phaseId={phase.id} index={i} />
         ))}
@@ -351,61 +481,75 @@ const HowItWorks = () => {
 
       {/* Complete Intelligence CTA */}
       <section className="max-w-5xl mx-auto px-6 mb-24">
-        <div className="rounded-[3rem] overflow-hidden bg-gradient-to-br from-brand-primary via-brand-primary to-slate-900 text-white p-10 md:p-16 relative shadow-2xl">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.98 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          className="rounded-[3rem] overflow-hidden bg-gradient-to-br from-brand-primary via-brand-primary to-slate-900 text-white p-10 md:p-16 relative shadow-2xl"
+        >
           <div className="absolute top-0 right-0 w-96 h-96 bg-amber-400/10 blur-[120px]" />
+          <div className="absolute bottom-0 left-0 w-64 h-64 bg-brand-accent/10 blur-[80px]" />
           <div className="relative z-10 text-center">
-            <Crown className="text-amber-400 mx-auto mb-4" size={32} />
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">The Complete Intelligence</h2>
-            <p className="text-white/60 mb-6 max-w-2xl mx-auto">
+            <div className="w-16 h-16 rounded-2xl bg-amber-400/20 flex items-center justify-center mx-auto mb-6">
+              <Crown className="text-amber-400" size={32} />
+            </div>
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">The Complete Intelligence</h2>
+            <p className="text-white/50 mb-8 max-w-2xl mx-auto text-lg font-light">
               For sites where you can't afford to miss anything. All 16 purchasable reports, every phase covered, one price.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-              <span className="text-white/40 line-through text-lg">RRP: £15,625</span>
-              <span className="text-4xl font-bold">£6,995</span>
-              <span className="bg-emerald-500/20 text-emerald-400 px-3 py-1 rounded-full text-xs font-bold">Save 55%</span>
+              <span className="text-white/30 line-through text-lg">RRP: £15,625</span>
+              <span className="text-5xl font-bold">£6,995</span>
+              <span className="bg-emerald-500/20 text-emerald-400 px-4 py-1.5 rounded-full text-sm font-bold">Save 55%</span>
             </div>
+            <p className="text-white/30 text-sm mb-8">Mid-market equivalent: £12,550-£35,400</p>
             <Link
               to="/order-report?report=complete-intelligence"
-              className="inline-flex items-center gap-2 bg-amber-400 text-brand-primary px-8 py-4 rounded-full font-bold hover:scale-105 transition-transform shadow-xl"
+              className="inline-flex items-center gap-2 bg-amber-400 text-brand-primary px-10 py-5 rounded-full font-bold text-lg hover:scale-105 transition-transform shadow-xl shadow-amber-400/20"
             >
-              Order Complete Intelligence <ArrowRight size={18} />
+              Order Complete Intelligence <ArrowRight size={20} />
             </Link>
           </div>
-        </div>
+        </motion.div>
       </section>
 
-      {/* How We Help Grid */}
+      {/* Who Is This For */}
       <section className="max-w-5xl mx-auto px-6 mb-24">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-brand-primary mb-4">Who Is This <span className="italic font-accent font-light text-brand-primary/60">For?</span></h2>
+          <span className="font-mono text-xs uppercase tracking-[0.3em] font-bold text-brand-accent mb-2 block">Built For You</span>
+          <h2 className="text-3xl md:text-5xl font-bold text-brand-primary mb-4">Who Is This <span className="italic font-accent font-light text-brand-primary/60">For?</span></h2>
         </div>
         <div className="grid md:grid-cols-2 gap-6">
           {[
-            { who: 'Homeowner', before: 'Sees 16 reports, doesn\'t know where to start.', after: 'Sees "Start with SFR" and follows 5 clear steps.', icon: MapPin },
-            { who: 'Architect', before: 'Unsure which evidence docs they need for submission.', after: 'Phase 3 shows exactly what supports their drawings.', icon: Layers },
-            { who: 'Developer', before: 'Has to figure out which bundle fits their stage.', after: 'Phase 1 bundles are clearly labelled "before you buy".', icon: Landmark },
-            { who: 'Self-Builder', before: 'Overwhelmed by options.', after: 'Self-Build Starter highlighted at Phase 1, Construction Readiness at Phase 4.', icon: HardHat },
+            { who: 'Homeowner', desc: 'Planning an extension or new build?', before: 'Sees 16 reports, doesn\'t know where to start.', after: 'Sees "Start with SFR" and follows 5 clear steps.', icon: MapPin, gradient: 'from-teal-500 to-cyan-600' },
+            { who: 'Architect', desc: 'Need evidence documents for a submission?', before: 'Unsure which evidence docs they need for submission.', after: 'Phase 3 shows exactly what supports their drawings.', icon: Ruler, gradient: 'from-violet-500 to-purple-600' },
+            { who: 'Developer', desc: 'Evaluating a site for acquisition?', before: 'Has to figure out which bundle fits their stage.', after: 'Phase 1 bundles are clearly labelled "before you buy".', icon: TrendingUp, gradient: 'from-blue-500 to-indigo-600' },
+            { who: 'Self-Builder', desc: 'From plot to build — all the reports you need.', before: 'Overwhelmed by options.', after: 'Self-Build Starter highlighted at Phase 1, Construction Readiness at Phase 4.', icon: Hammer, gradient: 'from-amber-500 to-orange-600' },
           ].map((item, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="p-6 rounded-2xl bg-white border border-brand-primary/5 shadow-sm"
+              transition={{ delay: i * 0.1 }}
+              className="p-8 rounded-[2rem] bg-white border border-brand-primary/5 shadow-sm hover:shadow-lg transition-all"
             >
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-xl bg-brand-accent/10 flex items-center justify-center">
-                  <item.icon size={18} className="text-brand-accent" />
+              <div className="flex items-center gap-4 mb-6">
+                <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${item.gradient} flex items-center justify-center shadow-lg`}>
+                  <item.icon size={24} className="text-white" />
                 </div>
-                <h4 className="font-bold text-brand-primary">{item.who}</h4>
+                <div>
+                  <h4 className="font-bold text-brand-primary text-xl">{item.who}</h4>
+                  <p className="text-sm text-brand-primary/40">{item.desc}</p>
+                </div>
               </div>
-              <div className="space-y-3 text-sm">
-                <div className="flex items-start gap-2">
-                  <span className="text-red-400 font-bold text-xs mt-0.5 shrink-0">Before:</span>
+              <div className="space-y-4 text-sm">
+                <div className="p-3 rounded-xl bg-red-50/50 border border-red-100">
+                  <span className="text-red-400 font-bold text-[10px] uppercase tracking-widest block mb-1">Without Roadmap</span>
                   <span className="text-brand-primary/60">{item.before}</span>
                 </div>
-                <div className="flex items-start gap-2">
-                  <span className="text-emerald-500 font-bold text-xs mt-0.5 shrink-0">After:</span>
+                <div className="p-3 rounded-xl bg-emerald-50/50 border border-emerald-100">
+                  <span className="text-emerald-500 font-bold text-[10px] uppercase tracking-widest block mb-1">With Roadmap</span>
                   <span className="text-brand-primary/80">{item.after}</span>
                 </div>
               </div>
@@ -414,10 +558,10 @@ const HowItWorks = () => {
         </div>
       </section>
 
-      {/* View Packages CTA */}
-      <section className="max-w-3xl mx-auto px-6 text-center">
-        <h2 className="text-2xl font-bold text-brand-primary mb-4">Ready to get started?</h2>
-        <p className="text-brand-primary/50 mb-8">View all our packages or order individual reports.</p>
+      {/* Bottom CTAs */}
+      <section className="max-w-3xl mx-auto px-6 text-center pb-24">
+        <h2 className="text-3xl font-bold text-brand-primary mb-4">Ready to get started?</h2>
+        <p className="text-brand-primary/50 mb-8 text-lg">View all our packages or order individual reports.</p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
             to="/report-packages"
