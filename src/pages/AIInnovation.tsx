@@ -400,8 +400,6 @@ const AIInnovation = () => {
         <AIAgentSwarm />
       </section>
 
-      {/* Full Agent Catalogue */}
-      <AgentCatalogue />
 
       {/* Bento Grid Features */}
       <section className="max-w-7xl mx-auto px-6 pb-48">
