@@ -127,19 +127,19 @@ function PhaseSection({ phaseId, index }: { phaseId: string; index: number }) {
         transition={{ duration: 0.5 }}
       >
         {/* Phase Hero Card */}
-        <div className={`rounded-[2.5rem] overflow-hidden mb-10 relative ${phase.lightBg}`}>
+        <div className={`rounded-2xl sm:rounded-[2.5rem] overflow-hidden mb-10 relative ${phase.lightBg}`}>
           <div className={`absolute inset-0 bg-gradient-to-br ${phase.color} opacity-[0.07]`} />
-          <div className="relative z-10 p-8 md:p-12">
-            <div className="flex items-center gap-4 mb-6">
-              <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${phase.color} flex items-center justify-center shadow-lg`}>
-                <phase.icon size={28} className="text-white" />
+          <div className="relative z-10 p-5 sm:p-8 md:p-12">
+            <div className="flex items-center gap-3 sm:gap-4 mb-6">
+              <div className={`w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-gradient-to-br ${phase.color} flex items-center justify-center shadow-lg shrink-0`}>
+                <phase.icon size={24} className="text-white" />
               </div>
               <div>
                 <span className={`text-xs uppercase tracking-widest font-bold ${phase.accentColor} block`}>Phase {index + 1} — RIBA Stage {phase.stage}</span>
-                <h2 className="text-3xl md:text-4xl font-bold text-brand-primary">{content.title}</h2>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-brand-primary">{content.title}</h2>
               </div>
             </div>
-            <p className="text-xl text-brand-primary/60 font-light max-w-2xl mb-8">{content.subtitle}</p>
+            <p className="text-lg sm:text-xl text-brand-primary/60 font-light max-w-2xl mb-6 sm:mb-8">{content.subtitle}</p>
 
             <div className="grid md:grid-cols-2 gap-4">
               <div className={`p-5 rounded-2xl bg-white/80 backdrop-blur-sm border ${phase.borderColor}`}>
@@ -190,7 +190,7 @@ function PhaseSection({ phaseId, index }: { phaseId: string; index: number }) {
                   initial={{ opacity: 0, x: -12 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  className="p-5 rounded-2xl bg-white border border-brand-primary/5 shadow-sm hover:shadow-md hover:border-brand-accent/30 transition-all group"
+                  className="p-4 sm:p-5 rounded-xl sm:rounded-2xl bg-white border border-brand-primary/5 shadow-sm hover:shadow-md hover:border-brand-accent/30 transition-all group"
                 >
                   <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
                     <div className="flex-grow">
@@ -208,7 +208,7 @@ function PhaseSection({ phaseId, index }: { phaseId: string; index: number }) {
                         </span>
                       )}
                     </div>
-                    <div className="flex items-center gap-6 md:gap-8 shrink-0">
+                    <div className="flex items-center gap-4 sm:gap-6 md:gap-8 shrink-0">
                       {!isConstructionPhase ? (
                         <>
                           <div className="text-right">
@@ -261,7 +261,7 @@ function PhaseSection({ phaseId, index }: { phaseId: string; index: number }) {
                 <Link
                   key={bundle.slug}
                   to={`/order-report?report=${bundle.slug}`}
-                  className="group relative p-6 rounded-2xl bg-gradient-to-br from-brand-primary to-slate-800 text-white hover:scale-[1.02] transition-all shadow-lg overflow-hidden"
+                  className="group relative p-5 sm:p-6 rounded-xl sm:rounded-2xl bg-gradient-to-br from-brand-primary to-slate-800 text-white hover:scale-[1.02] transition-all shadow-lg overflow-hidden"
                 >
                   <div className="absolute top-0 right-0 w-32 h-32 bg-brand-accent/10 blur-[60px]" />
                   <div className="relative z-10">
@@ -353,7 +353,7 @@ const HowItWorks = () => {
           }} />
         </div>
 
-        <div className="relative z-10 pt-40 pb-24 max-w-6xl mx-auto px-6">
+        <div className="relative z-10 pt-28 sm:pt-40 pb-16 sm:pb-24 max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -361,7 +361,7 @@ const HowItWorks = () => {
             className="text-center mb-16"
           >
             <span className="font-mono text-sm uppercase tracking-[0.3em] font-bold text-brand-accent mb-6 block">Project Roadmap</span>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 tracking-tight leading-[0.9]">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-6 sm:mb-8 tracking-tight leading-[0.9]">
               Your Project.<br />
               <span className="italic font-accent font-light text-white/50">Our Intelligence.</span>
             </h1>
@@ -375,20 +375,20 @@ const HowItWorks = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="grid grid-cols-5 gap-3 md:gap-4 max-w-4xl mx-auto mb-16"
+            className="flex gap-2 sm:grid sm:grid-cols-5 sm:gap-4 max-w-4xl mx-auto mb-16 overflow-x-auto pb-2 sm:pb-0 scrollbar-hide"
           >
             {phases.map((phase, i) => (
               <button
                 key={phase.id}
                 onClick={() => scrollToPhase(phase.id)}
-                className="group flex flex-col items-center gap-3 p-4 md:p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/30 hover:bg-white/10 transition-all"
+                className="group flex flex-col items-center gap-2 sm:gap-3 p-3 sm:p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/30 hover:bg-white/10 transition-all min-w-[4.5rem] sm:min-w-0"
               >
-                <div className={`w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-gradient-to-br ${phase.color} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform`}>
-                  <phase.icon size={22} className="text-white" />
+                <div className={`w-10 h-10 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-gradient-to-br ${phase.color} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform`}>
+                  <phase.icon className="text-white w-[18px] h-[18px] sm:w-[22px] sm:h-[22px]" />
                 </div>
                 <div className="text-center">
-                  <span className="text-xs md:text-sm font-bold text-white/80 block">{i + 1}</span>
-                  <span className="text-[10px] md:text-xs uppercase tracking-widest text-white/40 hidden sm:block">{phase.shortLabel}</span>
+                  <span className="text-xs sm:text-sm font-bold text-white/80 block">{i + 1}</span>
+                  <span className="text-[10px] sm:text-xs uppercase tracking-widest text-white/40 hidden sm:block">{phase.shortLabel}</span>
                 </div>
               </button>
             ))}
@@ -424,7 +424,7 @@ const HowItWorks = () => {
       </section>
 
       {/* Appeal Readiness Banner */}
-      <section className="max-w-5xl mx-auto px-6 -mt-4 mb-16 relative z-10">
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 -mt-4 mb-16 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -459,7 +459,7 @@ const HowItWorks = () => {
                 <button
                   key={phase.id}
                   onClick={() => scrollToPhase(phase.id)}
-                  className={`flex items-center gap-2 px-5 py-3 rounded-full text-sm font-bold whitespace-nowrap transition-all ${
+                  className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-5 py-2.5 sm:py-3 rounded-full text-xs sm:text-sm font-bold whitespace-nowrap transition-all ${
                     isActive
                       ? `bg-gradient-to-r ${phase.color} text-white shadow-md`
                       : 'bg-white text-brand-primary/50 hover:text-brand-primary border border-brand-primary/5'
@@ -477,19 +477,19 @@ const HowItWorks = () => {
       </div>
 
       {/* Phase Sections */}
-      <div className="max-w-5xl mx-auto px-6 bg-brand-surface">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 bg-brand-surface">
         {phases.map((phase, i) => (
           <PhaseSection key={phase.id} phaseId={phase.id} index={i} />
         ))}
       </div>
 
       {/* Complete Intelligence CTA */}
-      <section className="max-w-5xl mx-auto px-6 mb-24">
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 mb-16 sm:mb-24">
         <motion.div
           initial={{ opacity: 0, scale: 0.98 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="rounded-[3rem] overflow-hidden bg-gradient-to-br from-brand-primary via-brand-primary to-slate-900 text-white p-10 md:p-16 relative shadow-2xl"
+          className="rounded-2xl sm:rounded-[3rem] overflow-hidden bg-gradient-to-br from-brand-primary via-brand-primary to-slate-900 text-white p-6 sm:p-10 md:p-16 relative shadow-2xl"
         >
           <div className="absolute top-0 right-0 w-96 h-96 bg-amber-400/10 blur-[120px]" />
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-brand-accent/10 blur-[80px]" />
@@ -497,19 +497,19 @@ const HowItWorks = () => {
             <div className="w-16 h-16 rounded-2xl bg-amber-400/20 flex items-center justify-center mx-auto mb-6">
               <Crown className="text-amber-400" size={32} />
             </div>
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">The Complete Intelligence</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-4">The Complete Intelligence</h2>
             <p className="text-white/50 mb-8 max-w-2xl mx-auto text-lg font-light">
               For sites where you can't afford to miss anything. All 16 purchasable reports, every phase covered, one price.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
               <span className="text-white/30 line-through text-lg">RRP: £15,625</span>
-              <span className="text-5xl font-bold">£6,995</span>
+              <span className="text-4xl sm:text-5xl font-bold">£6,995</span>
               <span className="bg-emerald-500/20 text-emerald-400 px-4 py-1.5 rounded-full text-sm font-bold">Save 55%</span>
             </div>
             <p className="text-white/30 text-sm mb-8">Mid-market equivalent: £12,550-£35,400</p>
             <Link
               to="/order-report?report=complete-intelligence"
-              className="inline-flex items-center gap-2 bg-amber-400 text-brand-primary px-10 py-5 rounded-full font-bold text-lg hover:scale-105 transition-transform shadow-xl shadow-amber-400/20"
+              className="inline-flex items-center gap-2 bg-amber-400 text-brand-primary px-6 sm:px-10 py-4 sm:py-5 rounded-full font-bold text-base sm:text-lg hover:scale-105 transition-transform shadow-xl shadow-amber-400/20"
             >
               Order Complete Intelligence <ArrowRight size={20} />
             </Link>
@@ -518,10 +518,10 @@ const HowItWorks = () => {
       </section>
 
       {/* Who Is This For */}
-      <section className="max-w-5xl mx-auto px-6 mb-24">
-        <div className="text-center mb-12">
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 mb-16 sm:mb-24">
+        <div className="text-center mb-8 sm:mb-12">
           <span className="font-mono text-sm uppercase tracking-[0.3em] font-bold text-brand-accent mb-2 block">Built For You</span>
-          <h2 className="text-3xl md:text-5xl font-bold text-brand-primary mb-4">Who Is This <span className="italic font-accent font-light text-brand-primary/60">For?</span></h2>
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-brand-primary mb-4">Who Is This <span className="italic font-accent font-light text-brand-primary/60">For?</span></h2>
         </div>
         <div className="grid md:grid-cols-2 gap-6">
           {[
@@ -536,7 +536,7 @@ const HowItWorks = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="p-8 rounded-[2rem] bg-white border border-brand-primary/5 shadow-sm hover:shadow-lg transition-all"
+              className="p-5 sm:p-8 rounded-2xl sm:rounded-[2rem] bg-white border border-brand-primary/5 shadow-sm hover:shadow-lg transition-all"
             >
               <div className="flex items-center gap-4 mb-6">
                 <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${item.gradient} flex items-center justify-center shadow-lg`}>
@@ -563,8 +563,8 @@ const HowItWorks = () => {
       </section>
 
       {/* Bottom CTAs */}
-      <section className="max-w-3xl mx-auto px-6 text-center pb-24">
-        <h2 className="text-3xl font-bold text-brand-primary mb-4">Ready to get started?</h2>
+      <section className="max-w-3xl mx-auto px-4 sm:px-6 text-center pb-16 sm:pb-24">
+        <h2 className="text-2xl sm:text-3xl font-bold text-brand-primary mb-4">Ready to get started?</h2>
         <p className="text-brand-primary/50 mb-8 text-lg">View all our packages or order individual reports.</p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
