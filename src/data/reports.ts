@@ -332,6 +332,14 @@ export const bundles: ReportBundle[] = [
     savings: 2850,
     includedReports: ['site-feasibility-report', 'geotechnical-desk-study', 'flood-risk-assessment', 'construction-management-plan'],
   },
+  {
+    slug: 'appeal-ready-pack',
+    name: 'The Appeal-Ready Pack',
+    earlyAccessPrice: 2735,
+    rrp: 5335,
+    savings: 2600,
+    includedReports: ['site-feasibility-report', 'planning-statement', 'design-and-access-statement', 'pre-application-advice'],
+  },
 ];
 
 export const TOTAL_BUNDLES = bundles.length;

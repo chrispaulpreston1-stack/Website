@@ -18,6 +18,36 @@ export interface BlogPost {
 
 const blogPosts: BlogPost[] = [
   {
+    slug: 'planning-appeal-changes-2026',
+    title: 'Planning Appeal Rules Changed on 1 April 2026 — What It Means for Your Application',
+    excerpt: 'New regulations mean 95% of planning appeals can no longer introduce new evidence. Your original application is now your only chance to make the case. Here is what changed and how to prepare.',
+    date: 'Mar 6, 2026',
+    author: 'Chris Preston',
+    category: 'Planning & Regulation',
+    image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=1200',
+    content: [
+      'On 1 April 2026, the way planning appeals work in England changed fundamentally. The Town and Country Planning (Appeals) (Written Representations and Hearings Procedure) (England) (Amendment) Rules 2026 — SI 2026/122 — came into force, and the consequences for anyone submitting a planning application are significant.',
+      'The headline: approximately 95% of planning appeals will now follow the Part 1 expedited procedure. Under this procedure, no new evidence can be introduced at appeal. The documents you submitted with your original application are the only documents the Inspector will consider. Your application is your appeal case.',
+      'Under the previous system, if your planning application was refused, you could submit additional supporting documents at appeal — new surveys, updated reports, extra policy justification, fresh expert opinions. Many applicants treated the appeal as a second chance to make their case properly. That safety net has been removed.',
+      'The new Part 1 procedure works as follows. When you appeal, the Inspector reviews your original application documents, the council officer report, the decision notice, and any third-party representations that were made during the original consultation. The appellant can submit a short statement of case explaining why the council was wrong — but cannot introduce new evidence, new reports, or new expert assessments.',
+      'There are limited exceptions. The Part 2 procedure — which does allow fuller evidence exchange — still exists, but it applies to a narrow range of cases: major developments, applications with an Environmental Impact Assessment, cases involving significant public interest, and appeals against non-determination where the applicant has not agreed a time extension. For the vast majority of householder applications, minor developments, and standard full applications, Part 1 is the default.',
+      'There is a perverse incentive worth understanding. If you agree to a time extension and the council then refuses your application, you are locked into Part 1 at appeal — no new evidence. But if you let the council miss its statutory deadline without agreeing an extension, you can appeal for non-determination under Part 2, which preserves your right to submit new evidence. For high-friction sites where refusal is likely, the strategic choice of whether to grant a time extension is now a material decision.',
+      'This regulatory change creates a clear dividing line between applications submitted before and after 1 April 2026. Applications submitted before that date, even if they are decided or appealed after April, follow the old rules. Only applications submitted on or after 1 April 2026 are subject to the new procedure.',
+      'So what does this mean in practice? It means every report you submit with your planning application needs to be complete, accurate, and evidence-based from day one. Missing a heritage assessment when your site is near a listed building, citing outdated flood data, failing to address a local design policy, or leaving gaps in your biodiversity net gain evidence — these are mistakes that could previously be corrected at appeal. From April 2026, they are permanent.',
+      'There is also a new requirement for AI disclosure. When AI-generated content is used in appeal documents, this must be declared. Our reports have always cited their data sources transparently, and we have adopted a standard AI disclosure paragraph that identifies the data sources interrogated, the AI tools used for analysis, and the verification process applied.',
+      'We built PF & Co Site Intelligence specifically so that every report is appeal-ready from submission. Each report interrogates authoritative government data sources, cites specific policies, references relevant case law where applicable, and includes full data source attributions. When an Inspector reads your application, they see a complete, evidenced case — not a document that needs supplementing.',
+      'The practical steps you should take are straightforward. First, do not submit an application without a Planning Statement — it is not always mandatory, but under the new rules, having your policy justification on record from day one is essential. Second, commission a Site Feasibility Report before you design anything — it identifies every constraint and tells you which reports you need. Third, check your data currency — if your flood risk data is 18 months old or your ecology survey is from a different season, update it before submission. Fourth, consider pre-application advice — getting informal feedback from the council before you submit gives you a chance to address concerns before they become refusal reasons.',
+      'The appeal-ready application is not a new concept — good planning consultants have always aimed for it. What has changed is that it is no longer optional. Under SI 2026/122, the quality of your original submission is the only thing that matters.',
+      'This is general guidance only. Every project is unique — please consult a qualified planning consultant or structural engineer for advice specific to your property.',
+    ],
+    relatedReport: {
+      title: 'Site Feasibility Report',
+      path: '/site-intelligence/site-feasibility-report',
+      orderSlug: 'site-feasibility-report',
+      price: '1500',
+    },
+  },
+  {
     slug: 'what-reports-do-you-need-for-planning-permission',
     title: 'What Reports Do You Need for Planning Permission? The Complete 2026 Guide',
     excerpt: 'Complete guide to the 18 reports you might need for planning permission in England. Covers what each one is, when it is required, what it costs, and which ones you actually need for your project.',

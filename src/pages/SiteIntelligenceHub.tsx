@@ -212,6 +212,44 @@ const SiteIntelligenceHub = () => {
         duration="2:32"
       />
 
+      {/* Appeal-Readiness Regulatory Alert */}
+      <section className="max-w-7xl mx-auto px-6 mb-24">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="relative p-8 md:p-10 bg-gradient-to-br from-red-950 to-brand-primary rounded-[2rem] text-white overflow-hidden shadow-2xl border border-red-500/20"
+        >
+          <div className="absolute inset-0 opacity-5 engineering-grid" />
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-500 via-amber-400 to-red-500" />
+          <div className="relative z-10">
+            <div className="flex items-start gap-4 mb-6">
+              <div className="w-12 h-12 bg-red-500/20 rounded-xl flex items-center justify-center shrink-0">
+                <ShieldAlert size={24} className="text-red-400" />
+              </div>
+              <div>
+                <span className="inline-block bg-red-500/20 text-red-300 text-[9px] font-bold uppercase tracking-widest px-2 py-0.5 rounded mb-2">Regulatory Change — 1 April 2026</span>
+                <h3 className="text-2xl md:text-3xl font-bold leading-tight">Submit Once, Submit Right.</h3>
+              </div>
+            </div>
+            <p className="text-white/70 text-base leading-relaxed mb-6 max-w-3xl">
+              From 1 April 2026, planning appeals in England no longer accept new evidence. Under SI 2026/122, approximately 95% of appeals will follow the expedited procedure where your original application <strong className="text-white">is</strong> the appeal case. Missing a report, citing outdated data, or leaving a gap in your evidence cannot be fixed later.
+            </p>
+            <p className="text-white/70 text-base leading-relaxed mb-8 max-w-3xl">
+              Our reports are built to be <strong className="text-white">appeal-ready from day one</strong> — every data source cited, every policy referenced, every constraint evidenced. When the planning officer reads your application, they see a case that is already complete.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Link to="/blog/planning-appeal-changes-2026" className="px-6 py-3 bg-white text-brand-primary rounded-xl font-bold hover:scale-105 transition-all shadow-lg text-sm">
+                Read: What Changed on 1 April
+              </Link>
+              <Link to="/order-report" className="px-6 py-3 bg-red-500/20 text-white border border-red-500/30 rounded-xl font-bold hover:bg-red-500/30 transition-all text-sm">
+                Order Appeal-Ready Reports
+              </Link>
+            </div>
+          </div>
+        </motion.div>
+      </section>
+
       {/* White Label & Professional Partners */}
       <section className="max-w-7xl mx-auto px-6 mb-24">
         <motion.div
