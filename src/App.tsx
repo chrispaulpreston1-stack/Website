@@ -80,13 +80,13 @@ const Navbar = () => {
     { name: 'Engineering', href: '/structural-engineering' },
     { name: 'Construction', href: '/construction' },
     { name: 'Site Intelligence', href: '/site-intelligence' },
-    { name: 'How It Works', href: '/how-it-works' },
+    { name: 'Plans & Pricing', href: '/how-it-works' },
     { name: 'Building Control', href: '/building-control' },
     { name: 'Party Wall', href: '/party-wall' },
     { name: 'Insights', href: '/blog/', isExternal: true },
   ];
 
-  const isAIInnovation = location.pathname === '/ai-innovation';
+  const hasDarkHero = location.pathname === '/ai-innovation' || location.pathname === '/how-it-works';
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'glass py-3 shadow-sm' : 'bg-transparent py-6'}`}>
@@ -96,8 +96,8 @@ const Navbar = () => {
             <span className="text-brand-accent font-display font-bold text-xl">PF</span>
           </div>
           <div className="flex flex-col leading-none">
-            <span className={`font-display font-bold text-lg tracking-tight ${isAIInnovation && !isScrolled ? 'text-white' : 'text-brand-primary'}`}>PF & Co</span>
-            <span className={`text-[10px] uppercase tracking-[0.2em] opacity-60 font-mono ${isAIInnovation && !isScrolled ? 'text-white' : 'text-brand-primary'}`}>Site Intelligence</span>
+            <span className={`font-display font-bold text-lg tracking-tight ${hasDarkHero && !isScrolled ? 'text-white' : 'text-brand-primary'}`}>PF & Co</span>
+            <span className={`text-[10px] uppercase tracking-[0.2em] opacity-60 font-mono ${hasDarkHero && !isScrolled ? 'text-white' : 'text-brand-primary'}`}>Site Intelligence</span>
           </div>
         </Link>
 
@@ -110,7 +110,7 @@ const Navbar = () => {
                 href={link.href}
                 className={`relative text-sm font-medium hover:text-brand-accent transition-colors ${location.pathname.startsWith(link.href)
                   ? 'text-brand-accent'
-                  : (isAIInnovation && !isScrolled ? 'text-white/80' : 'text-brand-primary')
+                  : (hasDarkHero && !isScrolled ? 'text-white/80' : 'text-brand-primary')
                   }`}
               >
                 {link.name}
@@ -121,7 +121,7 @@ const Navbar = () => {
                 to={link.href}
                 className={`relative text-sm font-medium hover:text-brand-accent transition-colors ${location.pathname === link.href
                   ? 'text-brand-accent'
-                  : (isAIInnovation && !isScrolled ? 'text-white/80' : 'text-brand-primary')
+                  : (hasDarkHero && !isScrolled ? 'text-white/80' : 'text-brand-primary')
                   }`}
               >
                 {link.name}
@@ -141,7 +141,7 @@ const Navbar = () => {
 
         {/* Mobile Toggle */}
         <button
-          className={`lg:hidden ${isAIInnovation && !isScrolled ? 'text-white' : 'text-brand-primary'}`}
+          className={`lg:hidden ${hasDarkHero && !isScrolled ? 'text-white' : 'text-brand-primary'}`}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
         >
@@ -156,7 +156,7 @@ const Navbar = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className={`absolute top-full left-0 right-0 border-t p-6 flex flex-col gap-4 lg:hidden shadow-xl ${isAIInnovation ? 'bg-brand-primary text-white border-white/10' : 'bg-white text-brand-primary border-gray-100'
+            className={`absolute top-full left-0 right-0 border-t p-6 flex flex-col gap-4 lg:hidden shadow-xl ${hasDarkHero ? 'bg-brand-primary text-white border-white/10' : 'bg-white text-brand-primary border-gray-100'
               }`}
           >
             {navLinks.map((link) => (
@@ -164,7 +164,7 @@ const Navbar = () => {
                 <a
                   key={link.name}
                   href={link.href}
-                  className={`text-lg font-medium py-2 border-b ${isAIInnovation ? 'border-white/5 hover:text-brand-accent' : 'border-gray-50 hover:text-brand-accent'
+                  className={`text-lg font-medium py-2 border-b ${hasDarkHero ? 'border-white/5 hover:text-brand-accent' : 'border-gray-50 hover:text-brand-accent'
                     }`}
                 >
                   {link.name}
@@ -173,7 +173,7 @@ const Navbar = () => {
                 <Link
                   key={link.name}
                   to={link.href}
-                  className={`text-lg font-medium py-2 border-b ${isAIInnovation ? 'border-white/5 hover:text-brand-accent' : 'border-gray-50 hover:text-brand-accent'
+                  className={`text-lg font-medium py-2 border-b ${hasDarkHero ? 'border-white/5 hover:text-brand-accent' : 'border-gray-50 hover:text-brand-accent'
                     }`}
                 >
                   {link.name}
@@ -353,7 +353,7 @@ const Footer = () => {
               <li><Link to="/building-control" className="hover:text-brand-accent transition-colors">Building Control</Link></li>
               <li><Link to="/party-wall" className="hover:text-brand-accent transition-colors">Party Wall</Link></li>
               <li><Link to="/report-packages" className="hover:text-brand-accent transition-colors">Report Packages</Link></li>
-              <li><Link to="/how-it-works" className="hover:text-brand-accent transition-colors">How It Works</Link></li>
+              <li><Link to="/how-it-works" className="hover:text-brand-accent transition-colors">Plans & Pricing</Link></li>
               <li><Link to="/subscriptions" className="hover:text-brand-accent transition-colors">Subscriptions</Link></li>
             </ul>
           </div>
