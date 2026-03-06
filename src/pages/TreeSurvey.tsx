@@ -56,6 +56,35 @@ const TreeSurvey = () => {
             description: 'BS 5837 compliant tree survey with categorisation, RPA mapping, and arboricultural impact assessment.',
             brand: { '@type': 'Organization', name: 'PF & Co Construction' },
             offers: { '@type': 'Offer', price: '575', priceCurrency: 'GBP' },
+          },
+          {
+            '@type': 'FAQPage',
+            mainEntity: [
+              {
+                '@type': 'Question',
+                name: 'Is this a physical site visit?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Our desktop tree survey uses LiDAR canopy height modelling, aerial imagery, and TPO register data to produce BS 5837-compliant assessments remotely. For complex sites or where Category A trees are suspected, we may recommend a physical site visit as a follow-up.'
+                }
+              },
+              {
+                '@type': 'Question',
+                name: 'What is BS 5837?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'BS 5837:2012 is the British Standard for Trees in relation to design, demolition and construction. It sets out the methodology for surveying and categorising trees, calculating root protection areas, and assessing the arboricultural impact of development proposals.'
+                }
+              },
+              {
+                '@type': 'Question',
+                name: 'Do I need this for a householder application?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'If your site has significant trees, TPO-protected trees, or is in a Conservation Area, yes. Many councils now require arboricultural information even for householder applications where trees could be affected by foundations, access routes, or construction activity.'
+                }
+              }
+            ]
           }
         ]}
       />

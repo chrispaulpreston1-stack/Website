@@ -67,6 +67,35 @@ const ParkingSurvey = () => {
             uploadDate: '2026-03-02',
             duration: 'PT1M19S',
             publisher: { '@type': 'Organization', name: 'PF & Co Construction', url: 'https://www.pfcoconstruction.co.uk' },
+          },
+          {
+            '@type': 'FAQPage',
+            mainEntity: [
+              {
+                '@type': 'Question',
+                name: 'What if my parking is below the council standard?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: "That's exactly when you need this report. We build a data-driven case using Census car ownership figures and public transport accessibility to show the shortfall won't cause unacceptable harm."
+                }
+              },
+              {
+                '@type': 'Question',
+                name: 'Is this a physical on-street parking survey?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: "No. This is a desktop analysis using published Census data and public transport timetables. It doesn't involve physical roadside counts, though the data often satisfies council needs."
+                }
+              },
+              {
+                '@type': 'Question',
+                name: 'Can this help with an HMO application?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Yes. HMOs often trigger parking concerns because each room may count as a unit. Census data consistently shows HMO tenants have lower car ownership rates, which we present clearly.'
+                }
+              }
+            ]
           }
         ]}
       />

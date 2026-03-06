@@ -97,6 +97,35 @@ const FloodRiskAssessment = () => {
             uploadDate: '2026-03-02',
             duration: 'PT1M31S',
             publisher: { '@type': 'Organization', name: 'PF & Co Construction', url: 'https://www.pfcoconstruction.co.uk' },
+          },
+          {
+            '@type': 'FAQPage',
+            mainEntity: [
+              {
+                '@type': 'Question',
+                name: 'Do I need an FRA for my extension?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'If your site is in Flood Zone 2 or 3, or if your local planning authority has identified surface water flood risk, you will typically need an FRA. Even Zone 1 sites may require one if there is recorded surface water flooding.'
+                }
+              },
+              {
+                '@type': 'Question',
+                name: 'Is this a Tier 2 FRA?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'This is a Tier 1 Desktop FRA based on published data and engineering interpretation. It does not include hydraulic modelling. For complex sites, a Tier 2 assessment with detailed modelling may be recommended.'
+                }
+              },
+              {
+                '@type': 'Question',
+                name: 'Will this satisfy my planning officer?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'The report is structured for planning submission and addresses the Sequential Test, Exception Test, and NPPF requirements. However, some LPAs may require additional detail depending on site complexity.'
+                }
+              }
+            ]
           }
         ]}
       />

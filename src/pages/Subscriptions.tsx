@@ -104,6 +104,23 @@ const Subscriptions = () => {
         title="Engineering Subscriptions & Partner Credits | PF & Co"
         description="Get unlimited structural calculations and priority design support for a fixed monthly fee, or join our B2B Partner Credit system."
         path="/subscriptions"
+        jsonLd={{
+          '@type': 'Service',
+          name: 'PF & Co Engineering Subscriptions',
+          provider: { '@type': 'Organization', name: 'PF & Co Construction', url: 'https://www.pfcoconstruction.co.uk' },
+          description: 'Retained structural engineering and site intelligence subscriptions for homeowners and B2B partners.',
+          hasOfferCatalog: {
+            '@type': 'OfferCatalog',
+            name: 'Subscription Plans',
+            itemListElement: [
+              { '@type': 'Offer', name: 'Standard Project', price: '395', priceCurrency: 'GBP', description: 'Perfect for single extensions, loft conversions, wall removals, or garage conversions. £1,195 setup + £395/mo.' },
+              { '@type': 'Offer', name: 'Complex Project', price: '495', priceCurrency: 'GBP', description: 'For multi-element projects, basements, new builds, heritage sites, or flood zones. £1,795 setup + £495/mo.' },
+              { '@type': 'Offer', name: 'B2B Starter', price: '595', priceCurrency: 'GBP', description: '10 credits per month for small practices needing occasional engineering and planning support.' },
+              { '@type': 'Offer', name: 'B2B Professional', price: '1495', priceCurrency: 'GBP', description: '30 credits per month for active architectural practices and developers.' },
+              { '@type': 'Offer', name: 'B2B Enterprise', price: '2995', priceCurrency: 'GBP', description: '70 credits per month for high-volume firms requiring a constant engineering & reporting partner.' },
+            ]
+          }
+        }}
       />
       <section className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">

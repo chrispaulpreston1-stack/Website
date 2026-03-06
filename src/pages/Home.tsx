@@ -11,6 +11,13 @@ const Home = () => {
         title="PF & Co | AI-Powered Structural Engineering & Construction"
         description="Nationwide AI-powered structural engineering and construction firm. Precision calculations, fixed quotes, and 24h turnaround."
         path="/"
+        jsonLd={{
+          '@type': 'WebSite',
+          name: 'PF & Co Construction',
+          url: 'https://www.pfcoconstruction.co.uk',
+          description: 'AI-powered structural engineering, construction, and site intelligence services across England and Wales.',
+          publisher: { '@type': 'Organization', name: 'PF & Co Construction' }
+        }}
       />
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center pt-32 pb-24 overflow-hidden">

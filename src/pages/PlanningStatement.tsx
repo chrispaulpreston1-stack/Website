@@ -67,6 +67,35 @@ const PlanningStatement = () => {
             uploadDate: '2026-03-02',
             duration: 'PT1M27S',
             publisher: { '@type': 'Organization', name: 'PF & Co Construction', url: 'https://www.pfcoconstruction.co.uk' },
+          },
+          {
+            '@type': 'FAQPage',
+            mainEntity: [
+              {
+                '@type': 'Question',
+                name: 'Is this different from a Design and Access Statement?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Yes. A Planning Statement addresses policy compliance — why it should be approved. A DAS addresses the design process and accessibility — how it was designed.'
+                }
+              },
+              {
+                '@type': 'Question',
+                name: 'Which planning policies will you reference?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'We reference all relevant policies from the council\'s adopted local plan, any SPDs, neighbourhood plans, and the NPPF. Every reference is specific to your council.'
+                }
+              },
+              {
+                '@type': 'Question',
+                name: 'Can you cover any council in England?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Yes. We research the Local Planning Authority for your site from scratch. If your site is in England, we can produce a Planning Statement for it.'
+                }
+              }
+            ]
           }
         ]}
       />

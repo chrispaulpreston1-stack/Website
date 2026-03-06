@@ -1,13 +1,13 @@
 # PF & Co Construction
-> AI-powered structural engineering, construction, and site intelligence services across Surrey, London, and the South East of England.
+> AI-powered structural engineering, construction, and site intelligence services nationwide across England and Wales.
 
 ## About
-PF & Co Construction is an engineering-led construction firm specialising in structural design, precision construction, and data-driven site intelligence. We combine AI-optimised design tools with hands-on engineering expertise to deliver safer, faster, and more cost-effective outcomes. PI insured, with 24-hour turnaround on quotes.
+PF & Co Construction is an engineering-led construction firm specialising in structural design, precision construction, and data-driven site intelligence. We combine AI-optimised design tools with hands-on engineering expertise to deliver safer, faster, and more cost-effective outcomes. PI insured, with 24-hour turnaround on quotes. Our multi-agent AI system interrogates 44 authoritative data sources across 9 constraint categories to produce planning-ready reports in 48 hours.
 
 ## Services
 
 ### Structural Engineering
-Residential and commercial structural design, beam calculations (RSJ/steel), basement impact assessments, and load-bearing wall removals.
+Residential and commercial structural design, beam calculations (RSJ/steel), basement impact assessments, and load-bearing wall removals. Nationwide coverage.
 URL: https://www.pfcoconstruction.co.uk/structural-engineering
 
 ### Construction
@@ -15,44 +15,45 @@ Engineering-led construction services including structural alterations, extensio
 URL: https://www.pfcoconstruction.co.uk/construction
 
 ### Site Intelligence
-Data-driven pre-construction screening reports interrogating 15+ authoritative data sources. Reports include:
-- Site Feasibility Report (£1,500)
-- Geotechnical Desk Study (£900)
-- Flood Risk Assessment (£375)
-- Planning Statement (£900)
-- Heritage Impact Assessment (£725)
-- Design & Access Statement (£600)
-- Transport Statement (£600)
-- Sustainability / Energy Statement (£550)
-- CIL Liability Assessment (£500)
-- Construction Management Plan (£425)
-- Party Wall Pre-Assessment (£425)
-- Pre-Construction Design Review (£425)
-- Parking Provision Statement (£375)
-- Biodiversity Net Gain Screening (£300)
-- Concept Feasibility Study (£1,200)
-- Pre-Application Advice Pack (£1,100)
-- BC Readiness Check (£150)
-- Full Site Intelligence Bundle (£2,375)
-All prices are Early Access pricing (approximately 40% off RRP). Prices exclude VAT.
+Data-driven pre-construction screening reports interrogating 44 authoritative data sources across 9 constraint categories. Reports include:
+- Site Feasibility Report — 22+ constraint screening, Planning Friction Score (EA £1,500 / Stripe £297)
+- Geotechnical Desk Study — BGS geology, contamination, foundation risk (EA £900 / Stripe £197)
+- Flood Risk Assessment — 7 flood sources, Decision Risk Scores (EA £375 / Stripe £147)
+- Planning Statement — Policy evidence and planning justification (EA £900 / Stripe £197)
+- Heritage Impact Assessment — Listed buildings, conservation areas (EA £725 / Stripe £197)
+- Design & Access Statement — DMPO 2015 compliant DAS (EA £600 / Stripe £147)
+- Transport Statement — Trip generation, highways, accessibility (EA £600 / Stripe £147)
+- Sustainability / Energy Statement — Part L, SAP, MEES (EA £550 / Stripe £147)
+- CIL Liability Assessment — Levy exposure, exemptions, relief (EA £500 / Stripe £147)
+- Construction Management Plan — Pre-commencement CMP condition (EA £425 / Stripe £147)
+- Party Wall Pre-Assessment — Party Wall Act 1996 assessment (EA £425 / Stripe £147)
+- Pre-Construction Design Review — 95-check coordination review (EA £425 / Stripe £147)
+- Parking Provision Statement — Evidence-based parking demand (EA £375 / Stripe £97)
+- Biodiversity Net Gain Screening — BNG applicability, 10% metric (EA £300 / Stripe £97)
+- Concept Feasibility Study — GDV, cost appraisal, viability (EA £1,200 / Stripe £247)
+- Pre-Application Advice Pack — LPA pre-submission engagement (EA £1,100 / Stripe £247)
+- Tree Survey (BS 5837) — Categorisation, RPAs, impact assessment (EA £575 / Stripe £147)
+- BC Readiness Check — Building Control submission readiness (EA £150 / Stripe £47)
+EA = Early Access price shown on website. Stripe = actual checkout price. All prices exclude VAT.
 URL: https://www.pfcoconstruction.co.uk/site-intelligence
 Order: https://www.pfcoconstruction.co.uk/order-report
-Sample reports (illustrative PDFs with fictional data) are available for every product:
-  https://www.pfcoconstruction.co.uk/samples/{slug}-sample.pdf
-  Slugs: site-feasibility, geotechnical-desk-study, flood-risk-assessment, biodiversity-net-gain, construction-management-plan, design-and-access-statement, energy-statement, feasibility-study, heritage-impact-assessment, parking-survey, planning-statement, transport-statement, pre-construction-design-review, pre-application-advice, cil-liability-assessment, party-wall-assessment, building-control, full-bundle
+Sample reports: https://www.pfcoconstruction.co.uk/samples/{slug}-sample.pdf
 
-### Report Packages
+### Report Packages (Bundles)
 Pre-construction diligence bundles at additional savings:
-- Pre-Planning Pack (4 reports): £3,025
-- Triple Threat (3 reports): £2,375
-- Site Acquisition Pack (5 reports): £2,900
-- Architect Support Pack (5 reports): £2,625
-- Self-Build Starter (4 reports): £3,050
-- Land Buyer Screening (5 reports): £3,500
+- The Complete Intelligence (16 reports, all phases): £6,995 EA — Save 55%
+- The Full Planning Suite (8 planning application reports): £3,495 EA — Save 37%
+- The Developer Due Diligence (5 reports, site acquisition): £3,095 EA — Save 39%
+- The Self-Build Starter (4 reports, plot assessment): £3,050 EA — Save 32%
+- The Appeal-Ready Pack (5 reports, submission + appeal): £2,735 EA — Save 35%
+- The Architect Support Pack (5 reports, design evidence): £2,625 EA — Save 39%
+- The Triple Threat (3 core reports, most popular entry): £2,375 EA — Save 36%
+- The Construction Readiness Pack (2 post-permission reports): £1,195 EA — Save 32%
 URL: https://www.pfcoconstruction.co.uk/report-packages
+Plans & Pricing Roadmap: https://www.pfcoconstruction.co.uk/how-it-works
 
 ### AI Innovation
-AI-powered structural design tools that optimise safety and reduce material waste.
+Multi-agent AI system with 84 specialised agents across 7 categories (Data Acquisition, Analysis & Scoring, Market Intelligence, Structural Engineering, Construction & Project, Platform & Operations, Computer Vision). Interrogates 44 authoritative data sources including BGS, Environment Agency, Historic England, Natural England, Land Registry, and National Grid.
 URL: https://www.pfcoconstruction.co.uk/ai-innovation
 
 ### Subscriptions
@@ -80,6 +81,9 @@ Expert articles on structural engineering, planning, and site intelligence:
 
 ## Key URLs
 - Homepage: https://www.pfcoconstruction.co.uk
+- Plans & Pricing: https://www.pfcoconstruction.co.uk/how-it-works
+- Report Packages: https://www.pfcoconstruction.co.uk/report-packages
+- Order Reports: https://www.pfcoconstruction.co.uk/order-report
 - Blog / Insights: https://www.pfcoconstruction.co.uk/blog
 - Contact: https://www.pfcoconstruction.co.uk/contact
 - Privacy Policy: https://www.pfcoconstruction.co.uk/privacy-policy
@@ -88,4 +92,4 @@ Expert articles on structural engineering, planning, and site intelligence:
 ## Contact
 - Phone: 01483 363210
 - Email: info@pfcoconstruction.co.uk
-- Region: Surrey, London & the South East
+- Coverage: Nationwide across England and Wales

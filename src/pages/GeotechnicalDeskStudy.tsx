@@ -88,6 +88,35 @@ const GeotechnicalDeskStudy = () => {
             uploadDate: '2026-03-02',
             duration: 'PT1M23S',
             publisher: { '@type': 'Organization', name: 'PF & Co Construction', url: 'https://www.pfcoconstruction.co.uk' },
+          },
+          {
+            '@type': 'FAQPage',
+            mainEntity: [
+              {
+                '@type': 'Question',
+                name: 'Is a desk study the same as a site investigation?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'No. A desk study is a desktop exercise using published data. A site investigation involves physical work on-site such as trial pits and boreholes. The desk study tells you whether you need a site investigation and what to test for.'
+                }
+              },
+              {
+                '@type': 'Question',
+                name: 'Will Building Control accept a desk study?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Building Control typically requires evidence of ground conditions for foundation approval. A desk study provides this evidence and informs the structural engineer\'s foundation design.'
+                }
+              },
+              {
+                '@type': 'Question',
+                name: 'How does this relate to structural calculations?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'The desk study feeds directly into foundation design. Your structural engineer uses the geology, bearing capacity, and shrinkage data to specify foundation type, depth, and reinforcement.'
+                }
+              }
+            ]
           }
         ]}
       />

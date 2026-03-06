@@ -50,30 +50,61 @@ const TransportStatement = () => {
         title="Transport Statement | Highways & Accessibility | PF & Co"
         description="A professional transport statement for planning applications — covering trip generation, accessibility, and highways safety."
         path="/site-intelligence/transport-statement"
-        jsonLd={{
-          '@type': 'Product',
-          name: 'Transport Statement',
-          description: 'Professional transport statement covering trip generation, accessibility, and highways safety.',
-          brand: { '@type': 'Organization', name: 'PF & Co Construction' },
-          offers: { '@type': 'Offer', price: '600', priceCurrency: 'GBP' },
-          subjectOf: {
-            '@type': 'VideoObject',
-            name: 'Transport Statement Explainer',
-            description: 'Learn how our Transport Statements analyse trip generation, accessibility, and highways safety for planning applications.',
-            thumbnailUrl: 'https://www.pfcoconstruction.co.uk/videos/transport-statement-thumb.jpg',
-            contentUrl: 'https://www.pfcoconstruction.co.uk/videos/transport-statement-demo.mp4',
-            uploadDate: new Date().toISOString().split('T')[0],
-            duration: 'PT1M36S',
-            publisher: {
-              '@type': 'Organization',
-              name: 'PF & Co Construction',
-              logo: {
-                '@type': 'ImageObject',
-                url: 'https://www.pfcoconstruction.co.uk/logo.png'
+        jsonLd={[
+          {
+            '@type': 'Product',
+            name: 'Transport Statement',
+            description: 'Professional transport statement covering trip generation, accessibility, and highways safety.',
+            brand: { '@type': 'Organization', name: 'PF & Co Construction' },
+            offers: { '@type': 'Offer', price: '600', priceCurrency: 'GBP' },
+            subjectOf: {
+              '@type': 'VideoObject',
+              name: 'Transport Statement Explainer',
+              description: 'Learn how our Transport Statements analyse trip generation, accessibility, and highways safety for planning applications.',
+              thumbnailUrl: 'https://www.pfcoconstruction.co.uk/videos/transport-statement-thumb.jpg',
+              contentUrl: 'https://www.pfcoconstruction.co.uk/videos/transport-statement-demo.mp4',
+              uploadDate: new Date().toISOString().split('T')[0],
+              duration: 'PT1M36S',
+              publisher: {
+                '@type': 'Organization',
+                name: 'PF & Co Construction',
+                logo: {
+                  '@type': 'ImageObject',
+                  url: 'https://www.pfcoconstruction.co.uk/logo.png'
+                }
               }
             }
+          },
+          {
+            '@type': 'FAQPage',
+            mainEntity: [
+              {
+                '@type': 'Question',
+                name: 'What is the difference between a Transport Statement and Assessment?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'A Transport Statement is for smaller developments with lower impacts. A Transport Assessment is for larger schemes that require more detailed junction modeling and impact analysis.'
+                }
+              },
+              {
+                '@type': 'Question',
+                name: 'What is TRICS data?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'TRICS is the national standard database for trip generation. It allows us to predict how many vehicle movements your development will generate based on similar sites across the UK.'
+                }
+              },
+              {
+                '@type': 'Question',
+                name: 'Do I need this for a small residential scheme?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Many councils require a Transport Statement for schemes of 5-10+ dwellings, or where there are specific local highways concerns or parking shortfalls.'
+                }
+              }
+            ]
           }
-        }}
+        ]}
       />
 
       {/* Editorial Hero */}

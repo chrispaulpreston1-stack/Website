@@ -67,6 +67,35 @@ const HeritageImpactAssessment = () => {
             uploadDate: '2026-03-02',
             duration: 'PT1M26S',
             publisher: { '@type': 'Organization', name: 'PF & Co Construction', url: 'https://www.pfcoconstruction.co.uk' },
+          },
+          {
+            '@type': 'FAQPage',
+            mainEntity: [
+              {
+                '@type': 'Question',
+                name: 'How do I know if my site is near a heritage asset?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'You can search the National Heritage List for England (NHLE). Alternatively, provide us with your address and we will confirm the heritage context for you at no charge.'
+                }
+              },
+              {
+                '@type': 'Question',
+                name: 'What is the NPPF heritage balance test?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: "The NPPF requires different tests depending on harm. 'Less than substantial harm' requires the harm to be weighed against public benefits. Our report identifies the right test and presents your case accordingly."
+                }
+              },
+              {
+                '@type': 'Question',
+                name: 'Do I need this for a conservation area extension?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'In most cases, yes. Even for householder extensions, the validation checklist usually includes heritage evidence when within a CA.'
+                }
+              }
+            ]
           }
         ]}
       />

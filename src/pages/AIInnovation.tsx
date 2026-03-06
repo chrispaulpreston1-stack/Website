@@ -331,6 +331,20 @@ const AIInnovation = () => {
         title="AI Innovation | PF & Co Structural Engineering"
         description={`Explore our ${TOTAL_AGENTS}-agent AI workforce and generative structural design tools that optimise safety and cost.`}
         path="/ai-innovation"
+        jsonLd={{
+          '@type': 'SoftwareApplication',
+          name: 'PF & Co AI Swarm',
+          applicationCategory: 'EngineeringApplication',
+          description: 'Multi-agent AI system for structural engineering and site intelligence, orchestrating data acquisition, analysis, and report generation across 44 authoritative data sources.',
+          operatingSystem: 'Web',
+          offers: {
+            '@type': 'Offer',
+            price: '0',
+            priceCurrency: 'GBP',
+            description: 'AI capabilities included with all Site Intelligence reports'
+          },
+          creator: { '@type': 'Organization', name: 'PF & Co Construction', url: 'https://www.pfcoconstruction.co.uk' }
+        }}
       />
 
       <NeuralBackground />

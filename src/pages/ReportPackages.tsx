@@ -104,6 +104,19 @@ const ReportPackages = () => {
         title="Report Packages & Bundles | PF & Co Engineering"
         description="Save up to 55% with our report bundles. From the Triple Threat starter to The Complete Intelligence — every report we produce in one package."
         path="/report-packages"
+        jsonLd={bundles.map(b => ({
+          '@type': 'Product' as const,
+          name: b.name,
+          description: b.tagline,
+          brand: { '@type': 'Organization' as const, name: 'PF & Co Construction' },
+          offers: {
+            '@type': 'Offer' as const,
+            price: String(b.earlyAccessPrice),
+            priceCurrency: 'GBP',
+            availability: 'https://schema.org/InStock',
+            url: `https://www.pfcoconstruction.co.uk/order-report?report=${b.slug}`,
+          },
+        }))}
       />
 
       {/* Hero */}

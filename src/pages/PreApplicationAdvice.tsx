@@ -67,6 +67,35 @@ const PreApplicationAdvice = () => {
             uploadDate: '2026-03-02',
             duration: 'PT1M19S',
             publisher: { '@type': 'Organization', name: 'PF & Co Construction', url: 'https://www.pfcoconstruction.co.uk' },
+          },
+          {
+            '@type': 'FAQPage',
+            mainEntity: [
+              {
+                '@type': 'Question',
+                name: 'What is a pre-application enquiry?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: "It's an informal consultation with the council before a formal application. You describe your proposal, ask questions, and an officer provides feedback on policy issues and expectations."
+                }
+              },
+              {
+                '@type': 'Question',
+                name: "Is the council's response binding?",
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: "No. It's advisory and not binding. However, a positive response carries significant weight, and a negative response identifies showstoppers before you spend on a full application."
+                }
+              },
+              {
+                '@type': 'Question',
+                name: 'How does this save me money?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'A full application involves high fees, architect drawings, and consultant reports. A pre-app enquiry costs a fraction of that and tells you if the principle is acceptable first.'
+                }
+              }
+            ]
           }
         ]}
       />

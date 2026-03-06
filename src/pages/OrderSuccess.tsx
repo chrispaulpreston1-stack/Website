@@ -18,6 +18,11 @@ const OrderSuccess = () => {
         title="Order Successful | PF & Co"
         description="Your site intelligence report order has been confirmed. You will receive your report via email."
         path="/order-success"
+        jsonLd={{
+          '@type': 'WebPage',
+          name: 'Order Confirmation',
+          description: 'Your site intelligence report order has been confirmed.'
+        }}
       />
 
       <div className="max-w-2xl mx-auto px-6 text-center">

@@ -337,6 +337,19 @@ const HowItWorks = () => {
         title="Plans & Pricing — Your Project Roadmap | PF & Co Engineering"
         description="From finding a site to breaking ground — your complete project roadmap. See exactly which reports you need at each stage and what they cost."
         path="/how-it-works"
+        jsonLd={{
+          '@type': 'ItemList',
+          name: 'Construction Project Roadmap',
+          description: 'Five-phase guide from site assessment to construction completion.',
+          numberOfItems: 5,
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Site Assessment', description: 'Constraint screening, ground risk, and viability before you commit.' },
+            { '@type': 'ListItem', position: 2, name: 'Strategy', description: 'Pre-application engagement and levy assessment before design fees.' },
+            { '@type': 'ListItem', position: 3, name: 'Planning Application', description: 'The technical evidence documents your planning submission needs.' },
+            { '@type': 'ListItem', position: 4, name: 'Post-Permission', description: 'Design coordination and construction planning before breaking ground.' },
+            { '@type': 'ListItem', position: 5, name: 'Construction', description: 'Structural engineering and party wall services bespoke to your project.' },
+          ]
+        }}
       />
 
       {/* Hero — Full Bleed Dark */}

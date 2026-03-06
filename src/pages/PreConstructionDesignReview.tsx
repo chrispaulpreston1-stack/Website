@@ -67,6 +67,35 @@ const PreConstructionDesignReview = () => {
             uploadDate: '2026-03-02',
             duration: 'PT1M33S',
             publisher: { '@type': 'Organization', name: 'PF & Co Construction', url: 'https://www.pfcoconstruction.co.uk' },
+          },
+          {
+            '@type': 'FAQPage',
+            mainEntity: [
+              {
+                '@type': 'Question',
+                name: 'What drawings do you need from me?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'We need the full set you intend to issue for construction: architectural plans/sections, structural GA and details, drainage layout, and any specialist drawings (fire, M&E).'
+                }
+              },
+              {
+                '@type': 'Question',
+                name: 'How is this different from Building Control?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: "Building Control checks compliance with Regulations. Our review checks coordination between disciplines — whether the beam clashes with the architect's window or drainage route."
+                }
+              },
+              {
+                '@type': 'Question',
+                name: "What does 'CONDITIONAL' readiness mean?",
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'It means the package is substantially complete but has identified items that should be resolved before construction or during early stages. Most real projects receive this on first review.'
+                }
+              }
+            ]
           }
         ]}
       />
