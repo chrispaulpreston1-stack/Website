@@ -161,7 +161,7 @@ function PhaseSection({ phaseId, index }: { phaseId: string; index: number; key?
 
             {/* Phase Mockup Decoration (Hidden on small screens) */}
             <div className="hidden xl:flex items-center justify-center shrink-0 w-64 h-[350px] relative group pointer-events-none">
-              {phase.id === 'feasibility' && (
+              {phase.id === 'assessment' && (
                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-[0.38] group-hover:scale-[0.40] transition-transform duration-500 z-10 w-[600px] pointer-events-auto">
                    <DocumentMockup 
                       title="Market Intelligence Report" 
@@ -181,7 +181,7 @@ function PhaseSection({ phaseId, index }: { phaseId: string; index: number; key?
                    />
                  </div>
               )}
-              {phase.id === 'planning' && (
+              {phase.id === 'application' && (
                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-[0.38] group-hover:scale-[0.40] transition-transform duration-500 z-10 w-[600px] pointer-events-auto">
                    <DocumentMockup 
                       title="Sustainability and Energy Statement" 
@@ -200,6 +200,16 @@ function PhaseSection({ phaseId, index }: { phaseId: string; index: number; key?
                       preparedFor="Jerome Roith"
                       documentRef="014-BENTLEY26-PFCO-REP-GeotechDeskStudy-R00"
                       className="-rotate-2 shadow-2xl group-hover:rotate-0"
+                   />
+                 </div>
+              )}
+              {phase.id === 'construction' && (
+                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-[0.38] group-hover:scale-[0.40] transition-transform duration-500 z-10 w-[600px] pointer-events-auto">
+                   <DocumentMockup 
+                      title="Structural Design Package" 
+                      subtitle="Pre-Construction Engineering Submission"
+                      documentRef="014-BENTLEY26-PFCO-REP-StructuralDesign-R00"
+                      className="rotate-3 shadow-2xl group-hover:rotate-0"
                    />
                  </div>
               )}
@@ -595,8 +605,34 @@ const HowItWorks = () => {
         >
           <div className="absolute top-0 right-0 w-96 h-96 bg-amber-400/10 blur-[120px]" />
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-brand-accent/10 blur-[80px]" />
-          <div className="relative z-10 text-center">
-            <div className="w-16 h-16 rounded-2xl bg-amber-400/20 flex items-center justify-center mx-auto mb-6">
+          
+          {/* Mockup Stack Decoration */}
+          <div className="hidden lg:block absolute -right-20 top-1/2 -translate-y-1/2 w-[500px] h-[500px] pointer-events-none opacity-80 z-0">
+             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-[0.35] rotate-12 drop-shadow-2xl">
+               <DocumentMockup 
+                  title="Site Feasibility Report" 
+                  documentRef="014-PFCO-REP-Feasibility-R00"
+                  className=""
+               />
+             </div>
+             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-[0.35] -rotate-6 drop-shadow-2xl -ml-16 mt-8">
+               <DocumentMockup 
+                  title="Planning Statement" 
+                  documentRef="014-PFCO-REP-Planning-R00"
+                  className=""
+               />
+             </div>
+             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-[0.35] rotate-2 drop-shadow-2xl -ml-32 mt-16">
+               <DocumentMockup 
+                  title="Sustainability and Energy" 
+                  documentRef="014-PFCO-REP-Energy-R00"
+                  className=""
+               />
+             </div>
+          </div>
+
+          <div className="relative z-10 text-center lg:text-left lg:max-w-2xl">
+            <div className="w-16 h-16 rounded-2xl bg-amber-400/20 flex items-center justify-center mx-auto lg:mx-0 mb-6">
               <Crown className="text-amber-400" size={32} />
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-4">The Complete Intelligence</h2>
@@ -628,11 +664,22 @@ const HowItWorks = () => {
       </section>
 
       {/* Who Is This For */}
-      <section className="max-w-5xl mx-auto px-4 sm:px-6 mb-16 sm:mb-24">
-        <div className="text-center mb-8 sm:mb-12">
-          <span className="font-mono text-sm uppercase tracking-[0.3em] font-bold text-brand-accent mb-2 block">Built For You</span>
-          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-brand-primary mb-4">Who Is This <span className="italic font-accent font-light text-brand-accent text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-emerald-500">For?</span></h2>
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 mb-16 sm:mb-24 relative overflow-hidden pb-10">
+        <div className="absolute top-0 right-0 w-full h-full pointer-events-none opacity-30 z-0 flex justify-end">
+           <div className="scale-[0.3] rotate-[15deg] drop-shadow-xl translate-x-24 -translate-y-16">
+             <DocumentMockup 
+                title="Project Scoping" 
+                subtitle="Client Requirements & Briefing"
+                documentRef="014-PFCO-BRIEF-R00"
+                className=""
+             />
+           </div>
         </div>
+        <div className="relative z-10">
+          <div className="text-center mb-8 sm:mb-12">
+            <span className="font-mono text-sm uppercase tracking-[0.3em] font-bold text-brand-accent mb-2 block">Built For You</span>
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-brand-primary mb-4">Who Is This <span className="italic font-accent font-light text-brand-accent text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-emerald-500">For?</span></h2>
+          </div>
         <div className="grid md:grid-cols-2 gap-6">
           {[
             { who: 'Homeowner', desc: 'Planning an extension or new build?', before: 'Sees 16 reports, doesn\'t know where to start.', after: 'Sees "Start with SFR" and follows 5 clear steps.', icon: MapPin, gradient: 'from-teal-500 to-cyan-600' },

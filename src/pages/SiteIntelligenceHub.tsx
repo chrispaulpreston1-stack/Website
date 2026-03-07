@@ -44,7 +44,7 @@ const SiteIntelligenceHub = () => {
 
   const stats = [
     { num: "300+", label: "Projects Delivered" },
-    { num: "44", label: "Authoritative Data Sources" },
+    { num: "58", label: "Authoritative Data Sources" },
     { num: "48hr", label: "Typical Turnaround" }
   ];
 
@@ -239,7 +239,7 @@ const SiteIntelligenceHub = () => {
               Our reports are built to be <strong className="text-white">appeal-ready from day one</strong> — every data source cited, every policy referenced, every constraint evidenced. When the planning officer reads your application, they see a case that is already complete.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Link to="/blog/planning-appeal-changes-2026" className="px-6 py-3 bg-white text-brand-primary rounded-xl font-bold hover:scale-105 transition-all shadow-lg text-sm">
+              <Link to="/insights/planning-appeal-changes-2026" className="px-6 py-3 bg-white text-brand-primary rounded-xl font-bold hover:scale-105 transition-all shadow-lg text-sm">
                 Read: What Changed on 1 April
               </Link>
               <Link to="/order-report" className="px-6 py-3 bg-red-500/20 text-white border border-red-500/30 rounded-xl font-bold hover:bg-red-500/30 transition-all text-sm">
@@ -518,7 +518,7 @@ const SiteIntelligenceHub = () => {
               >
                 Order Triple Threat — Early Access <Zap size={20} />
               </Link>
-              <a href="/samples/full-bundle-sample.pdf" target="_blank" rel="noopener noreferrer" className="w-full py-4 mt-3 bg-white/10 backdrop-blur-md text-white border border-white/20 rounded-2xl font-bold hover:bg-white/20 transition-all flex items-center justify-center gap-2">
+              <a href="/samples/site-feasibility-report-sample.pdf" target="_blank" rel="noopener noreferrer" className="w-full py-4 mt-3 bg-white/10 backdrop-blur-md text-white border border-white/20 rounded-2xl font-bold hover:bg-white/20 transition-all flex items-center justify-center gap-2">
                 Sample Report <FileText size={16} />
               </a>
               <p className="mt-4 text-xs text-white/40 font-light italic">

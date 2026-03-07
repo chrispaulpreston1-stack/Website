@@ -17,23 +17,23 @@ URL: https://www.pfcoconstruction.co.uk/construction
 ### Site Intelligence
 Data-driven pre-construction screening reports interrogating 58 authoritative data sources across 11 constraint categories. Reports include:
 - Site Feasibility Report — 22+ constraint screening, Planning Friction Score (EA £1,500 / Stripe £297)
-- Geotechnical Desk Study — BGS geology, contamination, foundation risk (EA £900 / Stripe £197)
-- Flood Risk Assessment — 7 flood sources, Decision Risk Scores (EA £375 / Stripe £147)
-- Planning Statement — Policy evidence and planning justification (EA £900 / Stripe £197)
-- Heritage Impact Assessment — Listed buildings, conservation areas (EA £725 / Stripe £197)
-- Design & Access Statement — DMPO 2015 compliant DAS (EA £600 / Stripe £147)
-- Transport Statement — Trip generation, highways, accessibility (EA £600 / Stripe £147)
-- Sustainability / Energy Statement — Part L, SAP, MEES (EA £550 / Stripe £147)
-- CIL Liability Assessment — Levy exposure, exemptions, relief (EA £500 / Stripe £147)
-- Construction Management Plan — Pre-commencement CMP condition (EA £425 / Stripe £147)
-- Party Wall Pre-Assessment — Party Wall Act 1996 assessment (EA £425 / Stripe £147)
-- Pre-Construction Design Review — 95-check coordination review (EA £425 / Stripe £147)
-- Parking Provision Statement — Evidence-based parking demand (EA £375 / Stripe £97)
-- Biodiversity Net Gain Screening — BNG applicability, 10% metric (EA £300 / Stripe £97)
-- Concept Feasibility Study — GDV, cost appraisal, viability (EA £1,200 / Stripe £247)
-- Pre-Application Advice Pack — LPA pre-submission engagement (EA £1,100 / Stripe £247)
+- Geotechnical Desk Study — BGS geology, contamination, foundation risk (EA £900 / Stripe £297)
+- Flood Risk Assessment — 7 flood sources, Decision Risk Scores (EA £375 / Stripe £297)
+- Planning Statement — Policy evidence and planning justification (EA £495 / Stripe £495)
+- Heritage Impact Assessment — Listed buildings, conservation areas (EA £545 / Stripe £545)
+- Design & Access Statement — DMPO 2015 compliant DAS (EA £395 / Stripe £395)
+- Transport Statement — Trip generation, highways, accessibility (EA £495 / Stripe £495)
+- Sustainability / Energy Statement — Part L, SAP, MEES (EA £445 / Stripe £445)
+- CIL Liability Assessment — Levy exposure, exemptions, relief (EA £295 / Stripe £295)
+- Construction Management Plan — Pre-commencement CMP condition (EA £595 / Stripe £595)
+- Pre-Construction Design Review — 95-check coordination review (EA £895 / Stripe £895)
+- Parking Provision Statement — Evidence-based parking demand (EA £345 / Stripe £345)
+- Biodiversity Net Gain Screening — BNG applicability, 10% metric (EA £495 / Stripe £495)
+- Concept Feasibility Study — GDV, cost appraisal, viability (EA £795 / Stripe £795)
+- Pre-Application Advice Pack — LPA pre-submission engagement (EA £245 / Stripe £245)
 - Arboricultural Desk Study — Desktop tree categorisation, RPAs, impact assessment (EA £575 / Stripe £575)
-- BC Readiness Check — Building Control submission readiness (EA £150 / Stripe £47)
+- Building Control — Part A structural calculations (project-dependent, contact for quote)
+- Party Wall Assessment — Engineering-led party wall assessment (project-dependent, contact for quote)
 EA = Early Access price shown on website. Stripe = actual checkout price. All prices exclude VAT.
 URL: https://www.pfcoconstruction.co.uk/site-intelligence
 Order: https://www.pfcoconstruction.co.uk/order-report
@@ -50,7 +50,7 @@ Pre-construction diligence bundles at additional savings:
 - The Triple Threat (3 core reports, most popular entry): £2,375 EA — Save 36%
 - The Construction Readiness Pack (2 post-permission reports): £1,195 EA — Save 32%
 URL: https://www.pfcoconstruction.co.uk/report-packages
-Plans & Pricing Roadmap: https://www.pfcoconstruction.co.uk/how-it-works
+Plans & Pricing Roadmap: https://www.pfcoconstruction.co.uk/plans-and-pricing
 
 ### AI Innovation
 Multi-agent AI system with 112 specialised agents across 7 categories (Data Acquisition, Analysis & Scoring, Market Intelligence, Structural Engineering, Construction & Project, Platform & Operations, Computer Vision). Interrogates 58 authoritative data sources across 11 constraint categories including BGS, Environment Agency, Historic England, Natural England, Land Registry, National Grid, NaPTAN, CQC, GIAS, DNO capacity heatmaps, and UK House Price Index.

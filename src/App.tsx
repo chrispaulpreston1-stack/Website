@@ -83,10 +83,10 @@ const Navbar = () => {
     { name: 'Plans & Pricing', href: '/plans-and-pricing' },
     { name: 'Building Control', href: '/building-control' },
     { name: 'Party Wall', href: '/party-wall' },
-    { name: 'Insights', href: '/blog/', isExternal: true },
+    { name: 'Insights', href: '/blog' },
   ];
 
-  const hasDarkHero = location.pathname === '/ai-innovation' || location.pathname === '/how-it-works';
+  const hasDarkHero = location.pathname === '/ai-innovation' || location.pathname === '/plans-and-pricing';
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'glass py-3 shadow-sm' : 'bg-transparent py-6'}`}>

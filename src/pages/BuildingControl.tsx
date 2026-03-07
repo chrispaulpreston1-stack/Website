@@ -58,12 +58,9 @@ const BuildingControl = () => {
                             Securing Building Regulations approval shouldn't be a gamble. We provide the comprehensive structural calculations, detailed drawings, and expert liaison needed to satisfy inspectors and secure your Completion Certificate, stress-free.
                         </p>
                         <div className="flex flex-wrap gap-6 items-center">
-                            <Link to="/order-report?report=building-control" className="px-8 py-4 bg-emerald-600 text-white rounded-full font-bold hover:bg-emerald-700 transition-all shadow-xl shadow-emerald-500/20 flex items-center gap-2">
-                                Order Readiness Check <Zap size={20} className="text-emerald-200" />
+                            <Link to="/contact" className="px-8 py-4 bg-emerald-600 text-white rounded-full font-bold hover:bg-emerald-700 transition-all shadow-xl shadow-emerald-500/20 flex items-center gap-2">
+                                Get a Quote <Zap size={20} className="text-emerald-200" />
                             </Link>
-                            <a href="/samples/building-control-sample.pdf" target="_blank" rel="noopener noreferrer" className="px-8 py-4 bg-white/10 backdrop-blur-md text-white border border-white/20 rounded-full font-bold hover:bg-white/20 transition-all flex items-center gap-2">
-                                Sample Report <FileText size={20} className="text-emerald-400" />
-                            </a>
                             <div className="flex flex-col">
                                 <div className="inline-block px-3 py-1 bg-emerald-500/20 border border-emerald-500/30 rounded-full text-emerald-400 text-[10px] uppercase tracking-widest font-bold mb-3 self-start">
                                     Early Access Pricing - 40% off all reports.

@@ -75,7 +75,7 @@ export const dataSources: DataSource[] = [
   { id: 29, name: 'Green Belt Boundaries', organisation: 'Ordnance Survey / LPAs', category: 'planning', description: 'Green Belt designation mapping.', usedBy: ['SFR'] },
   { id: 30, name: 'AONB / National Landscape', organisation: 'Natural England', category: 'planning', description: 'Areas of Outstanding Natural Beauty boundary data.', usedBy: ['SFR'] },
   { id: 31, name: 'Article 4 Direction Registers', organisation: 'Local Authorities', category: 'planning', description: 'Directions removing permitted development rights.', usedBy: ['SFR'] },
-  { id: 32, name: 'TPO Registers', organisation: 'Local Authorities', category: 'planning', description: 'Tree Preservation Orders and protected tree data.', usedBy: ['SFR', 'TRS'] },
+  { id: 32, name: 'TPO Registers', organisation: 'Local Authorities', category: 'planning', description: 'Tree Preservation Orders and protected tree data.', usedBy: ['SFR', 'ADS'] },
 
   // ── Mapping & Spatial ─────────────────────────────────────────────
   { id: 33, name: 'Ordnance Survey', organisation: 'Ordnance Survey', category: 'mapping-spatial', description: 'MasterMap, VectorMap, and topographic mapping.', usedBy: ['All'] },
