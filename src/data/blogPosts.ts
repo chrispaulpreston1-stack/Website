@@ -68,7 +68,7 @@ const blogPosts: BlogPost[] = [
       title: 'Planning Statement',
       path: '/site-intelligence/planning-statement',
       orderSlug: 'planning-statement',
-      price: '750',
+      price: '495',
     },
   },
   {
@@ -170,9 +170,9 @@ const blogPosts: BlogPost[] = [
       'This is general guidance only. Every project is unique — please consult a qualified structural engineer for advice specific to your property.',
     ],
     relatedReport: {
-      title: 'Full Site Intelligence Bundle',
-      path: '/site-intelligence',
-      orderSlug: 'full-bundle',
+      title: 'The Triple Threat',
+      path: '/report-packages',
+      orderSlug: 'triple-threat',
       price: '2375',
     },
   },
@@ -321,9 +321,9 @@ const blogPosts: BlogPost[] = [
       'At PF & Co, we regularly help clients discharge pre-commencement conditions nationwide across England and Wales. Our site intelligence reports are specifically structured to satisfy common planning conditions, and we can typically turn around most documents within a week. If you have just received planning permission and are staring at a page of conditions, get in touch — the sooner you start, the sooner you can build.',
     ],
     relatedReport: {
-      title: 'Full Site Intelligence Bundle',
-      path: '/site-intelligence',
-      orderSlug: 'full-bundle',
+      title: 'The Triple Threat',
+      path: '/report-packages',
+      orderSlug: 'triple-threat',
       price: '2375',
     },
   },
@@ -387,7 +387,7 @@ const blogPosts: BlogPost[] = [
       title: 'BNG Screening & Feasibility',
       path: '/site-intelligence/biodiversity-net-gain',
       orderSlug: 'biodiversity-net-gain',
-      price: '300',
+      price: '495',
     },
   },
   {
@@ -410,7 +410,7 @@ const blogPosts: BlogPost[] = [
       title: 'Construction Management Plan',
       path: '/site-intelligence/construction-management-plan',
       orderSlug: 'construction-management-plan',
-      price: '425',
+      price: '595',
     },
   },
 ];

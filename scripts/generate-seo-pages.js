@@ -62,13 +62,13 @@ const routes = [
     path: '/site-intelligence/geotechnical-desk-study',
     title: 'Geotechnical Desk Study | Ground Investigation | PF & Co',
     description: 'Comprehensive desktop ground investigation covering BGS geology, groundwater, contamination history, and foundation risk assessment.',
-    jsonLd: { '@type': 'Product', name: 'Geotechnical Desk Study', brand: { '@type': 'Organization', name: 'PF & Co Construction' }, offers: { '@type': 'Offer', price: '197', priceCurrency: 'GBP', availability: 'https://schema.org/InStock' } },
+    jsonLd: { '@type': 'Product', name: 'Geotechnical Desk Study', brand: { '@type': 'Organization', name: 'PF & Co Construction' }, offers: { '@type': 'Offer', price: '297', priceCurrency: 'GBP', availability: 'https://schema.org/InStock' } },
   },
   {
     path: '/site-intelligence/flood-risk-assessment',
     title: 'Flood Risk Assessment | Planning-Ready Reports | PF & Co',
     description: 'Tier 1 Desktop Flood Risk Assessment evaluating fluvial, surface water, groundwater, and sewer flood risk with 4 Decision Risk Scores.',
-    jsonLd: { '@type': 'Product', name: 'Flood Risk Assessment', brand: { '@type': 'Organization', name: 'PF & Co Construction' }, offers: { '@type': 'Offer', price: '147', priceCurrency: 'GBP', availability: 'https://schema.org/InStock' } },
+    jsonLd: { '@type': 'Product', name: 'Flood Risk Assessment', brand: { '@type': 'Organization', name: 'PF & Co Construction' }, offers: { '@type': 'Offer', price: '297', priceCurrency: 'GBP', availability: 'https://schema.org/InStock' } },
   },
   {
     path: '/site-intelligence/planning-statement',

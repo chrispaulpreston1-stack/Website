@@ -2,7 +2,6 @@ const REPORT_PRICES = {
   'site-feasibility-report': { name: 'Site Feasibility Report', price: 297 },
   'geotechnical-desk-study': { name: 'Geotechnical Desk Study', price: 297 },
   'flood-risk-assessment': { name: 'Flood Risk Assessment', price: 297 },
-  'full-bundle': { name: 'Full Site Intelligence Bundle', price: 830 },
   // Bundle prices (Stripe checkout prices for bundles)
   'complete-intelligence': { name: 'The Complete Intelligence', price: 6995 },
   'full-planning-suite': { name: 'The Full Planning Suite', price: 3495 },
