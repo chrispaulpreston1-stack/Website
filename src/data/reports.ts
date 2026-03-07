@@ -55,7 +55,7 @@ export const reports: Report[] = [
     path: '/site-intelligence/geotechnical-desk-study',
     description: 'BGS geology, groundwater, contamination history, and foundation risk analysis.',
     turnaround: '48hr',
-    samplePath: null,
+    samplePath: '/samples/geotechnical-desk-study-sample.pdf',
   },
   {
     slug: 'flood-risk-assessment',
