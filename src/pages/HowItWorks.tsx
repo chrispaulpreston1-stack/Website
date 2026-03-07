@@ -645,13 +645,13 @@ const HowItWorks = () => {
             <p className="text-white/50 mb-8 max-w-2xl mx-auto text-lg font-light">
               For sites where you can't afford to miss anything. All 16 purchasable reports, every phase covered, one price.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-              <span className="text-white/30 line-through text-lg">RRP: £15,625</span>
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-4">
+              <span className="text-white/40 line-through text-lg">RRP: £15,625</span>
               <span className="text-4xl sm:text-5xl font-bold">£6,995</span>
-              <span className="bg-emerald-500/20 text-emerald-400 px-4 py-1.5 rounded-full text-sm font-bold">Save 55%</span>
+              <span className="bg-gradient-to-r from-emerald-500 to-emerald-400 text-white shadow-[0_0_20px_rgba(52,211,153,0.4)] px-4 py-1.5 rounded-full text-sm font-bold uppercase tracking-wider">Save 55%</span>
             </div>
-            <p className="text-white/30 text-sm mb-8">Mid-market equivalent: £12,550-£35,400</p>
-            <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
+            <p className="text-white/40 text-sm mb-8">Mid-market equivalent: £12,550-£35,400</p>
+            <div className="flex flex-col sm:flex-row justify-center lg:justify-start items-center gap-4">
               <Link
                 to="/order-report?report=complete-intelligence"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-amber-400 text-brand-primary px-8 py-4 rounded-full font-bold text-base sm:text-lg hover:scale-105 transition-transform shadow-[0_0_30px_-5px_rgba(251,191,36,0.4)]"
