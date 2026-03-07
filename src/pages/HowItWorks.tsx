@@ -8,6 +8,7 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import PageSEO from '../components/PageSEO';
+import { DocumentMockup } from '../components/DocumentMockup';
 import { bundles, reports, getReportBySlug, type ReportBundle } from '../data/reports';
 
 const phases = [
@@ -156,6 +157,30 @@ function PhaseSection({ phaseId, index }: { phaseId: string; index: number; key?
                 </div>
                 <p className="text-base text-brand-primary/80">{content.who}</p>
               </div>
+            </div>
+            {/* Phase Mockup Decoration (Hidden on small screens) */}
+            <div className="hidden lg:flex items-center justify-center shrink-0 w-64">
+              {phase.id === 'feasibility' && (
+                 <DocumentMockup 
+                    title="Feasibility Study" 
+                    color="from-teal-500 to-emerald-500"
+                    className="rotate-3 shadow-lg hover:rotate-0"
+                 />
+              )}
+              {phase.id === 'planning' && (
+                 <DocumentMockup 
+                    title="Planning Statement" 
+                    color="from-violet-500 to-purple-500"
+                    className="-rotate-3 shadow-lg hover:rotate-0"
+                 />
+              )}
+              {phase.id === 'pre-construction' && (
+                 <DocumentMockup 
+                    title="Construction Management Plan" 
+                    color="from-amber-500 to-orange-500"
+                    className="rotate-2 shadow-lg hover:rotate-0"
+                 />
+              )}
             </div>
           </div>
         </div>
@@ -404,21 +429,46 @@ const HowItWorks = () => {
         </div>
 
         <div className="relative z-10 pt-28 sm:pt-40 pb-16 sm:pb-24 max-w-6xl mx-auto px-4 sm:px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <span className="font-mono text-sm uppercase tracking-[0.3em] font-bold text-brand-accent mb-6 block">Project Roadmap</span>
-            <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-6 sm:mb-8 tracking-tight leading-[0.9]">
-              Your Project.<br />
-              <span className="italic font-accent font-light text-brand-secondary">Our Intelligence.</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-brand-secondary leading-relaxed max-w-3xl mx-auto font-light">
-              From finding a site to breaking ground — here's exactly where we help, what you need, and what it costs.
-            </p>
-          </motion.div>
+          <div className="lg:flex lg:items-center lg:justify-between lg:gap-12 mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-center lg:text-left lg:max-w-2xl"
+            >
+              <span className="font-mono text-sm uppercase tracking-[0.3em] font-bold text-brand-accent mb-6 block">Project Roadmap</span>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 sm:mb-8 tracking-tight leading-[0.9]">
+                Your Project.<br />
+                <span className="italic font-accent font-light text-brand-secondary">Our Intelligence.</span>
+              </h1>
+              <p className="text-xl md:text-2xl text-brand-secondary leading-relaxed mx-auto lg:mx-0 font-light">
+                From finding a site to breaking ground — here's exactly where we help, what you need, and what it costs.
+              </p>
+            </motion.div>
+
+            {/* Hero Mockups Display */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="hidden lg:block relative w-[400px] h-[400px]"
+            >
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-brand-accent/5 rounded-full blur-[60px] " />
+              
+              <DocumentMockup 
+                title="Site Feasibility Report" 
+                color="from-brand-accent to-emerald-500"
+                className="absolute top-10 left-10 z-20 shadow-2xl scale-110"
+                delay={0.4}
+              />
+              <DocumentMockup 
+                title="Pre-Application Advice" 
+                color="from-blue-500 to-indigo-500"
+                className="absolute bottom-10 right-0 z-10 shadow-xl opacity-90 backdrop-blur-sm"
+                delay={0.6}
+              />
+            </motion.div>
+          </div>
 
           {/* Phase Journey Visual */}
           <motion.div
