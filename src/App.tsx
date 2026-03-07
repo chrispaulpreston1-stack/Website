@@ -76,7 +76,7 @@ const Navbar = () => {
     window.scrollTo(0, 0);
   }, [location]);
 
-  const navLinks = [
+  const navLinks: { name: string; href: string; isExternal?: boolean }[] = [
     { name: 'Engineering', href: '/structural-engineering' },
     { name: 'Construction', href: '/construction' },
     { name: 'Site Intelligence', href: '/site-intelligence' },

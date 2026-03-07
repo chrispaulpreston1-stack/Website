@@ -611,6 +611,7 @@ const HowItWorks = () => {
              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-[0.25] lg:scale-[0.35] rotate-12 drop-shadow-2xl">
                <DocumentMockup 
                   title="Site Feasibility Report" 
+                  subtitle="Desktop Feasibility Study"
                   documentRef="014-PFCO-REP-Feasibility-R00"
                   className=""
                />
@@ -618,6 +619,7 @@ const HowItWorks = () => {
              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-[0.25] lg:scale-[0.35] -rotate-6 drop-shadow-2xl -ml-8 lg:-ml-16 mt-4 lg:mt-8">
                <DocumentMockup 
                   title="Planning Statement" 
+                  subtitle="Desktop Planning Assessment"
                   documentRef="014-PFCO-REP-Planning-R00"
                   className=""
                />
@@ -625,6 +627,7 @@ const HowItWorks = () => {
              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-[0.25] lg:scale-[0.35] rotate-2 drop-shadow-2xl -ml-16 lg:-ml-32 mt-8 lg:mt-16">
                <DocumentMockup 
                   title="Sustainability and Energy" 
+                  subtitle="Desktop Energy Assessment"
                   documentRef="014-PFCO-REP-Energy-R00"
                   className=""
                />
@@ -716,6 +719,7 @@ const HowItWorks = () => {
               </div>
             </motion.div>
           ))}
+        </div>
         </div>
       </section>
 
