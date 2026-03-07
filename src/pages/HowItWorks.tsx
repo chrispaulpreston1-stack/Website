@@ -158,28 +158,50 @@ function PhaseSection({ phaseId, index }: { phaseId: string; index: number; key?
                 <p className="text-base text-brand-primary/80">{content.who}</p>
               </div>
             </div>
+
             {/* Phase Mockup Decoration (Hidden on small screens) */}
-            <div className="hidden lg:flex items-center justify-center shrink-0 w-64">
+            <div className="hidden xl:flex items-center justify-center shrink-0 w-64 h-[350px] relative group pointer-events-none">
               {phase.id === 'feasibility' && (
-                 <DocumentMockup 
-                    title="Feasibility Study" 
-                    color="from-teal-500 to-emerald-500"
-                    className="rotate-3 shadow-lg hover:rotate-0"
-                 />
+                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-[0.38] group-hover:scale-[0.40] transition-transform duration-500 z-10 w-[600px] pointer-events-auto">
+                   <DocumentMockup 
+                      title="Market Intelligence Report" 
+                      subtitle="Residential Development — Bentley, Hampshire"
+                      documentRef="014-BENTLEY26-PFCO-MarketIntelligence-R00"
+                      className="rotate-3 shadow-2xl group-hover:rotate-0"
+                   />
+                 </div>
+              )}
+              {phase.id === 'strategy' && (
+                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-[0.38] group-hover:scale-[0.40] transition-transform duration-500 z-10 w-[600px] pointer-events-auto">
+                   <DocumentMockup 
+                      title="Flood Risk Assessment" 
+                      subtitle="Tier 1 Desktop Flood Assessment"
+                      documentRef="014-BENTLEY26-PFCO-REP-FloodRisk-R00"
+                      className="-rotate-2 shadow-2xl group-hover:-rotate-0"
+                   />
+                 </div>
               )}
               {phase.id === 'planning' && (
-                 <DocumentMockup 
-                    title="Planning Statement" 
-                    color="from-violet-500 to-purple-500"
-                    className="-rotate-3 shadow-lg hover:rotate-0"
-                 />
+                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-[0.38] group-hover:scale-[0.40] transition-transform duration-500 z-10 w-[600px] pointer-events-auto">
+                   <DocumentMockup 
+                      title="Sustainability and Energy Statement" 
+                      subtitle="Desktop Energy Assessment"
+                      preparedFor="Jerome Roith"
+                      documentRef="014-BENTLEY26-PFCO-REP-SustainabilityEnergy-R00"
+                      className="rotate-2 shadow-2xl group-hover:rotate-0"
+                   />
+                 </div>
               )}
-              {phase.id === 'pre-construction' && (
-                 <DocumentMockup 
-                    title="Construction Management Plan" 
-                    color="from-amber-500 to-orange-500"
-                    className="rotate-2 shadow-lg hover:rotate-0"
-                 />
+              {phase.id === 'post-permission' && (
+                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-[0.38] group-hover:scale-[0.40] transition-transform duration-500 z-10 w-[600px] pointer-events-auto">
+                   <DocumentMockup 
+                      title="Geotechnical Desk Study" 
+                      subtitle="Desktop Ground Investigation for Foundation Design"
+                      preparedFor="Jerome Roith"
+                      documentRef="014-BENTLEY26-PFCO-REP-GeotechDeskStudy-R00"
+                      className="-rotate-2 shadow-2xl group-hover:rotate-0"
+                   />
+                 </div>
               )}
             </div>
           </div>
@@ -434,7 +456,7 @@ const HowItWorks = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-center lg:text-left lg:max-w-2xl"
+              className="text-center lg:text-left lg:max-w-3xl"
             >
               <span className="font-mono text-sm uppercase tracking-[0.3em] font-bold text-brand-accent mb-6 block">Project Roadmap</span>
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 sm:mb-8 tracking-tight leading-[0.9]">
@@ -444,29 +466,6 @@ const HowItWorks = () => {
               <p className="text-xl md:text-2xl text-brand-secondary leading-relaxed mx-auto lg:mx-0 font-light">
                 From finding a site to breaking ground — here's exactly where we help, what you need, and what it costs.
               </p>
-            </motion.div>
-
-            {/* Hero Mockups Display */}
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="hidden lg:block relative w-[400px] h-[400px]"
-            >
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-brand-accent/5 rounded-full blur-[60px] " />
-              
-              <DocumentMockup 
-                title="Site Feasibility Report" 
-                color="from-brand-accent to-emerald-500"
-                className="absolute top-10 left-10 z-20 shadow-2xl scale-110"
-                delay={0.4}
-              />
-              <DocumentMockup 
-                title="Pre-Application Advice" 
-                color="from-blue-500 to-indigo-500"
-                className="absolute bottom-10 right-0 z-10 shadow-xl opacity-90 backdrop-blur-sm"
-                delay={0.6}
-              />
             </motion.div>
           </div>
 
