@@ -607,7 +607,7 @@ const HowItWorks = () => {
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-brand-accent/10 blur-[80px]" />
           
           {/* Mockup Stack Decoration */}
-          <div className="hidden md:block absolute -right-20 lg:-right-10 top-1/2 -translate-y-1/2 w-[300px] lg:w-[500px] h-[500px] pointer-events-none opacity-80 z-0">
+          <div className="hidden md:block absolute -right-40 lg:-right-10 top-1/2 -translate-y-1/2 w-[400px] lg:w-[500px] h-[500px] pointer-events-none opacity-50 lg:opacity-80 z-0">
              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-[0.25] lg:scale-[0.35] rotate-12 drop-shadow-2xl">
                <DocumentMockup 
                   title="Site Feasibility Report" 
@@ -634,7 +634,10 @@ const HowItWorks = () => {
              </div>
           </div>
 
-          <div className="relative z-10 text-center lg:text-left lg:max-w-2xl">
+          {/* Contrast Gradient to protect text from mockups */}
+          <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-brand-primary via-brand-primary/90 to-transparent z-[5] w-[75%] pointer-events-none" />
+
+          <div className="relative z-10 text-center lg:text-left md:max-w-lg lg:max-w-2xl mx-auto lg:mx-0">
             <div className="w-16 h-16 rounded-2xl bg-amber-400/20 flex items-center justify-center mx-auto lg:mx-0 mb-6">
               <Crown className="text-amber-400" size={32} />
             </div>
