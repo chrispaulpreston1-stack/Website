@@ -4,8 +4,12 @@ import { Link } from 'react-router-dom';
 import PageSEO from '../components/PageSEO';
 import ComparisonTable from '../components/ComparisonTable';
 import VideoExplainer from '../components/VideoExplainer';
+import { getReportBySlug } from '../data/reports';
+
+const formatPrice = (n: number) => n.toLocaleString('en-GB');
 
 const BiodiversityNetGain = () => {
+  const report = getReportBySlug('biodiversity-net-gain')!;
   const features = [
     { title: "5 Statutory Exemption Checks", desc: "Systematic check of all five exemptions under the Environment Act 2021." },
     { title: "Ecological Constraint Mapping", desc: "Desktop data from Natural England, NBN Atlas, and GCN Risk Zone mapping." },
@@ -58,7 +62,7 @@ const BiodiversityNetGain = () => {
             name: 'Biodiversity Net Gain Screening',
             description: 'BNG screening and feasibility assessment — find out whether BNG applies and which surveys you need.',
             brand: { '@type': 'Organization', name: 'PF & Co Construction' },
-            offers: { '@type': 'Offer', price: '300', priceCurrency: 'GBP' },
+            offers: { '@type': 'Offer', price: String(report.earlyAccessPrice), priceCurrency: 'GBP' },
           },
           {
             '@type': 'VideoObject',
@@ -113,11 +117,11 @@ const BiodiversityNetGain = () => {
               </a>
               <div className="flex flex-col">
                 <div className="inline-block px-3 py-1 bg-brand-accent/20 border border-brand-accent/30 rounded-full text-brand-accent text-[10px] uppercase tracking-widest font-bold mb-3 self-start">
-                  Early Access Pricing - 40% off all reports.
+                  Early Access Pricing - Up to 40% off.
                 </div>
                 <div className="flex items-baseline gap-3 mb-1">
-                  <span className="text-3xl font-mono font-bold text-white">Early Access: £300</span>
-                  <span className="text-base text-white/50 line-through font-medium">Was £500</span>
+                  <span className="text-3xl font-mono font-bold text-white">Early Access: £{formatPrice(report.earlyAccessPrice)}</span>
+                  <span className="text-base text-white/50 line-through font-medium">Was £{formatPrice(report.rrp)}</span>
                 </div>
                 <span className="text-xs text-white/70 italic">First 50 reports at early access pricing</span>
               </div>

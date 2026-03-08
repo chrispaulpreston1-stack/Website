@@ -1,11 +1,15 @@
 import { motion } from 'motion/react';
-import { Search, Check, ArrowRight, Info, Clock, Zap, ShieldAlert, FileText, CheckCircle2, AlertTriangle, Users, Building, Home as HomeIcon } from 'lucide-react';
+import { Check, ArrowRight, Info, Clock, Zap, ShieldAlert, FileText, CheckCircle2, AlertTriangle, Users, Building, Home as HomeIcon } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import PageSEO from '../components/PageSEO';
 import ComparisonTable from '../components/ComparisonTable';
 import VideoExplainer from '../components/VideoExplainer';
+import { getReportBySlug } from '../data/reports';
+
+const formatPrice = (n: number) => n.toLocaleString('en-GB');
 
 const CILLiabilityAssessment = () => {
+    const report = getReportBySlug('cil-liability-assessment')!;
     const features = [
         { title: "Liability Calculation", desc: "We calculate your CIL liability using the correct charging schedule, BCIS index-linked rates, and your actual floor areas. You get a Low / Central / High range." },
         { title: "Exemption & Relief Check", desc: "We check every available exemption: self-build, residential extension, residential annexe, social housing relief, charitable relief, and exceptional circumstances." },
@@ -39,7 +43,7 @@ const CILLiabilityAssessment = () => {
         {
             title: "Pricing & Speed",
             rows: [
-                { feature: "Pricing Model", pfco: "Fixed fee £500", competitor1: "Hourly rate (£75–£250)", competitor2: "Case-by-case quote" },
+                { feature: "Pricing Model", pfco: `Fixed fee £${formatPrice(report.earlyAccessPrice)}`, competitor1: "Hourly rate (£75–£250)", competitor2: "Case-by-case quote" },
                 { feature: "Turnaround", pfco: "48 hours typical", competitor1: "2–4 weeks", competitor2: "1–2 weeks" }
             ]
         }
@@ -48,8 +52,8 @@ const CILLiabilityAssessment = () => {
     return (
         <div className="pt-20">
             <PageSEO
-                title="CIL Liability Assessment | £500 | PF & Co Construction"
-                description="Know your CIL exposure before you start. CIL Liability Assessment for £500. Exemption checks, index-linked calculations & challenge strategy included."
+                title={`CIL Liability Assessment | £${formatPrice(report.earlyAccessPrice)} | PF & Co Construction`}
+                description={`Know your CIL exposure before you start. CIL Liability Assessment for £${formatPrice(report.earlyAccessPrice)}. Exemption checks, index-linked calculations & challenge strategy included.`}
                 path="/site-intelligence/cil-liability-assessment"
                 jsonLd={[
                   {
@@ -57,7 +61,7 @@ const CILLiabilityAssessment = () => {
                     name: 'CIL Liability Assessment',
                     description: 'Professional Community Infrastructure Levy assessment including liability calculation, exemption checks, challenge strategy, and pre-filled CIL forms.',
                     provider: { '@type': 'Organization', name: 'PF & Co Construction' },
-                    offers: { '@type': 'Offer', price: '500', priceCurrency: 'GBP' },
+                    offers: { '@type': 'Offer', price: String(report.earlyAccessPrice), priceCurrency: 'GBP' },
                     subjectOf: {
                         '@type': 'VideoObject',
                         name: 'CIL Liability Assessment Explainer',
@@ -120,11 +124,11 @@ const CILLiabilityAssessment = () => {
                             </a>
                             <div className="flex flex-col">
                                 <div className="inline-block px-3 py-1 bg-emerald-500/20 border border-emerald-500/30 rounded-full text-emerald-400 text-[10px] uppercase tracking-widest font-bold mb-3 self-start">
-                                    Early Access Pricing - 40% off all reports.
+                                    Early Access Pricing - Up to 40% off.
                                 </div>
                                 <div className="flex items-baseline gap-3 mb-1">
-                                    <span className="text-3xl font-mono font-bold text-white">Early Access: £500</span>
-                                    <span className="text-base text-white/50 line-through font-medium">Was £800</span>
+                                    <span className="text-3xl font-mono font-bold text-white">Early Access: £{formatPrice(report.earlyAccessPrice)}</span>
+                                    <span className="text-base text-white/50 line-through font-medium">Was £{formatPrice(report.rrp)}</span>
                                 </div>
                                 <span className="text-xs text-white/70 italic">First 50 reports at early access pricing</span>
                             </div>
@@ -243,8 +247,8 @@ const CILLiabilityAssessment = () => {
 
                         <div className="text-center mb-10">
                             <h2 className="text-3xl font-bold text-brand-primary mb-2">CIL Liability Assessment</h2>
-                            <div className="text-lg text-slate-400 line-through mb-2 font-mono">Typical market rate £800+</div>
-                            <div className="text-6xl font-bold text-emerald-500 font-display">£500</div>
+                            <div className="text-lg text-slate-400 line-through mb-2 font-mono">Typical market rate £{formatPrice(report.rrp)}+</div>
+                            <div className="text-6xl font-bold text-emerald-500 font-display">£{formatPrice(report.earlyAccessPrice)}</div>
                             <p className="text-sm text-slate-400 mt-2 italic">Early Access pricing — fixed fee for standard residential projects</p>
                         </div>
 
@@ -272,7 +276,7 @@ const CILLiabilityAssessment = () => {
                         </div>
 
                         <div className="mt-10 pt-8 border-t border-brand-primary/5 text-sm text-brand-primary/60 font-light text-center">
-                            <p className="mb-2">£500 for most residential projects (extensions, loft conversions, single dwellings, self-builds).</p>
+                            <p className="mb-2">£{formatPrice(report.earlyAccessPrice)} at Early Access pricing (extensions, loft conversions, single dwellings, self-builds).</p>
                             <p>Larger or multi-dwelling developments are quoted individually based on site complexity. We'll need your architectural drawings and planning reference to get started.</p>
                         </div>
                     </div>
@@ -287,7 +291,7 @@ const CILLiabilityAssessment = () => {
                         subtitle="And What They Don't Include"
                         columns={["Feature", "PF&Co Construction", "Typical Planning Consultant", "Specialist CIL Firm"]}
                         categories={comparisonCategories}
-                        footerNote="Comparison based on typical UK planning consultancy models. We built our assessment as a standalone product at £500 to ensure every project can afford to know its CIL position before work starts."
+                        footerNote={`Comparison based on typical UK planning consultancy models. We built our assessment as a standalone product at £${formatPrice(report.earlyAccessPrice)} (Early Access) to ensure every project can afford to know its CIL position before work starts.`}
                         accentColor="text-emerald-500"
                     />
                 </div>
@@ -391,7 +395,7 @@ const CILLiabilityAssessment = () => {
                                 to="/contact"
                                 className="px-12 py-6 bg-orange-500 text-white rounded-full font-bold hover:scale-105 hover:bg-orange-600 transition-all shadow-xl"
                             >
-                                Get Started — £500
+                                Get Started — £{formatPrice(report.earlyAccessPrice)}
                             </Link>
                             <a href="/samples/cil-liability-assessment-sample.pdf" target="_blank" rel="noopener noreferrer" className="px-12 py-6 bg-emerald-900/40 backdrop-blur-md text-emerald-400 border border-emerald-500/30 rounded-full font-bold hover:bg-emerald-900/60 transition-all flex items-center gap-2">
                                 Sample Report <FileText size={20} />

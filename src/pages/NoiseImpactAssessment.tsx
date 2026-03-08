@@ -1,49 +1,44 @@
 import { motion } from 'motion/react';
-import { Layout, Check, ArrowRight, Info, HelpCircle, Clock, Zap, ShieldCheck, Ruler, FileText } from 'lucide-react';
+import { Volume2, ArrowRight, Info, Clock, ShieldCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import PageSEO from '../components/PageSEO';
 import ComparisonTable from '../components/ComparisonTable';
-import VideoExplainer from '../components/VideoExplainer';
-import { getReportBySlug } from '../data/reports';
 
-const formatPrice = (n: number) => n.toLocaleString('en-GB');
-
-const FeasibilityStudy = () => {
-  const report = getReportBySlug('feasibility-study')!;
+const NoiseImpactAssessment = () => {
   const features = [
-    { title: "Three Concept Options", desc: "Up to three realistic design options tailored to your brief and budget, compared side-by-side." },
-    { title: "Hand-Sketch Floor Plans", desc: "Rendered floor plans in a hand-sketch style for clear spatial understanding without technical jargon." },
-    { title: "Cost Confidence Bands", desc: "Indicative construction costs for each option with +/- 15–20% confidence bands." },
-    { title: "VAT Analysis", desc: "Breakdown of VAT implications for each option, including potential structuring for tax recovery." },
-    { title: "Planning Route Assessment", desc: "Clear identification of the planning route (PD, Householder, Full) for each design option." },
-    { title: "Neighbour Precedent Analysis", desc: "Research into immediate planning history to identify relevant precedents and anticipate objections." },
-    { title: "Phasing Strategy", desc: "Assessment of whether splitting the project into phases could reduce cost or simplify planning." },
-    { title: "Budget Architecture Diagram", desc: "Visual breakdown of budget allocation across structure, finishes, fees, and contingency." }
+    { title: "BS 4142 Commercial/Industrial Assessment", desc: "Rating level vs background sound analysis for nearby commercial or industrial uses." },
+    { title: "BS 8233 Internal Ambient Assessment", desc: "Target internal noise levels for habitable rooms (bedrooms, living rooms, kitchens)." },
+    { title: "ProPG Planning Assessment", desc: "Professional Practice Guidance for planning and noise — initial and detailed assessment stages." },
+    { title: "Noise Source Identification", desc: "Desktop identification of all significant noise sources within 500m (roads, rail, commercial, industrial)." },
+    { title: "Glazing Specification Guidance", desc: "Weighted sound reduction indices for windows and ventilators to achieve target internal levels." },
+    { title: "Ventilation Strategy Impact", desc: "Assessment of overheating risk from closed-window noise mitigation strategies." },
+    { title: "Construction Noise Screening", desc: "BS 5228 screening for construction phase noise and vibration impacts on sensitive receptors." },
+    { title: "Noise Contour Mapping", desc: "Strategic noise map analysis using Defra Round 4 Lden and Lnight contours." }
   ];
 
   const comparisonCategories = [
     {
-      title: "Design & Options",
+      title: "Technical Analysis",
       rows: [
-        { feature: "Three distinct concept options compared", pfco: true, competitor1: "Usually 1 only", competitor2: "Brief mention" },
-        { feature: "Hand-sketch floor plans per option", pfco: true, competitor1: "Rarely provided", competitor2: false },
-        { feature: "Spatial trade-off analysis", pfco: true, competitor1: "Informal", competitor2: false },
+        { feature: "BS 4142 assessment", pfco: true, competitor1: "Often outsourced", competitor2: false },
+        { feature: "ProPG staged assessment", pfco: true, competitor1: "Rarely included", competitor2: false },
+        { feature: "Glazing specification guidance", pfco: true, competitor1: "Generic advice", competitor2: false },
       ]
     },
     {
-      title: "Financial Intelligence",
+      title: "Regulatory Compliance",
       rows: [
-        { feature: "Cost estimates with confidence bands", pfco: true, competitor1: "Single figure", competitor2: "None" },
-        { feature: "VAT analysis per option", pfco: true, competitor1: "Rarely considered", competitor2: false },
-        { feature: "Budget architecture visual breakdown", pfco: true, competitor1: "Spreadsheet only", competitor2: false },
+        { feature: "BS 8233 internal levels", pfco: true, competitor1: "Often omitted", competitor2: false },
+        { feature: "Ventilation overheating assessment", pfco: true, competitor1: "Not addressed", competitor2: false },
+        { feature: "Defra noise contour mapping", pfco: true, competitor1: "Basic only", competitor2: false },
       ]
     },
     {
-      title: "Planning & Risk",
+      title: "Value & Format",
       rows: [
-        { feature: "Planning route per option (PD/Householder)", pfco: true, competitor1: "Generic advice", competitor2: false },
-        { feature: "Neighbour precedent research", pfco: true, competitor1: "Not typically done", competitor2: false },
-        { feature: "Phasing strategy where relevant", pfco: true, competitor1: "Not assessed", competitor2: false },
+        { feature: "Construction noise screening", pfco: true, competitor1: "Separate report", competitor2: false },
+        { feature: "Proportional to noise risk (3-25 pages)", pfco: true, competitor1: "One-size-fits-all", competitor2: "Variable" },
+        { feature: "Branded submission-ready Word document", pfco: true, competitor1: "Email summary", competitor2: "Generic template" },
       ]
     }
   ];
@@ -51,33 +46,33 @@ const FeasibilityStudy = () => {
   return (
     <div className="pt-20">
       <PageSEO
-        title="Concept Feasibility Study | Pre-Design Concept Options | PF & Co"
-        description="Understand what's possible, what it costs, and which route to take — before you spend a penny on architect fees. Three concept options compared."
-        path="/site-intelligence/feasibility-study"
+        title="Noise Impact Assessment | Acoustic Screening | PF & Co"
+        description="BS 4142/BS 8233/ProPG noise screening for residential schemes near roads, railways, or commercial uses."
+        path="/site-intelligence/noise-impact-assessment"
         jsonLd={[
           {
             '@type': 'Product',
-            name: 'Concept Feasibility Study',
-            description: 'Pre-design concept feasibility study — understand what is possible, what it costs, and which route to take.',
+            name: 'Noise Impact Assessment',
+            description: 'BS 4142/BS 8233/ProPG noise screening for residential schemes near roads, railways, or commercial uses.',
             brand: { '@type': 'Organization', name: 'PF & Co Construction' },
-            offers: { '@type': 'Offer', price: String(report.earlyAccessPrice), priceCurrency: 'GBP' },
+            offers: { '@type': 'Offer', price: '445', priceCurrency: 'GBP' },
           },
           {
             '@type': 'VideoObject',
-            name: 'Concept Feasibility Study — What\'s Inside Your Report',
-            description: 'A walkthrough of the PF & Co Concept Feasibility Study, showing how we compare three design options side-by-side with real costs and planning routes to help you brief your architect with confidence.',
-            thumbnailUrl: 'https://www.pfcoconstruction.co.uk/videos/feasibility-study-thumb.jpg',
-            contentUrl: 'https://www.pfcoconstruction.co.uk/videos/feasibility-study-demo.mp4',
-            uploadDate: '2026-03-02',
-            duration: 'PT1M15S',
+            name: 'Noise Impact Assessment — What\'s Inside Your Report',
+            description: 'A walkthrough of the PF & Co Noise Impact Assessment, showing how we analyse Defra noise contours, assess against BS 4142 and BS 8233, and provide glazing specifications to help you satisfy council acoustic requirements.',
+            thumbnailUrl: 'https://www.pfcoconstruction.co.uk/videos/noise-demo-thumb.jpg',
+            contentUrl: 'https://www.pfcoconstruction.co.uk/videos/noise-demo.mp4',
+            uploadDate: '2026-03-07',
+            duration: 'PT1M28S',
             publisher: { '@type': 'Organization', name: 'PF & Co Construction', url: 'https://www.pfcoconstruction.co.uk' },
           },
           {
             '@type': 'FAQPage',
             mainEntity: [
-              { '@type': 'Question', name: 'Do I still need an architect after this?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. A Concept Feasibility Study is pre-design \u2014 it tells you what\'s possible and what it costs. Once you\'ve chosen an option, you\'ll appoint an architect to develop it into technical drawings with far more clarity.' } },
-              { '@type': 'Question', name: 'How accurate are the cost estimates?', acceptedAnswer: { '@type': 'Answer', text: 'We provide indicative costs with +/- 15\u201320% confidence bands based on current regional rates. They are intended for decision-making and budget validation, not for tendering.' } },
-              { '@type': 'Question', name: 'Can I use the floor plans for planning?', acceptedAnswer: { '@type': 'Answer', text: 'No. The hand-sketch plans are concept-stage illustrations to help you understand spatial layout. They are not measured drawings for Planning or Building Control.' } },
+              { '@type': 'Question', name: 'Do I always need a noise assessment?', acceptedAnswer: { '@type': 'Answer', text: 'Not always. Your council will request one if your site is near a significant noise source — typically major roads, railways, airports, or commercial/industrial uses. We can check your site-specific requirements.' } },
+              { '@type': 'Question', name: 'Is this a full acoustic survey?', acceptedAnswer: { '@type': 'Answer', text: 'No — this is a desktop screening assessment using published noise data and strategic noise mapping. If your site has complex noise issues, we will recommend a full acoustic survey with on-site monitoring as a next step.' } },
+              { '@type': 'Question', name: 'What standards do you follow?', acceptedAnswer: { '@type': 'Answer', text: 'We assess against BS 4142:2014+A1:2019 for commercial noise, BS 8233:2014 for internal ambient levels, and ProPG: Planning & Noise (2017) for residential development. All are referenced by the National Planning Practice Guidance.' } },
             ]
           }
         ]}
@@ -88,7 +83,7 @@ const FeasibilityStudy = () => {
         <div className="absolute inset-0 z-0 opacity-20">
           <div className="absolute inset-0 bg-gradient-to-b from-brand-primary via-transparent to-brand-primary" />
           <div aria-hidden="true" className="text-[30vw] font-display uppercase leading-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 select-none opacity-10">
-            FEASIBILITY
+            NOISE
           </div>
         </div>
 
@@ -98,28 +93,25 @@ const FeasibilityStudy = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="font-mono text-xs uppercase tracking-[0.4em] text-violet-400 font-bold mb-6 block">Site Intelligence / Product 08</span>
+            <span className="font-mono text-xs uppercase tracking-[0.4em] text-violet-400 font-bold mb-6 block">Site Intelligence / Product 18</span>
             <h1 className="text-7xl md:text-8xl font-bold leading-[0.85] mb-8 tracking-tighter">
-              Feasibility <br />
-              <span className="text-violet-400 italic font-accent font-light">Study</span>
+              Noise Impact <br />
+              <span className="text-violet-400 italic font-accent font-light">Assessment</span>
             </h1>
             <p className="text-xl text-white/60 leading-relaxed mb-10 max-w-lg font-light">
-              Understand what's possible, what it costs, and which route to take — before you spend a penny on architect fees.
+              BS 4142/BS 8233/ProPG noise screening for residential schemes near roads, railways, or commercial uses.
             </p>
             <div className="flex flex-wrap gap-6 items-center">
-              <Link to="/order-report?report=feasibility-study" className="px-10 py-5 bg-violet-600 text-white rounded-full font-bold hover:bg-violet-700 transition-all shadow-xl shadow-violet-500/20 flex items-center gap-2">
-                Buy Now <Zap size={20} className="text-violet-200" />
+              <Link to="/order-report?report=noise-impact-assessment" className="px-10 py-5 bg-violet-500 text-white rounded-full font-bold hover:bg-violet-600 transition-all shadow-xl shadow-violet-500/20 flex items-center gap-2">
+                Buy Now <Volume2 size={20} className="text-violet-200" />
               </Link>
-              <a href="/samples/feasibility-study-sample.pdf" target="_blank" rel="noopener noreferrer" className="px-10 py-5 bg-white/10 backdrop-blur-md text-white border border-white/20 rounded-full font-bold hover:bg-white/20 transition-all flex items-center gap-2">
-                Sample Report <FileText size={20} className="text-violet-400" />
-              </a>
               <div className="flex flex-col">
                 <div className="inline-block px-3 py-1 bg-brand-accent/20 border border-brand-accent/30 rounded-full text-brand-accent text-[10px] uppercase tracking-widest font-bold mb-3 self-start">
                   Early Access Pricing - Up to 40% off.
                 </div>
                 <div className="flex items-baseline gap-3 mb-1">
-                  <span className="text-3xl font-mono font-bold text-white">Early Access: £{formatPrice(report.earlyAccessPrice)}</span>
-                  <span className="text-base text-white/50 line-through font-medium">Was £{formatPrice(report.rrp)}</span>
+                  <span className="text-3xl font-mono font-bold text-white">Early Access: £445</span>
+                  <span className="text-base text-white/50 line-through font-medium">Was £745</span>
                 </div>
                 <span className="text-xs text-white/70 italic">First 50 reports at early access pricing</span>
               </div>
@@ -137,25 +129,25 @@ const FeasibilityStudy = () => {
 
               <div className="relative z-10">
                 <div className="flex justify-between items-start mb-12">
-                  <div className="w-16 h-16 bg-violet-600 rounded-2xl flex items-center justify-center shadow-lg shadow-violet-500/40">
-                    <Ruler size={32} className="text-white" />
+                  <div className="w-16 h-16 bg-violet-500 rounded-2xl flex items-center justify-center shadow-lg shadow-violet-500/40">
+                    <Volume2 size={32} className="text-white" />
                   </div>
                   <div className="text-right">
-                    <div className="text-[10px] font-mono uppercase tracking-widest text-white/60">Design Status</div>
+                    <div className="text-[10px] font-mono uppercase tracking-widest text-white/60">Acoustic Status</div>
                     <div className="text-sm font-bold text-violet-400 flex items-center gap-2 justify-end">
-                      <ShieldCheck size={16} /> Brief Validated
+                      <ShieldCheck size={16} /> BS 8233 Assessed
                     </div>
                   </div>
                 </div>
 
-                <h3 className="text-2xl font-bold mb-8 font-accent italic">Option Appraisal</h3>
+                <h3 className="text-2xl font-bold mb-8 font-accent italic">Noise Strategy</h3>
 
                 <div className="space-y-6">
                   {[
-                    { label: "Spatial Efficiency", score: 9, color: "bg-violet-400" },
-                    { label: "Budget Alignment", score: 8, color: "bg-blue-400" },
-                    { label: "Planning Risk", score: 3, color: "bg-emerald-400" },
-                    { label: "Build Complexity", score: 5, color: "bg-amber-400" }
+                    { label: "Road Traffic Noise", score: 7, color: "bg-violet-400" },
+                    { label: "Commercial Sources", score: 4, color: "bg-purple-400" },
+                    { label: "Internal Ambient Level", score: 9, color: "bg-emerald-400" },
+                    { label: "Mitigation Effectiveness", score: 8, color: "bg-violet-400" }
                   ].map((item, i) => (
                     <div key={i}>
                       <div className="flex justify-between text-[10px] uppercase tracking-widest mb-2 font-bold text-white/60">
@@ -177,8 +169,8 @@ const FeasibilityStudy = () => {
 
               <div className="relative z-10 pt-8 border-t border-white/10 flex justify-between items-end">
                 <div>
-                  <div className="text-[10px] font-mono uppercase tracking-widest text-white/60 mb-1">Project Context</div>
-                  <div className="text-lg font-bold">Concept Stage <span className="text-xs font-normal opacity-60">(Pre-Architect)</span></div>
+                  <div className="text-[10px] font-mono uppercase tracking-widest text-white/60 mb-1">Noise Context</div>
+                  <div className="text-lg font-bold">Defra Round 4 <span className="text-xs font-normal opacity-60">(Strategic Mapping)</span></div>
                 </div>
                 <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center animate-float">
                   <Info size={20} className="text-violet-400" />
@@ -189,29 +181,20 @@ const FeasibilityStudy = () => {
         </div>
       </section>
 
-      <VideoExplainer
-        title="Concept Feasibility Study"
-        accentColor="violet-500"
-        description="Watch our walkthrough to see how we compare three design options side-by-side with real costs and planning routes, helping you brief your architect with confidence."
-        thumbnailUrl="/videos/feasibility-study-thumb.jpg"
-        videoUrl="/videos/feasibility-study-demo.mp4"
-        duration="1:15"
-      />
-
       {/* Editorial Content Section */}
       <section className="py-32 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-12 gap-16">
             <div className="lg:col-span-5">
               <span className="text-violet-500 font-bold text-sm uppercase tracking-widest mb-4 block">The Core Analysis</span>
-              <h2 className="text-5xl font-bold mb-8 leading-tight text-brand-primary">Why You Need a <br /><span className="font-accent italic font-light text-violet-600">Concept Feasibility Study.</span></h2>
+              <h2 className="text-5xl font-bold mb-8 leading-tight text-brand-primary">Why Acoustic Evidence is a <br /><span className="font-accent italic font-light text-violet-600">Planning Requirement.</span></h2>
               <p className="text-brand-primary/60 text-lg leading-relaxed mb-12 font-light">
-                Most projects start the wrong way round. They invest in drawings, then discover the budget doesn't stretch. A Concept Feasibility Study puts the decision-making first.
+                Councils routinely condition noise assessments for sites near roads, railways, or commercial uses. Without proportionate acoustic evidence, your application risks refusal or costly delays.
               </p>
               <div className="space-y-4">
                 {features.slice(0, 4).map((f, i) => (
                   <div key={i} className="flex gap-4 p-6 rounded-2xl bg-brand-surface border border-brand-primary/5">
-                    <div className="w-6 h-6 rounded-full bg-violet-500 flex-shrink-0 flex items-center justify-center text-white text-[10px] font-bold">{i + 1}</div>
+                    <div className="w-6 h-6 rounded-full bg-violet-500 flex-shrink-0 flex items-center justify-center text-white text-[10px] font-bold">{i+1}</div>
                     <div>
                       <h4 className="font-bold mb-1 text-brand-primary">{f.title}</h4>
                       <p className="text-sm text-brand-primary/60 font-light">{f.desc}</p>
@@ -234,9 +217,9 @@ const FeasibilityStudy = () => {
 
               <div className="mt-16 p-12 bg-brand-primary rounded-[3rem] text-white relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-64 h-64 bg-violet-500/20 blur-[80px]" />
-                <h3 className="text-3xl font-bold mb-6 relative z-10">48hr Turnaround <br /><span className="text-emerald-400 italic font-accent font-light">Typical.</span></h3>
+                <h3 className="text-3xl font-bold mb-6 relative z-10">48-72hr Turnaround <br /><span className="text-violet-400 italic font-accent font-light">Typical.</span></h3>
                 <p className="text-white/60 mb-8 relative z-10 font-light">
-                  Time is the biggest risk in any development. We deliver our Tier 1 assessments within 48 hours of instruction, so you can make decisions at the speed of the market.
+                  Time is the biggest risk in any development. We deliver our Noise Impact Assessments within 48-72 hours of instruction, so you can make decisions at the speed of the market.
                 </p>
                 <Link to="/contact" className="inline-flex items-center gap-2 font-bold text-violet-400 hover:gap-4 transition-all relative z-10">
                   Instruct a Report <ArrowRight size={18} />
@@ -251,11 +234,11 @@ const FeasibilityStudy = () => {
       <section className="py-32 bg-brand-surface">
         <div className="max-w-7xl mx-auto px-6">
           <ComparisonTable
-            title="Concept Feasibility Study"
-            subtitle="What you get vs a typical architect or consultant"
-            columns={["Feature", "PF&Co Site Intelligence", "Typical Architect", "Basic Advice"]}
+            title="Noise Impact Assessment"
+            subtitle="What you get vs a typical consultant"
+            columns={["Feature", "PF&Co Site Intelligence", "Typical Consultant", "Basic Mention"]}
             categories={comparisonCategories}
-            footerNote="Comparison based on typical UK architectural practice. PF&Co Concept Feasibility Study provides strategic groundwork to make design drawings worthwhile."
+            footerNote="Comparison based on typical UK acoustic consultancy practices. PF&Co Noise Impact Assessment references Defra Round 4 strategic noise maps and all relevant British Standards."
             accentColor="text-violet-500"
           />
         </div>
@@ -266,20 +249,20 @@ const FeasibilityStudy = () => {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-20">
             <h2 className="text-5xl font-bold mb-4 tracking-tight text-brand-primary">When You Need <span className="font-accent italic font-light text-violet-600">Certainty.</span></h2>
-            <p className="text-brand-primary/60 max-w-2xl mx-auto font-light">Critical scenarios where a Concept Feasibility Study is the smartest first step.</p>
+            <p className="text-brand-primary/60 max-w-2xl mx-auto font-light">Critical scenarios where a Noise Impact Assessment is essential for planning.</p>
           </div>
 
           <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-px bg-brand-primary/10 border border-brand-primary/10 rounded-[2rem] overflow-hidden">
             {[
-              { s: "Extension", r: "Rear/Side/Wrap", c: "Compare extension options and costs" },
-              { s: "Loft Conversion", r: "Dormer/Mansard", c: "Dormer vs mansard vs rooflight compared" },
-              { s: "New Build", r: "Residential plot", c: "Scheme options with planning route per option" },
-              { s: "Pre-Architect", r: "Strategy stage", c: "Option appraisal before architect appointment" },
-              { s: "Budget Check", r: "Risk management", c: "Confidence-banded costs prevent surprises" },
+              { s: "Road Traffic", r: "Major road nearby", c: "Glazing spec + ventilation strategy" },
+              { s: "Railway", r: "Rail corridor within 200m", c: "Vibration screening + sound insulation" },
+              { s: "Commercial", r: "Adjacent business uses", c: "BS 4142 rating level assessment" },
+              { s: "Mixed-Use", r: "Ground floor commercial", c: "Internal separation requirements" },
+              { s: "Construction", r: "Sensitive receptors", c: "BS 5228 construction noise limits" },
             ].map((row, i) => (
               <div key={i} className="bg-white p-8 hover:bg-brand-surface transition-colors flex flex-col justify-between min-h-[250px]">
                 <div>
-                  <div className="text-[10px] font-mono uppercase tracking-widest text-violet-500 font-bold mb-4">Scenario 0{i + 1}</div>
+                  <div className="text-[10px] font-mono uppercase tracking-widest text-violet-500 font-bold mb-4">Scenario 0{i+1}</div>
                   <h4 className="text-xl font-bold mb-2 text-brand-primary">{row.s}</h4>
                   <p className="text-xs text-brand-primary/60 uppercase tracking-wider font-bold mb-6">{row.r}</p>
                 </div>
@@ -296,9 +279,9 @@ const FeasibilityStudy = () => {
           <h2 className="text-4xl font-bold mb-16 text-center font-accent italic text-violet-600">Common Inquiries</h2>
           <div className="space-y-12">
             {[
-              { q: "Do I still need an architect after this?", a: "Yes. A Concept Feasibility Study is pre-design — it tells you what's possible and what it costs. Once you've chosen an option, you'll appoint an architect to develop it into technical drawings with far more clarity." },
-              { q: "How accurate are the cost estimates?", a: "We provide indicative costs with +/- 15–20% confidence bands based on current regional rates. They are intended for decision-making and budget validation, not for tendering." },
-              { q: "Can I use the floor plans for planning?", a: "No. The hand-sketch plans are concept-stage illustrations to help you understand spatial layout. They are not measured drawings for Planning or Building Control." }
+              { q: "Do I always need a noise assessment?", a: "Not always. Your council will request one if your site is near a significant noise source — typically major roads, railways, airports, or commercial/industrial uses. We can check your site-specific requirements." },
+              { q: "Is this a full acoustic survey?", a: "No — this is a desktop screening assessment using published noise data and strategic noise mapping. If your site has complex noise issues, we will recommend a full acoustic survey with on-site monitoring as a next step." },
+              { q: "What standards do you follow?", a: "We assess against BS 4142:2014+A1:2019 for commercial noise, BS 8233:2014 for internal ambient levels, and ProPG: Planning & Noise (2017) for residential development. All are referenced by the National Planning Practice Guidance." }
             ].map((item, i) => (
               <div key={i} className="group">
                 <h4 className="text-xl font-bold mb-4 flex items-center gap-4 text-brand-primary">
@@ -314,7 +297,7 @@ const FeasibilityStudy = () => {
         </div>
       </section>
 
-      
+
       {/* MEGA PILLAR CROSS-LINK */}
       <section className="max-w-4xl mx-auto px-6 pb-24 -mt-8">
         <div className="bg-brand-surface border-2 border-brand-accent/20 rounded-[2rem] p-8 md:p-10 text-center shadow-xl shadow-brand-primary/5 relative overflow-hidden">
@@ -336,23 +319,20 @@ const FeasibilityStudy = () => {
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-1 bg-gradient-to-r from-transparent via-white to-transparent animate-scan" />
 
           <div className="relative z-10">
-            <h2 className="text-5xl md:text-6xl font-bold mb-8 tracking-tighter">Ready to Find Out <br />What's Possible?</h2>
+            <h2 className="text-5xl md:text-6xl font-bold mb-8 tracking-tighter">Ready to Satisfy Your <br />Acoustic Requirements?</h2>
             <p className="text-white/80 text-xl mb-12 max-w-2xl mx-auto font-light">
-              Get honest answers about your project before you commit to architect fees. Three options, real costs, clear planning routes.
+              Get submission-ready noise screening evidence for your planning application. Proportionate to your site's noise risk, specific to your council's expectations.
             </p>
             <div className="flex flex-wrap justify-center gap-6">
               <Link
                 to="/contact"
                 className="px-12 py-6 bg-white text-violet-600 rounded-full font-bold hover:scale-105 transition-all shadow-xl"
               >
-                Get Your Concept Feasibility Study
+                Get Your Noise Assessment
               </Link>
-              <a href="/samples/feasibility-study-sample.pdf" target="_blank" rel="noopener noreferrer" className="px-12 py-6 bg-violet-700/50 backdrop-blur-md text-white border border-white/20 rounded-full font-bold hover:bg-violet-800/50 transition-all flex items-center gap-2">
-                Sample Report <FileText size={20} />
-              </a>
               <div className="flex items-center gap-3 px-8 py-6 bg-violet-700/50 backdrop-blur-md rounded-full border border-white/10 text-sm font-bold">
                 <Clock size={18} />
-                48hr Delivery
+                48-72hr Delivery
               </div>
             </div>
           </div>
@@ -362,4 +342,4 @@ const FeasibilityStudy = () => {
   );
 };
 
-export default FeasibilityStudy;
+export default NoiseImpactAssessment;

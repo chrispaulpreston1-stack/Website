@@ -1,49 +1,44 @@
 import { motion } from 'motion/react';
-import { MessageSquare, Check, ArrowRight, Info, HelpCircle, Clock, Zap, ShieldCheck, FileText } from 'lucide-react';
+import { Wind, Check, ArrowRight, Info, HelpCircle, Clock, ShieldCheck, FileText } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import PageSEO from '../components/PageSEO';
 import ComparisonTable from '../components/ComparisonTable';
-import VideoExplainer from '../components/VideoExplainer';
-import { getReportBySlug } from '../data/reports';
 
-const formatPrice = (n: number) => n.toLocaleString('en-GB');
-
-const PreApplicationAdvice = () => {
-  const report = getReportBySlug('pre-application-advice')!;
+const AirQualityScreening = () => {
   const features = [
-    { title: "Professional Covering Letter", desc: "Formal introduction describing the site and proposal clearly in planning terms." },
-    { title: "Site & Constraint Summary", desc: "Concise summary of planning constraints drawn from our 22-category desktop research." },
-    { title: "Proposal Description", desc: "Structured description of use, scale, and layout, formatted for officer engagement." },
-    { title: "Planning Policy Context", desc: "Identification of key local plan and NPPF policies to frame the enquiry." },
-    { title: "5–10 Targeted Questions", desc: "Actionable questions designed to elicit specific answers on principle and showstoppers." },
-    { title: "Supporting Constraint Data", desc: "Inclusion of relevant maps or planning history to provide the officer with evidence." },
-    { title: "Branded Word Document", desc: "Professional pack ready for direct submission to the council's planning portal." },
-    { title: "Ready for Submission", desc: "Finished document pack formatted for direct upload with your pre-app fee." }
+    { title: "AQMA Proximity Analysis", desc: "Assessment of distance and relationship to declared Air Quality Management Areas." },
+    { title: "IAQM/EPUK Screening", desc: "Institute of Air Quality Management and Environmental Protection UK screening methodology." },
+    { title: "Construction Dust Risk Assessment", desc: "IAQM dust assessment methodology for earthworks, construction, and trackout." },
+    { title: "NO2 Diffusion Tube Analysis", desc: "Mapping and interpretation of local authority NO2 monitoring data near the site." },
+    { title: "Sensitive Receptor Mapping", desc: "Desktop identification of schools, hospitals, and care homes within 350m." },
+    { title: "Mitigation Measures Register", desc: "Proportionate construction and operational phase mitigation recommendations." },
+    { title: "Damage Cost Assessment", desc: "Defra air quality damage cost methodology where quantification is required." },
+    { title: "Cumulative Impact Screening", desc: "Assessment of committed developments and their combined air quality impact." }
   ];
 
   const comparisonCategories = [
     {
-      title: "Enquiry Quality",
+      title: "Technical Analysis",
       rows: [
-        { feature: "Targeted site-specific questions (5–10)", pfco: true, competitor1: "Often 1–2 vague", competitor2: false },
-        { feature: "Full planning policy context provided", pfco: true, competitor1: "Usually none", competitor2: false },
-        { feature: "Site constraint research (22+ categories)", pfco: true, competitor1: "Basic address only", competitor2: false },
+        { feature: "AQMA proximity assessment", pfco: true, competitor1: "Basic check", competitor2: false },
+        { feature: "IAQM/EPUK screening methodology", pfco: true, competitor1: "Often simplified", competitor2: false },
+        { feature: "NO2 monitoring data analysis", pfco: true, competitor1: "Rarely included", competitor2: false },
       ]
     },
     {
-      title: "Professionalism",
+      title: "Regulatory Compliance",
       rows: [
-        { feature: "Formal covering letter included", pfco: true, competitor1: "Informal email", competitor2: false },
-        { feature: "Proposal described in planning terms", pfco: true, competitor1: "Often unclear", competitor2: true },
-        { feature: "Supporting constraint data included", pfco: true, competitor1: "Not provided", competitor2: false },
+        { feature: "Construction dust risk assessment", pfco: true, competitor1: "Often deferred", competitor2: false },
+        { feature: "Sensitive receptor mapping", pfco: true, competitor1: "Generic buffer", competitor2: false },
+        { feature: "Damage cost assessment", pfco: true, competitor1: "Not provided", competitor2: false },
       ]
     },
     {
-      title: "Delivery & Value",
+      title: "Value & Format",
       rows: [
-        { feature: "Branded, submission-ready document", pfco: true, competitor1: "Unformatted email", competitor2: "Variable" },
-        { feature: "Designed to extract actionable responses", pfco: true, competitor1: "Generic answers", competitor2: false },
-        { feature: "Typical turnaround under 5 working days", pfco: true, competitor1: "Variable", competitor2: "Variable" },
+        { feature: "Cumulative impact screening", pfco: true, competitor1: "Not addressed", competitor2: false },
+        { feature: "Proportional to air quality risk (3-20 pages)", pfco: true, competitor1: "One-size-fits-all", competitor2: "Variable" },
+        { feature: "Branded submission-ready Word document", pfco: true, competitor1: "Email summary", competitor2: "Generic template" },
       ]
     }
   ];
@@ -51,54 +46,33 @@ const PreApplicationAdvice = () => {
   return (
     <div className="pt-20">
       <PageSEO
-        title="Pre-Application Advice | Planning Enquiry Packs | PF & Co"
-        description="Ask the right questions before you commit to a full planning application — and get answers that actually shape your scheme."
-        path="/site-intelligence/pre-application-advice"
+        title="Air Quality Screening | Environmental Evidence | PF & Co"
+        description="IAQM/EPUK air quality screening with AQMA proximity analysis and construction dust risk assessment."
+        path="/site-intelligence/air-quality-screening"
         jsonLd={[
           {
             '@type': 'Product',
-            name: 'Pre-Application Advice Pack',
-            description: 'Ask the right questions before committing to a full planning application.',
+            name: 'Air Quality Screening',
+            description: 'IAQM/EPUK air quality screening with AQMA proximity analysis and construction dust risk assessment.',
             brand: { '@type': 'Organization', name: 'PF & Co Construction' },
-            offers: { '@type': 'Offer', price: String(report.earlyAccessPrice), priceCurrency: 'GBP' },
+            offers: { '@type': 'Offer', price: '395', priceCurrency: 'GBP' },
           },
           {
             '@type': 'VideoObject',
-            name: 'Pre-Application Advice Pack — What\'s Inside Your Report',
-            description: 'A walkthrough of the PF & Co Pre-Application Advice Pack, showing how we frame strategic questions and policy context to get actionable feedback from the planning officer.',
-            thumbnailUrl: 'https://www.pfcoconstruction.co.uk/videos/pre-app-advice-thumb.jpg',
-            contentUrl: 'https://www.pfcoconstruction.co.uk/videos/pre-app-advice-demo.mp4',
-            uploadDate: '2026-03-02',
-            duration: 'PT1M19S',
+            name: 'Air Quality Screening — What\'s Inside Your Report',
+            description: 'A walkthrough of the PF & Co Air Quality Screening, showing how we assess AQMA proximity and apply the IAQM/EPUK methodology to help you satisfy council air quality requirements.',
+            thumbnailUrl: 'https://www.pfcoconstruction.co.uk/videos/air-quality-demo-thumb.jpg',
+            contentUrl: 'https://www.pfcoconstruction.co.uk/videos/air-quality-demo.mp4',
+            uploadDate: '2026-03-07',
+            duration: 'PT1M22S',
             publisher: { '@type': 'Organization', name: 'PF & Co Construction', url: 'https://www.pfcoconstruction.co.uk' },
           },
           {
             '@type': 'FAQPage',
             mainEntity: [
-              {
-                '@type': 'Question',
-                name: 'What is a pre-application enquiry?',
-                acceptedAnswer: {
-                  '@type': 'Answer',
-                  text: "It's an informal consultation with the council before a formal application. You describe your proposal, ask questions, and an officer provides feedback on policy issues and expectations."
-                }
-              },
-              {
-                '@type': 'Question',
-                name: "Is the council's response binding?",
-                acceptedAnswer: {
-                  '@type': 'Answer',
-                  text: "No. It's advisory and not binding. However, a positive response carries significant weight, and a negative response identifies showstoppers before you spend on a full application."
-                }
-              },
-              {
-                '@type': 'Question',
-                name: 'How does this save me money?',
-                acceptedAnswer: {
-                  '@type': 'Answer',
-                  text: 'A full application involves high fees, architect drawings, and consultant reports. A pre-app enquiry costs a fraction of that and tells you if the principle is acceptable first.'
-                }
-              }
+              { '@type': 'Question', name: 'When is an air quality assessment required?', acceptedAnswer: { '@type': 'Answer', text: 'Your council will typically request one if your site is within or near an AQMA, adjacent to a busy road, involves demolition or significant earthworks, or proposes sensitive uses like homes near industrial areas. We check your specific requirements as part of the screening.' } },
+              { '@type': 'Question', name: 'Is this a full air quality modelling study?', acceptedAnswer: { '@type': 'Answer', text: 'No — this is a desktop screening assessment using published monitoring data and the IAQM/EPUK methodology. If detailed dispersion modelling is needed, we will recommend this as a next step and can connect you with a specialist.' } },
+              { '@type': 'Question', name: 'What is an AQMA?', acceptedAnswer: { '@type': 'Answer', text: 'An Air Quality Management Area is declared by local authorities where national air quality objectives are not being met — usually for nitrogen dioxide (NO2) from road traffic. If your site falls within or near one, you will need to demonstrate that your development does not worsen air quality.' } },
             ]
           }
         ]}
@@ -109,7 +83,7 @@ const PreApplicationAdvice = () => {
         <div className="absolute inset-0 z-0 opacity-20">
           <div className="absolute inset-0 bg-gradient-to-b from-brand-primary via-transparent to-brand-primary" />
           <div aria-hidden="true" className="text-[30vw] font-display uppercase leading-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 select-none opacity-10">
-            PRE-APP
+            AIR
           </div>
         </div>
 
@@ -119,28 +93,25 @@ const PreApplicationAdvice = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="font-mono text-xs uppercase tracking-[0.4em] text-cyan-400 font-bold mb-6 block">Site Intelligence / Product 12</span>
+            <span className="font-mono text-xs uppercase tracking-[0.4em] text-cyan-400 font-bold mb-6 block">Site Intelligence / Product 19</span>
             <h1 className="text-7xl md:text-8xl font-bold leading-[0.85] mb-8 tracking-tighter">
-              Pre-Application <br />
-              <span className="text-cyan-400 italic font-accent font-light">Advice Pack</span>
+              Air Quality <br />
+              <span className="text-cyan-400 italic font-accent font-light">Screening</span>
             </h1>
             <p className="text-xl text-white/60 leading-relaxed mb-10 max-w-lg font-light">
-              Ask the right questions before you commit to a full planning application — and get answers that actually shape your scheme.
+              IAQM/EPUK air quality screening with AQMA proximity analysis and construction dust risk assessment.
             </p>
             <div className="flex flex-wrap gap-6 items-center">
-              <Link to="/order-report?report=pre-application-advice" className="px-10 py-5 bg-cyan-600 text-white rounded-full font-bold hover:bg-cyan-700 transition-all shadow-xl shadow-cyan-500/20 flex items-center gap-2">
-                Buy Now <Zap size={20} className="text-cyan-200" />
+              <Link to="/order-report?report=air-quality-screening" className="px-10 py-5 bg-cyan-500 text-white rounded-full font-bold hover:bg-cyan-600 transition-all shadow-xl shadow-cyan-500/20 flex items-center gap-2">
+                Buy Now <Wind size={20} className="text-cyan-200" />
               </Link>
-              <a href="/samples/pre-application-advice-sample.pdf" target="_blank" rel="noopener noreferrer" className="px-10 py-5 bg-white/10 backdrop-blur-md text-white border border-white/20 rounded-full font-bold hover:bg-white/20 transition-all flex items-center gap-2">
-                Sample Report <FileText size={20} className="text-cyan-400" />
-              </a>
               <div className="flex flex-col">
                 <div className="inline-block px-3 py-1 bg-brand-accent/20 border border-brand-accent/30 rounded-full text-brand-accent text-[10px] uppercase tracking-widest font-bold mb-3 self-start">
                   Early Access Pricing - Up to 40% off.
                 </div>
                 <div className="flex items-baseline gap-3 mb-1">
-                  <span className="text-3xl font-mono font-bold text-white">Early Access: £{formatPrice(report.earlyAccessPrice)}</span>
-                  <span className="text-base text-white/50 line-through font-medium">Was £{formatPrice(report.rrp)}</span>
+                  <span className="text-3xl font-mono font-bold text-white">Early Access: £395</span>
+                  <span className="text-base text-white/50 line-through font-medium">Was £660</span>
                 </div>
                 <span className="text-xs text-white/70 italic">First 50 reports at early access pricing</span>
               </div>
@@ -158,25 +129,25 @@ const PreApplicationAdvice = () => {
 
               <div className="relative z-10">
                 <div className="flex justify-between items-start mb-12">
-                  <div className="w-16 h-16 bg-cyan-600 rounded-2xl flex items-center justify-center shadow-lg shadow-cyan-500/40">
-                    <MessageSquare size={32} className="text-white" />
+                  <div className="w-16 h-16 bg-cyan-500 rounded-2xl flex items-center justify-center shadow-lg shadow-cyan-500/40">
+                    <Wind size={32} className="text-white" />
                   </div>
                   <div className="text-right">
-                    <div className="text-[10px] font-mono uppercase tracking-widest text-white/60">Enquiry Status</div>
+                    <div className="text-[10px] font-mono uppercase tracking-widest text-white/60">Air Quality Status</div>
                     <div className="text-sm font-bold text-cyan-400 flex items-center gap-2 justify-end">
-                      <ShieldCheck size={16} /> Targeted Pack
+                      <ShieldCheck size={16} /> IAQM Screened
                     </div>
                   </div>
                 </div>
 
-                <h3 className="text-2xl font-bold mb-8 font-accent italic">Strategic Questions</h3>
+                <h3 className="text-2xl font-bold mb-8 font-accent italic">Air Quality Analysis</h3>
 
                 <div className="space-y-6">
                   {[
-                    { label: "Policy Framing", score: 9, color: "bg-cyan-400" },
-                    { label: "Constraint Evidence", score: 8, color: "bg-blue-400" },
-                    { label: "Actionable Feedback", score: 9, color: "bg-cyan-400" },
-                    { label: "Risk Identification", score: 7, color: "bg-amber-400" }
+                    { label: "AQMA Proximity", score: 7, color: "bg-cyan-400" },
+                    { label: "NO2 Concentration", score: 5, color: "bg-teal-400" },
+                    { label: "Dust Risk", score: 3, color: "bg-emerald-400" },
+                    { label: "Receptor Sensitivity", score: 6, color: "bg-cyan-400" }
                   ].map((item, i) => (
                     <div key={i}>
                       <div className="flex justify-between text-[10px] uppercase tracking-widest mb-2 font-bold text-white/60">
@@ -198,11 +169,11 @@ const PreApplicationAdvice = () => {
 
               <div className="relative z-10 pt-8 border-t border-white/10 flex justify-between items-end">
                 <div>
-                  <div className="text-[10px] font-mono uppercase tracking-widest text-white/60 mb-1">Enquiry Context</div>
-                  <div className="text-lg font-bold">Pre-Submission <span className="text-xs font-normal opacity-60">(Risk Mitigation)</span></div>
+                  <div className="text-[10px] font-mono uppercase tracking-widest text-white/60 mb-1">Screening Context</div>
+                  <div className="text-lg font-bold">AQMA Zone <span className="text-xs font-normal opacity-60">(Proximity Trigger)</span></div>
                 </div>
                 <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center animate-float">
-                  <HelpCircle size={20} className="text-cyan-400" />
+                  <Info size={20} className="text-cyan-400" />
                 </div>
               </div>
             </div>
@@ -210,29 +181,20 @@ const PreApplicationAdvice = () => {
         </div>
       </section>
 
-      <VideoExplainer
-        title="Pre-Application Advice Pack"
-        accentColor="cyan-500"
-        description="Watch our walkthrough to see how we frame strategic questions and policy context to get actionable feedback from the planning officer."
-        thumbnailUrl="/videos/pre-app-advice-thumb.jpg"
-        videoUrl="/videos/pre-app-advice-demo.mp4"
-        duration="1:19"
-      />
-
       {/* Editorial Content Section */}
       <section className="py-32 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-12 gap-16">
             <div className="lg:col-span-5">
               <span className="text-cyan-500 font-bold text-sm uppercase tracking-widest mb-4 block">The Core Analysis</span>
-              <h2 className="text-5xl font-bold mb-8 leading-tight text-brand-primary">Don't Guess — <br /><span className="font-accent italic font-light text-cyan-600">Ask the Right Questions.</span></h2>
+              <h2 className="text-5xl font-bold mb-8 leading-tight text-brand-primary">Why Air Quality Evidence is Now a <br /><span className="font-accent italic font-light text-cyan-600">Planning Requirement.</span></h2>
               <p className="text-brand-primary/60 text-lg leading-relaxed mb-12 font-light">
-                Submit a vague enquiry and you'll get a vague response. Submit a well-researched, targeted enquiry and the officer will engage properly.
+                If your site is within or near an Air Quality Management Area, involves demolition, or proposes sensitive uses near busy roads, your council will require air quality evidence before validating your application.
               </p>
               <div className="space-y-4">
                 {features.slice(0, 4).map((f, i) => (
                   <div key={i} className="flex gap-4 p-6 rounded-2xl bg-brand-surface border border-brand-primary/5">
-                    <div className="w-6 h-6 rounded-full bg-cyan-500 flex-shrink-0 flex items-center justify-center text-white text-[10px] font-bold">{i + 1}</div>
+                    <div className="w-6 h-6 rounded-full bg-cyan-500 flex-shrink-0 flex items-center justify-center text-white text-[10px] font-bold">{i+1}</div>
                     <div>
                       <h4 className="font-bold mb-1 text-brand-primary">{f.title}</h4>
                       <p className="text-sm text-brand-primary/60 font-light">{f.desc}</p>
@@ -272,11 +234,11 @@ const PreApplicationAdvice = () => {
       <section className="py-32 bg-brand-surface">
         <div className="max-w-7xl mx-auto px-6">
           <ComparisonTable
-            title="Pre-Application Advice Pack"
-            subtitle="What you get vs a DIY submission"
-            columns={["Feature", "PF&Co Site Intelligence", "DIY Submission", "Basic Email"]}
+            title="Air Quality Screening"
+            subtitle="What you get vs a typical consultant"
+            columns={["Feature", "PF&Co Site Intelligence", "Typical Consultant", "Basic Mention"]}
             categories={comparisonCategories}
-            footerNote="Comparison based on typical DIY pre-application submissions. PF&Co Pre-App Pack pulls data from 58 authoritative sources and frames questions within the relevant local policy context."
+            footerNote="Comparison based on typical UK environmental consultancy practices. PF&Co Air Quality Screening references IAQM/EPUK guidance and local authority monitoring data from 58 authoritative sources."
             accentColor="text-cyan-500"
           />
         </div>
@@ -287,20 +249,20 @@ const PreApplicationAdvice = () => {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-20">
             <h2 className="text-5xl font-bold mb-4 tracking-tight text-brand-primary">When You Need <span className="font-accent italic font-light text-cyan-600">Certainty.</span></h2>
-            <p className="text-brand-primary/60 max-w-2xl mx-auto font-light">Critical scenarios where a Pre-Application enquiry is the smartest first step.</p>
+            <p className="text-brand-primary/60 max-w-2xl mx-auto font-light">Critical scenarios where an Air Quality Screening is mandatory for planning.</p>
           </div>
 
           <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-px bg-brand-primary/10 border border-brand-primary/10 rounded-[2rem] overflow-hidden">
             {[
-              { s: "Risk Mitigation", r: "Pre-submission", c: "Test the principle before committing to full fees" },
-              { s: "Change of Use", r: "HMO/Commercial", c: "Officer feedback on use class acceptability" },
-              { s: "Conservation", r: "Character zones", c: "Heritage sensitivity check before design" },
-              { s: "Listed Buildings", r: "Nearby assets", c: "Identify heritage concerns before design spend" },
-              { s: "Complex Sites", r: "Multi-constraint", c: "Identify which constraints are showstoppers" },
+              { s: "Near AQMA", r: "Within or adjacent to zone", c: "Full IAQM screening + mitigation" },
+              { s: "Major Road", r: "A-road within 200m", c: "NO2 assessment + receptor mapping" },
+              { s: "Construction", r: "Demolition or earthworks", c: "Dust risk assessment + mitigation" },
+              { s: "Major Development", r: "50+ dwellings", c: "Cumulative impact + damage costs" },
+              { s: "Sensitive Area", r: "Schools, hospitals nearby", c: "Enhanced receptor sensitivity analysis" },
             ].map((row, i) => (
               <div key={i} className="bg-white p-8 hover:bg-brand-surface transition-colors flex flex-col justify-between min-h-[250px]">
                 <div>
-                  <div className="text-[10px] font-mono uppercase tracking-widest text-cyan-500 font-bold mb-4">Scenario 0{i + 1}</div>
+                  <div className="text-[10px] font-mono uppercase tracking-widest text-cyan-500 font-bold mb-4">Scenario 0{i+1}</div>
                   <h4 className="text-xl font-bold mb-2 text-brand-primary">{row.s}</h4>
                   <p className="text-xs text-brand-primary/60 uppercase tracking-wider font-bold mb-6">{row.r}</p>
                 </div>
@@ -317,9 +279,9 @@ const PreApplicationAdvice = () => {
           <h2 className="text-4xl font-bold mb-16 text-center font-accent italic text-cyan-600">Common Inquiries</h2>
           <div className="space-y-12">
             {[
-              { q: "What is a pre-application enquiry?", a: "It's an informal consultation with the council before a formal application. You describe your proposal, ask questions, and an officer provides feedback on policy issues and expectations." },
-              { q: "Is the council's response binding?", a: "No. It's advisory and not binding. However, a positive response carries significant weight, and a negative response identifies showstoppers before you spend on a full application." },
-              { q: "How does this save me money?", a: "A full application involves high fees, architect drawings, and consultant reports. A pre-app enquiry costs a fraction of that and tells you if the principle is acceptable first." }
+              { q: "When is an air quality assessment required?", a: "Your council will typically request one if your site is within or near an AQMA, adjacent to a busy road, involves demolition or significant earthworks, or proposes sensitive uses like homes near industrial areas. We check your specific requirements as part of the screening." },
+              { q: "Is this a full air quality modelling study?", a: "No — this is a desktop screening assessment using published monitoring data and the IAQM/EPUK methodology. If detailed dispersion modelling is needed, we will recommend this as a next step and can connect you with a specialist." },
+              { q: "What is an AQMA?", a: "An Air Quality Management Area is declared by local authorities where national air quality objectives are not being met — usually for nitrogen dioxide (NO2) from road traffic. If your site falls within or near one, you will need to demonstrate that your development does not worsen air quality." }
             ].map((item, i) => (
               <div key={i} className="group">
                 <h4 className="text-xl font-bold mb-4 flex items-center gap-4 text-brand-primary">
@@ -335,7 +297,7 @@ const PreApplicationAdvice = () => {
         </div>
       </section>
 
-      
+
       {/* MEGA PILLAR CROSS-LINK */}
       <section className="max-w-4xl mx-auto px-6 pb-24 -mt-8">
         <div className="bg-brand-surface border-2 border-brand-accent/20 rounded-[2rem] p-8 md:p-10 text-center shadow-xl shadow-brand-primary/5 relative overflow-hidden">
@@ -357,20 +319,17 @@ const PreApplicationAdvice = () => {
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-1 bg-gradient-to-r from-transparent via-white to-transparent animate-scan" />
 
           <div className="relative z-10">
-            <h2 className="text-5xl md:text-6xl font-bold mb-8 tracking-tighter">Don't Guess — <br />Ask the Right Questions.</h2>
+            <h2 className="text-5xl md:text-6xl font-bold mb-8 tracking-tighter">Ready to Satisfy Your <br />Air Quality Requirements?</h2>
             <p className="text-white/80 text-xl mb-12 max-w-2xl mx-auto font-light">
-              Spend a fraction of the cost of a full application and find out where you stand. Targeted questions, professional presentation, actionable answers.
+              Get submission-ready air quality evidence for your planning application. Proportionate to your project, specific to your council's expectations.
             </p>
             <div className="flex flex-wrap justify-center gap-6">
               <Link
                 to="/contact"
                 className="px-12 py-6 bg-white text-cyan-600 rounded-full font-bold hover:scale-105 transition-all shadow-xl"
               >
-                Get Your Pre-App Pack
+                Get Your Air Quality Screening
               </Link>
-              <a href="/samples/pre-application-advice-sample.pdf" target="_blank" rel="noopener noreferrer" className="px-12 py-6 bg-cyan-700/50 backdrop-blur-md text-white border border-white/20 rounded-full font-bold hover:bg-cyan-800/50 transition-all flex items-center gap-2">
-                Sample Report <FileText size={20} />
-              </a>
               <div className="flex items-center gap-3 px-8 py-6 bg-cyan-700/50 backdrop-blur-md rounded-full border border-white/10 text-sm font-bold">
                 <Clock size={18} />
                 48hr Delivery
@@ -383,4 +342,4 @@ const PreApplicationAdvice = () => {
   );
 };
 
-export default PreApplicationAdvice;
+export default AirQualityScreening;

@@ -162,7 +162,7 @@ const FloodRiskAssessment = () => {
               </a>
               <div className="flex flex-col">
                 <div className="inline-block px-3 py-1 bg-brand-accent/20 border border-brand-accent/30 rounded-full text-brand-accent text-[10px] uppercase tracking-widest font-bold mb-3 self-start">
-                  Early Access Pricing - 40% off all reports.
+                  Early Access Pricing - Up to 40% off.
                 </div>
                 <div className="flex items-baseline gap-3 mb-1">
                   <span className="text-3xl font-mono font-bold text-white">Early Access: £375</span>
@@ -300,7 +300,7 @@ const FloodRiskAssessment = () => {
             subtitle="What you get vs a typical FRA consultant or budget provider"
             columns={["Feature", "PF&Co Site Intelligence", "Typical FRA Consultant", "Budget / Basic FRA"]}
             categories={comparisonCategories}
-            footerNote="Comparison based on publicly available product information from GeoSmart FloodSmart, Ark Environmental, FloodPlan Reports, Urban Water, and typical UK flood risk consultancies. Features may vary by provider and product tier. PF&Co Flood Risk Assessment pulls data from 58 authoritative APIs and references the latest NPPF (Dec 2024), PPG (Sep 2025), SuDS National Standards (Jun 2025) and EA Standing Advice (Oct 2025)."
+            footerNote="Comparison based on publicly available product information from GeoSmart FloodSmart, Ark Environmental, FloodPlan Reports, Urban Water, and typical UK flood risk consultancies. Features may vary by provider and product tier. PF&Co Flood Risk Assessment pulls data from 58 authoritative APIs and references the latest NPPF (Dec 2024), PPG, SuDS National Standards (Schedule 3 FWMA 2010) and EA Standing Advice."
             accentColor="text-blue-500"
           />
         </div>

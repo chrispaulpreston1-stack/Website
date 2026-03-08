@@ -4,8 +4,12 @@ import { Link } from 'react-router-dom';
 import PageSEO from '../components/PageSEO';
 import ComparisonTable from '../components/ComparisonTable';
 import VideoExplainer from '../components/VideoExplainer';
+import { getReportBySlug } from '../data/reports';
+
+const formatPrice = (n: number) => n.toLocaleString('en-GB');
 
 const ConstructionManagementPlan = () => {
+  const report = getReportBySlug('construction-management-plan')!;
   const features = [
     { title: "Dust & Air Quality Management", desc: "Measures to control dust generation during demolition, earthworks, and construction." },
     { title: "Noise & Vibration Control", desc: "Working hours, noise limits, and vibration monitoring thresholds appropriate to your site." },
@@ -56,7 +60,7 @@ const ConstructionManagementPlan = () => {
             name: 'Construction Management Plan',
             description: 'Satisfy CMP planning conditions — dust, noise, traffic, and neighbour protection in one document.',
             brand: { '@type': 'Organization', name: 'PF & Co Construction' },
-            offers: { '@type': 'Offer', price: '425', priceCurrency: 'GBP' },
+            offers: { '@type': 'Offer', price: String(report.earlyAccessPrice), priceCurrency: 'GBP' },
           },
           {
             '@type': 'VideoObject',
@@ -111,11 +115,11 @@ const ConstructionManagementPlan = () => {
               </a>
               <div className="flex flex-col">
                 <div className="inline-block px-3 py-1 bg-brand-accent/20 border border-brand-accent/30 rounded-full text-brand-accent text-[10px] uppercase tracking-widest font-bold mb-3 self-start">
-                  Early Access Pricing - 40% off all reports.
+                  Early Access Pricing - Up to 40% off.
                 </div>
                 <div className="flex items-baseline gap-3 mb-1">
-                  <span className="text-3xl font-mono font-bold text-white">Early Access: £425</span>
-                  <span className="text-base text-white/50 line-through font-medium">Was £700</span>
+                  <span className="text-3xl font-mono font-bold text-white">Early Access: £{formatPrice(report.earlyAccessPrice)}</span>
+                  <span className="text-base text-white/50 line-through font-medium">Was £{formatPrice(report.rrp)}</span>
                 </div>
                 <span className="text-xs text-white/70 italic">First 50 reports at early access pricing</span>
               </div>

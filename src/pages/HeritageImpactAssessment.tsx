@@ -4,8 +4,12 @@ import { Link } from 'react-router-dom';
 import PageSEO from '../components/PageSEO';
 import ComparisonTable from '../components/ComparisonTable';
 import VideoExplainer from '../components/VideoExplainer';
+import { getReportBySlug } from '../data/reports';
+
+const formatPrice = (n: number) => n.toLocaleString('en-GB');
 
 const HeritageImpactAssessment = () => {
+  const report = getReportBySlug('heritage-impact-assessment')!;
   const features = [
     { title: "HEAN 12 Significance Assessment", desc: "Assessment against the four interests: archaeological, architectural, historic, and artistic." },
     { title: "Setting Assessment per GPA 3", desc: "Stepped approach to assess how development affects an asset's significance through its setting." },
@@ -56,7 +60,7 @@ const HeritageImpactAssessment = () => {
             name: 'Heritage Impact Assessment',
             description: 'Evidence-based heritage statement for planning applications affecting listed buildings, conservation areas, and scheduled monuments.',
             brand: { '@type': 'Organization', name: 'PF & Co Construction' },
-            offers: { '@type': 'Offer', price: '725', priceCurrency: 'GBP' },
+            offers: { '@type': 'Offer', price: String(report.earlyAccessPrice), priceCurrency: 'GBP' },
           },
           {
             '@type': 'VideoObject',
@@ -132,11 +136,11 @@ const HeritageImpactAssessment = () => {
               </a>
               <div className="flex flex-col">
                 <div className="inline-block px-3 py-1 bg-brand-accent/20 border border-brand-accent/30 rounded-full text-brand-accent text-[10px] uppercase tracking-widest font-bold mb-3 self-start">
-                  Early Access Pricing - 40% off all reports.
+                  Early Access Pricing - Up to 40% off.
                 </div>
                 <div className="flex items-baseline gap-3 mb-1">
-                  <span className="text-3xl font-mono font-bold text-white">Early Access: £725</span>
-                  <span className="text-base text-white/50 line-through font-medium">Was £1,200</span>
+                  <span className="text-3xl font-mono font-bold text-white">Early Access: £{formatPrice(report.earlyAccessPrice)}</span>
+                  <span className="text-base text-white/50 line-through font-medium">Was £{formatPrice(report.rrp)}</span>
                 </div>
                 <span className="text-xs text-white/70 italic">First 50 reports at early access pricing</span>
               </div>
@@ -291,7 +295,7 @@ const HeritageImpactAssessment = () => {
               { s: "Listed Buildings", r: "Direct or setting", c: "Proportionate to grade and proximity" },
               { s: "Conservation Areas", r: "Development within", c: "References council CA Appraisals" },
               { s: "Scheduled Monuments", r: "Nearby sites", c: "Setting assessment per GPA 3" },
-              { s: "Non-Designated", r: "Local assets", c: "NPPF para 216 balanced judgement" },
+              { s: "Non-Designated", r: "Local assets", c: "NPPF para 209 balanced judgement" },
               { s: "Locally Listed", r: "Character assets", c: "Moderate significance assessment" },
             ].map((row, i) => (
               <div key={i} className="bg-white p-8 hover:bg-brand-surface transition-colors flex flex-col justify-between min-h-[250px]">

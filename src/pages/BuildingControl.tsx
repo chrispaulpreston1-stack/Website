@@ -63,7 +63,7 @@ const BuildingControl = () => {
                             </Link>
                             <div className="flex flex-col">
                                 <div className="inline-block px-3 py-1 bg-emerald-500/20 border border-emerald-500/30 rounded-full text-emerald-400 text-[10px] uppercase tracking-widest font-bold mb-3 self-start">
-                                    Early Access Pricing - 40% off all reports.
+                                    Early Access Pricing - Up to 40% off.
                                 </div>
                                 <div className="flex items-baseline gap-3 mb-1">
                                     <span className="text-3xl font-mono font-bold text-white">Early Access: £150</span>

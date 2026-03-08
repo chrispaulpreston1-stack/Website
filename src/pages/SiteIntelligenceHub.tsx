@@ -27,7 +27,7 @@ const SiteIntelligenceHub = () => {
       price: "900",
       rrp: "1,500",
       features: ["BGS geological mapping", "Borehole & trial pit data", "Shrink-swell clay analysis", "Contamination risk screen", "Foundation recommendations"],
-      sample: null
+      sample: "/samples/geotechnical-desk-study-sample.pdf"
     },
     {
       title: "Flood Risk Assessment",
@@ -292,7 +292,7 @@ const SiteIntelligenceHub = () => {
                 Data accelerates our intelligence, but human expertise secures it.
               </p>
               <p className="text-brand-primary/60 leading-relaxed max-w-lg">
-                Every API call, geospatial analysis, and data-driven insight gathered in our Site Intelligence reports is rigorously reviewed, interpreted, and verified by our qualified human engineers. We don't just hand you raw, unchecked outputs; we deliver actionable, deeply verified engineering intelligence with zero room for error.
+                Every API call, geospatial analysis, and data-driven insight gathered in our Site Intelligence reports is rigorously reviewed, interpreted, and verified by our qualified human engineers. We don't just hand you raw, unchecked outputs; we deliver actionable, deeply verified engineering intelligence built to withstand scrutiny.
               </p>
             </div>
             <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
@@ -560,7 +560,7 @@ const SiteIntelligenceHub = () => {
                   { cap: "Heritage & ecology screening", trad: "Sometimes", map: false, si: true },
                   { cap: "Engineer interpretation", trad: true, map: false, si: true },
                   { cap: "Turnaround", trad: "2-4 weeks", map: "Instant", si: "48 hours" },
-                  { cap: "Typical cost", trad: "£1,500-£5,000+", map: "Free-£50", si: "From £150" },
+                  { cap: "Typical cost", trad: "£1,500-£5,000+", map: "Free-£50", si: "From £245" },
                 ].map((row, i) => (
                   <tr key={i} className="border-b border-brand-primary/5 hover:bg-brand-primary/5 transition-colors group">
                     <td className="py-6 font-bold text-brand-primary/80 group-hover:text-brand-primary transition-colors">{row.cap}</td>

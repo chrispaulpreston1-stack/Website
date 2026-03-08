@@ -4,8 +4,12 @@ import { Link } from 'react-router-dom';
 import PageSEO from '../components/PageSEO';
 import ComparisonTable from '../components/ComparisonTable';
 import VideoExplainer from '../components/VideoExplainer';
+import { getReportBySlug } from '../data/reports';
+
+const formatPrice = (n: number) => n.toLocaleString('en-GB');
 
 const ParkingSurvey = () => {
+  const report = getReportBySlug('parking-survey')!;
   const features = [
     { title: "Census Car Ownership Data", desc: "Analysis of the most recent Census car ownership data for the output area covering your site." },
     { title: "Public Transport Assessment", desc: "Walking distances to stops/stations and service frequencies documented to show alternatives." },
@@ -56,7 +60,7 @@ const ParkingSurvey = () => {
             name: 'Parking Survey',
             description: 'Evidence-based parking provision statement built on Census data and NPPF compliance.',
             brand: { '@type': 'Organization', name: 'PF & Co Construction' },
-            offers: { '@type': 'Offer', price: '375', priceCurrency: 'GBP' },
+            offers: { '@type': 'Offer', price: String(report.earlyAccessPrice), priceCurrency: 'GBP' },
           },
           {
             '@type': 'VideoObject',
@@ -132,11 +136,11 @@ const ParkingSurvey = () => {
               </a>
               <div className="flex flex-col">
                 <div className="inline-block px-3 py-1 bg-brand-accent/20 border border-brand-accent/30 rounded-full text-brand-accent text-[10px] uppercase tracking-widest font-bold mb-3 self-start">
-                  Early Access Pricing - 40% off all reports.
+                  Early Access Pricing - Up to 40% off.
                 </div>
                 <div className="flex items-baseline gap-3 mb-1">
-                  <span className="text-3xl font-mono font-bold text-white">Early Access: £375</span>
-                  <span className="text-base text-white/50 line-through font-medium">Was £600</span>
+                  <span className="text-3xl font-mono font-bold text-white">Early Access: £{formatPrice(report.earlyAccessPrice)}</span>
+                  <span className="text-base text-white/50 line-through font-medium">Was £{formatPrice(report.rrp)}</span>
                 </div>
                 <span className="text-xs text-white/70 italic">First 50 reports at early access pricing</span>
               </div>
