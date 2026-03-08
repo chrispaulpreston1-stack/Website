@@ -409,6 +409,15 @@ const SiteIntelligenceHub = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
+                cat: "Core Intelligence",
+                items: [
+                  { name: "Site Feasibility Report", link: "/site-intelligence/site-feasibility-report", desc: "22+ constraint screening." },
+                  { name: "Geotechnical Desk Study", link: "/site-intelligence/geotechnical-desk-study", desc: "Ground condition analysis." },
+                  { name: "Flood Risk Assessment", link: "/site-intelligence/flood-risk-assessment", desc: "Planning-ready FRA." },
+                  { name: "Phase 1 Contamination", link: "/site-intelligence/phase-1-contamination", desc: "LCRM 2020 risk assessment." }
+                ]
+              },
+              {
                 cat: "Planning & Strategy",
                 items: [
                   { name: "CIL Liability Assessment", link: "/site-intelligence/cil-liability-assessment", desc: "Exemption checks & liability calculation." },
@@ -423,17 +432,18 @@ const SiteIntelligenceHub = () => {
                 items: [
                   { name: "Biodiversity Net Gain", link: "/site-intelligence/biodiversity-net-gain", desc: "BNG assessment & strategy." },
                   { name: "Energy Statement", link: "/site-intelligence/energy-statement", desc: "Sustainability & carbon analysis." },
-                  { name: "Flood Risk Assessment", link: "/site-intelligence/flood-risk-assessment", desc: "Planning-ready FRA." },
-                  { name: "Geotechnical Desk Study", link: "/site-intelligence/geotechnical-desk-study", desc: "Ground condition analysis." }
+                  { name: "Air Quality Screening", link: "/site-intelligence/air-quality-screening", desc: "IAQM/EPUK screening & AQMA analysis." }
                 ]
               },
               {
                 cat: "Specialist Surveys",
                 items: [
                   { name: "Heritage Impact Assessment", link: "/site-intelligence/heritage-impact-assessment", desc: "Listed building & CA analysis." },
-
                   { name: "Transport Statement", link: "/site-intelligence/transport-statement", desc: "Highways & accessibility." },
-                  { name: "Parking Survey", link: "/site-intelligence/parking-survey", desc: "Evidence-based provision." }
+                  { name: "Parking Survey", link: "/site-intelligence/parking-survey", desc: "Evidence-based provision." },
+                  { name: "Noise Impact Assessment", link: "/site-intelligence/noise-impact-assessment", desc: "BS 4142/BS 8233 acoustic screening." },
+                  { name: "Daylight & Sunlight Assessment", link: "/site-intelligence/daylight-sunlight-assessment", desc: "BRE 209 impact analysis." },
+                  { name: "Arboricultural Desk Study", link: "/site-intelligence/tree-survey", desc: "BS 5837 tree assessment & RPA mapping." }
                 ]
               },
               {

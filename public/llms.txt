@@ -2,7 +2,7 @@
 > AI-powered structural engineering, construction, and site intelligence services nationwide across England and Wales.
 
 ## About
-PF & Co Construction is an engineering-led construction firm specialising in structural design, precision construction, and data-driven site intelligence. We combine AI-optimised design tools with hands-on engineering expertise to deliver safer, faster, and more cost-effective outcomes. PI insured, with 24-hour turnaround on quotes. Our multi-agent AI system interrogates 58 authoritative data sources across 11 constraint categories to produce planning-ready reports in 48 hours.
+PF & Co Construction delivers AI-powered site intelligence and planning reports across England and Wales. Our multi-agent AI system interrogates 58 authoritative data sources across 11 constraint categories to produce planning-ready reports in 48 hours. Fixed pricing, 48-hour turnaround.
 
 ## Services
 
@@ -32,6 +32,10 @@ Data-driven pre-construction screening reports interrogating 58 authoritative da
 - Concept Feasibility Study — GDV, cost appraisal, viability (EA £795 / Stripe £795)
 - Pre-Application Advice Pack — LPA pre-submission engagement (EA £245 / Stripe £245)
 - Arboricultural Desk Study — Desktop tree categorisation, RPAs, impact assessment (EA £575 / Stripe £575)
+- Air Quality Screening — Air quality impact assessment for development proposals (EA £395 / Stripe £395)
+- Noise Impact Assessment — Acoustic impact assessment and mitigation strategy (EA £445 / Stripe £445)
+- Daylight & Sunlight Assessment — BRE 209 compliant daylight/sunlight analysis (EA £595 / Stripe £595)
+- Phase 1 Contamination Assessment — Preliminary risk assessment per BS 10175 (EA £595 / Stripe £595)
 - Building Control — Part A structural calculations (project-dependent, contact for quote)
 - Party Wall Assessment — Engineering-led party wall assessment (project-dependent, contact for quote)
 EA = Early Access price shown on website. Stripe = actual checkout price. All prices exclude VAT.
@@ -41,19 +45,19 @@ Sample reports: https://www.pfcoconstruction.co.uk/samples/{slug}-sample.pdf
 
 ### Report Packages (Bundles)
 Pre-construction diligence bundles at additional savings:
-- The Complete Intelligence (16 reports, all phases): £6,995 EA — Save 55%
-- The Full Planning Suite (8 planning application reports): £3,495 EA — Save 37%
-- The Developer Due Diligence (5 reports, site acquisition): £3,095 EA — Save 39%
-- The Self-Build Starter (4 reports, plot assessment): £3,050 EA — Save 32%
-- The Appeal-Ready Pack (5 reports, submission + appeal): £2,735 EA — Save 35%
-- The Architect Support Pack (5 reports, design evidence): £2,625 EA — Save 39%
-- The Triple Threat (3 core reports, most popular entry): £2,375 EA — Save 36%
-- The Construction Readiness Pack (2 post-permission reports): £1,195 EA — Save 32%
+- The Complete Intelligence (20 reports, all phases): £6,995 EA — Save 63%
+- The Full Planning Suite (7 planning application reports): £3,495 EA — Save 52%
+- The Developer Due Diligence (5 reports, site acquisition): £3,095 EA — Save 52%
+- The Self-Build Starter (4 reports, plot assessment): £3,050 EA — Save 45%
+- The Appeal-Ready Pack (4 reports, submission + appeal): £2,635 EA — Save 40%
+- The Architect Support Pack (4 reports, design evidence): £2,625 EA — Save 44%
+- The Triple Threat (3 core reports, most popular entry): £2,375 EA — Save 48%
+- The Construction Readiness Pack (2 post-permission reports): £1,195 EA — Save 52%
 URL: https://www.pfcoconstruction.co.uk/report-packages
 Plans & Pricing Roadmap: https://www.pfcoconstruction.co.uk/plans-and-pricing
 
 ### AI Innovation
-Multi-agent AI system with 112 specialised agents across 7 categories (Data Acquisition, Analysis & Scoring, Market Intelligence, Structural Engineering, Construction & Project, Platform & Operations, Computer Vision). Interrogates 58 authoritative data sources across 11 constraint categories including BGS, Environment Agency, Historic England, Natural England, Land Registry, National Grid, NaPTAN, CQC, GIAS, DNO capacity heatmaps, and UK House Price Index.
+Multi-agent AI system with 112 specialised agents across 7 categories (Data Acquisition, Analysis & Scoring, Market Intelligence, Structural Engineering, Construction & Project, Platform & Operations, Quality Assurance). Interrogates 58 authoritative data sources across 11 constraint categories including BGS, Environment Agency, Historic England, Natural England, Land Registry, National Grid, NaPTAN, CQC, GIAS, DNO capacity heatmaps, and UK House Price Index.
 URL: https://www.pfcoconstruction.co.uk/ai-innovation
 
 ### Subscriptions
@@ -81,7 +85,7 @@ Expert articles on structural engineering, planning, and site intelligence:
 
 ## Key URLs
 - Homepage: https://www.pfcoconstruction.co.uk
-- Plans & Pricing: https://www.pfcoconstruction.co.uk/how-it-works
+- Plans & Pricing: https://www.pfcoconstruction.co.uk/plans-and-pricing
 - Report Packages: https://www.pfcoconstruction.co.uk/report-packages
 - Order Reports: https://www.pfcoconstruction.co.uk/order-report
 - Blog / Insights: https://www.pfcoconstruction.co.uk/blog

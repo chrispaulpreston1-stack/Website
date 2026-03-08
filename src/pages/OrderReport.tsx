@@ -30,6 +30,10 @@ import {
   HardHat,
   Ruler,
   Crown,
+  Wind,
+  Volume2,
+  Sun,
+  FlaskConical,
 } from 'lucide-react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -69,6 +73,10 @@ const reportIcons: Record<string, React.ReactNode> = {
   'pre-construction-design-review': <Ruler className="text-brand-primary" />,
   'building-control': <ShieldCheck className="text-emerald-600" />,
   'party-wall-assessment': <Building2 className="text-indigo-500" />,
+  'air-quality-screening': <Wind className="text-emerald-500" />,
+  'noise-impact-assessment': <Volume2 className="text-amber-500" />,
+  'daylight-sunlight-assessment': <Sun className="text-yellow-500" />,
+  'phase-1-contamination': <FlaskConical className="text-red-500" />,
 };
 
 const reportColors: Record<string, string> = {
@@ -90,6 +98,10 @@ const reportColors: Record<string, string> = {
   'pre-construction-design-review': 'border-brand-primary bg-brand-primary/5',
   'building-control': 'border-emerald-600 bg-emerald-50/30',
   'party-wall-assessment': 'border-indigo-500 bg-indigo-50/30',
+  'air-quality-screening': 'border-emerald-500 bg-emerald-50/30',
+  'noise-impact-assessment': 'border-amber-500 bg-amber-50/30',
+  'daylight-sunlight-assessment': 'border-yellow-500 bg-yellow-50/30',
+  'phase-1-contamination': 'border-red-500 bg-red-50/30',
 };
 
 // Purchasable reports only (exclude project-dependent)
@@ -271,7 +283,7 @@ const OrderReport = () => {
     <div className="pt-32 pb-24 bg-brand-surface min-h-screen">
       <PageSEO
         title="Order Report | Site Intelligence | PF & Co"
-        description="Order planning-ready site intelligence reports from PF & Co. Choose from 16 professional reports, 8 bundles, or The Complete Intelligence package."
+        description="Order planning-ready site intelligence reports from PF & Co. Choose from 20 professional reports, 8 bundles, or The Complete Intelligence package."
         path="/order-report"
         jsonLd={{
           '@type': 'Product',

@@ -3,8 +3,12 @@ import { TreePine, Check, ArrowRight, Info, HelpCircle, Clock, Zap, ShieldCheck,
 import { Link } from 'react-router-dom';
 import PageSEO from '../components/PageSEO';
 import ComparisonTable from '../components/ComparisonTable';
+import { getReportBySlug } from '../data/reports';
+
+const formatPrice = (n: number) => n.toLocaleString('en-GB');
 
 const TreeSurvey = () => {
+  const report = getReportBySlug('tree-survey')!;
   const features = [
     { title: "TPO & Conservation Area Check", desc: "Identification of all Tree Preservation Orders and Conservation Area protections affecting the site and adjacent land." },
     { title: "BS 5837 Categorisation", desc: "Trees assessed and categorised A (high), B (moderate), C (low), or U (unsuitable for retention) using LiDAR canopy modelling and aerial imagery per BS 5837:2012." },
@@ -55,7 +59,7 @@ const TreeSurvey = () => {
             name: 'Arboricultural Desk Study',
             description: 'Desktop arboricultural assessment with BS 5837 categorisation, LiDAR canopy analysis, and RPA mapping.',
             brand: { '@type': 'Organization', name: 'PF & Co Construction' },
-            offers: { '@type': 'Offer', price: '575', priceCurrency: 'GBP' },
+            offers: { '@type': 'Offer', price: String(report.earlyAccessPrice), priceCurrency: 'GBP' },
           },
           {
             '@type': 'FAQPage',
@@ -124,8 +128,8 @@ const TreeSurvey = () => {
                   Early Access Pricing - Up to 40% off.
                 </div>
                 <div className="flex items-baseline gap-3 mb-1">
-                  <span className="text-3xl font-mono font-bold text-white">Early Access: £575</span>
-                  <span className="text-base text-white/50 line-through font-medium">Was £960</span>
+                  <span className="text-3xl font-mono font-bold text-white">Early Access: £{formatPrice(report.earlyAccessPrice)}</span>
+                  <span className="text-base text-white/50 line-through font-medium">Was £{formatPrice(report.rrp)}</span>
                 </div>
                 <span className="text-xs text-white/70 italic">First 50 reports at early access pricing</span>
               </div>

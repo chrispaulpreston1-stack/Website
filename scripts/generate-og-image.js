@@ -103,7 +103,7 @@ const svg = `<svg width="${WIDTH}" height="${HEIGHT}" xmlns="http://www.w3.org/2
     pfcoconstruction.co.uk
   </text>
   <text x="1120" y="607" font-family="system-ui, -apple-system, sans-serif" font-weight="400" font-size="16" fill="#6b7280" text-anchor="end">
-    PI Insured | Nationwide England &amp; Wales
+    58 Data Sources | Nationwide England &amp; Wales
   </text>
 
   <!-- Grid pattern (subtle) -->

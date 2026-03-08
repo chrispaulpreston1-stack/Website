@@ -2,9 +2,9 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'motion/react';
 import {
   ArrowRight, Check, Search, Layers, FileText, Award, HardHat,
-  ChevronRight, Crown, AlertTriangle, MapPin, Shield, Clock,
-  Landmark, Droplets, TreePine, Zap, Scale, ArrowDown,
-  Building2, Ruler, Target, TrendingUp, Compass, Hammer
+  ChevronRight, Crown, AlertTriangle, MapPin, Clock,
+  Zap, ArrowDown,
+  Ruler, Target, TrendingUp, Compass, Hammer
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import PageSEO from '../components/PageSEO';
@@ -32,6 +32,9 @@ const phaseReports: Record<string, PhaseReport[]> = {
     { slug: 'geotechnical-desk-study', whatItTellsYou: 'Ground conditions, geology, contamination, foundation risk.', midMarket: '£800-£1,500' },
     { slug: 'flood-risk-assessment', whatItTellsYou: '7 flood sources, Decision Risk Scores (0-10), SuDS viability.', midMarket: '£750-£1,500' },
     { slug: 'feasibility-study', whatItTellsYou: 'Development viability, GDV estimate, cost appraisal.', midMarket: '£2,000-£5,000' },
+    { slug: 'air-quality-screening', whatItTellsYou: 'IAQM screening assessment. Construction dust risk. Receptor sensitivity mapping. Mitigation measures for planning condition discharge.', midMarket: '£800-£2,500' },
+    { slug: 'noise-impact-assessment', whatItTellsYou: 'BS 4142 and BS 8233 assessment. Background sound survey analysis. Internal noise criteria. Glazing and ventilation specifications.', midMarket: '£1,200-£3,500' },
+    { slug: 'phase-1-contamination', whatItTellsYou: 'Preliminary risk assessment per BS 10175. Conceptual Site Model. Contamination source-pathway-receptor analysis. Phase 2 recommendations.', midMarket: '£1,200-£3,000' },
   ],
   strategy: [
     { slug: 'pre-application-advice', whatItTellsYou: 'Targeted enquiry pack for LPA pre-submission engagement.', midMarket: '£750-£2,000' },
@@ -46,6 +49,7 @@ const phaseReports: Record<string, PhaseReport[]> = {
     { slug: 'transport-statement', whatItTellsYou: 'Highways, accessibility, trip generation.', midMarket: '£1,500-£3,000', required: 'If access issues' },
     { slug: 'parking-survey', whatItTellsYou: 'Evidence-based parking demand & provision.', midMarket: '£1,000-£2,000', required: 'If parking pressure' },
     { slug: 'tree-survey', whatItTellsYou: 'Desktop tree categorisation, RPAs, impact assessment.', midMarket: '£400-£900', required: 'If TPOs/trees' },
+    { slug: 'daylight-sunlight-assessment', whatItTellsYou: 'BRE Site Layout Planning methodology. Vertical Sky Component analysis. Annual/Winter Probable Sunlight Hours. Overshadowing assessment.', midMarket: '£1,500-£4,000' },
   ],
   'post-permission': [
     { slug: 'pre-construction-design-review', whatItTellsYou: '95-check design coordination review — catches clashes before they become site problems.', midMarket: '£1,500-£3,000' },
@@ -430,7 +434,7 @@ const HowItWorks = () => {
                 name: 'How much does a site feasibility report cost?',
                 acceptedAnswer: {
                   '@type': 'Answer',
-                  text: 'The mid-market cost for an equivalent report is between £1,000 to £4,000. Our Early Access price is £500. This provides you with 22+ environmental and planning constraints, a Planning Friction Score, and a Buildability Rating.'
+                  text: 'The mid-market cost for an equivalent report is between £1,000 to £4,000. At Early Access pricing, ours is a fraction of this. It provides you with 22+ environmental and planning constraints, a Planning Friction Score, and a Buildability Rating.'
                 }
               },
               {
@@ -643,12 +647,12 @@ const HowItWorks = () => {
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-4 relative z-10">The Complete Intelligence</h2>
             <p className="text-white/80 mb-8 max-w-2xl mx-auto lg:mx-0 text-lg font-light relative z-10">
-              For sites where you can't afford to miss anything. All 16 purchasable reports, every phase covered, one price.
+              For sites where you can't afford to miss anything. All 20 purchasable reports, every phase covered, one price.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-4 relative z-10">
-              <span className="text-white/60 line-through text-lg">RRP: £15,625</span>
+              <span className="text-white/60 line-through text-lg">RRP: £19,020</span>
               <span className="text-4xl sm:text-5xl font-bold">£6,995</span>
-              <span className="bg-gradient-to-r from-emerald-500 to-emerald-400 text-white shadow-[0_0_20px_rgba(52,211,153,0.4)] px-4 py-1.5 rounded-full text-sm font-bold uppercase tracking-wider">Save 55%</span>
+              <span className="bg-gradient-to-r from-emerald-500 to-emerald-400 text-white shadow-[0_0_20px_rgba(52,211,153,0.4)] px-4 py-1.5 rounded-full text-sm font-bold uppercase tracking-wider">Save 63%</span>
             </div>
             <p className="text-white/60 text-sm mb-8 relative z-10">Mid-market equivalent: £12,550-£35,400</p>
             <div className="flex flex-col sm:flex-row justify-center lg:justify-start items-center gap-4 relative z-10">
@@ -688,7 +692,7 @@ const HowItWorks = () => {
           </div>
         <div className="grid md:grid-cols-2 gap-6">
           {[
-            { who: 'Homeowner', desc: 'Planning an extension or new build?', before: 'Sees 16 reports, doesn\'t know where to start.', after: 'Sees "Start with SFR" and follows 5 clear steps.', icon: MapPin, gradient: 'from-teal-500 to-cyan-600' },
+            { who: 'Homeowner', desc: 'Planning an extension or new build?', before: 'Sees 20 reports, doesn\'t know where to start.', after: 'Sees "Start with SFR" and follows 5 clear steps.', icon: MapPin, gradient: 'from-teal-500 to-cyan-600' },
             { who: 'Architect', desc: 'Need evidence documents for a submission?', before: 'Unsure which evidence docs they need for submission.', after: 'Phase 3 shows exactly what supports their drawings.', icon: Ruler, gradient: 'from-violet-500 to-purple-600' },
             { who: 'Developer', desc: 'Evaluating a site for acquisition?', before: 'Has to figure out which bundle fits their stage.', after: 'Phase 1 bundles are clearly labelled "before you buy".', icon: TrendingUp, gradient: 'from-blue-500 to-indigo-600' },
             { who: 'Self-Builder', desc: 'From plot to build — all the reports you need.', before: 'Overwhelmed by options, no clear starting point.', after: 'Self-Build Starter at Phase 1, Construction Readiness at Phase 4 — a clear path.', icon: Hammer, gradient: 'from-amber-500 to-orange-600' },
@@ -735,7 +739,7 @@ const HowItWorks = () => {
         <div className="space-y-4">
           {[
             { q: "What reports do I need for planning permission in the UK?", a: "This depends heavily on your site. Our recommendation is always to start with the Site Feasibility Report (SFR) in Phase 1. It screens your site against 22+ constraints and explicitly tells you which Phase 3 application reports are required for your local planning authority." },
-            { q: "How much does a site feasibility report cost?", a: "The mid-market cost for an equivalent report is between £1,000 to £4,000. Our Early Access price is £500. This provides you with 22+ environmental and planning constraints, a Planning Friction Score, and a Buildability Rating." },
+            { q: "How much does a site feasibility report cost?", a: "The mid-market cost for an equivalent report is between £1,000 to £4,000. At Early Access pricing, ours is a fraction of this. It provides you with 22+ environmental and planning constraints, a Planning Friction Score, and a Buildability Rating." },
             { q: "Can I submit evidence after a planning appeal?", a: "Following SI 2026/122, planning appeals will no longer accept new evidence. The application you submit is the case the Inspector decides. Our technical evidence documents are built from day one to be appeal-ready." },
           ].map((faq, i) => (
              <div key={i} className="p-6 rounded-2xl bg-white shadow-sm border border-gray-200">

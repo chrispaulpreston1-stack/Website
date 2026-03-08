@@ -1,6 +1,5 @@
-import React from 'react';
 import { motion } from 'motion/react';
-import { Check, ArrowRight, Crown, Sparkles, Shield, Clock, ChevronRight } from 'lucide-react';
+import { Check, ArrowRight, Crown, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import PageSEO from '../components/PageSEO';
 import { bundles, reports, getBundleReports, type ReportBundle } from '../data/reports';
@@ -102,7 +101,7 @@ const ReportPackages = () => {
     <div className="pt-32 pb-24 bg-brand-surface min-h-screen">
       <PageSEO
         title="Report Packages & Bundles | PF & Co Engineering"
-        description="Save up to 55% with our report bundles. From the Triple Threat starter to The Complete Intelligence — every report we produce in one package."
+        description="Save up to 63% with our report bundles. From the Triple Threat starter to The Complete Intelligence — every report we produce in one package."
         path="/report-packages"
         jsonLd={bundles.map(b => ({
           '@type': 'Product' as const,
@@ -126,7 +125,7 @@ const ReportPackages = () => {
           Report <span className="italic font-accent font-light text-brand-primary/60">Packages.</span>
         </h1>
         <p className="text-xl text-brand-primary/70 leading-relaxed max-w-3xl mx-auto">
-          Pre-construction diligence is cheaper when bundled. Save up to 55% compared to ordering individually — delivered with our signature 48-hour turnaround.
+          Pre-construction diligence is cheaper when bundled. Save up to 63% compared to ordering individually — delivered with our signature 48-hour turnaround.
         </p>
       </section>
 
@@ -275,11 +274,13 @@ const ReportPackages = () => {
             </thead>
             <tbody>
               {[
-                { name: 'The Complete Intelligence', reports: 16, ea: '£6,995', mid: '£12,550–£35,400', premium: '£35,900–£105,500' },
+                { name: 'The Complete Intelligence', reports: 20, ea: '£6,995', mid: '£12,550–£35,400', premium: '£35,900–£105,500' },
                 { name: 'The Full Planning Suite', reports: 7, ea: '£3,495', mid: '£6,050–£18,500', premium: '£18,500–£51,000' },
                 { name: 'The Developer Due Diligence', reports: 5, ea: '£3,095', mid: '£5,050–£15,500', premium: '£14,500–£58,000' },
+                { name: 'The Self-Build Starter', reports: 4, ea: '£3,050', mid: '£4,500–£12,000', premium: '£12,000–£35,000' },
                 { name: 'The Triple Threat', reports: 3, ea: '£2,375', mid: '£2,550–£7,000', premium: '£8,000–£23,000' },
-                { name: 'The Appeal-Ready Pack', reports: 4, ea: '£2,735', mid: '£2,750–£11,000', premium: '£12,000–£33,000' },
+                { name: 'The Appeal-Ready Pack', reports: 4, ea: '£2,635', mid: '£2,750–£11,000', premium: '£12,000–£33,000' },
+                { name: 'The Architect Support Pack', reports: 4, ea: '£2,625', mid: '£3,500–£10,000', premium: '£10,000–£30,000' },
                 { name: 'The Construction Readiness', reports: 2, ea: '£1,195', mid: '£2,700–£6,000', premium: '£6,000–£18,000' },
               ].map((row, i) => (
                 <tr key={i} className="border-b border-brand-primary/5">

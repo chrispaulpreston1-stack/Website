@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { HelmetProvider, Helmet } from 'react-helmet-async';
@@ -22,40 +22,45 @@ import {
 // Components
 import PageSEO from './components/PageSEO';
 
-// Pages
+// Eager-loaded (common entry points)
 import Home from './pages/Home';
-import StructuralEngineering from './pages/StructuralEngineering';
-import BuildingControl from './pages/BuildingControl';
-import PartyWallAssessment from './pages/PartyWallAssessment';
-import Construction from './pages/Construction';
-import Blog from './pages/Blog';
-import BlogArticle from './pages/BlogArticle';
-import AIInnovation from './pages/AIInnovation';
-import Subscriptions from './pages/Subscriptions';
-import SiteIntelligenceHub from './pages/SiteIntelligenceHub';
-import FloodRiskAssessment from './pages/FloodRiskAssessment';
-import GeotechnicalDeskStudy from './pages/GeotechnicalDeskStudy';
-import SiteFeasibilityReport from './pages/SiteFeasibilityReport';
-import BiodiversityNetGain from './pages/BiodiversityNetGain';
-import ConstructionManagementPlan from './pages/ConstructionManagementPlan';
-import DesignAndAccessStatement from './pages/DesignAndAccessStatement';
-import EnergyStatement from './pages/EnergyStatement';
-import FeasibilityStudy from './pages/FeasibilityStudy';
-import HeritageImpactAssessment from './pages/HeritageImpactAssessment';
-import ParkingSurvey from './pages/ParkingSurvey';
-import PlanningStatement from './pages/PlanningStatement';
-import PreApplicationAdvice from './pages/PreApplicationAdvice';
-import PreConstructionDesignReview from './pages/PreConstructionDesignReview';
-import TransportStatement from './pages/TransportStatement';
-import TreeSurvey from './pages/TreeSurvey';
 
-import CILLiabilityAssessment from './pages/CILLiabilityAssessment';
-import OrderReport from './pages/OrderReport';
-import OrderSuccess from './pages/OrderSuccess';
-import PrivacyPolicy from './pages/PrivacyPolicy';
-import TermsOfService from './pages/TermsOfService';
-import ReportPackages from './pages/ReportPackages';
-import HowItWorks from './pages/HowItWorks';
+// Lazy-loaded pages
+const StructuralEngineering = lazy(() => import('./pages/StructuralEngineering'));
+const BuildingControl = lazy(() => import('./pages/BuildingControl'));
+const PartyWallAssessment = lazy(() => import('./pages/PartyWallAssessment'));
+const Construction = lazy(() => import('./pages/Construction'));
+const Blog = lazy(() => import('./pages/Blog'));
+const BlogArticle = lazy(() => import('./pages/BlogArticle'));
+const AIInnovation = lazy(() => import('./pages/AIInnovation'));
+const Subscriptions = lazy(() => import('./pages/Subscriptions'));
+const SiteIntelligenceHub = lazy(() => import('./pages/SiteIntelligenceHub'));
+const FloodRiskAssessment = lazy(() => import('./pages/FloodRiskAssessment'));
+const GeotechnicalDeskStudy = lazy(() => import('./pages/GeotechnicalDeskStudy'));
+const SiteFeasibilityReport = lazy(() => import('./pages/SiteFeasibilityReport'));
+const BiodiversityNetGain = lazy(() => import('./pages/BiodiversityNetGain'));
+const ConstructionManagementPlan = lazy(() => import('./pages/ConstructionManagementPlan'));
+const DesignAndAccessStatement = lazy(() => import('./pages/DesignAndAccessStatement'));
+const EnergyStatement = lazy(() => import('./pages/EnergyStatement'));
+const FeasibilityStudy = lazy(() => import('./pages/FeasibilityStudy'));
+const HeritageImpactAssessment = lazy(() => import('./pages/HeritageImpactAssessment'));
+const ParkingSurvey = lazy(() => import('./pages/ParkingSurvey'));
+const PlanningStatement = lazy(() => import('./pages/PlanningStatement'));
+const PreApplicationAdvice = lazy(() => import('./pages/PreApplicationAdvice'));
+const PreConstructionDesignReview = lazy(() => import('./pages/PreConstructionDesignReview'));
+const TransportStatement = lazy(() => import('./pages/TransportStatement'));
+const TreeSurvey = lazy(() => import('./pages/TreeSurvey'));
+const CILLiabilityAssessment = lazy(() => import('./pages/CILLiabilityAssessment'));
+const NoiseImpactAssessment = lazy(() => import('./pages/NoiseImpactAssessment'));
+const AirQualityScreening = lazy(() => import('./pages/AirQualityScreening'));
+const Phase1Contamination = lazy(() => import('./pages/Phase1Contamination'));
+const DaylightSunlightAssessment = lazy(() => import('./pages/DaylightSunlightAssessment'));
+const OrderReport = lazy(() => import('./pages/OrderReport'));
+const OrderSuccess = lazy(() => import('./pages/OrderSuccess'));
+const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
+const TermsOfService = lazy(() => import('./pages/TermsOfService'));
+const ReportPackages = lazy(() => import('./pages/ReportPackages'));
+const HowItWorks = lazy(() => import('./pages/HowItWorks'));
 
 // --- Global Components ---
 
@@ -330,6 +335,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-brand-surface flex items-center justify-center text-brand-primary hover:bg-brand-accent hover:text-brand-primary transition-all"
+                aria-label="Facebook"
               >
                 <Facebook size={18} />
               </a>
@@ -338,6 +344,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-brand-surface flex items-center justify-center text-brand-primary hover:bg-brand-accent hover:text-brand-primary transition-all"
+                aria-label="Instagram"
               >
                 <Instagram size={18} />
               </a>
@@ -377,7 +384,7 @@ const Footer = () => {
             <h4 className="font-bold mb-6">Company</h4>
             <ul className="space-y-3 text-sm text-brand-primary/60">
               <li><Link to="/" className="hover:text-brand-accent transition-colors">Home</Link></li>
-              <li><a href="/blog/" className="hover:text-brand-accent transition-colors">Insights</a></li>
+              <li><Link to="/blog" className="hover:text-brand-accent transition-colors">Insights</Link></li>
               <li><Link to="/insights/what-reports-do-you-need-for-planning-permission" className="hover:text-brand-accent transition-colors">Planning Guide</Link></li>
               <li><Link to="/ai-innovation" className="hover:text-brand-accent transition-colors">AI Innovation</Link></li>
               <li><Link to="/contact" className="hover:text-brand-accent transition-colors">Contact</Link></li>
@@ -408,7 +415,7 @@ export default function App() {
         <div className="min-h-screen selection:bg-brand-accent/30">
           <Helmet>
             <title>PF & Co | AI-Powered Structural Engineering & Construction</title>
-            <meta name="description" content="Precision structural engineering and construction services nationwide across England and Wales. AI-optimised design, fixed quotes in 24hrs. ICE registered, PI insured." />
+            <meta name="description" content="AI-powered site intelligence and planning reports across England and Wales. 58 data sources, 48-hour turnaround, fixed pricing." />
             <meta name="keywords" content="structural engineer nationwide, structural calculations uk, basement impact assessment, site feasibility report, AI structural engineering" />
             <link rel="canonical" href="https://www.pfcoconstruction.co.uk" />
             <meta property="og:title" content="PF & Co | Engineering-Led Construction" />
@@ -422,7 +429,7 @@ export default function App() {
                 "@context": "https://schema.org",
                 "@type": "LocalBusiness",
                 "name": "PF & Co Construction",
-                "description": "AI-powered structural engineering and construction services nationwide across England and Wales.",
+                "description": "AI-powered site intelligence and planning reports across England and Wales.",
                 "url": "https://www.pfcoconstruction.co.uk",
                 "telephone": "01483 363210",
                 "email": "info@pfcoconstruction.co.uk",
@@ -438,6 +445,7 @@ export default function App() {
           </Helmet>
           <Navbar />
           <main>
+            <Suspense fallback={<div className="min-h-screen flex items-center justify-center"><div className="w-8 h-8 border-2 border-brand-primary/20 border-t-brand-primary rounded-full animate-spin" /></div>}>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/structural-engineering" element={<StructuralEngineering />} />
@@ -462,6 +470,10 @@ export default function App() {
               <Route path="/site-intelligence/tree-survey" element={<TreeSurvey />} />
 
               <Route path="/site-intelligence/cil-liability-assessment" element={<CILLiabilityAssessment />} />
+              <Route path="/site-intelligence/noise-impact-assessment" element={<NoiseImpactAssessment />} />
+              <Route path="/site-intelligence/air-quality-screening" element={<AirQualityScreening />} />
+              <Route path="/site-intelligence/phase-1-contamination" element={<Phase1Contamination />} />
+              <Route path="/site-intelligence/daylight-sunlight-assessment" element={<DaylightSunlightAssessment />} />
               <Route path="/subscriptions" element={<Subscriptions />} />
               <Route path="/report-packages" element={<ReportPackages />} />
               <Route path="/plans-and-pricing" element={<HowItWorks />} />
@@ -485,6 +497,7 @@ export default function App() {
                 </div>
               } />
             </Routes>
+            </Suspense>
           </main>
           <Footer />
 

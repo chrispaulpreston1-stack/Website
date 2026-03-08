@@ -4,8 +4,12 @@ import { Link } from 'react-router-dom';
 import PageSEO from '../components/PageSEO';
 import ComparisonTable from '../components/ComparisonTable';
 import VideoExplainer from '../components/VideoExplainer';
+import { getReportBySlug } from '../data/reports';
+
+const formatPrice = (n: number) => n.toLocaleString('en-GB');
 
 const GeotechnicalDeskStudy = () => {
+  const report = getReportBySlug('geotechnical-desk-study')!;
   const features = [
     { title: "BGS Geological Mapping", desc: "Bedrock, superficial deposits, drift geology interpretation. We identify the geological formations beneath your site." },
     { title: "Borehole & Trial Pit Data", desc: "BGS borehole records within proximity of the site, including strata logs. Historical data provides direct evidence of subsurface conditions." },
@@ -77,7 +81,7 @@ const GeotechnicalDeskStudy = () => {
             name: 'Geotechnical Desk Study',
             description: 'Comprehensive desktop ground investigation analysing geology, groundwater, contamination history, and foundation risk.',
             brand: { '@type': 'Organization', name: 'PF & Co Site Intelligence' },
-            offers: { '@type': 'Offer', price: '900', priceCurrency: 'GBP' },
+            offers: { '@type': 'Offer', price: String(report.earlyAccessPrice), priceCurrency: 'GBP' },
           },
           {
             '@type': 'VideoObject',
@@ -155,8 +159,8 @@ const GeotechnicalDeskStudy = () => {
                   Early Access Pricing - Up to 40% off.
                 </div>
                 <div className="flex items-baseline gap-3 mb-1">
-                  <span className="text-3xl font-mono font-bold text-brand-primary">Early Access: £900</span>
-                  <span className="text-base text-brand-primary/60 line-through font-medium">Was £1,500</span>
+                  <span className="text-3xl font-mono font-bold text-brand-primary">Early Access: £{formatPrice(report.earlyAccessPrice)}</span>
+                  <span className="text-base text-brand-primary/60 line-through font-medium">Was £{formatPrice(report.rrp)}</span>
                 </div>
                 <span className="text-xs text-brand-primary/70 italic">First 50 reports at early access pricing</span>
               </div>

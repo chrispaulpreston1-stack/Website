@@ -39,8 +39,8 @@ const routes = [
   },
   {
     path: '/building-control',
-    title: 'BC Readiness Check | £150 | PF & Co',
-    description: 'Dedicated BC Readiness Check ensuring your drawings, specifications, and calculations are complete before Building Control submission. From £150.',
+    title: 'BC Readiness Check | Project-Dependent | PF & Co',
+    description: 'Dedicated BC Readiness Check ensuring your drawings, specifications, and calculations are complete before Building Control submission. Project-dependent pricing.',
   },
   {
     path: '/party-wall',
@@ -149,9 +149,33 @@ const routes = [
     jsonLd: { '@type': 'Product', name: 'CIL Liability Assessment', brand: { '@type': 'Organization', name: 'PF & Co Construction' }, offers: { '@type': 'Offer', price: '295', priceCurrency: 'GBP', availability: 'https://schema.org/InStock' } },
   },
   {
+    path: '/site-intelligence/noise-impact-assessment',
+    title: 'Noise Impact Assessment | £445 | PF & Co Construction',
+    description: 'BS 4142/BS 8233/ProPG noise screening for residential schemes near roads, railways, or commercial uses.',
+    jsonLd: { '@type': 'Product', name: 'Noise Impact Assessment', brand: { '@type': 'Organization', name: 'PF & Co Construction' }, offers: { '@type': 'Offer', price: '445', priceCurrency: 'GBP', availability: 'https://schema.org/InStock' } },
+  },
+  {
+    path: '/site-intelligence/air-quality-screening',
+    title: 'Air Quality Screening | £395 | PF & Co Construction',
+    description: 'IAQM/EPUK air quality screening with AQMA proximity analysis and construction dust risk assessment.',
+    jsonLd: { '@type': 'Product', name: 'Air Quality Screening', brand: { '@type': 'Organization', name: 'PF & Co Construction' }, offers: { '@type': 'Offer', price: '395', priceCurrency: 'GBP', availability: 'https://schema.org/InStock' } },
+  },
+  {
+    path: '/site-intelligence/phase-1-contamination',
+    title: 'Phase 1 Contamination Assessment | £595 | PF & Co Construction',
+    description: 'LCRM 2020 / BS 10175 Preliminary Risk Assessment with Conceptual Site Model and remediation screening.',
+    jsonLd: { '@type': 'Product', name: 'Phase 1 Contamination Assessment', brand: { '@type': 'Organization', name: 'PF & Co Construction' }, offers: { '@type': 'Offer', price: '595', priceCurrency: 'GBP', availability: 'https://schema.org/InStock' } },
+  },
+  {
+    path: '/site-intelligence/daylight-sunlight-assessment',
+    title: 'Daylight & Sunlight Assessment | £595 | PF & Co Construction',
+    description: 'BRE 209 daylight/sunlight impact assessment including VSC, APSH, NSL, and sun-on-ground analysis.',
+    jsonLd: { '@type': 'Product', name: 'Daylight & Sunlight Assessment', brand: { '@type': 'Organization', name: 'PF & Co Construction' }, offers: { '@type': 'Offer', price: '595', priceCurrency: 'GBP', availability: 'https://schema.org/InStock' } },
+  },
+  {
     path: '/report-packages',
     title: 'Report Packages & Bundles | PF & Co Engineering',
-    description: 'Save up to 55% with our report bundles. From the Triple Threat starter to The Complete Intelligence — every report we produce in one package.',
+    description: 'Save up to 63% with our report bundles. From the Triple Threat starter to The Complete Intelligence — every report we produce in one package.',
   },
   {
     path: '/plans-and-pricing',
@@ -161,7 +185,7 @@ const routes = [
   {
     path: '/order-report',
     title: 'Order Report | Site Intelligence | PF & Co',
-    description: 'Order planning-ready site intelligence reports from PF & Co. Choose from 16 professional reports, 8 bundles, or The Complete Intelligence package.',
+    description: 'Order planning-ready site intelligence reports from PF & Co. Choose from 20 professional reports, 8 bundles, or The Complete Intelligence package.',
   },
   {
     path: '/subscriptions',
@@ -171,7 +195,7 @@ const routes = [
   {
     path: '/ai-innovation',
     title: 'AI Innovation | PF & Co Structural Engineering',
-    description: 'Explore our multi-agent AI system and generative structural design tools that optimise safety and reduce material waste across 58 data sources.',
+    description: 'Explore our multi-agent AI system interrogating 58 authoritative data sources to produce planning-ready site intelligence reports in 48 hours.',
   },
   {
     path: '/blog',
@@ -192,6 +216,12 @@ const routes = [
     path: '/terms-of-service',
     title: 'Terms of Service | PF & Co Construction',
     description: 'Terms and conditions governing the use of PF & Co Construction website and services, including report orders and subscriptions.',
+  },
+  {
+    path: '/order-success',
+    title: 'Order Confirmation | Site Intelligence',
+    description: 'Your report order has been confirmed.',
+    noindex: true,
   },
 ];
 
@@ -270,6 +300,11 @@ function injectMeta(template, route) {
   // Add canonical link (before </head>)
   if (!html.includes('rel="canonical"')) {
     html = html.replace('</head>', `  <link rel="canonical" href="${canonical}" />\n</head>`);
+  }
+
+  // Add noindex meta tag for pages that should not be indexed (e.g. post-purchase)
+  if (route.noindex) {
+    html = html.replace('</head>', `  <meta name="robots" content="noindex, nofollow" />\n</head>`);
   }
 
   // Add route-specific JSON-LD if provided (before </head>)

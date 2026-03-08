@@ -4,8 +4,12 @@ import { Link } from 'react-router-dom';
 import PageSEO from '../components/PageSEO';
 import ComparisonTable from '../components/ComparisonTable';
 import VideoExplainer from '../components/VideoExplainer';
+import { getReportBySlug } from '../data/reports';
+
+const formatPrice = (n: number) => n.toLocaleString('en-GB');
 
 const PreConstructionDesignReview = () => {
+  const report = getReportBySlug('pre-construction-design-review')!;
   const features = [
     { title: "9 Check Categories (~95 Checks)", desc: "Systematic review across dimensional coordination, structural integration, drainage, and more." },
     { title: "Cross-Discipline Coordination", desc: "Examination of interfaces between architectural, structural, and drainage drawings." },
@@ -56,7 +60,7 @@ const PreConstructionDesignReview = () => {
             name: 'Pre-Construction Design Review',
             description: 'Systematic 95-check review of your drawing package — catching clashes, gaps, and missing information.',
             brand: { '@type': 'Organization', name: 'PF & Co Construction' },
-            offers: { '@type': 'Offer', price: '425', priceCurrency: 'GBP' },
+            offers: { '@type': 'Offer', price: String(report.earlyAccessPrice), priceCurrency: 'GBP' },
           },
           {
             '@type': 'VideoObject',
@@ -135,8 +139,8 @@ const PreConstructionDesignReview = () => {
                   Early Access Pricing - 50% off this report.
                 </div>
                 <div className="flex items-baseline gap-3 mb-1">
-                  <span className="text-3xl font-mono font-bold text-white">Early Access: £425</span>
-                  <span className="text-base text-white/50 line-through font-medium">Was £850</span>
+                  <span className="text-3xl font-mono font-bold text-white">Early Access: £{formatPrice(report.earlyAccessPrice)}</span>
+                  <span className="text-base text-white/50 line-through font-medium">Was £{formatPrice(report.rrp)}</span>
                 </div>
                 <span className="text-xs text-white/70 italic">First 50 reports at early access pricing</span>
               </div>

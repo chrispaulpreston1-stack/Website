@@ -75,9 +75,9 @@ export default function TermsOfService() {
           <h2>7. Professional Advice</h2>
           <p>
             Our reports and website content are for informational purposes and do not constitute formal
-            professional advice. For structural design work, we hold Professional Indemnity insurance and
-            our engineers are registered with the Institution of Civil Engineers (ICE). Specific terms
-            for structural engineering commissions are agreed separately.
+            professional advice. Reports are AI-assisted desk studies based on publicly available data
+            and should be reviewed by an appropriately qualified professional before reliance.
+            Specific terms for bespoke commissions are agreed separately.
           </p>
 
           <h2>8. Cancellations and Refunds</h2>

@@ -3,8 +3,12 @@ import { Volume2, ArrowRight, Info, Clock, ShieldCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import PageSEO from '../components/PageSEO';
 import ComparisonTable from '../components/ComparisonTable';
+import { getReportBySlug } from '../data/reports';
+
+const formatPrice = (n: number) => n.toLocaleString('en-GB');
 
 const NoiseImpactAssessment = () => {
+  const report = getReportBySlug('noise-impact-assessment')!;
   const features = [
     { title: "BS 4142 Commercial/Industrial Assessment", desc: "Rating level vs background sound analysis for nearby commercial or industrial uses." },
     { title: "BS 8233 Internal Ambient Assessment", desc: "Target internal noise levels for habitable rooms (bedrooms, living rooms, kitchens)." },
@@ -55,7 +59,7 @@ const NoiseImpactAssessment = () => {
             name: 'Noise Impact Assessment',
             description: 'BS 4142/BS 8233/ProPG noise screening for residential schemes near roads, railways, or commercial uses.',
             brand: { '@type': 'Organization', name: 'PF & Co Construction' },
-            offers: { '@type': 'Offer', price: '445', priceCurrency: 'GBP' },
+            offers: { '@type': 'Offer', price: String(report.earlyAccessPrice), priceCurrency: 'GBP' },
           },
           {
             '@type': 'VideoObject',
@@ -110,8 +114,8 @@ const NoiseImpactAssessment = () => {
                   Early Access Pricing - Up to 40% off.
                 </div>
                 <div className="flex items-baseline gap-3 mb-1">
-                  <span className="text-3xl font-mono font-bold text-white">Early Access: £445</span>
-                  <span className="text-base text-white/50 line-through font-medium">Was £745</span>
+                  <span className="text-3xl font-mono font-bold text-white">Early Access: £{formatPrice(report.earlyAccessPrice)}</span>
+                  <span className="text-base text-white/50 line-through font-medium">Was £{formatPrice(report.rrp)}</span>
                 </div>
                 <span className="text-xs text-white/70 italic">First 50 reports at early access pricing</span>
               </div>

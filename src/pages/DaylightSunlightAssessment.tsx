@@ -3,8 +3,12 @@ import { SunDim, ArrowRight, Info, Clock, ShieldCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import PageSEO from '../components/PageSEO';
 import ComparisonTable from '../components/ComparisonTable';
+import { getReportBySlug } from '../data/reports';
+
+const formatPrice = (n: number) => n.toLocaleString('en-GB');
 
 const DaylightSunlightAssessment = () => {
+  const report = getReportBySlug('daylight-sunlight-assessment')!;
   const features = [
     { title: "Vertical Sky Component (VSC)", desc: "BRE 209 assessment of daylight reaching windows of neighbouring properties." },
     { title: "Annual Probable Sunlight Hours (APSH)", desc: "Sun availability assessment for south-facing windows (winter and annual)." },
@@ -55,7 +59,7 @@ const DaylightSunlightAssessment = () => {
             name: 'Daylight & Sunlight Assessment',
             description: 'BRE 209 daylight/sunlight impact assessment including VSC, APSH, NSL, and sun-on-ground analysis.',
             brand: { '@type': 'Organization', name: 'PF & Co Construction' },
-            offers: { '@type': 'Offer', price: '595', priceCurrency: 'GBP' },
+            offers: { '@type': 'Offer', price: String(report.earlyAccessPrice), priceCurrency: 'GBP' },
           },
           {
             '@type': 'VideoObject',
@@ -110,8 +114,8 @@ const DaylightSunlightAssessment = () => {
                   Early Access Pricing - Up to 40% off.
                 </div>
                 <div className="flex items-baseline gap-3 mb-1">
-                  <span className="text-3xl font-mono font-bold text-white">Early Access: £595</span>
-                  <span className="text-base text-white/50 line-through font-medium">Was £995</span>
+                  <span className="text-3xl font-mono font-bold text-white">Early Access: £{formatPrice(report.earlyAccessPrice)}</span>
+                  <span className="text-base text-white/50 line-through font-medium">Was £{formatPrice(report.rrp)}</span>
                 </div>
                 <span className="text-xs text-white/70 italic">First 50 reports at early access pricing</span>
               </div>

@@ -3,8 +3,12 @@ import { FlaskConical, Check, ArrowRight, Info, HelpCircle, Clock, ShieldCheck, 
 import { Link } from 'react-router-dom';
 import PageSEO from '../components/PageSEO';
 import ComparisonTable from '../components/ComparisonTable';
+import { getReportBySlug } from '../data/reports';
+
+const formatPrice = (n: number) => n.toLocaleString('en-GB');
 
 const Phase1Contamination = () => {
+  const report = getReportBySlug('phase-1-contamination')!;
   const features = [
     { title: "LCRM 2020 Framework", desc: "Assessment following the Land Contamination Risk Management framework (formerly CLR11)." },
     { title: "Historical Land Use Review", desc: "Ordnance Survey historical mapping analysis from 1840s to present day." },
@@ -55,7 +59,7 @@ const Phase1Contamination = () => {
             name: 'Phase 1 Contamination Assessment',
             description: 'LCRM 2020 / BS 10175 Preliminary Risk Assessment with Conceptual Site Model and remediation screening.',
             brand: { '@type': 'Organization', name: 'PF & Co Construction' },
-            offers: { '@type': 'Offer', price: '595', priceCurrency: 'GBP' },
+            offers: { '@type': 'Offer', price: String(report.earlyAccessPrice), priceCurrency: 'GBP' },
           },
           {
             '@type': 'VideoObject',
@@ -110,8 +114,8 @@ const Phase1Contamination = () => {
                   Early Access Pricing - Up to 40% off.
                 </div>
                 <div className="flex items-baseline gap-3 mb-1">
-                  <span className="text-3xl font-mono font-bold text-white">Early Access: £595</span>
-                  <span className="text-base text-white/50 line-through font-medium">Was £995</span>
+                  <span className="text-3xl font-mono font-bold text-white">Early Access: £{formatPrice(report.earlyAccessPrice)}</span>
+                  <span className="text-base text-white/50 line-through font-medium">Was £{formatPrice(report.rrp)}</span>
                 </div>
                 <span className="text-xs text-white/70 italic">First 50 reports at early access pricing</span>
               </div>

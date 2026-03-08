@@ -3,8 +3,12 @@ import { Search, Check, ArrowRight, HelpCircle, AlertTriangle, Building2, Map, Z
 import { Link } from 'react-router-dom';
 import PageSEO from '../components/PageSEO';
 import ComparisonTable from '../components/ComparisonTable';
+import { getReportBySlug } from '../data/reports';
+
+const formatPrice = (n: number) => n.toLocaleString('en-GB');
 
 const SiteFeasibilityReport = () => {
+  const report = getReportBySlug('site-feasibility-report')!;
   const features = [
     { title: "Planning Constraints", desc: "Use Class assessment, Permitted Development rights analysis, local plan policy review, and Article 4 directions." },
     { title: "Flood & Drainage Risk", desc: "Environment Agency flood zones, surface water flood risk, reservoir inundation mapping, and SuDS requirements." },
@@ -95,7 +99,7 @@ const SiteFeasibilityReport = () => {
             name: 'Site Feasibility Report',
             description: 'Data-driven pre-construction screening report checking 22+ planning, environmental, and ground risk constraints.',
             brand: { '@type': 'Organization', name: 'PF & Co Construction' },
-            offers: { '@type': 'Offer', price: '1500', priceCurrency: 'GBP' },
+            offers: { '@type': 'Offer', price: String(report.earlyAccessPrice), priceCurrency: 'GBP' },
           },
           {
             '@type': 'FAQPage',
@@ -141,8 +145,8 @@ const SiteFeasibilityReport = () => {
                   Early Access Pricing - Up to 40% off.
                 </div>
                 <div className="flex items-baseline gap-3 mb-1">
-                  <span className="text-3xl font-mono font-bold text-brand-primary">Early Access: £1,500</span>
-                  <span className="text-base text-brand-primary/60 line-through font-medium">Was £2,500</span>
+                  <span className="text-3xl font-mono font-bold text-brand-primary">Early Access: £{formatPrice(report.earlyAccessPrice)}</span>
+                  <span className="text-base text-brand-primary/60 line-through font-medium">Was £{formatPrice(report.rrp)}</span>
                 </div>
                 <span className="text-xs text-brand-primary/70 italic">First 50 reports at early access pricing</span>
               </div>

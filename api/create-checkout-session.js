@@ -1,3 +1,5 @@
+// IMPORTANT: These prices must match stripePrice values in src/data/reports.ts.
+// When updating prices, update BOTH files. See reports.ts as the source of truth.
 const REPORT_PRICES = {
   'site-feasibility-report': { name: 'Site Feasibility Report', price: 297 },
   'geotechnical-desk-study': { name: 'Geotechnical Desk Study', price: 297 },
@@ -8,7 +10,7 @@ const REPORT_PRICES = {
   'developer-due-diligence': { name: 'The Developer Due Diligence', price: 3095 },
   'construction-readiness': { name: 'The Construction Readiness Pack', price: 1195 },
   'triple-threat': { name: 'The Triple Threat', price: 2375 },
-  'appeal-ready-pack': { name: 'The Appeal-Ready Pack', price: 2735 },
+  'appeal-ready-pack': { name: 'The Appeal-Ready Pack', price: 2635 },
   'self-build-starter': { name: 'The Self-Build Starter', price: 3050 },
   'architect-support-pack': { name: 'The Architect Support Pack', price: 2625 },
   'biodiversity-net-gain': { name: 'Biodiversity Net Gain', price: 495 },
@@ -24,6 +26,10 @@ const REPORT_PRICES = {
   'transport-statement': { name: 'Transport Statement', price: 495 },
   'tree-survey': { name: 'Arboricultural Desk Study', price: 575 },
   'cil-liability-assessment': { name: 'CIL Liability Assessment', price: 295 },
+  'noise-impact-assessment': { name: 'Noise Impact Assessment', price: 445 },
+  'air-quality-screening': { name: 'Air Quality Screening', price: 395 },
+  'phase-1-contamination': { name: 'Phase 1 Contamination Assessment', price: 595 },
+  'daylight-sunlight-assessment': { name: 'Daylight & Sunlight Assessment', price: 595 },
 };
 
 const DISCOUNT_CODES = {

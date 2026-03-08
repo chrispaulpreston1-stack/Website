@@ -84,7 +84,7 @@ const LiveOperationsLog = () => {
     `Data Sync: ${TOTAL_AGENTS}/${TOTAL_AGENTS} agents reporting optimal status.`,
     "Audit: Design sign-off pending final verification.",
     "Predictive AI: Weather delay probability: 4%",
-    "Computer Vision: PPE compliance verified on Site B.",
+    "QA Pipeline: Pre-issue compliance checks passed.",
     "Market Intelligence: Benchmark delta calculated: -1.8pp...",
     "Ecology Screening: Statutory exemption checks complete.",
     "Flood Analysis: Zone 3a identified — FRA triggered.",
@@ -329,13 +329,13 @@ const AIInnovation = () => {
     <div className="pt-20 bg-brand-primary text-white overflow-x-hidden" ref={containerRef}>
       <PageSEO
         title="AI Innovation | PF & Co Structural Engineering"
-        description={`Explore our ${TOTAL_AGENTS}-agent AI workforce and generative structural design tools that optimise safety and cost.`}
+        description={`Explore our ${TOTAL_AGENTS}-agent AI system interrogating 58 authoritative data sources to produce planning-ready site intelligence reports in 48 hours.`}
         path="/ai-innovation"
         jsonLd={{
           '@type': 'SoftwareApplication',
           name: 'PF & Co AI Swarm',
           applicationCategory: 'EngineeringApplication',
-          description: 'Multi-agent AI system for structural engineering and site intelligence, orchestrating data acquisition, analysis, and report generation across 58 authoritative data sources.',
+          description: 'Multi-agent AI system for site intelligence, orchestrating data acquisition, analysis, and report generation across 58 authoritative data sources.',
           operatingSystem: 'Web',
           offers: {
             '@type': 'Offer',
@@ -389,9 +389,9 @@ const AIInnovation = () => {
           <div className="lg:col-span-5 pt-12">
             <div className="grid grid-cols-2 gap-4">
               {[
-                { label: "Efficiency Gain", val: "+42%" },
-                { label: "Material Saved", val: "20%" },
-                { label: "Safety Score", val: "99.9" },
+                { label: "Data Sources", val: "58" },
+                { label: "Agent Network", val: `${TOTAL_AGENTS}` },
+                { label: "Turnaround", val: "48h" },
                 { label: "Design Time", val: "-80%" }
               ].map((stat, i) => (
                 <motion.div
@@ -419,7 +419,7 @@ const AIInnovation = () => {
       <section className="max-w-7xl mx-auto px-6 pb-48">
         <div className="text-center mb-24">
           <h2 className="text-5xl md:text-6xl font-display font-bold text-white mb-6">Built on <span className="text-brand-accent italic font-serif font-light">Innovation.</span></h2>
-          <p className="text-white/40 max-w-2xl mx-auto text-lg font-light">Our core technologies represent the bleeding edge of structural engineering and machine learning.</p>
+          <p className="text-white/40 max-w-2xl mx-auto text-lg font-light">Our core technologies combine multi-agent AI orchestration with authoritative government data sources.</p>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-6">
@@ -433,13 +433,13 @@ const AIInnovation = () => {
               <div className="w-16 h-16 bg-brand-accent rounded-2xl flex items-center justify-center mb-12 text-brand-primary shadow-xl">
                 <Cpu size={32} />
               </div>
-              <h3 className="text-4xl font-display font-bold text-white mb-6">Generative Structural Design</h3>
+              <h3 className="text-4xl font-display font-bold text-white mb-6">Multi-Source Data Fusion</h3>
               <p className="text-white/60 text-lg leading-relaxed max-w-xl mb-12 font-light">
-                Our proprietary algorithms iterate through thousands of structural configurations in parallel. We don't just find a solution; we find the <span className="text-brand-accent italic">mathematically optimal</span> one, reducing material waste by an average of 20%.
+                Our agents interrogate 58 authoritative data sources in parallel — BGS geology, EA flood zones, Historic England listings, Land Registry transactions, and more. Every constraint cross-referenced, every risk scored, in a <span className="text-brand-accent italic">single integrated report</span>.
               </p>
               <div className="flex gap-4">
-                <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-widest text-white/40">Optimisation</span>
-                <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-widest text-white/40">Sustainability</span>
+                <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-widest text-white/40">58 Data Sources</span>
+                <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-widest text-white/40">Cross-Referenced</span>
               </div>
             </div>
           </motion.div>
@@ -453,10 +453,10 @@ const AIInnovation = () => {
               <div className="w-16 h-16 bg-brand-primary rounded-2xl flex items-center justify-center mb-12 text-brand-accent">
                 <Shield size={32} />
               </div>
-              <h3 className="text-3xl font-display font-bold text-brand-primary mb-6 leading-tight">The Human Safety Leap</h3>
+              <h3 className="text-3xl font-display font-bold text-brand-primary mb-6 leading-tight">Human Review Built In</h3>
             </div>
             <p className="text-brand-primary/70 font-medium">
-              AI accelerates the design, but human expertise secures it. Every calculation is rigorously verified and stamped by our qualified structural engineers. Zero room for error.
+              AI drafts the analysis, but every report is reviewed before issue. Our QA pipeline catches errors that manual processes miss — regulatory cross-checks, data validation, and consistency auditing.
             </p>
           </motion.div>
 
@@ -482,7 +482,7 @@ const AIInnovation = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-brand-primary to-transparent z-10" />
             <img
               src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=1000"
-              alt="Site Safety AI"
+              alt="Quality Assurance Pipeline"
               className="absolute inset-0 w-full h-full object-cover grayscale opacity-30 group-hover:scale-110 transition-transform duration-700"
               loading="lazy"
               referrerPolicy="no-referrer"
@@ -491,9 +491,9 @@ const AIInnovation = () => {
               <div className="w-16 h-16 bg-brand-accent rounded-2xl flex items-center justify-center mb-12 text-brand-primary">
                 <Search size={32} />
               </div>
-              <h3 className="text-4xl font-display font-bold text-white mb-6">Computer Vision Site Safety</h3>
+              <h3 className="text-4xl font-display font-bold text-white mb-6">Automated Quality Assurance</h3>
               <p className="text-white/60 text-lg leading-relaxed max-w-xl font-light">
-                Real-time monitoring of site safety protocols using advanced visual recognition AI. Protecting lives through proactive intelligence.
+                Every report passes through a multi-stage QA pipeline — accuracy auditing, regulatory verification, and pre-issue compliance checks before a single page is delivered.
               </p>
             </div>
           </motion.div>

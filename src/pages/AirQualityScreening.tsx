@@ -3,8 +3,12 @@ import { Wind, Check, ArrowRight, Info, HelpCircle, Clock, ShieldCheck, FileText
 import { Link } from 'react-router-dom';
 import PageSEO from '../components/PageSEO';
 import ComparisonTable from '../components/ComparisonTable';
+import { getReportBySlug } from '../data/reports';
+
+const formatPrice = (n: number) => n.toLocaleString('en-GB');
 
 const AirQualityScreening = () => {
+  const report = getReportBySlug('air-quality-screening')!;
   const features = [
     { title: "AQMA Proximity Analysis", desc: "Assessment of distance and relationship to declared Air Quality Management Areas." },
     { title: "IAQM/EPUK Screening", desc: "Institute of Air Quality Management and Environmental Protection UK screening methodology." },
@@ -55,7 +59,7 @@ const AirQualityScreening = () => {
             name: 'Air Quality Screening',
             description: 'IAQM/EPUK air quality screening with AQMA proximity analysis and construction dust risk assessment.',
             brand: { '@type': 'Organization', name: 'PF & Co Construction' },
-            offers: { '@type': 'Offer', price: '395', priceCurrency: 'GBP' },
+            offers: { '@type': 'Offer', price: String(report.earlyAccessPrice), priceCurrency: 'GBP' },
           },
           {
             '@type': 'VideoObject',
@@ -110,8 +114,8 @@ const AirQualityScreening = () => {
                   Early Access Pricing - Up to 40% off.
                 </div>
                 <div className="flex items-baseline gap-3 mb-1">
-                  <span className="text-3xl font-mono font-bold text-white">Early Access: £395</span>
-                  <span className="text-base text-white/50 line-through font-medium">Was £660</span>
+                  <span className="text-3xl font-mono font-bold text-white">Early Access: £{formatPrice(report.earlyAccessPrice)}</span>
+                  <span className="text-base text-white/50 line-through font-medium">Was £{formatPrice(report.rrp)}</span>
                 </div>
                 <span className="text-xs text-white/70 italic">First 50 reports at early access pricing</span>
               </div>
