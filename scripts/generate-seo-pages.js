@@ -53,6 +53,12 @@ const routes = [
     description: 'Interrogate 58 authoritative data sources across 11 constraint categories. Planning Friction Score, risk profiling, and buildability ratings — delivered in 48 hours.',
   },
   {
+    path: '/site-intelligence/site-acquisition-intelligence',
+    title: 'Site Acquisition Intelligence | Development Appraisal | PF & Co',
+    description: 'Should you buy this site? Development capacity, GDV, build cost, residual land value, planning risk, and go/no-go recommendation — delivered in 48-72 hours.',
+    jsonLd: { '@type': 'Product', name: 'Site Acquisition Intelligence', brand: { '@type': 'Organization', name: 'PF & Co Construction' }, offers: { '@type': 'Offer', price: '995', priceCurrency: 'GBP', availability: 'https://schema.org/InStock' } },
+  },
+  {
     path: '/site-intelligence/site-feasibility-report',
     title: 'Site Feasibility Report | Pre-Construction Screening | PF & Co',
     description: 'A data-driven pre-construction screening report interrogating 22+ planning, environmental, and ground risk constraints for any UK property. From £297.',

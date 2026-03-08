@@ -411,6 +411,7 @@ const SiteIntelligenceHub = () => {
               {
                 cat: "Core Intelligence",
                 items: [
+                  { name: "Site Acquisition Intelligence", link: "/site-intelligence/site-acquisition-intelligence", desc: "GDV, RLV, capacity & go/no-go recommendation." },
                   { name: "Site Feasibility Report", link: "/site-intelligence/site-feasibility-report", desc: "22+ constraint screening." },
                   { name: "Geotechnical Desk Study", link: "/site-intelligence/geotechnical-desk-study", desc: "Ground condition analysis." },
                   { name: "Flood Risk Assessment", link: "/site-intelligence/flood-risk-assessment", desc: "Planning-ready FRA." },

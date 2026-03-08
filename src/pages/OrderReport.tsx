@@ -55,6 +55,7 @@ type OrderFormData = z.infer<typeof orderSchema>;
 
 // Icon mapping for reports (UI concern — kept here, not in data layer)
 const reportIcons: Record<string, React.ReactNode> = {
+  'site-acquisition-intelligence': <Building2 className="text-violet-500" />,
   'site-feasibility-report': <Search className="text-teal-500" />,
   'geotechnical-desk-study': <Database className="text-amber-600" />,
   'flood-risk-assessment': <Droplets className="text-blue-500" />,
@@ -80,6 +81,7 @@ const reportIcons: Record<string, React.ReactNode> = {
 };
 
 const reportColors: Record<string, string> = {
+  'site-acquisition-intelligence': 'border-violet-500 bg-violet-50/30',
   'site-feasibility-report': 'border-teal-500 bg-teal-50/30',
   'geotechnical-desk-study': 'border-amber-600 bg-amber-50/30',
   'flood-risk-assessment': 'border-blue-500 bg-blue-50/30',

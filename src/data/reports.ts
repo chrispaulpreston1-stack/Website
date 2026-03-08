@@ -32,6 +32,19 @@ export const REPORT_CATEGORIES: Record<ReportCategory, string> = {
 export const reports: Report[] = [
   // -- Core Intelligence --
   {
+    slug: 'site-acquisition-intelligence',
+    name: 'Site Acquisition Intelligence',
+    shortName: 'SAI',
+    category: 'core',
+    earlyAccessPrice: 995,
+    rrp: 1650,
+    stripePrice: 995,
+    path: '/site-intelligence/site-acquisition-intelligence',
+    description: 'Development capacity, GDV, build cost, RLV, planning risk, and go/no-go recommendation for land acquisition decisions.',
+    turnaround: '48-72hr',
+    samplePath: null,
+  },
+  {
     slug: 'site-feasibility-report',
     name: 'Site Feasibility Report',
     shortName: 'SFR',
@@ -365,6 +378,7 @@ export const bundles: ReportBundle[] = [
     savings: 12025,
     savingsPercent: 63,
     includedReports: [
+      'site-acquisition-intelligence',
       'site-feasibility-report', 'geotechnical-desk-study', 'flood-risk-assessment',
       'phase-1-contamination',
       'planning-statement', 'pre-application-advice', 'design-and-access-statement',
@@ -404,6 +418,7 @@ export const bundles: ReportBundle[] = [
     savings: 3320,
     savingsPercent: 52,
     includedReports: [
+      'site-acquisition-intelligence',
       'site-feasibility-report', 'geotechnical-desk-study', 'flood-risk-assessment',
       'feasibility-study', 'cil-liability-assessment',
     ],

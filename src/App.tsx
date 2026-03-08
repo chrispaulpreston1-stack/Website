@@ -35,6 +35,7 @@ const BlogArticle = lazy(() => import('./pages/BlogArticle'));
 const AIInnovation = lazy(() => import('./pages/AIInnovation'));
 const Subscriptions = lazy(() => import('./pages/Subscriptions'));
 const SiteIntelligenceHub = lazy(() => import('./pages/SiteIntelligenceHub'));
+const SiteAcquisitionIntelligence = lazy(() => import('./pages/SiteAcquisitionIntelligence'));
 const FloodRiskAssessment = lazy(() => import('./pages/FloodRiskAssessment'));
 const GeotechnicalDeskStudy = lazy(() => import('./pages/GeotechnicalDeskStudy'));
 const SiteFeasibilityReport = lazy(() => import('./pages/SiteFeasibilityReport'));
@@ -453,6 +454,7 @@ export default function App() {
               <Route path="/party-wall" element={<PartyWallAssessment />} />
               <Route path="/construction" element={<Construction />} />
               <Route path="/site-intelligence" element={<SiteIntelligenceHub />} />
+              <Route path="/site-intelligence/site-acquisition-intelligence" element={<SiteAcquisitionIntelligence />} />
               <Route path="/site-intelligence/flood-risk-assessment" element={<FloodRiskAssessment />} />
               <Route path="/site-intelligence/geotechnical-desk-study" element={<GeotechnicalDeskStudy />} />
               <Route path="/site-intelligence/site-feasibility-report" element={<SiteFeasibilityReport />} />
