@@ -45,6 +45,19 @@ export const reports: Report[] = [
     samplePath: null,
   },
   {
+    slug: 'development-finance-summary',
+    name: 'Development Finance Summary',
+    shortName: 'DFS',
+    category: 'core',
+    earlyAccessPrice: 795,
+    rrp: 1350,
+    stripePrice: 795,
+    path: '/site-intelligence/development-finance-summary',
+    description: "Lender's investment memo: GDV, build cost, profit on cost, LTGDV, site risk RAG dashboard, sensitivity matrix, and information checklist for credit committee submission.",
+    turnaround: '48-72hr',
+    samplePath: null,
+  },
+  {
     slug: 'site-feasibility-report',
     name: 'Site Feasibility Report',
     shortName: 'SFR',
@@ -378,7 +391,7 @@ export const bundles: ReportBundle[] = [
     savings: 12025,
     savingsPercent: 63,
     includedReports: [
-      'site-acquisition-intelligence',
+      'site-acquisition-intelligence', 'development-finance-summary',
       'site-feasibility-report', 'geotechnical-desk-study', 'flood-risk-assessment',
       'phase-1-contamination',
       'planning-statement', 'pre-application-advice', 'design-and-access-statement',
@@ -418,7 +431,7 @@ export const bundles: ReportBundle[] = [
     savings: 3320,
     savingsPercent: 52,
     includedReports: [
-      'site-acquisition-intelligence',
+      'site-acquisition-intelligence', 'development-finance-summary',
       'site-feasibility-report', 'geotechnical-desk-study', 'flood-risk-assessment',
       'feasibility-study', 'cil-liability-assessment',
     ],
