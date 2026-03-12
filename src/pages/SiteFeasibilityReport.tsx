@@ -228,7 +228,7 @@ const SiteFeasibilityReport = () => {
             subtitle="What you get vs a typical planning consultant or automated data search"
             columns={["Feature", "PF&Co Site Intelligence", "Typical Planning Consultant", "Groundsure / Envirocheck"]}
             categories={comparisonCategories}
-            footerNote="Comparison based on publicly available product information from Groundsure Avista, Landmark Envirocheck, and typical UK planning consultancy appraisals. Features may vary by provider and product tier. PF&Co Site Feasibility Report checks 22+ constraint categories from 58 authoritative data sources."
+            footerNote="Comparison based on publicly available product information from Groundsure Avista, Landmark Envirocheck, and typical UK planning consultancy appraisals. Features may vary by provider and product tier. PF&Co Site Feasibility Report checks 22+ constraint categories from 60 authoritative data sources."
             accentColor="text-teal-500"
           />
         </div>

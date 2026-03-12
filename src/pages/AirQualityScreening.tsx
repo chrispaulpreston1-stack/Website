@@ -242,7 +242,7 @@ const AirQualityScreening = () => {
             subtitle="What you get vs a typical consultant"
             columns={["Feature", "PF&Co Site Intelligence", "Typical Consultant", "Basic Mention"]}
             categories={comparisonCategories}
-            footerNote="Comparison based on typical UK environmental consultancy practices. PF&Co Air Quality Screening references IAQM/EPUK guidance and local authority monitoring data from 58 authoritative sources."
+            footerNote="Comparison based on typical UK environmental consultancy practices. PF&Co Air Quality Screening references IAQM/EPUK guidance and local authority monitoring data from 60 authoritative sources."
             accentColor="text-cyan-500"
           />
         </div>

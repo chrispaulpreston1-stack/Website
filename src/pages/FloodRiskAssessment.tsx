@@ -304,7 +304,7 @@ const FloodRiskAssessment = () => {
             subtitle="What you get vs a typical FRA consultant or budget provider"
             columns={["Feature", "PF&Co Site Intelligence", "Typical FRA Consultant", "Budget / Basic FRA"]}
             categories={comparisonCategories}
-            footerNote="Comparison based on publicly available product information from GeoSmart FloodSmart, Ark Environmental, FloodPlan Reports, Urban Water, and typical UK flood risk consultancies. Features may vary by provider and product tier. PF&Co Flood Risk Assessment pulls data from 58 authoritative APIs and references the latest NPPF (Dec 2024), PPG, SuDS National Standards (Schedule 3 FWMA 2010) and EA Standing Advice."
+            footerNote="Comparison based on publicly available product information from GeoSmart FloodSmart, Ark Environmental, FloodPlan Reports, Urban Water, and typical UK flood risk consultancies. Features may vary by provider and product tier. PF&Co Flood Risk Assessment pulls data from 60 authoritative APIs and references the latest NPPF (Dec 2024), PPG, SuDS National Standards (Schedule 3 FWMA 2010) and EA Standing Advice."
             accentColor="text-blue-500"
           />
         </div>

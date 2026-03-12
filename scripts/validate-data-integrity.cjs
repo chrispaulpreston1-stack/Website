@@ -62,13 +62,13 @@ if (dsDupes.length) fail('Duplicate data source IDs: ' + dsDupes.join(', '));
 else pass('No duplicate data source IDs');
 
 // Check count matches expected
-if (dsIds.length === 58) pass('58 data sources (44 original + 14 new)');
-else fail('Expected 58 data sources, found ' + dsIds.length);
+if (dsIds.length === 60) pass('60 data sources (44 original + 16 new)');
+else fail('Expected 60 data sources, found ' + dsIds.length);
 
 // New sources check
 const newDsIds = dsIds.filter(id => parseInt(id) >= 45);
-if (newDsIds.length === 14) pass('14 new data sources (45-58)');
-else fail('Expected 14 new sources (45-58), found ' + newDsIds.length + ': ' + newDsIds.join(', '));
+if (newDsIds.length === 16) pass('16 new data sources (45-60)');
+else fail('Expected 16 new sources (45-60), found ' + newDsIds.length + ': ' + newDsIds.join(', '));
 
 // Check categories
 const dsCats = [...dsContent.matchAll(/category:\s*'([^']+)'/g)].map(m => m[1]);

@@ -329,13 +329,13 @@ const AIInnovation = () => {
     <div className="pt-20 bg-brand-primary text-white overflow-x-hidden" ref={containerRef}>
       <PageSEO
         title="AI Innovation | PF & Co Structural Engineering"
-        description={`Explore our ${TOTAL_AGENTS}-agent AI system interrogating 58 authoritative data sources to produce planning-ready site intelligence reports in 48 hours.`}
+        description={`Explore our ${TOTAL_AGENTS}-agent AI system interrogating 60 authoritative data sources to produce planning-ready site intelligence reports in 48 hours.`}
         path="/ai-innovation"
         jsonLd={{
           '@type': 'SoftwareApplication',
           name: 'PF & Co AI Swarm',
           applicationCategory: 'EngineeringApplication',
-          description: 'Multi-agent AI system for site intelligence, orchestrating data acquisition, analysis, and report generation across 58 authoritative data sources.',
+          description: 'Multi-agent AI system for site intelligence, orchestrating data acquisition, analysis, and report generation across 60 authoritative data sources.',
           operatingSystem: 'Web',
           offers: {
             '@type': 'Offer',
@@ -389,7 +389,7 @@ const AIInnovation = () => {
           <div className="lg:col-span-5 pt-12">
             <div className="grid grid-cols-2 gap-4">
               {[
-                { label: "Data Sources", val: "58" },
+                { label: "Data Sources", val: "60" },
                 { label: "Agent Network", val: `${TOTAL_AGENTS}` },
                 { label: "Turnaround", val: "48h" },
                 { label: "Design Time", val: "-80%" }
@@ -435,10 +435,10 @@ const AIInnovation = () => {
               </div>
               <h3 className="text-4xl font-display font-bold text-white mb-6">Multi-Source Data Fusion</h3>
               <p className="text-white/60 text-lg leading-relaxed max-w-xl mb-12 font-light">
-                Our agents interrogate 58 authoritative data sources in parallel — BGS geology, EA flood zones, Historic England listings, Land Registry transactions, and more. Every constraint cross-referenced, every risk scored, in a <span className="text-brand-accent italic">single integrated report</span>.
+                Our agents interrogate 60 authoritative data sources in parallel — BGS geology, EA flood zones, Historic England listings, Land Registry transactions, and more. Every constraint cross-referenced, every risk scored, in a <span className="text-brand-accent italic">single integrated report</span>.
               </p>
               <div className="flex gap-4">
-                <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-widest text-white/40">58 Data Sources</span>
+                <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-widest text-white/40">60 Data Sources</span>
                 <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-widest text-white/40">Cross-Referenced</span>
               </div>
             </div>

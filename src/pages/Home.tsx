@@ -127,7 +127,7 @@ const Home = () => {
             </div>
             <div className="w-px h-8 bg-brand-primary/10 hidden md:block" />
             <div className="flex flex-col items-center gap-1">
-              <span className="font-display font-bold text-lg lg:text-xl text-brand-primary">58 Data Sources</span>
+              <span className="font-display font-bold text-lg lg:text-xl text-brand-primary">60 Data Sources</span>
               <span className="text-[10px] uppercase tracking-widest text-brand-primary/60 font-mono text-center">Cross-Referenced</span>
             </div>
           </div>

@@ -416,7 +416,7 @@ export default function App() {
         <div className="min-h-screen selection:bg-brand-accent/30">
           <Helmet>
             <title>PF & Co | AI-Powered Structural Engineering & Construction</title>
-            <meta name="description" content="AI-powered site intelligence and planning reports across England and Wales. 58 data sources, 48-hour turnaround, fixed pricing." />
+            <meta name="description" content="AI-powered site intelligence and planning reports across England and Wales. 60 data sources, 48-hour turnaround, fixed pricing." />
             <meta name="keywords" content="structural engineer nationwide, structural calculations uk, basement impact assessment, site feasibility report, AI structural engineering" />
             <link rel="canonical" href="https://www.pfcoconstruction.co.uk" />
             <meta property="og:title" content="PF & Co | Engineering-Led Construction" />

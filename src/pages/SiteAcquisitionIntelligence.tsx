@@ -251,7 +251,7 @@ const SiteAcquisitionIntelligence = () => {
           <div className="text-center mb-20">
             <h2 className="text-5xl font-bold tracking-tighter mb-6">From Postcode to <span className="text-violet-600 italic font-serif font-light">Decision.</span></h2>
             <p className="text-brand-primary/50 max-w-2xl mx-auto text-lg font-light">
-              We synthesise data from 58 sources across 6 intelligence streams into one acquisition-grade summary.
+              We synthesise data from 60 sources across 6 intelligence streams into one acquisition-grade summary.
             </p>
           </div>
 

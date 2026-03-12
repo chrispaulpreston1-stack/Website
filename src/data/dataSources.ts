@@ -118,6 +118,10 @@ export const dataSources: DataSource[] = [
   // ── Market & Infrastructure (expanded) ────────────────────────────
   { id: 57, name: 'UK House Price Index', organisation: 'HM Land Registry', category: 'market-infrastructure', description: 'Area-level index values, average prices by property type, monthly/annual percentage change, and sales volumes.', usedBy: ['SFR', 'CFS'] },
   { id: 58, name: 'Ofcom Connected Nations', organisation: 'Ofcom', category: 'market-infrastructure', description: 'Premises-level broadband availability — FTTP, FTTC, cable speeds, and provider coverage.', usedBy: ['SFR', 'CFS', 'DAS', 'DRR'] },
+
+  // ── Planning Intelligence (auto-detected) ────────────────────────
+  { id: 59, name: 'Planning Data (Local Plans)', organisation: 'DLUHC', category: 'planning', description: 'Local plan stage, adopted date, timetable events, housing targets, and plan-weight assessment from planning.data.gov.uk.', usedBy: ['SFR', 'PS', 'PAA', 'SAI'] },
+  { id: 60, name: 'Land Registry PPD (Sold Comparables)', organisation: 'HM Land Registry', category: 'market-infrastructure', description: 'Transaction-level sold price comparables with EPC floor-area enrichment and local authority market context for viability benchmarking.', usedBy: ['SFR', 'CFS', 'SAI'] },
 ];
 
 export const TOTAL_DATA_SOURCES = dataSources.length;
