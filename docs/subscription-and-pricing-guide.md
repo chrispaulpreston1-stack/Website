@@ -21,6 +21,117 @@ Each level is cheaper per report than the one above it. Bundles beat standalone.
 
 ---
 
+## PART 0: THE SAI — FLAGSHIP REPORT DEEP DIVE
+
+### What Is a Site Acquisition Intelligence Report?
+
+The SAI is the "should I buy this site?" report. You give us a UK address. Within 48-72 hours, 22 AI agents interrogate 27 government data sources and return a single document covering:
+
+**Financial Appraisal:**
+- Development capacity — unit range from site area, density policy, and local plan allocation
+- GDV range — Gross Development Value from Land Registry sold comparables (low/central/high)
+- Build cost bracket — BCIS regional rebased rates by element
+- Residual Land Value — the number developers actually bid with
+- Profit-on-cost sensitivity — how GDV/cost/land price changes affect margin
+- CIL liability estimate — calculated from the local CIL charging schedule
+- S106 heads of terms — predicted affordable housing %, likely contributions for that LPA
+- Abnormal cost flags — ground conditions, access, contamination that add cost
+
+**Planning Intelligence:**
+- Planning Friction Score (0-100) — traffic-light rating based on constraint density
+- 22+ constraint categories screened — flood, heritage, ecology, contamination, TPOs, Green Belt, AONB, Article 4, mining, radon, UXO, and more
+- Local plan allocation check — is this site allocated for development?
+- Planning policy compliance — development plan mapping, tilted balance assessment
+- EIA screening — Schedule 1/2 threshold check
+- Recent decision precedent — comparable schemes approved/refused nearby
+- Determination timeline estimate — major vs non-major classification
+
+**Market & Site Context:**
+- Comparable transactions within locality — pricing, density, unit mix, approval rates
+- Price-per-sqft benchmarking from Land Registry + EPC floor area data
+- UK House Price Index trends — market direction for the local authority
+- PTAL / accessibility scoring — from NaPTAN bus stops, rail frequencies, tram stops
+- Amenity proximity scorecard — walking distance to schools, GPs, pharmacies, supermarkets (RAG rated)
+- Infrastructure proximity — pylons, solar farms, substations, landfills, sewage works (with value impact)
+- Development pipeline — NSIP and large planning applications within impact radius
+- Utilities capacity — DNO grid headroom, water/sewer, broadband, EV charging feasibility
+
+**Decision Support:**
+- Go / No-Go recommendation — proceed, proceed with caution, or walk away (with conditions)
+- Risk register with programme impact
+- Recommended next steps — which reports to commission next
+- Data confidence scoring per source
+
+### What Would This Normally Cost?
+
+To get equivalent intelligence from traditional consultants, you would need to commission separately:
+
+| What You Need | Traditional Provider | Typical Cost | Typical Timeline |
+|---------------|---------------------|-------------|-----------------|
+| Site appraisal / viability study | Development surveyor | £3,000-£8,000 | 3-6 weeks |
+| Desktop environmental search | Groundsure / Landmark | £130-£430 | 1-3 days |
+| Flood risk screening | FRA consultant | £300-£900 | 2-4 weeks |
+| Ground risk assessment | Geotechnical consultant | £565-£2,000 | 2-4 weeks |
+| Planning constraint search | Planning consultant | £500-£1,500 | 1-2 weeks |
+| CIL/S106 estimate | Planning consultant | £300-£800 | 1-2 weeks |
+| Market comparables | Estate agent / surveyor | £200-£500 | 1-2 weeks |
+| Transport accessibility review | Transport consultant | £500-£1,000 | 2-3 weeks |
+| Utilities capacity check | M&E consultant | £300-£800 | 2-4 weeks |
+| **TOTAL (traditional)** | **5-9 separate firms** | **£5,795-£15,930** | **4-8 weeks** |
+
+**PF & Co SAI:** One report. One firm. **£995 standalone. 48-72 hours.**
+
+On a subscription:
+
+| Tier | Effective SAI Cost | vs Traditional |
+|------|-------------------|----------------|
+| Scout | ~£200 | **97% cheaper** |
+| Professional | ~£166 | **97% cheaper** |
+| Developer | ~£166 | **97% cheaper** |
+| Enterprise | ~£133 | **98% cheaper** |
+
+### What Happens After the SAI?
+
+The SAI tells you whether to buy the site. If the answer is "proceed", you then need planning reports to get permission. This is where the subscription value compounds:
+
+**Full Project Lifecycle — SAI Through to Construction**
+
+| Phase | Reports Needed | Purpose |
+|-------|---------------|---------|
+| **1. Acquire** | SAI | Should I buy this site? |
+| **2. Appraise** | DFS, CFS | Does the deal stack? What's the concept? |
+| **3. Plan** | SFR, PS, DAS, FRA, BNG | Constraint evidence + submission documents |
+| **4. Specialist** | HIA, TS, AQS, NIA, DSA (site-dependent) | Address specific constraint triggers |
+| **5. Build** | CMP, DRR | Post-permission construction readiness |
+
+**Cost by Tier — A Typical 9-Report Project (SAI + SFR + GDS + FRA + PS + DAS + BNG + CIL + CMP):**
+
+| | Standalone | Scout | Professional | Developer | Enterprise |
+|---|-----------|-------|-------------|-----------|-----------|
+| Effective per report | £520 avg | £200 | £166 | £166 | £133 |
+| **9-report project cost** | **£4,680** | **£1,800** | **£1,494** | **£1,494** | **£1,197** |
+| Saving vs standalone | -- | 62% | 68% | 68% | 74% |
+| Credits needed | -- | 9 (4.5 months) | 9 (1.5 months) | 9 (< 1 month) | 9 (< 1 month) |
+
+**Traditional consultant equivalent for the same 9 reports: £12,000-£30,000+ and 8-16 weeks.**
+
+On a Developer subscription, you get the same 9 reports for **£1,494 effective cost, delivered across 2-3 weeks** — and you still have 3 credits left that month for your next project.
+
+### The Overage Ladder
+
+If you need more reports than your tier allows in a given month, you can buy additional credits at your tier's overage rate:
+
+| Tier | Included Credits | Effective Per Credit | Overage Rate | Overage Premium |
+|------|-----------------|---------------------|-------------|----------------|
+| Scout | 2/mo | ~£200 | £275 | +38% |
+| Professional | 6/mo | ~£166 | £240 | +45% |
+| Developer | 12/mo | ~£166 | £225 | +36% |
+| Enterprise | 30/mo | ~£133 | £195 | +47% |
+
+**Key point:** Overages are always cheaper than standalone (cheapest standalone is £245 for PAA). If you're consistently hitting overages, that's the signal to upgrade to the next tier.
+
+---
+
 ## PART 1: SUBSCRIPTION TIERS (Site Intelligence)
 
 ### How Credits Work
