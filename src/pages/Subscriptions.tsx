@@ -9,6 +9,40 @@ const formatPrice = (n: number) => n.toLocaleString('en-GB');
 
 const Subscriptions = () => {
   const [billingCycle, setBillingCycle] = useState<'monthly' | 'annual'>('monthly');
+  const [subscribingTier, setSubscribingTier] = useState<string | null>(null);
+  const [subForm, setSubForm] = useState({ fullName: '', email: '', company: '', phone: '' });
+  const [subError, setSubError] = useState<string | null>(null);
+  const [subLoading, setSubLoading] = useState(false);
+
+  const handleSubscribe = async (planName: string) => {
+    if (subscribingTier === planName) {
+      // Already showing form — submit it
+      if (!subForm.fullName || !subForm.email) {
+        setSubError('Please enter your name and email.');
+        return;
+      }
+      setSubLoading(true);
+      setSubError(null);
+      try {
+        const tier = `${planName.toLowerCase()}-${billingCycle}`;
+        const res = await fetch('/api/create-subscription', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ tier, ...subForm }),
+        });
+        const result = await res.json();
+        if (!res.ok) throw new Error(result.error || 'Failed to create subscription');
+        window.location.href = result.url;
+      } catch (err: any) {
+        setSubError(err.message);
+        setSubLoading(false);
+      }
+    } else {
+      // Show the form for this tier
+      setSubscribingTier(planName);
+      setSubError(null);
+    }
+  };
 
   const plans = [
     {
@@ -242,12 +276,52 @@ const Subscriptions = () => {
                   </span>
                 </div>
 
-                <Link
-                  to="/contact"
-                  className={`block w-full py-4 mt-auto rounded-2xl font-bold transition-all text-center ${plan.highlight ? 'bg-brand-accent text-brand-primary hover:scale-105 shadow-xl shadow-brand-accent/20' : 'bg-brand-surface text-brand-primary hover:bg-brand-primary/5 border-2 border-transparent'}`}
-                >
-                  Get Started
-                </Link>
+                {subscribingTier === plan.name ? (
+                  <div className="mt-auto space-y-2">
+                    <input
+                      type="text"
+                      placeholder="Full name"
+                      value={subForm.fullName}
+                      onChange={e => setSubForm(f => ({ ...f, fullName: e.target.value }))}
+                      className="w-full px-4 py-2.5 rounded-xl border border-brand-primary/10 text-sm text-brand-primary bg-white"
+                    />
+                    <input
+                      type="email"
+                      placeholder="Email"
+                      value={subForm.email}
+                      onChange={e => setSubForm(f => ({ ...f, email: e.target.value }))}
+                      className="w-full px-4 py-2.5 rounded-xl border border-brand-primary/10 text-sm text-brand-primary bg-white"
+                    />
+                    <input
+                      type="text"
+                      placeholder="Company (optional)"
+                      value={subForm.company}
+                      onChange={e => setSubForm(f => ({ ...f, company: e.target.value }))}
+                      className="w-full px-4 py-2.5 rounded-xl border border-brand-primary/10 text-sm text-brand-primary bg-white"
+                    />
+                    {subError && <p className="text-red-500 text-xs">{subError}</p>}
+                    <button
+                      onClick={() => handleSubscribe(plan.name)}
+                      disabled={subLoading}
+                      className={`block w-full py-4 rounded-2xl font-bold transition-all text-center ${plan.highlight ? 'bg-brand-accent text-brand-primary hover:scale-105 shadow-xl shadow-brand-accent/20' : 'bg-brand-primary text-white hover:bg-brand-primary/90'} ${subLoading ? 'opacity-50' : ''}`}
+                    >
+                      {subLoading ? 'Setting up...' : `Subscribe — £${formatPrice(price)}/mo`}
+                    </button>
+                    <button
+                      onClick={() => setSubscribingTier(null)}
+                      className="w-full text-center text-xs text-brand-primary/40 hover:text-brand-primary/60 py-1"
+                    >
+                      Cancel
+                    </button>
+                  </div>
+                ) : (
+                  <button
+                    onClick={() => handleSubscribe(plan.name)}
+                    className={`block w-full py-4 mt-auto rounded-2xl font-bold transition-all text-center ${plan.highlight ? 'bg-brand-accent text-brand-primary hover:scale-105 shadow-xl shadow-brand-accent/20' : 'bg-brand-surface text-brand-primary hover:bg-brand-primary/5 border-2 border-transparent'}`}
+                  >
+                    Get Started
+                  </button>
+                )}
               </div>
             );
           })}
