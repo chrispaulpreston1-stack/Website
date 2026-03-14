@@ -202,7 +202,7 @@ const routes = [
   {
     path: '/subscriptions',
     title: 'Engineering Subscriptions & Partner Credits | PF & Co',
-    description: 'Get unlimited structural calculations and priority design support for a fixed monthly fee, or join our B2B Partner Credit system.',
+    description: 'Site intelligence report subscriptions from £399/mo. Fixed cost, 48-hour turnaround, 60 data sources. Tiers for land buyers, architects, developers, and enterprise.',
   },
   {
     path: '/ai-innovation',
