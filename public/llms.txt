@@ -1,98 +1,106 @@
 # PF & Co Construction
-> AI-powered structural engineering, construction, and site intelligence services nationwide across England and Wales.
+> AI-powered site intelligence and planning reports across England and Wales. 24 report types. 60 data sources. 48-hour turnaround. Subscribe from £399/mo.
 
 ## About
-PF & Co Construction delivers AI-powered site intelligence and planning reports across England and Wales. Our multi-agent AI system interrogates 60 authoritative data sources across 11 constraint categories to produce planning-ready reports in 48 hours. Fixed pricing, 48-hour turnaround.
+PF & Co Construction delivers AI-powered site intelligence and planning reports across England and Wales. Our multi-agent AI system (112 specialised agents) interrogates 60 authoritative data sources across 11 constraint categories to produce planning-ready reports in 48 hours. Fixed pricing, 48-hour turnaround, human-verified, RICS AI Standard aligned.
 
 ## Services
 
+### Site Intelligence (Primary Service)
+Planning-ready reports for any UK site. 24 report types across 6 categories. Buy individually, as a bundle, or subscribe.
+
+**Core Intelligence:**
+- Site Acquisition Report — GDV, RLV, planning risk, go/no-go recommendation (£995)
+- Development Finance Summary — Viability screening, profit on cost, sensitivity analysis (£795)
+- Site Feasibility Report — 22+ constraint screening, Planning Friction Score (£595)
+- Geotechnical Desk Study — BGS geology, contamination, foundation risk (£495)
+- Flood Risk Assessment — 7 flood sources, Decision Risk Scores (£375)
+- Phase 1 Desk Study — Preliminary risk assessment per BS 10175 / LCRM 2020 (£595)
+
+**Planning & Strategy:**
+- Planning Statement — Policy evidence and planning justification (£495)
+- Pre-Application Advice — LPA pre-submission enquiry pack (£245)
+- Design & Access Statement — Design rationale and accessibility (£395)
+- Feasibility Study — GDV, cost appraisal, viability (£795)
+- CIL Liability Assessment — Levy exposure, exemptions, relief (£295)
+
+**Environmental & Ecology:**
+- Biodiversity Net Gain Screening — BNG applicability, 10% metric (£495)
+- Energy Statement — Part L, SAP, MEES, carbon analysis (£445)
+- Air Quality Screening Assessment — IAQM/EPUK screening (£395)
+
+**Specialist Surveys:**
+- Heritage Impact Assessment — Listed buildings, conservation areas (£545)
+- Transport Statement — Trip generation, highways, accessibility (£495)
+- Parking Survey — Evidence-based parking demand (£345)
+- Arboricultural Constraints Appraisal — Desktop TPO register, LiDAR canopy, RPA mapping (£575)
+- Noise Screening Report — Desktop BS 4142/BS 8233/ProPG screening (£445)
+- Daylight & Sunlight Screening — BRE 209 screening with risk indicators (£595)
+
+**Construction Readiness:**
+- Construction Management Plan — Pre-commencement CMP condition (£595)
+- Pre-Construction Design Review — 95-check design coordination review (£895)
+
+**Compliance & Legal (project-dependent):**
+- Building Control — Part A structural calculations (contact for quote)
+- Party Wall Assessment — Engineering-led party wall assessment (contact for quote)
+
+All prices exclude VAT.
+URL: https://www.pfcoconstruction.co.uk/site-intelligence
+Order: https://www.pfcoconstruction.co.uk/order-report
+
+### Subscriptions
+Site intelligence report subscriptions. 1 credit = 1 report of any type. Fixed monthly cost, 48-hour turnaround.
+- Scout: £399/mo — 2 reports/month, 72hr turnaround, for land buyers and deal packagers
+- Professional: £995/mo — 6 reports/month, 48hr turnaround, white-label, for architects and consultants
+- Developer: £1,995/mo — 12 reports/month, 48hr turnaround, white-label, for SME developers
+- Enterprise: £3,995/mo — 30 reports/month, 48hr turnaround, white-label, for volume housebuilders
+Annual billing available (15% discount). 30-day money-back guarantee.
+URL: https://www.pfcoconstruction.co.uk/subscriptions
+
+### Report Bundles
+Pre-construction diligence bundles at additional savings:
+- The Complete Intelligence (22 reports): £6,995 — Save 68% vs RRP
+- The Developer Due Diligence (7 reports): £2,995 — Save 68% vs RRP
+- The Full Planning Suite (7 reports): £2,495 — Save 66% vs RRP
+- The Self-Build Starter (4 reports): £1,495 — Save 73% vs RRP
+- The Conversion Ready Pack (4 reports): £1,495 — Save 70% vs RRP
+- The Architect Support Pack (4 reports): £1,395 — Save 70% vs RRP
+- The Appeal-Ready Pack (4 reports): £1,195 — Save 73% vs RRP
+- The Construction Readiness Pack (2 reports): £1,095 — Save 56% vs RRP
+- The Triple Threat (3 reports): £995 — Save 78% vs RRP
+URL: https://www.pfcoconstruction.co.uk/report-packages
+
 ### Structural Engineering
-Residential and commercial structural design, beam calculations (RSJ/steel), basement impact assessments, and load-bearing wall removals. Nationwide coverage.
+Residential and commercial structural design, beam calculations, basement impact assessments, and load-bearing wall removals.
 URL: https://www.pfcoconstruction.co.uk/structural-engineering
 
 ### Construction
 Engineering-led construction services including structural alterations, extensions, loft conversions, and basement builds.
 URL: https://www.pfcoconstruction.co.uk/construction
 
-### Site Intelligence
-Data-driven pre-construction screening reports interrogating 60 authoritative data sources across 11 constraint categories. Reports include:
-- Site Feasibility Report — 22+ constraint screening, Planning Friction Score (EA £595 / Stripe £595)
-- Geotechnical Desk Study — BGS geology, contamination, foundation risk (EA £900 / Stripe £495)
-- Flood Risk Assessment — 7 flood sources, Decision Risk Scores (EA £375 / Stripe £375)
-- Planning Statement — Policy evidence and planning justification (EA £495 / Stripe £495)
-- Heritage Impact Assessment — Listed buildings, conservation areas (EA £545 / Stripe £545)
-- Design & Access Statement — DMPO 2015 compliant DAS (EA £395 / Stripe £395)
-- Transport Statement — Trip generation, highways, accessibility (EA £495 / Stripe £495)
-- Sustainability / Energy Statement — Part L, SAP, MEES (EA £445 / Stripe £445)
-- CIL Liability Assessment — Levy exposure, exemptions, relief (EA £295 / Stripe £295)
-- Construction Management Plan — Pre-commencement CMP condition (EA £595 / Stripe £595)
-- Pre-Construction Design Review — 95-check design coordination review (EA £895 / Stripe £895)
-- Parking Provision Statement — Evidence-based parking demand (EA £345 / Stripe £345)
-- Biodiversity Net Gain Screening — BNG applicability, 10% metric (EA £495 / Stripe £495)
-- Feasibility Study — GDV, cost appraisal, viability (EA £795 / Stripe £795)
-- Pre-Application Advice Pack — LPA pre-submission engagement (EA £245 / Stripe £245)
-- Arboricultural Constraints Appraisal — Desktop tree constraints, TPO register, LiDAR canopy, RPA mapping (EA £575 / Stripe £575)
-- Air Quality Screening Assessment — IAQM/EPUK screening for development proposals (EA £395 / Stripe £395)
-- Noise Screening Report — Desktop noise screening against BS 4142/BS 8233/ProPG (EA £445 / Stripe £445)
-- Daylight & Sunlight Screening — BRE 209 daylight/sunlight screening with risk indicators (EA £595 / Stripe £595)
-- Phase 1 Desk Study — Preliminary risk assessment per BS 10175 / LCRM 2020 (EA £595 / Stripe £595)
-- Building Control — Part A structural calculations (project-dependent, contact for quote)
-- Party Wall Assessment — Engineering-led party wall assessment (project-dependent, contact for quote)
-EA = Early Access price shown on website. Stripe = actual checkout price. All prices exclude VAT.
-URL: https://www.pfcoconstruction.co.uk/site-intelligence
-Order: https://www.pfcoconstruction.co.uk/order-report
-Sample reports: https://www.pfcoconstruction.co.uk/samples/{slug}-sample.pdf
-
-### Report Packages (Bundles)
-Pre-construction diligence bundles at additional savings:
-- The Complete Intelligence (22 reports, all phases): £6,995 EA — Save 68% vs RRP
-- The Developer Due Diligence (7 reports, site acquisition): £2,995 EA — Save 68% vs RRP
-- The Full Planning Suite (7 planning application reports): £2,495 EA — Save 66% vs RRP
-- The Self-Build Starter (4 reports, plot assessment): £1,495 EA — Save 73% vs RRP
-- The Conversion Ready Pack (4 reports, change of use): £1,495 EA — Save 70% vs RRP
-- The Architect Support Pack (4 reports, design evidence): £1,395 EA — Save 70% vs RRP
-- The Appeal-Ready Pack (4 reports, submission + appeal): £1,195 EA — Save 73% vs RRP
-- The Construction Readiness Pack (2 post-permission reports): £1,095 EA — Save 56% vs RRP
-- The Triple Threat (3 core reports, most popular entry): £995 EA — Save 78% vs RRP
-URL: https://www.pfcoconstruction.co.uk/report-packages
-Plans & Pricing Roadmap: https://www.pfcoconstruction.co.uk/plans-and-pricing
-
-### AI Innovation
-Multi-agent AI system with 112 specialised agents across 7 categories (Data Acquisition, Analysis & Scoring, Market Intelligence, Structural Engineering, Construction & Project, Platform & Operations, Quality Assurance). Interrogates 60 authoritative data sources across 11 constraint categories including BGS, Environment Agency, Historic England, Natural England, Land Registry, National Grid, NaPTAN, CQC, GIAS, DNO capacity heatmaps, and UK House Price Index.
-URL: https://www.pfcoconstruction.co.uk/ai-innovation
-
-### Subscriptions
-Engineering as a Service — structural calculations and priority design support for a fixed monthly fee.
-- Starter: £595/mo
-- Professional: £1,495/mo
-- Enterprise: £2,995/mo
-URL: https://www.pfcoconstruction.co.uk/subscriptions
-
 ## Insights / Blog
-Expert articles on structural engineering, planning, and site intelligence:
+Expert articles on planning, site intelligence, and engineering:
 - What Reports Do You Need for Planning Permission? The Complete 2026 Guide: https://www.pfcoconstruction.co.uk/insights/what-reports-do-you-need-for-planning-permission
-- Engineering as a Service — Structural Design Subscriptions: https://www.pfcoconstruction.co.uk/insights/engineering-as-a-service-structural-design-subscriptions
-- Navigating Party Wall Agreements: https://www.pfcoconstruction.co.uk/insights/navigating-party-wall-agreements-owners-neighbours-guide
-- The Hidden Value of Site Intelligence: https://www.pfcoconstruction.co.uk/insights/hidden-value-site-intelligence-desktop-ground-investigation
-- The Role of AI in Modern Structural Engineering: https://www.pfcoconstruction.co.uk/insights/ai-in-modern-structural-engineering
-- Understanding RSJ Calculations for Home Extensions: https://www.pfcoconstruction.co.uk/insights/rsj-calculations-home-extensions
-- Basement Impact Assessments — What You Need to Know: https://www.pfcoconstruction.co.uk/insights/basement-impact-assessments-london
-- Flood Risk Assessments — When You Need One and What to Expect: https://www.pfcoconstruction.co.uk/insights/flood-risk-assessments-explained
-- Pre-Commencement Conditions — The Hidden Delay in Your Build: https://www.pfcoconstruction.co.uk/insights/planning-conditions-pre-commencement
-- What Is a Geotechnical Desk Study and Do You Need One: https://www.pfcoconstruction.co.uk/insights/geotechnical-desk-study-guide
-- Loft Conversions — The Structural Engineering You Cannot See: https://www.pfcoconstruction.co.uk/insights/loft-conversions-structural-considerations
+- Why Architects Are Switching to Subscriptions: https://www.pfcoconstruction.co.uk/insights/why-architects-switching-to-subscriptions
+- The True Cost of Per-Project Due Diligence: https://www.pfcoconstruction.co.uk/insights/true-cost-outsourced-due-diligence
+- Flood Risk Assessments Explained: https://www.pfcoconstruction.co.uk/insights/flood-risk-assessments-explained
 - Biodiversity Net Gain — What It Means for Your Planning Application: https://www.pfcoconstruction.co.uk/insights/biodiversity-net-gain-planning
-- Construction Management Plans — What Planning Officers Actually Want to See: https://www.pfcoconstruction.co.uk/insights/construction-management-plans-explained
+- Construction Management Plans Explained: https://www.pfcoconstruction.co.uk/insights/construction-management-plans-explained
+- Geotechnical Desk Study Guide: https://www.pfcoconstruction.co.uk/insights/geotechnical-desk-study-guide
+- Planning Appeal Rules Changed — What It Means: https://www.pfcoconstruction.co.uk/insights/planning-appeal-changes-2026
+- New Planning Rules from April 2026: https://www.pfcoconstruction.co.uk/insights/new-planning-rules-april-2026-simple-guide
 
 ## Key URLs
 - Homepage: https://www.pfcoconstruction.co.uk
-- Plans & Pricing: https://www.pfcoconstruction.co.uk/plans-and-pricing
-- Report Packages: https://www.pfcoconstruction.co.uk/report-packages
+- All Reports: https://www.pfcoconstruction.co.uk/site-intelligence
 - Order Reports: https://www.pfcoconstruction.co.uk/order-report
-- Blog / Insights: https://www.pfcoconstruction.co.uk/blog
+- Subscriptions: https://www.pfcoconstruction.co.uk/subscriptions
+- Report Bundles: https://www.pfcoconstruction.co.uk/report-packages
+- How It Works: https://www.pfcoconstruction.co.uk/plans-and-pricing
+- AI Standards: https://www.pfcoconstruction.co.uk/ai-compliance
+- Blog: https://www.pfcoconstruction.co.uk/blog
 - Contact: https://www.pfcoconstruction.co.uk/contact
-- Privacy Policy: https://www.pfcoconstruction.co.uk/privacy-policy
-- Terms of Service: https://www.pfcoconstruction.co.uk/terms-of-service
 
 ## Contact
 - Phone: 01483 363210
