@@ -161,8 +161,8 @@ const Home = () => {
                 <div className="w-16 h-16 bg-brand-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-6 text-brand-accent">
                   {item.icon}
                 </div>
-                <div className="text-5xl font-mono font-bold text-brand-primary/5 mb-2">{item.step}</div>
-                <h3 className="text-xl font-bold mb-3 text-brand-primary -mt-8">{item.title}</h3>
+                <div className="text-3xl font-mono font-bold text-brand-accent/30 mb-4">{item.step}</div>
+                <h3 className="text-xl font-bold mb-3 text-brand-primary">{item.title}</h3>
                 <p className="text-brand-primary/50 text-sm leading-relaxed">{item.desc}</p>
               </motion.div>
             ))}
