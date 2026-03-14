@@ -13,7 +13,7 @@ const SiteIntelligenceHub = () => {
       icon: <Search className="text-teal-500" size={32} />,
       link: "/site-intelligence/site-feasibility-report",
       accent: "border-teal-500",
-      price: "1,500",
+      price: "595",
       rrp: "2,500",
       features: ["Planning constraints & PD rights", "Flood & drainage risk", "Heritage & conservation", "Ecology & biodiversity", "Planning Friction Score (0-100)"],
       sample: "/samples/site-feasibility-report-sample.pdf"
@@ -24,7 +24,7 @@ const SiteIntelligenceHub = () => {
       icon: <Database className="text-amber-600" size={32} />,
       link: "/site-intelligence/geotechnical-desk-study",
       accent: "border-amber-600",
-      price: "900",
+      price: "495",
       rrp: "1,500",
       features: ["BGS geological mapping", "Borehole & trial pit data", "Shrink-swell clay analysis", "Contamination risk screen", "Foundation recommendations"],
       sample: "/samples/geotechnical-desk-study-sample.pdf"
@@ -101,7 +101,7 @@ const SiteIntelligenceHub = () => {
               transition={{ delay: 0.15 }}
               className="text-2xl font-bold text-brand-accent mb-6"
             >
-              Early Access Now Open.
+              22 Reports. 60 Data Sources. 48 Hours.
             </motion.p>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -109,7 +109,7 @@ const SiteIntelligenceHub = () => {
               transition={{ delay: 0.2 }}
               className="text-xl text-brand-primary/60 leading-relaxed mb-8"
             >
-              Welcome to Early Access. You're among the first to use PF & Co Site Intelligence — data-driven pre-construction screening that interrogates 60 authoritative data sources. Lock in discounted pricing today and help shape the product before V1 launch.
+              Planning-ready reports for any UK site. From constraint screening to viability appraisals, every document is AI-generated, human-verified, and submission-ready. Buy individually, as a bundle, or subscribe from £399/mo.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -117,33 +117,16 @@ const SiteIntelligenceHub = () => {
               transition={{ delay: 0.3 }}
               className="flex flex-wrap gap-4"
             >
-              <Link to="/contact" className="px-8 py-4 bg-brand-primary text-white rounded-xl font-bold hover:bg-brand-primary/90 transition-all flex items-center gap-2">
-                Unlock Early Access <ArrowRight size={20} />
+              <Link to="/order-report" className="px-8 py-4 bg-brand-primary text-white rounded-xl font-bold hover:bg-brand-primary/90 transition-all flex items-center gap-2">
+                Order Reports <ArrowRight size={20} />
+              </Link>
+              <Link to="/subscriptions" className="px-8 py-4 bg-brand-surface border border-brand-primary/5 rounded-xl font-bold hover:bg-brand-primary/5 transition-all flex items-center gap-2">
+                View Subscriptions
               </Link>
               <div className="flex items-center gap-2 px-6 py-4 bg-brand-surface border border-brand-primary/5 rounded-xl text-sm font-bold">
                 <Clock size={18} className="text-brand-accent" />
                 48hr Turnaround
               </div>
-            </motion.div>
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.4 }}
-              className="text-xs text-brand-primary/40 mt-4 italic"
-            >
-              Early Access pricing is temporary. Price increases upon the final V1 release.
-            </motion.p>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5 }}
-              className="mt-6 p-4 bg-brand-surface border border-brand-primary/5 rounded-xl max-w-lg"
-            >
-              <p className="text-sm text-brand-primary/70">
-                <span className="inline-block bg-brand-primary/10 text-brand-primary text-[9px] font-bold uppercase tracking-widest px-2 py-0.5 rounded mr-2">Coming Soon</span>
-                White-label, non-branded reports delivered under your practice's identity.{' '}
-                <Link to="/contact" className="text-brand-accent font-bold hover:underline">Register your interest</Link>
-              </p>
             </motion.div>
           </div>
 
@@ -265,15 +248,11 @@ const SiteIntelligenceHub = () => {
             </div>
             <div>
               <h3 className="text-2xl font-bold mb-2">White Label & Professional Partners</h3>
-              <p className="text-white/60 text-sm font-light">White label solutions for architectural practices and developers. Bespoke and tiered rates available for multiple report orders.</p>
-              <p className="text-white/60 text-sm font-light mt-2">
-                <span className="inline-block bg-white/10 text-white/80 text-[9px] font-bold uppercase tracking-widest px-2 py-0.5 rounded mr-2">Coming Soon</span>
-                Non-branded reports delivered under your practice's identity. Register your interest.
-              </p>
+              <p className="text-white/60 text-sm font-light">Reports delivered under your practice branding. Available on Professional subscriptions and above. Ideal for architects and consultants reselling to clients.</p>
             </div>
           </div>
-          <Link to="/contact" className="relative z-10 px-8 py-4 bg-white text-brand-primary rounded-xl font-bold hover:scale-105 transition-all shadow-xl shrink-0">
-            Discuss Professional Rates
+          <Link to="/subscriptions" className="relative z-10 px-8 py-4 bg-white text-brand-primary rounded-xl font-bold hover:scale-105 transition-all shadow-xl shrink-0">
+            View Subscription Plans
           </Link>
         </motion.div>
       </section>
@@ -345,7 +324,7 @@ const SiteIntelligenceHub = () => {
 
       {/* Product Cards */}
       <section className="max-w-7xl mx-auto px-6 mb-24">
-        <h2 className="text-4xl font-bold mb-12 text-center">Three Core Reports. Early Access Pricing.</h2>
+        <h2 className="text-4xl font-bold mb-12 text-center">Core Reports. <span className="text-brand-accent italic font-serif font-light">Start Here.</span></h2>
         <div className="grid lg:grid-cols-3 gap-8 mb-16">
           {products.map((product, i) => (
             <motion.div
@@ -391,7 +370,7 @@ const SiteIntelligenceHub = () => {
                     to={`/order-report?report=${product.link.split('/').pop()}`}
                     className="py-4 bg-brand-primary text-white rounded-xl font-bold text-center hover:bg-brand-primary/90 transition-colors flex items-center justify-center gap-2 shadow-lg shadow-brand-primary/10 text-sm"
                   >
-                    Claim Early Bird Price <Zap size={16} className="text-brand-accent" />
+                    Order Now <Zap size={16} className="text-brand-accent" />
                   </Link>
                 </div>
               </div>
