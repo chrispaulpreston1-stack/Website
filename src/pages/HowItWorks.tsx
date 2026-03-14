@@ -28,6 +28,8 @@ interface PhaseReport {
 
 const phaseReports: Record<string, PhaseReport[]> = {
   assessment: [
+    { slug: 'site-acquisition-intelligence', whatItTellsYou: 'GDV, RLV, planning risk, go/no-go recommendation for land acquisition decisions.', midMarket: '£3,000-£8,000' },
+    { slug: 'development-finance-summary', whatItTellsYou: 'Viability screening, profit on cost, sensitivity analysis for development finance.', midMarket: '£3,000-£8,000' },
     { slug: 'site-feasibility-report', whatItTellsYou: '22+ planning, environmental & ground constraints. Planning Friction Score (0-100). Buildability Rating (1-10).', midMarket: '£1,000-£4,000' },
     { slug: 'geotechnical-desk-study', whatItTellsYou: 'Ground conditions, geology, contamination, foundation risk.', midMarket: '£800-£1,500' },
     { slug: 'flood-risk-assessment', whatItTellsYou: '7 flood sources, Decision Risk Scores (0-10), SuDS viability.', midMarket: '£750-£1,500' },
@@ -140,7 +142,7 @@ function PhaseSection({ phaseId, index }: { phaseId: string; index: number; key?
                 <phase.icon size={24} className="text-white" />
               </div>
               <div>
-                <span className={`text-xs uppercase tracking-widest font-bold ${phase.accentColor} block`}>Phase {index + 1} — RIBA Stage {phase.stage}</span>
+                <span className={`text-xs uppercase tracking-widest font-bold ${phase.accentColor} block`}>Step {index + 1}</span>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-brand-primary group-hover:text-brand-accent transition-colors">{content.title}</h2>
               </div>
             </div>
@@ -515,10 +517,10 @@ const HowItWorks = () => {
             className="flex flex-wrap justify-center gap-8 md:gap-16"
           >
             {[
-              { value: '18', label: 'Reports' },
-              { value: '8', label: 'Bundles' },
+              { value: '22', label: 'Reports' },
+              { value: '9', label: 'Bundles' },
               { value: '48hr', label: 'Turnaround' },
-              { value: '44', label: 'Data Sources' },
+              { value: '60', label: 'Data Sources' },
             ].map((stat, i) => (
               <div key={i} className="text-center">
                 <div className="text-3xl md:text-4xl font-bold text-brand-accent">{stat.value}</div>
