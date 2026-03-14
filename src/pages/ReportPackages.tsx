@@ -274,14 +274,15 @@ const ReportPackages = () => {
             </thead>
             <tbody>
               {[
-                { name: 'The Complete Intelligence', reports: 20, ea: '£6,995', mid: '£12,550–£35,400', premium: '£35,900–£105,500' },
-                { name: 'The Full Planning Suite', reports: 7, ea: '£3,495', mid: '£6,050–£18,500', premium: '£18,500–£51,000' },
-                { name: 'The Developer Due Diligence', reports: 5, ea: '£3,095', mid: '£5,050–£15,500', premium: '£14,500–£58,000' },
-                { name: 'The Self-Build Starter', reports: 4, ea: '£3,050', mid: '£4,500–£12,000', premium: '£12,000–£35,000' },
-                { name: 'The Triple Threat', reports: 3, ea: '£2,375', mid: '£2,550–£7,000', premium: '£8,000–£23,000' },
-                { name: 'The Appeal-Ready Pack', reports: 4, ea: '£2,635', mid: '£2,750–£11,000', premium: '£12,000–£33,000' },
-                { name: 'The Architect Support Pack', reports: 4, ea: '£2,625', mid: '£3,500–£10,000', premium: '£10,000–£30,000' },
-                { name: 'The Construction Readiness', reports: 2, ea: '£1,195', mid: '£2,700–£6,000', premium: '£6,000–£18,000' },
+                { name: 'The Complete Intelligence', reports: 22, ea: '£6,995', mid: '£12,550–£35,400', premium: '£35,900–£105,500' },
+                { name: 'The Developer Due Diligence', reports: 7, ea: '£2,995', mid: '£5,050–£15,500', premium: '£14,500–£58,000' },
+                { name: 'The Full Planning Suite', reports: 7, ea: '£2,495', mid: '£6,050–£18,500', premium: '£18,500–£51,000' },
+                { name: 'The Self-Build Starter', reports: 4, ea: '£1,495', mid: '£4,500–£12,000', premium: '£12,000–£35,000' },
+                { name: 'The Conversion Ready Pack', reports: 4, ea: '£1,495', mid: '£3,500–£10,000', premium: '£10,000–£28,000' },
+                { name: 'The Architect Support Pack', reports: 4, ea: '£1,395', mid: '£3,500–£10,000', premium: '£10,000–£30,000' },
+                { name: 'The Appeal-Ready Pack', reports: 4, ea: '£1,195', mid: '£2,750–£11,000', premium: '£12,000–£33,000' },
+                { name: 'The Construction Readiness', reports: 2, ea: '£1,095', mid: '£2,700–£6,000', premium: '£6,000–£18,000' },
+                { name: 'The Triple Threat', reports: 3, ea: '£995', mid: '£2,550–£7,000', premium: '£8,000–£23,000' },
               ].map((row, i) => (
                 <tr key={i} className="border-b border-brand-primary/5">
                   <td className="py-4 pr-4">
