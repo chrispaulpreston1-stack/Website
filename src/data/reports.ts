@@ -83,7 +83,7 @@ export const reports: Report[] = [
     category: 'core',
     earlyAccessPrice: 1500,
     rrp: 2500,
-    stripePrice: 297,
+    stripePrice: 595,
     path: '/site-intelligence/site-feasibility-report',
     description: '22+ planning, environmental, and ground risk constraints for any UK property address.',
     turnaround: '48hr',
@@ -98,7 +98,7 @@ export const reports: Report[] = [
     category: 'core',
     earlyAccessPrice: 900,
     rrp: 1500,
-    stripePrice: 297,
+    stripePrice: 495,
     path: '/site-intelligence/geotechnical-desk-study',
     description: 'BGS geology, groundwater, contamination history, and foundation risk analysis.',
     turnaround: '48hr',
@@ -113,7 +113,7 @@ export const reports: Report[] = [
     category: 'core',
     earlyAccessPrice: 375,
     rrp: 600,
-    stripePrice: 297,
+    stripePrice: 375,
     path: '/site-intelligence/flood-risk-assessment',
     description: 'Tier 1 Desktop FRA with 4 Decision Risk Scores covering 7 flood sources.',
     turnaround: '48hr',
@@ -443,16 +443,17 @@ export interface ReportBundle {
 }
 
 export const bundles: ReportBundle[] = [
-  // -- Premium Tier --
+  // ── Premium Tier ────────────────────────────────────────────────
+  // Standalone total: £11,900 | RRP total: £22,020 | EA: £6,995 (41% off standalone, 68% off RRP)
   {
     slug: 'complete-intelligence',
     name: 'The Complete Intelligence',
     tagline: 'Every report. One price. Zero gaps.',
     target: 'For Developers & Professionals',
     earlyAccessPrice: 6995,
-    rrp: 19020,
-    savings: 12025,
-    savingsPercent: 63,
+    rrp: 22020,
+    savings: 15025,
+    savingsPercent: 68,
     includedReports: [
       'site-acquisition-intelligence', 'development-finance-summary',
       'site-feasibility-report', 'geotechnical-desk-study', 'flood-risk-assessment',
@@ -468,31 +469,33 @@ export const bundles: ReportBundle[] = [
     isNew: true,
   },
 
-  // -- Mid Tier (New bundles) --
+  // ── Mid Tier ────────────────────────────────────────────────────
+  // Standalone total: £3,465 | RRP total: £7,285 | EA: £2,495 (28% off standalone, 66% off RRP)
   {
     slug: 'full-planning-suite',
     name: 'The Full Planning Suite',
     tagline: 'Every supporting document your planning application needs — except the drawings.',
     target: 'For Architects & Planning Consultants',
-    earlyAccessPrice: 3495,
+    earlyAccessPrice: 2495,
     rrp: 7285,
-    savings: 3790,
-    savingsPercent: 52,
+    savings: 4790,
+    savingsPercent: 66,
     includedReports: [
       'site-feasibility-report', 'planning-statement', 'design-and-access-statement',
       'heritage-impact-assessment', 'biodiversity-net-gain', 'energy-statement', 'transport-statement',
     ],
     isNew: true,
   },
+  // Standalone total: £4,345 | RRP total: £9,415 | EA: £2,995 (31% off standalone, 68% off RRP)
   {
     slug: 'developer-due-diligence',
     name: 'The Developer Due Diligence',
     tagline: 'Everything you need to know before you sign.',
     target: 'For Developers & Investors',
-    earlyAccessPrice: 3095,
-    rrp: 6415,
-    savings: 3320,
-    savingsPercent: 52,
+    earlyAccessPrice: 2995,
+    rrp: 9415,
+    savings: 6420,
+    savingsPercent: 68,
     includedReports: [
       'site-acquisition-intelligence', 'development-finance-summary',
       'site-feasibility-report', 'geotechnical-desk-study', 'flood-risk-assessment',
@@ -500,84 +503,89 @@ export const bundles: ReportBundle[] = [
     ],
     isNew: true,
   },
+  // Standalone total: £1,490 | RRP total: £2,480 | EA: £1,095 (27% off standalone, 56% off RRP)
   {
     slug: 'construction-readiness',
     name: 'The Construction Readiness Pack',
     tagline: 'Permission granted. Now make sure you\'re actually ready to build.',
     target: 'For Self-Builders & Contractors',
-    earlyAccessPrice: 1195,
+    earlyAccessPrice: 1095,
     rrp: 2480,
-    savings: 1285,
-    savingsPercent: 52,
+    savings: 1385,
+    savingsPercent: 56,
     includedReports: [
       'pre-construction-design-review', 'construction-management-plan',
     ],
     isNew: true,
   },
-
+  // Standalone total: £2,080 | RRP total: £4,980 | EA: £1,495 (28% off standalone, 70% off RRP)
   {
     slug: 'conversion-ready-pack',
     name: 'The Conversion Ready Pack',
     tagline: 'Office. Retail. Mixed-use — convert to residential with confidence.',
     target: 'For Change of Use Projects',
-    earlyAccessPrice: 2395,
+    earlyAccessPrice: 1495,
     rrp: 4980,
-    savings: 2585,
-    savingsPercent: 52,
+    savings: 3485,
+    savingsPercent: 70,
     includedReports: [
       'site-feasibility-report', 'planning-statement', 'design-and-access-statement', 'phase-1-contamination',
     ],
     isNew: true,
   },
 
-  // -- Established Bundles --
+  // ── Established Bundles ─────────────────────────────────────────
+  // Standalone total: £1,465 | RRP total: £4,600 | EA: £995 (32% off standalone, 78% off RRP)
   {
     slug: 'triple-threat',
     name: 'The Triple Threat',
     tagline: 'The essential trio — site, ground, and flood risk in one.',
     target: 'For Homeowners',
-    earlyAccessPrice: 2375,
+    earlyAccessPrice: 995,
     rrp: 4600,
-    savings: 2225,
-    savingsPercent: 48,
+    savings: 3605,
+    savingsPercent: 78,
     includedReports: ['site-feasibility-report', 'geotechnical-desk-study', 'flood-risk-assessment'],
     isMostPopular: true,
   },
+  // Standalone total: £1,730 | RRP total: £4,395 | EA: £1,195 (31% off standalone, 73% off RRP)
   {
     slug: 'appeal-ready-pack',
     name: 'The Appeal-Ready Pack',
     tagline: 'Built for the 2026 appeal rules — your evidence, airtight from day one.',
     target: 'For Planning Appeals',
-    earlyAccessPrice: 2635,
+    earlyAccessPrice: 1195,
     rrp: 4395,
-    savings: 1760,
-    savingsPercent: 40,
+    savings: 3200,
+    savingsPercent: 73,
     includedReports: [
       'site-feasibility-report', 'planning-statement', 'design-and-access-statement', 'pre-application-advice',
     ],
   },
+  // Standalone total: £2,060 | RRP total: £5,590 | EA: £1,495 (27% off standalone, 73% off RRP)
   {
     slug: 'self-build-starter',
     name: 'The Self-Build Starter',
     tagline: 'From finding your plot to breaking ground — covered.',
     target: 'For Self-Builders',
-    earlyAccessPrice: 3050,
+    earlyAccessPrice: 1495,
     rrp: 5590,
-    savings: 2540,
-    savingsPercent: 45,
+    savings: 4095,
+    savingsPercent: 73,
     includedReports: [
       'site-feasibility-report', 'geotechnical-desk-study', 'flood-risk-assessment', 'construction-management-plan',
     ],
   },
+  // Standalone total: £1,930 | RRP total: £4,725 | EA: £1,395 (28% off standalone, 70% off RRP)
   {
     slug: 'architect-support-pack',
     name: 'The Architect Support Pack',
     tagline: 'The technical evidence to back your design.',
     target: 'For Architects (B2B)',
-    earlyAccessPrice: 2625,
+    earlyAccessPrice: 1395,
     rrp: 4725,
-    savings: 2100,
-    savingsPercent: 44,
+    savings: 3330,
+    savingsPercent: 70,
     includedReports: [
       'site-feasibility-report', 'design-and-access-statement', 'planning-statement', 'energy-statement',
     ],
