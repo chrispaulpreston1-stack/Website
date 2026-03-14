@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Search, ShieldAlert, BarChart3, ArrowRight, Check, X, Database, Clock, Users, Zap, FileText } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import PageSEO from '../components/PageSEO';
 import VideoExplainer from '../components/VideoExplainer';
+import { reports } from '../data/reports';
 
 const SiteIntelligenceHub = () => {
+  const [roleFilter, setRoleFilter] = useState<string>('all');
   const products = [
     {
       title: "Site Feasibility Report",
@@ -378,89 +380,76 @@ const SiteIntelligenceHub = () => {
           ))}
         </div>
 
-        {/* Full Product Suite Section */}
+        {/* Full Report Catalog — Filterable */}
         <div className="mt-32">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl font-bold mb-6 tracking-tighter">The Full Site Intelligence <span className="text-brand-accent italic font-serif font-light">Suite.</span></h2>
-            <p className="text-brand-primary/60 max-w-2xl mx-auto text-lg font-light">Specialist reports for every stage of the planning and pre-construction process.</p>
+          <div className="text-center mb-12">
+            <h2 className="text-5xl font-bold mb-6 tracking-tighter">All <span className="text-brand-accent italic font-serif font-light">Reports.</span></h2>
+            <p className="text-brand-primary/60 max-w-2xl mx-auto text-lg font-light">22 report types. Filter by who you are to see what's most relevant.</p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Role Filter */}
+          <div className="flex flex-wrap justify-center gap-2 mb-12">
             {[
-              {
-                cat: "Core Intelligence",
-                items: [
-                  { name: "Site Acquisition Intelligence", link: "/site-intelligence/site-acquisition-intelligence", desc: "GDV, RLV, capacity & go/no-go recommendation." },
-                  { name: "Site Feasibility Report", link: "/site-intelligence/site-feasibility-report", desc: "22+ constraint screening." },
-                  { name: "Geotechnical Desk Study", link: "/site-intelligence/geotechnical-desk-study", desc: "Ground condition analysis." },
-                  { name: "Flood Risk Assessment", link: "/site-intelligence/flood-risk-assessment", desc: "Planning-ready FRA." },
-                  { name: "Phase 1 Contamination", link: "/site-intelligence/phase-1-contamination", desc: "LCRM 2020 risk assessment." }
-                ]
-              },
-              {
-                cat: "Planning & Strategy",
-                items: [
-                  { name: "CIL Liability Assessment", link: "/site-intelligence/cil-liability-assessment", desc: "Exemption checks & liability calculation." },
-                  { name: "Planning Statement", link: "/site-intelligence/planning-statement", desc: "Submission-ready policy evidence." },
-                  { name: "Pre-Application Advice", link: "/site-intelligence/pre-application-advice", desc: "Targeted enquiry packs." },
-                  { name: "Design & Access Statement", link: "/site-intelligence/design-and-access-statement", desc: "Design rationale & accessibility." },
-                  { name: "Concept Feasibility Study", link: "/site-intelligence/feasibility-study", desc: "In-depth development appraisal." }
-                ]
-              },
-              {
-                cat: "Environmental & Ecology",
-                items: [
-                  { name: "Biodiversity Net Gain", link: "/site-intelligence/biodiversity-net-gain", desc: "BNG assessment & strategy." },
-                  { name: "Energy Statement", link: "/site-intelligence/energy-statement", desc: "Sustainability & carbon analysis." },
-                  { name: "Air Quality Screening", link: "/site-intelligence/air-quality-screening", desc: "IAQM/EPUK screening & AQMA analysis." }
-                ]
-              },
-              {
-                cat: "Specialist Surveys",
-                items: [
-                  { name: "Heritage Impact Assessment", link: "/site-intelligence/heritage-impact-assessment", desc: "Listed building & CA analysis." },
-                  { name: "Transport Statement", link: "/site-intelligence/transport-statement", desc: "Highways & accessibility." },
-                  { name: "Parking Survey", link: "/site-intelligence/parking-survey", desc: "Evidence-based provision." },
-                  { name: "Noise Impact Assessment", link: "/site-intelligence/noise-impact-assessment", desc: "BS 4142/BS 8233 acoustic screening." },
-                  { name: "Daylight & Sunlight Assessment", link: "/site-intelligence/daylight-sunlight-assessment", desc: "BRE 209 impact analysis." },
-                  { name: "Arboricultural Desk Study", link: "/site-intelligence/tree-survey", desc: "BS 5837 tree assessment & RPA mapping." }
-                ]
-              },
-              {
-                cat: "Construction Readiness",
-                items: [
-                  { name: "Construction Management Plan", link: "/site-intelligence/construction-management-plan", desc: "Logistics & safety strategy." },
-                  { name: "Design Readiness Review", link: "/site-intelligence/pre-construction-design-review", desc: "95-check coordination review." }
-                ]
-              },
-              {
-                cat: "Compliance & Legal",
-                items: [
-                  { name: "Building Control", link: "/building-control", desc: "Part A calculations & drawings." },
-                  { name: "Party Wall Assessment", link: "/party-wall", desc: "Engineering-led legal resolution." }
-                ]
-              }
-            ].map((category, i) => (
-              <div key={i} className="bg-white rounded-3xl p-8 border-2 border-brand-primary/5 hover:border-brand-accent/20 shadow-xl shadow-brand-primary/5 hover:shadow-2xl transition-all duration-500 premium-card group/card">
-                <div className="flex items-center gap-3 mb-8 border-b border-brand-primary/10 pb-4">
-                  <div className="w-2 h-2 rounded-full bg-brand-accent shadow-lg shadow-brand-accent/50 group-hover/card:scale-150 transition-transform duration-500" />
-                  <h3 className="text-xs font-mono uppercase tracking-widest text-brand-accent font-bold">
-                    {category.cat}
-                  </h3>
-                </div>
-                <div className="space-y-6">
-                  {category.items.map((item, j) => (
-                    <Link key={j} to={item.link} className="group block p-3 -mx-3 rounded-xl hover:bg-brand-surface transition-colors">
-                      <div className="flex justify-between items-start mb-1">
-                        <h4 className="font-bold text-brand-primary group-hover:text-brand-accent transition-colors">{item.name}</h4>
-                        <ArrowRight size={16} className="opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all text-brand-accent" />
-                      </div>
-                      <p className="text-xs text-brand-primary/60 font-medium">{item.desc}</p>
-                    </Link>
-                  ))}
-                </div>
-              </div>
+              { id: 'all', label: 'All Reports' },
+              { id: 'developer', label: 'Developer' },
+              { id: 'architect', label: 'Architect' },
+              { id: 'land-buyer', label: 'Land Buyer' },
+              { id: 'homeowner', label: 'Homeowner' },
+              { id: 'lender', label: 'Lender / Investor' },
+            ].map(role => (
+              <button
+                key={role.id}
+                onClick={() => setRoleFilter(role.id)}
+                className={`px-5 py-2.5 rounded-full text-sm font-bold transition-all ${roleFilter === role.id ? 'bg-brand-primary text-white shadow-lg' : 'bg-white text-brand-primary/60 border border-brand-primary/10 hover:border-brand-accent/30'}`}
+              >
+                {role.label}
+              </button>
             ))}
+          </div>
+
+          {/* Report Cards */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+            {(() => {
+              const roleReports: Record<string, string[]> = {
+                'all': reports.filter(r => r.stripePrice > 0).map(r => r.slug),
+                'developer': ['site-acquisition-intelligence', 'development-finance-summary', 'site-feasibility-report', 'geotechnical-desk-study', 'flood-risk-assessment', 'phase-1-contamination', 'planning-statement', 'design-and-access-statement', 'feasibility-study', 'cil-liability-assessment', 'biodiversity-net-gain', 'energy-statement', 'construction-management-plan', 'pre-construction-design-review'],
+                'architect': ['site-feasibility-report', 'planning-statement', 'design-and-access-statement', 'heritage-impact-assessment', 'biodiversity-net-gain', 'energy-statement', 'transport-statement', 'parking-survey', 'tree-survey', 'noise-impact-assessment', 'daylight-sunlight-assessment', 'air-quality-screening'],
+                'land-buyer': ['site-acquisition-intelligence', 'development-finance-summary', 'site-feasibility-report', 'geotechnical-desk-study', 'flood-risk-assessment', 'feasibility-study', 'cil-liability-assessment'],
+                'homeowner': ['site-feasibility-report', 'geotechnical-desk-study', 'flood-risk-assessment', 'planning-statement', 'design-and-access-statement', 'construction-management-plan', 'pre-construction-design-review'],
+                'lender': ['site-acquisition-intelligence', 'development-finance-summary', 'site-feasibility-report', 'flood-risk-assessment', 'geotechnical-desk-study', 'phase-1-contamination'],
+              };
+
+              const slugs = roleReports[roleFilter] || roleReports['all'];
+              const filtered = reports.filter(r => slugs.includes(r.slug) && r.stripePrice > 0);
+
+              return filtered.map((report, i) => (
+                <motion.div
+                  key={report.slug}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.03 }}
+                >
+                  <Link to={report.path} className="block p-6 rounded-2xl bg-white border border-brand-primary/5 hover:border-brand-accent/20 hover:shadow-md transition-all group h-full">
+                    <div className="flex items-center justify-between mb-3">
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-brand-primary/30">{report.shortName}</span>
+                      <span className="text-lg font-bold text-brand-accent">£{report.stripePrice.toLocaleString()}</span>
+                    </div>
+                    <h4 className="font-bold text-brand-primary mb-2 group-hover:text-brand-accent transition-colors text-sm">{report.name}</h4>
+                    <p className="text-xs text-brand-primary/50 leading-relaxed mb-3">{report.description}</p>
+                    <div className="flex items-center justify-between">
+                      <span className="text-[10px] text-brand-primary/30 font-bold">{report.turnaround}</span>
+                      <ArrowRight size={14} className="text-brand-accent opacity-0 group-hover:opacity-100 transition-opacity" />
+                    </div>
+                  </Link>
+                </motion.div>
+              ));
+            })()}
+          </div>
+
+          <div className="text-center mt-12">
+            <Link to="/order-report" className="inline-flex items-center gap-2 px-8 py-4 bg-brand-primary text-white rounded-full font-bold hover:scale-105 transition-transform">
+              Order Reports <ArrowRight size={18} />
+            </Link>
           </div>
         </div>
 
