@@ -16,9 +16,9 @@ URL: https://www.pfcoconstruction.co.uk/construction
 
 ### Site Intelligence
 Data-driven pre-construction screening reports interrogating 60 authoritative data sources across 11 constraint categories. Reports include:
-- Site Feasibility Report — 22+ constraint screening, Planning Friction Score (EA £1,500 / Stripe £297)
-- Geotechnical Desk Study — BGS geology, contamination, foundation risk (EA £900 / Stripe £297)
-- Flood Risk Assessment — 7 flood sources, Decision Risk Scores (EA £375 / Stripe £297)
+- Site Feasibility Report — 22+ constraint screening, Planning Friction Score (EA £1,500 / Stripe £595)
+- Geotechnical Desk Study — BGS geology, contamination, foundation risk (EA £900 / Stripe £495)
+- Flood Risk Assessment — 7 flood sources, Decision Risk Scores (EA £375 / Stripe £375)
 - Planning Statement — Policy evidence and planning justification (EA £495 / Stripe £495)
 - Heritage Impact Assessment — Listed buildings, conservation areas (EA £545 / Stripe £545)
 - Design & Access Statement — DMPO 2015 compliant DAS (EA £395 / Stripe £395)
@@ -45,14 +45,15 @@ Sample reports: https://www.pfcoconstruction.co.uk/samples/{slug}-sample.pdf
 
 ### Report Packages (Bundles)
 Pre-construction diligence bundles at additional savings:
-- The Complete Intelligence (20 reports, all phases): £6,995 EA — Save 63%
-- The Full Planning Suite (7 planning application reports): £3,495 EA — Save 52%
-- The Developer Due Diligence (5 reports, site acquisition): £3,095 EA — Save 52%
-- The Self-Build Starter (4 reports, plot assessment): £3,050 EA — Save 45%
-- The Appeal-Ready Pack (4 reports, submission + appeal): £2,635 EA — Save 40%
-- The Architect Support Pack (4 reports, design evidence): £2,625 EA — Save 44%
-- The Triple Threat (3 core reports, most popular entry): £2,375 EA — Save 48%
-- The Construction Readiness Pack (2 post-permission reports): £1,195 EA — Save 52%
+- The Complete Intelligence (22 reports, all phases): £6,995 EA — Save 68% vs RRP
+- The Developer Due Diligence (7 reports, site acquisition): £2,995 EA — Save 68% vs RRP
+- The Full Planning Suite (7 planning application reports): £2,495 EA — Save 66% vs RRP
+- The Self-Build Starter (4 reports, plot assessment): £1,495 EA — Save 73% vs RRP
+- The Conversion Ready Pack (4 reports, change of use): £1,495 EA — Save 70% vs RRP
+- The Architect Support Pack (4 reports, design evidence): £1,395 EA — Save 70% vs RRP
+- The Appeal-Ready Pack (4 reports, submission + appeal): £1,195 EA — Save 73% vs RRP
+- The Construction Readiness Pack (2 post-permission reports): £1,095 EA — Save 56% vs RRP
+- The Triple Threat (3 core reports, most popular entry): £995 EA — Save 78% vs RRP
 URL: https://www.pfcoconstruction.co.uk/report-packages
 Plans & Pricing Roadmap: https://www.pfcoconstruction.co.uk/plans-and-pricing
 

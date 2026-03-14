@@ -67,20 +67,20 @@ const routes = [
   {
     path: '/site-intelligence/site-feasibility-report',
     title: 'Site Feasibility Report | Pre-Construction Screening | PF & Co',
-    description: 'A data-driven pre-construction screening report interrogating 22+ planning, environmental, and ground risk constraints for any UK property. From £297.',
-    jsonLd: { '@type': 'Product', name: 'Site Feasibility Report', brand: { '@type': 'Organization', name: 'PF & Co Construction' }, offers: { '@type': 'Offer', price: '297', priceCurrency: 'GBP', availability: 'https://schema.org/InStock' } },
+    description: 'A data-driven pre-construction screening report interrogating 22+ planning, environmental, and ground risk constraints for any UK property. From £595.',
+    jsonLd: { '@type': 'Product', name: 'Site Feasibility Report', brand: { '@type': 'Organization', name: 'PF & Co Construction' }, offers: { '@type': 'Offer', price: '595', priceCurrency: 'GBP', availability: 'https://schema.org/InStock' } },
   },
   {
     path: '/site-intelligence/geotechnical-desk-study',
     title: 'Geotechnical Desk Study | Ground Investigation | PF & Co',
     description: 'Comprehensive desktop ground investigation covering BGS geology, groundwater, contamination history, and foundation risk assessment.',
-    jsonLd: { '@type': 'Product', name: 'Geotechnical Desk Study', brand: { '@type': 'Organization', name: 'PF & Co Construction' }, offers: { '@type': 'Offer', price: '297', priceCurrency: 'GBP', availability: 'https://schema.org/InStock' } },
+    jsonLd: { '@type': 'Product', name: 'Geotechnical Desk Study', brand: { '@type': 'Organization', name: 'PF & Co Construction' }, offers: { '@type': 'Offer', price: '495', priceCurrency: 'GBP', availability: 'https://schema.org/InStock' } },
   },
   {
     path: '/site-intelligence/flood-risk-assessment',
     title: 'Flood Risk Assessment | Planning-Ready Reports | PF & Co',
     description: 'Tier 1 Desktop Flood Risk Assessment evaluating fluvial, surface water, groundwater, and sewer flood risk with 4 Decision Risk Scores.',
-    jsonLd: { '@type': 'Product', name: 'Flood Risk Assessment', brand: { '@type': 'Organization', name: 'PF & Co Construction' }, offers: { '@type': 'Offer', price: '297', priceCurrency: 'GBP', availability: 'https://schema.org/InStock' } },
+    jsonLd: { '@type': 'Product', name: 'Flood Risk Assessment', brand: { '@type': 'Organization', name: 'PF & Co Construction' }, offers: { '@type': 'Offer', price: '375', priceCurrency: 'GBP', availability: 'https://schema.org/InStock' } },
   },
   {
     path: '/site-intelligence/planning-statement',

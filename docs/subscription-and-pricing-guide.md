@@ -404,7 +404,7 @@ Above + DFS + CFS + ES + DSA + DRR + PAA = **22 reports** (Complete Intelligence
 | 9 | Design & Access Statement | £395 | Design rationale & accessibility |
 | 10 | Concept Feasibility Study | £795 | Development appraisal & viability |
 | 11 | CIL Liability Assessment | £295 | CIL liability, exemptions, relief |
-| 12 | Biodiversity Net Gain | £495 | Exemption checks, habitat screening |
+| 12 | Biodiversity Net Gain Screening | £495 | Exemption checks, habitat screening |
 | 13 | Energy Statement | £445 | Part L, SAP, MEES, carbon |
 | 14 | Air Quality Screening | £395 | AQMA proximity, dust risk |
 | 15 | Heritage Impact Assessment | £545 | Listed buildings, conservation areas |
@@ -448,7 +448,7 @@ Above + DFS + CFS + ES + DSA + DRR + PAA = **22 reports** (Complete Intelligence
 | 2 | Planning Statement | £495 | Policy evidence for submission |
 | 3 | Design & Access Statement | £395 | Design rationale & accessibility |
 | 4 | Heritage Impact Assessment | £545 | Heritage impact on listed buildings/CAs |
-| 5 | Biodiversity Net Gain | £495 | BNG screening & exemptions |
+| 5 | Biodiversity Net Gain Screening | £495 | BNG screening & exemptions |
 | 6 | Energy Statement | £445 | Energy & sustainability evidence |
 | 7 | Transport Statement | £495 | Transport & highways assessment |
 | | **STANDALONE TOTAL** | **£3,465** | |
