@@ -103,6 +103,54 @@ const reportShortNames = [...reportsContent.matchAll(/shortName:\s*'([^']+)'/g)]
 console.log('  Total reports: ' + reportShortNames.length);
 console.log('  Short names: ' + reportShortNames.join(', '));
 
+// ── RICS AI COMPLIANCE FIELDS ──────────────────────────────────────
+console.log('\n=== RICS AI COMPLIANCE (reports.ts) ===');
+
+// Only check the reports array, not bundles — split on the bundles export
+const reportsOnlyContent = reportsContent.split(/export\s+const\s+bundles/)[0];
+const reportSlugs = [...reportsOnlyContent.matchAll(/slug:\s*'([^']+)'/g)].map(m => m[1]);
+
+// Check every report has methodologySummary
+const reportsBlocks = reportsOnlyContent.split(/\{\s*slug:/g).slice(1);
+const missingMethodology = [];
+const missingDataCats = [];
+reportsBlocks.forEach(block => {
+  const slugMatch = block.match(/^\s*'([^']+)'/);
+  if (slugMatch) {
+    if (!block.includes('methodologySummary')) missingMethodology.push(slugMatch[1]);
+    if (!block.includes('dataCategories')) missingDataCats.push(slugMatch[1]);
+  }
+});
+
+if (missingMethodology.length === 0) pass('All ' + reportSlugs.length + ' reports have methodologySummary');
+else fail('Missing methodologySummary on ' + missingMethodology.length + ' reports: ' + missingMethodology.join(', '));
+
+if (missingDataCats.length === 0) pass('All ' + reportSlugs.length + ' reports have dataCategories');
+else fail('Missing dataCategories on ' + missingDataCats.length + ' reports: ' + missingDataCats.join(', '));
+
+// Check dataCategories only use valid category labels
+const validCategoryLabels = [
+  'Flood & Water', 'Geology & Ground', 'Heritage & Conservation',
+  'Ecology & Environment', 'Planning & Land Use', 'Mapping & Spatial',
+  'Climate & Energy', 'Safety & Risk', 'Market & Infrastructure',
+  'Transport & Accessibility', 'Amenity & Services',
+];
+const dataCategoriesBlocks = [...reportsOnlyContent.matchAll(/dataCategories:\s*\[([^\]]+)\]/g)].map(m => m[1]);
+const allCategoryRefs = new Set();
+dataCategoriesBlocks.forEach(block => {
+  const cats = block.match(/'([^']+)'/g);
+  if (cats) cats.forEach(c => allCategoryRefs.add(c.replace(/'/g, '')));
+});
+const invalidCats = [...allCategoryRefs].filter(c => !validCategoryLabels.includes(c));
+if (invalidCats.length) fail('Invalid dataCategory labels: ' + invalidCats.join(', '));
+else pass('All dataCategory labels are valid (' + allCategoryRefs.size + ' unique labels used)');
+
+// Check empty methodologySummary strings
+const methodologySummaries = [...reportsOnlyContent.matchAll(/methodologySummary:\s*'([^']+)'/g)].map(m => m[1]);
+const emptyMethodology = methodologySummaries.filter(s => s.trim().length < 10);
+if (emptyMethodology.length) fail(emptyMethodology.length + ' reports have suspiciously short methodologySummary');
+else pass('All methodologySummary values are substantive');
+
 // ── CROSS-REFERENCES ───────────────────────────────────────────────
 console.log('\n=== CROSS-REFERENCES ===');
 
@@ -205,6 +253,53 @@ srcFiles.forEach(fp => {
   }
 });
 if (staleCount === 0) pass('No stale count references in src/**/*.{ts,tsx}');
+
+// ── REPORT-AGENT ORPHAN CHECK ─────────────────────────────────────
+console.log('\n=== REPORT-AGENT ORPHAN CHECK ===');
+
+// Every report shortName should appear in at least one agent's triggeredBy
+const orphanedReports = reportShortNames.filter(sn => {
+  return !allTrigCodes.has(sn) && !trigBlocks.some(block => block.includes("'" + sn + "'"));
+});
+// Re-scan: collect all triggeredBy codes from agents
+const allAgentTrigCodes = new Set();
+trigBlocks.forEach(block => {
+  const codes = block.match(/'([^']+)'/g);
+  if (codes) codes.forEach(c => allAgentTrigCodes.add(c.replace(/'/g, '')));
+});
+const orphaned = reportShortNames.filter(sn => !allAgentTrigCodes.has(sn));
+if (orphaned.length) fail('Report shortNames with no agent triggeredBy mapping: ' + orphaned.join(', '));
+else pass('All ' + reportShortNames.length + ' report shortNames mapped in agent triggeredBy');
+
+// ── SEO DATA SOURCE COUNT CHECK ───────────────────────────────────
+console.log('\n=== SEO DATA SOURCE COUNT CHECK ===');
+
+const seoContent = fs.readFileSync(path.join(root, 'scripts/generate-seo-pages.js'), 'utf8');
+const seoCountMatch = seoContent.match(/(\d+) authoritative data sources/);
+if (seoCountMatch) {
+  const seoDsCount = parseInt(seoCountMatch[1]);
+  if (seoDsCount === dsIds.length) pass('SEO script data source count (' + seoDsCount + ') matches dataSources.ts (' + dsIds.length + ')');
+  else fail('SEO script says ' + seoDsCount + ' data sources but dataSources.ts has ' + dsIds.length);
+} else {
+  warn('Could not find data source count in SEO script');
+}
+
+// ── SITEMAP ROUTE CHECK ───────────────────────────────────────────
+console.log('\n=== SITEMAP ROUTE CHECK ===');
+
+const sitemapContent = fs.readFileSync(path.join(root, 'public/sitemap.xml'), 'utf8');
+const sitemapUrls = [...sitemapContent.matchAll(/<loc>https:\/\/www\.pfcoconstruction\.co\.uk(\/[^<]*)<\/loc>/g)].map(m => m[1]);
+const seoRoutes = [...seoContent.matchAll(/path:\s*'([^']+)'/g)].map(m => m[1]);
+const seoRoutesNoIndex = [...seoContent.matchAll(/noindex:\s*true/g)];
+// Filter out noindex routes from comparison
+const indexableRoutes = seoRoutes.filter((_, i) => {
+  // Find the route block this path belongs to and check if it has noindex
+  const routeBlocks = seoContent.split(/\{\s*\n?\s*path:/g).slice(1);
+  return routeBlocks[i] ? !routeBlocks[i].includes('noindex: true') : true;
+});
+const missingSitemap = indexableRoutes.filter(r => !sitemapUrls.includes(r));
+if (missingSitemap.length) fail('Routes in SEO script but missing from sitemap: ' + missingSitemap.join(', '));
+else pass('All indexable SEO routes present in sitemap (' + sitemapUrls.length + ' URLs)');
 
 // ── SUMMARY ────────────────────────────────────────────────────────
 console.log('\n' + '='.repeat(50));

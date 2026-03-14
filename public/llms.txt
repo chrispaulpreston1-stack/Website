@@ -2,7 +2,7 @@
 > AI-powered structural engineering, construction, and site intelligence services nationwide across England and Wales.
 
 ## About
-PF & Co Construction delivers AI-powered site intelligence and planning reports across England and Wales. Our multi-agent AI system interrogates 58 authoritative data sources across 11 constraint categories to produce planning-ready reports in 48 hours. Fixed pricing, 48-hour turnaround.
+PF & Co Construction delivers AI-powered site intelligence and planning reports across England and Wales. Our multi-agent AI system interrogates 60 authoritative data sources across 11 constraint categories to produce planning-ready reports in 48 hours. Fixed pricing, 48-hour turnaround.
 
 ## Services
 
@@ -15,7 +15,7 @@ Engineering-led construction services including structural alterations, extensio
 URL: https://www.pfcoconstruction.co.uk/construction
 
 ### Site Intelligence
-Data-driven pre-construction screening reports interrogating 58 authoritative data sources across 11 constraint categories. Reports include:
+Data-driven pre-construction screening reports interrogating 60 authoritative data sources across 11 constraint categories. Reports include:
 - Site Feasibility Report — 22+ constraint screening, Planning Friction Score (EA £1,500 / Stripe £297)
 - Geotechnical Desk Study — BGS geology, contamination, foundation risk (EA £900 / Stripe £297)
 - Flood Risk Assessment — 7 flood sources, Decision Risk Scores (EA £375 / Stripe £297)
@@ -33,8 +33,8 @@ Data-driven pre-construction screening reports interrogating 58 authoritative da
 - Pre-Application Advice Pack — LPA pre-submission engagement (EA £245 / Stripe £245)
 - Arboricultural Desk Study — Desktop tree categorisation, RPAs, impact assessment (EA £575 / Stripe £575)
 - Air Quality Screening — Air quality impact assessment for development proposals (EA £395 / Stripe £395)
-- Noise Impact Assessment — Acoustic impact assessment and mitigation strategy (EA £445 / Stripe £445)
-- Daylight & Sunlight Assessment — BRE 209 compliant daylight/sunlight analysis (EA £595 / Stripe £595)
+- Noise Impact Screening — Desktop noise screening against BS 4142/BS 8233/ProPG (EA £445 / Stripe £445)
+- Daylight & Sunlight Screening — BRE 209 daylight/sunlight screening with risk indicators (EA £595 / Stripe £595)
 - Phase 1 Contamination Assessment — Preliminary risk assessment per BS 10175 (EA £595 / Stripe £595)
 - Building Control — Part A structural calculations (project-dependent, contact for quote)
 - Party Wall Assessment — Engineering-led party wall assessment (project-dependent, contact for quote)
@@ -57,7 +57,7 @@ URL: https://www.pfcoconstruction.co.uk/report-packages
 Plans & Pricing Roadmap: https://www.pfcoconstruction.co.uk/plans-and-pricing
 
 ### AI Innovation
-Multi-agent AI system with 112 specialised agents across 7 categories (Data Acquisition, Analysis & Scoring, Market Intelligence, Structural Engineering, Construction & Project, Platform & Operations, Quality Assurance). Interrogates 58 authoritative data sources across 11 constraint categories including BGS, Environment Agency, Historic England, Natural England, Land Registry, National Grid, NaPTAN, CQC, GIAS, DNO capacity heatmaps, and UK House Price Index.
+Multi-agent AI system with 112 specialised agents across 7 categories (Data Acquisition, Analysis & Scoring, Market Intelligence, Structural Engineering, Construction & Project, Platform & Operations, Quality Assurance). Interrogates 60 authoritative data sources across 11 constraint categories including BGS, Environment Agency, Historic England, Natural England, Land Registry, National Grid, NaPTAN, CQC, GIAS, DNO capacity heatmaps, and UK House Price Index.
 URL: https://www.pfcoconstruction.co.uk/ai-innovation
 
 ### Subscriptions

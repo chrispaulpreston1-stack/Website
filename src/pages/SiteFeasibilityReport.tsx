@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import PageSEO from '../components/PageSEO';
 import ComparisonTable from '../components/ComparisonTable';
 import { getReportBySlug } from '../data/reports';
+import ReportMethodology from '../components/ReportMethodology';
 
 const formatPrice = (n: number) => n.toLocaleString('en-GB');
 
@@ -272,6 +273,14 @@ const SiteFeasibilityReport = () => {
           </div>
         </div>
       </section>
+
+      {/* AI Methodology */}
+      {(() => {
+        const report = getReportBySlug('site-feasibility-report');
+        return report?.methodologySummary ? (
+          <ReportMethodology methodologySummary={report.methodologySummary} dataCategories={report.dataCategories || []} />
+        ) : null;
+      })()}
 
       {/* FAQ - Minimal SaaS Style */}
       <section className="py-32 bg-white">

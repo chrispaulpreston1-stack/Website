@@ -12,7 +12,7 @@ export default function PrivacyPolicy() {
       <section className="pt-32 pb-24 bg-brand-surface">
         <div className="max-w-3xl mx-auto px-6">
           <h1 className="text-4xl md:text-5xl font-display font-bold text-brand-primary mb-4">Privacy Policy</h1>
-          <p className="text-brand-primary/60 font-mono text-sm">Last updated: 2 March 2026</p>
+          <p className="text-brand-primary/60 font-mono text-sm">Last updated: 13 March 2026</p>
         </div>
       </section>
 
@@ -45,6 +45,23 @@ export default function PrivacyPolicy() {
             <li>Comply with legal obligations.</li>
           </ul>
 
+          <h3>3A. AI Data Processing</h3>
+          <p>
+            When you order a report, the site address and project information you provide are processed by
+            our AI systems to generate your report. Specifically:
+          </p>
+          <ul>
+            <li>Site addresses are used to query authoritative public data sources (e.g. Environment Agency, British Geological Survey, Historic England) relevant to your report type.</li>
+            <li>Project details (type, description) are used to tailor the analysis and ensure regulatory relevance.</li>
+            <li>Your data is <strong>not</strong> used to train or fine-tune any AI models.</li>
+            <li>All AI-generated outputs are reviewed by our engineering team before delivery.</li>
+          </ul>
+          <p>
+            The legal basis for this processing is contractual necessity — we process this data to fulfil the report
+            order you have placed. For more information about our AI methodology, see our{' '}
+            <a href="/ai-compliance">AI Standards & Compliance</a> page.
+          </p>
+
           <h2>4. Legal Basis for Processing</h2>
           <p>We process your data on the following legal bases under UK GDPR:</p>
           <ul>
@@ -66,6 +83,7 @@ export default function PrivacyPolicy() {
             <li><strong>Stripe:</strong> processes payments securely.</li>
             <li><strong>Vercel:</strong> hosts our website and provides analytics.</li>
             <li><strong>ElevenLabs:</strong> powers our AI chat assistant.</li>
+            <li><strong>AI Processing Systems:</strong> our multi-agent AI system processes site addresses and project details to generate reports. Data is processed on secure infrastructure and is not used for model training. All AI outputs are reviewed by our engineering team before delivery.</li>
           </ul>
           <p>Each service has its own privacy policy and processes data in accordance with applicable data protection laws.</p>
 

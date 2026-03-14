@@ -50,13 +50,19 @@ const routes = [
   {
     path: '/site-intelligence',
     title: 'PF & Co Site Intelligence | Data-Driven Pre-Construction Screening',
-    description: 'Interrogate 58 authoritative data sources across 11 constraint categories. Planning Friction Score, risk profiling, and buildability ratings — delivered in 48 hours.',
+    description: 'Interrogate 60 authoritative data sources across 11 constraint categories. Planning Friction Score, risk profiling, and buildability ratings — delivered in 48 hours.',
   },
   {
     path: '/site-intelligence/site-acquisition-intelligence',
     title: 'Site Acquisition Intelligence | Development Appraisal | PF & Co',
     description: 'Should you buy this site? Development capacity, GDV, build cost, residual land value, planning risk, and go/no-go recommendation — delivered in 48-72 hours.',
     jsonLd: { '@type': 'Product', name: 'Site Acquisition Intelligence', brand: { '@type': 'Organization', name: 'PF & Co Construction' }, offers: { '@type': 'Offer', price: '995', priceCurrency: 'GBP', availability: 'https://schema.org/InStock' } },
+  },
+  {
+    path: '/site-intelligence/development-finance-summary',
+    title: 'Development Finance Summary | Viability Screening | PF & Co',
+    description: 'Preliminary investment memo for development finance: GDV, build cost, profit on cost, RLV, site risk dashboard, and sensitivity analysis — delivered in 48-72 hours.',
+    jsonLd: { '@type': 'Product', name: 'Development Finance Summary', brand: { '@type': 'Organization', name: 'PF & Co Construction' }, offers: { '@type': 'Offer', price: '795', priceCurrency: 'GBP', availability: 'https://schema.org/InStock' } },
   },
   {
     path: '/site-intelligence/site-feasibility-report',
@@ -156,9 +162,9 @@ const routes = [
   },
   {
     path: '/site-intelligence/noise-impact-assessment',
-    title: 'Noise Impact Assessment | £445 | PF & Co Construction',
+    title: 'Noise Impact Screening | £445 | PF & Co Construction',
     description: 'BS 4142/BS 8233/ProPG noise screening for residential schemes near roads, railways, or commercial uses.',
-    jsonLd: { '@type': 'Product', name: 'Noise Impact Assessment', brand: { '@type': 'Organization', name: 'PF & Co Construction' }, offers: { '@type': 'Offer', price: '445', priceCurrency: 'GBP', availability: 'https://schema.org/InStock' } },
+    jsonLd: { '@type': 'Product', name: 'Noise Impact Screening', brand: { '@type': 'Organization', name: 'PF & Co Construction' }, offers: { '@type': 'Offer', price: '445', priceCurrency: 'GBP', availability: 'https://schema.org/InStock' } },
   },
   {
     path: '/site-intelligence/air-quality-screening',
@@ -174,9 +180,9 @@ const routes = [
   },
   {
     path: '/site-intelligence/daylight-sunlight-assessment',
-    title: 'Daylight & Sunlight Assessment | £595 | PF & Co Construction',
-    description: 'BRE 209 daylight/sunlight impact assessment including VSC, APSH, NSL, and sun-on-ground analysis.',
-    jsonLd: { '@type': 'Product', name: 'Daylight & Sunlight Assessment', brand: { '@type': 'Organization', name: 'PF & Co Construction' }, offers: { '@type': 'Offer', price: '595', priceCurrency: 'GBP', availability: 'https://schema.org/InStock' } },
+    title: 'Daylight & Sunlight Screening | £595 | PF & Co Construction',
+    description: 'BRE 209 daylight/sunlight screening including VSC, APSH, NSL, and sun-on-ground risk indicators.',
+    jsonLd: { '@type': 'Product', name: 'Daylight & Sunlight Screening', brand: { '@type': 'Organization', name: 'PF & Co Construction' }, offers: { '@type': 'Offer', price: '595', priceCurrency: 'GBP', availability: 'https://schema.org/InStock' } },
   },
   {
     path: '/report-packages',
@@ -201,7 +207,7 @@ const routes = [
   {
     path: '/ai-innovation',
     title: 'AI Innovation | PF & Co Structural Engineering',
-    description: 'Explore our multi-agent AI system interrogating 58 authoritative data sources to produce planning-ready site intelligence reports in 48 hours.',
+    description: 'Explore our multi-agent AI system interrogating 60 authoritative data sources to produce planning-ready site intelligence reports in 48 hours.',
   },
   {
     path: '/blog',
@@ -222,6 +228,16 @@ const routes = [
     path: '/terms-of-service',
     title: 'Terms of Service | PF & Co Construction',
     description: 'Terms and conditions governing the use of PF & Co Construction website and services, including report orders and subscriptions.',
+  },
+  {
+    path: '/ai-compliance',
+    title: 'AI Standards & Compliance | RICS AI Aligned | PF & Co',
+    description: 'Our AI compliance framework: 112 specialised agents, 60 authoritative data sources, 24-category QA pipeline, and RICS AI Standard alignment.',
+  },
+  {
+    path: '/ai-governance-policy',
+    title: 'AI Governance Policy | PF & Co Construction',
+    description: 'Our policy for the responsible use of artificial intelligence in site intelligence and engineering services.',
   },
   {
     path: '/order-success',

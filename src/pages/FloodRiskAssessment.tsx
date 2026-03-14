@@ -5,6 +5,7 @@ import PageSEO from '../components/PageSEO';
 import ComparisonTable from '../components/ComparisonTable';
 import VideoExplainer from '../components/VideoExplainer';
 import { getReportBySlug } from '../data/reports';
+import ReportMethodology from '../components/ReportMethodology';
 
 const formatPrice = (n: number) => n.toLocaleString('en-GB');
 
@@ -16,7 +17,7 @@ const FloodRiskAssessment = () => {
     { title: "Surface Water Analysis", desc: "Surface water flow paths, ponding areas, and drainage capacity assessment." },
     { title: "Groundwater & Sewer Risk", desc: "Aquifer levels, groundwater emergence potential, and sewer surcharge data." },
     { title: "Sequential & Exception Tests", desc: "Planning policy compliance assessment including vulnerability classification." },
-    { title: "Climate Change Allowances", desc: "Catchment-specific uplift factors applied to flood levels, aligned with NPPF (Dec 2024)." },
+    { title: "Climate Change Allowances", desc: "Catchment-specific uplift factors applied to flood levels, aligned with the latest NPPF." },
     { title: "Mitigation Strategy", desc: "SuDS design principles, finished floor level recommendations, and flood resilience measures." },
     { title: "Insurance & Mortgage Reality", desc: "Flood Re eligibility assessment, lender requirements, and valuation impact." },
     { title: "Flood Zone Maps", desc: "EA-sourced flood zone maps embedded directly in the report for clear visual reference." }
@@ -304,7 +305,7 @@ const FloodRiskAssessment = () => {
             subtitle="What you get vs a typical FRA consultant or budget provider"
             columns={["Feature", "PF&Co Site Intelligence", "Typical FRA Consultant", "Budget / Basic FRA"]}
             categories={comparisonCategories}
-            footerNote="Comparison based on publicly available product information from GeoSmart FloodSmart, Ark Environmental, FloodPlan Reports, Urban Water, and typical UK flood risk consultancies. Features may vary by provider and product tier. PF&Co Flood Risk Assessment pulls data from 60 authoritative APIs and references the latest NPPF (Dec 2024), PPG, SuDS National Standards (Schedule 3 FWMA 2010) and EA Standing Advice."
+            footerNote="Comparison based on publicly available product information from GeoSmart FloodSmart, Ark Environmental, FloodPlan Reports, Urban Water, and typical UK flood risk consultancies. Features may vary by provider and product tier. PF&Co Flood Risk Assessment pulls data from 60 authoritative APIs and references the latest NPPF, PPG, SuDS National Standards (Schedule 3 FWMA 2010) and EA Standing Advice."
             accentColor="text-blue-500"
           />
         </div>
@@ -338,6 +339,14 @@ const FloodRiskAssessment = () => {
           </div>
         </div>
       </section>
+
+      {/* AI Methodology */}
+      {(() => {
+        const report = getReportBySlug('flood-risk-assessment');
+        return report?.methodologySummary ? (
+          <ReportMethodology methodologySummary={report.methodologySummary} dataCategories={report.dataCategories || []} />
+        ) : null;
+      })()}
 
       {/* FAQ - Minimal Editorial */}
       <section className="py-32 bg-brand-surface">

@@ -125,3 +125,11 @@ export const dataSources: DataSource[] = [
 ];
 
 export const TOTAL_DATA_SOURCES = dataSources.length;
+
+/** Category-level counts for public-facing compliance pages (no source-level detail) */
+export const DATA_SOURCE_CATEGORY_COUNTS: Record<DataSourceCategory, number> = Object.fromEntries(
+  (Object.keys(DATA_SOURCE_CATEGORIES) as DataSourceCategory[]).map(cat => [
+    cat,
+    dataSources.filter(ds => ds.category === cat).length,
+  ])
+) as Record<DataSourceCategory, number>;

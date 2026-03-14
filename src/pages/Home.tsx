@@ -130,6 +130,11 @@ const Home = () => {
               <span className="font-display font-bold text-lg lg:text-xl text-brand-primary">60 Data Sources</span>
               <span className="text-[10px] uppercase tracking-widest text-brand-primary/60 font-mono text-center">Cross-Referenced</span>
             </div>
+            <div className="w-px h-8 bg-brand-primary/10 hidden md:block" />
+            <Link to="/ai-compliance" className="flex flex-col items-center gap-1 hover:opacity-80 transition-opacity">
+              <span className="font-display font-bold text-lg lg:text-xl text-brand-primary">RICS AI Aligned</span>
+              <span className="text-[10px] uppercase tracking-widest text-brand-primary/60 font-mono text-center">AI Standard</span>
+            </Link>
           </div>
         </div>
       </section>
@@ -194,7 +199,8 @@ const Home = () => {
                   Human-in-the-Loop Safety
                 </h4>
                 <p className="text-sm text-brand-primary/70">
-                  AI generates the initial analysis, but **we never trust it blindly**. Every report passes through our multi-stage QA pipeline — accuracy auditing, regulatory cross-checks, and pre-issue compliance verification before delivery.
+                  AI generates the initial analysis, but **we never trust it blindly**. Every report passes through our multi-stage QA pipeline — accuracy auditing, regulatory cross-checks, and pre-issue compliance verification before delivery.{' '}
+                  <Link to="/ai-compliance" className="text-brand-accent font-medium hover:underline">RICS AI Standard aligned.</Link>
                 </p>
               </div>
 

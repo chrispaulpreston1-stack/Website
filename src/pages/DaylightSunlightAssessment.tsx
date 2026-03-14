@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import PageSEO from '../components/PageSEO';
 import ComparisonTable from '../components/ComparisonTable';
 import { getReportBySlug } from '../data/reports';
+import ReportMethodology from '../components/ReportMethodology';
 
 const formatPrice = (n: number) => n.toLocaleString('en-GB');
 
@@ -50,14 +51,14 @@ const DaylightSunlightAssessment = () => {
   return (
     <div className="pt-20">
       <PageSEO
-        title="Daylight & Sunlight Assessment | BRE 209 Analysis | PF & Co"
+        title="Daylight & Sunlight Screening | BRE 209 Analysis | PF & Co"
         description="BRE 209 daylight/sunlight impact assessment including VSC, APSH, NSL, and sun-on-ground analysis."
         path="/site-intelligence/daylight-sunlight-assessment"
         jsonLd={[
           {
             '@type': 'Product',
-            name: 'Daylight & Sunlight Assessment',
-            description: 'BRE 209 daylight/sunlight impact assessment including VSC, APSH, NSL, and sun-on-ground analysis.',
+            name: 'Daylight & Sunlight Screening',
+            description: 'BRE 209 daylight/sunlight screening including VSC, APSH, NSL, and sun-on-ground risk indicators.',
             brand: { '@type': 'Organization', name: 'PF & Co Construction' },
             offers: { '@type': 'Offer', price: String(report.earlyAccessPrice), priceCurrency: 'GBP' },
           },
@@ -276,6 +277,14 @@ const DaylightSunlightAssessment = () => {
           </div>
         </div>
       </section>
+
+      {/* AI Methodology */}
+      {(() => {
+        const report = getReportBySlug('daylight-sunlight-assessment');
+        return report?.methodologySummary ? (
+          <ReportMethodology methodologySummary={report.methodologySummary} dataCategories={report.dataCategories || []} />
+        ) : null;
+      })()}
 
       {/* FAQ - Minimal Editorial */}
       <section className="py-32 bg-brand-surface">

@@ -168,7 +168,7 @@ const ReportPackages = () => {
                 <h2 className="text-4xl md:text-5xl font-bold mb-4">{premiumBundle.name}</h2>
                 <p className="text-xl text-white/60 mb-8 font-light">{premiumBundle.tagline}</p>
                 <p className="text-white/50 leading-relaxed mb-8">
-                  For sites where you can't afford to miss anything. Every constraint checked, every policy evidenced, every risk scored. Complete appeal-readiness under SI 2026/122.
+                  For sites where you can't afford to miss anything. Every constraint checked, every policy evidenced, every risk scored. Complete appeal-readiness under the 2026 appeal procedure rules.
                 </p>
 
                 <div className="flex flex-col sm:flex-row items-start sm:items-end gap-4 mb-8">

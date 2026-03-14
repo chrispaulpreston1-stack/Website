@@ -233,7 +233,7 @@ const SiteIntelligenceHub = () => {
               </div>
             </div>
             <p className="text-white/70 text-base leading-relaxed mb-6 max-w-3xl">
-              From 1 April 2026, planning appeals in England no longer accept new evidence. Under SI 2026/122, approximately 95% of appeals will follow the expedited procedure where your original application <strong className="text-white">is</strong> the appeal case. Missing a report, citing outdated data, or leaving a gap in your evidence cannot be fixed later.
+              From 1 April 2026, planning appeals in England no longer accept new evidence under the expedited written representations procedure. The majority of appeals will follow this procedure, where your original application <strong className="text-white">is</strong> the appeal case. Missing a report, citing outdated data, or leaving a gap in your evidence cannot be fixed later.
             </p>
             <p className="text-white/70 text-base leading-relaxed mb-8 max-w-3xl">
               Our reports are built to be <strong className="text-white">appeal-ready from day one</strong> — every data source cited, every policy referenced, every constraint evidenced. When the planning officer reads your application, they see a case that is already complete.

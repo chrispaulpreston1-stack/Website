@@ -5,6 +5,7 @@ import PageSEO from '../components/PageSEO';
 import ComparisonTable from '../components/ComparisonTable';
 import VideoExplainer from '../components/VideoExplainer';
 import { getReportBySlug } from '../data/reports';
+import ReportMethodology from '../components/ReportMethodology';
 
 const formatPrice = (n: number) => n.toLocaleString('en-GB');
 
@@ -289,6 +290,14 @@ const FeasibilityStudy = () => {
           </div>
         </div>
       </section>
+
+      {/* AI Methodology */}
+      {(() => {
+        const report = getReportBySlug('feasibility-study');
+        return report?.methodologySummary ? (
+          <ReportMethodology methodologySummary={report.methodologySummary} dataCategories={report.dataCategories || []} />
+        ) : null;
+      })()}
 
       {/* FAQ - Minimal Editorial */}
       <section className="py-32 bg-brand-surface">

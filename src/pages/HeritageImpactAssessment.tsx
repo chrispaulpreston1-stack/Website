@@ -5,6 +5,7 @@ import PageSEO from '../components/PageSEO';
 import ComparisonTable from '../components/ComparisonTable';
 import VideoExplainer from '../components/VideoExplainer';
 import { getReportBySlug } from '../data/reports';
+import ReportMethodology from '../components/ReportMethodology';
 
 const formatPrice = (n: number) => n.toLocaleString('en-GB');
 
@@ -276,7 +277,7 @@ const HeritageImpactAssessment = () => {
             subtitle="What you get vs a typical heritage consultant"
             columns={["Feature", "PF&Co Site Intelligence", "Typical Consultant", "Basic Statement"]}
             categories={comparisonCategories}
-            footerNote="Comparison based on typical UK heritage consultancy practices. PF&Co HIA follows HEAN 12 and references the latest NPPF (Dec 2024) Chapter 16 requirements."
+            footerNote="Comparison based on typical UK heritage consultancy practices. PF&Co HIA follows HEAN 12 and references the latest NPPF Chapter 16 requirements."
             accentColor="text-amber-500"
           />
         </div>
@@ -310,6 +311,14 @@ const HeritageImpactAssessment = () => {
           </div>
         </div>
       </section>
+
+      {/* AI Methodology */}
+      {(() => {
+        const report = getReportBySlug('heritage-impact-assessment');
+        return report?.methodologySummary ? (
+          <ReportMethodology methodologySummary={report.methodologySummary} dataCategories={report.dataCategories || []} />
+        ) : null;
+      })()}
 
       {/* FAQ - Minimal Editorial */}
       <section className="py-32 bg-brand-surface">

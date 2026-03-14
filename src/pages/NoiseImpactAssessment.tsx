@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import PageSEO from '../components/PageSEO';
 import ComparisonTable from '../components/ComparisonTable';
 import { getReportBySlug } from '../data/reports';
+import ReportMethodology from '../components/ReportMethodology';
 
 const formatPrice = (n: number) => n.toLocaleString('en-GB');
 
@@ -50,13 +51,13 @@ const NoiseImpactAssessment = () => {
   return (
     <div className="pt-20">
       <PageSEO
-        title="Noise Impact Assessment | Acoustic Screening | PF & Co"
+        title="Noise Impact Screening | Acoustic Screening | PF & Co"
         description="BS 4142/BS 8233/ProPG noise screening for residential schemes near roads, railways, or commercial uses."
         path="/site-intelligence/noise-impact-assessment"
         jsonLd={[
           {
             '@type': 'Product',
-            name: 'Noise Impact Assessment',
+            name: 'Noise Impact Screening',
             description: 'BS 4142/BS 8233/ProPG noise screening for residential schemes near roads, railways, or commercial uses.',
             brand: { '@type': 'Organization', name: 'PF & Co Construction' },
             offers: { '@type': 'Offer', price: String(report.earlyAccessPrice), priceCurrency: 'GBP' },
@@ -276,6 +277,14 @@ const NoiseImpactAssessment = () => {
           </div>
         </div>
       </section>
+
+      {/* AI Methodology */}
+      {(() => {
+        const report = getReportBySlug('noise-impact-assessment');
+        return report?.methodologySummary ? (
+          <ReportMethodology methodologySummary={report.methodologySummary} dataCategories={report.dataCategories || []} />
+        ) : null;
+      })()}
 
       {/* FAQ - Minimal Editorial */}
       <section className="py-32 bg-brand-surface">

@@ -442,7 +442,7 @@ const HowItWorks = () => {
                 name: 'Can I submit evidence after a planning appeal?',
                 acceptedAnswer: {
                   '@type': 'Answer',
-                  text: 'Following SI 2026/122, planning appeals will no longer accept new evidence. The application you submit is the case the Inspector decides. Our technical evidence documents are built from day one to be appeal-ready.'
+                  text: 'Following the 2026 appeal procedure rules, planning appeals will no longer accept new evidence under the expedited procedure. The application you submit is the case the Inspector decides. Our technical evidence documents are built from day one to be appeal-ready.'
                 }
               }
             ]
@@ -549,7 +549,7 @@ const HowItWorks = () => {
               <AlertTriangle className="text-amber-600" size={22} />
             </div>
             <div>
-              <h3 className="font-bold text-brand-primary mb-2 text-lg">Appeal-Ready from Day One — SI 2026/122</h3>
+              <h3 className="font-bold text-brand-primary mb-2 text-lg">Appeal-Ready from Day One — 2026 Appeal Rules</h3>
               <p className="text-base text-brand-secondary leading-relaxed">
                 {new Date() >= new Date('2026-04-01')
                   ? 'Since 1 April 2026, planning appeals no longer accept new evidence.'
@@ -740,7 +740,7 @@ const HowItWorks = () => {
           {[
             { q: "What reports do I need for planning permission in the UK?", a: "This depends heavily on your site. Our recommendation is always to start with the Site Feasibility Report (SFR) in Phase 1. It screens your site against 22+ constraints and explicitly tells you which Phase 3 application reports are required for your local planning authority." },
             { q: "How much does a site feasibility report cost?", a: "The mid-market cost for an equivalent report is between £1,000 to £4,000. At Early Access pricing, ours is a fraction of this. It provides you with 22+ environmental and planning constraints, a Planning Friction Score, and a Buildability Rating." },
-            { q: "Can I submit evidence after a planning appeal?", a: "Following SI 2026/122, planning appeals will no longer accept new evidence. The application you submit is the case the Inspector decides. Our technical evidence documents are built from day one to be appeal-ready." },
+            { q: "Can I submit evidence after a planning appeal?", a: "Following the 2026 appeal procedure rules, planning appeals will no longer accept new evidence under the expedited procedure. The application you submit is the case the Inspector decides. Our technical evidence documents are built from day one to be appeal-ready." },
           ].map((faq, i) => (
              <div key={i} className="p-6 rounded-2xl bg-white shadow-sm border border-gray-200">
               <h3 className="text-lg font-bold text-brand-primary mb-2">{faq.q}</h3>

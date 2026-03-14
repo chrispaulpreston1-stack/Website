@@ -325,6 +325,19 @@ const OrderReport = () => {
           <div className="lg:col-span-2">
             {/* Step 1: Report Selection & Site */}
             <div className={step === 1 ? 'space-y-8' : 'hidden'}>
+              {/* AI-Assisted Reports Disclosure */}
+              <div className="flex items-start gap-4 p-6 rounded-2xl bg-emerald-50 border border-emerald-200">
+                <ShieldCheck className="text-emerald-600 mt-0.5 shrink-0" size={22} />
+                <div>
+                  <h3 className="font-bold text-brand-primary text-sm mb-1">AI-Assisted Reports</h3>
+                  <p className="text-xs text-brand-primary/60 leading-relaxed">
+                    Our reports are produced using a multi-agent AI system that interrogates 60+ authoritative data sources,
+                    with every output reviewed through a 24-category QA pipeline and engineering oversight.{' '}
+                    <a href="/ai-compliance" className="text-brand-accent font-medium hover:underline">Learn more about our AI methodology.</a>
+                  </p>
+                </div>
+              </div>
+
               <section>
                 <h2 className="text-2xl font-bold mb-2">Select Your Reports</h2>
                 <p className="text-sm text-brand-primary/50 mb-6">Choose a bundle for best value, or pick individual reports.</p>
@@ -543,8 +556,12 @@ const OrderReport = () => {
                     )}
                   </div>
 
-                  <p className="text-white/60 text-sm mb-8 font-light">
+                  <p className="text-white/60 text-sm mb-4 font-light">
                     Payment is processed securely via Stripe. You will be redirected to complete your purchase.
+                  </p>
+                  <p className="text-white/40 text-xs mb-8 font-light leading-relaxed">
+                    Reports are AI-assisted desk studies reviewed by our engineering team. For non-AI alternatives,
+                    contact us at <a href="mailto:info@pfcoconstruction.co.uk" className="text-brand-accent hover:underline">info@pfcoconstruction.co.uk</a>.
                   </p>
                   <div className="flex items-center gap-4 text-[10px] font-bold uppercase tracking-widest text-white/40">
                     <div className="flex items-center gap-1"><ShieldCheck size={14} className="text-brand-accent" /> SSL Encrypted</div>
@@ -641,6 +658,10 @@ const OrderReport = () => {
                     <div className="flex items-start gap-3">
                       <Clock size={16} className="text-brand-accent mt-1 shrink-0" />
                       <p className="text-xs text-white/60 leading-relaxed">We aim to deliver within 2 working days.</p>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <ShieldCheck size={16} className="text-brand-accent mt-1 shrink-0" />
+                      <p className="text-xs text-white/60 leading-relaxed">AI-assisted analysis with human QA review.</p>
                     </div>
                   </div>
                 </div>

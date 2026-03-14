@@ -5,6 +5,7 @@ import PageSEO from '../components/PageSEO';
 import ComparisonTable from '../components/ComparisonTable';
 import VideoExplainer from '../components/VideoExplainer';
 import { getReportBySlug } from '../data/reports';
+import ReportMethodology from '../components/ReportMethodology';
 
 const formatPrice = (n: number) => n.toLocaleString('en-GB');
 
@@ -276,7 +277,7 @@ const PlanningStatement = () => {
             subtitle="What you get vs a typical planning consultant"
             columns={["Feature", "PF&Co Site Intelligence", "Typical Consultant", "Basic Cover Letter"]}
             categories={comparisonCategories}
-            footerNote="Comparison based on typical UK planning consultancy practices. PF&Co Planning Statement pulls data from 60 authoritative sources and references the latest NPPF (Dec 2024) and local plan policies."
+            footerNote="Comparison based on typical UK planning consultancy practices. PF&Co Planning Statement pulls data from 60 authoritative sources and references the latest NPPF and local plan policies."
             accentColor="text-emerald-500"
           />
         </div>
@@ -310,6 +311,14 @@ const PlanningStatement = () => {
           </div>
         </div>
       </section>
+
+      {/* AI Methodology */}
+      {(() => {
+        const report = getReportBySlug('planning-statement');
+        return report?.methodologySummary ? (
+          <ReportMethodology methodologySummary={report.methodologySummary} dataCategories={report.dataCategories || []} />
+        ) : null;
+      })()}
 
       {/* FAQ - Minimal Editorial */}
       <section className="py-32 bg-brand-surface">

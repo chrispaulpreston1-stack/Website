@@ -1,3 +1,16 @@
+export type DataCategoryLabel =
+  | 'Flood & Water'
+  | 'Geology & Ground'
+  | 'Heritage & Conservation'
+  | 'Ecology & Environment'
+  | 'Planning & Land Use'
+  | 'Mapping & Spatial'
+  | 'Climate & Energy'
+  | 'Safety & Risk'
+  | 'Market & Infrastructure'
+  | 'Transport & Accessibility'
+  | 'Amenity & Services';
+
 export interface Report {
   slug: string;
   name: string;
@@ -10,6 +23,8 @@ export interface Report {
   description: string;
   turnaround: string;
   samplePath: string | null;
+  methodologySummary?: string;
+  dataCategories?: DataCategoryLabel[];
 }
 
 export type ReportCategory =
@@ -43,6 +58,8 @@ export const reports: Report[] = [
     description: 'Development capacity, GDV, build cost, RLV, planning risk, and go/no-go recommendation for land acquisition decisions.',
     turnaround: '48-72hr',
     samplePath: null,
+    methodologySummary: 'Draws on planning, market, environmental, and infrastructure data sources to assess development capacity, viability, and risk for land acquisition decisions.',
+    dataCategories: ['Planning & Land Use', 'Market & Infrastructure', 'Flood & Water', 'Geology & Ground', 'Ecology & Environment', 'Transport & Accessibility'],
   },
   {
     slug: 'development-finance-summary',
@@ -53,9 +70,11 @@ export const reports: Report[] = [
     rrp: 1350,
     stripePrice: 795,
     path: '/site-intelligence/development-finance-summary',
-    description: "Lender's investment memo: GDV, build cost, profit on cost, LTGDV, site risk RAG dashboard, sensitivity matrix, and information checklist for credit committee submission.",
+    description: "Preliminary investment memo: GDV, build cost, profit on cost, residual land value, site risk RAG dashboard, sensitivity analysis, and information checklist for development finance screening.",
     turnaround: '48-72hr',
     samplePath: null,
+    methodologySummary: 'Draws on market transaction data, planning policy, and site constraint intelligence to produce a lender-ready investment appraisal with sensitivity analysis.',
+    dataCategories: ['Market & Infrastructure', 'Planning & Land Use', 'Flood & Water', 'Geology & Ground'],
   },
   {
     slug: 'site-feasibility-report',
@@ -69,6 +88,8 @@ export const reports: Report[] = [
     description: '22+ planning, environmental, and ground risk constraints for any UK property address.',
     turnaround: '48hr',
     samplePath: '/samples/site-feasibility-report-sample.pdf',
+    methodologySummary: 'Interrogates planning, environmental, geological, heritage, ecological, and infrastructure data sources to screen 22+ constraint categories and produce quantified risk scores.',
+    dataCategories: ['Planning & Land Use', 'Flood & Water', 'Geology & Ground', 'Heritage & Conservation', 'Ecology & Environment', 'Safety & Risk', 'Market & Infrastructure', 'Mapping & Spatial', 'Transport & Accessibility', 'Amenity & Services', 'Climate & Energy'],
   },
   {
     slug: 'geotechnical-desk-study',
@@ -82,6 +103,8 @@ export const reports: Report[] = [
     description: 'BGS geology, groundwater, contamination history, and foundation risk analysis.',
     turnaround: '48hr',
     samplePath: '/samples/geotechnical-desk-study-sample.pdf',
+    methodologySummary: 'Draws on geological, hydrogeological, and environmental data sources to assess ground conditions, contamination risk, and foundation design implications.',
+    dataCategories: ['Geology & Ground', 'Flood & Water', 'Safety & Risk', 'Mapping & Spatial', 'Climate & Energy'],
   },
   {
     slug: 'flood-risk-assessment',
@@ -95,6 +118,8 @@ export const reports: Report[] = [
     description: 'Tier 1 Desktop FRA with 4 Decision Risk Scores covering 7 flood sources.',
     turnaround: '48hr',
     samplePath: '/samples/flood-risk-assessment-sample.pdf',
+    methodologySummary: 'Draws on hydrological, geological, climate, and spatial data sources to assess flood risk across seven pathways including fluvial, tidal, surface water, groundwater, sewer, reservoir, and coastal.',
+    dataCategories: ['Flood & Water', 'Geology & Ground', 'Climate & Energy', 'Mapping & Spatial'],
   },
 
   // -- Planning & Strategy --
@@ -110,6 +135,8 @@ export const reports: Report[] = [
     description: 'Submission-ready policy evidence and planning justification.',
     turnaround: '48-72hr',
     samplePath: '/samples/planning-statement-sample.pdf',
+    methodologySummary: 'Draws on planning policy, heritage, ecological, transport, and environmental data sources to demonstrate compliance with national and local planning policy.',
+    dataCategories: ['Planning & Land Use', 'Heritage & Conservation', 'Ecology & Environment', 'Transport & Accessibility', 'Flood & Water', 'Mapping & Spatial'],
   },
   {
     slug: 'pre-application-advice',
@@ -123,6 +150,8 @@ export const reports: Report[] = [
     description: 'Targeted enquiry packs for council pre-submission engagement.',
     turnaround: '48hr',
     samplePath: '/samples/pre-application-advice-sample.pdf',
+    methodologySummary: 'Draws on planning policy, heritage, and environmental data sources to frame targeted questions for LPA pre-submission engagement.',
+    dataCategories: ['Planning & Land Use', 'Heritage & Conservation', 'Ecology & Environment', 'Transport & Accessibility'],
   },
   {
     slug: 'design-and-access-statement',
@@ -136,6 +165,8 @@ export const reports: Report[] = [
     description: 'Design rationale, site context, and accessibility compliance.',
     turnaround: '48-72hr',
     samplePath: '/samples/design-and-access-statement-sample.pdf',
+    methodologySummary: 'Draws on planning, heritage, transport, ecological, and spatial data sources to establish design context and demonstrate accessibility compliance.',
+    dataCategories: ['Planning & Land Use', 'Heritage & Conservation', 'Transport & Accessibility', 'Mapping & Spatial', 'Ecology & Environment', 'Climate & Energy'],
   },
   {
     slug: 'feasibility-study',
@@ -149,6 +180,8 @@ export const reports: Report[] = [
     description: 'In-depth development appraisal and concept viability assessment.',
     turnaround: '72hr',
     samplePath: '/samples/feasibility-study-sample.pdf',
+    methodologySummary: 'Draws on market, planning, environmental, and infrastructure data sources to assess development viability, concept options, and cost parameters.',
+    dataCategories: ['Market & Infrastructure', 'Planning & Land Use', 'Flood & Water', 'Geology & Ground', 'Heritage & Conservation', 'Ecology & Environment', 'Climate & Energy', 'Transport & Accessibility'],
   },
   {
     slug: 'cil-liability-assessment',
@@ -162,6 +195,8 @@ export const reports: Report[] = [
     description: 'CIL payment calculation, exemption eligibility, and relief checks.',
     turnaround: '48hr',
     samplePath: '/samples/cil-liability-assessment-sample.pdf',
+    methodologySummary: 'Draws on planning policy and land registry data sources to calculate CIL liability, check exemption eligibility, and identify relief opportunities.',
+    dataCategories: ['Planning & Land Use', 'Market & Infrastructure'],
   },
 
   // -- Environmental & Ecology --
@@ -177,6 +212,8 @@ export const reports: Report[] = [
     description: 'Statutory exemption checks, habitat mapping, GCN risk zones.',
     turnaround: '48hr',
     samplePath: '/samples/biodiversity-net-gain-sample.pdf',
+    methodologySummary: 'Draws on ecological, environmental, and spatial data sources to screen biodiversity constraints, check statutory exemptions, and assess habitat impact.',
+    dataCategories: ['Ecology & Environment', 'Planning & Land Use', 'Mapping & Spatial', 'Climate & Energy'],
   },
   {
     slug: 'energy-statement',
@@ -190,6 +227,8 @@ export const reports: Report[] = [
     description: 'Sustainability, SAP, Part L, MEES compliance, and carbon analysis.',
     turnaround: '48-72hr',
     samplePath: '/samples/energy-statement-sample.pdf',
+    methodologySummary: 'Draws on climate, energy, and infrastructure data sources to assess Part L compliance, renewable feasibility, grid capacity, and carbon performance.',
+    dataCategories: ['Climate & Energy', 'Market & Infrastructure', 'Mapping & Spatial'],
   },
 
   // -- Specialist Surveys --
@@ -205,6 +244,8 @@ export const reports: Report[] = [
     description: 'Listed building analysis, conservation area assessment, impact on setting.',
     turnaround: '48-72hr',
     samplePath: '/samples/heritage-impact-assessment-sample.pdf',
+    methodologySummary: 'Draws on heritage, planning, and spatial data sources to assess significance, impact on setting, and compliance with heritage policy.',
+    dataCategories: ['Heritage & Conservation', 'Planning & Land Use', 'Mapping & Spatial'],
   },
   {
     slug: 'transport-statement',
@@ -218,6 +259,8 @@ export const reports: Report[] = [
     description: 'Traffic impact, highways accessibility, and trip generation analysis.',
     turnaround: '48-72hr',
     samplePath: '/samples/transport-statement-sample.pdf',
+    methodologySummary: 'Draws on transport, spatial, and planning data sources to assess trip generation, public transport accessibility, highways safety, and sustainable travel.',
+    dataCategories: ['Transport & Accessibility', 'Planning & Land Use', 'Mapping & Spatial'],
   },
   {
     slug: 'parking-survey',
@@ -231,6 +274,8 @@ export const reports: Report[] = [
     description: 'Evidence-based parking demand and provision analysis.',
     turnaround: '48hr',
     samplePath: '/samples/parking-survey-sample.pdf',
+    methodologySummary: 'Draws on transport, spatial, and planning data sources to calculate evidence-based parking demand and assess provision against local standards.',
+    dataCategories: ['Transport & Accessibility', 'Planning & Land Use', 'Mapping & Spatial'],
   },
   {
     slug: 'tree-survey',
@@ -244,6 +289,8 @@ export const reports: Report[] = [
     description: 'Desktop arboricultural assessment: TPO register, LiDAR canopy analysis, BS 5837 categorisation, and RPA mapping.',
     turnaround: '72hr',
     samplePath: '/samples/tree-survey-sample.pdf',
+    methodologySummary: 'Draws on planning, ecological, and spatial data sources including LiDAR elevation data to identify protected trees, map canopy cover, and calculate root protection areas.',
+    dataCategories: ['Planning & Land Use', 'Ecology & Environment', 'Mapping & Spatial'],
   },
 
   // -- Environmental & Ecology (continued) --
@@ -259,12 +306,14 @@ export const reports: Report[] = [
     description: 'IAQM/EPUK screening with AQMA proximity, construction dust risk, and mitigation strategy.',
     turnaround: '48hr',
     samplePath: null,
+    methodologySummary: 'Draws on environmental, transport, and spatial data sources to screen air quality constraints, AQMA proximity, and construction-phase dust risk.',
+    dataCategories: ['Ecology & Environment', 'Transport & Accessibility', 'Mapping & Spatial'],
   },
 
   // -- Specialist Surveys (continued) --
   {
     slug: 'noise-impact-assessment',
-    name: 'Noise Impact Assessment',
+    name: 'Noise Impact Screening',
     shortName: 'NIA',
     category: 'specialist-surveys',
     earlyAccessPrice: 445,
@@ -274,10 +323,12 @@ export const reports: Report[] = [
     description: 'BS 4142/BS 8233/ProPG noise screening for residential schemes near roads, railways, or commercial uses.',
     turnaround: '48-72hr',
     samplePath: null,
+    methodologySummary: 'Draws on transport, spatial, and environmental data sources to screen noise impact from roads, railways, and commercial uses against BS 4142/BS 8233/ProPG standards.',
+    dataCategories: ['Transport & Accessibility', 'Mapping & Spatial', 'Planning & Land Use'],
   },
   {
     slug: 'daylight-sunlight-assessment',
-    name: 'Daylight & Sunlight Assessment',
+    name: 'Daylight & Sunlight Screening',
     shortName: 'DSA',
     category: 'specialist-surveys',
     earlyAccessPrice: 595,
@@ -287,6 +338,8 @@ export const reports: Report[] = [
     description: 'BRE 209 daylight/sunlight impact assessment including VSC, APSH, NSL, and sun-on-ground analysis.',
     turnaround: '72hr',
     samplePath: null,
+    methodologySummary: 'Draws on spatial, climate, and mapping data sources to model daylight and sunlight impact using BRE 209 methodology including VSC, APSH, and NSL calculations.',
+    dataCategories: ['Mapping & Spatial', 'Climate & Energy', 'Planning & Land Use'],
   },
 
   // -- Core (continued) --
@@ -302,6 +355,8 @@ export const reports: Report[] = [
     description: 'LCRM 2020 / BS 10175 Preliminary Risk Assessment with Conceptual Site Model and remediation screening.',
     turnaround: '48-72hr',
     samplePath: null,
+    methodologySummary: 'Draws on geological, environmental, and historical land use data sources to assess contamination risk, build a conceptual site model, and screen remediation requirements.',
+    dataCategories: ['Geology & Ground', 'Ecology & Environment', 'Safety & Risk', 'Mapping & Spatial', 'Market & Infrastructure'],
   },
 
   // -- Construction Readiness --
@@ -317,6 +372,8 @@ export const reports: Report[] = [
     description: 'Pre-construction logistics, phasing, and site safety strategy.',
     turnaround: '48-72hr',
     samplePath: '/samples/construction-management-plan-sample.pdf',
+    methodologySummary: 'Draws on transport, planning, environmental, and spatial data sources to plan construction logistics, delivery routes, and site safety measures.',
+    dataCategories: ['Transport & Accessibility', 'Planning & Land Use', 'Mapping & Spatial', 'Safety & Risk', 'Ecology & Environment'],
   },
   {
     slug: 'pre-construction-design-review',
@@ -330,6 +387,8 @@ export const reports: Report[] = [
     description: '95-check design coordination review for construction readiness.',
     turnaround: '72hr',
     samplePath: '/samples/pre-construction-design-review-sample.pdf',
+    methodologySummary: 'Draws on energy, infrastructure, and planning data sources to systematically verify design coordination across 95 checks before construction begins.',
+    dataCategories: ['Climate & Energy', 'Market & Infrastructure', 'Planning & Land Use', 'Mapping & Spatial'],
   },
 
   // -- Compliance & Legal --
@@ -345,6 +404,8 @@ export const reports: Report[] = [
     description: 'Part A structural calculations and drawings for Building Regs submission.',
     turnaround: 'Project-dependent',
     samplePath: null,
+    methodologySummary: 'Engineering-led structural calculations and design verification for Building Regulations compliance, combining AI analysis with professional engineering review.',
+    dataCategories: ['Geology & Ground', 'Mapping & Spatial'],
   },
   {
     slug: 'party-wall-assessment',
@@ -358,6 +419,8 @@ export const reports: Report[] = [
     description: 'Engineering-led party wall assessment under the Party Wall Act 1996.',
     turnaround: 'Project-dependent',
     samplePath: null,
+    methodologySummary: 'Engineering-led assessment of Party Wall Act 1996 obligations, combining site boundary analysis with structural impact assessment.',
+    dataCategories: ['Planning & Land Use', 'Mapping & Spatial'],
   },
 ];
 
@@ -452,6 +515,21 @@ export const bundles: ReportBundle[] = [
     isNew: true,
   },
 
+  {
+    slug: 'conversion-ready-pack',
+    name: 'The Conversion Ready Pack',
+    tagline: 'Office. Retail. Mixed-use — convert to residential with confidence.',
+    target: 'For Change of Use Projects',
+    earlyAccessPrice: 2395,
+    rrp: 4980,
+    savings: 2585,
+    savingsPercent: 52,
+    includedReports: [
+      'site-feasibility-report', 'planning-statement', 'design-and-access-statement', 'phase-1-contamination',
+    ],
+    isNew: true,
+  },
+
   // -- Established Bundles --
   {
     slug: 'triple-threat',
@@ -468,7 +546,7 @@ export const bundles: ReportBundle[] = [
   {
     slug: 'appeal-ready-pack',
     name: 'The Appeal-Ready Pack',
-    tagline: 'Built for SI 2026/122 — your evidence, airtight from day one.',
+    tagline: 'Built for the 2026 appeal rules — your evidence, airtight from day one.',
     target: 'For Planning Appeals',
     earlyAccessPrice: 2635,
     rrp: 4395,

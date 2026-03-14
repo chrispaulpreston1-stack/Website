@@ -3,7 +3,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://www.pfcoconstruction.co.uk/</loc>
-    <lastmod>2026-03-06</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -11,117 +11,153 @@
   <!-- Main Service Pages -->
   <url>
     <loc>https://www.pfcoconstruction.co.uk/structural-engineering</loc>
-    <lastmod>2026-03-06</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.pfcoconstruction.co.uk/construction</loc>
-    <lastmod>2026-03-06</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.pfcoconstruction.co.uk/site-intelligence</loc>
-    <lastmod>2026-03-06</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- Site Intelligence Reports (17) -->
+  <!-- Site Intelligence Reports (22) -->
   <url>
     <loc>https://www.pfcoconstruction.co.uk/site-intelligence/site-feasibility-report</loc>
-    <lastmod>2026-03-06</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.pfcoconstruction.co.uk/site-intelligence/geotechnical-desk-study</loc>
-    <lastmod>2026-03-06</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.pfcoconstruction.co.uk/site-intelligence/flood-risk-assessment</loc>
-    <lastmod>2026-03-06</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.pfcoconstruction.co.uk/site-intelligence/planning-statement</loc>
-    <lastmod>2026-03-06</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.pfcoconstruction.co.uk/site-intelligence/heritage-impact-assessment</loc>
-    <lastmod>2026-03-06</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.pfcoconstruction.co.uk/site-intelligence/design-and-access-statement</loc>
-    <lastmod>2026-03-06</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.pfcoconstruction.co.uk/site-intelligence/transport-statement</loc>
-    <lastmod>2026-03-06</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.pfcoconstruction.co.uk/site-intelligence/energy-statement</loc>
-    <lastmod>2026-03-06</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.pfcoconstruction.co.uk/site-intelligence/biodiversity-net-gain</loc>
-    <lastmod>2026-03-06</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.pfcoconstruction.co.uk/site-intelligence/cil-liability-assessment</loc>
-    <lastmod>2026-03-06</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.pfcoconstruction.co.uk/site-intelligence/construction-management-plan</loc>
-    <lastmod>2026-03-06</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.pfcoconstruction.co.uk/site-intelligence/parking-survey</loc>
-    <lastmod>2026-03-06</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.pfcoconstruction.co.uk/site-intelligence/pre-application-advice</loc>
-    <lastmod>2026-03-06</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.pfcoconstruction.co.uk/site-intelligence/pre-construction-design-review</loc>
-    <lastmod>2026-03-06</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.pfcoconstruction.co.uk/site-intelligence/feasibility-study</loc>
-    <lastmod>2026-03-06</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.pfcoconstruction.co.uk/site-intelligence/tree-survey</loc>
-    <lastmod>2026-03-06</lastmod>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.pfcoconstruction.co.uk/site-intelligence/development-finance-summary</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.pfcoconstruction.co.uk/site-intelligence/site-acquisition-intelligence</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.pfcoconstruction.co.uk/site-intelligence/noise-impact-assessment</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.pfcoconstruction.co.uk/site-intelligence/air-quality-screening</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.pfcoconstruction.co.uk/site-intelligence/phase-1-contamination</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.pfcoconstruction.co.uk/site-intelligence/daylight-sunlight-assessment</loc>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -129,13 +165,13 @@
   <!-- Building Control & Party Wall -->
   <url>
     <loc>https://www.pfcoconstruction.co.uk/building-control</loc>
-    <lastmod>2026-03-06</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.pfcoconstruction.co.uk/party-wall</loc>
-    <lastmod>2026-03-06</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -143,19 +179,19 @@
   <!-- E-Commerce & Packages -->
   <url>
     <loc>https://www.pfcoconstruction.co.uk/report-packages</loc>
-    <lastmod>2026-03-06</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.pfcoconstruction.co.uk/order-report</loc>
-    <lastmod>2026-03-06</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.pfcoconstruction.co.uk/how-it-works</loc>
-    <lastmod>2026-03-06</lastmod>
+    <loc>https://www.pfcoconstruction.co.uk/plans-and-pricing</loc>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -163,19 +199,19 @@
   <!-- Service Pages -->
   <url>
     <loc>https://www.pfcoconstruction.co.uk/subscriptions</loc>
-    <lastmod>2026-03-06</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.pfcoconstruction.co.uk/ai-innovation</loc>
-    <lastmod>2026-03-06</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.pfcoconstruction.co.uk/contact</loc>
-    <lastmod>2026-03-06</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -183,7 +219,7 @@
   <!-- Blog -->
   <url>
     <loc>https://www.pfcoconstruction.co.uk/blog</loc>
-    <lastmod>2026-03-06</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -191,93 +227,107 @@
   <!-- Blog Articles -->
   <url>
     <loc>https://www.pfcoconstruction.co.uk/insights/what-reports-do-you-need-for-planning-permission</loc>
-    <lastmod>2026-03-06</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.pfcoconstruction.co.uk/insights/engineering-as-a-service-structural-design-subscriptions</loc>
-    <lastmod>2026-03-06</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://www.pfcoconstruction.co.uk/insights/navigating-party-wall-agreements-owners-neighbours-guide</loc>
-    <lastmod>2026-03-06</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://www.pfcoconstruction.co.uk/insights/hidden-value-site-intelligence-desktop-ground-investigation</loc>
-    <lastmod>2026-03-06</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://www.pfcoconstruction.co.uk/insights/ai-in-modern-structural-engineering</loc>
-    <lastmod>2026-03-06</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://www.pfcoconstruction.co.uk/insights/rsj-calculations-home-extensions</loc>
-    <lastmod>2026-03-06</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://www.pfcoconstruction.co.uk/insights/basement-impact-assessments-london</loc>
-    <lastmod>2026-03-06</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://www.pfcoconstruction.co.uk/insights/flood-risk-assessments-explained</loc>
-    <lastmod>2026-03-06</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://www.pfcoconstruction.co.uk/insights/planning-conditions-pre-commencement</loc>
-    <lastmod>2026-03-06</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://www.pfcoconstruction.co.uk/insights/geotechnical-desk-study-guide</loc>
-    <lastmod>2026-03-06</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://www.pfcoconstruction.co.uk/insights/loft-conversions-structural-considerations</loc>
-    <lastmod>2026-03-06</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://www.pfcoconstruction.co.uk/insights/biodiversity-net-gain-planning</loc>
-    <lastmod>2026-03-06</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://www.pfcoconstruction.co.uk/insights/construction-management-plans-explained</loc>
-    <lastmod>2026-03-06</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+  </url>
+
+  <!-- AI Compliance -->
+  <url>
+    <loc>https://www.pfcoconstruction.co.uk/ai-compliance</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.pfcoconstruction.co.uk/ai-governance-policy</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
   </url>
 
   <!-- Legal -->
   <url>
     <loc>https://www.pfcoconstruction.co.uk/privacy-policy</loc>
-    <lastmod>2026-03-02</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://www.pfcoconstruction.co.uk/terms-of-service</loc>
-    <lastmod>2026-03-02</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>

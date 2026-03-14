@@ -36,6 +36,7 @@ const AIInnovation = lazy(() => import('./pages/AIInnovation'));
 const Subscriptions = lazy(() => import('./pages/Subscriptions'));
 const SiteIntelligenceHub = lazy(() => import('./pages/SiteIntelligenceHub'));
 const SiteAcquisitionIntelligence = lazy(() => import('./pages/SiteAcquisitionIntelligence'));
+const DevelopmentFinanceSummary = lazy(() => import('./pages/DevelopmentFinanceSummary'));
 const FloodRiskAssessment = lazy(() => import('./pages/FloodRiskAssessment'));
 const GeotechnicalDeskStudy = lazy(() => import('./pages/GeotechnicalDeskStudy'));
 const SiteFeasibilityReport = lazy(() => import('./pages/SiteFeasibilityReport'));
@@ -62,6 +63,8 @@ const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
 const TermsOfService = lazy(() => import('./pages/TermsOfService'));
 const ReportPackages = lazy(() => import('./pages/ReportPackages'));
 const HowItWorks = lazy(() => import('./pages/HowItWorks'));
+const AICompliance = lazy(() => import('./pages/AICompliance'));
+const AIGovernancePolicy = lazy(() => import('./pages/AIGovernancePolicy'));
 
 // --- Global Components ---
 
@@ -388,6 +391,7 @@ const Footer = () => {
               <li><Link to="/blog" className="hover:text-brand-accent transition-colors">Insights</Link></li>
               <li><Link to="/insights/what-reports-do-you-need-for-planning-permission" className="hover:text-brand-accent transition-colors">Planning Guide</Link></li>
               <li><Link to="/ai-innovation" className="hover:text-brand-accent transition-colors">AI Innovation</Link></li>
+              <li><Link to="/ai-compliance" className="hover:text-brand-accent transition-colors">AI Standards</Link></li>
               <li><Link to="/contact" className="hover:text-brand-accent transition-colors">Contact</Link></li>
               <li><Link to="/privacy-policy" className="hover:text-brand-accent transition-colors">Privacy Policy</Link></li>
               <li><Link to="/terms-of-service" className="hover:text-brand-accent transition-colors">Terms of Service</Link></li>
@@ -402,6 +406,7 @@ const Footer = () => {
           <div className="flex gap-8 text-xs text-brand-primary/40 font-mono uppercase tracking-widest">
             <Link to="/privacy-policy" className="hover:text-brand-accent transition-colors">Privacy Policy</Link>
             <Link to="/terms-of-service" className="hover:text-brand-accent transition-colors">Terms of Service</Link>
+            <Link to="/ai-governance-policy" className="hover:text-brand-accent transition-colors">AI Governance</Link>
           </div>
         </div>
       </div>
@@ -455,6 +460,7 @@ export default function App() {
               <Route path="/construction" element={<Construction />} />
               <Route path="/site-intelligence" element={<SiteIntelligenceHub />} />
               <Route path="/site-intelligence/site-acquisition-intelligence" element={<SiteAcquisitionIntelligence />} />
+              <Route path="/site-intelligence/development-finance-summary" element={<DevelopmentFinanceSummary />} />
               <Route path="/site-intelligence/flood-risk-assessment" element={<FloodRiskAssessment />} />
               <Route path="/site-intelligence/geotechnical-desk-study" element={<GeotechnicalDeskStudy />} />
               <Route path="/site-intelligence/site-feasibility-report" element={<SiteFeasibilityReport />} />
@@ -486,6 +492,8 @@ export default function App() {
               <Route path="/order-success" element={<OrderSuccess />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route path="/terms-of-service" element={<TermsOfService />} />
+              <Route path="/ai-compliance" element={<AICompliance />} />
+              <Route path="/ai-governance-policy" element={<AIGovernancePolicy />} />
               <Route path="/contact" element={<><PageSEO title="Contact Us | PF & Co Construction" description="Get in touch with PF & Co for structural engineering, construction, and site intelligence services nationwide across England and Wales." path="/contact" /><ContactSection /></>} />
               <Route path="*" element={
                 <div className="min-h-screen flex items-center justify-center bg-brand-surface">

@@ -12,7 +12,7 @@ export default function TermsOfService() {
       <section className="pt-32 pb-24 bg-brand-surface">
         <div className="max-w-3xl mx-auto px-6">
           <h1 className="text-4xl md:text-5xl font-display font-bold text-brand-primary mb-4">Terms of Service</h1>
-          <p className="text-brand-primary/60 font-mono text-sm">Last updated: 2 March 2026</p>
+          <p className="text-brand-primary/60 font-mono text-sm">Last updated: 13 March 2026</p>
         </div>
       </section>
 
@@ -72,12 +72,47 @@ export default function TermsOfService() {
             of our services or website, to the fullest extent permitted by law.
           </p>
 
-          <h2>7. Professional Advice</h2>
+          <h2>7. AI-Assisted Services & Professional Advice</h2>
+
+          <h3>7.1 AI-Assisted Methodology</h3>
+          <p>
+            Our site intelligence reports are produced using a multi-agent artificial intelligence system
+            that interrogates authoritative public data sources. "AI-assisted" means that AI is used for
+            data acquisition, analysis, scoring, and initial report drafting. The AI system does not make
+            autonomous decisions about report conclusions — all outputs are subject to human review before delivery.
+          </p>
+
+          <h3>7.2 Human Oversight</h3>
+          <p>
+            Every report passes through our multi-stage quality assurance pipeline, which includes accuracy
+            auditing, regulatory cross-checks, consistency verification, and engineering review before
+            delivery. Our QA process covers 24 quality categories across accuracy, regulatory compliance,
+            consistency, formatting, and citation integrity.
+          </p>
+
+          <h3>7.3 Client Information Rights</h3>
+          <p>
+            Clients may request additional information about our AI methodology in writing. Information
+            will be provided at a categorical level describing the types of data sources, analysis methods,
+            and quality assurance processes used. This information excludes proprietary algorithms,
+            agent-to-report mappings, data source wiring, scoring formulas, and other trade secrets.
+            For RICS-regulated professionals requiring supplier due diligence documentation, please
+            contact us at <a href="mailto:info@pfcoconstruction.co.uk">info@pfcoconstruction.co.uk</a>.
+          </p>
+
+          <h3>7.4 Alternative Services</h3>
+          <p>
+            If you require a report produced without AI assistance, please contact us to discuss a
+            bespoke non-AI quotation. Availability and pricing for non-AI reports are assessed on a
+            case-by-case basis.
+          </p>
+
+          <h3>7.5 Professional Reliance</h3>
           <p>
             Our reports and website content are for informational purposes and do not constitute formal
-            professional advice. Reports are AI-assisted desk studies based on publicly available data
-            and should be reviewed by an appropriately qualified professional before reliance.
-            Specific terms for bespoke commissions are agreed separately.
+            professional advice. Reports are desk studies based on publicly available data and should be
+            reviewed by an appropriately qualified professional before reliance. Specific terms for
+            bespoke commissions are agreed separately.
           </p>
 
           <h2>8. Cancellations and Refunds</h2>

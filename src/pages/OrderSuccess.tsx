@@ -2,13 +2,14 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import PageSEO from '../components/PageSEO';
-import { 
+import {
   CheckCircle2,
   ArrowRight,
   Mail,
   Clock,
   FileText,
-  Zap
+  Zap,
+  ShieldCheck
 } from 'lucide-react';
 
 const OrderSuccess = () => {
@@ -69,6 +70,14 @@ const OrderSuccess = () => {
             <h3 className="font-bold mb-2">48hr Turnaround</h3>
             <p className="text-xs text-brand-primary/60 leading-relaxed">Your report will be delivered digitally within 2 working days.</p>
           </div>
+          <div className="p-8 rounded-[2rem] bg-white border border-brand-primary/5 text-left shadow-sm sm:col-span-2">
+            <ShieldCheck className="text-emerald-600 mb-4" size={24} />
+            <h3 className="font-bold mb-2">AI Transparency</h3>
+            <p className="text-xs text-brand-primary/60 leading-relaxed">
+              Your report is produced using our AI-assisted methodology with human QA review.{' '}
+              <Link to="/ai-compliance" className="text-brand-accent font-medium hover:underline">Learn about our AI standards.</Link>
+            </p>
+          </div>
         </motion.div>
 
         <motion.div
@@ -95,6 +104,10 @@ const OrderSuccess = () => {
             <div className="flex items-center gap-2 font-bold text-sm"><Zap size={16} /> Instant Processing</div>
             <div className="flex items-center gap-2 font-bold text-sm"><FileText size={16} /> Digital Delivery</div>
           </div>
+          <p className="text-xs text-brand-primary/40 mt-6">
+            For RICS supplier due diligence documentation, email{' '}
+            <a href="mailto:info@pfcoconstruction.co.uk" className="hover:text-brand-accent transition-colors">info@pfcoconstruction.co.uk</a>.
+          </p>
         </motion.div>
       </div>
     </div>
