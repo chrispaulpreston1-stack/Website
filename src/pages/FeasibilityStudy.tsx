@@ -52,21 +52,21 @@ const FeasibilityStudy = () => {
   return (
     <div className="pt-20">
       <PageSEO
-        title="Concept Feasibility Study | Pre-Design Concept Options | PF & Co"
+        title="Feasibility Study | Pre-Design Concept Options | PF & Co"
         description="Understand what's possible, what it costs, and which route to take — before you spend a penny on architect fees. Three concept options compared."
         path="/site-intelligence/feasibility-study"
         jsonLd={[
           {
             '@type': 'Product',
-            name: 'Concept Feasibility Study',
+            name: 'Feasibility Study',
             description: 'Pre-design concept feasibility study — understand what is possible, what it costs, and which route to take.',
             brand: { '@type': 'Organization', name: 'PF & Co Construction' },
             offers: { '@type': 'Offer', price: String(report.earlyAccessPrice), priceCurrency: 'GBP' },
           },
           {
             '@type': 'VideoObject',
-            name: 'Concept Feasibility Study — What\'s Inside Your Report',
-            description: 'A walkthrough of the PF & Co Concept Feasibility Study, showing how we compare three design options side-by-side with real costs and planning routes to help you brief your architect with confidence.',
+            name: 'Feasibility Study — What\'s Inside Your Report',
+            description: 'A walkthrough of the PF & Co Feasibility Study, showing how we compare three design options side-by-side with real costs and planning routes to help you brief your architect with confidence.',
             thumbnailUrl: 'https://www.pfcoconstruction.co.uk/videos/feasibility-study-thumb.jpg',
             contentUrl: 'https://www.pfcoconstruction.co.uk/videos/feasibility-study-demo.mp4',
             uploadDate: '2026-03-02',
@@ -76,7 +76,7 @@ const FeasibilityStudy = () => {
           {
             '@type': 'FAQPage',
             mainEntity: [
-              { '@type': 'Question', name: 'Do I still need an architect after this?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. A Concept Feasibility Study is pre-design \u2014 it tells you what\'s possible and what it costs. Once you\'ve chosen an option, you\'ll appoint an architect to develop it into technical drawings with far more clarity.' } },
+              { '@type': 'Question', name: 'Do I still need an architect after this?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. A Feasibility Study is pre-design \u2014 it tells you what\'s possible and what it costs. Once you\'ve chosen an option, you\'ll appoint an architect to develop it into technical drawings with far more clarity.' } },
               { '@type': 'Question', name: 'How accurate are the cost estimates?', acceptedAnswer: { '@type': 'Answer', text: 'We provide indicative costs with +/- 15\u201320% confidence bands based on current regional rates. They are intended for decision-making and budget validation, not for tendering.' } },
               { '@type': 'Question', name: 'Can I use the floor plans for planning?', acceptedAnswer: { '@type': 'Answer', text: 'No. The hand-sketch plans are concept-stage illustrations to help you understand spatial layout. They are not measured drawings for Planning or Building Control.' } },
             ]
@@ -191,7 +191,7 @@ const FeasibilityStudy = () => {
       </section>
 
       <VideoExplainer
-        title="Concept Feasibility Study"
+        title="Feasibility Study"
         accentColor="violet-500"
         description="Watch our walkthrough to see how we compare three design options side-by-side with real costs and planning routes, helping you brief your architect with confidence."
         thumbnailUrl="/videos/feasibility-study-thumb.jpg"
@@ -205,9 +205,9 @@ const FeasibilityStudy = () => {
           <div className="grid lg:grid-cols-12 gap-16">
             <div className="lg:col-span-5">
               <span className="text-violet-500 font-bold text-sm uppercase tracking-widest mb-4 block">The Core Analysis</span>
-              <h2 className="text-5xl font-bold mb-8 leading-tight text-brand-primary">Why You Need a <br /><span className="font-accent italic font-light text-violet-600">Concept Feasibility Study.</span></h2>
+              <h2 className="text-5xl font-bold mb-8 leading-tight text-brand-primary">Why You Need a <br /><span className="font-accent italic font-light text-violet-600">Feasibility Study.</span></h2>
               <p className="text-brand-primary/60 text-lg leading-relaxed mb-12 font-light">
-                Most projects start the wrong way round. They invest in drawings, then discover the budget doesn't stretch. A Concept Feasibility Study puts the decision-making first.
+                Most projects start the wrong way round. They invest in drawings, then discover the budget doesn't stretch. A Feasibility Study puts the decision-making first.
               </p>
               <div className="space-y-4">
                 {features.slice(0, 4).map((f, i) => (
@@ -252,11 +252,11 @@ const FeasibilityStudy = () => {
       <section className="py-32 bg-brand-surface">
         <div className="max-w-7xl mx-auto px-6">
           <ComparisonTable
-            title="Concept Feasibility Study"
+            title="Feasibility Study"
             subtitle="What you get vs a typical architect or consultant"
             columns={["Feature", "PF&Co Site Intelligence", "Typical Architect", "Basic Advice"]}
             categories={comparisonCategories}
-            footerNote="Comparison based on typical UK architectural practice. PF&Co Concept Feasibility Study provides strategic groundwork to make design drawings worthwhile."
+            footerNote="Comparison based on typical UK architectural practice. PF&Co Feasibility Study provides strategic groundwork to make design drawings worthwhile."
             accentColor="text-violet-500"
           />
         </div>
@@ -267,7 +267,7 @@ const FeasibilityStudy = () => {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-20">
             <h2 className="text-5xl font-bold mb-4 tracking-tight text-brand-primary">When You Need <span className="font-accent italic font-light text-violet-600">Certainty.</span></h2>
-            <p className="text-brand-primary/60 max-w-2xl mx-auto font-light">Critical scenarios where a Concept Feasibility Study is the smartest first step.</p>
+            <p className="text-brand-primary/60 max-w-2xl mx-auto font-light">Critical scenarios where a Feasibility Study is the smartest first step.</p>
           </div>
 
           <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-px bg-brand-primary/10 border border-brand-primary/10 rounded-[2rem] overflow-hidden">
@@ -305,7 +305,7 @@ const FeasibilityStudy = () => {
           <h2 className="text-4xl font-bold mb-16 text-center font-accent italic text-violet-600">Common Inquiries</h2>
           <div className="space-y-12">
             {[
-              { q: "Do I still need an architect after this?", a: "Yes. A Concept Feasibility Study is pre-design — it tells you what's possible and what it costs. Once you've chosen an option, you'll appoint an architect to develop it into technical drawings with far more clarity." },
+              { q: "Do I still need an architect after this?", a: "Yes. A Feasibility Study is pre-design — it tells you what's possible and what it costs. Once you've chosen an option, you'll appoint an architect to develop it into technical drawings with far more clarity." },
               { q: "How accurate are the cost estimates?", a: "We provide indicative costs with +/- 15–20% confidence bands based on current regional rates. They are intended for decision-making and budget validation, not for tendering." },
               { q: "Can I use the floor plans for planning?", a: "No. The hand-sketch plans are concept-stage illustrations to help you understand spatial layout. They are not measured drawings for Planning or Building Control." }
             ].map((item, i) => (
@@ -354,7 +354,7 @@ const FeasibilityStudy = () => {
                 to="/contact"
                 className="px-12 py-6 bg-white text-violet-600 rounded-full font-bold hover:scale-105 transition-all shadow-xl"
               >
-                Get Your Concept Feasibility Study
+                Get Your Feasibility Study
               </Link>
               <a href="/samples/feasibility-study-sample.pdf" target="_blank" rel="noopener noreferrer" className="px-12 py-6 bg-violet-700/50 backdrop-blur-md text-white border border-white/20 rounded-full font-bold hover:bg-violet-800/50 transition-all flex items-center gap-2">
                 Sample Report <FileText size={20} />

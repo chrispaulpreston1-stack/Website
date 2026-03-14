@@ -382,7 +382,7 @@ const DevelopmentFinanceSummary = () => {
               { q: "Can I send this to my lender?", a: "Yes — as a supporting document alongside your full appraisal. The DFS provides comparable evidence, constraint screening, and viability indicators that complement a formal valuation. Most lenders will also require an independent RICS Red Book valuation and a QS cost estimate for credit committee." },
               { q: "How is the GDV calculated?", a: "GDV is derived from Land Registry Price Paid Data for comparable transactions within the locality, enriched with EPC floor area data to calculate price-per-sqft benchmarks. We provide a range (low/central/high) rather than a single figure to reflect market uncertainty." },
               { q: "How accurate are the build costs?", a: "Build costs are benchmarked against BCIS regional rebased rates by element. These are industry-standard rates used by QS firms as a starting point. For site-specific pricing, we recommend commissioning a QS elemental cost plan as a next step." },
-              { q: "How is this different from a Site Acquisition Intelligence report?", a: "The SAI answers 'should I buy this site?' with a go/no-go recommendation. The DFS answers 'does the deal stack financially?' with lender-facing viability analysis. Developers often commission both — SAI first for acquisition, then DFS when structuring finance." },
+              { q: "How is this different from a Site Acquisition Report report?", a: "The SAI answers 'should I buy this site?' with a go/no-go recommendation. The DFS answers 'does the deal stack financially?' with lender-facing viability analysis. Developers often commission both — SAI first for acquisition, then DFS when structuring finance." },
             ].map((faq, i) => (
               <div key={i} className="border-b border-brand-primary/5 pb-8">
                 <h3 className="text-lg font-bold text-brand-primary mb-3">{faq.q}</h3>
@@ -399,7 +399,7 @@ const DevelopmentFinanceSummary = () => {
           <div className="flex items-center justify-between">
             <div>
               <div className="text-[10px] font-mono uppercase tracking-widest text-emerald-500 font-bold mb-2">Related Product</div>
-              <h3 className="text-xl font-bold text-brand-primary group-hover:text-emerald-600 transition-colors">Site Acquisition Intelligence — Should You Buy This Site?</h3>
+              <h3 className="text-xl font-bold text-brand-primary group-hover:text-emerald-600 transition-colors">Site Acquisition Report — Should You Buy This Site?</h3>
             </div>
             <ArrowRight className="text-emerald-400 group-hover:translate-x-2 transition-transform" />
           </div>

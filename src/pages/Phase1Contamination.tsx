@@ -51,21 +51,21 @@ const Phase1Contamination = () => {
   return (
     <div className="pt-20">
       <PageSEO
-        title="Phase 1 Contamination Assessment | Preliminary Risk Assessment | PF & Co"
+        title="Phase 1 Desk Study | Preliminary Risk Assessment | PF & Co"
         description="LCRM 2020 / BS 10175 Preliminary Risk Assessment with Conceptual Site Model and remediation screening."
         path="/site-intelligence/phase-1-contamination"
         jsonLd={[
           {
             '@type': 'Product',
-            name: 'Phase 1 Contamination Assessment',
+            name: 'Phase 1 Desk Study',
             description: 'LCRM 2020 / BS 10175 Preliminary Risk Assessment with Conceptual Site Model and remediation screening.',
             brand: { '@type': 'Organization', name: 'PF & Co Construction' },
             offers: { '@type': 'Offer', price: String(report.earlyAccessPrice), priceCurrency: 'GBP' },
           },
           {
             '@type': 'VideoObject',
-            name: 'Phase 1 Contamination Assessment — What\'s Inside Your Report',
-            description: 'A walkthrough of the PF & Co Phase 1 Contamination Assessment, showing how we apply the LCRM 2020 framework and build a Conceptual Site Model to assess contamination risk for your site.',
+            name: 'Phase 1 Desk Study — What\'s Inside Your Report',
+            description: 'A walkthrough of the PF & Co Phase 1 Desk Study, showing how we apply the LCRM 2020 framework and build a Conceptual Site Model to assess contamination risk for your site.',
             thumbnailUrl: 'https://www.pfcoconstruction.co.uk/videos/contamination-demo-thumb.jpg',
             contentUrl: 'https://www.pfcoconstruction.co.uk/videos/contamination-demo.mp4',
             uploadDate: '2026-03-07',
@@ -239,7 +239,7 @@ const Phase1Contamination = () => {
       <section className="py-32 bg-brand-surface">
         <div className="max-w-7xl mx-auto px-6">
           <ComparisonTable
-            title="Phase 1 Contamination Assessment"
+            title="Phase 1 Desk Study"
             subtitle="What you get vs a typical consultant"
             columns={["Feature", "PF&Co Site Intelligence", "Typical Consultant", "Basic Mention"]}
             categories={comparisonCategories}
@@ -254,7 +254,7 @@ const Phase1Contamination = () => {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-20">
             <h2 className="text-5xl font-bold mb-4 tracking-tight text-brand-primary">When You Need <span className="font-accent italic font-light text-orange-600">Certainty.</span></h2>
-            <p className="text-brand-primary/60 max-w-2xl mx-auto font-light">Critical scenarios where a Phase 1 Contamination Assessment is essential.</p>
+            <p className="text-brand-primary/60 max-w-2xl mx-auto font-light">Critical scenarios where a Phase 1 Desk Study is essential.</p>
           </div>
 
           <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-px bg-brand-primary/10 border border-brand-primary/10 rounded-[2rem] overflow-hidden">

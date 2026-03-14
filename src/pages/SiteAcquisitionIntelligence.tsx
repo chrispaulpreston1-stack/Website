@@ -72,13 +72,13 @@ const SiteAcquisitionIntelligence = () => {
   return (
     <div className="pt-20">
       <PageSEO
-        title="Site Acquisition Intelligence | Development Appraisal | PF & Co"
+        title="Site Acquisition Report | Development Appraisal | PF & Co"
         description="Should you buy this site? Development capacity, GDV, build cost, residual land value, planning risk, and go/no-go recommendation — delivered in 48-72 hours."
         path="/site-intelligence/site-acquisition-intelligence"
         jsonLd={[
           {
             '@type': 'Product',
-            name: 'Site Acquisition Intelligence',
+            name: 'Site Acquisition Report',
             description: 'Development capacity, GDV, build cost, RLV, planning risk, and go/no-go recommendation for land acquisition decisions.',
             brand: { '@type': 'Organization', name: 'PF & Co Construction' },
             offers: { '@type': 'Offer', price: String(report.earlyAccessPrice), priceCurrency: 'GBP' },
@@ -86,8 +86,8 @@ const SiteAcquisitionIntelligence = () => {
           {
             '@type': 'FAQPage',
             mainEntity: [
-              { '@type': 'Question', name: 'What is a Site Acquisition Intelligence report?', acceptedAnswer: { '@type': 'Answer', text: 'It synthesises planning, market, financial, and ground risk data into a single acquisition-grade summary — telling you whether to buy a site, at what price, and under what conditions.' } },
-              { '@type': 'Question', name: 'How is this different from a Site Feasibility Report?', acceptedAnswer: { '@type': 'Answer', text: 'The Site Feasibility Report screens 22+ constraints. The Site Acquisition Intelligence report goes further — adding GDV, build cost, residual land value, S106/CIL exposure, and a financial viability assessment to support the land-buying decision.' } },
+              { '@type': 'Question', name: 'What is a Site Acquisition Report report?', acceptedAnswer: { '@type': 'Answer', text: 'It synthesises planning, market, financial, and ground risk data into a single acquisition-grade summary — telling you whether to buy a site, at what price, and under what conditions.' } },
+              { '@type': 'Question', name: 'How is this different from a Site Feasibility Report?', acceptedAnswer: { '@type': 'Answer', text: 'The Site Feasibility Report screens 22+ constraints. The Site Acquisition Report report goes further — adding GDV, build cost, residual land value, S106/CIL exposure, and a financial viability assessment to support the land-buying decision.' } },
               { '@type': 'Question', name: 'Can I use the RLV figure to make an offer?', acceptedAnswer: { '@type': 'Answer', text: 'The indicative RLV provides a data-informed starting point for your bid. It should be refined by your surveyor or development manager with site-specific assumptions before making a formal offer.' } },
               { '@type': 'Question', name: 'Does it cover affordable housing and S106?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. For sites triggering affordable housing thresholds (typically 10+ units), we calculate the policy obligation, likely S106 heads of terms, and the viability impact on your appraisal.' } },
             ]
@@ -282,7 +282,7 @@ const SiteAcquisitionIntelligence = () => {
       {/* Comparison Table */}
       <section className="py-32 bg-white">
         <ComparisonTable
-          title="Site Acquisition Intelligence"
+          title="Site Acquisition Report"
           subtitle="What you get vs a typical land agent's due diligence pack"
           columns={["Feature", "PF & Co", "Traditional Agent", "Desktop Search"]}
           categories={comparisonCategories}
@@ -356,8 +356,8 @@ const SiteAcquisitionIntelligence = () => {
           <h2 className="text-4xl font-bold text-center mb-16 tracking-tighter">Frequently Asked <span className="text-violet-600 italic font-serif font-light">Questions.</span></h2>
           <div className="space-y-8">
             {[
-              { q: "What is a Site Acquisition Intelligence report?", a: "It synthesises planning, market, financial, and ground risk data into a single acquisition-grade summary — telling you whether to buy a site, at what price, and under what conditions." },
-              { q: "How is this different from a Site Feasibility Report?", a: "The Site Feasibility Report screens 22+ constraints. The Site Acquisition Intelligence report goes further — adding GDV, build cost, residual land value, S106/CIL exposure, and a financial viability assessment to support the land-buying decision." },
+              { q: "What is a Site Acquisition Report report?", a: "It synthesises planning, market, financial, and ground risk data into a single acquisition-grade summary — telling you whether to buy a site, at what price, and under what conditions." },
+              { q: "How is this different from a Site Feasibility Report?", a: "The Site Feasibility Report screens 22+ constraints. The Site Acquisition Report report goes further — adding GDV, build cost, residual land value, S106/CIL exposure, and a financial viability assessment to support the land-buying decision." },
               { q: "Can I use the RLV figure to make an offer?", a: "The indicative RLV provides a data-informed starting point for your bid. It should be refined by your surveyor or development manager with site-specific assumptions before making a formal offer." },
               { q: "Does it cover affordable housing and S106?", a: "Yes. For sites triggering affordable housing thresholds (typically 10+ units), we calculate the policy obligation, likely S106 heads of terms, and the viability impact on your appraisal." },
               { q: "How accurate is the GDV range?", a: "GDV is derived from Land Registry Price Paid Data for comparable transactions within the locality, adjusted for unit type and size. We provide a range (low/central/high) rather than a single figure to reflect market uncertainty." },

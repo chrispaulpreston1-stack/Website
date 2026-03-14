@@ -51,13 +51,13 @@ const TreeSurvey = () => {
   return (
     <div className="pt-20">
       <PageSEO
-        title="Arboricultural Desk Study | Desktop Tree Assessment | PF & Co"
+        title="Arboricultural Constraints Appraisal | Desktop Tree Assessment | PF & Co"
         description="Desktop arboricultural assessment using LiDAR canopy modelling, TPO register data, and aerial imagery. BS 5837 categorisation and RPA mapping for planning applications across England and Wales."
         path="/site-intelligence/tree-survey"
         jsonLd={[
           {
             '@type': 'Product',
-            name: 'Arboricultural Desk Study',
+            name: 'Arboricultural Constraints Appraisal',
             description: 'Desktop arboricultural assessment with BS 5837 categorisation, LiDAR canopy analysis, and RPA mapping.',
             brand: { '@type': 'Organization', name: 'PF & Co Construction' },
             offers: { '@type': 'Offer', price: String(report.earlyAccessPrice), priceCurrency: 'GBP' },
@@ -112,7 +112,7 @@ const TreeSurvey = () => {
             <span className="font-mono text-xs uppercase tracking-[0.4em] text-emerald-400 font-bold mb-6 block">Site Intelligence / Product 12</span>
             <h1 className="text-7xl md:text-8xl font-bold leading-[0.85] mb-8 tracking-tighter">
               Arboricultural <br />
-              <span className="text-emerald-400 italic font-accent font-light">Desk Study</span>
+              <span className="text-emerald-400 italic font-accent font-light">Constraints Appraisal</span>
             </h1>
             <p className="text-xl text-white/60 leading-relaxed mb-10 max-w-lg font-light">
               Desktop arboricultural assessment using LiDAR canopy modelling, TPO register data, and aerial imagery — BS 5837 categorisation and RPA mapping to support your planning application.
@@ -253,11 +253,11 @@ const TreeSurvey = () => {
       <section className="py-32 bg-brand-surface">
         <div className="max-w-7xl mx-auto px-6">
           <ComparisonTable
-            title="Arboricultural Desk Study"
+            title="Arboricultural Constraints Appraisal"
             subtitle="What you get vs a typical arboricultural consultant"
             columns={["Feature", "PF&Co Desk Study", "Typical Consultant", "Basic Report"]}
             categories={comparisonCategories}
-            footerNote="This is a desktop study, not a physical site survey. PF&Co Arboricultural Desk Study uses LiDAR canopy modelling and remote data sources for rapid, evidence-based assessment. A physical survey may be recommended for complex sites."
+            footerNote="This is a desktop study, not a physical site survey. PF&Co Arboricultural Constraints Appraisal uses LiDAR canopy modelling and remote data sources for rapid, evidence-based assessment. A physical survey may be recommended for complex sites."
             accentColor="text-emerald-500"
           />
         </div>

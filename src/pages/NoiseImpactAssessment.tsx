@@ -51,21 +51,21 @@ const NoiseImpactAssessment = () => {
   return (
     <div className="pt-20">
       <PageSEO
-        title="Noise Impact Screening | Acoustic Screening | PF & Co"
+        title="Noise Screening Report | Acoustic Screening | PF & Co"
         description="BS 4142/BS 8233/ProPG noise screening for residential schemes near roads, railways, or commercial uses."
         path="/site-intelligence/noise-impact-assessment"
         jsonLd={[
           {
             '@type': 'Product',
-            name: 'Noise Impact Screening',
+            name: 'Noise Screening Report',
             description: 'BS 4142/BS 8233/ProPG noise screening for residential schemes near roads, railways, or commercial uses.',
             brand: { '@type': 'Organization', name: 'PF & Co Construction' },
             offers: { '@type': 'Offer', price: String(report.earlyAccessPrice), priceCurrency: 'GBP' },
           },
           {
             '@type': 'VideoObject',
-            name: 'Noise Impact Assessment — What\'s Inside Your Report',
-            description: 'A walkthrough of the PF & Co Noise Impact Assessment, showing how we analyse Defra noise contours, assess against BS 4142 and BS 8233, and provide glazing specifications to help you satisfy council acoustic requirements.',
+            name: 'Noise Screening Report — What\'s Inside Your Report',
+            description: 'A walkthrough of the PF & Co Noise Screening Report, showing how we analyse Defra noise contours, assess against BS 4142 and BS 8233, and provide glazing specifications to help you satisfy council acoustic requirements.',
             thumbnailUrl: 'https://www.pfcoconstruction.co.uk/videos/noise-demo-thumb.jpg',
             contentUrl: 'https://www.pfcoconstruction.co.uk/videos/noise-demo.mp4',
             uploadDate: '2026-03-07',
@@ -100,8 +100,8 @@ const NoiseImpactAssessment = () => {
           >
             <span className="font-mono text-xs uppercase tracking-[0.4em] text-violet-400 font-bold mb-6 block">Site Intelligence / Product 18</span>
             <h1 className="text-7xl md:text-8xl font-bold leading-[0.85] mb-8 tracking-tighter">
-              Noise Impact <br />
-              <span className="text-violet-400 italic font-accent font-light">Assessment</span>
+              Noise Screening <br />
+              <span className="text-violet-400 italic font-accent font-light">Report</span>
             </h1>
             <p className="text-xl text-white/60 leading-relaxed mb-10 max-w-lg font-light">
               BS 4142/BS 8233/ProPG noise screening for residential schemes near roads, railways, or commercial uses.
@@ -224,7 +224,7 @@ const NoiseImpactAssessment = () => {
                 <div className="absolute top-0 right-0 w-64 h-64 bg-violet-500/20 blur-[80px]" />
                 <h3 className="text-3xl font-bold mb-6 relative z-10">48-72hr Turnaround <br /><span className="text-violet-400 italic font-accent font-light">Typical.</span></h3>
                 <p className="text-white/60 mb-8 relative z-10 font-light">
-                  Time is the biggest risk in any development. We deliver our Noise Impact Assessments within 48-72 hours of instruction, so you can make decisions at the speed of the market.
+                  Time is the biggest risk in any development. We deliver our Noise Screening Reports within 48-72 hours of instruction, so you can make decisions at the speed of the market.
                 </p>
                 <Link to="/contact" className="inline-flex items-center gap-2 font-bold text-violet-400 hover:gap-4 transition-all relative z-10">
                   Instruct a Report <ArrowRight size={18} />
@@ -239,11 +239,11 @@ const NoiseImpactAssessment = () => {
       <section className="py-32 bg-brand-surface">
         <div className="max-w-7xl mx-auto px-6">
           <ComparisonTable
-            title="Noise Impact Assessment"
+            title="Noise Screening Report"
             subtitle="What you get vs a typical consultant"
             columns={["Feature", "PF&Co Site Intelligence", "Typical Consultant", "Basic Mention"]}
             categories={comparisonCategories}
-            footerNote="Comparison based on typical UK acoustic consultancy practices. PF&Co Noise Impact Assessment references Defra Round 4 strategic noise maps and all relevant British Standards."
+            footerNote="Comparison based on typical UK acoustic consultancy practices. PF&Co Noise Screening Report references Defra Round 4 strategic noise maps and all relevant British Standards."
             accentColor="text-violet-500"
           />
         </div>
@@ -254,7 +254,7 @@ const NoiseImpactAssessment = () => {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-20">
             <h2 className="text-5xl font-bold mb-4 tracking-tight text-brand-primary">When You Need <span className="font-accent italic font-light text-violet-600">Certainty.</span></h2>
-            <p className="text-brand-primary/60 max-w-2xl mx-auto font-light">Critical scenarios where a Noise Impact Assessment is essential for planning.</p>
+            <p className="text-brand-primary/60 max-w-2xl mx-auto font-light">Critical scenarios where a Noise Screening Report is essential for planning.</p>
           </div>
 
           <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-px bg-brand-primary/10 border border-brand-primary/10 rounded-[2rem] overflow-hidden">

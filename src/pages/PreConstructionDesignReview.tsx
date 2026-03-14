@@ -122,8 +122,8 @@ const PreConstructionDesignReview = () => {
           >
             <span className="font-mono text-xs uppercase tracking-[0.4em] text-rose-400 font-bold mb-6 block">Site Intelligence / Product 13</span>
             <h1 className="text-7xl md:text-8xl font-bold leading-[0.85] mb-8 tracking-tighter">
-              Design <br />
-              <span className="text-rose-400 italic font-accent font-light">Readiness Review</span>
+              Pre-Construction <br />
+              <span className="text-rose-400 italic font-accent font-light">Design Review</span>
             </h1>
             <p className="text-xl text-white/60 leading-relaxed mb-10 max-w-lg font-light">
               A systematic 95-check review of your drawing package — catching clashes, gaps, and missing information on paper, not on site.
@@ -273,7 +273,7 @@ const PreConstructionDesignReview = () => {
       <section className="py-32 bg-brand-surface">
         <div className="max-w-7xl mx-auto px-6">
           <ComparisonTable
-            title="Design Readiness Review"
+            title="Pre-Construction Design Review"
             subtitle="What you get vs a typical ad hoc review"
             columns={["Feature", "PF&Co Site Intelligence", "Typical Approach", "Internal Review"]}
             categories={comparisonCategories}
@@ -288,7 +288,7 @@ const PreConstructionDesignReview = () => {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-20">
             <h2 className="text-5xl font-bold mb-4 tracking-tight text-brand-primary">When You Need <span className="font-accent italic font-light text-rose-600">Certainty.</span></h2>
-            <p className="text-brand-primary/60 max-w-2xl mx-auto font-light">Critical scenarios where a Design Readiness Review is the smartest pre-construction step.</p>
+            <p className="text-brand-primary/60 max-w-2xl mx-auto font-light">Critical scenarios where a Pre-Construction Design Review is the smartest pre-construction step.</p>
           </div>
 
           <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-px bg-brand-primary/10 border border-brand-primary/10 rounded-[2rem] overflow-hidden">

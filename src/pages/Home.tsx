@@ -96,7 +96,7 @@ const Home = () => {
               <div className="absolute bottom-8 left-8 right-8">
                 <div className="glass p-6 rounded-2xl">
                   <p className="text-sm font-mono uppercase tracking-widest mb-2 opacity-60">Featured</p>
-                  <h3 className="text-xl font-bold">Site Acquisition Intelligence</h3>
+                  <h3 className="text-xl font-bold">Site Acquisition Report</h3>
                   <p className="text-sm text-white/60 mt-1">Should you buy this site? GDV, RLV, go/no-go.</p>
                   <Link to="/site-intelligence/site-acquisition-intelligence" className="flex items-center gap-2 mt-4 text-brand-accent">
                     <span className="text-xs font-bold">Learn More</span>

@@ -362,7 +362,7 @@ const Footer = () => {
               <li><Link to="/order-report" className="hover:text-brand-accent transition-colors font-medium text-brand-accent">Order Reports</Link></li>
               <li><Link to="/plans-and-pricing" className="hover:text-brand-accent transition-colors">How It Works</Link></li>
               <li><Link to="/site-intelligence/site-feasibility-report" className="hover:text-brand-accent transition-colors">Site Feasibility Report</Link></li>
-              <li><Link to="/site-intelligence/site-acquisition-intelligence" className="hover:text-brand-accent transition-colors">Site Acquisition Intelligence</Link></li>
+              <li><Link to="/site-intelligence/site-acquisition-intelligence" className="hover:text-brand-accent transition-colors">Site Acquisition Report</Link></li>
               <li><Link to="/site-intelligence/flood-risk-assessment" className="hover:text-brand-accent transition-colors">Flood Risk Assessment</Link></li>
             </ul>
           </div>
