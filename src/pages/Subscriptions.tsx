@@ -363,7 +363,7 @@ const Subscriptions = () => {
                     {
                       scenario: "Architect (15 apps/year)",
                       individual: "£51,975",
-                      subscription: "£11,940/yr",
+                      subscription: "£11,940/yr (£165.83/report)",
                       saving: "77%",
                       tier: "Professional",
                       icon: <FileText size={20} />,
@@ -371,7 +371,7 @@ const Subscriptions = () => {
                     {
                       scenario: "Developer (10 projects/year)",
                       individual: "£43,450",
-                      subscription: "£23,940/yr",
+                      subscription: "£23,940/yr (£166.25/report)",
                       saving: "45%",
                       tier: "Developer",
                       icon: <Building2 size={20} />,
@@ -379,7 +379,7 @@ const Subscriptions = () => {
                     {
                       scenario: "Land Buyer (24 sites/year)",
                       individual: "£23,880",
-                      subscription: "£4,788/yr",
+                      subscription: "£4,788/yr (£199.50/report)",
                       saving: "80%",
                       tier: "Scout",
                       icon: <MapPin size={20} />,

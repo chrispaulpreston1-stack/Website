@@ -85,10 +85,10 @@ On a subscription:
 
 | Tier | Effective SAI Cost | vs Traditional |
 |------|-------------------|----------------|
-| Scout | ~£200 | **97% cheaper** |
-| Professional | ~£166 | **97% cheaper** |
-| Developer | ~£166 | **97% cheaper** |
-| Enterprise | ~£133 | **98% cheaper** |
+| Scout | £199.50 | **97% cheaper** |
+| Professional | £165.83 | **97% cheaper** |
+| Developer | £166.25 | **97% cheaper** |
+| Enterprise | £133.17 | **98% cheaper** |
 
 ### What Happens After the SAI?
 
@@ -108,14 +108,14 @@ The SAI tells you whether to buy the site. If the answer is "proceed", you then 
 
 | | Standalone | Scout | Professional | Developer | Enterprise |
 |---|-----------|-------|-------------|-----------|-----------|
-| Effective per report | £520 avg | £200 | £166 | £166 | £133 |
-| **9-report project cost** | **£4,680** | **£1,800** | **£1,494** | **£1,494** | **£1,197** |
+| Effective per credit | £520 avg | £199.50 | £165.83 | £166.25 | £133.17 |
+| **9-report project cost** | **£4,680** | **£1,795.50** | **£1,492.47** | **£1,496.25** | **£1,198.53** |
 | Saving vs standalone | -- | 62% | 68% | 68% | 74% |
 | Credits needed | -- | 9 (4.5 months) | 9 (1.5 months) | 9 (< 1 month) | 9 (< 1 month) |
 
 **Traditional consultant equivalent for the same 9 reports: £12,000-£30,000+ and 8-16 weeks.**
 
-On a Developer subscription, you get the same 9 reports for **£1,494 effective cost, delivered across 2-3 weeks** — and you still have 3 credits left that month for your next project.
+On a Developer subscription (£166.25/credit), you get the same 9 reports for **£1,496 effective cost, delivered across 2-3 weeks** — and you still have 3 credits left that month for your next project.
 
 ### The Overage Ladder
 
@@ -123,10 +123,10 @@ If you need more reports than your tier allows in a given month, you can buy add
 
 | Tier | Included Credits | Effective Per Credit | Overage Rate | Overage Premium |
 |------|-----------------|---------------------|-------------|----------------|
-| Scout | 2/mo | ~£200 | £275 | +38% |
-| Professional | 6/mo | ~£166 | £240 | +45% |
-| Developer | 12/mo | ~£166 | £225 | +36% |
-| Enterprise | 30/mo | ~£133 | £195 | +47% |
+| Scout | 2/mo | £199.50 | £275 | +38% |
+| Professional | 6/mo | £165.83 | £240 | +45% |
+| Developer | 12/mo | £166.25 | £225 | +35% |
+| Enterprise | 30/mo | £133.17 | £195 | +46% |
 
 **Key point:** Overages are always cheaper than standalone (cheapest standalone is £245 for PAA). If you're consistently hitting overages, that's the signal to upgrade to the next tier.
 
@@ -290,7 +290,7 @@ If you need more reports than your tier allows in a given month, you can buy add
 | **Annual (EA)** | £4,069 | £10,149 | £20,349 | £40,749 |
 | **Reports/month** | 2 | 6 | 12 | 30 |
 | **Reports/year** | 24 | 72 | 144 | 360 |
-| **Effective per report** | ~£200 | ~£166 | ~£166 | ~£133 |
+| **Effective per credit** | £199.50 | £165.83 | £166.25 | £133.17 |
 | **vs standalone avg** | 62% cheaper | 68% cheaper | 68% cheaper | 74% cheaper |
 | **Turnaround** | 72hr | 48hr | 48hr | 48hr |
 | **Rollover** | 2 months | 3 months | 4 months | 6 months |
@@ -311,12 +311,12 @@ Professional tier and above include white-label — reports delivered under your
 
 | Report | Your Cost (1 credit) | Bill Client At | Your Margin |
 |--------|---------------------|---------------|-------------|
-| SFR | ~£166 | £595-£1,500 | £429-£1,334 |
-| PS | ~£166 | £495-£825 | £329-£659 |
-| DAS | ~£166 | £395-£660 | £229-£494 |
-| HIA | ~£166 | £545-£910 | £379-£744 |
-| BNG | ~£166 | £495-£825 | £329-£659 |
-| TS | ~£166 | £495-£825 | £329-£659 |
+| SFR | £165.83 | £595-£1,500 | £429-£1,334 |
+| PS | £165.83 | £495-£825 | £329-£659 |
+| DAS | £165.83 | £395-£660 | £229-£494 |
+| HIA | £165.83 | £545-£910 | £379-£744 |
+| BNG | £165.83 | £495-£825 | £329-£659 |
+| TS | £165.83 | £495-£825 | £329-£659 |
 | **6 reports/month** | **£995 subscription** | **£3,000-£6,000 billed** | **£2,000-£5,000 profit/mo** |
 
 An architect using all 6 credits and billing clients at standalone prices makes 200%+ return on subscription cost. The reports are delivered under their practice branding — the client sees their firm's name, not ours.
@@ -376,9 +376,9 @@ Above + DFS + CFS + ES + DSA + DRR + PAA = **22 reports** (Complete Intelligence
 
 | Project Type | Reports | Standalone | Developer Sub | Enterprise Sub | Traditional Consultants |
 |---|---|---|---|---|---|
-| Simple (9 reports) | 9 | £4,680 | £1,494 | £1,197 | £12,000-£30,000 |
-| Typical urban (16 reports) | 16 | £8,320 | £2,656 | £2,128 | £20,000-£45,000 |
-| Major brownfield (22 reports) | 22 | £11,900 | £3,652 | £2,926 | £35,000-£70,000 |
+| Simple (9 reports) | 9 | £4,680 | £1,496 (£166.25/cr) | £1,199 (£133.17/cr) | £12,000-£30,000 |
+| Typical urban (16 reports) | 16 | £8,320 | £2,660 (£166.25/cr) | £2,131 (£133.17/cr) | £20,000-£45,000 |
+| Major brownfield (22 reports) | 22 | £11,900 | £3,658 (£166.25/cr) | £2,930 (£133.17/cr) | £35,000-£70,000 |
 | **Timeline** | | **2-4 weeks** | **2-4 weeks** | **< 2 weeks** | **12-24 weeks** |
 
 **The more complex the site, the bigger the subscription savings.** Simple sites save 60-70%. Complex sites save 75-85%.
@@ -648,13 +648,24 @@ Land buyer buys 1 SAI (£995)
 
 | Audience | Hook | Proof Point |
 |----------|------|------------|
-| Land buyers | "Know before you bid" | "Screen 24 sites/year for £4,788 vs £23,880 standalone" |
-| Architects | "Your engineering partner on retainer" | "6 reports/mo, white-label, 48hr turnaround — £995/mo" |
-| Developers | "Outsource the due diligence" | "12 reports/mo covers 3 full project packs — £1,995/mo" |
-| Housing assoc. | "Pipeline intelligence at scale" | "Fixed monthly cost, quarterly pipeline reviews" |
+| Land buyers | "Know before you bid" | "SAI at £199.50/report on Scout vs £995 standalone — screen 24 sites/year for £4,788" |
+| Architects | "Your engineering partner on retainer" | "£165.83/report on Professional — 6 reports/mo, white-label, 48hr turnaround" |
+| Developers | "Outsource the due diligence" | "£166.25/report on Developer — 12 reports/mo covers 3 full project packs" |
+| Housing assoc. | "Pipeline intelligence at scale" | "£133.17/report on Enterprise — 30 reports/mo, dedicated account manager" |
 | Self-builders | "From plot to build — covered" | "Triple Threat: £995 for site + ground + flood" |
+| Deal packagers | "Turn a lead into a proposition" | "SAI at £199.50 on Scout — your deal package just got a GDV, RLV, and go/no-go" |
+
+**Per-credit pricing by tier (for all marketing materials):**
+
+| Tier | Per Credit (Included) | Per Credit (Overage) | Standalone Avg |
+|------|----------------------|---------------------|---------------|
+| Scout | **£199.50** | £275 | £520 |
+| Professional | **£165.83** | £240 | £520 |
+| Developer | **£166.25** | £225 | £520 |
+| Enterprise | **£133.17** | £195 | £520 |
 
 **Pricing anchors to use:**
 - "Traditional consultant: £2,000-£8,000/month retainer. PF & Co: from £399/mo."
-- "Individual Phase 1 desk study: £600-£2,000. Ours: £595 standalone, or ~£133 on Enterprise."
+- "Individual Phase 1 desk study: £600-£2,000. Ours: £595 standalone, or £133.17 on Enterprise."
 - "Full planning evidence pack from a consultant: £8,000-£15,000. Our Full Planning Suite: £2,495."
+- "SAI from a development surveyor: £3,000-£8,000. Ours: £995 standalone, £199.50 on Scout, £133.17 on Enterprise."
