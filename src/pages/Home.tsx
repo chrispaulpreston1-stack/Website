@@ -147,7 +147,7 @@ const Home = () => {
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {[
               { step: "01", title: "Enter Your Address", desc: "Any UK site. Postcode or full address. We do the rest — 60 data sources queried automatically.", icon: <Search size={24} /> },
-              { step: "02", title: "Select Your Reports", desc: "Pick individual reports, a bundle, or subscribe for monthly credits. 22 report types available.", icon: <FileText size={24} /> },
+              { step: "02", title: "Select Your Reports", desc: "Pick individual reports, a bundle, or subscribe for monthly credits. 24 report types available.", icon: <FileText size={24} /> },
               { step: "03", title: "Receive in 48 Hours", desc: "AI-generated, human-verified, submission-ready documents. PDF and Word. Planning-grade quality.", icon: <Clock size={24} /> },
             ].map((item, i) => (
               <motion.div
@@ -183,7 +183,7 @@ const Home = () => {
             <span className="font-mono text-xs uppercase tracking-[0.3em] text-brand-accent font-bold mb-4 block">Most Popular</span>
             <h2 className="text-5xl font-bold tracking-tighter mb-4">Our <span className="italic font-accent font-light text-brand-accent">Reports.</span></h2>
             <p className="text-brand-primary/50 max-w-2xl mx-auto text-lg font-light">
-              22 report types across 6 categories. Every one submission-ready, data-driven, and human-verified.
+              24 report types across 6 categories. Every one submission-ready, data-driven, and human-verified.
             </p>
           </div>
 

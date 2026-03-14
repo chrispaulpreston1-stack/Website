@@ -26,7 +26,7 @@ const Subscriptions = () => {
       overage: 275,
       features: [
         "2 report credits per month",
-        "Any of our 22 report types",
+        "Any of our 24 report types",
         "72-hour turnaround",
         "Email support",
       ],
@@ -48,7 +48,7 @@ const Subscriptions = () => {
       overage: 240,
       features: [
         "6 report credits per month",
-        "Any of our 22 report types",
+        "Any of our 24 report types",
         "Priority 48-hour turnaround",
         "White-label reports (your branding)",
         "Dedicated account manager",
@@ -71,7 +71,7 @@ const Subscriptions = () => {
       overage: 225,
       features: [
         "12 report credits per month",
-        "Any of our 22 report types",
+        "Any of our 24 report types",
         "Priority 48-hour turnaround",
         "White-label reports",
         "Dedicated account manager",
@@ -95,7 +95,7 @@ const Subscriptions = () => {
       overage: 195,
       features: [
         "30 report credits per month",
-        "Any of our 22 report types",
+        "Any of our 24 report types",
         "Priority 48-hour turnaround",
         "White-label reports",
         "Dedicated account manager",
@@ -155,7 +155,7 @@ const Subscriptions = () => {
               </div>
               <div>
                 <div className="text-sm font-bold text-brand-primary">1 Credit = 1 Report</div>
-                <div className="text-xs text-brand-primary/40">Any of our 22 report types</div>
+                <div className="text-xs text-brand-primary/40">Any of our 24 report types</div>
               </div>
             </div>
             <div className="w-px h-8 bg-brand-primary/10 hidden sm:block" />
@@ -334,7 +334,7 @@ const Subscriptions = () => {
           <h2 className="text-3xl font-bold text-brand-primary mb-12 text-center">Common Questions</h2>
           <div className="space-y-6">
             {[
-              { q: "What is 1 credit?", a: "1 credit = 1 complete, submission-ready report of any type. A Site Feasibility Report, a Flood Risk Assessment, a Planning Statement — any of our 22 reports. Same quality whether you buy standalone or use a credit." },
+              { q: "What is 1 credit?", a: "1 credit = 1 complete, submission-ready report of any type. A Site Feasibility Report, a Flood Risk Assessment, a Planning Statement — any of our 24 reports. Same quality whether you buy standalone or use a credit." },
               { q: "Can I mix report types?", a: "Yes. Your credits work for any combination. Use 2 credits on 2 SAIs for site screening, or 1 SFR + 1 FRA for due diligence on one site, or 6 different reports for a full planning application. No restrictions." },
               { q: "What happens to unused credits?", a: "They roll over. Scout credits last 2 months, Professional 3 months, Developer 4 months, Enterprise 6 months. No wasted spend." },
               { q: "Can I upgrade or downgrade?", a: "Yes. Upgrade any time and your remaining credits carry over. Downgrade at the end of your billing cycle." },

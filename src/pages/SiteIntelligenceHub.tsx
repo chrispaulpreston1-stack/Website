@@ -384,7 +384,7 @@ const SiteIntelligenceHub = () => {
         <div className="mt-32">
           <div className="text-center mb-12">
             <h2 className="text-5xl font-bold mb-6 tracking-tighter">All <span className="text-brand-accent italic font-serif font-light">Reports.</span></h2>
-            <p className="text-brand-primary/60 max-w-2xl mx-auto text-lg font-light">22 report types. Filter by who you are to see what's most relevant.</p>
+            <p className="text-brand-primary/60 max-w-2xl mx-auto text-lg font-light">24 report types. Filter by who you are to see what's most relevant.</p>
           </div>
 
           {/* Role Filter */}
@@ -431,14 +431,14 @@ const SiteIntelligenceHub = () => {
                 >
                   <Link to={report.path} className="block p-6 rounded-2xl bg-white border border-brand-primary/5 hover:border-brand-accent/20 hover:shadow-md transition-all group h-full">
                     <div className="flex items-center justify-between mb-3">
-                      <span className="text-[10px] font-bold uppercase tracking-widest text-brand-primary/30">{report.shortName}</span>
-                      <span className="text-lg font-bold text-brand-accent">£{report.stripePrice.toLocaleString()}</span>
+                      <span className="text-xs font-bold uppercase tracking-widest text-brand-primary/30">{report.shortName}</span>
+                      <span className="text-xl font-bold text-brand-accent">£{report.stripePrice.toLocaleString()}</span>
                     </div>
-                    <h4 className="font-bold text-brand-primary mb-2 group-hover:text-brand-accent transition-colors text-sm">{report.name}</h4>
-                    <p className="text-xs text-brand-primary/50 leading-relaxed mb-3">{report.description}</p>
+                    <h4 className="font-bold text-brand-primary mb-2 group-hover:text-brand-accent transition-colors">{report.name}</h4>
+                    <p className="text-sm text-brand-primary/50 leading-relaxed mb-3">{report.description}</p>
                     <div className="flex items-center justify-between">
-                      <span className="text-[10px] text-brand-primary/30 font-bold">{report.turnaround}</span>
-                      <ArrowRight size={14} className="text-brand-accent opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <span className="text-xs text-brand-primary/30 font-bold">{report.turnaround}</span>
+                      <ArrowRight size={16} className="text-brand-accent opacity-0 group-hover:opacity-100 transition-opacity" />
                     </div>
                   </Link>
                 </motion.div>
