@@ -86,16 +86,14 @@ const Navbar = () => {
   }, [location]);
 
   const navLinks: { name: string; href: string; isExternal?: boolean }[] = [
-    { name: 'Engineering', href: '/structural-engineering' },
-    { name: 'Construction', href: '/construction' },
-    { name: 'Site Intelligence', href: '/site-intelligence' },
-    { name: 'Plans & Pricing', href: '/plans-and-pricing' },
-    { name: 'Building Control', href: '/building-control' },
-    { name: 'Party Wall', href: '/party-wall' },
+    { name: 'Reports', href: '/site-intelligence' },
+    { name: 'Pricing', href: '/subscriptions' },
+    { name: 'How It Works', href: '/plans-and-pricing' },
+    { name: 'AI Standards', href: '/ai-compliance' },
     { name: 'Insights', href: '/blog' },
   ];
 
-  const hasDarkHero = location.pathname === '/ai-innovation' || location.pathname === '/plans-and-pricing';
+  const hasDarkHero = location.pathname === '/ai-innovation' || location.pathname === '/plans-and-pricing' || location.pathname === '/site-intelligence';
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'glass py-3 shadow-sm' : 'bg-transparent py-6'}`}>
@@ -143,8 +141,8 @@ const Navbar = () => {
               </Link>
             )
           ))}
-          <Link to="/contact" className="bg-brand-primary text-white px-6 py-2.5 rounded-full text-sm font-bold hover:scale-105 transition-transform shadow-lg shadow-brand-primary/20 flex items-center gap-2 border border-white/10">
-            Get a Quote <ArrowRight size={16} />
+          <Link to="/order-report" className="bg-brand-primary text-white px-6 py-2.5 rounded-full text-sm font-bold hover:scale-105 transition-transform shadow-lg shadow-brand-primary/20 flex items-center gap-2 border border-white/10">
+            Order Now <ArrowRight size={16} />
           </Link>
         </div>
 
@@ -189,8 +187,8 @@ const Navbar = () => {
                 </Link>
               )
             ))}
-            <Link to="/contact" className="bg-brand-primary text-white w-full py-4 rounded-xl font-bold mt-4 text-center border border-white/10">
-              Get a Quote
+            <Link to="/order-report" className="bg-brand-primary text-white w-full py-4 rounded-xl font-bold mt-4 text-center border border-white/10">
+              Order Now
             </Link>
           </motion.div>
         )}
@@ -331,7 +329,7 @@ const Footer = () => {
               </div>
             </div>
             <p className="text-brand-primary/60 max-w-sm leading-relaxed mb-6 text-sm">
-              Engineering-led construction and structural design across England and Wales.
+              AI-powered site intelligence and planning reports. 60 data sources. 48-hour turnaround. Nationwide across England and Wales.
             </p>
             <div className="flex gap-4">
               <a
@@ -356,42 +354,36 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="font-bold mb-6">Services</h4>
+            <h4 className="font-bold mb-6">Site Intelligence</h4>
             <ul className="space-y-3 text-sm text-brand-primary/60">
-              <li><Link to="/structural-engineering" className="hover:text-brand-accent transition-colors">Structural Engineering</Link></li>
-              <li><Link to="/construction" className="hover:text-brand-accent transition-colors">Construction</Link></li>
-              <li><Link to="/site-intelligence" className="hover:text-brand-accent transition-colors">Site Intelligence</Link></li>
-              <li><Link to="/building-control" className="hover:text-brand-accent transition-colors">Building Control</Link></li>
-              <li><Link to="/party-wall" className="hover:text-brand-accent transition-colors">Party Wall</Link></li>
-              <li><Link to="/report-packages" className="hover:text-brand-accent transition-colors">Report Packages</Link></li>
-              <li><Link to="/plans-and-pricing" className="hover:text-brand-accent transition-colors">Plans & Pricing</Link></li>
-              <li><Link to="/subscriptions" className="hover:text-brand-accent transition-colors">Subscriptions</Link></li>
+              <li><Link to="/site-intelligence" className="hover:text-brand-accent transition-colors">All Reports</Link></li>
+              <li><Link to="/subscriptions" className="hover:text-brand-accent transition-colors font-medium text-brand-accent">Subscriptions</Link></li>
+              <li><Link to="/report-packages" className="hover:text-brand-accent transition-colors">Report Bundles</Link></li>
+              <li><Link to="/order-report" className="hover:text-brand-accent transition-colors font-medium text-brand-accent">Order Reports</Link></li>
+              <li><Link to="/plans-and-pricing" className="hover:text-brand-accent transition-colors">How It Works</Link></li>
+              <li><Link to="/site-intelligence/site-feasibility-report" className="hover:text-brand-accent transition-colors">Site Feasibility Report</Link></li>
+              <li><Link to="/site-intelligence/site-acquisition-intelligence" className="hover:text-brand-accent transition-colors">Site Acquisition Intelligence</Link></li>
+              <li><Link to="/site-intelligence/flood-risk-assessment" className="hover:text-brand-accent transition-colors">Flood Risk Assessment</Link></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="font-bold mb-6">Reports</h4>
+            <h4 className="font-bold mb-6">Other Services</h4>
             <ul className="space-y-3 text-sm text-brand-primary/60">
-              <li><Link to="/site-intelligence/site-feasibility-report" className="hover:text-brand-accent transition-colors">Site Feasibility</Link></li>
-              <li><Link to="/site-intelligence/geotechnical-desk-study" className="hover:text-brand-accent transition-colors">Geotechnical Study</Link></li>
-              <li><Link to="/site-intelligence/flood-risk-assessment" className="hover:text-brand-accent transition-colors">Flood Risk</Link></li>
-              <li><Link to="/site-intelligence/planning-statement" className="hover:text-brand-accent transition-colors">Planning Statement</Link></li>
-              <li><Link to="/site-intelligence/heritage-impact-assessment" className="hover:text-brand-accent transition-colors">Heritage Statement</Link></li>
-              <li><Link to="/site-intelligence/biodiversity-net-gain" className="hover:text-brand-accent transition-colors">BNG Screening</Link></li>
-              <li><Link to="/site-intelligence/cil-liability-assessment" className="hover:text-brand-accent transition-colors">CIL Assessment</Link></li>
-              <li><Link to="/site-intelligence/energy-statement" className="hover:text-brand-accent transition-colors">Energy Statement</Link></li>
-              <li><Link to="/order-report" className="hover:text-brand-accent transition-colors font-medium text-brand-accent">Order Reports</Link></li>
+              <li><Link to="/structural-engineering" className="hover:text-brand-accent transition-colors">Structural Engineering</Link></li>
+              <li><Link to="/construction" className="hover:text-brand-accent transition-colors">Construction</Link></li>
+              <li><Link to="/building-control" className="hover:text-brand-accent transition-colors">Building Control</Link></li>
+              <li><Link to="/party-wall" className="hover:text-brand-accent transition-colors">Party Wall</Link></li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-bold mb-6">Company</h4>
             <ul className="space-y-3 text-sm text-brand-primary/60">
-              <li><Link to="/" className="hover:text-brand-accent transition-colors">Home</Link></li>
               <li><Link to="/blog" className="hover:text-brand-accent transition-colors">Insights</Link></li>
-              <li><Link to="/insights/what-reports-do-you-need-for-planning-permission" className="hover:text-brand-accent transition-colors">Planning Guide</Link></li>
-              <li><Link to="/ai-innovation" className="hover:text-brand-accent transition-colors">AI Innovation</Link></li>
               <li><Link to="/ai-compliance" className="hover:text-brand-accent transition-colors">AI Standards</Link></li>
+              <li><Link to="/ai-innovation" className="hover:text-brand-accent transition-colors">AI Innovation</Link></li>
+              <li><Link to="/insights/what-reports-do-you-need-for-planning-permission" className="hover:text-brand-accent transition-colors">Planning Guide</Link></li>
               <li><Link to="/contact" className="hover:text-brand-accent transition-colors">Contact</Link></li>
               <li><Link to="/privacy-policy" className="hover:text-brand-accent transition-colors">Privacy Policy</Link></li>
               <li><Link to="/terms-of-service" className="hover:text-brand-accent transition-colors">Terms of Service</Link></li>

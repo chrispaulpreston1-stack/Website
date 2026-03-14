@@ -24,8 +24,8 @@ const BASE_URL = 'https://www.pfcoconstruction.co.uk';
 const routes = [
   {
     path: '/',
-    title: 'PF & Co | AI-Powered Structural Engineering & Construction',
-    description: 'Nationwide AI-powered structural engineering and construction firm. 48-hour Site Intelligence reports, precision construction, and structural design.',
+    title: 'PF & Co | AI-Powered Site Intelligence & Planning Reports',
+    description: 'Planning-ready site intelligence reports for any UK site. 60 data sources, 112 AI agents, 48-hour turnaround. From £375. Subscribe from £399/mo.',
   },
   {
     path: '/structural-engineering',
