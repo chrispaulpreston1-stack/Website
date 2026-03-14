@@ -278,8 +278,8 @@ const SiteIntelligenceHub = () => {
             </div>
             <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
               <img
-                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200"
-                alt="Engineer reviewing data"
+                src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=1200"
+                alt="Professional reviewing technical documents at desk"
                 className="absolute inset-0 w-full h-full object-cover"
                 loading="lazy"
                 referrerPolicy="no-referrer"
