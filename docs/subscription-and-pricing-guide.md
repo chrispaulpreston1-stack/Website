@@ -299,6 +299,89 @@ If you need more reports than your tier allows in a given month, you can buy add
 | **Pipeline review** | -- | -- | Quarterly | Quarterly |
 | **Overage rate** | £275 | £240 | £225 | £195 |
 | **Money-back** | 30 days | 30 days | 30 days | 30 days |
+| **Minimum term** | 3 months | 6 months | 12 months | 12 months |
+
+---
+
+### RESALE & WHITE-LABEL OPPORTUNITY
+
+Professional tier and above include white-label — reports delivered under your branding. This creates a resale business model for architects, planning consultants, and deal packagers.
+
+**Architect / Planning Consultant Resale Model (Professional Tier):**
+
+| Report | Your Cost (1 credit) | Bill Client At | Your Margin |
+|--------|---------------------|---------------|-------------|
+| SFR | ~£166 | £595-£1,500 | £429-£1,334 |
+| PS | ~£166 | £495-£825 | £329-£659 |
+| DAS | ~£166 | £395-£660 | £229-£494 |
+| HIA | ~£166 | £545-£910 | £379-£744 |
+| BNG | ~£166 | £495-£825 | £329-£659 |
+| TS | ~£166 | £495-£825 | £329-£659 |
+| **6 reports/month** | **£995 subscription** | **£3,000-£6,000 billed** | **£2,000-£5,000 profit/mo** |
+
+An architect using all 6 credits and billing clients at standalone prices makes 200%+ return on subscription cost. The reports are delivered under their practice branding — the client sees their firm's name, not ours.
+
+**Marketing pitch:** "Subscribe at £995/mo. White-label the reports. Bill your clients. Keep the margin."
+
+---
+
+### DEAL PACKAGER USE CASE
+
+Deal packagers and land sourcers find sites, package them with intelligence, and sell the opportunity to developers/investors for a finder's fee (typically 1-3% of land value or £5,000-£25,000 fixed).
+
+**Without PF & Co:** Deal package = address + asking price + Rightmove screenshot. Weak proposition. Lower fee.
+
+**With Scout subscription (£399/mo):** Deal package includes a full SAI showing GDV range, RLV, planning friction, 22+ constraints screened, comparable evidence, go/no-go recommendation. The developer has real numbers to take to their board or lender.
+
+| | Without Intelligence | With SAI |
+|---|---|---|
+| Monthly subscription cost | £0 | £399 |
+| Sites packaged per month | 2 | 2 |
+| Intelligence per deal | Address + asking price | Full SAI with data-backed numbers |
+| Typical finder's fee | £5,000-£10,000 | £10,000-£25,000 |
+| **Monthly revenue** | **£10,000-£20,000** | **£20,000-£50,000** |
+| **ROI on £399 spend** | -- | **5,000-7,000%** |
+
+**Marketing pitch:** "Your deal package is only as strong as the intelligence behind it. An SAI turns a lead into a fully appraised proposition. £399/mo. Two deals. The first one pays for the year."
+
+---
+
+### MINIMUM COMMITMENT PERIODS
+
+| Tier | Minimum Term | Why |
+|------|-------------|-----|
+| Scout | 3 months | Low commitment entry — 6 reports over 3 months gives enough time to see value |
+| Professional | 6 months | Architects/consultants need a full planning cycle (submit → determine) to see ROI |
+| Developer | 12 months | Developers plan in annual pipelines — annual commitment matches their workflow |
+| Enterprise | 12 months | Volume deals need commitment both ways — preferential rates require term |
+
+Annual billing (15% discount) naturally locks in 12 months. Minimums apply to monthly payers only.
+
+Early cancellation: pro-rata refund of unused months minus any overage credits consumed. No penalty — just fair value.
+
+---
+
+### PROJECT COMPLEXITY — WHY BIGGER SITES NEED MORE REPORTS
+
+A 9-report project is a simple scheme. Most real projects need 12-20 reports:
+
+**Simple site** (Flood Zone 1, no heritage, greenfield):
+SFR + GDS + FRA + PS + DAS + BNG + CIL + CMP + SAI = **9 reports**
+
+**Typical urban infill** (near conservation area, main road, trees, former commercial):
+Above + HIA + NIA + AQS + ADS + P1C + TS + PKS = **16 reports**
+
+**Major brownfield scheme** (flood zone, heritage, contamination, lender involved):
+Above + DFS + CFS + ES + DSA + DRR + PAA = **22 reports** (Complete Intelligence)
+
+| Project Type | Reports | Standalone | Developer Sub | Enterprise Sub | Traditional Consultants |
+|---|---|---|---|---|---|
+| Simple (9 reports) | 9 | £4,680 | £1,494 | £1,197 | £12,000-£30,000 |
+| Typical urban (16 reports) | 16 | £8,320 | £2,656 | £2,128 | £20,000-£45,000 |
+| Major brownfield (22 reports) | 22 | £11,900 | £3,652 | £2,926 | £35,000-£70,000 |
+| **Timeline** | | **2-4 weeks** | **2-4 weeks** | **< 2 weeks** | **12-24 weeks** |
+
+**The more complex the site, the bigger the subscription savings.** Simple sites save 60-70%. Complex sites save 75-85%.
 
 ---
 
