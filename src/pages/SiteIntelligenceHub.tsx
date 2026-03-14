@@ -188,204 +188,12 @@ const SiteIntelligenceHub = () => {
         </div>
       </section>
 
-      <VideoExplainer
-        title="PF & Co Site Intelligence"
-        accentColor="brand-accent"
-        description="See the complete process — from order to delivery. Learn how we interrogate 60 authoritative data sources and translate raw data into engineering decisions, typically within 48 hours."
-        thumbnailUrl="/videos/site-intelligence-demo-thumb.jpg"
-        videoUrl="/videos/site-intelligence-demo.mp4"
-        duration="2:32"
-      />
-
-      {/* Appeal-Readiness Regulatory Alert */}
+      {/* Product Cards — replaced by catalog below, keeping section wrapper */}
       <section className="max-w-7xl mx-auto px-6 mb-24">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="relative p-8 md:p-10 bg-gradient-to-br from-red-950 to-brand-primary rounded-[2rem] text-white overflow-hidden shadow-2xl border border-red-500/20"
-        >
-          <div className="absolute inset-0 opacity-5 engineering-grid" />
-          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-500 via-amber-400 to-red-500" />
-          <div className="relative z-10">
-            <div className="flex items-start gap-4 mb-6">
-              <div className="w-12 h-12 bg-red-500/20 rounded-xl flex items-center justify-center shrink-0">
-                <ShieldAlert size={24} className="text-red-400" />
-              </div>
-              <div>
-                <span className="inline-block bg-red-500/20 text-red-300 text-[9px] font-bold uppercase tracking-widest px-2 py-0.5 rounded mb-2">Regulatory Change — 1 April 2026</span>
-                <h3 className="text-2xl md:text-3xl font-bold leading-tight">Submit Once, Submit Right.</h3>
-              </div>
-            </div>
-            <p className="text-white/70 text-base leading-relaxed mb-6 max-w-3xl">
-              From 1 April 2026, planning appeals in England no longer accept new evidence under the expedited written representations procedure. The majority of appeals will follow this procedure, where your original application <strong className="text-white">is</strong> the appeal case. Missing a report, citing outdated data, or leaving a gap in your evidence cannot be fixed later.
-            </p>
-            <p className="text-white/70 text-base leading-relaxed mb-8 max-w-3xl">
-              Our reports are built to be <strong className="text-white">appeal-ready from day one</strong> — every data source cited, every policy referenced, every constraint evidenced. When the planning officer reads your application, they see a case that is already complete.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Link to="/insights/planning-appeal-changes-2026" className="px-6 py-3 bg-white text-brand-primary rounded-xl font-bold hover:scale-105 transition-all shadow-lg text-sm">
-                Read: What Changed on 1 April
-              </Link>
-              <Link to="/order-report" className="px-6 py-3 bg-red-500/20 text-white border border-red-500/30 rounded-xl font-bold hover:bg-red-500/30 transition-all text-sm">
-                Order Appeal-Ready Reports
-              </Link>
-            </div>
-          </div>
-        </motion.div>
-      </section>
-
-      {/* White Label & Professional Partners */}
-      <section className="max-w-7xl mx-auto px-6 mb-24">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="flex flex-col md:flex-row items-center justify-between gap-8 p-10 bg-brand-primary rounded-[2rem] text-white relative overflow-hidden shadow-2xl"
-        >
-          <div className="absolute inset-0 opacity-10 engineering-grid" />
-          <div className="relative z-10 flex items-center gap-6">
-            <div className="w-16 h-16 bg-brand-accent rounded-2xl flex items-center justify-center shadow-xl shadow-brand-accent/20 shrink-0">
-              <Users size={32} className="text-brand-primary" />
-            </div>
-            <div>
-              <h3 className="text-2xl font-bold mb-2">White Label & Professional Partners</h3>
-              <p className="text-white/60 text-sm font-light">Reports delivered under your practice branding. Available on Professional subscriptions and above. Ideal for architects and consultants reselling to clients.</p>
-            </div>
-          </div>
-          <Link to="/subscriptions" className="relative z-10 px-8 py-4 bg-white text-brand-primary rounded-xl font-bold hover:scale-105 transition-all shadow-xl shrink-0">
-            View Subscription Plans
-          </Link>
-        </motion.div>
-      </section>
-
-      {/* Human Safety Leap */}
-      <section className="max-w-7xl mx-auto px-6 mb-24">
-        <div className="bg-brand-surface border border-brand-accent/20 rounded-[3rem] p-12 lg:p-20 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-brand-accent/5 blur-[100px] rounded-full" />
-          <div className="relative z-10 grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <div className="w-16 h-16 bg-brand-accent/10 flex items-center justify-center text-brand-accent rounded-2xl mb-8">
-                <ShieldAlert size={32} />
-              </div>
-              <h2 className="text-4xl font-display font-bold text-brand-primary mb-6">The Human Safety Leap.</h2>
-              <p className="text-xl font-bold text-brand-primary/80 leading-relaxed mb-6">
-                Data accelerates our intelligence, but human expertise secures it.
-              </p>
-              <p className="text-brand-primary/60 leading-relaxed max-w-lg">
-                Every API call, geospatial analysis, and data-driven insight gathered in our Site Intelligence reports is rigorously reviewed, interpreted, and verified by our qualified human engineers. We don't just hand you raw, unchecked outputs; we deliver actionable, deeply verified engineering intelligence built to withstand scrutiny.
-              </p>
-            </div>
-            <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
-              <img
-                src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=1200"
-                alt="Professional reviewing technical documents at desk"
-                className="absolute inset-0 w-full h-full object-cover"
-                loading="lazy"
-                referrerPolicy="no-referrer"
-              />
-              <div className="absolute inset-0 bg-brand-primary/10" />
-            </div>
-          </div>
+        <div className="text-center mb-12">
+          <h2 className="text-5xl font-bold mb-6 tracking-tighter">Our <span className="text-brand-accent italic font-serif font-light">Reports.</span></h2>
+          <p className="text-brand-primary/60 max-w-2xl mx-auto text-lg font-light">24 report types. Filter by who you are to see what's most relevant.</p>
         </div>
-      </section>
-
-      {/* Problem Section */}
-      <section className="bg-brand-primary text-white py-24 mb-24 rounded-[3rem] mx-6">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-4xl font-bold mb-6">The Problem We Solve</h2>
-              <p className="text-white/60 text-lg leading-relaxed mb-8">
-                Every construction project sits on a web of constraints — planning restrictions, flood zones, heritage listings, contaminated land, ecological designations, ground risk. Most people discover these <span className="text-brand-accent italic">after</span> they've committed. Site Intelligence finds them <span className="text-brand-accent italic">before</span>.
-              </p>
-              <div className="grid sm:grid-cols-3 gap-8">
-                {stats.map((stat, i) => (
-                  <div key={i}>
-                    <div className="text-3xl font-bold text-brand-accent">{stat.num}</div>
-                    <div className="text-xs uppercase tracking-wider text-white/40 mt-1">{stat.label}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="grid gap-6">
-              {[
-                { title: "Architects", desc: "Screen the site before you pick up a pencil. Avoid wasted fees and frustrated clients." },
-                { title: "Homeowners", desc: "Know what you're buying before you exchange. Identify flood risk and TPOs early." },
-                { title: "Developers", desc: "Screen multiple sites quickly. Identify deal-breakers in 48 hours before tying up capital." }
-              ].map((item, i) => (
-                <div key={i} className="bg-white/5 border border-white/10 p-6 rounded-2xl">
-                  <h4 className="font-bold text-lg mb-2">{item.title}</h4>
-                  <p className="text-white/50 text-sm">{item.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Product Cards */}
-      <section className="max-w-7xl mx-auto px-6 mb-24">
-        <h2 className="text-4xl font-bold mb-12 text-center">Core Reports. <span className="text-brand-accent italic font-serif font-light">Start Here.</span></h2>
-        <div className="grid lg:grid-cols-3 gap-8 mb-16">
-          {products.map((product, i) => (
-            <motion.div
-              key={i}
-              whileHover={{ y: -10 }}
-              className={`bg-white border-2 ${product.accent} p-8 rounded-[2.5rem] flex flex-col shadow-sm relative overflow-hidden`}
-            >
-              <div className="absolute top-4 right-4 bg-brand-accent/10 text-brand-accent text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">
-                Early Access
-              </div>
-              <div className="mb-6">{product.icon}</div>
-              <h3 className="text-2xl font-bold mb-4">{product.title}</h3>
-              <p className="text-brand-primary/60 text-sm mb-8 flex-grow">{product.desc}</p>
-
-              <div className="mb-8">
-                <div className="text-[10px] font-bold uppercase tracking-widest text-brand-primary/40 mb-1">Early Access Price</div>
-                <div className="flex items-baseline gap-2">
-                  <span className="text-3xl font-bold text-brand-primary">£{product.price}</span>
-                  <span className="text-sm text-brand-primary/40 line-through">RRP £{product.rrp}</span>
-                </div>
-              </div>
-
-              <ul className="space-y-3 mb-8">
-                {product.features.map((feature, j) => (
-                  <li key={j} className="flex items-start gap-3 text-sm">
-                    <Check size={16} className="text-brand-accent mt-0.5 shrink-0" />
-                    <span>{feature}</span>
-                  </li>
-                ))}
-              </ul>
-              <div className="flex flex-col gap-3">
-                <Link
-                  to={`${product.link}`}
-                  className="w-full py-4 bg-brand-surface text-brand-primary border border-brand-primary/5 rounded-xl font-bold text-center hover:bg-brand-primary/5 transition-colors flex items-center justify-center gap-2"
-                >
-                  Learn More <ArrowRight size={18} />
-                </Link>
-                <div className="grid grid-cols-2 gap-3">
-                  <a href={`/samples/${product.link.split('/').pop()}-sample.pdf`} target="_blank" rel="noopener noreferrer" className="py-4 bg-white text-brand-primary border border-brand-primary/10 rounded-xl font-bold text-center hover:bg-brand-surface transition-colors flex items-center justify-center gap-2 text-sm">
-                    Sample <FileText size={16} className="text-brand-accent" />
-                  </a>
-                  <Link
-                    to={`/order-report?report=${product.link.split('/').pop()}`}
-                    className="py-4 bg-brand-primary text-white rounded-xl font-bold text-center hover:bg-brand-primary/90 transition-colors flex items-center justify-center gap-2 shadow-lg shadow-brand-primary/10 text-sm"
-                  >
-                    Order Now <Zap size={16} className="text-brand-accent" />
-                  </Link>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Full Report Catalog — Filterable */}
-        <div className="mt-32">
-          <div className="text-center mb-12">
-            <h2 className="text-5xl font-bold mb-6 tracking-tighter">All <span className="text-brand-accent italic font-serif font-light">Reports.</span></h2>
-            <p className="text-brand-primary/60 max-w-2xl mx-auto text-lg font-light">24 report types. Filter by who you are to see what's most relevant.</p>
-          </div>
 
           {/* Role Filter */}
           <div className="flex flex-wrap justify-center gap-2 mb-12">
@@ -451,7 +259,6 @@ const SiteIntelligenceHub = () => {
               Order Reports <ArrowRight size={18} />
             </Link>
           </div>
-        </div>
 
         {/* Bundle Offer */}
         <motion.div
@@ -567,21 +374,55 @@ const SiteIntelligenceHub = () => {
         </div>
       </section>
 
+      {/* Human Safety Leap */}
+      <section className="max-w-7xl mx-auto px-6 mb-24">
+        <div className="bg-brand-surface border border-brand-accent/20 rounded-[3rem] p-12 lg:p-16 relative overflow-hidden">
+          <div className="relative z-10 grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl font-bold text-brand-primary mb-4">Human Verified. Every Time.</h2>
+              <p className="text-brand-primary/60 leading-relaxed">
+                Every report passes through our multi-stage QA pipeline. AI generates the intelligence. Qualified engineers verify it. You get submission-ready documents built to withstand scrutiny.
+              </p>
+              <Link to="/ai-compliance" className="inline-flex items-center gap-2 text-brand-accent font-bold mt-6 hover:gap-4 transition-all">
+                See our AI Standards <ArrowRight size={16} />
+              </Link>
+            </div>
+            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
+              <img
+                src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=1200"
+                alt="Professional reviewing technical documents at desk"
+                className="absolute inset-0 w-full h-full object-cover"
+                loading="lazy"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="max-w-7xl mx-auto px-6">
-        <div className="bg-brand-accent rounded-[3rem] p-12 text-center relative overflow-hidden">
+        <div className="bg-brand-primary rounded-[3rem] p-12 text-center relative overflow-hidden">
           <div className="absolute inset-0 opacity-10 engineering-grid" />
           <div className="relative z-10">
-            <h2 className="text-4xl font-bold mb-4">Request Early Access — PF & Co Site Intelligence</h2>
-            <p className="text-brand-primary/80 text-lg mb-8 max-w-2xl mx-auto">
-              Send us a property address and we'll tell you what's underneath it, around it, and restricting it — typically within 48 hours.
+            <h2 className="text-4xl font-bold mb-4 text-white">Ready to Screen Your Site?</h2>
+            <p className="text-white/60 text-lg mb-8 max-w-2xl mx-auto">
+              24 report types. 60 data sources. 48-hour turnaround. From £245.
             </p>
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-brand-primary text-white rounded-xl font-bold hover:bg-brand-primary/90 transition-all"
-            >
-              Unlock Early Access <ArrowRight size={20} />
-            </Link>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link
+                to="/order-report"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-brand-accent text-brand-primary rounded-xl font-bold hover:scale-105 transition-all"
+              >
+                Order Reports <ArrowRight size={20} />
+              </Link>
+              <Link
+                to="/subscriptions"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-white/10 text-white border border-white/20 rounded-xl font-bold hover:bg-white/20 transition-all"
+              >
+                Subscribe from £399/mo
+              </Link>
+            </div>
           </div>
         </div>
       </section>
