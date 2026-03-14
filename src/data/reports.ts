@@ -48,7 +48,7 @@ export const reports: Report[] = [
   // -- Core Intelligence --
   {
     slug: 'site-acquisition-intelligence',
-    name: 'Site Acquisition Intelligence',
+    name: 'Site Acquisition Report',
     shortName: 'SAI',
     category: 'core',
     earlyAccessPrice: 995,
@@ -170,7 +170,7 @@ export const reports: Report[] = [
   },
   {
     slug: 'feasibility-study',
-    name: 'Concept Feasibility Study',
+    name: 'Feasibility Study',
     shortName: 'CFS',
     category: 'planning-strategy',
     earlyAccessPrice: 795,
@@ -279,7 +279,7 @@ export const reports: Report[] = [
   },
   {
     slug: 'tree-survey',
-    name: 'Arboricultural Desk Study',
+    name: 'Arboricultural Constraints Appraisal',
     shortName: 'ADS',
     category: 'specialist-surveys',
     earlyAccessPrice: 575,
@@ -296,7 +296,7 @@ export const reports: Report[] = [
   // -- Environmental & Ecology (continued) --
   {
     slug: 'air-quality-screening',
-    name: 'Air Quality Screening',
+    name: 'Air Quality Screening Assessment',
     shortName: 'AQS',
     category: 'environmental-ecology',
     earlyAccessPrice: 395,
@@ -313,7 +313,7 @@ export const reports: Report[] = [
   // -- Specialist Surveys (continued) --
   {
     slug: 'noise-impact-assessment',
-    name: 'Noise Impact Screening',
+    name: 'Noise Screening Report',
     shortName: 'NIA',
     category: 'specialist-surveys',
     earlyAccessPrice: 445,
@@ -345,7 +345,7 @@ export const reports: Report[] = [
   // -- Core (continued) --
   {
     slug: 'phase-1-contamination',
-    name: 'Phase 1 Contamination Assessment',
+    name: 'Phase 1 Desk Study',
     shortName: 'P1C',
     category: 'core',
     earlyAccessPrice: 595,
@@ -377,7 +377,7 @@ export const reports: Report[] = [
   },
   {
     slug: 'pre-construction-design-review',
-    name: 'Design Readiness Review',
+    name: 'Pre-Construction Design Review',
     shortName: 'DRR',
     category: 'construction-readiness',
     earlyAccessPrice: 895,

@@ -190,7 +190,7 @@ const Home = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               { name: 'Site Feasibility Report', desc: '22+ constraint screening, Planning Friction Score, Buildability Rating', price: '£595', path: '/site-intelligence/site-feasibility-report', badge: 'Most Popular' },
-              { name: 'Site Acquisition Intelligence', desc: 'GDV, RLV, planning risk, go/no-go recommendation for land buyers', price: '£995', path: '/site-intelligence/site-acquisition-intelligence', badge: 'Land Buyers' },
+              { name: 'Site Acquisition Report', desc: 'GDV, RLV, planning risk, go/no-go recommendation for land buyers', price: '£995', path: '/site-intelligence/site-acquisition-intelligence', badge: 'Land Buyers' },
               { name: 'Flood Risk Assessment', desc: '7 flood sources, 4 Decision Risk Scores, SuDS viability', price: '£375', path: '/site-intelligence/flood-risk-assessment', badge: null },
               { name: 'Planning Statement', desc: 'Submission-ready policy evidence and planning justification', price: '£495', path: '/site-intelligence/planning-statement', badge: null },
               { name: 'Development Finance Summary', desc: 'GDV, build cost, profit on cost, sensitivity analysis for lenders', price: '£795', path: '/site-intelligence/development-finance-summary', badge: 'New' },

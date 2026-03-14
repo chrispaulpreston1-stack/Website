@@ -16,7 +16,7 @@ URL: https://www.pfcoconstruction.co.uk/construction
 
 ### Site Intelligence
 Data-driven pre-construction screening reports interrogating 60 authoritative data sources across 11 constraint categories. Reports include:
-- Site Feasibility Report — 22+ constraint screening, Planning Friction Score (EA £1,500 / Stripe £595)
+- Site Feasibility Report — 22+ constraint screening, Planning Friction Score (EA £595 / Stripe £595)
 - Geotechnical Desk Study — BGS geology, contamination, foundation risk (EA £900 / Stripe £495)
 - Flood Risk Assessment — 7 flood sources, Decision Risk Scores (EA £375 / Stripe £375)
 - Planning Statement — Policy evidence and planning justification (EA £495 / Stripe £495)
@@ -26,16 +26,16 @@ Data-driven pre-construction screening reports interrogating 60 authoritative da
 - Sustainability / Energy Statement — Part L, SAP, MEES (EA £445 / Stripe £445)
 - CIL Liability Assessment — Levy exposure, exemptions, relief (EA £295 / Stripe £295)
 - Construction Management Plan — Pre-commencement CMP condition (EA £595 / Stripe £595)
-- Pre-Construction Design Review — 95-check coordination review (EA £895 / Stripe £895)
+- Pre-Construction Design Review — 95-check design coordination review (EA £895 / Stripe £895)
 - Parking Provision Statement — Evidence-based parking demand (EA £345 / Stripe £345)
 - Biodiversity Net Gain Screening — BNG applicability, 10% metric (EA £495 / Stripe £495)
-- Concept Feasibility Study — GDV, cost appraisal, viability (EA £795 / Stripe £795)
+- Feasibility Study — GDV, cost appraisal, viability (EA £795 / Stripe £795)
 - Pre-Application Advice Pack — LPA pre-submission engagement (EA £245 / Stripe £245)
-- Arboricultural Desk Study — Desktop tree categorisation, RPAs, impact assessment (EA £575 / Stripe £575)
-- Air Quality Screening — Air quality impact assessment for development proposals (EA £395 / Stripe £395)
-- Noise Impact Screening — Desktop noise screening against BS 4142/BS 8233/ProPG (EA £445 / Stripe £445)
+- Arboricultural Constraints Appraisal — Desktop tree constraints, TPO register, LiDAR canopy, RPA mapping (EA £575 / Stripe £575)
+- Air Quality Screening Assessment — IAQM/EPUK screening for development proposals (EA £395 / Stripe £395)
+- Noise Screening Report — Desktop noise screening against BS 4142/BS 8233/ProPG (EA £445 / Stripe £445)
 - Daylight & Sunlight Screening — BRE 209 daylight/sunlight screening with risk indicators (EA £595 / Stripe £595)
-- Phase 1 Contamination Assessment — Preliminary risk assessment per BS 10175 (EA £595 / Stripe £595)
+- Phase 1 Desk Study — Preliminary risk assessment per BS 10175 / LCRM 2020 (EA £595 / Stripe £595)
 - Building Control — Part A structural calculations (project-dependent, contact for quote)
 - Party Wall Assessment — Engineering-led party wall assessment (project-dependent, contact for quote)
 EA = Early Access price shown on website. Stripe = actual checkout price. All prices exclude VAT.

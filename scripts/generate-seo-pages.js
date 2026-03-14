@@ -54,9 +54,9 @@ const routes = [
   },
   {
     path: '/site-intelligence/site-acquisition-intelligence',
-    title: 'Site Acquisition Intelligence | Development Appraisal | PF & Co',
+    title: 'Site Acquisition Report | Development Appraisal | PF & Co',
     description: 'Should you buy this site? Development capacity, GDV, build cost, residual land value, planning risk, and go/no-go recommendation — delivered in 48-72 hours.',
-    jsonLd: { '@type': 'Product', name: 'Site Acquisition Intelligence', brand: { '@type': 'Organization', name: 'PF & Co Construction' }, offers: { '@type': 'Offer', price: '995', priceCurrency: 'GBP', availability: 'https://schema.org/InStock' } },
+    jsonLd: { '@type': 'Product', name: 'Site Acquisition Report', brand: { '@type': 'Organization', name: 'PF & Co Construction' }, offers: { '@type': 'Offer', price: '995', priceCurrency: 'GBP', availability: 'https://schema.org/InStock' } },
   },
   {
     path: '/site-intelligence/development-finance-summary',
@@ -126,9 +126,9 @@ const routes = [
   },
   {
     path: '/site-intelligence/feasibility-study',
-    title: 'Concept Feasibility Study | Pre-Design Concept Options | PF & Co',
+    title: 'Feasibility Study | Pre-Design Concept Options | PF & Co',
     description: 'Understand what is possible, what it costs, and which route to take — before investing in full design.',
-    jsonLd: { '@type': 'Product', name: 'Concept Feasibility Study', brand: { '@type': 'Organization', name: 'PF & Co Construction' }, offers: { '@type': 'Offer', price: '795', priceCurrency: 'GBP', availability: 'https://schema.org/InStock' } },
+    jsonLd: { '@type': 'Product', name: 'Feasibility Study', brand: { '@type': 'Organization', name: 'PF & Co Construction' }, offers: { '@type': 'Offer', price: '795', priceCurrency: 'GBP', availability: 'https://schema.org/InStock' } },
   },
   {
     path: '/site-intelligence/pre-application-advice',
@@ -150,9 +150,9 @@ const routes = [
   },
   {
     path: '/site-intelligence/tree-survey',
-    title: 'Arboricultural Desk Study | Desktop Tree Assessment | PF & Co',
+    title: 'Arboricultural Constraints Appraisal | Desktop Tree Assessment | PF & Co',
     description: 'Desktop arboricultural assessment using LiDAR canopy modelling and TPO register data. BS 5837 categorisation and RPA mapping for planning applications.',
-    jsonLd: { '@type': 'Product', name: 'Arboricultural Desk Study', brand: { '@type': 'Organization', name: 'PF & Co Construction' }, offers: { '@type': 'Offer', price: '575', priceCurrency: 'GBP', availability: 'https://schema.org/InStock' } },
+    jsonLd: { '@type': 'Product', name: 'Arboricultural Constraints Appraisal', brand: { '@type': 'Organization', name: 'PF & Co Construction' }, offers: { '@type': 'Offer', price: '575', priceCurrency: 'GBP', availability: 'https://schema.org/InStock' } },
   },
   {
     path: '/site-intelligence/cil-liability-assessment',
@@ -162,21 +162,21 @@ const routes = [
   },
   {
     path: '/site-intelligence/noise-impact-assessment',
-    title: 'Noise Impact Screening | £445 | PF & Co Construction',
+    title: 'Noise Screening Report | £445 | PF & Co Construction',
     description: 'BS 4142/BS 8233/ProPG noise screening for residential schemes near roads, railways, or commercial uses.',
-    jsonLd: { '@type': 'Product', name: 'Noise Impact Screening', brand: { '@type': 'Organization', name: 'PF & Co Construction' }, offers: { '@type': 'Offer', price: '445', priceCurrency: 'GBP', availability: 'https://schema.org/InStock' } },
+    jsonLd: { '@type': 'Product', name: 'Noise Screening Report', brand: { '@type': 'Organization', name: 'PF & Co Construction' }, offers: { '@type': 'Offer', price: '445', priceCurrency: 'GBP', availability: 'https://schema.org/InStock' } },
   },
   {
     path: '/site-intelligence/air-quality-screening',
     title: 'Air Quality Screening | £395 | PF & Co Construction',
     description: 'IAQM/EPUK air quality screening with AQMA proximity analysis and construction dust risk assessment.',
-    jsonLd: { '@type': 'Product', name: 'Air Quality Screening', brand: { '@type': 'Organization', name: 'PF & Co Construction' }, offers: { '@type': 'Offer', price: '395', priceCurrency: 'GBP', availability: 'https://schema.org/InStock' } },
+    jsonLd: { '@type': 'Product', name: 'Air Quality Screening Assessment', brand: { '@type': 'Organization', name: 'PF & Co Construction' }, offers: { '@type': 'Offer', price: '395', priceCurrency: 'GBP', availability: 'https://schema.org/InStock' } },
   },
   {
     path: '/site-intelligence/phase-1-contamination',
-    title: 'Phase 1 Contamination Assessment | £595 | PF & Co Construction',
+    title: 'Phase 1 Desk Study | £595 | PF & Co Construction',
     description: 'LCRM 2020 / BS 10175 Preliminary Risk Assessment with Conceptual Site Model and remediation screening.',
-    jsonLd: { '@type': 'Product', name: 'Phase 1 Contamination Assessment', brand: { '@type': 'Organization', name: 'PF & Co Construction' }, offers: { '@type': 'Offer', price: '595', priceCurrency: 'GBP', availability: 'https://schema.org/InStock' } },
+    jsonLd: { '@type': 'Product', name: 'Phase 1 Desk Study', brand: { '@type': 'Organization', name: 'PF & Co Construction' }, offers: { '@type': 'Offer', price: '595', priceCurrency: 'GBP', availability: 'https://schema.org/InStock' } },
   },
   {
     path: '/site-intelligence/daylight-sunlight-assessment',
