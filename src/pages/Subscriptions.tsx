@@ -25,6 +25,26 @@ const Subscriptions = () => {
       setSubError(null);
       try {
         const tier = `${planName.toLowerCase()}-${billingCycle}`;
+        const price = billingCycle === 'monthly'
+          ? plans.find(p => p.name === planName)?.monthlyEA
+          : plans.find(p => p.name === planName)?.annualEA;
+
+        // Email notification (non-blocking)
+        fetch('https://formspree.io/f/xdalrdyj', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify({
+            _subject: `New Subscription: ${planName} (${billingCycle})`,
+            name: subForm.fullName,
+            email: subForm.email,
+            company: subForm.company || 'N/A',
+            phone: subForm.phone || 'N/A',
+            tier: `${planName} — ${billingCycle}`,
+            price: `£${price?.toLocaleString()}`,
+            credits: `${plans.find(p => p.name === planName)?.reports}/month`,
+          }),
+        });
+
         const res = await fetch('/api/create-subscription', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
