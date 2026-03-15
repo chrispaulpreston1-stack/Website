@@ -44,7 +44,7 @@ const blogPosts: BlogPost[] = [
     date: 'Mar 18, 2026',
     author: 'Chris Preston',
     category: 'Business',
-    image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6e?auto=format&fit=crop&q=80&w=1200',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200',
     content: [
       'Every developer knows the feeling. You find a site that looks promising. You commission a Site Feasibility Report. Two weeks later, you get the results — the site has significant planning constraints, and the deal falls apart. You have spent £1,500-£3,000 on a report for a site you will never buy. Now multiply that by the 10, 20, or 50 sites you screen per year.',
       'The per-project model for site due diligence is broken. It punishes volume. The more sites you screen, the more you spend on intelligence that tells you not to proceed. But the sites you do not screen are the ones that catch you out — the flood zone you missed, the contamination history you did not check, the heritage constraint that kills the planning application six months later.',

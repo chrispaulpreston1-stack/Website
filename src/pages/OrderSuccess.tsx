@@ -77,7 +77,7 @@ const OrderSuccess = () => {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.4 }}
-          className="grid sm:grid-cols-3 gap-6 mb-16"
+          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16"
         >
           {isSubscription ? (
             <>
