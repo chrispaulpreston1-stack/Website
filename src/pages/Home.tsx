@@ -137,38 +137,45 @@ const Home = () => {
       </section>
 
       {/* How It Works — 3 Steps */}
-      <section className="py-32 bg-white">
+      <section className="py-32 bg-brand-primary text-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-20">
+          <div className="text-center mb-16">
             <span className="font-mono text-xs uppercase tracking-[0.3em] text-brand-accent font-bold mb-4 block">Simple Process</span>
             <h2 className="text-5xl font-bold tracking-tighter">How It <span className="italic font-accent font-light text-brand-accent">Works.</span></h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {[
-              { step: "01", title: "Enter Your Address", desc: "Any UK site. Postcode or full address. We do the rest — 60 data sources queried automatically.", icon: <Search size={24} /> },
-              { step: "02", title: "Select Your Reports", desc: "Pick individual reports, a bundle, or subscribe for monthly credits. 24 report types available.", icon: <FileText size={24} /> },
-              { step: "03", title: "Receive in 48 Hours", desc: "AI-generated, human-verified, submission-ready documents. PDF and Word. Planning-grade quality.", icon: <Clock size={24} /> },
+              { step: "01", title: "Enter Your Address", desc: "Any UK site. Postcode or full address. We query 60 authoritative data sources automatically.", icon: <Search size={28} />, color: 'from-teal-500 to-cyan-600' },
+              { step: "02", title: "Select Your Reports", desc: "Pick individual reports, a bundle, or subscribe for monthly credits. 24 report types available.", icon: <FileText size={28} />, color: 'from-violet-500 to-purple-600' },
+              { step: "03", title: "Receive in 48 Hours", desc: "AI-generated, human-verified, submission-ready documents. PDF and Word. Planning-grade quality.", icon: <Clock size={28} />, color: 'from-brand-accent to-amber-500' },
             ].map((item, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="text-center"
+                transition={{ delay: i * 0.15 }}
+                className="relative"
               >
-                <div className="w-16 h-16 bg-brand-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-6 text-brand-accent">
-                  {item.icon}
+                <div className="p-8 rounded-[2rem] bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 transition-all h-full">
+                  <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${item.color} flex items-center justify-center mb-6 shadow-lg`}>
+                    {item.icon}
+                  </div>
+                  <div className="text-sm font-mono font-bold text-brand-accent mb-2">Step {item.step}</div>
+                  <h3 className="text-xl font-bold mb-3">{item.title}</h3>
+                  <p className="text-white/50 leading-relaxed">{item.desc}</p>
                 </div>
-                <div className="text-3xl font-mono font-bold text-brand-accent/30 mb-4">{item.step}</div>
-                <h3 className="text-xl font-bold mb-3 text-brand-primary">{item.title}</h3>
-                <p className="text-brand-primary/50 text-sm leading-relaxed">{item.desc}</p>
+                {i < 2 && (
+                  <div className="hidden md:flex absolute top-1/2 -right-3 w-6 h-6 bg-brand-accent rounded-full items-center justify-center z-10 shadow-lg shadow-brand-accent/30">
+                    <ArrowRight size={12} className="text-brand-primary" />
+                  </div>
+                )}
               </motion.div>
             ))}
           </div>
 
-          <div className="text-center mt-16">
+          <div className="text-center mt-12">
             <Link to="/plans-and-pricing" className="inline-flex items-center gap-2 text-brand-accent font-bold hover:gap-4 transition-all">
               See the full process <ArrowRight size={18} />
             </Link>
