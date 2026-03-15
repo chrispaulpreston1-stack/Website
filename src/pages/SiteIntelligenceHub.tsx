@@ -216,7 +216,7 @@ const SiteIntelligenceHub = () => {
           </div>
 
           {/* Report Cards */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
             {(() => {
               const roleReports: Record<string, string[]> = {
                 'all': reports.filter(r => r.stripePrice > 0).map(r => r.slug),
@@ -225,6 +225,22 @@ const SiteIntelligenceHub = () => {
                 'land-buyer': ['site-acquisition-intelligence', 'development-finance-summary', 'site-feasibility-report', 'geotechnical-desk-study', 'flood-risk-assessment', 'feasibility-study', 'cil-liability-assessment'],
                 'homeowner': ['site-feasibility-report', 'geotechnical-desk-study', 'flood-risk-assessment', 'planning-statement', 'design-and-access-statement', 'construction-management-plan', 'pre-construction-design-review'],
                 'lender': ['site-acquisition-intelligence', 'development-finance-summary', 'site-feasibility-report', 'flood-risk-assessment', 'geotechnical-desk-study', 'phase-1-contamination'],
+              };
+
+              const categoryColors: Record<string, string> = {
+                'core': 'border-t-teal-500',
+                'planning-strategy': 'border-t-violet-500',
+                'environmental-ecology': 'border-t-emerald-500',
+                'specialist-surveys': 'border-t-blue-500',
+                'construction-readiness': 'border-t-amber-500',
+              };
+
+              const categoryLabels: Record<string, string> = {
+                'core': 'Core Intelligence',
+                'planning-strategy': 'Planning & Strategy',
+                'environmental-ecology': 'Environmental',
+                'specialist-surveys': 'Specialist',
+                'construction-readiness': 'Construction',
               };
 
               const slugs = roleReports[roleFilter] || roleReports['all'];
@@ -237,16 +253,21 @@ const SiteIntelligenceHub = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.03 }}
                 >
-                  <Link to={report.path} className="block p-6 rounded-2xl bg-white border border-brand-primary/5 hover:border-brand-accent/20 hover:shadow-md transition-all group h-full">
-                    <div className="flex items-center justify-between mb-3">
-                      <span className="text-xs font-bold uppercase tracking-widest text-brand-primary/30">{report.shortName}</span>
-                      <span className="text-xl font-bold text-brand-accent">£{report.stripePrice.toLocaleString()}</span>
+                  <Link to={report.path} className={`block p-8 rounded-2xl bg-white border border-brand-primary/5 border-t-4 ${categoryColors[report.category] || 'border-t-brand-accent'} hover:shadow-lg transition-all group h-full`}>
+                    <div className="flex items-center justify-between mb-4">
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-brand-primary/30">{categoryLabels[report.category] || report.category}</span>
+                      <span className="text-2xl font-bold text-brand-accent">£{report.stripePrice.toLocaleString()}</span>
                     </div>
-                    <h4 className="font-bold text-brand-primary mb-2 group-hover:text-brand-accent transition-colors">{report.name}</h4>
-                    <p className="text-sm text-brand-primary/50 leading-relaxed mb-3">{report.description}</p>
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs text-brand-primary/30 font-bold">{report.turnaround}</span>
-                      <ArrowRight size={16} className="text-brand-accent opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <h4 className="text-lg font-bold text-brand-primary mb-3 group-hover:text-brand-accent transition-colors">{report.name}</h4>
+                    <p className="text-brand-primary/50 leading-relaxed mb-4">{report.description}</p>
+                    <div className="flex items-center justify-between pt-4 border-t border-brand-primary/5">
+                      <div className="flex items-center gap-2">
+                        <Clock size={14} className="text-brand-primary/30" />
+                        <span className="text-xs text-brand-primary/40 font-bold">{report.turnaround}</span>
+                      </div>
+                      <span className="text-sm font-bold text-brand-accent flex items-center gap-1 group-hover:gap-2 transition-all">
+                        View <ArrowRight size={14} />
+                      </span>
                     </div>
                   </Link>
                 </motion.div>
