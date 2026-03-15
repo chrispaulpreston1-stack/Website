@@ -113,7 +113,7 @@ const ReportPackages = () => {
             price: String(b.earlyAccessPrice),
             priceCurrency: 'GBP',
             availability: 'https://schema.org/InStock',
-            url: `https://www.pfcoconstruction.co.uk/order-report?report=${b.slug}`,
+            url: `https://www.pfandco.co.uk/order-report?report=${b.slug}`,
           },
         }))}
       />

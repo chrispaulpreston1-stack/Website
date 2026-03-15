@@ -21,7 +21,7 @@ export default function TermsOfService() {
           <h2>1. Introduction</h2>
           <p>
             These terms of service ("Terms") govern your use of the website operated by PF & Co Construction
-            Ltd ("we", "us", "our") at pfcoconstruction.co.uk and any services provided through it. By using
+            Ltd ("we", "us", "our") at pfandco.co.uk and any services provided through it. By using
             our website or ordering services, you agree to these Terms.
           </p>
 
@@ -97,7 +97,7 @@ export default function TermsOfService() {
             and quality assurance processes used. This information excludes proprietary algorithms,
             agent-to-report mappings, data source wiring, scoring formulas, and other trade secrets.
             For RICS-regulated professionals requiring supplier due diligence documentation, please
-            contact us at <a href="mailto:info@pfcoconstruction.co.uk">info@pfcoconstruction.co.uk</a>.
+            contact us at <a href="mailto:info@pfandco.co.uk">info@pfandco.co.uk</a>.
           </p>
 
           <h3>7.4 Alternative Services</h3>
@@ -144,7 +144,7 @@ export default function TermsOfService() {
           <h2>12. Contact</h2>
           <p>
             For questions about these Terms, please contact us
-            at <a href="mailto:info@pfcoconstruction.co.uk">info@pfcoconstruction.co.uk</a> or
+            at <a href="mailto:info@pfandco.co.uk">info@pfandco.co.uk</a> or
             call 01483 363210.
           </p>
         </div>

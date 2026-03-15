@@ -100,7 +100,7 @@ const svg = `<svg width="${WIDTH}" height="${HEIGHT}" xmlns="http://www.w3.org/2
   <!-- Bottom bar -->
   <rect x="0" y="570" width="${WIDTH}" height="60" fill="rgba(0,0,0,0.3)"/>
   <text x="80" y="607" font-family="system-ui, -apple-system, sans-serif" font-weight="500" font-size="18" fill="#9ca3af">
-    pfcoconstruction.co.uk
+    pfandco.co.uk
   </text>
   <text x="1120" y="607" font-family="system-ui, -apple-system, sans-serif" font-weight="400" font-size="16" fill="#6b7280" text-anchor="end">
     58 Data Sources | Nationwide England &amp; Wales

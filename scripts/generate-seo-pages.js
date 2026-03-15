@@ -16,7 +16,7 @@ import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DIST = join(__dirname, '..', 'dist');
-const BASE_URL = 'https://www.pfcoconstruction.co.uk';
+const BASE_URL = 'https://www.pfandco.co.uk';
 
 // ── Route Metadata Map ───────────────────────────────────────────────────────
 // Keep in sync with PageSEO calls in src/pages/*.tsx

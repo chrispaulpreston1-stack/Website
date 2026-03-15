@@ -115,9 +115,9 @@ export function DocumentMockup({
             <div className="text-[10px] text-gray-400">Registered in England & Wales</div>
           </div>
           <div className="text-right flex flex-col items-end">
-            <div className="text-[10px] text-gray-400">info@pfcoconstruction.co.uk</div>
+            <div className="text-[10px] text-gray-400">info@pfandco.co.uk</div>
             <div className="text-[10px] text-gray-400">+44 (0)1483 363210</div>
-            <div className="text-[10px] text-gray-400">www.pfcoconstruction.co.uk</div>
+            <div className="text-[10px] text-gray-400">www.pfandco.co.uk</div>
           </div>
         </div>
 

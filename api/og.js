@@ -44,7 +44,7 @@ export default async function handler(req) {
     PF &amp; Co Construction
   </text>
   <text x="80" y="590" fill="#6b7280" font-family="system-ui,-apple-system,sans-serif" font-size="18">
-    pfcoconstruction.co.uk
+    pfandco.co.uk
   </text>
   <text x="1120" y="590" fill="#4b5563" font-family="system-ui,-apple-system,sans-serif" font-size="16" text-anchor="end">
     58 Data Sources | 112 AI Agents | 48hr Delivery

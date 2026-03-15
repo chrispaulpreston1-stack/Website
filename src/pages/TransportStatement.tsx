@@ -66,8 +66,8 @@ const TransportStatement = () => {
               '@type': 'VideoObject',
               name: 'Transport Statement Explainer',
               description: 'Learn how our Transport Statements analyse trip generation, accessibility, and highways safety for planning applications.',
-              thumbnailUrl: 'https://www.pfcoconstruction.co.uk/videos/transport-statement-thumb.jpg',
-              contentUrl: 'https://www.pfcoconstruction.co.uk/videos/transport-statement-demo.mp4',
+              thumbnailUrl: 'https://www.pfandco.co.uk/videos/transport-statement-thumb.jpg',
+              contentUrl: 'https://www.pfandco.co.uk/videos/transport-statement-demo.mp4',
               uploadDate: new Date().toISOString().split('T')[0],
               duration: 'PT1M36S',
               publisher: {
@@ -75,7 +75,7 @@ const TransportStatement = () => {
                 name: 'PF & Co Construction',
                 logo: {
                   '@type': 'ImageObject',
-                  url: 'https://www.pfcoconstruction.co.uk/logo.png'
+                  url: 'https://www.pfandco.co.uk/logo.png'
                 }
               }
             }

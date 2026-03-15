@@ -561,7 +561,7 @@ const OrderReport = () => {
                   </p>
                   <p className="text-white/40 text-xs mb-8 font-light leading-relaxed">
                     Reports are AI-assisted desk studies reviewed by our engineering team. For non-AI alternatives,
-                    contact us at <a href="mailto:info@pfcoconstruction.co.uk" className="text-brand-accent hover:underline">info@pfcoconstruction.co.uk</a>.
+                    contact us at <a href="mailto:info@pfandco.co.uk" className="text-brand-accent hover:underline">info@pfandco.co.uk</a>.
                   </p>
                   <div className="flex items-center gap-4 text-[10px] font-bold uppercase tracking-widest text-white/40">
                     <div className="flex items-center gap-1"><ShieldCheck size={14} className="text-brand-accent" /> SSL Encrypted</div>

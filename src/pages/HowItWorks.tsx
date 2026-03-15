@@ -665,7 +665,7 @@ const HowItWorks = () => {
                 Order Complete Intelligence <ArrowRight size={20} />
               </Link>
               <a
-                href="mailto:contact@pfcoconstruction.co.uk?subject=Complete Intelligence Package Strategy Call"
+                href="mailto:contact@pfandco.co.uk?subject=Complete Intelligence Package Strategy Call"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/10 text-white border border-white/20 px-8 py-4 rounded-full font-bold text-base sm:text-lg hover:bg-white/20 transition-all hover:border-white/40"
               >
                 Book a Strategy Call

@@ -17,7 +17,7 @@ const Home = () => {
         jsonLd={{
           '@type': 'WebSite',
           name: 'PF & Co Construction',
-          url: 'https://www.pfcoconstruction.co.uk',
+          url: 'https://www.pfandco.co.uk',
           description: 'AI-powered site intelligence reports and planning evidence for development projects across England and Wales.',
           publisher: { '@type': 'Organization', name: 'PF & Co Construction' }
         }}

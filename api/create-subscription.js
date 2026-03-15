@@ -82,7 +82,7 @@ export default async function handler(req, res) {
     }
 
     const plan = SUBSCRIPTION_TIERS[tier];
-    const origin = req.headers.origin || 'https://www.pfcoconstruction.co.uk';
+    const origin = req.headers.origin || 'https://www.pfandco.co.uk';
 
     const params = new URLSearchParams();
     params.append('payment_method_types[]', 'card');

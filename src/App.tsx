@@ -248,7 +248,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <p className="text-xs font-mono uppercase tracking-widest opacity-50">Email Us</p>
-                  <p className="text-xl font-bold">info@pfcoconstruction.co.uk</p>
+                  <p className="text-xl font-bold">info@pfandco.co.uk</p>
                 </div>
               </div>
               <div className="flex items-center gap-6">
@@ -415,12 +415,12 @@ export default function App() {
             <title>PF & Co | AI-Powered Structural Engineering & Construction</title>
             <meta name="description" content="AI-powered site intelligence and planning reports across England and Wales. 60 data sources, 48-hour turnaround, fixed pricing." />
             <meta name="keywords" content="structural engineer nationwide, structural calculations uk, basement impact assessment, site feasibility report, AI structural engineering" />
-            <link rel="canonical" href="https://www.pfcoconstruction.co.uk" />
+            <link rel="canonical" href="https://www.pfandco.co.uk" />
             <meta property="og:title" content="PF & Co | Engineering-Led Construction" />
             <meta property="og:description" content="Engineering-led construction & structural design across England and Wales. We don't just follow plans - we understand the physics." />
             <meta property="og:type" content="website" />
-            <meta property="og:url" content="https://www.pfcoconstruction.co.uk" />
-            <meta property="og:image" content="https://www.pfcoconstruction.co.uk/og-image.png" />
+            <meta property="og:url" content="https://www.pfandco.co.uk" />
+            <meta property="og:image" content="https://www.pfandco.co.uk/og-image.png" />
             <meta name="twitter:card" content="summary_large_image" />
             <script type="application/ld+json">{`
               {
@@ -428,9 +428,9 @@ export default function App() {
                 "@type": "LocalBusiness",
                 "name": "PF & Co Construction",
                 "description": "AI-powered site intelligence and planning reports across England and Wales.",
-                "url": "https://www.pfcoconstruction.co.uk",
+                "url": "https://www.pfandco.co.uk",
                 "telephone": "01483 363210",
-                "email": "info@pfcoconstruction.co.uk",
+                "email": "info@pfandco.co.uk",
                 "areaServed": ["England", "Wales", "UK"],
                 "serviceType": ["Structural Engineering", "Construction", "Site Intelligence"],
                 "address": {

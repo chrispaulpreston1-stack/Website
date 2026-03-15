@@ -69,11 +69,11 @@ const SiteIntelligenceHub = () => {
             '@type': 'VideoObject',
             name: 'PF & Co Site Intelligence — The Complete Process',
             description: 'See the complete Site Intelligence process from order to delivery. Learn how we interrogate 60 authoritative data sources and translate raw data into engineering decisions for planning, flood, and ground risk screening.',
-            thumbnailUrl: 'https://www.pfcoconstruction.co.uk/videos/site-intelligence-demo-thumb.jpg',
-            contentUrl: 'https://www.pfcoconstruction.co.uk/videos/site-intelligence-demo.mp4',
+            thumbnailUrl: 'https://www.pfandco.co.uk/videos/site-intelligence-demo-thumb.jpg',
+            contentUrl: 'https://www.pfandco.co.uk/videos/site-intelligence-demo.mp4',
             uploadDate: '2026-03-02',
             duration: 'PT2M32S',
-            publisher: { '@type': 'Organization', name: 'PF & Co Construction', url: 'https://www.pfcoconstruction.co.uk' },
+            publisher: { '@type': 'Organization', name: 'PF & Co Construction', url: 'https://www.pfandco.co.uk' },
           }
         ]}
       />

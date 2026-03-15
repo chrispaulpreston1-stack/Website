@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 
-const BASE_URL = 'https://www.pfcoconstruction.co.uk';
+const BASE_URL = 'https://www.pfandco.co.uk';
 
 interface BreadcrumbItem {
   name: string;

@@ -22,7 +22,7 @@ const Blog = () => {
             itemListElement: blogPosts.map((post, i) => ({
               '@type': 'ListItem',
               position: i + 1,
-              url: `https://www.pfcoconstruction.co.uk/insights/${post.slug}`,
+              url: `https://www.pfandco.co.uk/insights/${post.slug}`,
               name: post.title,
             })),
           },

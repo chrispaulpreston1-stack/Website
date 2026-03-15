@@ -67,14 +67,14 @@ const CILLiabilityAssessment = () => {
                         '@type': 'VideoObject',
                         name: 'CIL Liability Assessment Explainer',
                         description: 'Learn how our Community Infrastructure Levy assessments protect your project from unexpected liability and secure your exemptions.',
-                        thumbnailUrl: 'https://www.pfcoconstruction.co.uk/videos/cil-liability-assessment-thumb.jpg',
-                        contentUrl: 'https://www.pfcoconstruction.co.uk/videos/cil-liability-assessment-demo.mp4',
+                        thumbnailUrl: 'https://www.pfandco.co.uk/videos/cil-liability-assessment-thumb.jpg',
+                        contentUrl: 'https://www.pfandco.co.uk/videos/cil-liability-assessment-demo.mp4',
                         uploadDate: new Date().toISOString().split('T')[0],
                         duration: 'PT1M23S',
                         publisher: {
                             '@type': 'Organization',
                             name: 'PF & Co Construction',
-                            logo: { '@type': 'ImageObject', url: 'https://www.pfcoconstruction.co.uk/logo.png' }
+                            logo: { '@type': 'ImageObject', url: 'https://www.pfandco.co.uk/logo.png' }
                         }
                     }
                   },

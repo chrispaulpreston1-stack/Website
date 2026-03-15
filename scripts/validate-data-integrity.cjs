@@ -288,7 +288,7 @@ if (seoCountMatch) {
 console.log('\n=== SITEMAP ROUTE CHECK ===');
 
 const sitemapContent = fs.readFileSync(path.join(root, 'public/sitemap.xml'), 'utf8');
-const sitemapUrls = [...sitemapContent.matchAll(/<loc>https:\/\/www\.pfcoconstruction\.co\.uk(\/[^<]*)<\/loc>/g)].map(m => m[1]);
+const sitemapUrls = [...sitemapContent.matchAll(/<loc>https:\/\/www\.pfandco\.co\.uk(\/[^<]*)<\/loc>/g)].map(m => m[1]);
 const seoRoutes = [...seoContent.matchAll(/path:\s*'([^']+)'/g)].map(m => m[1]);
 const seoRoutesNoIndex = [...seoContent.matchAll(/noindex:\s*true/g)];
 // Filter out noindex routes from comparison

@@ -85,7 +85,7 @@ export default async function handler(req, res) {
       }
     }
 
-    const origin = req.headers.origin || 'https://www.pfcoconstruction.co.uk';
+    const origin = req.headers.origin || 'https://www.pfandco.co.uk';
 
     // Build Stripe API params with multiple line items
     const params = new URLSearchParams();

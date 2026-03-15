@@ -73,7 +73,7 @@ export default function AICompliance() {
           '@type': 'WebPage',
           name: 'AI Standards & Compliance',
           description: `PF & Co Construction's AI methodology, data governance, and RICS AI Standard alignment for site intelligence reports.`,
-          publisher: { '@type': 'Organization', name: 'PF & Co Construction', url: 'https://www.pfcoconstruction.co.uk' },
+          publisher: { '@type': 'Organization', name: 'PF & Co Construction', url: 'https://www.pfandco.co.uk' },
         }}
       />
 
@@ -379,11 +379,11 @@ export default function AICompliance() {
                 For RICS-regulated professionals, we offer a detailed supplier due diligence pack on request. This includes expanded methodology information at a categorical level.
               </p>
               <a
-                href="mailto:info@pfcoconstruction.co.uk?subject=AI%20Due%20Diligence%20Pack%20Request"
+                href="mailto:info@pfandco.co.uk?subject=AI%20Due%20Diligence%20Pack%20Request"
                 className="inline-flex items-center gap-3 px-10 py-5 bg-brand-accent text-brand-primary rounded-full font-bold text-lg hover:scale-105 transition-all shadow-xl shadow-brand-accent/20"
               >
                 <Mail size={20} />
-                info@pfcoconstruction.co.uk
+                info@pfandco.co.uk
               </a>
             </div>
           </motion.div>

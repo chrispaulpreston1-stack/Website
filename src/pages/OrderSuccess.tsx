@@ -156,7 +156,7 @@ const OrderSuccess = () => {
         >
           {isSubscription ? (
             <>
-              <a href="mailto:info@pfcoconstruction.co.uk?subject=New Subscription — Ready to Start" className="px-10 py-5 bg-brand-primary text-white rounded-2xl font-bold hover:scale-105 transition-all flex items-center justify-center gap-2 text-lg shadow-lg">
+              <a href="mailto:info@pfandco.co.uk?subject=New Subscription — Ready to Start" className="px-10 py-5 bg-brand-primary text-white rounded-2xl font-bold hover:scale-105 transition-all flex items-center justify-center gap-2 text-lg shadow-lg">
                 Send Us Your First Site <ArrowRight size={20} />
               </a>
               <Link to="/site-intelligence" className="px-10 py-5 bg-white text-brand-primary border-2 border-brand-primary/5 rounded-2xl font-bold hover:bg-brand-surface transition-all flex items-center justify-center gap-2">
@@ -183,7 +183,7 @@ const OrderSuccess = () => {
         >
           <p className="text-sm text-brand-primary/40">
             Questions? Email{' '}
-            <a href="mailto:info@pfcoconstruction.co.uk" className="text-brand-accent hover:underline font-medium">info@pfcoconstruction.co.uk</a>
+            <a href="mailto:info@pfandco.co.uk" className="text-brand-accent hover:underline font-medium">info@pfandco.co.uk</a>
             {' '}or call{' '}
             <a href="tel:01483363210" className="text-brand-accent hover:underline font-medium">01483 363210</a>
           </p>

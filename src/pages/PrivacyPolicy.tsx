@@ -24,7 +24,7 @@ export default function PrivacyPolicy() {
             registered in England. Our registered office is in Surrey. We are the data controller for the
             personal data described in this policy.
           </p>
-          <p>Email: <a href="mailto:info@pfcoconstruction.co.uk">info@pfcoconstruction.co.uk</a></p>
+          <p>Email: <a href="mailto:info@pfandco.co.uk">info@pfandco.co.uk</a></p>
           <p>Phone: 01483 363210</p>
 
           <h2>2. Information We Collect</h2>
@@ -106,7 +106,7 @@ export default function PrivacyPolicy() {
           </ul>
           <p>
             To exercise any of these rights, please contact us at{' '}
-            <a href="mailto:info@pfcoconstruction.co.uk">info@pfcoconstruction.co.uk</a>.
+            <a href="mailto:info@pfandco.co.uk">info@pfandco.co.uk</a>.
           </p>
 
           <h2>9. Changes to This Policy</h2>
@@ -118,7 +118,7 @@ export default function PrivacyPolicy() {
           <h2>10. Contact</h2>
           <p>
             If you have questions about this privacy policy or our data practices, please contact us
-            at <a href="mailto:info@pfcoconstruction.co.uk">info@pfcoconstruction.co.uk</a> or
+            at <a href="mailto:info@pfandco.co.uk">info@pfandco.co.uk</a> or
             call 01483 363210.
           </p>
         </div>

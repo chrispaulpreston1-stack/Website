@@ -110,7 +110,7 @@ export default function AIGovernancePolicy() {
 
           <p>
             For questions about this policy, contact us
-            at <a href="mailto:info@pfcoconstruction.co.uk">info@pfcoconstruction.co.uk</a> or
+            at <a href="mailto:info@pfandco.co.uk">info@pfandco.co.uk</a> or
             call 01483 363210.
           </p>
         </div>
