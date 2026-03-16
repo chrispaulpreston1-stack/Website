@@ -71,7 +71,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { tier, email, fullName, company, phone } = req.body;
+    const { tier, email, fullName, company, phone, termsAccepted } = req.body;
 
     if (!tier || !SUBSCRIPTION_TIERS[tier]) {
       return res.status(400).json({ error: `Invalid subscription tier: ${tier}` });
@@ -105,6 +105,8 @@ export default async function handler(req, res) {
     params.append('metadata[customer_name]', fullName);
     if (company) params.append('metadata[company]', company);
     if (phone) params.append('metadata[phone]', phone);
+    params.append('metadata[terms_accepted]', termsAccepted ? 'true' : 'false');
+    params.append('metadata[terms_accepted_at]', new Date().toISOString());
 
     // Subscription-specific settings
     params.append('subscription_data[metadata][tier]', tier);

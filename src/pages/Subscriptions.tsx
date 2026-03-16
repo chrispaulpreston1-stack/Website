@@ -11,6 +11,7 @@ const Subscriptions = () => {
   const [billingCycle, setBillingCycle] = useState<'monthly' | 'annual'>('monthly');
   const [subscribingTier, setSubscribingTier] = useState<string | null>(null);
   const [subForm, setSubForm] = useState({ fullName: '', email: '', company: '', phone: '' });
+  const [termsAccepted, setTermsAccepted] = useState(false);
   const [subError, setSubError] = useState<string | null>(null);
   const [subLoading, setSubLoading] = useState(false);
 
@@ -19,6 +20,10 @@ const Subscriptions = () => {
       // Already showing form — submit it
       if (!subForm.fullName || !subForm.email) {
         setSubError('Please enter your name and email.');
+        return;
+      }
+      if (!termsAccepted) {
+        setSubError('Please accept the Subscription Agreement to continue.');
         return;
       }
       setSubLoading(true);
@@ -48,7 +53,7 @@ const Subscriptions = () => {
         const res = await fetch('/api/create-subscription', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ tier, ...subForm }),
+          body: JSON.stringify({ tier, ...subForm, termsAccepted }),
         });
         const result = await res.json();
         if (!res.ok) throw new Error(result.error || 'Failed to create subscription');
@@ -60,6 +65,7 @@ const Subscriptions = () => {
     } else {
       // Show the form for this tier
       setSubscribingTier(planName);
+      setTermsAccepted(false);
       setSubError(null);
     }
   };
@@ -319,11 +325,30 @@ const Subscriptions = () => {
                       onChange={e => setSubForm(f => ({ ...f, company: e.target.value }))}
                       className="w-full px-4 py-2.5 rounded-xl border border-brand-primary/10 text-sm text-brand-primary bg-white"
                     />
+                    <label className="flex items-start gap-2 cursor-pointer">
+                      <input
+                        type="checkbox"
+                        checked={termsAccepted}
+                        onChange={e => { setTermsAccepted(e.target.checked); setSubError(null); }}
+                        className="mt-1 accent-brand-accent"
+                      />
+                      <span className={`text-xs leading-relaxed ${plan.highlight ? 'text-white/60' : 'text-brand-primary/50'}`}>
+                        I have read and agree to the{' '}
+                        <a
+                          href="/legal/PFCO-Subscription-Agreement.pdf"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-brand-accent underline hover:no-underline"
+                        >
+                          Subscription Agreement
+                        </a>. A personalised copy will be emailed to you upon sign-up.
+                      </span>
+                    </label>
                     {subError && <p className="text-red-500 text-xs">{subError}</p>}
                     <button
                       onClick={() => handleSubscribe(plan.name)}
-                      disabled={subLoading}
-                      className={`block w-full py-4 rounded-2xl font-bold transition-all text-center ${plan.highlight ? 'bg-brand-accent text-brand-primary hover:scale-105 shadow-xl shadow-brand-accent/20' : 'bg-brand-primary text-white hover:bg-brand-primary/90'} ${subLoading ? 'opacity-50' : ''}`}
+                      disabled={subLoading || !termsAccepted}
+                      className={`block w-full py-4 rounded-2xl font-bold transition-all text-center ${plan.highlight ? 'bg-brand-accent text-brand-primary hover:scale-105 shadow-xl shadow-brand-accent/20' : 'bg-brand-primary text-white hover:bg-brand-primary/90'} ${subLoading || !termsAccepted ? 'opacity-50' : ''}`}
                     >
                       {subLoading ? 'Setting up...' : `Subscribe — £${formatPrice(price)}/mo`}
                     </button>
