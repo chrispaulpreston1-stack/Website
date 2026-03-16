@@ -12,7 +12,7 @@ export default function TermsOfService() {
       <section className="pt-32 pb-24 bg-brand-surface">
         <div className="max-w-3xl mx-auto px-6">
           <h1 className="text-4xl md:text-5xl font-display font-bold text-brand-primary mb-4">Terms of Service</h1>
-          <p className="text-brand-primary/60 font-mono text-sm">Last updated: 13 March 2026</p>
+          <p className="text-brand-primary/60 font-mono text-sm">Last updated: 16 March 2026</p>
         </div>
       </section>
 
