@@ -12,7 +12,7 @@ const Home = () => {
     <div className="selection:bg-brand-accent/30">
       <PageSEO
         title="PF & Co | AI-Powered Site Intelligence & Planning Reports"
-        description="Planning-ready site intelligence reports for any UK site. 60 data sources, 112 AI agents, 48-hour turnaround. From £375. Subscribe from £399/mo."
+        description="Planning-ready site intelligence reports for any UK site. 60 data sources, 127 AI agents, 48-hour turnaround. From £375. Subscribe from £399/mo."
         path="/"
         jsonLd={{
           '@type': 'WebSite',

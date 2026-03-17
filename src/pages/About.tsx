@@ -24,7 +24,7 @@ import {
 
 const KEY_STATS = [
   { stat: '300+', label: 'Projects Delivered', sub: 'Across England and Wales', icon: <Building2 size={20} /> },
-  { stat: '112', label: 'AI Agents', sub: 'Interrogating 60 data sources', icon: <Bot size={20} /> },
+  { stat: '127', label: 'AI Agents', sub: 'Interrogating 60 data sources', icon: <Bot size={20} /> },
   { stat: '48hrs', label: 'Report Turnaround', sub: 'From order to delivery', icon: <Clock size={20} /> },
   { stat: '22', label: 'Report Types', sub: 'Planning-ready documentation', icon: <FileText size={20} /> },
 ];
@@ -37,7 +37,7 @@ const METHODOLOGY_POINTS = [
   },
   {
     title: 'Multi-Agent Architecture',
-    text: '112 specialised AI agents work across defined domains: flood, ecology, heritage, geology, planning policy, transport, and energy. Each agent has a specific scope, input contract, and output schema. No single model tries to do everything.',
+    text: '127 specialised AI agents work across defined domains: flood, ecology, heritage, geology, planning policy, transport, and energy. Each agent has a specific scope, input contract, and output schema. No single model tries to do everything.',
     icon: <Bot size={22} />,
   },
   {
@@ -84,7 +84,7 @@ export default function About() {
     <div className="bg-brand-surface">
       <PageSEO
         title="About Us | PF & Co Site Intelligence"
-        description="PF & Co Site Intelligence: AI-powered site intelligence and planning reports. Founded by Chris Preston BEng (Hons). 300+ projects, 112 AI agents, 60 data sources, 48-hour delivery."
+        description="PF & Co Site Intelligence: AI-powered site intelligence and planning reports. Founded by Chris Preston BEng (Hons). 300+ projects, 127 AI agents, 60 data sources, 48-hour delivery."
         path="/about"
         jsonLd={{
           '@type': 'AboutPage',

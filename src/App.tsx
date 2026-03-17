@@ -68,6 +68,11 @@ const AIGovernancePolicy = lazy(() => import('./pages/AIGovernancePolicy'));
 const About = lazy(() => import('./pages/About'));
 const HonestAssessment = lazy(() => import('./pages/HonestAssessment'));
 
+// Audience Pages
+const ForArchitects = lazy(() => import('./pages/ForArchitects'));
+const ForDevelopers = lazy(() => import('./pages/ForDevelopers'));
+const ForSelfBuilders = lazy(() => import('./pages/ForSelfBuilders'));
+
 // --- Global Components ---
 
 const Navbar = () => {
@@ -498,6 +503,9 @@ export default function App() {
               <Route path="/site-intelligence/daylight-sunlight-assessment" element={<DaylightSunlightAssessment />} />
               <Route path="/subscriptions" element={<Subscriptions />} />
               <Route path="/report-packages" element={<ReportPackages />} />
+              <Route path="/for-architects" element={<ForArchitects />} />
+              <Route path="/for-developers" element={<ForDevelopers />} />
+              <Route path="/for-self-builders" element={<ForSelfBuilders />} />
               <Route path="/plans-and-pricing" element={<HowItWorks />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/insights/:slug" element={<BlogArticle />} />
@@ -528,7 +536,6 @@ export default function App() {
           <Footer />
 
           {/* ElevenLabs Conversational AI Widget */}
-          {/* @ts-expect-error ElevenLabs custom element not typed in JSX.IntrinsicElements */}
           <elevenlabs-convai agent-id="agent_3001kjn17zm4fz7at5e3vekc9ryv"></elevenlabs-convai>
         </div>
       </Router>

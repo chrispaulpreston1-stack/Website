@@ -694,10 +694,10 @@ const HowItWorks = () => {
           </div>
         <div className="grid md:grid-cols-2 gap-6">
           {[
-            { who: 'Homeowner', desc: 'Planning an extension or new build?', before: 'Sees 20 reports, doesn\'t know where to start.', after: 'Sees "Start with SFR" and follows 5 clear steps.', icon: MapPin, gradient: 'from-teal-500 to-cyan-600' },
-            { who: 'Architect', desc: 'Need evidence documents for a submission?', before: 'Unsure which evidence docs they need for submission.', after: 'Phase 3 shows exactly what supports their drawings.', icon: Ruler, gradient: 'from-violet-500 to-purple-600' },
-            { who: 'Developer', desc: 'Evaluating a site for acquisition?', before: 'Has to figure out which bundle fits their stage.', after: 'Phase 1 bundles are clearly labelled "before you buy".', icon: TrendingUp, gradient: 'from-blue-500 to-indigo-600' },
-            { who: 'Self-Builder', desc: 'From plot to build — all the reports you need.', before: 'Overwhelmed by options, no clear starting point.', after: 'Self-Build Starter at Phase 1, Construction Readiness at Phase 4 — a clear path.', icon: Hammer, gradient: 'from-amber-500 to-orange-600' },
+            { who: 'Homeowner', href: '/for-self-builders', desc: 'Planning an extension or new build?', before: 'Sees 20 reports, doesn\'t know where to start.', after: 'Sees "Start with SFR" and follows 5 clear steps.', icon: MapPin, gradient: 'from-teal-500 to-cyan-600' },
+            { who: 'Architect', href: '/for-architects', desc: 'Need evidence documents for a submission?', before: 'Unsure which evidence docs they need for submission.', after: 'Phase 3 shows exactly what supports their drawings.', icon: Ruler, gradient: 'from-violet-500 to-purple-600' },
+            { who: 'Developer', href: '/for-developers', desc: 'Evaluating a site for acquisition?', before: 'Has to figure out which bundle fits their stage.', after: 'Phase 1 bundles are clearly labelled "before you buy".', icon: TrendingUp, gradient: 'from-blue-500 to-indigo-600' },
+            { who: 'Self-Builder', href: '/for-self-builders', desc: 'From plot to build — all the reports you need.', before: 'Overwhelmed by options, no clear starting point.', after: 'Self-Build Starter at Phase 1, Construction Readiness at Phase 4 — a clear path.', icon: Hammer, gradient: 'from-amber-500 to-orange-600' },
           ].map((item, i) => (
               <motion.div
               key={i}
@@ -705,27 +705,31 @@ const HowItWorks = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="p-5 sm:p-8 rounded-2xl sm:rounded-[2rem] bg-white border border-gray-100 shadow-xl hover:shadow-2xl hover:border-brand-accent/30 transition-all"
             >
-              <div className="flex items-center gap-4 mb-6">
-                <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${item.gradient} flex items-center justify-center shadow-lg`}>
-                  <item.icon size={24} className="text-white" />
+              <Link 
+                to={item.href}
+                className="block p-5 sm:p-8 rounded-2xl sm:rounded-[2rem] bg-white border border-gray-100 shadow-xl hover:shadow-2xl hover:border-brand-accent/30 transition-all h-full"
+              >
+                <div className="flex items-center gap-4 mb-6">
+                  <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${item.gradient} flex items-center justify-center shadow-lg`}>
+                    <item.icon size={24} className="text-white" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-brand-primary text-xl">{item.who}</h4>
+                    <p className="text-base text-brand-secondary">{item.desc}</p>
+                  </div>
                 </div>
-                <div>
-                  <h4 className="font-bold text-brand-primary text-xl">{item.who}</h4>
-                  <p className="text-base text-brand-secondary">{item.desc}</p>
+                <div className="space-y-4 text-base">
+                  <div className="p-3 rounded-xl bg-red-50 border border-red-100">
+                    <span className="text-red-500 font-bold text-xs uppercase tracking-widest block mb-1">Without Roadmap</span>
+                    <span className="text-brand-secondary">{item.before}</span>
+                  </div>
+                  <div className="p-3 rounded-xl bg-emerald-50 border border-emerald-100">
+                    <span className="text-emerald-600 font-bold text-xs uppercase tracking-widest block mb-1">With Roadmap</span>
+                    <span className="text-brand-primary/90">{item.after}</span>
+                  </div>
                 </div>
-              </div>
-              <div className="space-y-4 text-base">
-                <div className="p-3 rounded-xl bg-red-50 border border-red-100">
-                  <span className="text-red-500 font-bold text-xs uppercase tracking-widest block mb-1">Without Roadmap</span>
-                  <span className="text-brand-secondary">{item.before}</span>
-                </div>
-                <div className="p-3 rounded-xl bg-emerald-50 border border-emerald-100">
-                  <span className="text-emerald-600 font-bold text-xs uppercase tracking-widest block mb-1">With Roadmap</span>
-                  <span className="text-brand-primary/90">{item.after}</span>
-                </div>
-              </div>
+              </Link>
             </motion.div>
           ))}
         </div>

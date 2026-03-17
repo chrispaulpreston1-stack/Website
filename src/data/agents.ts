@@ -178,6 +178,25 @@ export const agents: Agent[] = [
   { id: '110', name: 'Amenity Proximity Engine', role: 'Measures walking distances to nearest schools, GP surgeries, pharmacies, supermarkets, and convenience stores with RAG ratings against NPPF sustainability thresholds', category: 'data-acquisition', triggeredBy: ['SFR', 'CFS', 'SAI', 'PS', 'DAS', 'PAA'] },
   { id: '111', name: 'Grid Capacity Assessor', role: 'Queries DNO open data portals to assess electricity substation headroom, heat pump/EV charging capacity, and connection feasibility', category: 'data-acquisition', triggeredBy: ['ES', 'SFR', 'CFS', 'SAI', 'DRR', 'CMP', 'DAS'] },
   { id: '112', name: 'Market Data Enricher', role: 'Cross-references UK House Price Index trends with EPC floor areas and Land Registry transactions to calculate local price-per-sqft and market direction', category: 'market-intelligence', triggeredBy: ['CFS', 'SFR', 'PS', 'PAA', 'CIL', 'DFS'] },
+
+  // ── Report Generation & Specialist Assessment (113–121) ────────
+  { id: '113', name: 'Affordable Housing Statement Specialist', role: 'Tenure/dwelling mix analysis, S106 heads of terms, and submission-ready AH statements', category: 'analysis-scoring', triggeredBy: ['PS', 'PAA', 'CFS', 'SAI', 'DFS'] },
+  { id: '114', name: 'Application Summary Generator', role: 'Executive brief synthesising all upstream reports into planning-officer-facing overview with compliance scorecard', category: 'platform-operations', triggeredBy: ['PS', 'PAA', 'DAS', 'SFR'] },
+  { id: '115', name: 'Community Involvement Specialist', role: 'Statement of Community Involvement documenting pre-application consultation and design response', category: 'platform-operations', triggeredBy: ['PS', 'PAA'] },
+  { id: '116', name: 'Fire Safety Statement Specialist', role: 'Gateway One Fire Statements for 7+ storey buildings under Building Safety Act 2022', category: 'construction-project', triggeredBy: ['DAS', 'PS', 'BC', 'CMP'] },
+  { id: '117', name: 'HRA & Nutrient Neutrality Assessor', role: 'Habitats Regulations Assessment and nutrient neutrality calculations for sensitive catchments', category: 'analysis-scoring', triggeredBy: ['BNG', 'PS', 'SFR', 'DAS'] },
+  { id: '118', name: 'Phasing & Delivery Planner', role: 'Infrastructure delivery plans mapping S106/CIL spend, occupation triggers, and utility sequencing', category: 'construction-project', triggeredBy: ['CFS', 'SAI', 'PS', 'CMP'] },
+  { id: '119', name: 'Prior Approval (Class MA) Specialist', role: 'Class E to C3 eligibility, 9 prescribed matters assessment, NDSS compliance, viability analysis', category: 'analysis-scoring', triggeredBy: ['SFR', 'CFS', 'PS'] },
+  { id: '120', name: 'Socio-Economic Impact Assessor', role: 'Employment, education, healthcare, and infrastructure impact quantification for major schemes', category: 'analysis-scoring', triggeredBy: ['PS', 'PAA', 'CFS', 'SAI'] },
+  { id: '121', name: 'Travel Plan Specialist', role: 'Framework Travel Plans with mode share targets, hard/soft measures, and 5-year monitoring', category: 'analysis-scoring', triggeredBy: ['TS', 'PS', 'DAS', 'CMP'] },
+
+  // ── Market Intelligence Depth (122–127) ────────────────────────
+  { id: '122', name: 'Area Value Analyst', role: 'Location-specific positive/negative value factor scoring with net area adjustment calculation', category: 'market-intelligence', triggeredBy: ['CFS', 'SAI', 'DFS', 'SFR'] },
+  { id: '123', name: 'Development Economics Calculator', role: 'Construction cost modelling, GDV appraisals, residual land value, and sensitivity analysis', category: 'market-intelligence', triggeredBy: ['CFS', 'SAI', 'DFS'] },
+  { id: '124', name: 'Housing Need Analyst', role: 'Census/ONS housing need evidence, delivery rates, affordability ratios for planning gain narrative', category: 'market-intelligence', triggeredBy: ['PS', 'CFS', 'SAI', 'PAA'] },
+  { id: '125', name: 'Market Comparables Researcher', role: 'Comparable sales analysis, new build premiums, price trends from Land Registry transaction evidence', category: 'market-intelligence', triggeredBy: ['CFS', 'SAI', 'DFS', 'SFR'] },
+  { id: '126', name: 'Market Intelligence Compiler', role: 'Orchestrates sub-agent research, calculates Development Opportunity Score (DOS), produces branded report', category: 'market-intelligence', triggeredBy: ['CFS', 'SAI', 'DFS', 'SFR'] },
+  { id: '127', name: 'Rental Yield Researcher', role: 'Rental values, HMO economics, gross/net yields, and LHA coverage for build-to-rent viability', category: 'market-intelligence', triggeredBy: ['CFS', 'SAI', 'DFS'] },
 ];
 
 export const TOTAL_AGENTS = agents.length;
