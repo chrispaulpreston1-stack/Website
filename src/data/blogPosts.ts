@@ -553,7 +553,7 @@ const blogPosts: BlogPost[] = [
     date: 'Mar 17, 2026',
     author: 'Chris Preston',
     category: 'Planning & Regulation',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?auto=format&fit=crop&q=80&w=1200',
+    image: '/images/blog-future-homes-standard.png',
     content: [
       'The Future Homes Standard is coming, and it will fundamentally change how new homes are designed, built, and heated in England. Legislation is expected to be laid by December 2026, with a transition period meaning all new homes must comply by December 2027. If you are a developer with schemes in the pipeline that will break ground in 2027 or later, the time to understand this standard is now — not when Building Control rejects your plans.',
       'The headline requirement is a 75-80% reduction in carbon emissions compared to the 2013 Part L baseline. To put that in context, the 2021 interim uplift to Part L required a 31% reduction. The Future Homes Standard more than doubles that target. Achieving this level of performance requires a fundamentally different approach to building fabric, heating systems, and energy generation. Incremental improvements to current designs will not be enough.',
