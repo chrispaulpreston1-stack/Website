@@ -40,7 +40,7 @@ const routes = [
   {
     path: '/building-control',
     title: 'BC Readiness Check | Project-Dependent | PF & Co',
-    description: 'Dedicated BC Readiness Check ensuring your drawings, specifications, and calculations are complete before Building Control submission. Project-dependent pricing.',
+    description: 'BC Readiness Check ensuring your drawings, specs, and calculations are complete before Building Control submission.',
   },
   {
     path: '/party-wall',
@@ -49,8 +49,8 @@ const routes = [
   },
   {
     path: '/site-intelligence',
-    title: 'PF & Co Site Intelligence | Data-Driven Pre-Construction Screening',
-    description: 'Interrogate 60 authoritative data sources across 11 constraint categories. Planning Friction Score, risk profiling, and buildability ratings — delivered in 48 hours.',
+    title: 'Site Intelligence | Pre-Construction Screening | PF & Co',
+    description: 'Interrogate 60 data sources across 11 constraint categories. Planning Friction Score, risk profiling, and buildability ratings in 48 hours.',
   },
   {
     path: '/site-intelligence/site-acquisition-intelligence',
@@ -61,12 +61,12 @@ const routes = [
   {
     path: '/site-intelligence/development-finance-summary',
     title: 'Development Finance Summary | Viability Screening | PF & Co',
-    description: 'Preliminary investment memo for development finance: GDV, build cost, profit on cost, RLV, site risk dashboard, and sensitivity analysis — delivered in 48-72 hours.',
+    description: 'Development finance memo: GDV, build cost, profit on cost, RLV, risk dashboard, and sensitivity analysis. Delivered in 48-72 hours.',
     jsonLd: { '@type': 'Product', name: 'Development Finance Summary', brand: { '@type': 'Organization', name: 'PF & Co Construction' }, offers: { '@type': 'Offer', price: '795', priceCurrency: 'GBP', availability: 'https://schema.org/InStock' } },
   },
   {
     path: '/site-intelligence/site-feasibility-report',
-    title: 'Site Feasibility Report | Pre-Construction Screening | PF & Co',
+    title: 'Site Feasibility Report | Constraint Screening | PF & Co',
     description: 'A data-driven pre-construction screening report interrogating 22+ planning, environmental, and ground risk constraints for any UK property. From £595.',
     jsonLd: { '@type': 'Product', name: 'Site Feasibility Report', brand: { '@type': 'Organization', name: 'PF & Co Construction' }, offers: { '@type': 'Offer', price: '595', priceCurrency: 'GBP', availability: 'https://schema.org/InStock' } },
   },
@@ -84,25 +84,25 @@ const routes = [
   },
   {
     path: '/site-intelligence/planning-statement',
-    title: 'Planning Statement | Submission-Ready Policy Evidence | PF & Co',
+    title: 'Planning Statement | Policy Evidence | PF & Co',
     description: 'A submission-ready document that demonstrates how your development proposals comply with national and local planning policy.',
     jsonLd: { '@type': 'Product', name: 'Planning Statement', brand: { '@type': 'Organization', name: 'PF & Co Construction' }, offers: { '@type': 'Offer', price: '495', priceCurrency: 'GBP', availability: 'https://schema.org/InStock' } },
   },
   {
     path: '/site-intelligence/design-and-access-statement',
-    title: 'Design and Access Statement (DAS) | Planning Submission | PF & Co',
+    title: 'Design and Access Statement (DAS) | PF & Co',
     description: 'A submission-ready Design and Access Statement explaining the design rationale, site context, and accessibility for your planning application.',
     jsonLd: { '@type': 'Product', name: 'Design and Access Statement', brand: { '@type': 'Organization', name: 'PF & Co Construction' }, offers: { '@type': 'Offer', price: '395', priceCurrency: 'GBP', availability: 'https://schema.org/InStock' } },
   },
   {
     path: '/site-intelligence/heritage-impact-assessment',
-    title: 'Heritage Impact Assessment (HIA) | Heritage Statements | PF & Co',
+    title: 'Heritage Impact Assessment (HIA) | PF & Co',
     description: 'A proportionate, evidence-based heritage statement covering listed buildings, conservation areas, and impact on setting.',
     jsonLd: { '@type': 'Product', name: 'Heritage Impact Assessment', brand: { '@type': 'Organization', name: 'PF & Co Construction' }, offers: { '@type': 'Offer', price: '545', priceCurrency: 'GBP', availability: 'https://schema.org/InStock' } },
   },
   {
     path: '/site-intelligence/biodiversity-net-gain',
-    title: 'Biodiversity Net Gain (BNG) | Screening & Feasibility | PF & Co',
+    title: 'Biodiversity Net Gain (BNG) Screening | PF & Co',
     description: 'Find out whether BNG applies to your site, what it will cost, and what measures are needed to meet the 10% mandatory requirement.',
     jsonLd: { '@type': 'Product', name: 'Biodiversity Net Gain Screening', brand: { '@type': 'Organization', name: 'PF & Co Construction' }, offers: { '@type': 'Offer', price: '495', priceCurrency: 'GBP', availability: 'https://schema.org/InStock' } },
   },
@@ -144,13 +144,13 @@ const routes = [
   },
   {
     path: '/site-intelligence/construction-management-plan',
-    title: 'Construction Management Plan (CMP) | Planning Conditions | PF & Co',
+    title: 'Construction Management Plan (CMP) | PF & Co',
     description: 'Satisfy CMP planning conditions and demonstrate responsible construction management to the local authority.',
     jsonLd: { '@type': 'Product', name: 'Construction Management Plan', brand: { '@type': 'Organization', name: 'PF & Co Construction' }, offers: { '@type': 'Offer', price: '595', priceCurrency: 'GBP', availability: 'https://schema.org/InStock' } },
   },
   {
     path: '/site-intelligence/tree-survey',
-    title: 'Arboricultural Constraints Appraisal | Desktop Tree Assessment | PF & Co',
+    title: 'Arboricultural Constraints Appraisal | PF & Co',
     description: 'Desktop arboricultural assessment using LiDAR canopy modelling and TPO register data. BS 5837 categorisation and RPA mapping for planning applications.',
     jsonLd: { '@type': 'Product', name: 'Arboricultural Constraints Appraisal', brand: { '@type': 'Organization', name: 'PF & Co Construction' }, offers: { '@type': 'Offer', price: '575', priceCurrency: 'GBP', availability: 'https://schema.org/InStock' } },
   },
@@ -202,7 +202,7 @@ const routes = [
   {
     path: '/subscriptions',
     title: 'Engineering Subscriptions & Partner Credits | PF & Co',
-    description: 'Site intelligence report subscriptions from £399/mo. Fixed cost, 48-hour turnaround, 60 data sources. Tiers for land buyers, architects, developers, and enterprise.',
+    description: 'Site intelligence subscriptions from £399/mo. Fixed cost, 48-hour turnaround, 60 data sources. Tiers for all project scales.',
   },
   {
     path: '/ai-innovation',

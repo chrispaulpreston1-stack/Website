@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { motion } from 'motion/react';
 import PageSEO from '../components/PageSEO';
-import { Calendar, ArrowLeft, ArrowRight, FileText, Zap, Link2, Check } from 'lucide-react';
+import { Calendar, ArrowLeft, ArrowRight, FileText, Zap, Link2, Check, Clock } from 'lucide-react';
 import blogPosts from '../data/blogPosts';
 
 const ShareButtons = ({ title, url }: { title: string; url: string }) => {
@@ -64,6 +64,11 @@ const ShareButtons = ({ title, url }: { title: string; url: string }) => {
   );
 };
 
+function readTime(content: string[]): number {
+  const words = content.join(' ').split(/\s+/).length;
+  return Math.max(1, Math.round(words / 230));
+}
+
 const BlogArticle = () => {
   const { slug } = useParams<{ slug: string }>();
   const post = blogPosts.find(p => p.slug === slug);
@@ -73,6 +78,11 @@ const BlogArticle = () => {
   const currentIndex = blogPosts.findIndex(p => p.slug === slug);
   const nextPost = blogPosts[currentIndex + 1];
   const prevPost = blogPosts[currentIndex - 1];
+
+  // Related posts: same category, excluding current, max 3
+  const relatedPosts = blogPosts
+    .filter(p => p.slug !== slug && p.category === post.category)
+    .slice(0, 3);
 
   return (
     <div className="pt-32 pb-24">
@@ -128,6 +138,10 @@ const BlogArticle = () => {
             <span className="text-brand-primary/10">|</span>
             <span className="font-mono text-[10px] text-brand-primary/40 flex items-center gap-1.5">
               <Calendar size={12} /> {post.date}
+            </span>
+            <span className="text-brand-primary/10">|</span>
+            <span className="font-mono text-[10px] text-brand-primary/40 flex items-center gap-1.5">
+              <Clock size={12} /> {readTime(post.content)} min read
             </span>
           </div>
 
@@ -216,6 +230,23 @@ const BlogArticle = () => {
             </div>
           </div>
         </div>
+
+        {/* Related Posts */}
+        {relatedPosts.length > 0 && (
+          <div className="max-w-3xl mx-auto mt-16">
+            <h3 className="text-sm font-mono uppercase tracking-widest text-brand-primary/30 font-bold mb-6">Related Insights</h3>
+            <div className="grid sm:grid-cols-3 gap-6">
+              {relatedPosts.map(rp => (
+                <Link key={rp.slug} to={`/insights/${rp.slug}`} className="group">
+                  <div className="aspect-[16/10] rounded-2xl overflow-hidden mb-4">
+                    <img src={rp.image} alt={rp.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" referrerPolicy="no-referrer" />
+                  </div>
+                  <p className="font-bold text-sm leading-snug group-hover:text-brand-accent transition-colors">{rp.title}</p>
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* Prev / Next */}
         <div className="max-w-3xl mx-auto mt-12 pt-12 border-t border-brand-primary/5">

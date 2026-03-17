@@ -48,7 +48,7 @@ const Subscriptions = () => {
             price: `£${price?.toLocaleString()}`,
             credits: `${plans.find(p => p.name === planName)?.reports}/month`,
           }),
-        });
+        }).catch(() => {});
 
         const res = await fetch('/api/create-subscription', {
           method: 'POST',

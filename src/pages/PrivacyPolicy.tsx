@@ -25,7 +25,7 @@ export default function PrivacyPolicy() {
             personal data described in this policy.
           </p>
           <p>Email: <a href="mailto:info@pfandco.co.uk">info@pfandco.co.uk</a></p>
-          <p>Phone: 01483 363210</p>
+          <p>Phone: <a href="tel:01483363210" className="text-brand-accent hover:underline">01483 363210</a></p>
 
           <h2>2. Information We Collect</h2>
           <p>We may collect the following personal data:</p>

@@ -239,7 +239,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <p className="text-xs font-mono uppercase tracking-widest opacity-50">Call Us</p>
-                  <p className="text-xl font-bold">01483 363210</p>
+                  <a href="tel:01483363210" className="text-xl font-bold hover:text-brand-accent transition-colors">01483 363210</a>
                 </div>
               </div>
               <div className="flex items-center gap-6">
@@ -504,7 +504,7 @@ export default function App() {
           <Footer />
 
           {/* ElevenLabs Conversational AI Widget */}
-          {/* @ts-ignore */}
+          {/* @ts-expect-error ElevenLabs custom element not typed in JSX.IntrinsicElements */}
           <elevenlabs-convai agent-id="agent_3001kjn17zm4fz7at5e3vekc9ryv"></elevenlabs-convai>
         </div>
       </Router>

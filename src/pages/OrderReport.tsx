@@ -244,7 +244,7 @@ const OrderReport = () => {
           description: data.description,
           discountCode: appliedDiscount?.code || 'None',
         }),
-      });
+      }).catch(() => {});
 
       // Create Stripe Checkout session
       const res = await fetch('/api/create-checkout-session', {
@@ -490,34 +490,34 @@ const OrderReport = () => {
                 <h2 className="text-2xl font-bold mb-6">Contact Details</h2>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label className="text-[10px] font-bold uppercase tracking-widest text-brand-primary/40">Full Name</label>
+                    <label htmlFor="order-fullName" className="text-[10px] font-bold uppercase tracking-widest text-brand-primary/40">Full Name</label>
                     <div className="relative">
                       <User className="absolute left-4 top-1/2 -translate-y-1/2 text-brand-primary/30" size={18} />
-                      <input {...register('fullName')} className="w-full bg-white border-2 border-brand-primary/5 rounded-2xl p-4 pl-12 focus:border-brand-accent outline-none" placeholder="John Smith" />
+                      <input id="order-fullName" {...register('fullName')} className="w-full bg-white border-2 border-brand-primary/5 rounded-2xl p-4 pl-12 focus:border-brand-accent outline-none" placeholder="John Smith" />
                     </div>
-                    {errors.fullName && <p className="text-red-500 text-xs mt-1 font-bold">{errors.fullName.message}</p>}
+                    {errors.fullName && <p className="text-red-500 text-xs mt-1 font-bold" role="alert">{errors.fullName.message}</p>}
                   </div>
                   <div className="space-y-2">
-                    <label className="text-[10px] font-bold uppercase tracking-widest text-brand-primary/40">Email Address</label>
+                    <label htmlFor="order-email" className="text-[10px] font-bold uppercase tracking-widest text-brand-primary/40">Email Address</label>
                     <div className="relative">
                       <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-brand-primary/30" size={18} />
-                      <input {...register('email')} className="w-full bg-white border-2 border-brand-primary/5 rounded-2xl p-4 pl-12 focus:border-brand-accent outline-none" placeholder="john@example.com" />
+                      <input id="order-email" {...register('email')} className="w-full bg-white border-2 border-brand-primary/5 rounded-2xl p-4 pl-12 focus:border-brand-accent outline-none" placeholder="john@example.com" />
                     </div>
-                    {errors.email && <p className="text-red-500 text-xs mt-1 font-bold">{errors.email.message}</p>}
+                    {errors.email && <p className="text-red-500 text-xs mt-1 font-bold" role="alert">{errors.email.message}</p>}
                   </div>
                   <div className="space-y-2">
-                    <label className="text-[10px] font-bold uppercase tracking-widest text-brand-primary/40">Phone Number</label>
+                    <label htmlFor="order-phone" className="text-[10px] font-bold uppercase tracking-widest text-brand-primary/40">Phone Number</label>
                     <div className="relative">
                       <Phone className="absolute left-4 top-1/2 -translate-y-1/2 text-brand-primary/30" size={18} />
-                      <input {...register('phone')} className="w-full bg-white border-2 border-brand-primary/5 rounded-2xl p-4 pl-12 focus:border-brand-accent outline-none" placeholder="07700 900000" />
+                      <input id="order-phone" {...register('phone')} className="w-full bg-white border-2 border-brand-primary/5 rounded-2xl p-4 pl-12 focus:border-brand-accent outline-none" placeholder="07700 900000" />
                     </div>
-                    {errors.phone && <p className="text-red-500 text-xs mt-1 font-bold">{errors.phone.message}</p>}
+                    {errors.phone && <p className="text-red-500 text-xs mt-1 font-bold" role="alert">{errors.phone.message}</p>}
                   </div>
                   <div className="space-y-2">
-                    <label className="text-[10px] font-bold uppercase tracking-widest text-brand-primary/40">Company (Optional)</label>
+                    <label htmlFor="order-company" className="text-[10px] font-bold uppercase tracking-widest text-brand-primary/40">Company (Optional)</label>
                     <div className="relative">
                       <Building2 className="absolute left-4 top-1/2 -translate-y-1/2 text-brand-primary/30" size={18} />
-                      <input {...register('company')} className="w-full bg-white border-2 border-brand-primary/5 rounded-2xl p-4 pl-12 focus:border-brand-accent outline-none" placeholder="Architects Ltd" />
+                      <input id="order-company" {...register('company')} className="w-full bg-white border-2 border-brand-primary/5 rounded-2xl p-4 pl-12 focus:border-brand-accent outline-none" placeholder="Architects Ltd" />
                     </div>
                   </div>
                 </div>

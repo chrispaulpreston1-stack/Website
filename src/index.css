@@ -84,6 +84,10 @@
     @apply bg-brand-primary/10 text-brand-primary;
   }
 
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-brand-accent;
+  }
+
   h1,
   h2,
   h3,
