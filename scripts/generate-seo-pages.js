@@ -250,6 +250,21 @@ const routes = [
     description: 'Every site gets an honest, upfront assessment of its development prospects. If there are dealbreakers, you\'ll know before committing to architect fees and application costs.',
   },
   {
+    path: '/for-architects',
+    title: 'For Architects & Planners | PF & Co Engineering',
+    description: 'You do the design. We provide the evidence. AI-powered technical reports supporting your planning applications natively.',
+  },
+  {
+    path: '/for-developers',
+    title: 'For Developers & Land Buyers | PF & Co Engineering',
+    description: 'Everything you need to know before you sign. AI-powered site intelligence covering planning, environmental, and financial constraints.',
+  },
+  {
+    path: '/for-self-builders',
+    title: 'For Homeowners & Self-Builders | PF & Co Engineering',
+    description: 'Understand your site before you hire an architect. Avoid expensive mistakes with our easy-to-understand Site Intelligence reports.',
+  },
+  {
     path: '/order-success',
     title: 'Order Confirmation | Site Intelligence',
     description: 'Your report order has been confirmed.',
