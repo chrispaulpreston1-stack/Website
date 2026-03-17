@@ -163,10 +163,35 @@ export default function TermsOfService() {
           </p>
 
           <h2>9. Cancellations and Refunds</h2>
+
+          <h3>9.1 Individual Report Orders</h3>
           <p>
             You may cancel an order before work has commenced for a full refund. Once production of a report
             has begun, cancellations are not accepted. If you believe a report contains material errors,
             please contact us within 14 days and we will review and correct at no additional charge.
+          </p>
+
+          <h3>9.2 Subscription 30-Day Money-Back Guarantee</h3>
+          <p>
+            All new subscriptions are covered by a 30-day money-back guarantee. If you have not used any
+            report credits during the first 30 days of your subscription (measured from the date of your
+            first payment), you may request a full refund of your first monthly or annual payment by
+            emailing <a href="mailto:info@pfandco.co.uk">info@pfandco.co.uk</a> within that 30-day period.
+            The refund will be processed to your original payment method within 10 business days.
+          </p>
+          <p>
+            This guarantee applies to new subscriptions only and is limited to one claim per client. If you
+            have used one or more report credits during the 30-day period, the guarantee does not apply and
+            standard cancellation terms (Section 9.3) apply instead.
+          </p>
+
+          <h3>9.3 Subscription Cancellation</h3>
+          <p>
+            All subscriptions are subject to a minimum term of 3 months. After the minimum term, you may
+            cancel your subscription at any time by emailing <a href="mailto:info@pfandco.co.uk">info@pfandco.co.uk</a> at
+            least 7 days before your next billing date. Cancellation takes effect at the end of the current
+            billing period. Unused credits do not carry over beyond cancellation and are not refundable.
+            No partial-month refunds are provided.
           </p>
 
           <h2>10. Client Warranty</h2>
