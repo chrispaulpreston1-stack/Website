@@ -84,6 +84,7 @@ const Subscriptions = () => {
       desc: "Screen sites fast. Know before you bid.",
       minTerm: "3 months",
       overage: 275,
+      overageStandard: 345,
       features: [
         "2 report credits per month",
         "Any of our 24 report types",
@@ -106,6 +107,7 @@ const Subscriptions = () => {
       desc: "Your engineering partner on retainer.",
       minTerm: "6 months",
       overage: 240,
+      overageStandard: 295,
       features: [
         "6 report credits per month",
         "Any of our 24 report types",
@@ -129,6 +131,7 @@ const Subscriptions = () => {
       desc: "Full project packs on demand.",
       minTerm: "12 months",
       overage: 225,
+      overageStandard: 275,
       features: [
         "12 report credits per month",
         "Any of our 24 report types",
@@ -153,6 +156,7 @@ const Subscriptions = () => {
       desc: "Intelligence at scale.",
       minTerm: "12 months",
       overage: 195,
+      overageStandard: 245,
       features: [
         "30 report credits per month",
         "Any of our 24 report types",
@@ -384,10 +388,13 @@ const Subscriptions = () => {
           </p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {plans.map((plan, i) => (
-              <div key={i} className="text-center p-4 rounded-xl bg-brand-surface">
+              <div key={i} className="text-center p-5 rounded-xl bg-brand-surface">
                 <div className="text-sm font-bold text-brand-primary mb-1">{plan.name}</div>
-                <div className="text-2xl font-bold text-brand-accent">£{plan.overage}</div>
-                <div className="text-[10px] text-brand-primary/40 uppercase tracking-widest">per extra report</div>
+                <div className="flex items-baseline justify-center gap-2">
+                  <span className="text-2xl font-bold text-brand-accent">£{plan.overage}</span>
+                  <span className="text-sm line-through text-brand-primary/25">£{plan.overageStandard}</span>
+                </div>
+                <div className="text-[10px] text-brand-primary/40 uppercase tracking-widest mt-1">per extra report</div>
               </div>
             ))}
           </div>
