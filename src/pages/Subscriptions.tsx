@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { Check, ArrowRight, ShieldCheck, Clock, FileText, Building2, Search, Zap, TrendingUp, Users, Target, MapPin, Database, HelpCircle } from 'lucide-react';
+import { Check, ArrowRight, ShieldCheck, Clock, FileText, Building2, Search, Zap, TrendingUp, Users, Target, MapPin, Database, HelpCircle, Calculator } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import PageSEO from '../components/PageSEO';
 import { bundles } from '../data/reports';
@@ -14,6 +14,7 @@ const Subscriptions = () => {
   const [termsAccepted, setTermsAccepted] = useState(false);
   const [subError, setSubError] = useState<string | null>(null);
   const [subLoading, setSubLoading] = useState(false);
+  const [roiReports, setRoiReports] = useState(6);
 
   const handleSubscribe = async (planName: string) => {
     if (subscribingTier === planName) {
@@ -379,6 +380,136 @@ const Subscriptions = () => {
             );
           })}
         </div>
+
+        {/* ROI Calculator */}
+        {(() => {
+          const STANDALONE_PRICE = 495;
+          const standaloneCost = roiReports * STANDALONE_PRICE;
+
+          // Find best tier: cheapest plan that covers the volume
+          const bestPlan = plans.find(p => p.reports >= roiReports)
+            || plans[plans.length - 1];
+
+          // If volume exceeds plan, add overage
+          const overageCount = Math.max(0, roiReports - bestPlan.reports);
+          const bestPrice = billingCycle === 'monthly' ? bestPlan.monthlyEA : Math.round(bestPlan.annualEA / 12);
+          const subscriptionCost = bestPrice + overageCount * bestPlan.overage;
+
+          const monthlySavings = standaloneCost - subscriptionCost;
+          const annualSavings = monthlySavings * 12;
+          const savingsPercent = standaloneCost > 0 ? Math.round((monthlySavings / standaloneCost) * 100) : 0;
+
+          return (
+            <div className="bg-white rounded-[2rem] p-8 lg:p-12 border border-brand-primary/5 shadow-sm max-w-4xl mx-auto mb-24">
+              <div className="text-center mb-8">
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-accent/10 text-brand-accent text-[10px] font-bold uppercase tracking-widest mb-4">
+                  <Calculator size={12} /> ROI Calculator
+                </div>
+                <h3 className="text-2xl font-bold text-brand-primary mb-2">How Much Could You Save?</h3>
+                <p className="text-brand-primary/50 max-w-xl mx-auto text-sm">
+                  Compare the cost of buying reports individually vs a subscription plan.
+                </p>
+              </div>
+
+              {/* Slider Input */}
+              <div className="max-w-md mx-auto mb-10">
+                <label className="block text-sm font-bold text-brand-primary mb-3 text-center">
+                  How many reports do you need per month?
+                </label>
+                <div className="flex items-center gap-4">
+                  <input
+                    type="range"
+                    min={1}
+                    max={30}
+                    value={roiReports}
+                    onChange={e => setRoiReports(Number(e.target.value))}
+                    className="flex-1 h-2 rounded-full appearance-none bg-brand-primary/10 accent-brand-accent cursor-pointer"
+                  />
+                  <div className="w-16 text-center">
+                    <input
+                      type="number"
+                      min={1}
+                      max={30}
+                      value={roiReports}
+                      onChange={e => {
+                        const v = Math.max(1, Math.min(30, Number(e.target.value) || 1));
+                        setRoiReports(v);
+                      }}
+                      className="w-full px-3 py-2 rounded-xl border border-brand-primary/10 text-center text-lg font-bold text-brand-primary bg-brand-surface"
+                    />
+                  </div>
+                </div>
+                <div className="flex justify-between text-[10px] text-brand-primary/30 mt-1 px-1">
+                  <span>1</span>
+                  <span>15</span>
+                  <span>30</span>
+                </div>
+              </div>
+
+              {/* Comparison Columns */}
+              <div className="grid md:grid-cols-2 gap-6 mb-8">
+                {/* One-Off Column */}
+                <div className="p-6 rounded-2xl bg-brand-surface border border-brand-primary/5 text-center">
+                  <div className="text-xs font-bold uppercase tracking-widest text-brand-primary/40 mb-3">Buying Individually</div>
+                  <div className="text-3xl font-bold text-brand-primary mb-1">
+                    £{formatPrice(standaloneCost)}
+                    <span className="text-sm font-normal text-brand-primary/40">/mo</span>
+                  </div>
+                  <div className="text-xs text-brand-primary/40 mb-4">
+                    {roiReports} reports × £{STANDALONE_PRICE} each
+                  </div>
+                  <div className="text-xs text-brand-primary/30">No commitment, no extras</div>
+                </div>
+
+                {/* Subscription Column */}
+                <div className="p-6 rounded-2xl bg-brand-accent/5 border-2 border-brand-accent text-center relative">
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-accent text-brand-primary px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest whitespace-nowrap">
+                    Best Value
+                  </div>
+                  <div className="text-xs font-bold uppercase tracking-widest text-brand-accent mb-3">{bestPlan.name} Plan</div>
+                  <div className="text-3xl font-bold text-brand-accent mb-1">
+                    £{formatPrice(subscriptionCost)}
+                    <span className="text-sm font-normal text-brand-primary/40">/mo</span>
+                  </div>
+                  <div className="text-xs text-brand-primary/40 mb-4">
+                    {bestPlan.reports} credits included{overageCount > 0 ? ` + ${overageCount} overage at £${bestPlan.overage}` : ''}
+                  </div>
+                  <div className="text-xs text-brand-primary/50">
+                    {bestPlan.turnaround} turnaround &bull; {bestPlan.rollover} rollover
+                  </div>
+                </div>
+              </div>
+
+              {/* Savings Summary */}
+              {monthlySavings > 0 ? (
+                <div className="text-center p-5 rounded-2xl bg-brand-accent/10">
+                  <div className="flex items-center justify-center gap-6 flex-wrap">
+                    <div>
+                      <div className="text-xs font-bold uppercase tracking-widest text-brand-primary/40 mb-1">Monthly Savings</div>
+                      <div className="text-2xl font-bold text-brand-accent">£{formatPrice(monthlySavings)}</div>
+                    </div>
+                    <div className="w-px h-10 bg-brand-primary/10 hidden sm:block" />
+                    <div>
+                      <div className="text-xs font-bold uppercase tracking-widest text-brand-primary/40 mb-1">Annual Savings</div>
+                      <div className="text-2xl font-bold text-brand-accent">£{formatPrice(annualSavings)}</div>
+                    </div>
+                    <div className="w-px h-10 bg-brand-primary/10 hidden sm:block" />
+                    <div>
+                      <div className="text-xs font-bold uppercase tracking-widest text-brand-primary/40 mb-1">You Save</div>
+                      <div className="text-2xl font-bold text-brand-accent">{savingsPercent}%</div>
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <div className="text-center p-5 rounded-2xl bg-brand-surface">
+                  <p className="text-sm text-brand-primary/50">
+                    At this volume a subscription matches standalone pricing. Increase your report count to see savings.
+                  </p>
+                </div>
+              )}
+            </div>
+          );
+        })()}
 
         {/* Need Extra Credits? */}
         <div className="bg-white rounded-[2rem] p-8 lg:p-12 border border-brand-primary/5 shadow-sm max-w-4xl mx-auto mb-24">

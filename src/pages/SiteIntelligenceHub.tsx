@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { Search, ShieldAlert, BarChart3, ArrowRight, Check, X, Database, Clock, Users, Zap, FileText } from 'lucide-react';
+import { Search, ShieldAlert, BarChart3, ArrowRight, ArrowLeft, Check, X, Database, Clock, Users, Zap, FileText, HelpCircle, Building2, Hammer, RefreshCw, TreePine, Droplets, Landmark, MapPin, Home, ChevronRight, RotateCcw } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import PageSEO from '../components/PageSEO';
 import VideoExplainer from '../components/VideoExplainer';
@@ -8,6 +8,85 @@ import { reports } from '../data/reports';
 
 const SiteIntelligenceHub = () => {
   const [roleFilter, setRoleFilter] = useState<string>('all');
+
+  // Wizard state
+  const [wizardStep, setWizardStep] = useState<number>(0); // 0 = collapsed, 1-3 = active steps
+  const [wizardScenario, setWizardScenario] = useState<string | null>(null);
+  const [wizardSiteTraits, setWizardSiteTraits] = useState<string[]>([]);
+
+  const wizardScenarios = [
+    { id: 'buying', label: 'Buying Land / Assessing a Site', icon: <MapPin size={22} /> },
+    { id: 'planning', label: 'Submitting a Planning Application', icon: <FileText size={22} /> },
+    { id: 'construction', label: 'Preparing for Construction', icon: <Hammer size={22} /> },
+    { id: 'conversion', label: 'Converting or Changing Use', icon: <Building2 size={22} /> },
+    { id: 'selfbuild', label: 'Self-Build Project', icon: <Home size={22} /> },
+  ];
+
+  const wizardSiteOptions = [
+    { id: 'greenfield', label: 'Greenfield Site', icon: <TreePine size={18} /> },
+    { id: 'brownfield', label: 'Brownfield / Previously Developed', icon: <Building2 size={18} /> },
+    { id: 'heritage', label: 'Near Heritage Assets / Conservation Area', icon: <Landmark size={18} /> },
+    { id: 'flood', label: 'Flood Risk Area', icon: <Droplets size={18} /> },
+    { id: 'urban', label: 'Urban Location', icon: <Building2 size={18} /> },
+    { id: 'rural', label: 'Rural / Edge of Settlement', icon: <TreePine size={18} /> },
+  ];
+
+  const toggleSiteTrait = (id: string) => {
+    setWizardSiteTraits(prev =>
+      prev.includes(id) ? prev.filter(t => t !== id) : [...prev, id]
+    );
+  };
+
+  const getWizardRecommendations = (): string[] => {
+    const slugs = new Set<string>();
+
+    // Base recommendations by scenario
+    const scenarioMap: Record<string, string[]> = {
+      buying: ['site-acquisition-intelligence', 'site-feasibility-report', 'geotechnical-desk-study', 'flood-risk-assessment'],
+      planning: ['planning-statement', 'design-and-access-statement', 'transport-statement', 'energy-statement', 'biodiversity-net-gain'],
+      construction: ['construction-management-plan', 'pre-construction-design-review'],
+      conversion: ['site-feasibility-report', 'planning-statement', 'heritage-impact-assessment', 'energy-statement', 'biodiversity-net-gain'],
+      selfbuild: ['site-feasibility-report', 'geotechnical-desk-study', 'flood-risk-assessment', 'planning-statement'],
+    };
+
+    if (wizardScenario && scenarioMap[wizardScenario]) {
+      scenarioMap[wizardScenario].forEach(s => slugs.add(s));
+    }
+
+    // Additional reports based on site traits
+    if (wizardSiteTraits.includes('flood')) {
+      slugs.add('flood-risk-assessment');
+    }
+    if (wizardSiteTraits.includes('heritage')) {
+      slugs.add('heritage-impact-assessment');
+    }
+    if (wizardSiteTraits.includes('brownfield')) {
+      slugs.add('phase-1-contamination');
+      slugs.add('geotechnical-desk-study');
+    }
+    if (wizardSiteTraits.includes('greenfield')) {
+      slugs.add('biodiversity-net-gain');
+      slugs.add('tree-survey');
+    }
+    if (wizardSiteTraits.includes('urban')) {
+      slugs.add('noise-impact-assessment');
+      slugs.add('air-quality-screening');
+      slugs.add('daylight-sunlight-assessment');
+    }
+    if (wizardSiteTraits.includes('rural')) {
+      slugs.add('biodiversity-net-gain');
+      slugs.add('tree-survey');
+    }
+
+    return Array.from(slugs);
+  };
+
+  const resetWizard = () => {
+    setWizardStep(0);
+    setWizardScenario(null);
+    setWizardSiteTraits([]);
+  };
+
   const products = [
     {
       title: "Site Feasibility Report",
@@ -186,6 +265,235 @@ const SiteIntelligenceHub = () => {
             </div>
           </motion.div>
         </div>
+      </section>
+
+      {/* Report Wizard */}
+      <section className="max-w-7xl mx-auto px-6 mb-24">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="bg-brand-surface border border-brand-primary/5 rounded-[3rem] p-8 md:p-12 relative overflow-hidden"
+        >
+          {/* Header — always visible */}
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 bg-brand-accent/10 rounded-2xl flex items-center justify-center text-brand-accent shrink-0">
+                <HelpCircle size={24} />
+              </div>
+              <div>
+                <h2 className="text-2xl md:text-3xl font-bold tracking-tight">What Reports Do I Need?</h2>
+                <p className="text-brand-primary/50 text-sm mt-1">Answer two quick questions and we'll recommend the right reports for your project.</p>
+              </div>
+            </div>
+            {wizardStep === 0 ? (
+              <button
+                onClick={() => setWizardStep(1)}
+                className="px-6 py-3 bg-brand-accent text-brand-primary rounded-xl font-bold hover:scale-[1.02] transition-all flex items-center gap-2 shrink-0"
+              >
+                Start Wizard <ChevronRight size={18} />
+              </button>
+            ) : (
+              <button
+                onClick={resetWizard}
+                className="px-5 py-2.5 bg-white border border-brand-primary/10 text-brand-primary/60 rounded-xl font-bold hover:border-brand-accent/30 transition-all flex items-center gap-2 text-sm shrink-0"
+              >
+                <RotateCcw size={14} /> Start Over
+              </button>
+            )}
+          </div>
+
+          {/* Step 1 */}
+          {wizardStep >= 1 && (
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <div className="flex items-center gap-2 mb-4">
+                <span className={`w-7 h-7 rounded-full text-xs font-bold flex items-center justify-center ${wizardStep === 1 ? 'bg-brand-accent text-brand-primary' : 'bg-brand-primary text-white'}`}>1</span>
+                <span className="font-bold text-sm">What are you doing?</span>
+                {wizardStep > 1 && wizardScenario && (
+                  <button onClick={() => { setWizardStep(1); setWizardSiteTraits([]); }} className="ml-2 text-xs text-brand-accent font-bold hover:underline">Change</button>
+                )}
+              </div>
+
+              {wizardStep === 1 ? (
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-2">
+                  {wizardScenarios.map(s => (
+                    <button
+                      key={s.id}
+                      onClick={() => { setWizardScenario(s.id); setWizardStep(2); }}
+                      className={`p-5 rounded-2xl border text-left transition-all flex items-center gap-4 group ${
+                        wizardScenario === s.id
+                          ? 'bg-brand-accent/10 border-brand-accent'
+                          : 'bg-white border-brand-primary/5 hover:border-brand-accent/30 hover:shadow-md'
+                      }`}
+                    >
+                      <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-colors ${
+                        wizardScenario === s.id ? 'bg-brand-accent text-brand-primary' : 'bg-brand-primary/5 text-brand-primary/50 group-hover:text-brand-accent'
+                      }`}>
+                        {s.icon}
+                      </div>
+                      <span className="font-bold text-sm">{s.label}</span>
+                    </button>
+                  ))}
+                </div>
+              ) : (
+                <div className="ml-9 mb-4">
+                  <span className="text-sm text-brand-primary/60 italic">
+                    {wizardScenarios.find(s => s.id === wizardScenario)?.label}
+                  </span>
+                </div>
+              )}
+            </motion.div>
+          )}
+
+          {/* Step 2 */}
+          {wizardStep >= 2 && (
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <div className="flex items-center gap-2 mb-4 mt-4">
+                <span className={`w-7 h-7 rounded-full text-xs font-bold flex items-center justify-center ${wizardStep === 2 ? 'bg-brand-accent text-brand-primary' : 'bg-brand-primary text-white'}`}>2</span>
+                <span className="font-bold text-sm">What's the site like?</span>
+                <span className="text-xs text-brand-primary/40 ml-1">(select all that apply)</span>
+              </div>
+
+              {wizardStep === 2 ? (
+                <>
+                  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-6">
+                    {wizardSiteOptions.map(opt => (
+                      <button
+                        key={opt.id}
+                        onClick={() => toggleSiteTrait(opt.id)}
+                        className={`p-4 rounded-2xl border text-left transition-all flex items-center gap-3 ${
+                          wizardSiteTraits.includes(opt.id)
+                            ? 'bg-brand-accent/10 border-brand-accent'
+                            : 'bg-white border-brand-primary/5 hover:border-brand-accent/30'
+                        }`}
+                      >
+                        <div className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 transition-colors ${
+                          wizardSiteTraits.includes(opt.id)
+                            ? 'bg-brand-accent text-brand-primary'
+                            : 'bg-brand-primary/5 text-brand-primary/40'
+                        }`}>
+                          {wizardSiteTraits.includes(opt.id) ? <Check size={16} /> : opt.icon}
+                        </div>
+                        <span className="font-bold text-sm">{opt.label}</span>
+                      </button>
+                    ))}
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <button
+                      onClick={() => setWizardStep(3)}
+                      className="px-6 py-3 bg-brand-accent text-brand-primary rounded-xl font-bold hover:scale-[1.02] transition-all flex items-center gap-2"
+                    >
+                      Show My Reports <ArrowRight size={18} />
+                    </button>
+                    <button
+                      onClick={() => setWizardStep(1)}
+                      className="px-5 py-3 bg-white border border-brand-primary/10 text-brand-primary/50 rounded-xl font-bold hover:border-brand-accent/30 transition-all flex items-center gap-2 text-sm"
+                    >
+                      <ArrowLeft size={14} /> Back
+                    </button>
+                  </div>
+                </>
+              ) : (
+                <div className="ml-9 mb-4">
+                  <span className="text-sm text-brand-primary/60 italic">
+                    {wizardSiteTraits.length > 0
+                      ? wizardSiteTraits.map(t => wizardSiteOptions.find(o => o.id === t)?.label).join(', ')
+                      : 'No specific traits selected'}
+                  </span>
+                </div>
+              )}
+            </motion.div>
+          )}
+
+          {/* Step 3 — Results */}
+          {wizardStep === 3 && (
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <div className="flex items-center gap-2 mb-6 mt-4">
+                <span className="w-7 h-7 rounded-full bg-brand-accent text-brand-primary text-xs font-bold flex items-center justify-center">3</span>
+                <span className="font-bold text-sm">Your Recommended Reports</span>
+              </div>
+
+              {(() => {
+                const recommendedSlugs = getWizardRecommendations();
+                const recommendedReports = reports.filter(r => recommendedSlugs.includes(r.slug) && r.stripePrice > 0);
+                const totalPrice = recommendedReports.reduce((sum, r) => sum + r.stripePrice, 0);
+
+                return (
+                  <>
+                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-6">
+                      {recommendedReports.map((report, i) => (
+                        <motion.div
+                          key={report.slug}
+                          initial={{ opacity: 0, y: 8 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: i * 0.05 }}
+                        >
+                          <Link
+                            to={report.path}
+                            className="block p-5 rounded-2xl bg-white border border-brand-primary/5 hover:border-brand-accent/30 hover:shadow-md transition-all group h-full"
+                          >
+                            <div className="flex items-start justify-between mb-2">
+                              <h4 className="font-bold text-sm text-brand-primary group-hover:text-brand-accent transition-colors leading-tight pr-2">{report.name}</h4>
+                              <span className="text-sm font-bold text-brand-accent whitespace-nowrap">{'\u00A3'}{report.stripePrice}</span>
+                            </div>
+                            <p className="text-xs text-brand-primary/45 leading-relaxed mb-3 line-clamp-2">{report.description}</p>
+                            <div className="flex items-center justify-between pt-3 border-t border-brand-primary/5">
+                              <div className="flex items-center gap-1.5">
+                                <Clock size={12} className="text-brand-primary/30" />
+                                <span className="text-[11px] text-brand-primary/40 font-bold">{report.turnaround}</span>
+                              </div>
+                              <span className="text-xs font-bold text-brand-accent flex items-center gap-1 group-hover:gap-2 transition-all">
+                                View <ArrowRight size={12} />
+                              </span>
+                            </div>
+                          </Link>
+                        </motion.div>
+                      ))}
+                    </div>
+
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-5 bg-white border border-brand-primary/5 rounded-2xl">
+                      <div>
+                        <span className="text-sm text-brand-primary/50">
+                          {recommendedReports.length} report{recommendedReports.length !== 1 ? 's' : ''} recommended
+                        </span>
+                        <span className="mx-3 text-brand-primary/20">|</span>
+                        <span className="text-sm font-bold text-brand-primary">
+                          Total from {'\u00A3'}{totalPrice.toLocaleString()}
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <Link
+                          to="/order-report"
+                          className="px-6 py-3 bg-brand-primary text-white rounded-xl font-bold hover:bg-brand-primary/90 transition-all flex items-center gap-2 text-sm"
+                        >
+                          Order Reports <ArrowRight size={16} />
+                        </Link>
+                        <Link
+                          to="/subscriptions"
+                          className="px-5 py-3 bg-white border border-brand-primary/10 text-brand-primary/60 rounded-xl font-bold hover:border-brand-accent/30 transition-all text-sm"
+                        >
+                          Or Subscribe
+                        </Link>
+                      </div>
+                    </div>
+                  </>
+                );
+              })()}
+            </motion.div>
+          )}
+        </motion.div>
       </section>
 
       {/* Product Cards — replaced by catalog below, keeping section wrapper */}

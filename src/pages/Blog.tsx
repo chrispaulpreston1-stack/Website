@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { motion } from 'motion/react';
-import { Calendar, ArrowRight, Clock } from 'lucide-react';
+import { Calendar, ArrowRight, Clock, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import PageSEO from '../components/PageSEO';
 import blogPosts from '../data/blogPosts';
@@ -18,6 +18,31 @@ const categories = ['All', ...Array.from(new Set(sortedPosts.map(p => p.category
 
 const Blog = () => {
   const [activeCategory, setActiveCategory] = useState('All');
+  const [newsletterEmail, setNewsletterEmail] = useState('');
+  const [newsletterSubmitted, setNewsletterSubmitted] = useState(false);
+  const [newsletterLoading, setNewsletterLoading] = useState(false);
+
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!newsletterEmail || newsletterLoading) return;
+    setNewsletterLoading(true);
+    fetch('https://formspree.io/f/xdalrdyj', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({
+        _subject: 'Newsletter Signup',
+        email: newsletterEmail,
+      }),
+    })
+      .then(() => {
+        setNewsletterSubmitted(true);
+        setNewsletterLoading(false);
+      })
+      .catch(() => {
+        setNewsletterSubmitted(true);
+        setNewsletterLoading(false);
+      });
+  };
 
   const filtered = useMemo(
     () => activeCategory === 'All' ? sortedPosts : sortedPosts.filter(p => p.category === activeCategory),
@@ -115,6 +140,40 @@ const Blog = () => {
               </Link>
             </motion.article>
           ))}
+        </div>
+
+        {/* Newsletter Signup */}
+        <div className="mt-24 bg-white rounded-[2rem] p-8 lg:p-12 border border-brand-primary/5 shadow-sm max-w-2xl mx-auto text-center">
+          <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-brand-accent/10 mb-4">
+            <Mail size={22} className="text-brand-accent" />
+          </div>
+          <h3 className="text-2xl font-bold text-brand-primary mb-2">Stay in the Loop</h3>
+          <p className="text-sm text-brand-primary/50 mb-6 max-w-md mx-auto leading-relaxed">
+            Get engineering insights, planning updates, and practical guidance delivered to your inbox. No spam, just signal.
+          </p>
+          {newsletterSubmitted ? (
+            <div className="p-5 rounded-2xl bg-brand-accent/10">
+              <p className="text-brand-accent font-bold">You're subscribed! We'll be in touch.</p>
+            </div>
+          ) : (
+            <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+              <input
+                type="email"
+                required
+                placeholder="Your email address"
+                value={newsletterEmail}
+                onChange={e => setNewsletterEmail(e.target.value)}
+                className="flex-1 px-5 py-3 rounded-xl border border-brand-primary/10 text-sm text-brand-primary bg-brand-surface placeholder:text-brand-primary/30 focus:outline-none focus:ring-2 focus:ring-brand-accent/30"
+              />
+              <button
+                type="submit"
+                disabled={newsletterLoading}
+                className={`px-6 py-3 rounded-xl bg-brand-primary text-white font-bold text-sm hover:bg-brand-primary/90 transition-all whitespace-nowrap ${newsletterLoading ? 'opacity-50' : ''}`}
+              >
+                {newsletterLoading ? 'Subscribing...' : 'Subscribe'}
+              </button>
+            </form>
+          )}
         </div>
       </section>
     </div>
