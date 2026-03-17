@@ -227,7 +227,7 @@ const ContactSection = () => {
         <div className="bg-white rounded-[3rem] overflow-hidden shadow-2xl flex flex-col lg:flex-row">
           <div className="lg:w-1/2 p-12 lg:p-20 bg-brand-primary text-white relative">
             <div className="absolute top-0 right-0 w-64 h-64 bg-brand-accent/20 blur-[100px]" />
-            <h2 className="text-5xl font-bold mb-8 relative z-10">Ready to Engineer Your Vision?</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-8 relative z-10">Ready to Engineer Your Vision?</h2>
             <p className="text-white/70 text-lg mb-12 relative z-10">
               Get a fixed quote within 24 hours. Our engineers are ready to discuss your next project.
             </p>

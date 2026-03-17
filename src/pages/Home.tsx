@@ -48,7 +48,7 @@ const Home = () => {
               <Zap size={16} />
               <span className="text-xs font-bold uppercase tracking-wider">AI-Powered Site Intelligence</span>
             </div>
-            <h1 className="text-6xl md:text-8xl font-bold leading-[0.9] mb-8 tracking-tighter">
+            <h1 className="text-4xl sm:text-5xl md:text-8xl font-bold leading-[0.9] mb-8 tracking-tighter">
               Site Intelligence <br />
               <span className="text-brand-accent italic font-accent font-medium">in 48 Hours.</span>
             </h1>
@@ -64,7 +64,7 @@ const Home = () => {
               </Link>
             </div>
 
-            <div className="mt-12 flex items-center gap-8 opacity-60">
+            <div className="mt-12 flex items-center gap-4 sm:gap-8 opacity-60 flex-wrap">
               <div className="flex flex-col">
                 <span className="font-display font-bold text-2xl">{PURCHASABLE_REPORTS.length}</span>
                 <span className="text-[10px] uppercase tracking-widest font-mono">Report Types</span>

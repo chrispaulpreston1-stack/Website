@@ -50,7 +50,7 @@ const Blog = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-8">
           <div className="max-w-2xl">
             <span className="font-mono text-xs uppercase tracking-[0.3em] text-brand-accent font-bold mb-4 block">Insights</span>
-            <h1 className="text-6xl font-bold">Engineering Journal</h1>
+            <h1 className="text-4xl md:text-6xl font-bold">Engineering Journal</h1>
           </div>
           <p className="text-brand-primary/60 max-w-sm leading-relaxed">
             Technical insights and practical guidance from our engineering team.

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import PageSEO from '../components/PageSEO';
 
 export default function PrivacyPolicy() {
@@ -59,7 +60,7 @@ export default function PrivacyPolicy() {
           <p>
             The legal basis for this processing is contractual necessity — we process this data to fulfil the report
             order you have placed. For more information about our AI methodology, see our{' '}
-            <a href="/ai-compliance">AI Standards & Compliance</a> page.
+            <Link to="/ai-compliance" className="text-brand-accent hover:underline">AI Standards & Compliance</Link> page.
           </p>
 
           <h2>4. Legal Basis for Processing</h2>
