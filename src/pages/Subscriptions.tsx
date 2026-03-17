@@ -382,9 +382,14 @@ const Subscriptions = () => {
 
         {/* Need Extra Credits? */}
         <div className="bg-white rounded-[2rem] p-8 lg:p-12 border border-brand-primary/5 shadow-sm max-w-4xl mx-auto mb-24">
-          <h3 className="text-2xl font-bold text-brand-primary mb-6 text-center">Need More Reports in a Busy Month?</h3>
-          <p className="text-center text-brand-primary/50 mb-8 max-w-2xl mx-auto">
+          <h3 className="text-2xl font-bold text-brand-primary mb-4 text-center">Need More Reports in a Busy Month?</h3>
+          <p className="text-center text-brand-primary/50 mb-3 max-w-2xl mx-auto">
             Buy additional credits at your tier's overage rate. Still cheaper than standalone pricing.
+          </p>
+          <p className="text-center mb-8">
+            <span className="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-widest text-brand-accent bg-brand-accent/10 px-3 py-1 rounded-full">
+              <Zap size={10} /> Early Access Rates
+            </span>
           </p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {plans.map((plan, i) => (
