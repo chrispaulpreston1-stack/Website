@@ -247,6 +247,37 @@ const routes = [
   },
 ];
 
+// ── Dynamic Blog Routes ─────────────────────────────────────────────────────
+// Parse blogPosts.ts to generate per-article SEO pages automatically
+
+function getBlogRoutes() {
+  const blogPath = join(__dirname, '..', 'src', 'data', 'blogPosts.ts');
+  const blogSrc = readFileSync(blogPath, 'utf8');
+
+  const posts = [];
+  const postRegex = /slug:\s*'([^']+)'[\s\S]*?title:\s*'([^']+)'[\s\S]*?excerpt:\s*'([^']+)'[\s\S]*?image:\s*'([^']+)'/g;
+
+  let match;
+  while ((match = postRegex.exec(blogSrc)) !== null) {
+    posts.push({
+      path: `/insights/${match[1]}`,
+      title: `${match[2]} | PF & Co Insights`,
+      description: match[3],
+      ogImage: match[4],
+      jsonLd: {
+        '@type': 'Article',
+        headline: match[2],
+        description: match[3],
+        image: match[4],
+        author: { '@type': 'Organization', name: 'PF & Co Construction' },
+        publisher: { '@type': 'Organization', name: 'PF & Co Construction' },
+      },
+    });
+  }
+
+  return posts;
+}
+
 // ── HTML Generation ──────────────────────────────────────────────────────────
 
 function escapeHtml(str) {
@@ -263,7 +294,12 @@ function generate() {
   const template = readFileSync(templatePath, 'utf8');
   let generated = 0;
 
-  for (const route of routes) {
+  // Merge static routes with dynamically-parsed blog routes
+  const blogRoutes = getBlogRoutes();
+  const allRoutes = [...routes, ...blogRoutes];
+  console.log(`SEO: Found ${blogRoutes.length} blog articles to pre-render`);
+
+  for (const route of allRoutes) {
     // Skip homepage — it's already index.html
     if (route.path === '/') {
       // Still update the root index.html meta tags
@@ -290,7 +326,7 @@ function injectMeta(template, route) {
   const title = escapeHtml(route.title);
   const desc = escapeHtml(route.description);
   const canonical = `${BASE_URL}${route.path}`;
-  const ogImage = `${BASE_URL}/api/og?path=${encodeURIComponent(route.path)}`;
+  const ogImage = route.ogImage || `${BASE_URL}/api/og?path=${encodeURIComponent(route.path)}`;
 
   let html = template;
 
@@ -313,11 +349,13 @@ function injectMeta(template, route) {
   html = html.replace(/<meta property="og:url" content="[^"]*"/, `<meta property="og:url" content="${canonical}"`);
   html = html.replace(/<meta property="og:title" content="[^"]*"/, `<meta property="og:title" content="${title}"`);
   html = html.replace(/<meta property="og:description"\s*content="[^"]*"/, `<meta property="og:description" content="${desc}"`);
+  html = html.replace(/<meta property="og:image" content="[^"]*"/, `<meta property="og:image" content="${ogImage}"`);
 
   // Replace Twitter tags
   html = html.replace(/<meta property="twitter:url" content="[^"]*"/, `<meta property="twitter:url" content="${canonical}"`);
   html = html.replace(/<meta property="twitter:title" content="[^"]*"/, `<meta property="twitter:title" content="${title}"`);
   html = html.replace(/<meta property="twitter:description"\s*content="[^"]*"/, `<meta property="twitter:description" content="${desc}"`);
+  html = html.replace(/<meta property="twitter:image" content="[^"]*"/, `<meta property="twitter:image" content="${ogImage}"`);
 
   // Add canonical link (before </head>)
   if (!html.includes('rel="canonical"')) {
