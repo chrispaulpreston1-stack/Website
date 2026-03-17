@@ -42,11 +42,11 @@ const SiteIntelligenceHub = () => {
 
     // Base recommendations by scenario
     const scenarioMap: Record<string, string[]> = {
-      buying: ['site-acquisition-intelligence', 'site-feasibility-report', 'geotechnical-desk-study', 'flood-risk-assessment'],
-      planning: ['planning-statement', 'design-and-access-statement', 'transport-statement', 'energy-statement', 'biodiversity-net-gain'],
-      construction: ['construction-management-plan', 'pre-construction-design-review'],
-      conversion: ['site-feasibility-report', 'planning-statement', 'heritage-impact-assessment', 'energy-statement', 'biodiversity-net-gain'],
-      selfbuild: ['site-feasibility-report', 'geotechnical-desk-study', 'flood-risk-assessment', 'planning-statement'],
+      buying: ['site-acquisition-intelligence', 'development-finance-summary', 'site-feasibility-report', 'geotechnical-desk-study', 'flood-risk-assessment'],
+      planning: ['planning-statement', 'design-and-access-statement', 'transport-statement', 'energy-statement', 'biodiversity-net-gain', 'cil-liability-assessment'],
+      construction: ['construction-management-plan', 'pre-construction-design-review', 'site-feasibility-report'],
+      conversion: ['site-feasibility-report', 'planning-statement', 'heritage-impact-assessment', 'energy-statement', 'biodiversity-net-gain', 'cil-liability-assessment'],
+      selfbuild: ['site-feasibility-report', 'geotechnical-desk-study', 'flood-risk-assessment', 'planning-statement', 'design-and-access-statement'],
     };
 
     if (wizardScenario && scenarioMap[wizardScenario]) {
@@ -72,6 +72,7 @@ const SiteIntelligenceHub = () => {
       slugs.add('noise-impact-assessment');
       slugs.add('air-quality-screening');
       slugs.add('daylight-sunlight-assessment');
+      slugs.add('parking-survey');
     }
     if (wizardSiteTraits.includes('rural')) {
       slugs.add('biodiversity-net-gain');
