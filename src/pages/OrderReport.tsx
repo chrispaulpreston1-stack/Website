@@ -157,6 +157,7 @@ const OrderReport = () => {
   const [checkoutError, setCheckoutError] = useState<string | null>(null);
   const [selectionError, setSelectionError] = useState<string | null>(null);
   const [showBundles, setShowBundles] = useState(true);
+  const [reportSearch, setReportSearch] = useState('');
 
   const initialReport = searchParams.get('report') || '';
   const [selectedReports, setSelectedReports] = useState<string[]>(initialReport ? [initialReport] : []);
@@ -343,7 +344,17 @@ const OrderReport = () => {
                 <p className="text-sm text-brand-primary/50 mb-6">Choose a bundle for best value, or pick individual reports.</p>
                 {selectionError && <p className="text-red-500 text-xs mb-4 font-bold">{selectionError}</p>}
 
-                {/* Toggle */}
+                {/* Search + Toggle */}
+                <div className="relative mb-4">
+                  <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-brand-primary/30" size={18} />
+                  <input
+                    type="text"
+                    value={reportSearch}
+                    onChange={(e) => setReportSearch(e.target.value)}
+                    className="w-full bg-white border-2 border-brand-primary/5 rounded-2xl p-4 pl-12 focus:border-brand-accent outline-none text-sm"
+                    placeholder="Search reports..."
+                  />
+                </div>
                 <div className="flex gap-2 mb-6">
                   <button
                     type="button"
@@ -362,7 +373,7 @@ const OrderReport = () => {
                 </div>
 
                 <div className="grid gap-4">
-                  {(showBundles ? bundleItems : reportItems).map((r) => {
+                  {(showBundles ? bundleItems : reportItems).filter(r => !reportSearch || r.name.toLowerCase().includes(reportSearch.toLowerCase())).map((r) => {
                     const isSelected = selectedReports.includes(r.id);
                     return (
                       <button

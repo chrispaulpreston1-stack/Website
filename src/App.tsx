@@ -443,7 +443,26 @@ export default function App() {
           </Helmet>
           <Navbar />
           <main>
-            <Suspense fallback={<div className="min-h-screen flex items-center justify-center"><div className="w-8 h-8 border-2 border-brand-primary/20 border-t-brand-primary rounded-full animate-spin" /></div>}>
+            <Suspense fallback={
+              <div className="min-h-screen pt-32 pb-24">
+                <div className="max-w-7xl mx-auto px-6">
+                  <div className="h-8 w-48 bg-brand-primary/5 rounded-full mb-4 shimmer" />
+                  <div className="h-12 w-96 max-w-full bg-brand-primary/5 rounded-2xl mb-8 shimmer" />
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {[1,2,3].map(i => (
+                      <div key={i} className="rounded-3xl overflow-hidden">
+                        <div className="aspect-[16/10] bg-brand-primary/5 shimmer" />
+                        <div className="pt-6 space-y-3">
+                          <div className="h-4 w-24 bg-brand-primary/5 rounded shimmer" />
+                          <div className="h-6 w-full bg-brand-primary/5 rounded shimmer" />
+                          <div className="h-4 w-3/4 bg-brand-primary/5 rounded shimmer" />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            }>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/structural-engineering" element={<StructuralEngineering />} />

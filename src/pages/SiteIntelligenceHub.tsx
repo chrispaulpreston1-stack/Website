@@ -243,6 +243,20 @@ const SiteIntelligenceHub = () => {
                 'construction-readiness': 'Construction',
               };
 
+              const roleLabels: Record<string, string> = {
+                'developer': 'Developers',
+                'architect': 'Architects',
+                'land-buyer': 'Land Buyers',
+                'homeowner': 'Homeowners',
+                'lender': 'Lenders',
+              };
+
+              function bestFor(slug: string): string[] {
+                return Object.entries(roleReports)
+                  .filter(([key, slugs]) => key !== 'all' && slugs.includes(slug))
+                  .map(([key]) => roleLabels[key] || key);
+              }
+
               const slugs = roleReports[roleFilter] || roleReports['all'];
               const filtered = reports.filter(r => slugs.includes(r.slug) && r.stripePrice > 0);
 
@@ -259,7 +273,12 @@ const SiteIntelligenceHub = () => {
                       <span className="text-2xl font-bold text-brand-accent">£{report.stripePrice.toLocaleString()}</span>
                     </div>
                     <h4 className="text-lg font-bold text-brand-primary mb-3 group-hover:text-brand-accent transition-colors">{report.name}</h4>
-                    <p className="text-brand-primary/50 leading-relaxed mb-4">{report.description}</p>
+                    <p className="text-brand-primary/50 leading-relaxed mb-3">{report.description}</p>
+                    <div className="flex flex-wrap gap-1.5 mb-4">
+                      {bestFor(report.slug).map(role => (
+                        <span key={role} className="text-[10px] font-bold uppercase tracking-wider bg-brand-primary/5 text-brand-primary/40 px-2.5 py-1 rounded-full">{role}</span>
+                      ))}
+                    </div>
                     <div className="flex items-center justify-between pt-4 border-t border-brand-primary/5">
                       <div className="flex items-center gap-2">
                         <Clock size={14} className="text-brand-primary/30" />
