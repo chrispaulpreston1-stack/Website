@@ -578,7 +578,7 @@ const blogPosts: BlogPost[] = [
     date: 'Mar 17, 2026',
     author: 'Chris Preston',
     category: 'Planning & Regulation',
-    image: 'https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&q=80&w=1200',
+    image: '/images/blog-epc-mees-changes.png',
     content: [
       'If you own rental property in England — residential or commercial — the next four years will bring the most significant changes to energy performance requirements since EPCs were introduced in 2007. The government is overhauling the EPC methodology, tightening Minimum Energy Efficiency Standards for landlords, and introducing new metrics that will change how buildings are assessed. The timeline has shifted several times, but the direction is locked in. Here is what you need to know.',
       'The current Energy Performance Certificate system is being replaced. The existing Standard Assessment Procedure, which has underpinned domestic EPCs since their introduction, will be superseded by the Home Energy Model. The HEM was originally due to launch in 2026 but has been pushed back to the second half of 2027. It will become compulsory for all new EPCs from 1 October 2029, running alongside the current SAP-based system until then. The new model is designed to better reflect real-world energy use, account for smart technologies, and provide a more accurate picture of a building\'s performance.',
@@ -605,7 +605,7 @@ const blogPosts: BlogPost[] = [
     date: 'Mar 17, 2026',
     author: 'Chris Preston',
     category: 'Planning & Regulation',
-    image: 'https://images.unsplash.com/photo-1590650153855-d9e808231d41?auto=format&fit=crop&q=80&w=1200',
+    image: '/images/blog-infrastructure-levy.png',
     content: [
       'The Community Infrastructure Levy has been part of the English planning system since 2010, and for most developers it is a familiar — if unwelcome — line in the development appraisal. CIL charges are set by local authorities at a fixed rate per square metre of new development, collected at commencement, and used to fund local infrastructure. The system is imperfect: rates vary wildly between authorities, the charge bears no relationship to the actual value of the development, and viability complaints are common. The government has decided to replace it.',
       'The Levelling Up and Regeneration Act 2023 includes provisions for a new Infrastructure Levy that will replace CIL in England. The key difference is fundamental: the new levy will be charged as a percentage of the gross development value of the completed scheme, not as a flat rate per square metre. This means the charge scales with the actual value of what is built, rather than being a blunt per-area calculation that treats a luxury penthouse and a studio flat identically.',
@@ -632,7 +632,7 @@ const blogPosts: BlogPost[] = [
     date: 'Mar 17, 2026',
     author: 'Chris Preston',
     category: 'Planning & Regulation',
-    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&q=80&w=1200',
+    image: '/images/blog-nutrient-neutrality.png',
     content: [
       'Since 2022, nutrient neutrality has been one of the most significant barriers to housing delivery in England. Natural England\'s advice to local planning authorities — that new developments must demonstrate they will not add to nutrient pollution in river catchments with protected habitats in unfavourable condition — has blocked tens of thousands of homes across the country. Entire local authority areas have been effectively frozen, unable to grant planning permission for residential schemes of any size. That picture is now changing.',
       'Natural England has begun reviewing catchment boundaries, and where environmental conditions have improved, it is removing nutrient neutrality requirements. The most significant change so far has been in Cumbria, where the River Eden catchment boundary was revised in early 2026. This single change removed nutrient neutrality requirements from major urban areas including Carlisle, unlocking around 50 stalled planning applications and over 500 affordable homes. These applications can now move through the planning system without needing to demonstrate nutrient neutrality.',
@@ -685,7 +685,7 @@ const blogPosts: BlogPost[] = [
     date: 'Mar 17, 2026',
     author: 'Chris Preston',
     category: 'Planning & Regulation',
-    image: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&q=80&w=1200',
+    image: '/images/blog-nature-restoration-levy.png',
     content: [
       'The Planning and Infrastructure Act 2025 received Royal Assent in December 2025, and with it came one of the most significant changes to how developers meet their environmental obligations in England. The Nature Restoration Levy creates a new mechanism where developers can pay into a centrally managed fund — administered by Natural England — instead of undertaking individual, site-specific environmental assessments and mitigation. For developers who have been frustrated by the cost, delay, and uncertainty of site-level ecological compliance, this is a potential game-changer.',
       'The problem the levy is designed to solve is well understood by anyone who has navigated the planning system on an ecologically sensitive site. Under the current regime, if your development is likely to affect a protected habitat — a Special Area of Conservation, a Site of Special Scientific Interest, a nutrient-sensitive catchment — you need to commission bespoke ecological surveys, model the impact, design mitigation measures, and demonstrate to Natural England and the local planning authority that your scheme will not cause harm. This process can take months, cost tens of thousands of pounds, and — in the case of nutrient neutrality — has blocked entire housing allocations for years.',
@@ -711,7 +711,7 @@ const blogPosts: BlogPost[] = [
     date: 'Mar 17, 2026',
     author: 'Chris Preston',
     category: 'Planning & Regulation',
-    image: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&q=80&w=1200',
+    image: '/images/blog-bng-small-site-exemption.png',
     content: [
       'Since April 2024, all planning applications in England for sites of one or more dwellings have been subject to a mandatory 10% biodiversity net gain requirement. For major developments, this was already priced in. But for small sites — schemes of 1-9 dwellings — the cost and complexity of BNG compliance has been disproportionate. A single self-build plot does not generate enough value to absorb £10,000-£20,000 in ecological surveys, habitat creation plans, and 30-year management commitments. The government has recognised this, and changes are coming.',
       'In December 2025, the Housing Secretary announced that the government will introduce an area-based exemption for smaller sites of up to 0.2 hectares. This is a significant threshold. A 0.2-hectare site is roughly 2,150 square feet — large enough for 2-4 houses in a suburban context, or a single substantial detached home with garden. For developers and self-builders working at this scale, the exemption removes the BNG requirement entirely, eliminating the need for ecological baseline surveys, biodiversity metric calculations, habitat creation plans, and 30-year management and monitoring obligations.',
@@ -737,7 +737,7 @@ const blogPosts: BlogPost[] = [
     date: 'Mar 10, 2026',
     author: 'Chris Preston',
     category: 'Business',
-    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200',
+    image: '/images/blog-why-architects-subscriptions.png',
     content: [
       'If you run an architectural practice, you already know the pattern. Every planning application needs supporting documents — a Planning Statement, a Design and Access Statement, maybe a Heritage Impact Assessment, a Transport Statement, an Energy Statement. You commission each one individually, from different consultants, at different prices, with different timescales. By the time the invoices arrive, the project margin has evaporated.',
       'There is a better model. A fixed monthly subscription that gives you access to the reports you need, when you need them, at a predictable cost. No per-project invoicing. No surprise fees. No waiting four weeks for a consultant to schedule your job.',
@@ -757,7 +757,7 @@ const blogPosts: BlogPost[] = [
     date: 'Mar 10, 2026',
     author: 'Chris Preston',
     category: 'Business',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200',
+    image: '/images/blog-true-cost-due-diligence.png',
     content: [
       'Every developer knows the feeling. You find a site that looks promising. You commission a Site Feasibility Report. Two weeks later, you get the results — the site has significant planning constraints, and the deal falls apart. You have spent £1,500-£3,000 on a report for a site you will never buy. Now multiply that by the 10, 20, or 50 sites you screen per year.',
       'The per-project model for site due diligence is broken. It punishes volume. The more sites you screen, the more you spend on intelligence that tells you not to proceed. But the sites you do not screen are the ones that catch you out — the flood zone you missed, the contamination history you did not check, the heritage constraint that kills the planning application six months later.',
@@ -776,7 +776,7 @@ const blogPosts: BlogPost[] = [
     date: 'Mar 10, 2026',
     author: 'Chris Preston',
     category: 'Site Intelligence',
-    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1200',
+    image: '/images/blog-appeal-ready-reports.png',
     content: [
       'From 1 April 2026, the vast majority of planning appeals in England will follow the expedited written representations procedure. No new evidence. No supplementary reports. The application you submit is the case the Inspector decides. That single change has raised the quality bar for every planning application in the country.',
       'The traditional way of preparing a planning application typically works like this. An applicant or their agent identifies the obvious requirements — maybe a flood risk assessment or a heritage statement — commissions them individually, and hopes that nothing has been missed. If something is missed, it can usually be addressed at appeal. That fallback no longer exists.',
@@ -803,7 +803,7 @@ const blogPosts: BlogPost[] = [
     date: 'Mar 16, 2026',
     author: 'Chris Preston',
     category: 'Planning & Regulation',
-    image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=1200',
+    image: '/images/blog-grey-belt-explained.png',
     content: [
       'Grey belt is the most talked-about concept in English planning right now. Introduced in the revised National Planning Policy Framework published in December 2024, it creates a new category of land within the Green Belt that is, for the first time, explicitly identified as suitable for development. If you own land in the Green Belt, or you are looking to acquire it, this is the single most important policy change you need to understand.',
       'The term "grey belt" is defined at paragraph 142 of the NPPF. It covers land within the Green Belt that has been "previously developed" or that "does not strongly contribute" to any of the five purposes of Green Belt set out at paragraph 143. Those five purposes are: checking the unrestricted sprawl of large built-up areas; preventing neighbouring towns from merging into one another; assisting in safeguarding the countryside from encroachment; preserving the setting and special character of historic towns; and assisting in urban regeneration by encouraging the recycling of derelict and other urban land. If your land fails to serve any of these purposes strongly, it may qualify as grey belt — regardless of what colour it appears on the Local Plan map.',
@@ -830,7 +830,7 @@ const blogPosts: BlogPost[] = [
     date: 'Mar 16, 2026',
     author: 'Chris Preston',
     category: 'Planning & Regulation',
-    image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=1200',
+    image: '/images/blog-building-safety-levy.png',
     content: [
       'On 1 October 2026, the Building Safety Levy comes into force in England. Introduced under sections 56 to 68 of the Building Safety Act 2022, the levy will apply to all new residential developments requiring building control approval where the scheme includes 10 or more dwellings. That is six months from now. If you are a developer with live or upcoming schemes in that bracket, you need to understand how this charge works, what it will cost you, and what your options are for avoiding or mitigating it.',
       'The Building Safety Levy is a new charge on developers of higher-rise and multi-occupancy residential buildings, designed to fund the remediation of unsafe cladding and other fire safety defects in existing buildings. The government estimates that the total remediation cost across England runs into billions of pounds. Rather than funding this entirely from general taxation, the Building Safety Act created a mechanism to recover a portion from developers building new residential stock. The levy is collected by building control bodies — either local authority building control or registered building control approvers — at the point of building control sign-off.',
@@ -857,7 +857,7 @@ const blogPosts: BlogPost[] = [
     date: 'Mar 16, 2026',
     author: 'Chris Preston',
     category: 'Planning & Regulation',
-    image: 'https://images.unsplash.com/photo-1529655683826-aba9b3e77383?auto=format&fit=crop&q=80&w=1200',
+    image: '/images/blog-nppf-2026-shakeup.png',
     content: [
       'The consultation on the revised National Planning Policy Framework closed on 10 March 2026. The government is expected to publish the final revised NPPF in summer 2026, and when it lands, it will represent the most significant overhaul of the English planning system in at least a decade. Whether you are a developer, an architect, a landowner, or an investor, the changes coming will directly affect how, where, and when you can build. This is not a minor policy tweak — it is a structural reset.',
       'The story starts with the December 2024 NPPF revision, which introduced several headline changes including grey belt, a stronger presumption in favour of sustainable development, and reinstated mandatory housing targets. The December 2025 consultation built on that foundation with a set of proposals that go much further. The government is now proposing National Development Management Policies, a brownfield passport, a mandatory 30-month Local Plan timetable, reformed Green Belt policy, and a recalibrated standard method for calculating housing need. Taken together, these changes will reshape the planning landscape for every local authority in England.',
@@ -885,7 +885,7 @@ const blogPosts: BlogPost[] = [
     date: 'Mar 12, 2026',
     author: 'Chris Preston',
     category: 'Planning & Regulation',
-    image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=1200',
+    image: '/images/blog-planning-time-extensions.png',
     content: [
       'If you have a planning application with a council right now, or you are about to submit one, there is a strategic decision you need to understand before 1 April 2026. It concerns time extensions — those routine requests from councils asking you to agree to extend the statutory determination period. Most applicants agree without thinking. After April, that decision carries real consequences.',
       'Here is the background. When you submit a planning application, the council has a statutory deadline to make a decision — 8 weeks for most applications, 13 weeks for major developments. If the council cannot decide within that period, they will often ask you to agree to an extension of time. This is common practice, and historically it has been a neutral administrative decision.',
@@ -912,7 +912,7 @@ const blogPosts: BlogPost[] = [
     date: 'Mar 7, 2026',
     author: 'Chris Preston',
     category: 'Guides',
-    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=1200',
+    image: '/images/blog-new-planning-rules-april.png',
     content: [
       'If you are planning building work on your home — an extension, a loft conversion, a new-build, or anything that needs planning permission — there is an important rule change coming on 1 April 2026 that you should know about. We will keep this as simple as possible.',
       'Right now, if your planning application is refused by the council, you can appeal. At that appeal, you are allowed to submit extra documents — new reports, updated surveys, additional evidence. Lots of people use this as a safety net. They submit their application, and if it gets refused, they fix the problems and try again at appeal with better paperwork.',
@@ -941,7 +941,7 @@ const blogPosts: BlogPost[] = [
     date: 'Mar 6, 2026',
     author: 'Chris Preston',
     category: 'Planning & Regulation',
-    image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=1200',
+    image: '/images/blog-planning-appeal-changes.png',
     content: [
       'On 1 April 2026, the way planning appeals work in England changed fundamentally. The new appeal procedure rules came into force, and the consequences for anyone submitting a planning application are significant.',
       'The headline: the majority of planning appeals will now follow the Part 1 expedited procedure. Under this procedure, no new evidence can be introduced at appeal. The documents you submitted with your original application are the only documents the Inspector will consider. Your application is your appeal case.',
@@ -971,7 +971,7 @@ const blogPosts: BlogPost[] = [
     date: 'Mar 4, 2026',
     author: 'Chris Preston',
     category: 'Planning & Reports',
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200',
+    image: '/images/blog-what-reports-planning.png',
     content: [
       'If you are planning an extension, loft conversion, new build, or any project that needs planning permission, you will almost certainly need to submit supporting reports alongside your application. The problem? Most people have no idea which ones they actually need — and submitting the wrong documents (or missing one entirely) is one of the most common reasons applications get invalidated or refused.',
       'In fact, a significant proportion of planning applications are invalidated by councils because of missing or incomplete documents. That is not a refusal — it is your application being sent back before anyone even looks at it. Weeks of work wasted because a report was missing from the checklist.',
@@ -1017,7 +1017,7 @@ const blogPosts: BlogPost[] = [
     date: 'Mar 3, 2026',
     author: 'PF & Co',
     category: 'Innovation',
-    image: 'https://images.unsplash.com/photo-1517581177682-a085bb7ffb15?auto=format&fit=crop&q=80&w=1200',
+    image: '/images/blog-engineering-subscriptions.png',
     content: [
       'Traditional structural engineering procurement can be frustrating. For proactive property developers, serial flippers, and busy architectural practices, constantly requesting quotes, negotiating fees, and waiting for availability on every single project creates unnecessary bottlenecks.',
       'Enter "Engineering as a Service." By shifting to a subscription-based model, developers secure dedicated monthly structural design capacity. This means predictable costs, priority scheduling, and a completely frictionless workflow where your engineering team feels like an in-house department rather than a distant external consultant.',
@@ -1033,7 +1033,7 @@ const blogPosts: BlogPost[] = [
     date: 'Mar 3, 2026',
     author: 'PF & Co',
     category: 'Guides',
-    image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=1200',
+    image: '/images/blog-party-wall-agreements.png',
     content: [
       'Receiving or serving a Party Wall Notice often sparks unnecessary anxiety. The legislation sounds formal and intimidating, but the reality is that the Party Wall etc. Act 1996 exists simply to protect both the homeowner undertaking the work and their neighbours. It provides a structured, fair framework for everyone involved.',
       'If you are the "Building Owner" planning an extension or loft conversion, serving a notice is a legal requirement before cutting into shared walls or excavating near boundaries. Transparent communication is your best tool. Discussing your plans with your neighbours before the formal notice arrives often sets a collaborative tone, preventing immediate disputes.',
@@ -1049,7 +1049,7 @@ const blogPosts: BlogPost[] = [
     date: 'Mar 3, 2026',
     author: 'PF & Co',
     category: 'Site Intelligence',
-    image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200',
+    image: '/images/blog-hidden-value-site-intel.png',
     content: [
       'Groundworks are notoriously the highest-risk phase of any construction project. Developers and homeowners often do not truly know what lies beneath their site until they literally break ground—at which point, discovering an unexpected problem can drastically inflate foundation costs and delay schedules.',
       'This is where "Site Intelligence" changes the game. By conducting a comprehensive Desktop Ground Investigation (DGI) before purchasing land or finalizing designs, we uncover critical historical data, geological maps, and flood risk profiles. It is about having foresight rather than hindsight.',
@@ -1065,7 +1065,7 @@ const blogPosts: BlogPost[] = [
     date: 'Feb 20, 2026',
     author: 'PF & Co',
     category: 'Innovation',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200',
+    image: '/images/blog-ai-structural-engineering.png',
     content: [
       'Artificial intelligence is no longer a futuristic concept in construction — it is here, and it is fundamentally changing how we approach structural engineering. At PF & Co, we have been integrating AI-driven tools into our workflow for over a year, and the results speak for themselves: faster turnaround times, more accurate feasibility assessments, and better-informed design decisions.',
       'The most immediate impact has been in site intelligence. Where a traditional desk study might take days to compile data from multiple sources — geology maps, flood records, planning history, environmental constraints — our AI systems can cross-reference and interpret this data in hours. This does not replace the engineer\'s judgement; it amplifies it. The engineer still makes the final call, but they are working with a far richer and more complete picture of the site.',
@@ -1082,7 +1082,7 @@ const blogPosts: BlogPost[] = [
     date: 'Feb 15, 2026',
     author: 'PF & Co',
     category: 'Guides',
-    image: 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&q=80&w=1200',
+    image: '/images/blog-rsj-calculations.png',
     content: [
       'If you are planning a home extension or knocking through a load-bearing wall, you will almost certainly need RSJ calculations. RSJ stands for Rolled Steel Joist — the steel beams that carry the load of the structure above when a wall is removed. Getting these calculations right is not just important; it is a legal requirement and a matter of structural safety.',
       'The process begins with a structural engineer assessing the loads that the existing wall carries. This includes the weight of the floors above, the roof structure, any walls sitting on top, and what engineers call "imposed loads" — the weight of furniture, people, and anything else the building needs to support in everyday use. All of these forces need to be transferred safely through the new steel beam and down into the foundations.',
@@ -1122,7 +1122,7 @@ const blogPosts: BlogPost[] = [
     date: 'Feb 5, 2026',
     author: 'PF & Co',
     category: 'Site Intelligence',
-    image: 'https://images.unsplash.com/photo-1547683905-f686c993aae5?auto=format&fit=crop&q=80&w=1200',
+    image: '/images/blog-flood-risk-explained.png',
     content: [
       'Flood risk is one of the most common reasons planning applications get delayed or refused. If your site falls within Flood Zone 2 or 3 — or even Flood Zone 1 with a site area over one hectare — the Environment Agency and your local planning authority will expect a Flood Risk Assessment as part of your submission. Understanding when you need one and what it should contain can save you months of back-and-forth with the council.',
       'A Flood Risk Assessment evaluates all sources of flood risk to your site: fluvial (river), pluvial (surface water), groundwater, sewer, and tidal. It is not simply about whether the site has flooded before — it is about the probability of flooding over the lifetime of the development, typically 100 years for residential use. The assessment must also consider the impact of climate change on future flood risk, using the latest climate change allowances published by the Environment Agency.',
@@ -1145,7 +1145,7 @@ const blogPosts: BlogPost[] = [
     date: 'Jan 28, 2026',
     author: 'PF & Co',
     category: 'Planning',
-    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=1200',
+    image: '/images/blog-planning-conditions.png',
     content: [
       'Getting planning permission feels like the finish line — but for most projects, it is actually the starting gun for a second round of approvals. Pre-commencement conditions are requirements attached to your planning consent that must be formally discharged by the local authority before any work can begin on site. Ignore them, and you risk enforcement action, stop notices, or even having to undo work that has already been completed.',
       'The most common pre-commencement conditions relate to construction management, contamination, drainage, archaeology, and ecology. A Construction Management Plan condition, for example, requires you to submit a detailed document showing how you will manage noise, dust, traffic, and working hours during the build. The council will not let you start until they have approved it — and approval can take eight weeks or more.',
@@ -1168,7 +1168,7 @@ const blogPosts: BlogPost[] = [
     date: 'Jan 20, 2026',
     author: 'PF & Co',
     category: 'Site Intelligence',
-    image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?auto=format&fit=crop&q=80&w=1200',
+    image: '/images/blog-geotechnical-desk-study.png',
     content: [
       'Every building sits on the ground, and the ground is never as simple as it looks. A geotechnical desk study is the first step in understanding what lies beneath your site — the geology, groundwater conditions, contamination history, and ground stability risks that will determine your foundation design and, ultimately, a significant portion of your construction budget.',
       'The desk study draws on a wide range of publicly available data: British Geological Survey maps and borehole records, Ordnance Survey historical mapping, Environment Agency data, mining and quarrying records, and local authority contaminated land registers. The aim is to build a geological model of the site without the cost of intrusive investigation. For many projects — particularly extensions, small new-builds, and change-of-use developments — a desk study provides enough information to design foundations with confidence.',
@@ -1191,7 +1191,7 @@ const blogPosts: BlogPost[] = [
     date: 'Jan 12, 2026',
     author: 'PF & Co',
     category: 'Engineering',
-    image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=1200',
+    image: '/images/blog-loft-conversions.png',
     content: [
       'A loft conversion is one of the most cost-effective ways to add space to a house. But behind the dormer windows and en-suite bathrooms lies a significant amount of structural engineering that most homeowners never think about until their builder tells them they need a structural engineer. The truth is, virtually every loft conversion requires structural calculations — and the engineering is more complex than you might expect.',
       'The fundamental challenge is that most residential roof structures were never designed to carry floor loads. A traditional cut roof with rafters and purlins is designed to support the weight of tiles and resist wind loads — typically around 1.0 to 1.5 kN/m². Converting that space to habitable use means the floor needs to support imposed loads of 1.5 kN/m² plus the weight of floor finishes, partition walls, and furniture. The existing ceiling joists are almost never adequate for this, so new floor structure is required.',
@@ -1231,7 +1231,7 @@ const blogPosts: BlogPost[] = [
     date: 'Dec 28, 2025',
     author: 'PF & Co',
     category: 'Guides',
-    image: 'https://images.unsplash.com/photo-1520986606214-8b456906c813?auto=format&fit=crop&q=80&w=1200',
+    image: '/images/blog-construction-management.png',
     content: [
       'A Construction Management Plan is one of the most commonly attached planning conditions in urban and suburban areas. Its purpose is to demonstrate to the local planning authority that you have thought through the practical impacts of your construction project — noise, dust, traffic, waste, and neighbour disruption — and have a credible plan to manage them. The problem is that many CMPs are written as generic documents that fail to address the specific characteristics of the site, leading to rejection and delay.',
       'Planning officers review CMPs against the wording of the condition and the relevant local plan policies. Most conditions follow a similar pattern: they require details of construction traffic routing, loading and unloading arrangements, storage of materials, working hours, dust and noise mitigation, and measures to prevent mud and debris on the public highway. Some boroughs add specific requirements for Construction Logistics Plans, Non-Road Mobile Machinery registers, or Direct Vision Standard compliance for construction vehicles.',
@@ -1254,7 +1254,7 @@ const blogPosts: BlogPost[] = [
     date: 'Mar 13, 2026',
     author: 'Chris Preston',
     category: 'AI & Compliance',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=1200',
+    image: '/images/blog-rics-ai-standard.png',
     content: [
       'On 9 March 2026, the RICS "Responsible Use of AI in Surveying Practice" standard became mandatory for all RICS-regulated professionals. If you are a surveyor, planning consultant, or architect who is RICS-regulated, every AI-assisted report you rely on now needs to come from a supplier who can demonstrate alignment with the standard.',
       'The standard is built on four pillars: transparency, accountability, fairness, and data governance. In practical terms, this means your report supplier should be able to tell you how AI is used in their process, who is accountable for the output, what data sources they use, and how client data is handled.',
