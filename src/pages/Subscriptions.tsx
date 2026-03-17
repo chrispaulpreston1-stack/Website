@@ -196,7 +196,7 @@ const Subscriptions = () => {
         <div className="text-center mb-16">
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-accent/20 text-brand-accent text-[10px] font-bold uppercase tracking-widest mb-6">
             <Zap size={12} />
-            Early Access Pricing
+            Early Access Pricing — Subscribe Now to Lock In These Rates
           </span>
           <h1 className="text-5xl md:text-7xl leading-[0.9] font-bold mb-6 tracking-[-0.02em] text-brand-primary">
             Simple <span className="italic font-serif font-light text-brand-accent">Pricing.</span>
@@ -278,12 +278,16 @@ const Subscriptions = () => {
                 <p className={`text-sm mb-6 ${plan.highlight ? 'text-white/60' : 'text-brand-primary/50'}`}>{plan.desc}</p>
 
                 <div className="mb-6 border-b pb-6 border-current/10">
+                  <div className={`inline-block text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3 ${plan.highlight ? 'bg-brand-accent/20 text-brand-accent' : 'bg-brand-accent/10 text-brand-accent'}`}>
+                    Early Access Price — Lock It In
+                  </div>
                   <div className="flex items-baseline gap-2 mb-1">
                     <span className="text-4xl font-bold text-brand-accent">£{formatPrice(price)}</span>
                     <span className={`text-sm ${plan.highlight ? 'text-white/40' : 'text-brand-primary/40'}`}>/mo</span>
+                    <span className={`text-sm line-through ${plan.highlight ? 'text-white/30' : 'text-brand-primary/25'}`}>£{formatPrice(standardPrice)}</span>
                   </div>
                   <div className={`text-xs ${plan.highlight ? 'text-white/40' : 'text-brand-primary/40'}`}>
-                    {plan.reports} reports/mo at £{perCredit} each
+                    {plan.reports} reports/mo at £{perCredit} each — save {Math.round((1 - price / standardPrice) * 100)}% vs standard
                   </div>
                 </div>
 
