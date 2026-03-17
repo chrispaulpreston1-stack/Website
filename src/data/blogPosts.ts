@@ -8,6 +8,7 @@ export interface BlogPost {
   category: string;
   image: string;
   content: string[];
+  faq?: { question: string; answer: string }[];
   relatedReport?: {
     title: string;
     path: string;
@@ -110,6 +111,32 @@ const blogPosts: BlogPost[] = [
       'An FRA evaluates the risk of flooding to the site and how it will be managed. A drainage strategy sets out how surface water from the development will be collected, attenuated, and discharged without increasing flood risk elsewhere. In practice, most FRAs include a drainage strategy as an integral component, and since the 2025 National Standards for SuDS they are often submitted as a single document.',
       'Understanding your site\'s flood risk is one of the first steps in any successful planning application. If you are unsure whether your project needs a Flood Risk Assessment, it is almost always better to commission one than to risk a refusal or delay. A properly prepared FRA does not just satisfy the planning authority -- it protects your investment by ensuring the development is safe and insurable for its lifetime.',
       'PF & Co\'s <a href="/site-intelligence/flood-risk-assessment">Flood Risk Assessment report</a> covers everything your planning application needs: flood zone classification, all sources of risk, climate change projections, Sequential Test evidence, SuDS strategy, and clear mitigation recommendations -- delivered in 48 hours at a fixed cost of \u00A3375. If you need to understand your site\'s flood risk before you submit, it is the fastest way to get the answer.',
+    ],
+    faq: [
+      {
+        question: 'Do I need a Flood Risk Assessment for a house extension?',
+        answer: 'Not usually if your property is in Flood Zone 1 and it is a standard householder extension. However, if your property is in Flood Zone 2 or 3, or is at risk from surface water flooding, an FRA will be required. Extensions of 250 square metres or less may be covered by the Environment Agency\'s standing advice.',
+      },
+      {
+        question: 'My site is in Flood Zone 1 -- do I still need an FRA?',
+        answer: 'Possibly. An FRA is required if your site is 1 hectare or larger, is in a Critical Drainage Area, or is shown at risk on the Environment Agency\'s surface water flood maps. Following the December 2024 NPPF update, surface water flood risk can trigger the Sequential Test even in Flood Zone 1.',
+      },
+      {
+        question: 'What happens if I do not submit an FRA with my planning application?',
+        answer: 'If an FRA is required and you do not include one, your application will fail the validation check and will not be registered. You will need to resubmit with the FRA included, typically adding 4-8 weeks to your timeline.',
+      },
+      {
+        question: 'Can I do a Flood Risk Assessment myself?',
+        answer: 'There is no legal requirement for an FRA to be prepared by a specific professional. However, it must be technically competent and use current Environment Agency data and climate change allowances. An inadequate FRA can cause more delay than submitting none at all.',
+      },
+      {
+        question: 'How long does a Flood Risk Assessment take?',
+        answer: 'A desk-based FRA for a straightforward site can be completed in 2-5 working days. More complex assessments requiring hydraulic modelling or site surveys can take 4-8 weeks.',
+      },
+      {
+        question: 'What is the difference between a Flood Risk Assessment and a drainage strategy?',
+        answer: 'An FRA evaluates the risk of flooding to the site and how it will be managed. A drainage strategy sets out how surface water will be collected, attenuated, and discharged without increasing flood risk elsewhere. Most FRAs include a drainage strategy as an integral component.',
+      },
     ],
     relatedReport: {
       title: 'Flood Risk Assessment',
@@ -230,6 +257,32 @@ const blogPosts: BlogPost[] = [
       'There is no legal requirement for an HIA to be prepared by a qualified heritage consultant. However, the document must demonstrate a competent understanding of heritage significance and the relevant policy framework. For straightforward cases, a well-informed applicant may be able to prepare an adequate assessment. For more complex proposals, particularly those involving assets of the highest significance or contentious levels of harm, professional input is strongly advisable.',
       'Planning works that could affect a heritage asset? A clear, policy-compliant Heritage Impact Assessment can make the difference between a smooth approval and a costly refusal. Find out how PF & Co can help at <a href="/site-intelligence/heritage-impact-assessment">pfandco.co.uk/site-intelligence/heritage-impact-assessment</a>.',
     ],
+    faq: [
+      {
+        question: 'Is a Heritage Impact Assessment the same as a Heritage Statement?',
+        answer: 'The terms are often used interchangeably by local authorities. A Heritage Statement is the broader term used in validation checklists, while a Heritage Impact Assessment implies a more detailed evaluation. Regardless of the name, the document must satisfy NPPF paragraph 207 by describing significance and assessing impact.',
+      },
+      {
+        question: 'Do I need a Heritage Impact Assessment for internal works to a listed building?',
+        answer: 'Yes, if you need listed building consent for internal works. Listing covers the entire building, inside and out, at all grades. Even where planning permission is not required, listed building consent almost certainly will be for works affecting the building\'s special interest.',
+      },
+      {
+        question: 'My property is not listed but it is in a conservation area. Do I still need an assessment?',
+        answer: 'Very likely, yes. Development within a conservation area that could affect its character or appearance will usually require a Heritage Impact Assessment, including demolition, new buildings, extensions, and sometimes changes to boundary treatments or landscaping.',
+      },
+      {
+        question: 'What is the difference between substantial harm and less than substantial harm?',
+        answer: 'These are NPPF policy terms. Substantial harm means the proposal would seriously affect the significance of the heritage asset or drain away much of its value. Less than substantial harm covers a wide spectrum from negligible to serious but not devastating impact. Different policy tests apply to each.',
+      },
+      {
+        question: 'How much does a Heritage Impact Assessment cost?',
+        answer: 'Costs vary by complexity. A simple HIA for a domestic extension near a listed building might cost a few hundred pounds, while a major development affecting multiple designated assets could run into several thousand. PF & Co\'s Heritage Impact Assessment is available from \u00A3545.',
+      },
+      {
+        question: 'Can I write the Heritage Impact Assessment myself?',
+        answer: 'There is no legal requirement for an HIA to be prepared by a qualified heritage consultant. However, the document must demonstrate competent understanding of heritage significance and the relevant policy framework. For complex proposals involving assets of the highest significance, professional input is strongly advisable.',
+      },
+    ],
     relatedReport: {
       title: 'Heritage Impact Assessment',
       path: '/site-intelligence/heritage-impact-assessment',
@@ -337,6 +390,32 @@ const blogPosts: BlogPost[] = [
       '### Is the government going to abolish the Green Belt?',
       'No. The government has been clear that it remains committed to protecting the Green Belt. The reforms introduced in 2024 and proposed in 2025 are about targeting development towards the least sensitive parts of the Green Belt -- the grey belt -- while maintaining protection for land that genuinely serves the five purposes. The general extent and purpose of the Green Belt is not being changed. What is changing is how development is assessed on land within the Green Belt that does not strongly contribute to its core functions.',
       'Understanding whether your Green Belt site can support development requires detailed policy analysis and constraint mapping. If you are considering a project on Green Belt land, our <a href="/site-intelligence/site-feasibility-report">Site Feasibility Report</a> provides the evidence base you need to make an informed decision -- delivered within 48 hours.',
+    ],
+    faq: [
+      {
+        question: 'Can I extend my house if it is in the Green Belt?',
+        answer: 'Yes. Extensions and alterations to existing buildings are an established exception under NPPF paragraph 154(c), provided the addition is not disproportionate to the size of the original building. Most local authorities accept increases of 30-50% of the original volume, though thresholds vary.',
+      },
+      {
+        question: 'Can I knock down and rebuild my house in the Green Belt?',
+        answer: 'Yes, subject to conditions. Paragraph 154(d) allows replacement of a building provided the new building is in the same use and not materially larger than the one it replaces. A significantly larger replacement will need justification or very special circumstances.',
+      },
+      {
+        question: 'What is the difference between Green Belt and grey belt?',
+        answer: 'Green Belt is the planning designation that has existed since the 1950s. Grey belt is a new subcategory introduced in the December 2024 NPPF for land within the Green Belt that is previously developed or does not strongly contribute to key Green Belt purposes. Development on grey belt land can be approved without demonstrating very special circumstances.',
+      },
+      {
+        question: 'Do I need planning permission for agricultural buildings in the Green Belt?',
+        answer: 'Agricultural buildings benefit from an exception under paragraph 154(a) and may also qualify for permitted development rights under Part 6 of the GPDO. The building must serve a genuine agricultural purpose and meet conditions on size, location, and siting.',
+      },
+      {
+        question: 'How do I know if my land qualifies as grey belt?',
+        answer: 'Your land may qualify if it is previously developed or does not strongly contribute to purposes (a), (b), or (d) of paragraph 143 -- checking urban sprawl, preventing towns merging, or preserving historic town settings. Land that is SSSI, Local Green Space, within a National Park, a heritage asset, or at risk of flooding is excluded.',
+      },
+      {
+        question: 'Is the government going to abolish the Green Belt?',
+        answer: 'No. The government remains committed to protecting the Green Belt. The 2024 and 2025 reforms target development towards the least sensitive parts -- the grey belt -- while maintaining protection for land that genuinely serves the five Green Belt purposes.',
+      },
     ],
     relatedReport: {
       title: 'Site Feasibility Report',
@@ -458,6 +537,32 @@ const blogPosts: BlogPost[] = [
       'Understanding your site\'s biodiversity position early is the most effective way to manage BNG risk and cost. A clear picture of existing habitats, constraints, and likely metric outcomes puts you in control of the process.',
       'PF & Co\'s <a href="/site-intelligence/biodiversity-net-gain">BNG Screening Report</a> provides a rapid, AI-powered assessment of your site\'s biodiversity context -- delivered within 48 hours, giving developers and landowners the early intelligence they need to plan with confidence.',
       'This article was last updated in March 2026. Biodiversity net gain policy continues to evolve, and developers should verify current requirements with their local planning authority and professional advisers before submitting planning applications.',
+    ],
+    faq: [
+      {
+        question: 'What is the 10% biodiversity net gain requirement?',
+        answer: 'All qualifying developments in England must deliver a minimum 10% uplift in biodiversity value compared to the pre-development baseline, as required by the Environment Act 2021. This is calculated using the statutory biodiversity metric. Some local authorities require a higher percentage through local plan policies.',
+      },
+      {
+        question: 'Does BNG apply to small developments?',
+        answer: 'Yes, since 2 April 2024. However, a new exemption for sites under 0.2 hectares was announced in December 2025 and is expected in the first half of 2026. Householder applications and developments affecting less than 25 square metres of habitat remain exempt.',
+      },
+      {
+        question: 'How long do habitats need to be maintained?',
+        answer: 'All habitat created or enhanced under BNG must be managed and maintained for a minimum of 30 years from completion, secured through a Section 106 agreement or conservation covenant and supported by a Habitat Management and Monitoring Plan.',
+      },
+      {
+        question: 'What happens if I cannot achieve 10% on-site?',
+        answer: 'The legislation provides a hierarchy: on-site delivery first, then off-site biodiversity units from a registered habitat bank (typically GBP 20,000-25,000 per unit), and finally statutory credits as a last resort (approximately GBP 84,000 per biodiversity unit).',
+      },
+      {
+        question: 'When do I need to submit my biodiversity gain plan?',
+        answer: 'The biodiversity gain plan is a pre-commencement condition that must be approved before development begins. However, most local authorities now expect a draft plan with a completed statutory metric calculation at the validation stage alongside the planning application.',
+      },
+      {
+        question: 'Can the pre-development baseline be manipulated?',
+        answer: 'No. If habitat has been degraded or cleared before a planning application, the local planning authority can use the earlier, higher biodiversity value as the baseline. Clearing vegetation to reduce the baseline score is counterproductive and can result in a higher BNG obligation.',
+      },
     ],
     relatedReport: {
       title: 'BNG Screening Report',

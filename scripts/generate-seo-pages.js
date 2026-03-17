@@ -240,6 +240,16 @@ const routes = [
     description: 'Our policy for the responsible use of artificial intelligence in site intelligence and engineering services.',
   },
   {
+    path: '/about',
+    title: 'About Us | PF & Co Construction',
+    description: 'PF & Co Construction: AI-powered site intelligence and planning reports. Founded by Chris Preston BEng (Hons). 300+ projects, 112 AI agents, 60 data sources, 48-hour delivery.',
+  },
+  {
+    path: '/honest-assessment',
+    title: 'Honest Assessment | We Tell You the Truth | PF & Co',
+    description: 'Every site gets an honest, upfront assessment of its development prospects. If there are dealbreakers, you\'ll know before committing to architect fees and application costs.',
+  },
+  {
     path: '/order-success',
     title: 'Order Confirmation | Site Intelligence',
     description: 'Your report order has been confirmed.',

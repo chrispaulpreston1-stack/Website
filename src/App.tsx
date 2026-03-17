@@ -65,6 +65,8 @@ const ReportPackages = lazy(() => import('./pages/ReportPackages'));
 const HowItWorks = lazy(() => import('./pages/HowItWorks'));
 const AICompliance = lazy(() => import('./pages/AICompliance'));
 const AIGovernancePolicy = lazy(() => import('./pages/AIGovernancePolicy'));
+const About = lazy(() => import('./pages/About'));
+const HonestAssessment = lazy(() => import('./pages/HonestAssessment'));
 
 // --- Global Components ---
 
@@ -380,6 +382,7 @@ const Footer = () => {
           <div>
             <h4 className="font-bold mb-6">Company</h4>
             <ul className="space-y-3 text-sm text-brand-primary/60">
+              <li><Link to="/about" className="hover:text-brand-accent transition-colors">About Us</Link></li>
               <li><Link to="/blog" className="hover:text-brand-accent transition-colors">Insights</Link></li>
               <li><Link to="/ai-compliance" className="hover:text-brand-accent transition-colors">AI Standards</Link></li>
               <li><Link to="/ai-innovation" className="hover:text-brand-accent transition-colors">AI Innovation</Link></li>
@@ -505,6 +508,8 @@ export default function App() {
               <Route path="/terms-of-service" element={<TermsOfService />} />
               <Route path="/ai-compliance" element={<AICompliance />} />
               <Route path="/ai-governance-policy" element={<AIGovernancePolicy />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/honest-assessment" element={<HonestAssessment />} />
               <Route path="/contact" element={<><PageSEO title="Contact Us | PF & Co Construction" description="Get in touch with PF & Co for structural engineering, construction, and site intelligence services nationwide across England and Wales." path="/contact" /><ContactSection /></>} />
               <Route path="*" element={
                 <div className="min-h-screen flex items-center justify-center bg-brand-surface">

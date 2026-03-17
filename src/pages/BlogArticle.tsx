@@ -91,15 +91,25 @@ const BlogArticle = () => {
         description={post.excerpt}
         path={`/insights/${post.slug}`}
         ogType="article"
-        jsonLd={{
-          '@type': 'Article',
-          headline: post.title,
-          description: post.excerpt,
-          image: post.image,
-          datePublished: post.date,
-          author: { '@type': 'Organization', name: 'PF & Co Construction' },
-          publisher: { '@type': 'Organization', name: 'PF & Co Construction' },
-        }}
+        jsonLd={[
+          {
+            '@type': 'Article',
+            headline: post.title,
+            description: post.excerpt,
+            image: post.image,
+            datePublished: post.date,
+            author: { '@type': 'Organization', name: 'PF & Co Construction' },
+            publisher: { '@type': 'Organization', name: 'PF & Co Construction' },
+          },
+          ...(post.faq ? [{
+            '@type': 'FAQPage',
+            mainEntity: post.faq.map(f => ({
+              '@type': 'Question',
+              name: f.question,
+              acceptedAnswer: { '@type': 'Answer', text: f.answer },
+            })),
+          }] : []),
+        ]}
       />
 
       <article className="max-w-4xl mx-auto px-6">
