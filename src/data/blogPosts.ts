@@ -117,7 +117,7 @@ const blogPosts: BlogPost[] = [
     date: 'Mar 16, 2026',
     author: 'Chris Preston',
     category: 'Planning & Regulation',
-    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=1200',
+    image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=1200',
     content: [
       'On 1 October 2026, the Building Safety Levy comes into force in England. Introduced under sections 56 to 68 of the Building Safety Act 2022, the levy will apply to all new residential developments requiring building control approval where the scheme includes 10 or more dwellings. That is six months from now. If you are a developer with live or upcoming schemes in that bracket, you need to understand how this charge works, what it will cost you, and what your options are for avoiding or mitigating it.',
       'The Building Safety Levy is a new charge on developers of higher-rise and multi-occupancy residential buildings, designed to fund the remediation of unsafe cladding and other fire safety defects in existing buildings. The government estimates that the total remediation cost across England runs into billions of pounds. Rather than funding this entirely from general taxation, the Building Safety Act created a mechanism to recover a portion from developers building new residential stock. The levy is collected by building control bodies — either local authority building control or registered building control approvers — at the point of building control sign-off.',
