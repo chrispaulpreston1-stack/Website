@@ -171,11 +171,17 @@ const BlogArticle = () => {
           transition={{ delay: 0.2 }}
           className="max-w-3xl mx-auto"
         >
-          {post.content.map((paragraph, i) => (
-            <p key={i} className="text-brand-primary/70 leading-[1.9] text-[17px] mb-8">
-              {paragraph}
-            </p>
-          ))}
+          {post.content.map((block, i) => {
+            if (block.startsWith('### ')) {
+              return <h3 key={i} className="text-xl font-bold mt-10 mb-4 text-brand-primary">{block.slice(4)}</h3>;
+            }
+            if (block.startsWith('## ')) {
+              return <h2 key={i} className="text-2xl md:text-3xl font-bold mt-14 mb-5 text-brand-primary tracking-tight">{block.slice(3)}</h2>;
+            }
+            return (
+              <p key={i} className="text-brand-primary/70 leading-[1.9] text-[17px] mb-8" dangerouslySetInnerHTML={{ __html: block }} />
+            );
+          })}
         </motion.div>
 
         {/* Report CTA */}
