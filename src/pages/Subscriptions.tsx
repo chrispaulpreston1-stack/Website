@@ -456,9 +456,9 @@ const Subscriptions = () => {
                     <span className="text-sm font-normal text-brand-primary/40">/mo</span>
                   </div>
                   <div className="text-xs text-brand-primary/40 mb-4">
-                    {roiReports} reports × £{STANDALONE_PRICE} each
+                    {roiReports} reports × £{STANDALONE_PRICE} avg. each
                   </div>
-                  <div className="text-xs text-brand-primary/30">No commitment, no extras</div>
+                  <div className="text-xs text-brand-primary/30">Based on average report price across all 22 types</div>
                 </div>
 
                 {/* Subscription Column */}
