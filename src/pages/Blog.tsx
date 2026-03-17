@@ -5,6 +5,10 @@ import { Link } from 'react-router-dom';
 import PageSEO from '../components/PageSEO';
 import blogPosts from '../data/blogPosts';
 
+const sortedPosts = [...blogPosts].sort(
+  (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+);
+
 const Blog = () => {
   return (
     <div className="pt-32 pb-24">
@@ -19,7 +23,7 @@ const Blog = () => {
           publisher: { '@type': 'Organization', name: 'PF & Co Construction' },
           mainEntity: {
             '@type': 'ItemList',
-            itemListElement: blogPosts.map((post, i) => ({
+            itemListElement: sortedPosts.map((post, i) => ({
               '@type': 'ListItem',
               position: i + 1,
               url: `https://www.pfandco.co.uk/insights/${post.slug}`,
@@ -40,7 +44,7 @@ const Blog = () => {
         </div>
 
         <div className="grid lg:grid-cols-3 gap-12">
-          {blogPosts.map((post, i) => (
+          {sortedPosts.map((post, i) => (
             <motion.article
               key={post.slug}
               initial={{ opacity: 0, y: 20 }}
