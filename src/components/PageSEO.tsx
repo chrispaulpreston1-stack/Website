@@ -84,11 +84,23 @@ export default function PageSEO({
           {JSON.stringify(buildBreadcrumbLd(resolvedBreadcrumbs))}
         </script>
       )}
-      {jsonLd && (Array.isArray(jsonLd) ? jsonLd : [jsonLd]).map((ld, i) => (
-        <script key={i} type="application/ld+json">
-          {JSON.stringify({ '@context': 'https://schema.org', ...ld })}
-        </script>
-      ))}
+      {jsonLd && (Array.isArray(jsonLd) ? jsonLd : [jsonLd]).map((ld, i) => {
+        const enriched: Record<string, unknown> = { '@context': 'https://schema.org', ...ld };
+        // Enrich Product schemas with fields Google requires
+        if (enriched['@type'] === 'Product') {
+          if (!enriched.image) enriched.image = ogImage;
+          if (!enriched.description) enriched.description = description;
+          const brand = enriched.brand as Record<string, unknown> | undefined;
+          if (brand && brand['@type'] === 'Organization') {
+            enriched.brand = { '@type': 'Brand', name: brand.name };
+          }
+        }
+        return (
+          <script key={i} type="application/ld+json">
+            {JSON.stringify(enriched)}
+          </script>
+        );
+      })}
     </Helmet>
   );
 }

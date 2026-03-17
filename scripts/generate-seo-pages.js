@@ -369,8 +369,19 @@ function injectMeta(template, route) {
 
   // Add route-specific JSON-LD if provided (before </head>)
   if (route.jsonLd) {
-    const ld = JSON.stringify({ '@context': 'https://schema.org', ...route.jsonLd });
-    html = html.replace('</head>', `  <script type="application/ld+json">${ld}</script>\n</head>`);
+    const ld = { '@context': 'https://schema.org', ...route.jsonLd };
+
+    // Enrich Product schemas with fields Google requires
+    if (ld['@type'] === 'Product') {
+      if (!ld.image) ld.image = ogImage;
+      if (!ld.description) ld.description = route.description;
+      // Google wants Brand, not Organization
+      if (ld.brand && ld.brand['@type'] === 'Organization') {
+        ld.brand = { '@type': 'Brand', name: ld.brand.name };
+      }
+    }
+
+    html = html.replace('</head>', `  <script type="application/ld+json">${JSON.stringify(ld)}</script>\n</head>`);
   }
 
   return html;
