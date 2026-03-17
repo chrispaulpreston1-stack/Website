@@ -181,7 +181,7 @@ const Subscriptions = () => {
         jsonLd={{
           '@type': 'Service',
           name: 'PF & Co Site Intelligence Subscriptions',
-          provider: { '@type': 'Organization', name: 'PF & Co Construction', url: 'https://www.pfandco.co.uk' },
+          provider: { '@type': 'Organization', name: 'PF & Co Site Intelligence', url: 'https://www.pfandco.co.uk' },
           description: 'Site intelligence report subscriptions for land buyers, architects, developers, and housebuilders.',
           hasOfferCatalog: {
             '@type': 'OfferCatalog',

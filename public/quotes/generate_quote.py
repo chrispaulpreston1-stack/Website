@@ -78,7 +78,7 @@ header_table.columns[1].width = Cm(7)
 # Left: company name
 left_cell = header_table.cell(0, 0)
 p = left_cell.paragraphs[0]
-add_run(p, 'PF & Co Construction Ltd', bold=True, size=18, color=BLACK)
+add_run(p, 'PF & Co Site Intelligence Ltd', bold=True, size=18, color=BLACK)
 p2 = left_cell.add_paragraph()
 add_run(p2, 'Structural Engineering & Construction — Surrey, London & the South East', size=8, color=GREY)
 p2.paragraph_format.space_before = Pt(2)
@@ -87,10 +87,10 @@ p2.paragraph_format.space_before = Pt(2)
 right_cell = header_table.cell(0, 1)
 p = right_cell.paragraphs[0]
 p.alignment = WD_ALIGN_PARAGRAPH.RIGHT
-add_run(p, 'PF & Co Construction Ltd\n', bold=True, size=9, color=BLACK)
+add_run(p, 'PF & Co Site Intelligence Ltd\n', bold=True, size=9, color=BLACK)
 add_run(p, '01483 363 210\n', size=9, color=GREY)
-add_run(p, 'info@pfcoconstruction.co.uk\n', size=9, color=GREY)
-add_run(p, 'www.pfcoconstruction.co.uk', size=9, color=GREY)
+add_run(p, 'info@pfandco.co.uk\n', size=9, color=GREY)
+add_run(p, 'www.pfandco.co.uk', size=9, color=GREY)
 
 # Amber divider
 divider = doc.add_paragraph()
@@ -407,11 +407,11 @@ terms = [
     'Payment terms: 50% deposit on acceptance of quotation; balance due on completion of works.',
     'The estimated programme is approximately 5 working days, subject to weather and site conditions.',
     'Any variations to the described scope of works will be agreed in writing before commencement and may result in additional costs.',
-    'PF & Co Construction Ltd holds full public liability insurance and employer\'s liability insurance. Certificates available on request.',
+    'PF & Co Site Intelligence Ltd holds full public liability insurance and employer\'s liability insurance. Certificates available on request.',
     'Works will be carried out in accordance with all relevant Building Regulations, British Standards and CDM Regulations where applicable.',
     'The client is responsible for obtaining any necessary planning permissions or consents prior to commencement.',
     'We reserve the right to sub-contract specialist elements of the works where necessary.',
-    'This quotation is subject to the full terms and conditions of PF & Co Construction Ltd, available on request.',
+    'This quotation is subject to the full terms and conditions of PF & Co Site Intelligence Ltd, available on request.',
 ]
 for i, term in enumerate(terms, 1):
     p = doc.add_paragraph()
@@ -431,7 +431,7 @@ add_run(accept_heading, 'Acceptance', bold=True, size=11, color=BLACK)
 accept_body = doc.add_paragraph()
 accept_body.paragraph_format.space_after = Pt(16)
 add_run(accept_body,
-    'I/we accept this quotation and authorise PF & Co Construction Ltd to proceed with the works as described above.',
+    'I/we accept this quotation and authorise PF & Co Site Intelligence Ltd to proceed with the works as described above.',
     size=9, color=GREY)
 
 # Signature lines
@@ -471,11 +471,11 @@ set_row_height(div_table2.rows[0], 0.1)
 footer_p = doc.add_paragraph()
 footer_p.alignment = WD_ALIGN_PARAGRAPH.CENTER
 footer_p.paragraph_format.space_before = Pt(6)
-add_run(footer_p, 'PF & Co Construction Ltd', bold=True, size=8, color=GREY)
-add_run(footer_p, '  |  01483 363 210  |  info@pfcoconstruction.co.uk  |  www.pfcoconstruction.co.uk', size=8, color=LIGHT_GREY)
+add_run(footer_p, 'PF & Co Site Intelligence Ltd', bold=True, size=8, color=GREY)
+add_run(footer_p, '  |  01483 363 210  |  info@pfandco.co.uk  |  www.pfandco.co.uk', size=8, color=LIGHT_GREY)
 footer_p2 = doc.add_paragraph()
 footer_p2.alignment = WD_ALIGN_PARAGRAPH.CENTER
-add_run(footer_p2, 'Registered in England & Wales  |  © 2020–2026 PF & Co Construction Ltd. All Rights Reserved.', size=7, color=LIGHT_GREY)
+add_run(footer_p2, 'Registered in England & Wales  |  © 2020–2026 PF & Co Site Intelligence Ltd. All Rights Reserved.', size=7, color=LIGHT_GREY)
 
 # ========================================
 # SAVE

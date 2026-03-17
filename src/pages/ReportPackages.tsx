@@ -107,7 +107,7 @@ const ReportPackages = () => {
           '@type': 'Product' as const,
           name: b.name,
           description: b.tagline,
-          brand: { '@type': 'Organization' as const, name: 'PF & Co Construction' },
+          brand: { '@type': 'Organization' as const, name: 'PF & Co Site Intelligence' },
           offers: {
             '@type': 'Offer' as const,
             price: String(b.earlyAccessPrice),

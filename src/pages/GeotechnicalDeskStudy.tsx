@@ -92,7 +92,7 @@ const GeotechnicalDeskStudy = () => {
             contentUrl: 'https://www.pfandco.co.uk/videos/geotechnical-desk-study-demo.mp4',
             uploadDate: '2026-03-02',
             duration: 'PT1M23S',
-            publisher: { '@type': 'Organization', name: 'PF & Co Construction', url: 'https://www.pfandco.co.uk' },
+            publisher: { '@type': 'Organization', name: 'PF & Co Site Intelligence', url: 'https://www.pfandco.co.uk' },
           },
           {
             '@type': 'FAQPage',

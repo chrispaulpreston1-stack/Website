@@ -60,7 +60,7 @@ const HeritageImpactAssessment = () => {
             '@type': 'Product',
             name: 'Heritage Impact Assessment',
             description: 'Evidence-based heritage statement for planning applications affecting listed buildings, conservation areas, and scheduled monuments.',
-            brand: { '@type': 'Organization', name: 'PF & Co Construction' },
+            brand: { '@type': 'Organization', name: 'PF & Co Site Intelligence' },
             offers: { '@type': 'Offer', price: String(report.earlyAccessPrice), priceCurrency: 'GBP' },
           },
           {
@@ -71,7 +71,7 @@ const HeritageImpactAssessment = () => {
             contentUrl: 'https://www.pfandco.co.uk/videos/heritage-demo.mp4',
             uploadDate: '2026-03-02',
             duration: 'PT1M26S',
-            publisher: { '@type': 'Organization', name: 'PF & Co Construction', url: 'https://www.pfandco.co.uk' },
+            publisher: { '@type': 'Organization', name: 'PF & Co Site Intelligence', url: 'https://www.pfandco.co.uk' },
           },
           {
             '@type': 'FAQPage',

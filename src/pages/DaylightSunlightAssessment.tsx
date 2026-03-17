@@ -59,7 +59,7 @@ const DaylightSunlightAssessment = () => {
             '@type': 'Product',
             name: 'Daylight & Sunlight Screening',
             description: 'BRE 209 daylight/sunlight screening including VSC, APSH, NSL, and sun-on-ground risk indicators.',
-            brand: { '@type': 'Organization', name: 'PF & Co Construction' },
+            brand: { '@type': 'Organization', name: 'PF & Co Site Intelligence' },
             offers: { '@type': 'Offer', price: String(report.earlyAccessPrice), priceCurrency: 'GBP' },
           },
           {
@@ -70,7 +70,7 @@ const DaylightSunlightAssessment = () => {
             contentUrl: 'https://www.pfandco.co.uk/videos/daylight-demo.mp4',
             uploadDate: '2026-03-07',
             duration: 'PT1M38S',
-            publisher: { '@type': 'Organization', name: 'PF & Co Construction', url: 'https://www.pfandco.co.uk' },
+            publisher: { '@type': 'Organization', name: 'PF & Co Site Intelligence', url: 'https://www.pfandco.co.uk' },
           },
           {
             '@type': 'FAQPage',

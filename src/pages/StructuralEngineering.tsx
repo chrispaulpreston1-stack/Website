@@ -22,7 +22,7 @@ const StructuralEngineering = () => {
           '@type': 'Service',
           name: 'Structural Engineering Services',
           description: 'Professional structural engineering services including beam calculations, residential design, and basement impact assessments.',
-          provider: { '@type': 'Organization', name: 'PF & Co Construction' },
+          provider: { '@type': 'Organization', name: 'PF & Co Site Intelligence' },
           areaServed: ['England', 'Wales', 'UK'],
           serviceType: 'Structural Engineering',
         }}

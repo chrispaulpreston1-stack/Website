@@ -100,7 +100,7 @@ draw.text((stats_x + 25, 482), "TURNAROUND", fill=MUTED, font=font_tag)
 
 # CTA bar at bottom
 draw.rectangle([0, HEIGHT - 70, WIDTH, HEIGHT], fill=ORANGE)
-draw.text((50, HEIGHT - 52), "First come, first served \u2014 email info@pfcoconstruction.co.uk", fill=NAVY, font=font_cta)
+draw.text((50, HEIGHT - 52), "First come, first served \u2014 email info@pfandco.co.uk", fill=NAVY, font=font_cta)
 
 img.save(OUTPUT, "PNG", quality=95)
 print(f"Image saved to: {OUTPUT}")

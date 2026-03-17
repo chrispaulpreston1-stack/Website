@@ -59,7 +59,7 @@ const Blog = () => {
           '@type': 'CollectionPage',
           name: 'Engineering Insights',
           description: 'Expert advice and technical insights on structural engineering, AI in construction, and site intelligence from PF & Co.',
-          publisher: { '@type': 'Organization', name: 'PF & Co Construction' },
+          publisher: { '@type': 'Organization', name: 'PF & Co Site Intelligence' },
           mainEntity: {
             '@type': 'ItemList',
             itemListElement: sortedPosts.map((post, i) => ({

@@ -90,7 +90,7 @@ const FloodRiskAssessment = () => {
             '@type': 'Product',
             name: 'Flood Risk Assessment',
             description: 'Tier 1 Desktop Flood Risk Assessment evaluating fluvial, surface water, groundwater, and sewer flood risk.',
-            brand: { '@type': 'Organization', name: 'PF & Co Construction' },
+            brand: { '@type': 'Organization', name: 'PF & Co Site Intelligence' },
             offers: { '@type': 'Offer', price: String(report.earlyAccessPrice), priceCurrency: 'GBP' },
           },
           {
@@ -101,7 +101,7 @@ const FloodRiskAssessment = () => {
             contentUrl: 'https://www.pfandco.co.uk/videos/fra-demo.mp4',
             uploadDate: '2026-03-02',
             duration: 'PT1M31S',
-            publisher: { '@type': 'Organization', name: 'PF & Co Construction', url: 'https://www.pfandco.co.uk' },
+            publisher: { '@type': 'Organization', name: 'PF & Co Site Intelligence', url: 'https://www.pfandco.co.uk' },
           },
           {
             '@type': 'FAQPage',

@@ -24,7 +24,7 @@ const BuildingControl = () => {
                     '@type': 'Product',
                     name: 'BC Readiness Check',
                     description: 'Ensure your proposals comply with building regulations before submission.',
-                    brand: { '@type': 'Organization', name: 'PF & Co Construction' },
+                    brand: { '@type': 'Organization', name: 'PF & Co Site Intelligence' },
                     offers: { '@type': 'Offer', price: '150', priceCurrency: 'GBP' }
                 }}
                 description="Dedicated BC Readiness Check — ensure your proposals comply with building regs before submission for £150."

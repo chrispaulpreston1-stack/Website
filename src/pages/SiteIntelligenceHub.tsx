@@ -153,7 +153,7 @@ const SiteIntelligenceHub = () => {
             contentUrl: 'https://www.pfandco.co.uk/videos/site-intelligence-demo.mp4',
             uploadDate: '2026-03-02',
             duration: 'PT2M32S',
-            publisher: { '@type': 'Organization', name: 'PF & Co Construction', url: 'https://www.pfandco.co.uk' },
+            publisher: { '@type': 'Organization', name: 'PF & Co Site Intelligence', url: 'https://www.pfandco.co.uk' },
           }
         ]}
       />

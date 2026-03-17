@@ -59,7 +59,7 @@ const NoiseImpactAssessment = () => {
             '@type': 'Product',
             name: 'Noise Screening Report',
             description: 'BS 4142/BS 8233/ProPG noise screening for residential schemes near roads, railways, or commercial uses.',
-            brand: { '@type': 'Organization', name: 'PF & Co Construction' },
+            brand: { '@type': 'Organization', name: 'PF & Co Site Intelligence' },
             offers: { '@type': 'Offer', price: String(report.earlyAccessPrice), priceCurrency: 'GBP' },
           },
           {
@@ -70,7 +70,7 @@ const NoiseImpactAssessment = () => {
             contentUrl: 'https://www.pfandco.co.uk/videos/noise-demo.mp4',
             uploadDate: '2026-03-07',
             duration: 'PT1M28S',
-            publisher: { '@type': 'Organization', name: 'PF & Co Construction', url: 'https://www.pfandco.co.uk' },
+            publisher: { '@type': 'Organization', name: 'PF & Co Site Intelligence', url: 'https://www.pfandco.co.uk' },
           },
           {
             '@type': 'FAQPage',

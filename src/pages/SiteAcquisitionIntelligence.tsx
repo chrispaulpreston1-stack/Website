@@ -80,7 +80,7 @@ const SiteAcquisitionIntelligence = () => {
             '@type': 'Product',
             name: 'Site Acquisition Report',
             description: 'Development capacity, GDV, build cost, RLV, planning risk, and go/no-go recommendation for land acquisition decisions.',
-            brand: { '@type': 'Organization', name: 'PF & Co Construction' },
+            brand: { '@type': 'Organization', name: 'PF & Co Site Intelligence' },
             offers: { '@type': 'Offer', price: String(report.earlyAccessPrice), priceCurrency: 'GBP' },
           },
           {

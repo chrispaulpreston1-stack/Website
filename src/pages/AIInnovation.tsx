@@ -343,7 +343,7 @@ const AIInnovation = () => {
             priceCurrency: 'GBP',
             description: 'AI capabilities included with all Site Intelligence reports'
           },
-          creator: { '@type': 'Organization', name: 'PF & Co Construction', url: 'https://www.pfandco.co.uk' }
+          creator: { '@type': 'Organization', name: 'PF & Co Site Intelligence', url: 'https://www.pfandco.co.uk' }
         }}
       />
 

@@ -4,7 +4,7 @@ export default function AIGovernancePolicy() {
   return (
     <>
       <PageSEO
-        title="AI Governance Policy | PF & Co Construction"
+        title="AI Governance Policy | PF & Co Site Intelligence"
         description="Our policy for the responsible use of artificial intelligence in site intelligence and engineering services."
         path="/ai-governance-policy"
       />
@@ -20,7 +20,7 @@ export default function AIGovernancePolicy() {
         <div className="max-w-3xl mx-auto px-6 prose prose-lg prose-brand-primary">
           <h2>1. Purpose & Scope</h2>
           <p>
-            This policy sets out how PF & Co Construction Ltd governs the use of artificial intelligence
+            This policy sets out how PF & Co Site Intelligence Ltd governs the use of artificial intelligence
             in the production of site intelligence reports, structural engineering analysis, and related
             professional services. It applies to all AI systems used in our report production pipeline,
             quality assurance processes, and client-facing outputs.

@@ -60,7 +60,7 @@ const FeasibilityStudy = () => {
             '@type': 'Product',
             name: 'Feasibility Study',
             description: 'Pre-design concept feasibility study — understand what is possible, what it costs, and which route to take.',
-            brand: { '@type': 'Organization', name: 'PF & Co Construction' },
+            brand: { '@type': 'Organization', name: 'PF & Co Site Intelligence' },
             offers: { '@type': 'Offer', price: String(report.earlyAccessPrice), priceCurrency: 'GBP' },
           },
           {
@@ -71,7 +71,7 @@ const FeasibilityStudy = () => {
             contentUrl: 'https://www.pfandco.co.uk/videos/feasibility-study-demo.mp4',
             uploadDate: '2026-03-02',
             duration: 'PT1M15S',
-            publisher: { '@type': 'Organization', name: 'PF & Co Construction', url: 'https://www.pfandco.co.uk' },
+            publisher: { '@type': 'Organization', name: 'PF & Co Site Intelligence', url: 'https://www.pfandco.co.uk' },
           },
           {
             '@type': 'FAQPage',

@@ -60,7 +60,7 @@ const PreApplicationAdvice = () => {
             '@type': 'Product',
             name: 'Pre-Application Advice Pack',
             description: 'Ask the right questions before committing to a full planning application.',
-            brand: { '@type': 'Organization', name: 'PF & Co Construction' },
+            brand: { '@type': 'Organization', name: 'PF & Co Site Intelligence' },
             offers: { '@type': 'Offer', price: String(report.earlyAccessPrice), priceCurrency: 'GBP' },
           },
           {
@@ -71,7 +71,7 @@ const PreApplicationAdvice = () => {
             contentUrl: 'https://www.pfandco.co.uk/videos/pre-app-advice-demo.mp4',
             uploadDate: '2026-03-02',
             duration: 'PT1M19S',
-            publisher: { '@type': 'Organization', name: 'PF & Co Construction', url: 'https://www.pfandco.co.uk' },
+            publisher: { '@type': 'Organization', name: 'PF & Co Site Intelligence', url: 'https://www.pfandco.co.uk' },
           },
           {
             '@type': 'FAQPage',

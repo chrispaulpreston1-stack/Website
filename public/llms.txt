@@ -1,8 +1,8 @@
-# PF & Co Construction
+# PF & Co Site Intelligence
 > AI-powered site intelligence and planning reports across England and Wales. 24 report types. 60 data sources. 48-hour turnaround. Subscribe from £399/mo.
 
 ## About
-PF & Co Construction delivers AI-powered site intelligence and planning reports across England and Wales. Our multi-agent AI system (112 specialised agents) interrogates 60 authoritative data sources across 11 constraint categories to produce planning-ready reports in 48 hours. Fixed pricing, 48-hour turnaround, human-verified, RICS AI Standard aligned.
+PF & Co Site Intelligence delivers AI-powered site intelligence and planning reports across England and Wales. Our multi-agent AI system (112 specialised agents) interrogates 60 authoritative data sources across 11 constraint categories to produce planning-ready reports in 48 hours. Fixed pricing, 48-hour turnaround, human-verified, RICS AI Standard aligned.
 
 ## Services
 

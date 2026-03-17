@@ -16,10 +16,10 @@ const Home = () => {
         path="/"
         jsonLd={{
           '@type': 'WebSite',
-          name: 'PF & Co Construction',
+          name: 'PF & Co Site Intelligence',
           url: 'https://www.pfandco.co.uk',
           description: 'AI-powered site intelligence reports and planning evidence for development projects across England and Wales.',
-          publisher: { '@type': 'Organization', name: 'PF & Co Construction' }
+          publisher: { '@type': 'Organization', name: 'PF & Co Site Intelligence' }
         }}
       />
 

@@ -131,7 +131,7 @@ export default function HonestAssessment() {
           '@type': 'WebPage',
           name: 'Honest Assessment',
           description: 'PF & Co\'s honest assessment approach: upfront constraint screening that tells you the truth before you spend money.',
-          publisher: { '@type': 'Organization', name: 'PF & Co Construction', url: 'https://www.pfandco.co.uk' },
+          publisher: { '@type': 'Organization', name: 'PF & Co Site Intelligence', url: 'https://www.pfandco.co.uk' },
         }}
       />
 

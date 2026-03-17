@@ -68,7 +68,7 @@ const DevelopmentFinanceSummary = () => {
             '@type': 'Product',
             name: 'Development Finance Summary',
             description: "Preliminary investment memo: GDV, build cost, profit on cost, RLV, site risk RAG dashboard, and sensitivity analysis for development finance screening.",
-            brand: { '@type': 'Organization', name: 'PF & Co Construction' },
+            brand: { '@type': 'Organization', name: 'PF & Co Site Intelligence' },
             offers: { '@type': 'Offer', price: String(report.earlyAccessPrice), priceCurrency: 'GBP' },
           },
           {

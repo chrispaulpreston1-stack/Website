@@ -292,7 +292,7 @@ const OrderReport = () => {
           '@type': 'Product',
           name: 'Site Intelligence Reports',
           description: 'Planning-ready site intelligence reports — from flood risk and geotechnical studies to planning statements and feasibility reports.',
-          brand: { '@type': 'Organization', name: 'PF & Co Construction' },
+          brand: { '@type': 'Organization', name: 'PF & Co Site Intelligence' },
           offers: {
             '@type': 'AggregateOffer',
             lowPrice: '245',

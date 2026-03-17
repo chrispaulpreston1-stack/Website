@@ -62,7 +62,7 @@ const BiodiversityNetGain = () => {
             '@type': 'Product',
             name: 'Biodiversity Net Gain Screening',
             description: 'BNG screening and feasibility assessment — find out whether BNG applies and which surveys you need.',
-            brand: { '@type': 'Organization', name: 'PF & Co Construction' },
+            brand: { '@type': 'Organization', name: 'PF & Co Site Intelligence' },
             offers: { '@type': 'Offer', price: String(report.earlyAccessPrice), priceCurrency: 'GBP' },
           },
           {
@@ -73,7 +73,7 @@ const BiodiversityNetGain = () => {
             contentUrl: 'https://www.pfandco.co.uk/videos/bng-screening-demo.mp4',
             uploadDate: '2026-03-02',
             duration: 'PT1M37S',
-            publisher: { '@type': 'Organization', name: 'PF & Co Construction', url: 'https://www.pfandco.co.uk' },
+            publisher: { '@type': 'Organization', name: 'PF & Co Site Intelligence', url: 'https://www.pfandco.co.uk' },
           },
           {
             '@type': 'FAQPage',

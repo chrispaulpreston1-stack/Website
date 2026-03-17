@@ -5,8 +5,8 @@ export default function PrivacyPolicy() {
   return (
     <>
       <PageSEO
-        title="Privacy Policy | PF & Co Construction"
-        description="How PF & Co Construction collects, uses, and protects your personal data. Covers contact forms, cookies, and third-party services."
+        title="Privacy Policy | PF & Co Site Intelligence"
+        description="How PF & Co Site Intelligence collects, uses, and protects your personal data. Covers contact forms, cookies, and third-party services."
         path="/privacy-policy"
       />
 
@@ -21,7 +21,7 @@ export default function PrivacyPolicy() {
         <div className="max-w-3xl mx-auto px-6 prose prose-lg prose-brand-primary">
           <h2>1. Who We Are</h2>
           <p>
-            PF & Co Construction Ltd ("we", "us", "our") is a structural engineering and construction company
+            PF & Co Site Intelligence Ltd ("we", "us", "our") is a structural engineering and construction company
             registered in England. Our registered office is in Surrey. We are the data controller for the
             personal data described in this policy.
           </p>

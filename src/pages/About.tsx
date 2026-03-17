@@ -83,14 +83,14 @@ export default function About() {
   return (
     <div className="bg-brand-surface">
       <PageSEO
-        title="About Us | PF & Co Construction"
-        description="PF & Co Construction: AI-powered site intelligence and planning reports. Founded by Chris Preston BEng (Hons). 300+ projects, 112 AI agents, 60 data sources, 48-hour delivery."
+        title="About Us | PF & Co Site Intelligence"
+        description="PF & Co Site Intelligence: AI-powered site intelligence and planning reports. Founded by Chris Preston BEng (Hons). 300+ projects, 112 AI agents, 60 data sources, 48-hour delivery."
         path="/about"
         jsonLd={{
           '@type': 'AboutPage',
-          name: 'About PF & Co Construction',
+          name: 'About PF & Co Site Intelligence',
           description: 'AI-powered site intelligence and planning reports, founded by Chris Preston BEng (Hons), delivering across England and Wales.',
-          publisher: { '@type': 'Organization', name: 'PF & Co Construction', url: 'https://www.pfandco.co.uk' },
+          publisher: { '@type': 'Organization', name: 'PF & Co Site Intelligence', url: 'https://www.pfandco.co.uk' },
         }}
       />
 
@@ -155,7 +155,7 @@ export default function About() {
               <h3 className="text-lg font-bold text-brand-primary mb-2">Chris Preston</h3>
               <p className="text-sm font-bold text-brand-accent mb-4">BEng (Hons), Structural & Civil Engineering</p>
               <p className="text-sm text-brand-primary/50 leading-relaxed font-light mb-4">
-                Chris founded PF & Co Construction in 2020 after spending years in structural and civil engineering, seeing first-hand how much time and money was wasted on report processes that could be automated without sacrificing quality.
+                Chris founded PF & Co Site Intelligence in 2020 after spending years in structural and civil engineering, seeing first-hand how much time and money was wasted on report processes that could be automated without sacrificing quality.
               </p>
               <p className="text-sm text-brand-primary/50 leading-relaxed font-light mb-4">
                 His engineering background means the company approaches every report as a technical problem: what does the data say, what are the risks, and what does the client actually need to know to make a decision?
@@ -338,7 +338,7 @@ export default function About() {
                 </a>
               </div>
               <p className="text-white/30 text-xs font-mono">
-                PF & Co Construction Ltd | Registered in England & Wales (No. 12463571) | Based in Surrey
+                PF & Co Site Intelligence Ltd | Registered in England & Wales (No. 12463571) | Based in Surrey
               </p>
             </div>
           </motion.div>

@@ -99,7 +99,7 @@ const SiteFeasibilityReport = () => {
             '@type': 'Product',
             name: 'Site Feasibility Report',
             description: 'Data-driven pre-construction screening report checking 22+ planning, environmental, and ground risk constraints.',
-            brand: { '@type': 'Organization', name: 'PF & Co Construction' },
+            brand: { '@type': 'Organization', name: 'PF & Co Site Intelligence' },
             offers: { '@type': 'Offer', price: String(report.earlyAccessPrice), priceCurrency: 'GBP' },
           },
           {

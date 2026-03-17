@@ -59,7 +59,7 @@ const AirQualityScreening = () => {
             '@type': 'Product',
             name: 'Air Quality Screening',
             description: 'IAQM/EPUK air quality screening with AQMA proximity analysis and construction dust risk assessment.',
-            brand: { '@type': 'Organization', name: 'PF & Co Construction' },
+            brand: { '@type': 'Organization', name: 'PF & Co Site Intelligence' },
             offers: { '@type': 'Offer', price: String(report.earlyAccessPrice), priceCurrency: 'GBP' },
           },
           {
@@ -70,7 +70,7 @@ const AirQualityScreening = () => {
             contentUrl: 'https://www.pfandco.co.uk/videos/air-quality-demo.mp4',
             uploadDate: '2026-03-07',
             duration: 'PT1M22S',
-            publisher: { '@type': 'Organization', name: 'PF & Co Construction', url: 'https://www.pfandco.co.uk' },
+            publisher: { '@type': 'Organization', name: 'PF & Co Site Intelligence', url: 'https://www.pfandco.co.uk' },
           },
           {
             '@type': 'FAQPage',

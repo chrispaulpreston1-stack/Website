@@ -38,7 +38,7 @@ const PartyWallAssessment = () => {
                     '@type': 'Product',
                     name: 'Party Wall Pre-Assessment',
                     description: 'Premium Party Wall Assessment and Notice service for structural engineering projects.',
-                    brand: { '@type': 'Organization', name: 'PF & Co Construction' },
+                    brand: { '@type': 'Organization', name: 'PF & Co Site Intelligence' },
                     offers: { '@type': 'Offer', price: '425', priceCurrency: 'GBP' }
                 }}
             />

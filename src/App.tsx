@@ -396,7 +396,7 @@ const Footer = () => {
 
         <div className="pt-10 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-xs text-brand-primary/40 font-mono">
-            © 2020–2026 PF & Co Construction Ltd. All Rights Reserved.
+            © 2020–2026 PF & Co Site Intelligence Ltd. All Rights Reserved.
           </p>
           <div className="flex gap-8 text-xs text-brand-primary/40 font-mono uppercase tracking-widest">
             <Link to="/privacy-policy" className="hover:text-brand-accent transition-colors">Privacy Policy</Link>
@@ -429,7 +429,7 @@ export default function App() {
               {
                 "@context": "https://schema.org",
                 "@type": "LocalBusiness",
-                "name": "PF & Co Construction",
+                "name": "PF & Co Site Intelligence",
                 "description": "AI-powered site intelligence and planning reports across England and Wales.",
                 "url": "https://www.pfandco.co.uk",
                 "telephone": "01483 363210",
@@ -510,7 +510,7 @@ export default function App() {
               <Route path="/ai-governance-policy" element={<AIGovernancePolicy />} />
               <Route path="/about" element={<About />} />
               <Route path="/honest-assessment" element={<HonestAssessment />} />
-              <Route path="/contact" element={<><PageSEO title="Contact Us | PF & Co Construction" description="Get in touch with PF & Co for structural engineering, construction, and site intelligence services nationwide across England and Wales." path="/contact" /><ContactSection /></>} />
+              <Route path="/contact" element={<><PageSEO title="Contact Us | PF & Co Site Intelligence" description="Get in touch with PF & Co for structural engineering, construction, and site intelligence services nationwide across England and Wales." path="/contact" /><ContactSection /></>} />
               <Route path="*" element={
                 <div className="min-h-screen flex items-center justify-center bg-brand-surface">
                   <div className="text-center px-6">

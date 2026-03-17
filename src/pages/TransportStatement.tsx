@@ -60,7 +60,7 @@ const TransportStatement = () => {
             '@type': 'Product',
             name: 'Transport Statement',
             description: 'Professional transport statement covering trip generation, accessibility, and highways safety.',
-            brand: { '@type': 'Organization', name: 'PF & Co Construction' },
+            brand: { '@type': 'Organization', name: 'PF & Co Site Intelligence' },
             offers: { '@type': 'Offer', price: String(report.earlyAccessPrice), priceCurrency: 'GBP' },
             subjectOf: {
               '@type': 'VideoObject',
@@ -72,7 +72,7 @@ const TransportStatement = () => {
               duration: 'PT1M36S',
               publisher: {
                 '@type': 'Organization',
-                name: 'PF & Co Construction',
+                name: 'PF & Co Site Intelligence',
                 logo: {
                   '@type': 'ImageObject',
                   url: 'https://www.pfandco.co.uk/logo.png'

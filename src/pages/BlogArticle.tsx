@@ -98,8 +98,8 @@ const BlogArticle = () => {
             description: post.excerpt,
             image: post.image,
             datePublished: post.date,
-            author: { '@type': 'Organization', name: 'PF & Co Construction' },
-            publisher: { '@type': 'Organization', name: 'PF & Co Construction' },
+            author: { '@type': 'Organization', name: 'PF & Co Site Intelligence' },
+            publisher: { '@type': 'Organization', name: 'PF & Co Site Intelligence' },
           },
           ...(post.faq ? [{
             '@type': 'FAQPage',

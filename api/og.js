@@ -14,7 +14,7 @@ const BRAND_ACCENT = '#f59e0b';
 
 export default async function handler(req) {
   const { searchParams } = new URL(req.url);
-  const title = searchParams.get('title') || 'PF & Co Construction';
+  const title = searchParams.get('title') || 'PF & Co Site Intelligence';
   const subtitle = searchParams.get('subtitle') || 'AI-Powered Structural Engineering & Site Intelligence';
 
   // Use SVG rendered as HTML — Vercel Edge can convert to PNG via ImageResponse

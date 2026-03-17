@@ -66,14 +66,14 @@ export default function AICompliance() {
   return (
     <div className="bg-brand-surface">
       <PageSEO
-        title="AI Standards & Compliance | PF & Co Construction"
+        title="AI Standards & Compliance | PF & Co Site Intelligence"
         description={`Our AI compliance framework: ${TOTAL_AGENTS} specialised agents, ${TOTAL_DATA_SOURCES} authoritative data sources, 24-category QA pipeline, and RICS AI Standard alignment.`}
         path="/ai-compliance"
         jsonLd={{
           '@type': 'WebPage',
           name: 'AI Standards & Compliance',
-          description: `PF & Co Construction's AI methodology, data governance, and RICS AI Standard alignment for site intelligence reports.`,
-          publisher: { '@type': 'Organization', name: 'PF & Co Construction', url: 'https://www.pfandco.co.uk' },
+          description: `PF & Co Site Intelligence's AI methodology, data governance, and RICS AI Standard alignment for site intelligence reports.`,
+          publisher: { '@type': 'Organization', name: 'PF & Co Site Intelligence', url: 'https://www.pfandco.co.uk' },
         }}
       />
 

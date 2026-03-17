@@ -60,7 +60,7 @@ const ParkingSurvey = () => {
             '@type': 'Product',
             name: 'Parking Survey',
             description: 'Evidence-based parking provision statement built on Census data and NPPF compliance.',
-            brand: { '@type': 'Organization', name: 'PF & Co Construction' },
+            brand: { '@type': 'Organization', name: 'PF & Co Site Intelligence' },
             offers: { '@type': 'Offer', price: String(report.earlyAccessPrice), priceCurrency: 'GBP' },
           },
           {
@@ -71,7 +71,7 @@ const ParkingSurvey = () => {
             contentUrl: 'https://www.pfandco.co.uk/videos/parking-survey-demo.mp4',
             uploadDate: '2026-03-02',
             duration: 'PT1M19S',
-            publisher: { '@type': 'Organization', name: 'PF & Co Construction', url: 'https://www.pfandco.co.uk' },
+            publisher: { '@type': 'Organization', name: 'PF & Co Site Intelligence', url: 'https://www.pfandco.co.uk' },
           },
           {
             '@type': 'FAQPage',

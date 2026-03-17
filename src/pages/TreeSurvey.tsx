@@ -59,7 +59,7 @@ const TreeSurvey = () => {
             '@type': 'Product',
             name: 'Arboricultural Constraints Appraisal',
             description: 'Desktop arboricultural assessment with BS 5837 categorisation, LiDAR canopy analysis, and RPA mapping.',
-            brand: { '@type': 'Organization', name: 'PF & Co Construction' },
+            brand: { '@type': 'Organization', name: 'PF & Co Site Intelligence' },
             offers: { '@type': 'Offer', price: String(report.earlyAccessPrice), priceCurrency: 'GBP' },
           },
           {

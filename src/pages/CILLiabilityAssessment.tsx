@@ -53,7 +53,7 @@ const CILLiabilityAssessment = () => {
     return (
         <div className="pt-20">
             <PageSEO
-                title={`CIL Liability Assessment | £${formatPrice(report.earlyAccessPrice)} | PF & Co Construction`}
+                title={`CIL Liability Assessment | £${formatPrice(report.earlyAccessPrice)} | PF & Co Site Intelligence`}
                 description={`Know your CIL exposure before you start. CIL Liability Assessment for £${formatPrice(report.earlyAccessPrice)}. Exemption checks, index-linked calculations & challenge strategy included.`}
                 path="/site-intelligence/cil-liability-assessment"
                 jsonLd={[
@@ -61,7 +61,7 @@ const CILLiabilityAssessment = () => {
                     '@type': 'Service',
                     name: 'CIL Liability Assessment',
                     description: 'Professional Community Infrastructure Levy assessment including liability calculation, exemption checks, challenge strategy, and pre-filled CIL forms.',
-                    provider: { '@type': 'Organization', name: 'PF & Co Construction' },
+                    provider: { '@type': 'Organization', name: 'PF & Co Site Intelligence' },
                     offers: { '@type': 'Offer', price: String(report.earlyAccessPrice), priceCurrency: 'GBP' },
                     subjectOf: {
                         '@type': 'VideoObject',
@@ -73,7 +73,7 @@ const CILLiabilityAssessment = () => {
                         duration: 'PT1M23S',
                         publisher: {
                             '@type': 'Organization',
-                            name: 'PF & Co Construction',
+                            name: 'PF & Co Site Intelligence',
                             logo: { '@type': 'ImageObject', url: 'https://www.pfandco.co.uk/logo.png' }
                         }
                     }
@@ -290,7 +290,7 @@ const CILLiabilityAssessment = () => {
                     <ComparisonTable
                         title="What Other Firms Charge"
                         subtitle="And What They Don't Include"
-                        columns={["Feature", "PF&Co Construction", "Typical Planning Consultant", "Specialist CIL Firm"]}
+                        columns={["Feature", "PF&Co Site Intelligence", "Typical Planning Consultant", "Specialist CIL Firm"]}
                         categories={comparisonCategories}
                         footerNote={`Comparison based on typical UK planning consultancy models. We built our assessment as a standalone product at £${formatPrice(report.earlyAccessPrice)} (Early Access) to ensure every project can afford to know its CIL position before work starts.`}
                         accentColor="text-emerald-500"

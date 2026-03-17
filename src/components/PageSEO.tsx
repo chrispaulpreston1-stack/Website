@@ -73,7 +73,7 @@ export default function PageSEO({
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:image" content={ogImage} />
       <meta property="og:type" content={ogType} />
-      <meta property="og:site_name" content="PF & Co Construction" />
+      <meta property="og:site_name" content="PF & Co Site Intelligence" />
       <meta property="og:locale" content="en_GB" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />

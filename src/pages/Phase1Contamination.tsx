@@ -59,7 +59,7 @@ const Phase1Contamination = () => {
             '@type': 'Product',
             name: 'Phase 1 Desk Study',
             description: 'LCRM 2020 / BS 10175 Preliminary Risk Assessment with Conceptual Site Model and remediation screening.',
-            brand: { '@type': 'Organization', name: 'PF & Co Construction' },
+            brand: { '@type': 'Organization', name: 'PF & Co Site Intelligence' },
             offers: { '@type': 'Offer', price: String(report.earlyAccessPrice), priceCurrency: 'GBP' },
           },
           {
@@ -70,7 +70,7 @@ const Phase1Contamination = () => {
             contentUrl: 'https://www.pfandco.co.uk/videos/contamination-demo.mp4',
             uploadDate: '2026-03-07',
             duration: 'PT1M45S',
-            publisher: { '@type': 'Organization', name: 'PF & Co Construction', url: 'https://www.pfandco.co.uk' },
+            publisher: { '@type': 'Organization', name: 'PF & Co Site Intelligence', url: 'https://www.pfandco.co.uk' },
           },
           {
             '@type': 'FAQPage',

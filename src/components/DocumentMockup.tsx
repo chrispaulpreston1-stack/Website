@@ -111,7 +111,7 @@ export function DocumentMockup({
         {/* Footer */}
         <div className="mt-12 pt-6 border-t border-gray-200 flex justify-between items-end relative z-10">
           <div>
-            <div className="text-xs font-bold text-gray-800">PF & Co Construction Ltd</div>
+            <div className="text-xs font-bold text-gray-800">PF & Co Site Intelligence Ltd</div>
             <div className="text-[10px] text-gray-400">Registered in England & Wales</div>
           </div>
           <div className="text-right flex flex-col items-end">
