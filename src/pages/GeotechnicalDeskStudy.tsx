@@ -1,3 +1,4 @@
+import PackageCrossSellBanner from '../components/PackageCrossSellBanner';
 import { motion } from 'motion/react';
 import { Database, Check, ArrowRight, HelpCircle, Clock, X, Zap, FileText } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -312,7 +313,7 @@ const GeotechnicalDeskStudy = () => {
             subtitle="What you get vs a traditional geotechnical consultancy or data report"
             columns={["Feature", "PF&Co Site Intelligence", "Traditional Geo Consultancy", "Envirocheck / Data Report"]}
             categories={comparisonCategories}
-            footerNote="Comparison based on publicly available product information from Earth Environmental, Southern Testing, SOCOTEC, RSK Geosciences, Landmark Envirocheck, and typical UK geotechnical consultancies. Features may vary by provider. Traditional geotechnical consultancies typically charge £600-800+VAT and require a physical site walkover. PF&Co Geotechnical Desk Study is a desktop product consulting 60 authoritative data sources, suitable for planning and Building Control submissions."
+            footerNote="Comparison based on publicly available product information from Earth Environmental, Southern Testing, SOCOTEC, RSK Geosciences, Landmark Envirocheck, and typical UK geotechnical consultancies. Features may vary by provider. Traditional geotechnical consultancies typically charge £600-800+VAT and require a physical site walkover. PF&Co Geotechnical Desk Study is a desktop product consulting 60+ authoritative data sources, suitable for planning and Building Control submissions."
             accentColor="text-amber-700"
           />
         </div>
@@ -362,6 +363,8 @@ const GeotechnicalDeskStudy = () => {
           </p>
         </div>
       </section>
+
+      <PackageCrossSellBanner />
 
       {/* Final CTA - Prestige Finish */}
       <section className="max-w-7xl mx-auto px-6 pb-24">

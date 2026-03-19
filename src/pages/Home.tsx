@@ -12,7 +12,7 @@ const Home = () => {
     <div className="selection:bg-brand-accent/30">
       <PageSEO
         title="PF & Co | AI-Powered Site Intelligence & Planning Reports"
-        description="Planning-ready site intelligence reports for any UK site. 60 data sources, 127 AI agents, 48-hour turnaround. From £375. Subscribe from £399/mo."
+        description="Planning-ready site intelligence reports for any UK site. 60+ data sources, 127 AI agents, 48-hour turnaround. From £375. Subscribe from £399/mo."
         path="/"
         jsonLd={{
           '@type': 'WebSite',
@@ -53,7 +53,7 @@ const Home = () => {
               <span className="text-brand-accent italic font-accent font-medium">in 48 Hours.</span>
             </h1>
             <p className="text-xl text-brand-primary/70 max-w-lg mb-10 leading-relaxed">
-              Planning-ready reports for any UK site. {TOTAL_DATA_SOURCES} data sources. {TOTAL_AGENTS} AI agents. Human-verified. Appeal-ready from day one.
+              Planning-ready reports for any UK site. {TOTAL_DATA_SOURCES}+ Data Sources. {TOTAL_AGENTS} AI agents. Human-verified. Appeal-ready from day one.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link to="/order-report" className="bg-brand-primary text-white px-8 py-4 rounded-full font-bold flex items-center gap-2 hover:scale-105 transition-transform">
@@ -119,7 +119,7 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 lg:gap-16">
             <div className="flex flex-col items-center gap-1">
-              <span className="font-display font-bold text-lg lg:text-xl text-brand-primary">{TOTAL_DATA_SOURCES} Data Sources</span>
+              <span className="font-display font-bold text-lg lg:text-xl text-brand-primary">{TOTAL_DATA_SOURCES}+ Data Sources</span>
               <span className="text-[10px] uppercase tracking-widest text-brand-primary/60 font-mono text-center">Cross-Referenced</span>
             </div>
             <div className="w-px h-8 bg-brand-primary/10 hidden md:block" />
@@ -151,8 +151,8 @@ const Home = () => {
 
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {[
-              { step: "01", title: "Enter Your Address", desc: "Any UK site. Postcode or full address. We query 60 authoritative data sources automatically.", icon: <Search size={28} />, color: 'from-teal-500 to-cyan-600' },
-              { step: "02", title: "Select Your Reports", desc: "Pick individual reports, a bundle, or subscribe for monthly credits. 24 report types available.", icon: <FileText size={28} />, color: 'from-violet-500 to-purple-600' },
+              { step: "01", title: "Enter Your Address", desc: "Any UK site. Postcode or full address. We query 60+ authoritative data sources automatically.", icon: <Search size={28} />, color: 'from-teal-500 to-cyan-600' },
+              { step: "02", title: "Select Your Reports", desc: "Pick individual reports, a bundle, or subscribe for monthly credits. 25+ report types available.", icon: <FileText size={28} />, color: 'from-violet-500 to-purple-600' },
               { step: "03", title: "Receive in 48 Hours", desc: "AI-generated, human-verified, submission-ready documents. PDF and Word. Planning-grade quality.", icon: <Clock size={28} />, color: 'from-brand-accent to-amber-500' },
             ].map((item, i) => (
               <motion.div
@@ -195,13 +195,13 @@ const Home = () => {
             <span className="font-mono text-xs uppercase tracking-[0.3em] text-brand-accent font-bold mb-4 block">Most Popular</span>
             <h2 className="text-5xl font-bold tracking-tighter mb-4">Our <span className="italic font-accent font-light text-brand-accent">Reports.</span></h2>
             <p className="text-brand-primary/50 max-w-2xl mx-auto text-lg font-light">
-              24 report types across 6 categories. Every one submission-ready, data-driven, and human-verified.
+              25+ report types across 6 categories. Every one submission-ready, data-driven, and human-verified.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { name: 'Site Feasibility Report', desc: '22+ constraint screening, Planning Friction Score, Buildability Rating', price: '£595', path: '/site-intelligence/site-feasibility-report', badge: 'Most Popular' },
+              { name: 'Site Feasibility Report', desc: '27+ constraint screening, Planning Friction Score, Buildability Rating', price: '£595', path: '/site-intelligence/site-feasibility-report', badge: 'Most Popular' },
               { name: 'Site Acquisition Report', desc: 'GDV, RLV, planning risk, go/no-go recommendation for land buyers', price: '£995', path: '/site-intelligence/site-acquisition-intelligence', badge: 'Land Buyers' },
               { name: 'Flood Risk Assessment', desc: '7 flood sources, 4 Decision Risk Scores, SuDS viability', price: '£375', path: '/site-intelligence/flood-risk-assessment', badge: null },
               { name: 'Planning Statement', desc: 'Submission-ready policy evidence and planning justification', price: '£495', path: '/site-intelligence/planning-statement', badge: null },

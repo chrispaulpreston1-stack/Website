@@ -1,3 +1,4 @@
+import PackageCrossSellBanner from '../components/PackageCrossSellBanner';
 import { motion } from 'motion/react';
 import { Search, Check, ArrowRight, HelpCircle, AlertTriangle, Building2, Map, Zap, Clock, X, FileText } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -36,7 +37,7 @@ const SiteFeasibilityReport = () => {
         { feature: "Heritage at Risk Register", pfco: true, competitor1: false, competitor2: false },
         { feature: "UXO risk indicators", pfco: true, competitor1: false, competitor2: false },
         { feature: "Mining risk assessment", pfco: true, competitor1: false, competitor2: true },
-        { feature: "22+ constraint categories in one report", pfco: true, competitor1: "6-8 typical", competitor2: "10 searches" },
+        { feature: "27+ constraint categories in one report", pfco: true, competitor1: "6-8 typical", competitor2: "10 searches" },
       ]
     },
     {
@@ -92,13 +93,13 @@ const SiteFeasibilityReport = () => {
     <div className="pt-20">
       <PageSEO
         title="Site Feasibility Report | Pre-Construction Screening | PF & Co"
-        description="A data-driven pre-construction screening report checking 22+ planning, environmental, and ground risk constraints before you commit."
+        description="A data-driven pre-construction screening report checking 27+ planning, environmental, and ground risk constraints before you commit."
         path="/site-intelligence/site-feasibility-report"
         jsonLd={[
           {
             '@type': 'Product',
             name: 'Site Feasibility Report',
-            description: 'Data-driven pre-construction screening report checking 22+ planning, environmental, and ground risk constraints.',
+            description: 'Data-driven pre-construction screening report checking 27+ planning, environmental, and ground risk constraints.',
             brand: { '@type': 'Organization', name: 'PF & Co Site Intelligence' },
             offers: { '@type': 'Offer', price: String(report.earlyAccessPrice), priceCurrency: 'GBP' },
           },
@@ -132,7 +133,7 @@ const SiteFeasibilityReport = () => {
               <span className="text-teal-600">Feasibility.</span>
             </h1>
             <p className="text-xl text-brand-primary/60 leading-relaxed mb-10 max-w-lg font-light">
-              The broadest screen available. We interrogate 22+ planning, environmental, and ground risk constraints for any UK property address in 48 hours.
+              The broadest screen available. We interrogate 27+ planning, environmental, and ground risk constraints for any UK property address in 48 hours.
             </p>
             <div className="flex flex-wrap gap-6 items-center">
               <Link to="/order-report?report=site-feasibility-report" className="px-10 py-5 bg-teal-600 text-white rounded-full font-bold hover:bg-teal-700 transition-all shadow-xl shadow-teal-600/20 flex items-center gap-2">
@@ -204,7 +205,7 @@ const SiteFeasibilityReport = () => {
           <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
             <div className="max-w-2xl">
               <span className="font-mono text-xs uppercase tracking-[0.4em] text-teal-400 font-bold mb-4 block">The Scope</span>
-              <h2 className="text-5xl font-bold mb-6 tracking-tighter leading-none">22+ Constraints. <br /><span className="text-teal-400 italic font-serif font-light">One Definitive Report.</span></h2>
+              <h2 className="text-5xl font-bold mb-6 tracking-tighter leading-none">27+ Constraints. <br /><span className="text-teal-400 italic font-serif font-light">One Definitive Report.</span></h2>
             </div>
             <p className="text-white/40 text-lg max-w-xs font-light">We interrogate the data so you don't have to. Every report is reviewed by an engineer.</p>
           </div>
@@ -229,7 +230,7 @@ const SiteFeasibilityReport = () => {
             subtitle="What you get vs a typical planning consultant or automated data search"
             columns={["Feature", "PF&Co Site Intelligence", "Typical Planning Consultant", "Groundsure / Envirocheck"]}
             categories={comparisonCategories}
-            footerNote="Comparison based on publicly available product information from Groundsure Avista, Landmark Envirocheck, and typical UK planning consultancy appraisals. Features may vary by provider and product tier. PF&Co Site Feasibility Report checks 22+ constraint categories from 60 authoritative data sources."
+            footerNote="Comparison based on publicly available product information from Groundsure Avista, Landmark Envirocheck, and typical UK planning consultancy appraisals. Features may vary by provider and product tier. PF&Co Site Feasibility Report checks 27+ constraint categories from 60+ authoritative data sources."
             accentColor="text-teal-500"
           />
         </div>
@@ -320,6 +321,8 @@ const SiteFeasibilityReport = () => {
           </p>
         </div>
       </section>
+
+      <PackageCrossSellBanner />
 
       {/* Final CTA - SaaS High Conversion */}
       <section className="max-w-7xl mx-auto px-6 pb-24">

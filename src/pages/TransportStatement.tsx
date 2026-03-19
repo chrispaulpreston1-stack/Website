@@ -1,3 +1,4 @@
+import PackageCrossSellBanner from '../components/PackageCrossSellBanner';
 import { motion } from 'motion/react';
 import { Truck, Check, ArrowRight, Info, HelpCircle, Clock, Zap, ShieldCheck, Navigation, FileText } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -366,6 +367,8 @@ const TransportStatement = () => {
           </p>
         </div>
       </section>
+
+      <PackageCrossSellBanner />
 
       {/* Final CTA - High Impact */}
       <section className="max-w-7xl mx-auto px-6 pb-24">

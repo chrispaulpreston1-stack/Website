@@ -1,3 +1,4 @@
+import PackageCrossSellBanner from '../components/PackageCrossSellBanner';
 import { motion } from 'motion/react';
 import { Banknote, Check, ArrowRight, Zap, Clock, TrendingUp, Shield, Calculator, BarChart3, Target, AlertTriangle, FileText, Scale, Building2, PieChart, Info } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -405,6 +406,8 @@ const DevelopmentFinanceSummary = () => {
           </div>
         </Link>
       </section>
+
+      <PackageCrossSellBanner />
 
       {/* Final CTA */}
       <section className="max-w-7xl mx-auto px-6 pb-24">

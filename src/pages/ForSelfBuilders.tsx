@@ -289,7 +289,7 @@ const ForSelfBuilders = () => {
                 <p className="text-brand-secondary mb-8 text-lg">The starting point for every project. A definitive breakdown of all your site's physical and regulatory constraints.</p>
                 
                 <ul className="space-y-4 mb-20">
-                  {['22+ Constraint Categories Checked', 'Planning Friction Score (0-100)', 'Buildability Rating'].map((item, i) => (
+                  {['27+ Constraint Categories Checked', 'Planning Friction Score (0-100)', 'Buildability Rating'].map((item, i) => (
                     <li key={i} className="flex items-start gap-3">
                       <CheckCircle2 size={20} className="text-teal-500 shrink-0 mt-0.5" />
                       <span className="text-brand-primary/80 font-medium">{item}</span>

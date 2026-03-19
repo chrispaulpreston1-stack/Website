@@ -1,3 +1,4 @@
+import PackageCrossSellBanner from '../components/PackageCrossSellBanner';
 import { motion } from 'motion/react';
 import { Building2, Check, ArrowRight, Zap, Clock, TrendingUp, Shield, MapPin, Calculator, BarChart3, Target, Landmark, AlertTriangle, Banknote, FileText, Scale } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -40,7 +41,7 @@ const SiteAcquisitionIntelligence = () => {
       rows: [
         { feature: "Planning risk score (0-100)", pfco: true, competitor1: false, competitor2: false },
         { feature: "Local plan allocation check", pfco: true, competitor1: true, competitor2: "Basic" },
-        { feature: "Constraint screening (22+ categories)", pfco: true, competitor1: "6-8", competitor2: "3-4" },
+        { feature: "Constraint screening (27+ categories)", pfco: true, competitor1: "6-8", competitor2: "3-4" },
         { feature: "Recent decision precedent", pfco: true, competitor1: "Sometimes", competitor2: false },
         { feature: "Pre-app recommendation", pfco: true, competitor1: false, competitor2: false },
         { feature: "Determination timeline estimate", pfco: true, competitor1: false, competitor2: false },
@@ -87,7 +88,7 @@ const SiteAcquisitionIntelligence = () => {
             '@type': 'FAQPage',
             mainEntity: [
               { '@type': 'Question', name: 'What is a Site Acquisition Report report?', acceptedAnswer: { '@type': 'Answer', text: 'It synthesises planning, market, financial, and ground risk data into a single acquisition-grade summary — telling you whether to buy a site, at what price, and under what conditions.' } },
-              { '@type': 'Question', name: 'How is this different from a Site Feasibility Report?', acceptedAnswer: { '@type': 'Answer', text: 'The Site Feasibility Report screens 22+ constraints. The Site Acquisition Report report goes further — adding GDV, build cost, residual land value, S106/CIL exposure, and a financial viability assessment to support the land-buying decision.' } },
+              { '@type': 'Question', name: 'How is this different from a Site Feasibility Report?', acceptedAnswer: { '@type': 'Answer', text: 'The Site Feasibility Report screens 27+ constraints. The Site Acquisition Report report goes further — adding GDV, build cost, residual land value, S106/CIL exposure, and a financial viability assessment to support the land-buying decision.' } },
               { '@type': 'Question', name: 'Can I use the RLV figure to make an offer?', acceptedAnswer: { '@type': 'Answer', text: 'The indicative RLV provides a data-informed starting point for your bid. It should be refined by your surveyor or development manager with site-specific assumptions before making a formal offer.' } },
               { '@type': 'Question', name: 'Does it cover affordable housing and S106?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. For sites triggering affordable housing thresholds (typically 10+ units), we calculate the policy obligation, likely S106 heads of terms, and the viability impact on your appraisal.' } },
             ]
@@ -357,7 +358,7 @@ const SiteAcquisitionIntelligence = () => {
           <div className="space-y-8">
             {[
               { q: "What is a Site Acquisition Report report?", a: "It synthesises planning, market, financial, and ground risk data into a single acquisition-grade summary — telling you whether to buy a site, at what price, and under what conditions." },
-              { q: "How is this different from a Site Feasibility Report?", a: "The Site Feasibility Report screens 22+ constraints. The Site Acquisition Report report goes further — adding GDV, build cost, residual land value, S106/CIL exposure, and a financial viability assessment to support the land-buying decision." },
+              { q: "How is this different from a Site Feasibility Report?", a: "The Site Feasibility Report screens 27+ constraints. The Site Acquisition Report report goes further — adding GDV, build cost, residual land value, S106/CIL exposure, and a financial viability assessment to support the land-buying decision." },
               { q: "Can I use the RLV figure to make an offer?", a: "The indicative RLV provides a data-informed starting point for your bid. It should be refined by your surveyor or development manager with site-specific assumptions before making a formal offer." },
               { q: "Does it cover affordable housing and S106?", a: "Yes. For sites triggering affordable housing thresholds (typically 10+ units), we calculate the policy obligation, likely S106 heads of terms, and the viability impact on your appraisal." },
               { q: "How accurate is the GDV range?", a: "GDV is derived from Land Registry Price Paid Data for comparable transactions within the locality, adjusted for unit type and size. We provide a range (low/central/high) rather than a single figure to reflect market uncertainty." },
@@ -384,6 +385,8 @@ const SiteAcquisitionIntelligence = () => {
           </div>
         </Link>
       </section>
+
+      <PackageCrossSellBanner />
 
       {/* Final CTA */}
       <section className="max-w-7xl mx-auto px-6 pb-24">

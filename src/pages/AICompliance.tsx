@@ -67,7 +67,7 @@ export default function AICompliance() {
     <div className="bg-brand-surface">
       <PageSEO
         title="AI Standards & Compliance | PF & Co Site Intelligence"
-        description={`Our AI compliance framework: ${TOTAL_AGENTS} specialised agents, ${TOTAL_DATA_SOURCES} authoritative data sources, 24-category QA pipeline, and RICS AI Standard alignment.`}
+        description={`Our AI compliance framework: ${TOTAL_AGENTS} specialised agents, ${TOTAL_DATA_SOURCES}+ authoritative data sources, 24-category QA pipeline, and RICS AI Standard alignment.`}
         path="/ai-compliance"
         jsonLd={{
           '@type': 'WebPage',
@@ -166,7 +166,7 @@ export default function AICompliance() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <p className="text-sm font-bold uppercase tracking-widest text-brand-accent mb-3">Data Foundations</p>
-            <h2 className="text-4xl font-bold text-brand-primary mb-4">{TOTAL_DATA_SOURCES} Authoritative Data Sources</h2>
+            <h2 className="text-4xl font-bold text-brand-primary mb-4">{TOTAL_DATA_SOURCES}+ authoritative Data Sources</h2>
             <p className="text-brand-primary/60 max-w-2xl mx-auto text-lg font-light">
               Every report is built on data from official UK government and regulatory sources, organised across {DATA_SOURCE_CATEGORY_INFO.length} categories.
             </p>

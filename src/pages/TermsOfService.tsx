@@ -59,7 +59,7 @@ export default function TermsOfService() {
 
           <h2>3. Report Orders</h2>
           <ul>
-            <li>All prices shown are exclusive of VAT where applicable.</li>
+            <li>All pricing shown is inclusive.</li>
             <li>Reports are delivered electronically to the email address provided.</li>
             <li>Typical turnaround times are stated on the relevant service pages but are targets, not guarantees.</li>
             <li>You are responsible for providing accurate and complete site and project information. We may rely on information you supply without independent verification unless expressly agreed otherwise in writing.</li>

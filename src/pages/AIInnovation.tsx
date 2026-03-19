@@ -287,7 +287,7 @@ const AgentCatalogue = () => {
           {TOTAL_AGENTS} Agents. <span className="text-brand-accent italic font-serif font-light">{categories.length} Domains.</span>
         </h2>
         <p className="text-white/40 max-w-2xl mx-auto text-lg font-light">
-          {TOTAL_AGENTS} specialised agents across {categories.length} operational domains, interrogating {TOTAL_DATA_SOURCES} authoritative data sources to produce {TOTAL_REPORTS} report types.
+          {TOTAL_AGENTS} specialised agents across {categories.length} operational domains, interrogating {TOTAL_DATA_SOURCES}+ authoritative data sources to produce {TOTAL_REPORTS} report types.
         </p>
       </div>
 
@@ -329,13 +329,13 @@ const AIInnovation = () => {
     <div className="pt-20 bg-brand-primary text-white overflow-x-hidden" ref={containerRef}>
       <PageSEO
         title="AI Innovation | PF & Co Structural Engineering"
-        description={`Explore our ${TOTAL_AGENTS}-agent AI system interrogating 60 authoritative data sources to produce planning-ready site intelligence reports in 48 hours.`}
+        description={`Explore our ${TOTAL_AGENTS}-agent AI system interrogating 60+ authoritative data sources to produce planning-ready site intelligence reports in 48 hours.`}
         path="/ai-innovation"
         jsonLd={{
           '@type': 'SoftwareApplication',
           name: 'PF & Co AI Swarm',
           applicationCategory: 'EngineeringApplication',
-          description: 'Multi-agent AI system for site intelligence, orchestrating data acquisition, analysis, and report generation across 60 authoritative data sources.',
+          description: 'Multi-agent AI system for site intelligence, orchestrating data acquisition, analysis, and report generation across 60+ authoritative data sources.',
           operatingSystem: 'Web',
           offers: {
             '@type': 'Offer',
@@ -364,7 +364,7 @@ const AIInnovation = () => {
                 Engineering.
               </h1>
               <p className="text-2xl text-white/60 leading-relaxed mb-12 max-w-2xl font-light">
-                We don't just use AI; we've rebuilt the structural engineering workflow around it. {TOTAL_AGENTS} specialised agents interrogating {TOTAL_DATA_SOURCES} authoritative data sources. Human intuition meets machine precision.
+                We don't just use AI; we've rebuilt the structural engineering workflow around it. {TOTAL_AGENTS} specialised agents interrogating {TOTAL_DATA_SOURCES}+ authoritative data sources. Human intuition meets machine precision.
               </p>
               <div className="flex flex-wrap gap-6 mb-12">
                 <Link to="/contact" className="px-10 py-5 bg-brand-accent text-brand-primary rounded-full font-bold text-lg hover:scale-105 transition-all shadow-[0_0_40px_rgba(245,158,11,0.2)]">
@@ -435,10 +435,10 @@ const AIInnovation = () => {
               </div>
               <h3 className="text-4xl font-display font-bold text-white mb-6">Multi-Source Data Fusion</h3>
               <p className="text-white/60 text-lg leading-relaxed max-w-xl mb-12 font-light">
-                Our agents interrogate 60 authoritative data sources in parallel — BGS geology, EA flood zones, Historic England listings, Land Registry transactions, and more. Every constraint cross-referenced, every risk scored, in a <span className="text-brand-accent italic">single integrated report</span>.
+                Our agents interrogate 60+ authoritative data sources in parallel — BGS geology, EA flood zones, Historic England listings, Land Registry transactions, and more. Every constraint cross-referenced, every risk scored, in a <span className="text-brand-accent italic">single integrated report</span>.
               </p>
               <div className="flex gap-4">
-                <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-widest text-white/40">60 Data Sources</span>
+                <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-widest text-white/40">60+ data sources</span>
                 <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-widest text-white/40">Cross-Referenced</span>
               </div>
             </div>

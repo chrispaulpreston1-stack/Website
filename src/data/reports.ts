@@ -85,10 +85,10 @@ export const reports: Report[] = [
     rrp: 2500,
     stripePrice: 595,
     path: '/site-intelligence/site-feasibility-report',
-    description: '22+ planning, environmental, and ground risk constraints for any UK property address.',
+    description: '27+ planning, environmental, and ground risk constraints for any UK property address.',
     turnaround: '48hr',
     samplePath: '/samples/site-feasibility-report-sample.pdf',
-    methodologySummary: 'Interrogates planning, environmental, geological, heritage, ecological, and infrastructure data sources to screen 22+ constraint categories and produce quantified risk scores.',
+    methodologySummary: 'Interrogates planning, environmental, geological, heritage, ecological, and infrastructure data sources to screen 27+ constraint categories and produce quantified risk scores.',
     dataCategories: ['Planning & Land Use', 'Flood & Water', 'Geology & Ground', 'Heritage & Conservation', 'Ecology & Environment', 'Safety & Risk', 'Market & Infrastructure', 'Mapping & Spatial', 'Transport & Accessibility', 'Amenity & Services', 'Climate & Energy'],
   },
   {

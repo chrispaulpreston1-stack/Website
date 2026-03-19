@@ -1,3 +1,4 @@
+import PackageCrossSellBanner from '../components/PackageCrossSellBanner';
 import { motion } from 'motion/react';
 import { MessageSquare, Check, ArrowRight, Info, HelpCircle, Clock, Zap, ShieldCheck, FileText } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -28,7 +29,7 @@ const PreApplicationAdvice = () => {
       rows: [
         { feature: "Targeted site-specific questions (5–10)", pfco: true, competitor1: "Often 1–2 vague", competitor2: false },
         { feature: "Full planning policy context provided", pfco: true, competitor1: "Usually none", competitor2: false },
-        { feature: "Site constraint research (22+ categories)", pfco: true, competitor1: "Basic address only", competitor2: false },
+        { feature: "Site constraint research (27+ categories)", pfco: true, competitor1: "Basic address only", competitor2: false },
       ]
     },
     {
@@ -358,6 +359,8 @@ const PreApplicationAdvice = () => {
           </p>
         </div>
       </section>
+
+      <PackageCrossSellBanner />
 
       {/* Final CTA - High Impact */}
       <section className="max-w-7xl mx-auto px-6 pb-24">

@@ -91,7 +91,7 @@ const SiteIntelligenceHub = () => {
   const products = [
     {
       title: "Site Feasibility Report",
-      desc: "The broadest screen. Checks 22+ planning, environmental, and ground risk constraints for any UK property address.",
+      desc: "The broadest screen. Checks 27+ planning, environmental, and ground risk constraints for any UK property address.",
       icon: <Search className="text-teal-500" size={32} />,
       link: "/site-intelligence/site-feasibility-report",
       accent: "border-teal-500",
@@ -126,7 +126,8 @@ const SiteIntelligenceHub = () => {
 
   const stats = [
     { num: "300+", label: "Projects Delivered" },
-    { num: "60", label: "Authoritative Data Sources" },
+    { num: "60+", label: "Data Sources Interrogated" },
+    { num: "25+", label: "Report Types Available" },
     { num: "48hr", label: "Typical Turnaround" }
   ];
 
@@ -134,13 +135,13 @@ const SiteIntelligenceHub = () => {
     <div className="pt-32 pb-24">
       <PageSEO
         title="PF & Co Site Intelligence | Data-Driven Pre-Construction Screening | PF & Co"
-        description="Interrogate 60 authoritative data sources to identify planning, flood, and ground risks before you commit to a site."
+        description="Interrogate 60+ authoritative data sources to identify planning, flood, and ground risks before you commit to a site."
         path="/site-intelligence"
         jsonLd={[
           {
             '@type': 'Service',
             name: 'Site Intelligence',
-            description: 'Data-driven pre-construction screening interrogating 60 authoritative data sources to identify planning, flood, and ground risks.',
+            description: 'Data-driven pre-construction screening interrogating 60+ authoritative data sources to identify planning, flood, and ground risks.',
             provider: { '@type': 'Organization', name: 'PF & Co Site Intelligence' },
             areaServed: ['England', 'Wales', 'UK'],
             serviceType: 'Site Intelligence',
@@ -148,7 +149,7 @@ const SiteIntelligenceHub = () => {
           {
             '@type': 'VideoObject',
             name: 'PF & Co Site Intelligence — The Complete Process',
-            description: 'See the complete Site Intelligence process from order to delivery. Learn how we interrogate 60 authoritative data sources and translate raw data into engineering decisions for planning, flood, and ground risk screening.',
+            description: 'See the complete Site Intelligence process from order to delivery. Learn how we interrogate 60+ authoritative data sources and translate raw data into engineering decisions for planning, flood, and ground risk screening.',
             thumbnailUrl: 'https://www.pfandco.co.uk/videos/site-intelligence-demo-thumb.jpg',
             contentUrl: 'https://www.pfandco.co.uk/videos/site-intelligence-demo.mp4',
             uploadDate: '2026-03-02',
@@ -183,7 +184,7 @@ const SiteIntelligenceHub = () => {
               transition={{ delay: 0.15 }}
               className="text-2xl font-bold text-brand-accent mb-6"
             >
-              22 Reports. 60 Data Sources. 48 Hours.
+              22 Reports. 60+ data sources. 48 Hours.
             </motion.p>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -265,6 +266,20 @@ const SiteIntelligenceHub = () => {
               </div>
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Trust Stats Bar */}
+      <section className="bg-brand-surface border-y border-brand-primary/10 mb-24 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 py-12 relative z-10">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 divide-x-0 lg:divide-x divide-brand-primary/10">
+            {stats.map((stat, i) => (
+              <div key={i} className="flex flex-col items-center text-center px-4">
+                <span className="text-4xl md:text-5xl font-display font-bold text-brand-accent mb-2">{stat.num}</span>
+                <span className="text-xs md:text-sm font-bold uppercase tracking-widest text-brand-primary/60">{stat.label}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -497,118 +512,151 @@ const SiteIntelligenceHub = () => {
         </motion.div>
       </section>
 
-      {/* Product Cards — replaced by catalog below, keeping section wrapper */}
-      <section className="max-w-7xl mx-auto px-6 mb-24">
-        <div className="text-center mb-12">
-          <h2 className="text-5xl font-bold mb-6 tracking-tighter">Our <span className="text-brand-accent italic font-serif font-light">Reports.</span></h2>
-          <p className="text-brand-primary/60 max-w-2xl mx-auto text-lg font-light">24 report types. Filter by who you are to see what's most relevant.</p>
+      {/* Grouped Reports Section */}
+      <section className="max-w-7xl mx-auto px-6 mb-16">
+        <div className="mb-12">
+          <h2 className="text-4xl font-bold mb-4 tracking-tighter">Planning Application <span className="text-brand-accent italic font-serif font-light">Reports.</span></h2>
+          <p className="text-brand-primary/60 text-lg font-light">Essential documents required for valid planning submissions.</p>
         </div>
-
-          {/* Role Filter */}
-          <div className="flex flex-wrap justify-center gap-2 mb-12">
-            {[
-              { id: 'all', label: 'All Reports' },
-              { id: 'developer', label: 'Developer' },
-              { id: 'architect', label: 'Architect' },
-              { id: 'land-buyer', label: 'Land Buyer' },
-              { id: 'homeowner', label: 'Homeowner' },
-              { id: 'lender', label: 'Lender / Investor' },
-            ].map(role => (
-              <button
-                key={role.id}
-                onClick={() => setRoleFilter(role.id)}
-                className={`px-5 py-2.5 rounded-full text-sm font-bold transition-all ${roleFilter === role.id ? 'bg-brand-primary text-white shadow-lg' : 'bg-white text-brand-primary/60 border border-brand-primary/10 hover:border-brand-accent/30'}`}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {(() => {
+            const categoryColors: Record<string, string> = {
+              'core': 'border-t-teal-500',
+              'planning-strategy': 'border-t-violet-500',
+              'environmental-ecology': 'border-t-emerald-500',
+              'specialist-surveys': 'border-t-blue-500',
+              'construction-readiness': 'border-t-amber-500',
+            };
+            const categoryLabels: Record<string, string> = {
+              'core': 'Core Intelligence',
+              'planning-strategy': 'Planning & Strategy',
+              'environmental-ecology': 'Environmental',
+              'specialist-surveys': 'Specialist',
+              'construction-readiness': 'Construction',
+            };
+            
+            const planningSlugs = ['site-feasibility-report', 'planning-statement', 'design-and-access-statement', 'heritage-impact-assessment', 'biodiversity-net-gain', 'tree-survey', 'energy-statement'];
+            const planningReports = reports.filter(r => planningSlugs.includes(r.slug) && r.stripePrice > 0);
+            
+            return planningReports.map((report, i) => (
+              <motion.div
+                key={report.slug}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.03 }}
               >
-                {role.label}
-              </button>
-            ))}
-          </div>
-
-          {/* Report Cards */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {(() => {
-              const roleReports: Record<string, string[]> = {
-                'all': reports.filter(r => r.stripePrice > 0).map(r => r.slug),
-                'developer': ['site-acquisition-intelligence', 'development-finance-summary', 'site-feasibility-report', 'geotechnical-desk-study', 'flood-risk-assessment', 'phase-1-contamination', 'planning-statement', 'design-and-access-statement', 'feasibility-study', 'cil-liability-assessment', 'biodiversity-net-gain', 'energy-statement', 'construction-management-plan', 'pre-construction-design-review'],
-                'architect': ['site-feasibility-report', 'planning-statement', 'design-and-access-statement', 'heritage-impact-assessment', 'biodiversity-net-gain', 'energy-statement', 'transport-statement', 'parking-survey', 'tree-survey', 'noise-impact-assessment', 'daylight-sunlight-assessment', 'air-quality-screening'],
-                'land-buyer': ['site-acquisition-intelligence', 'development-finance-summary', 'site-feasibility-report', 'geotechnical-desk-study', 'flood-risk-assessment', 'feasibility-study', 'cil-liability-assessment'],
-                'homeowner': ['site-feasibility-report', 'geotechnical-desk-study', 'flood-risk-assessment', 'planning-statement', 'design-and-access-statement', 'construction-management-plan', 'pre-construction-design-review'],
-                'lender': ['site-acquisition-intelligence', 'development-finance-summary', 'site-feasibility-report', 'flood-risk-assessment', 'geotechnical-desk-study', 'phase-1-contamination'],
-              };
-
-              const categoryColors: Record<string, string> = {
-                'core': 'border-t-teal-500',
-                'planning-strategy': 'border-t-violet-500',
-                'environmental-ecology': 'border-t-emerald-500',
-                'specialist-surveys': 'border-t-blue-500',
-                'construction-readiness': 'border-t-amber-500',
-              };
-
-              const categoryLabels: Record<string, string> = {
-                'core': 'Core Intelligence',
-                'planning-strategy': 'Planning & Strategy',
-                'environmental-ecology': 'Environmental',
-                'specialist-surveys': 'Specialist',
-                'construction-readiness': 'Construction',
-              };
-
-              const roleLabels: Record<string, string> = {
-                'developer': 'Developers',
-                'architect': 'Architects',
-                'land-buyer': 'Land Buyers',
-                'homeowner': 'Homeowners',
-                'lender': 'Lenders',
-              };
-
-              function bestFor(slug: string): string[] {
-                return Object.entries(roleReports)
-                  .filter(([key, slugs]) => key !== 'all' && slugs.includes(slug))
-                  .map(([key]) => roleLabels[key] || key);
-              }
-
-              const slugs = roleReports[roleFilter] || roleReports['all'];
-              const filtered = reports.filter(r => slugs.includes(r.slug) && r.stripePrice > 0);
-
-              return filtered.map((report, i) => (
-                <motion.div
-                  key={report.slug}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.03 }}
-                >
-                  <Link to={report.path} className={`block p-8 rounded-2xl bg-white border border-brand-primary/5 border-t-4 ${categoryColors[report.category] || 'border-t-brand-accent'} hover:shadow-lg transition-all group h-full`}>
-                    <div className="flex items-center justify-between mb-4">
-                      <span className="text-[10px] font-bold uppercase tracking-widest text-brand-primary/30">{categoryLabels[report.category] || report.category}</span>
-                      <span className="text-2xl font-bold text-brand-accent">£{report.stripePrice.toLocaleString()}</span>
+                <Link to={report.path} className={`block p-8 rounded-2xl bg-white border border-brand-primary/5 border-t-4 ${categoryColors[report.category] || 'border-t-brand-accent'} hover:shadow-lg transition-all group h-full`}>
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-brand-primary/30">{categoryLabels[report.category] || report.category}</span>
+                    <span className="text-2xl font-bold text-brand-accent">£{report.stripePrice.toLocaleString()}</span>
+                  </div>
+                  <h4 className="text-lg font-bold text-brand-primary mb-3 group-hover:text-brand-accent transition-colors">{report.name}</h4>
+                  <p className="text-brand-primary/50 leading-relaxed mb-3 line-clamp-3">{report.description}</p>
+                  <div className="flex flex-wrap gap-1.5 mb-4">
+                     <span className="text-[10px] font-bold uppercase tracking-wider bg-brand-primary/5 text-brand-primary/40 px-2.5 py-1 rounded-full">Planning Phase</span>
+                  </div>
+                  <div className="flex items-center justify-between pt-4 border-t border-brand-primary/5 mt-auto">
+                    <div className="flex items-center gap-2">
+                      <Clock size={14} className="text-brand-primary/30" />
+                      <span className="text-xs text-brand-primary/40 font-bold">{report.turnaround}</span>
                     </div>
-                    <h4 className="text-lg font-bold text-brand-primary mb-3 group-hover:text-brand-accent transition-colors">{report.name}</h4>
-                    <p className="text-brand-primary/50 leading-relaxed mb-3">{report.description}</p>
-                    <div className="flex flex-wrap gap-1.5 mb-4">
-                      {bestFor(report.slug).map(role => (
-                        <span key={role} className="text-[10px] font-bold uppercase tracking-wider bg-brand-primary/5 text-brand-primary/40 px-2.5 py-1 rounded-full">{role}</span>
-                      ))}
-                    </div>
-                    <div className="flex items-center justify-between pt-4 border-t border-brand-primary/5">
-                      <div className="flex items-center gap-2">
-                        <Clock size={14} className="text-brand-primary/30" />
-                        <span className="text-xs text-brand-primary/40 font-bold">{report.turnaround}</span>
-                      </div>
-                      <span className="text-sm font-bold text-brand-accent flex items-center gap-1 group-hover:gap-2 transition-all">
-                        View <ArrowRight size={14} />
-                      </span>
-                    </div>
-                  </Link>
-                </motion.div>
-              ));
-            })()}
-          </div>
+                    <span className="text-sm font-bold text-brand-accent flex items-center gap-1 group-hover:gap-2 transition-all">
+                      View <ArrowRight size={14} />
+                    </span>
+                  </div>
+                </Link>
+              </motion.div>
+            ));
+          })()}
+        </div>
+      </section>
 
-          <div className="text-center mt-12">
-            <Link to="/order-report" className="inline-flex items-center gap-2 px-8 py-4 bg-brand-primary text-white rounded-full font-bold hover:scale-105 transition-transform">
-              Order Reports <ArrowRight size={18} />
-            </Link>
+      {/* Packages Banner */}
+      <section className="max-w-7xl mx-auto px-6 mb-16">
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          className="bg-gradient-to-r from-amber-500 to-amber-600 rounded-[2rem] p-10 flex flex-col md:flex-row items-center justify-between text-white shadow-xl"
+        >
+          <div>
+            <h3 className="text-2xl md:text-3xl font-bold mb-2">Save up to 48% with Report Bundles</h3>
+            <p className="text-white/90 max-w-xl text-lg">Combine Feasibility, Geotechnical, and Flood Risk into one order. Delivered together for a single discounted price.</p>
           </div>
+          <Link to="/report-packages" className="mt-8 md:mt-0 px-8 py-4 bg-white text-amber-600 rounded-xl font-bold hover:scale-105 transition-transform whitespace-nowrap shadow-lg flex items-center gap-2">
+            View Packages <ArrowRight size={20} />
+          </Link>
+        </motion.div>
+      </section>
 
+      {/* Specialist & Developer Tools */}
+      <section className="max-w-7xl mx-auto px-6 mb-24">
+        <div className="mb-12">
+          <h2 className="text-4xl font-bold mb-4 tracking-tighter">Specialist & Developer <span className="text-brand-accent italic font-serif font-light">Tools.</span></h2>
+          <p className="text-brand-primary/60 text-lg font-light">Deep-dive technical reports and financial appraisals.</p>
+        </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {(() => {
+            const categoryColors: Record<string, string> = {
+              'core': 'border-t-teal-500',
+              'planning-strategy': 'border-t-violet-500',
+              'environmental-ecology': 'border-t-emerald-500',
+              'specialist-surveys': 'border-t-blue-500',
+              'construction-readiness': 'border-t-amber-500',
+            };
+            const categoryLabels: Record<string, string> = {
+              'core': 'Core Intelligence',
+              'planning-strategy': 'Planning & Strategy',
+              'environmental-ecology': 'Environmental',
+              'specialist-surveys': 'Specialist',
+              'construction-readiness': 'Construction',
+            };
+            
+            const specialistSlugs = ['site-acquisition-intelligence', 'development-finance-summary', 'geotechnical-desk-study', 'flood-risk-assessment', 'noise-impact-assessment', 'daylight-sunlight-assessment', 'phase-1-contamination', 'cil-liability-assessment'];
+            const specialistReports = reports.filter(r => specialistSlugs.includes(r.slug) && r.stripePrice > 0);
+            
+            return specialistReports.map((report, i) => (
+              <motion.div
+                key={report.slug}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.03 }}
+              >
+                <Link to={report.path} className={`block p-8 rounded-2xl bg-white border border-brand-primary/5 border-t-4 ${categoryColors[report.category] || 'border-t-brand-accent'} hover:shadow-lg transition-all group h-full`}>
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-brand-primary/30">{categoryLabels[report.category] || report.category}</span>
+                    <span className="text-2xl font-bold text-brand-accent">£{report.stripePrice.toLocaleString()}</span>
+                  </div>
+                  <h4 className="text-lg font-bold text-brand-primary mb-3 group-hover:text-brand-accent transition-colors">{report.name}</h4>
+                  <p className="text-brand-primary/50 leading-relaxed mb-3 line-clamp-3">{report.description}</p>
+                  <div className="flex flex-wrap gap-1.5 mb-4">
+                     <span className="text-[10px] font-bold uppercase tracking-wider bg-brand-primary/5 text-brand-primary/40 px-2.5 py-1 rounded-full">Specialist Phase</span>
+                  </div>
+                  <div className="flex items-center justify-between pt-4 border-t border-brand-primary/5 mt-auto">
+                    <div className="flex items-center gap-2">
+                      <Clock size={14} className="text-brand-primary/30" />
+                      <span className="text-xs text-brand-primary/40 font-bold">{report.turnaround}</span>
+                    </div>
+                    <span className="text-sm font-bold text-brand-accent flex items-center gap-1 group-hover:gap-2 transition-all">
+                      View <ArrowRight size={14} />
+                    </span>
+                  </div>
+                </Link>
+              </motion.div>
+            ));
+          })()}
+        </div>
+        
+        <div className="text-center mt-12">
+          <Link to="/order-report" className="inline-flex items-center gap-2 px-8 py-4 bg-brand-primary text-white rounded-full font-bold hover:scale-105 transition-transform">
+            Order Reports <ArrowRight size={18} />
+          </Link>
+        </div>
+      </section>
+
+      <section className="max-w-7xl mx-auto px-6 mb-24">
         {/* Bundle Offer */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -694,6 +742,9 @@ const SiteIntelligenceHub = () => {
                   { cap: "Ground conditions & geology", trad: true, map: false, si: true },
                   { cap: "Heritage & ecology screening", trad: "Sometimes", map: false, si: true },
                   { cap: "Engineer interpretation", trad: true, map: false, si: true },
+                  { cap: "Source-provenance audit trail", trad: "Sometimes", map: false, si: true },
+                  { cap: "Cross-report consistency checks", trad: "Rare", map: false, si: true },
+                  { cap: "Appeal-ready formatting (SI 2026/122)", trad: false, map: false, si: true },
                   { cap: "Turnaround", trad: "2-4 weeks", map: "Instant", si: "48 hours" },
                   { cap: "Typical cost", trad: "£1,500-£5,000+", map: "Free-£50", si: "From £245" },
                 ].map((row, i) => (
@@ -720,6 +771,31 @@ const SiteIntelligenceHub = () => {
             </table>
           </div>
 
+        </div>
+      </section>
+
+      {/* Built for Scrutiny */}
+      <section className="max-w-7xl mx-auto px-6 mb-24">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold mb-4 tracking-tighter">Built for <span className="text-brand-accent italic font-serif font-light">Scrutiny.</span></h2>
+          <p className="text-brand-primary/60 text-lg font-light max-w-3xl mx-auto">
+            Our reports are designed backwards from an appeal inquiry. Every data point is cited. Every engineer is named. Every methodology is published.
+          </p>
+        </div>
+        <div className="grid md:grid-cols-3 gap-6">
+          {[
+            { title: "Source-Provenance Audit Trail", desc: "Every metric links directly back to its original authoritative dataset. No black boxes.", icon: <Database size={24} /> },
+            { title: "AI-Human Hybrid Verification", desc: "AI does the heavy lifting. Qualified human engineers perform the final verification and sign-off.", icon: <ShieldAlert size={24} /> },
+            { title: "Local Policy Deep-Matching", desc: "We map site-specific constraints directly against the latest adopted Local Plan policies.", icon: <MapPin size={24} /> },
+          ].map((card, i) => (
+            <motion.div key={i} className="p-8 bg-brand-surface rounded-2xl border border-brand-primary/10 hover:shadow-lg transition-all" initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}>
+              <div className="w-12 h-12 bg-white rounded-xl shadow-sm border border-brand-primary/5 flex items-center justify-center text-brand-accent mb-6">
+                {card.icon}
+              </div>
+              <h3 className="font-bold text-lg mb-3">{card.title}</h3>
+              <p className="text-brand-primary/60 text-sm leading-relaxed">{card.desc}</p>
+            </motion.div>
+          ))}
         </div>
       </section>
 
@@ -756,7 +832,7 @@ const SiteIntelligenceHub = () => {
           <div className="relative z-10">
             <h2 className="text-4xl font-bold mb-4 text-white">Ready to Screen Your Site?</h2>
             <p className="text-white/60 text-lg mb-8 max-w-2xl mx-auto">
-              24 report types. 60 data sources. 48-hour turnaround. From £245.
+              25+ report types. 60+ data sources. 48-hour turnaround. From £245.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link

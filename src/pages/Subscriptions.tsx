@@ -88,7 +88,7 @@ const Subscriptions = () => {
       overageStandard: 345,
       features: [
         "2 report credits per month",
-        "Any of our 24 report types",
+        "Any of our 25+ report types",
         "72-hour turnaround",
         "Email support",
       ],
@@ -111,7 +111,7 @@ const Subscriptions = () => {
       overageStandard: 295,
       features: [
         "6 report credits per month",
-        "Any of our 24 report types",
+        "Any of our 25+ report types",
         "Priority 48-hour turnaround",
         "White-label reports (your branding)",
         "Dedicated account manager",
@@ -135,7 +135,7 @@ const Subscriptions = () => {
       overageStandard: 275,
       features: [
         "12 report credits per month",
-        "Any of our 24 report types",
+        "Any of our 25+ report types",
         "Priority 48-hour turnaround",
         "White-label reports",
         "Dedicated account manager",
@@ -160,7 +160,7 @@ const Subscriptions = () => {
       overageStandard: 245,
       features: [
         "30 report credits per month",
-        "Any of our 24 report types",
+        "Any of our 25+ report types",
         "Priority 48-hour turnaround",
         "White-label reports",
         "Dedicated account manager",
@@ -176,7 +176,7 @@ const Subscriptions = () => {
     <div className="pt-32 pb-24 min-h-screen bg-brand-surface">
       <PageSEO
         title="Pricing — Report Subscriptions & Bundles | PF & Co"
-        description="Site intelligence report subscriptions from £399/mo. 1 credit = 1 report. 48-hour turnaround, 60 data sources. Or buy individual reports and bundles."
+        description="Site intelligence report subscriptions from £399/mo. 1 credit = 1 report. 48-hour turnaround, 60+ data sources. Or buy individual reports and bundles."
         path="/subscriptions"
         jsonLd={{
           '@type': 'Service',
@@ -220,7 +220,7 @@ const Subscriptions = () => {
               </div>
               <div>
                 <div className="text-sm font-bold text-brand-primary">1 Credit = 1 Report</div>
-                <div className="text-xs text-brand-primary/40">Any of our 24 report types</div>
+                <div className="text-xs text-brand-primary/40">Any of our 25+ report types</div>
               </div>
             </div>
             <div className="w-px h-8 bg-brand-primary/10 hidden sm:block" />

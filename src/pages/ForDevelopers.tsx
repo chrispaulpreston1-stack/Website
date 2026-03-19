@@ -100,7 +100,7 @@ const ForDevelopers = () => {
               {
                 icon: ShieldCheck,
                 title: 'Constraint Mapping',
-                desc: 'Our AI agents automatically screen your site against 22+ constraint categories, identifying hidden issues like Article 4 Directions, TPOs, and complex flood zones before you buy.'
+                desc: 'Our AI agents automatically screen your site against 27+ constraint categories, identifying hidden issues like Article 4 Directions, TPOs, and complex flood zones before you buy.'
               },
               {
                 icon: LineChart,

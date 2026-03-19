@@ -118,7 +118,7 @@ const StructuralEngineering = () => {
           <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="max-w-xl">
               <h2 className="text-3xl font-bold mb-4">Eliminate Site Risk Early</h2>
-              <p className="text-white/60">Our Site Intelligence reports screen for 22+ planning and ground constraints before you commit to a design.</p>
+              <p className="text-white/60">Our Site Intelligence reports screen for 27+ planning and ground constraints before you commit to a design.</p>
             </div>
             <Link
               to="/site-intelligence"

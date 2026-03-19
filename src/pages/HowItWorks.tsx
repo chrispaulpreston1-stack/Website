@@ -30,7 +30,7 @@ const phaseReports: Record<string, PhaseReport[]> = {
   assessment: [
     { slug: 'site-acquisition-intelligence', whatItTellsYou: 'GDV, RLV, planning risk, go/no-go recommendation for land acquisition decisions.', midMarket: '£3,000-£8,000' },
     { slug: 'development-finance-summary', whatItTellsYou: 'Viability screening, profit on cost, sensitivity analysis for development finance.', midMarket: '£3,000-£8,000' },
-    { slug: 'site-feasibility-report', whatItTellsYou: '22+ planning, environmental & ground constraints. Planning Friction Score (0-100). Buildability Rating (1-10).', midMarket: '£1,000-£4,000' },
+    { slug: 'site-feasibility-report', whatItTellsYou: '27+ planning, environmental & ground constraints. Planning Friction Score (0-100). Buildability Rating (1-10).', midMarket: '£1,000-£4,000' },
     { slug: 'geotechnical-desk-study', whatItTellsYou: 'Ground conditions, geology, contamination, foundation risk.', midMarket: '£800-£1,500' },
     { slug: 'flood-risk-assessment', whatItTellsYou: '7 flood sources, Decision Risk Scores (0-10), SuDS viability.', midMarket: '£750-£1,500' },
     { slug: 'feasibility-study', whatItTellsYou: 'Development viability, GDV estimate, cost appraisal.', midMarket: '£2,000-£5,000' },
@@ -77,7 +77,7 @@ const phaseContent: Record<string, { title: string; subtitle: string; when: stri
     subtitle: 'Constraint screening, ground risk, and viability — before you commit.',
     when: 'Before you commit to a site, before you exchange, before you tie up capital.',
     who: 'Developers, land buyers, investors, self-builders, homeowners considering a plot.',
-    afterNote: 'Start here: The SFR is the entry point for every project. It screens your site against 22+ constraint categories and tells you what other reports you need.',
+    afterNote: 'Start here: The SFR is the entry point for every project. It screens your site against 27+ constraint categories and tells you what other reports you need.',
   },
   strategy: {
     title: 'What Can I Build?',
@@ -428,7 +428,7 @@ const HowItWorks = () => {
                 name: 'What reports do I need for planning permission in the UK?',
                 acceptedAnswer: {
                   '@type': 'Answer',
-                  text: 'This depends heavily on your site. Our recommendation is always to start with the Site Feasibility Report (SFR) in Phase 1. It screens your site against 22+ constraints and explicitly tells you which Phase 3 application reports are required for your local planning authority.'
+                  text: 'This depends heavily on your site. Our recommendation is always to start with the Site Feasibility Report (SFR) in Phase 1. It screens your site against 27+ constraints and explicitly tells you which Phase 3 application reports are required for your local planning authority.'
                 }
               },
               {
@@ -436,7 +436,7 @@ const HowItWorks = () => {
                 name: 'How much does a site feasibility report cost?',
                 acceptedAnswer: {
                   '@type': 'Answer',
-                  text: 'The mid-market cost for an equivalent report is between £1,000 to £4,000. At Early Access pricing, ours is a fraction of this. It provides you with 22+ environmental and planning constraints, a Planning Friction Score, and a Buildability Rating.'
+                  text: 'The mid-market cost for an equivalent report is between £1,000 to £4,000. At Early Access pricing, ours is a fraction of this. It provides you with 27+ environmental and planning constraints, a Planning Friction Score, and a Buildability Rating.'
                 }
               },
               {
@@ -520,7 +520,7 @@ const HowItWorks = () => {
               { value: '22', label: 'Reports' },
               { value: '9', label: 'Bundles' },
               { value: '48hr', label: 'Turnaround' },
-              { value: '60', label: 'Data Sources' },
+              { value: '60+', label: 'Data Sources' },
             ].map((stat, i) => (
               <div key={i} className="text-center">
                 <div className="text-3xl md:text-4xl font-bold text-brand-accent">{stat.value}</div>
@@ -744,8 +744,8 @@ const HowItWorks = () => {
         </div>
         <div className="space-y-4">
           {[
-            { q: "What reports do I need for planning permission in the UK?", a: "This depends heavily on your site. Our recommendation is always to start with the Site Feasibility Report (SFR) in Phase 1. It screens your site against 22+ constraints and explicitly tells you which Phase 3 application reports are required for your local planning authority." },
-            { q: "How much does a site feasibility report cost?", a: "The mid-market cost for an equivalent report is between £1,000 to £4,000. At Early Access pricing, ours is a fraction of this. It provides you with 22+ environmental and planning constraints, a Planning Friction Score, and a Buildability Rating." },
+            { q: "What reports do I need for planning permission in the UK?", a: "This depends heavily on your site. Our recommendation is always to start with the Site Feasibility Report (SFR) in Phase 1. It screens your site against 27+ constraints and explicitly tells you which Phase 3 application reports are required for your local planning authority." },
+            { q: "How much does a site feasibility report cost?", a: "The mid-market cost for an equivalent report is between £1,000 to £4,000. At Early Access pricing, ours is a fraction of this. It provides you with 27+ environmental and planning constraints, a Planning Friction Score, and a Buildability Rating." },
             { q: "Can I submit evidence after a planning appeal?", a: "Following the 2026 appeal procedure rules, planning appeals will no longer accept new evidence under the expedited procedure. The application you submit is the case the Inspector decides. Our technical evidence documents are built from day one to be appeal-ready." },
           ].map((faq, i) => (
              <div key={i} className="p-6 rounded-2xl bg-white shadow-sm border border-gray-200">

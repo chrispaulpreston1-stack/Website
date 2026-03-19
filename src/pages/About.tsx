@@ -24,7 +24,7 @@ import {
 
 const KEY_STATS = [
   { stat: '300+', label: 'Projects Delivered', sub: 'Across England and Wales', icon: <Building2 size={20} /> },
-  { stat: '127', label: 'AI Agents', sub: 'Interrogating 60 data sources', icon: <Bot size={20} /> },
+  { stat: '127', label: 'AI Agents', sub: 'Interrogating 60+ data sources', icon: <Bot size={20} /> },
   { stat: '48hrs', label: 'Report Turnaround', sub: 'From order to delivery', icon: <Clock size={20} /> },
   { stat: '22', label: 'Report Types', sub: 'Planning-ready documentation', icon: <FileText size={20} /> },
 ];
@@ -84,7 +84,7 @@ export default function About() {
     <div className="bg-brand-surface">
       <PageSEO
         title="About Us | PF & Co Site Intelligence"
-        description="PF & Co Site Intelligence: AI-powered site intelligence and planning reports. Founded by Chris Preston BEng (Hons). 300+ projects, 127 AI agents, 60 data sources, 48-hour delivery."
+        description="PF & Co Site Intelligence: AI-powered site intelligence and planning reports. Founded by Chris Preston BEng (Hons). 300+ projects, 127 AI agents, 60+ data sources, 48-hour delivery."
         path="/about"
         jsonLd={{
           '@type': 'AboutPage',
@@ -135,7 +135,7 @@ export default function About() {
                 Planning reports have always been slow and expensive. A single flood risk assessment or heritage impact assessment can take weeks to commission and cost thousands of pounds. For most projects, the core data already exists in public registers and government APIs, but consultants still compile it by hand.
               </p>
               <p className="text-brand-primary/60 text-lg leading-relaxed font-light mb-6">
-                PF & Co was founded to change that. We built a multi-agent AI system that interrogates 60 authoritative data sources, applies a rigorous quality assurance pipeline, and delivers planning-ready reports in 48 hours at a fraction of the traditional cost.
+                PF & Co was founded to change that. We built a multi-agent AI system that interrogates 60+ authoritative data sources, applies a rigorous quality assurance pipeline, and delivers planning-ready reports in 48 hours at a fraction of the traditional cost.
               </p>
               <p className="text-brand-primary/60 text-lg leading-relaxed font-light">
                 This is not about replacing professional judgement. It is about giving professionals better tools: faster data extraction, wider coverage, and consistent methodology applied equally to every site.

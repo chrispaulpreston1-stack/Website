@@ -71,7 +71,7 @@ const DIFFERENTIATORS = [
   },
   {
     icon: <Search size={22} />,
-    title: '22 constraint categories, not a gut feeling',
+    title: '27 constraint categories, not a gut feeling',
     text: 'Every site is screened against 22 categories of planning, environmental, and ground risk constraint using 60 authoritative government data sources. Nothing is missed because nothing is skipped.',
   },
   {
@@ -368,7 +368,7 @@ export default function HonestAssessment() {
               </div>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Get the Truth About Your Site</h2>
               <p className="text-white/60 max-w-2xl mx-auto text-lg font-light leading-relaxed mb-10">
-                Order a Site Feasibility Report and know exactly where your site stands — before you spend money on architects, surveys, and application fees. 22 constraint categories. 60 data sources. Delivered in 48 hours.
+                Order a Site Feasibility Report and know exactly where your site stands — before you spend money on architects, surveys, and application fees. 27 constraint categories. 60+ data sources. Delivered in 48 hours.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link

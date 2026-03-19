@@ -92,8 +92,21 @@ const Navbar = () => {
     window.scrollTo(0, 0);
   }, [location]);
 
-  const navLinks: { name: string; href: string; isExternal?: boolean }[] = [
-    { name: 'Reports', href: '/site-intelligence' },
+  const navLinks: { name: string; href: string; isExternal?: boolean; children?: {name: string, href: string}[] }[] = [
+    { 
+      name: 'Site Intelligence', 
+      href: '/site-intelligence',
+      children: [
+        { name: 'Site Feasibility Report', href: '/site-intelligence/site-feasibility-report' },
+        { name: 'Planning Statement', href: '/site-intelligence/planning-statement' },
+        { name: 'Heritage Assessment', href: '/site-intelligence/heritage-impact-assessment' },
+        { name: 'Flood Risk Assessment', href: '/site-intelligence/flood-risk-assessment' },
+        { name: 'BNG Screening', href: '/site-intelligence/biodiversity-net-gain' },
+        { name: 'Geotechnical Desk Study', href: '/site-intelligence/geotechnical-desk-study' },
+        { name: 'All Reports', href: '/site-intelligence' },
+        { name: 'Report Packages', href: '/report-packages' }
+      ]
+    },
     { name: 'Pricing', href: '/subscriptions' },
     { name: 'How It Works', href: '/plans-and-pricing' },
     { name: 'AI Standards', href: '/ai-compliance' },
@@ -118,35 +131,50 @@ const Navbar = () => {
         {/* Desktop Nav */}
         <div className="hidden lg:flex items-center gap-8">
           {navLinks.map((link) => (
-            link.isExternal ? (
-              <a
-                key={link.name}
-                href={link.href}
-                className={`relative text-sm font-medium hover:text-brand-accent transition-colors ${location.pathname.startsWith(link.href)
-                  ? 'text-brand-accent'
-                  : (hasDarkHero && !isScrolled ? 'text-white/80' : 'text-brand-primary')
-                  }`}
-              >
-                {link.name}
-              </a>
-            ) : (
-              <Link
-                key={link.name}
-                to={link.href}
-                className={`relative text-sm font-medium hover:text-brand-accent transition-colors ${location.pathname === link.href
-                  ? 'text-brand-accent'
-                  : (hasDarkHero && !isScrolled ? 'text-white/80' : 'text-brand-primary')
-                  }`}
-              >
-                {link.name}
-                {link.name === 'AI Innovation' && (
-                  <span className="absolute -top-1 -right-3 flex h-2 w-2">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-accent opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-accent"></span>
-                  </span>
-                )}
-              </Link>
-            )
+            <div key={link.name} className="relative group">
+              {link.isExternal ? (
+                <a
+                  href={link.href}
+                  className={`relative text-sm font-medium hover:text-brand-accent transition-colors ${location.pathname.startsWith(link.href)
+                    ? 'text-brand-accent'
+                    : (hasDarkHero && !isScrolled ? 'text-white/80' : 'text-brand-primary')
+                    }`}
+                >
+                  {link.name}
+                </a>
+              ) : (
+                <Link
+                  to={link.href}
+                  className={`relative text-sm font-medium hover:text-brand-accent transition-colors flex items-center gap-1 ${location.pathname === link.href || (link.children && location.pathname.startsWith('/site-intelligence'))
+                    ? 'text-brand-accent'
+                    : (hasDarkHero && !isScrolled ? 'text-white/80' : 'text-brand-primary')
+                    }`}
+                >
+                  {link.name}
+                  {link.name === 'AI Innovation' && (
+                    <span className="absolute -top-1 -right-3 flex h-2 w-2">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-accent opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-accent"></span>
+                    </span>
+                  )}
+                </Link>
+              )}
+              {link.children && (
+                <div className="absolute top-full -left-4 pt-6 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all w-[240px]">
+                  <div className="bg-white rounded-xl shadow-xl border border-gray-100 p-2 flex flex-col gap-1">
+                    {link.children.map(child => (
+                      <Link 
+                        key={child.name} 
+                        to={child.href} 
+                        className="px-4 py-2 hover:bg-brand-surface rounded-lg text-sm text-brand-primary font-medium hover:text-brand-accent transition-colors block"
+                      >
+                        {child.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
           ))}
           <Link to="/order-report" className="bg-brand-primary text-white px-6 py-2.5 rounded-full text-sm font-bold hover:scale-105 transition-transform shadow-lg shadow-brand-primary/20 flex items-center gap-2 border border-white/10">
             Order Now <ArrowRight size={16} />
@@ -174,25 +202,36 @@ const Navbar = () => {
               }`}
           >
             {navLinks.map((link) => (
-              link.isExternal ? (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className={`text-lg font-medium py-2 border-b ${hasDarkHero ? 'border-white/5 hover:text-brand-accent' : 'border-gray-50 hover:text-brand-accent'
-                    }`}
-                >
-                  {link.name}
-                </a>
-              ) : (
-                <Link
-                  key={link.name}
-                  to={link.href}
-                  className={`text-lg font-medium py-2 border-b ${hasDarkHero ? 'border-white/5 hover:text-brand-accent' : 'border-gray-50 hover:text-brand-accent'
-                    }`}
-                >
-                  {link.name}
-                </Link>
-              )
+              <div key={link.name} className={`flex flex-col border-b ${hasDarkHero ? 'border-white/5' : 'border-gray-50'}`}>
+                {link.isExternal ? (
+                  <a
+                    href={link.href}
+                    className={`text-lg font-medium py-2 ${hasDarkHero ? 'hover:text-brand-accent' : 'hover:text-brand-accent'}`}
+                  >
+                    {link.name}
+                  </a>
+                ) : (
+                  <Link
+                    to={link.href}
+                    className={`text-lg font-medium py-2 ${hasDarkHero ? 'hover:text-brand-accent' : 'hover:text-brand-accent'}`}
+                  >
+                    {link.name}
+                  </Link>
+                )}
+                {link.children && (
+                  <div className="flex flex-col gap-2 pl-4 pt-1 mb-3">
+                    {link.children.map(child => (
+                      <Link 
+                        key={child.name} 
+                        to={child.href} 
+                        className={`text-base font-medium py-1 ${hasDarkHero ? 'text-white/70 hover:text-brand-accent' : 'text-brand-primary/60 hover:text-brand-accent'}`}
+                      >
+                        {child.name}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
             ))}
             <Link to="/order-report" className="bg-brand-primary text-white w-full py-4 rounded-xl font-bold mt-4 text-center border border-white/10">
               Order Now
@@ -336,7 +375,7 @@ const Footer = () => {
               </div>
             </div>
             <p className="text-brand-primary/60 max-w-sm leading-relaxed mb-6 text-sm">
-              AI-powered site intelligence and planning reports. 60 data sources. 48-hour turnaround. Nationwide across England and Wales.
+              AI-powered site intelligence and planning reports. 60+ data sources. 48-hour turnaround. Nationwide across England and Wales.
             </p>
             <div className="flex gap-4">
               <a
@@ -421,7 +460,7 @@ export default function App() {
         <div className="min-h-screen selection:bg-brand-accent/30">
           <Helmet>
             <title>PF & Co | AI-Powered Structural Engineering & Construction</title>
-            <meta name="description" content="AI-powered site intelligence and planning reports across England and Wales. 60 data sources, 48-hour turnaround, fixed pricing." />
+            <meta name="description" content="AI-powered site intelligence and planning reports across England and Wales. 60+ data sources, 48-hour turnaround, fixed pricing." />
             <meta name="keywords" content="structural engineer nationwide, structural calculations uk, basement impact assessment, site feasibility report, AI structural engineering" />
             <link rel="canonical" href="https://www.pfandco.co.uk" />
             <meta property="og:title" content="PF & Co | Engineering-Led Construction" />

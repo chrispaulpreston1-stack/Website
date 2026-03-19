@@ -1,3 +1,4 @@
+import PackageCrossSellBanner from '../components/PackageCrossSellBanner';
 import { motion } from 'motion/react';
 import { ShieldAlert, Check, ArrowRight, Info, HelpCircle, Clock, X, Zap, FileText } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -386,6 +387,8 @@ const FloodRiskAssessment = () => {
           </p>
         </div>
       </section>
+
+      <PackageCrossSellBanner />
 
       {/* Final CTA - High Impact */}
       <section className="max-w-7xl mx-auto px-6 pb-24">

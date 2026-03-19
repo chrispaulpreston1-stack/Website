@@ -1,3 +1,4 @@
+import PackageCrossSellBanner from '../components/PackageCrossSellBanner';
 import { motion } from 'motion/react';
 import { Scale, Check, ArrowRight, Home, Gavel, Camera, PenTool, Zap, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -237,6 +238,8 @@ const PartyWallAssessment = () => {
           </p>
         </div>
       </section>
+
+      <PackageCrossSellBanner />
 
       {/* Final CTA */}
             <section className="bg-brand-primary text-white py-24 my-24 rounded-[3rem] mx-6 relative overflow-hidden">

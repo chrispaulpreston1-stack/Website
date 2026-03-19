@@ -1,3 +1,4 @@
+import PackageCrossSellBanner from '../components/PackageCrossSellBanner';
 import { motion } from 'motion/react';
 import { ShieldCheck, Check, ArrowRight, FileText, Layers, ClipboardCheck, HardHat, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -285,6 +286,8 @@ const BuildingControl = () => {
           </p>
         </div>
       </section>
+
+      <PackageCrossSellBanner />
 
       {/* Final CTA */}
             <section className="bg-brand-primary text-white py-24 my-24 rounded-[3rem] mx-6 relative overflow-hidden">

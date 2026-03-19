@@ -134,7 +134,7 @@ const OrderSuccess = () => {
               { step: "4", text: "Your credits refresh each month. Unused credits roll over per your tier's rollover policy." },
             ] : [
               { step: "1", text: "Our team reviews your order and site details within the hour." },
-              { step: "2", text: "We query 60 authoritative data sources and run your site through our AI analysis pipeline." },
+              { step: "2", text: "We query 60+ authoritative data sources and run your site through our AI analysis pipeline." },
               { step: "3", text: "A qualified engineer reviews and verifies every output before sign-off." },
               { step: "4", text: "Your completed report is delivered to your email — typically within 48 hours." },
             ]).map((item, i) => (
