@@ -48,8 +48,8 @@ const CityCambridge = () => {
       <PageSEO 
         title="Site Intelligence Cambridge | PF & Co Construction"
         description="Desktop environmental reports for Cambridge projects. Aquifer sensitivity, conservation constraints, flood risk, and ground conditions screening from 60+ data sources."
-        url="https://pfcoconstruction.co.uk/si-cambridge/"
-        schemaData={schemaData}
+        path="/si-cambridge"
+        jsonLd={schemaData}
       />
       <main className="city-landing-page min-h-screen">
         

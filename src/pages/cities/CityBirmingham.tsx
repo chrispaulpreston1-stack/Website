@@ -48,8 +48,8 @@ const CityBirmingham = () => {
       <PageSEO 
         title="Site Intelligence Birmingham | PF & Co Construction"
         description="Desktop environmental reports for Birmingham projects. Coal mining risk, contamination, flood risk, and heritage screening from 60+ data sources."
-        url="https://pfcoconstruction.co.uk/si-birmingham/"
-        schemaData={schemaData}
+        path="/si-birmingham"
+        jsonLd={schemaData}
       />
       <main className="city-landing-page min-h-screen">
         

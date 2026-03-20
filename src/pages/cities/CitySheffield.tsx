@@ -48,8 +48,8 @@ const CitySheffield = () => {
       <PageSEO 
         title="Site Intelligence Sheffield | PF & Co Construction"
         description="Desktop environmental reports for Sheffield projects. Contamination, flood risk, ecology, and ground conditions screening from 60+ data sources."
-        url="https://pfcoconstruction.co.uk/si-sheffield/"
-        schemaData={schemaData}
+        path="/si-sheffield"
+        jsonLd={schemaData}
       />
       <main className="city-landing-page min-h-screen">
         

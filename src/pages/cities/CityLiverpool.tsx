@@ -48,8 +48,8 @@ const CityLiverpool = () => {
       <PageSEO 
         title="Site Intelligence Liverpool | PF & Co Construction"
         description="Desktop environmental reports for Liverpool projects. Flood risk, contamination, heritage constraints, and ground conditions screening from 60+ data sources."
-        url="https://pfcoconstruction.co.uk/si-liverpool/"
-        schemaData={schemaData}
+        path="/si-liverpool"
+        jsonLd={schemaData}
       />
       <main className="city-landing-page min-h-screen">
         

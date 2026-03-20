@@ -48,8 +48,8 @@ const CityNottingham = () => {
       <PageSEO 
         title="Site Intelligence Nottingham | PF & Co Construction"
         description="Desktop environmental reports for Nottingham projects. Flood risk, contamination, ground conditions, and aquifer screening from 60+ data sources."
-        url="https://pfcoconstruction.co.uk/si-nottingham/"
-        schemaData={schemaData}
+        path="/si-nottingham"
+        jsonLd={schemaData}
       />
       <main className="city-landing-page min-h-screen">
         

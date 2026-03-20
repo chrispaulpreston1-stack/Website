@@ -48,8 +48,8 @@ const CityPlymouth = () => {
       <PageSEO 
         title="Site Intelligence Plymouth | PF & Co Construction"
         description="Desktop environmental reports for Plymouth projects. Coastal erosion, brownfield contamination, marine conservation, and ground conditions screening from 60+ data sources."
-        url="https://pfcoconstruction.co.uk/si-plymouth/"
-        schemaData={schemaData}
+        path="/si-plymouth"
+        jsonLd={schemaData}
       />
       <main className="city-landing-page min-h-screen">
         
