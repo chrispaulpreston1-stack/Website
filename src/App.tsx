@@ -73,6 +73,18 @@ const ForArchitects = lazy(() => import('./pages/ForArchitects'));
 const ForDevelopers = lazy(() => import('./pages/ForDevelopers'));
 const ForSelfBuilders = lazy(() => import('./pages/ForSelfBuilders'));
 
+// City Landing Pages
+const CityBirmingham = lazy(() => import('./pages/cities/CityBirmingham'));
+const CityBristol = lazy(() => import('./pages/cities/CityBristol'));
+const CityCambridge = lazy(() => import('./pages/cities/CityCambridge'));
+const CityLeeds = lazy(() => import('./pages/cities/CityLeeds'));
+const CityLiverpool = lazy(() => import('./pages/cities/CityLiverpool'));
+const CityLondon = lazy(() => import('./pages/cities/CityLondon'));
+const CityManchester = lazy(() => import('./pages/cities/CityManchester'));
+const CityNottingham = lazy(() => import('./pages/cities/CityNottingham'));
+const CityPlymouth = lazy(() => import('./pages/cities/CityPlymouth'));
+const CitySheffield = lazy(() => import('./pages/cities/CitySheffield'));
+
 // --- Global Components ---
 
 const Navbar = () => {
@@ -571,6 +583,18 @@ export default function App() {
               <Route path="/for-developers" element={<ForDevelopers />} />
               <Route path="/for-self-builders" element={<ForSelfBuilders />} />
               <Route path="/plans-and-pricing" element={<HowItWorks />} />
+
+              {/* City Pages */}
+              <Route path="/si-birmingham" element={<CityBirmingham />} />
+              <Route path="/si-bristol" element={<CityBristol />} />
+              <Route path="/si-cambridge" element={<CityCambridge />} />
+              <Route path="/si-leeds" element={<CityLeeds />} />
+              <Route path="/si-liverpool" element={<CityLiverpool />} />
+              <Route path="/si-london" element={<CityLondon />} />
+              <Route path="/si-manchester" element={<CityManchester />} />
+              <Route path="/si-nottingham" element={<CityNottingham />} />
+              <Route path="/si-plymouth" element={<CityPlymouth />} />
+              <Route path="/si-sheffield" element={<CitySheffield />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/insights/:slug" element={<BlogArticle />} />
               <Route path="/ai-innovation" element={<AIInnovation />} />

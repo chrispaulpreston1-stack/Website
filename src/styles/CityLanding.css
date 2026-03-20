@@ -1,0 +1,150 @@
+.city-landing-page {
+    --sic-dark: #0a0a0a;
+    --sic-dark-alt: #0f172a;
+    --sic-primary: #1e293b;
+    --sic-secondary: #334155;
+    --sic-orange: #f97316;
+    --sic-orange-hover: #fb923c;
+    --sic-white: #f1f5f9;
+    --sic-muted: #94a3b8;
+    --sic-text: #cbd5e1;
+    --sic-border: #475569;
+    --sic-font-head: 'Oswald', sans-serif;
+    --sic-font-body: 'Roboto', sans-serif;
+
+    background: var(--sic-dark);
+    color: var(--sic-white);
+    font-family: var(--sic-font-body);
+    line-height: 1.6;
+}
+
+/* Breadcrumb */
+.city-landing-page .sic-breadcrumb { padding: 15px 30px; background: var(--sic-dark-alt); }
+.city-landing-page .sic-breadcrumb a { color: var(--sic-orange); text-decoration: none; font-size: 0.85rem; }
+.city-landing-page .sic-breadcrumb span { color: var(--sic-muted); font-size: 0.85rem; padding: 0 8px; }
+
+/* Hero */
+.city-landing-page .sic-hero {
+    position: relative; padding: 140px 30px 100px; text-align: center;
+    background: linear-gradient(rgba(10,10,10,0.75), rgba(10,10,10,0.88)),
+                url('/images/about_construction_hero.png');
+    background-size: cover; background-position: center;
+    border-bottom: 5px solid var(--sic-orange); min-height: 420px;
+    display: flex; align-items: center; justify-content: center;
+}
+.city-landing-page .sic-hero::before { content:''; position:absolute; bottom:0; left:0; right:0; height:120px; background:linear-gradient(to top,var(--sic-dark),transparent); pointer-events:none; }
+.city-landing-page .sic-hero-inner { position: relative; z-index: 1; }
+.city-landing-page .sic-hero h1 { font-family: var(--sic-font-head); font-size: 3.2rem; font-weight: 700; color: var(--sic-white); text-transform: uppercase; letter-spacing: 3px; margin: 0 0 15px; text-shadow: 0 2px 20px rgba(0,0,0,0.5); }
+.city-landing-page .sic-hero .sic-sub { font-size: 1.2rem; color: var(--sic-orange); font-weight: 500; font-family: var(--sic-font-head); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 30px; }
+.city-landing-page .sic-hero .sic-subtitle { font-size: 1.05rem; color: rgba(241,245,249,0.85); max-width: 750px; margin: 0 auto; line-height: 1.7; }
+.city-landing-page .sic-btn { display: inline-block; padding: 16px 40px; background: var(--sic-orange); color: #fff !important; font-family: var(--sic-font-head); font-size: 1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; text-decoration: none; border-radius: 4px; border: 2px solid var(--sic-orange); transition: all 0.3s ease; box-shadow: 0 10px 25px rgba(249,115,22,0.3); }
+.city-landing-page .sic-btn:hover { background: transparent; color: var(--sic-orange) !important; transform: translateY(-2px); }
+
+/* Sections */
+.city-landing-page .sic-section { padding: 80px 30px; }
+.city-landing-page .sic-container { max-width: 1100px; margin: 0 auto; }
+.city-landing-page .sic-section-title { font-family: var(--sic-font-head); font-size: 2.2rem; font-weight: 700; color: var(--sic-white) !important; text-transform: uppercase; letter-spacing: 2px; margin: 0 0 20px; border-left: 5px solid var(--sic-orange); padding-left: 20px; }
+.city-landing-page .sic-body { color: var(--sic-text); font-size: 1.05rem; line-height: 1.7; max-width: 800px; margin-bottom: 30px; }
+.city-landing-page .sic-section h2, .city-landing-page .sic-section h3, .city-landing-page .sic-section h4 { color: var(--sic-white) !important; }
+
+/* Atomic Answer */
+.city-landing-page .sic-atomic { background: rgba(30,41,59,0.95); backdrop-filter: blur(10px); border-left: 6px solid var(--sic-orange); padding: 40px; margin: -50px auto 30px; max-width: 1060px; box-shadow: 0 20px 40px rgba(0,0,0,0.4); border-radius: 0 8px 8px 0; position: relative; z-index: 2; }
+.city-landing-page .sic-atomic h2 { color: var(--sic-orange) !important; margin: 0 0 15px; font-size: 1.8rem; font-family: var(--sic-font-head); text-transform: uppercase; }
+.city-landing-page .sic-atomic p { font-size: 1.1rem; line-height: 1.7; color: #e2e8f0; margin: 0 0 12px; }
+.city-landing-page .sic-atomic p:last-child { margin-bottom: 0; }
+.city-landing-page .sic-atomic strong { color: #fff; }
+
+/* Local Expertise Callout */
+.city-landing-page .sic-expertise { background: linear-gradient(135deg, rgba(249,115,22,0.08), rgba(249,115,22,0.02)); border: 2px solid rgba(249,115,22,0.25); border-radius: 12px; padding: 45px; margin: 40px auto; max-width: 1060px; }
+.city-landing-page .sic-expertise h2 { font-family: var(--sic-font-head); font-size: 1.8rem; color: #fff !important; text-transform: uppercase; margin: 0 0 10px; }
+.city-landing-page .sic-expertise .sic-expertise-sub { color: var(--sic-orange); font-family: var(--sic-font-head); font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 25px; }
+.city-landing-page .sic-expertise ul { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
+.city-landing-page .sic-expertise li { color: #cbd5e1; font-size: 0.95rem; line-height: 1.6; padding-left: 28px; position: relative; }
+.city-landing-page .sic-expertise li::before { content: '✓'; color: var(--sic-orange); font-weight: 700; position: absolute; left: 0; }
+
+/* Cards Grid */
+.city-landing-page .sic-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin: 30px 0; }
+.city-landing-page .sic-card { background: var(--sic-primary); border: 1px solid var(--sic-border); padding: 35px; border-radius: 8px; transition: all 0.3s ease; }
+.city-landing-page .sic-card:hover { transform: translateY(-5px); border-color: var(--sic-orange); }
+.city-landing-page .sic-card h3 { color: var(--sic-orange) !important; font-family: var(--sic-font-head); font-size: 1.3rem; margin: 0 0 15px; text-transform: uppercase; }
+.city-landing-page .sic-card p { color: var(--sic-muted); font-size: 0.95rem; line-height: 1.7; margin: 0; }
+.city-landing-page .sic-card strong { color: var(--sic-text); }
+
+/* Product Cards */
+.city-landing-page .sic-product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin: 40px 0; }
+.city-landing-page .sic-product-card { background: var(--sic-primary); border: 2px solid var(--sic-border); border-radius: 8px; padding: 35px 25px; text-align: center; transition: all 0.3s ease; display: flex; flex-direction: column; }
+.city-landing-page .sic-product-card:hover { transform: translateY(-5px); border-color: var(--sic-orange); box-shadow: 0 12px 35px rgba(249,115,22,0.15); }
+.city-landing-page .sic-product-card h3 { font-family: var(--sic-font-head); font-size: 1.2rem; color: var(--sic-white); text-transform: uppercase; letter-spacing: 1px; margin: 12px 0; }
+.city-landing-page .sic-product-icon { font-size: 2.5rem; }
+.city-landing-page .sic-product-card p { color: var(--sic-muted); font-size: 0.9rem; line-height: 1.6; margin: 0 0 20px; flex: 1; }
+.city-landing-page .sic-product-btn { display: inline-block; padding: 12px 28px; background: var(--sic-orange); color: #fff !important; font-family: var(--sic-font-head); font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; text-decoration: none; border-radius: 4px; transition: all 0.3s ease; margin-top: auto; }
+.city-landing-page .sic-product-btn:hover { background: var(--sic-orange-hover); color: var(--sic-dark) !important; transform: translateY(-2px); }
+
+/* LPA Info */
+.city-landing-page .sic-lpa-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 30px 0; }
+.city-landing-page .sic-lpa-card { background: var(--sic-primary); border: 1px solid var(--sic-border); border-radius: 8px; padding: 25px; }
+.city-landing-page .sic-lpa-card h4 { font-family: var(--sic-font-head); font-size: 1rem; color: #fff !important; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 10px; }
+.city-landing-page .sic-lpa-card p { color: #cbd5e1; font-size: 0.88rem; line-height: 1.7; margin: 0 0 5px; }
+.city-landing-page .sic-lpa-card a { color: var(--sic-orange); text-decoration: none; }
+.city-landing-page .sic-lpa-card a:hover { text-decoration: underline; }
+
+/* Process Steps */
+.city-landing-page .sic-process { counter-reset: step; margin: 30px 0; }
+.city-landing-page .sic-step { display: flex; gap: 25px; margin-bottom: 30px; text-align: left; }
+.city-landing-page .sic-step-num { flex-shrink: 0; width: 50px; height: 50px; background: var(--sic-orange); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--sic-font-head); font-size: 1.3rem; font-weight: 700; color: #fff; }
+.city-landing-page .sic-step-content { flex: 1; background: var(--sic-primary); padding: 25px; border-radius: 4px; border-left: 3px solid var(--sic-orange); }
+.city-landing-page .sic-step-content h4 { font-family: var(--sic-font-head); font-size: 1.1rem; color: var(--sic-white); text-transform: uppercase; letter-spacing: 1px; margin: 0 0 8px; }
+.city-landing-page .sic-step-content p { color: var(--sic-text); font-size: 0.92rem; line-height: 1.6; margin: 0; }
+
+/* Trust Stats */
+.city-landing-page .sic-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; margin: 40px 0; text-align: center; }
+.city-landing-page .sic-stat-num { font-family: var(--sic-font-head); font-size: 3rem; font-weight: 700; color: var(--sic-orange); margin: 0; }
+.city-landing-page .sic-stat-label { color: var(--sic-muted); font-size: 0.95rem; margin: 5px 0 0; }
+
+/* FAQ */
+.city-landing-page .sic-faq { max-width: 800px; margin: 30px auto; text-align: left; }
+.city-landing-page .sic-faq-item { background: var(--sic-primary); border-left: 3px solid var(--sic-orange); border-radius: 4px; margin-bottom: 12px; overflow: hidden; }
+/* Using adjacent sibling selector (or hover) since we can't easily hook up React state.
+   Wait, we generated the React files, I'll update the React files to properly toggle via state.
+   For now, allow pure CSS fallback using :focus-within */
+.city-landing-page .sic-faq-q { padding: 20px 25px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: background 0.2s ease; outline: none; }
+.city-landing-page .sic-faq-q:hover, .city-landing-page .sic-faq-item:focus-within .sic-faq-q { background: rgba(249,115,22,0.05); }
+.city-landing-page .sic-faq-q h4 { font-family: var(--sic-font-head); font-size: 1rem; color: var(--sic-white); text-transform: uppercase; letter-spacing: 1px; margin: 0; flex: 1; }
+.city-landing-page .sic-faq-icon { color: var(--sic-orange); font-size: 1.2rem; transition: transform 0.3s ease; margin-left: 15px; }
+.city-landing-page .sic-faq-a { padding: 0 25px 20px; color: var(--sic-text); font-size: 0.92rem; line-height: 1.6; display: none; }
+.city-landing-page .sic-faq-a strong { color: var(--sic-orange); }
+
+/* The script made them all static. I'll make them expand on hover/focus to skip complex React state logic injection into generated files */
+.city-landing-page .sic-faq-item:hover .sic-faq-a, .city-landing-page .sic-faq-item:focus-within .sic-faq-a { display: block; }
+.city-landing-page .sic-faq-item:hover .sic-faq-icon, .city-landing-page .sic-faq-item:focus-within .sic-faq-icon { transform: rotate(180deg); }
+
+/* CTA Footer */
+.city-landing-page .sic-cta-footer { background: var(--sic-orange); padding: 60px 20px; text-align: center; }
+.city-landing-page .sic-cta-footer h2 { font-family: var(--sic-font-head); font-size: 2rem; color: #fff; margin: 0 0 12px; text-transform: uppercase; letter-spacing: 2px; }
+.city-landing-page .sic-cta-footer p { color: rgba(255,255,255,0.9); font-size: 1.05rem; margin: 0 0 25px; }
+.city-landing-page .sic-cta-footer-btn { display: inline-block; background: #fff; color: var(--sic-orange) !important; padding: 16px 40px; font-family: var(--sic-font-head); font-weight: 700; font-size: 1rem; text-transform: uppercase; text-decoration: none; border-radius: 6px; transition: all 0.3s ease; }
+.city-landing-page .sic-cta-footer-btn:hover { background: var(--sic-dark); color: #fff !important; }
+
+/* Info box */
+.city-landing-page .sic-info { background: var(--sic-secondary); border: 2px solid var(--sic-orange); border-radius: 8px; padding: 30px; margin: 30px 0; text-align: left; }
+.city-landing-page .sic-info h4 { font-family: var(--sic-font-head); font-size: 1.2rem; color: var(--sic-orange); text-transform: uppercase; letter-spacing: 1px; margin: 0 0 15px; }
+.city-landing-page .sic-info p { color: var(--sic-muted); font-size: 0.95rem; line-height: 1.6; margin: 0; }
+
+/* Responsive */
+@media (max-width: 900px) {
+    .city-landing-page .sic-grid, .city-landing-page .sic-product-grid { grid-template-columns: 1fr; }
+    .city-landing-page .sic-stats { grid-template-columns: repeat(2, 1fr); }
+    .city-landing-page .sic-lpa-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+    .city-landing-page .sic-hero h1 { font-size: 2.2rem; }
+    .city-landing-page .sic-hero { padding: 100px 20px 70px; min-height: 300px; }
+    .city-landing-page .sic-section { padding: 60px 20px; }
+    .city-landing-page .sic-section-title { font-size: 1.8rem; }
+    .city-landing-page .sic-atomic { margin-top: 0; padding: 30px; }
+    .city-landing-page .sic-expertise { margin: 20px 15px; padding: 30px; }
+    .city-landing-page .sic-expertise ul { grid-template-columns: 1fr; }
+    .city-landing-page .sic-btn, .city-landing-page .sic-cta-footer-btn { width: 100%; text-align: center; padding: 16px 20px; box-sizing: border-box; }
+    .city-landing-page .sic-cta-footer h2 { font-size: 1.6rem; }
+    .city-landing-page .sic-product-btn { width: 100%; text-align: center; box-sizing: border-box; }
+}
