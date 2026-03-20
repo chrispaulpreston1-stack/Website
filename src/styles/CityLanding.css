@@ -17,10 +17,11 @@
     color: var(--sic-text);
     font-family: var(--sic-font-body);
     line-height: 1.6;
+    padding-top: 105px;
 }
 
 /* Breadcrumb */
-.city-landing-page .sic-breadcrumb { padding: 110px 30px 15px; background: var(--sic-bg-alt); border-bottom: 1px solid var(--sic-border); }
+.city-landing-page .sic-breadcrumb { padding: 15px 30px; background: var(--sic-bg-alt); border-bottom: 1px solid var(--sic-border); }
 .city-landing-page .sic-breadcrumb a { color: var(--sic-orange); text-decoration: none; font-size: 0.85rem; font-weight: 500; }
 .city-landing-page .sic-breadcrumb span { color: var(--sic-muted); font-size: 0.85rem; padding: 0 8px; }
 
