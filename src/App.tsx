@@ -400,22 +400,47 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="font-bold mb-6">Site Intelligence</h4>
+            <h4 className="font-bold mb-6">Reports (A-G)</h4>
             <ul className="space-y-3 text-sm text-brand-primary/60">
-              <li><Link to="/site-intelligence" className="hover:text-brand-accent transition-colors">All Reports</Link></li>
-              <li><Link to="/subscriptions" className="hover:text-brand-accent transition-colors font-medium text-brand-accent">Subscriptions</Link></li>
-              <li><Link to="/report-packages" className="hover:text-brand-accent transition-colors">Report Bundles</Link></li>
-              <li><Link to="/order-report" className="hover:text-brand-accent transition-colors font-medium text-brand-accent">Order Reports</Link></li>
-              <li><Link to="/plans-and-pricing" className="hover:text-brand-accent transition-colors">How It Works</Link></li>
-              <li><Link to="/site-intelligence/site-feasibility-report" className="hover:text-brand-accent transition-colors">Site Feasibility Report</Link></li>
-              <li><Link to="/site-intelligence/site-acquisition-intelligence" className="hover:text-brand-accent transition-colors">Site Acquisition Report</Link></li>
-              <li><Link to="/site-intelligence/flood-risk-assessment" className="hover:text-brand-accent transition-colors">Flood Risk Assessment</Link></li>
+              <li><Link to="/site-intelligence/air-quality-screening" className="hover:text-brand-accent transition-colors">Air Quality</Link></li>
+              <li><Link to="/site-intelligence/biodiversity-net-gain" className="hover:text-brand-accent transition-colors">BNG Screening</Link></li>
+              <li><Link to="/site-intelligence/cil-liability-assessment" className="hover:text-brand-accent transition-colors">CIL Liability</Link></li>
+              <li><Link to="/site-intelligence/construction-management-plan" className="hover:text-brand-accent transition-colors">Const. Mgmt Plan</Link></li>
+              <li><Link to="/site-intelligence/daylight-sunlight-assessment" className="hover:text-brand-accent transition-colors">Daylight/Sunlight</Link></li>
+              <li><Link to="/site-intelligence/design-and-access-statement" className="hover:text-brand-accent transition-colors">Design & Access</Link></li>
+              <li><Link to="/site-intelligence/development-finance-summary" className="hover:text-brand-accent transition-colors">Finance Summary</Link></li>
+              <li><Link to="/site-intelligence/energy-statement" className="hover:text-brand-accent transition-colors">Energy Statement</Link></li>
+              <li><Link to="/site-intelligence/feasibility-study" className="hover:text-brand-accent transition-colors">Feasibility Study</Link></li>
+              <li><Link to="/site-intelligence/flood-risk-assessment" className="hover:text-brand-accent transition-colors">Flood Risk</Link></li>
+              <li><Link to="/site-intelligence/geotechnical-desk-study" className="hover:text-brand-accent transition-colors">Geotechnical Desk Study</Link></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="font-bold mb-6">Other Services</h4>
+            <h4 className="font-bold mb-6">Reports (H-Z)</h4>
             <ul className="space-y-3 text-sm text-brand-primary/60">
+              <li><Link to="/site-intelligence/heritage-impact-assessment" className="hover:text-brand-accent transition-colors">Heritage Impact</Link></li>
+              <li><Link to="/site-intelligence/noise-impact-assessment" className="hover:text-brand-accent transition-colors">Noise Impact</Link></li>
+              <li><Link to="/site-intelligence/parking-survey" className="hover:text-brand-accent transition-colors">Parking Survey</Link></li>
+              <li><Link to="/site-intelligence/phase-1-contamination" className="hover:text-brand-accent transition-colors">Phase 1 Contamination</Link></li>
+              <li><Link to="/site-intelligence/planning-statement" className="hover:text-brand-accent transition-colors">Planning Statement</Link></li>
+              <li><Link to="/site-intelligence/pre-application-advice" className="hover:text-brand-accent transition-colors">Pre-App Advice</Link></li>
+              <li><Link to="/site-intelligence/pre-construction-design-review" className="hover:text-brand-accent transition-colors">Design Review</Link></li>
+              <li><Link to="/site-intelligence/site-acquisition-intelligence" className="hover:text-brand-accent transition-colors">Site Acquisition</Link></li>
+              <li><Link to="/site-intelligence/site-feasibility-report" className="hover:text-brand-accent transition-colors">Site Feasibility</Link></li>
+              <li><Link to="/site-intelligence/transport-statement" className="hover:text-brand-accent transition-colors">Transport Statement</Link></li>
+              <li><Link to="/site-intelligence/tree-survey" className="hover:text-brand-accent transition-colors">Tree Survey</Link></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-bold mb-6">Pricing & Services</h4>
+            <ul className="space-y-3 text-sm text-brand-primary/60">
+              <li><Link to="/site-intelligence" className="hover:text-brand-accent transition-colors">All Reports Hub</Link></li>
+              <li><Link to="/subscriptions" className="hover:text-brand-accent transition-colors font-medium text-brand-accent">Subscriptions</Link></li>
+              <li><Link to="/report-packages" className="hover:text-brand-accent transition-colors">Report Bundles</Link></li>
+              <li><Link to="/order-report" className="hover:text-brand-accent transition-colors font-medium text-brand-accent">Order Reports</Link></li>
+              <li><Link to="/plans-and-pricing" className="hover:text-brand-accent transition-colors">How It Works</Link></li>
               <li><Link to="/structural-engineering" className="hover:text-brand-accent transition-colors">Structural Engineering</Link></li>
               <li><Link to="/construction" className="hover:text-brand-accent transition-colors">Construction</Link></li>
               <li><Link to="/building-control" className="hover:text-brand-accent transition-colors">Building Control</Link></li>
