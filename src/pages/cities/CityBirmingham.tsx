@@ -62,7 +62,7 @@ const CityBirmingham = () => {
 </nav>
 
 {/*  Hero  */}
-<section className="sic-hero" aria-label="Site Intelligence Reports in Birmingham">
+<section className="sic-hero" style={{ backgroundImage: `linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.8)), url('/images/birmingham_city_hero.png')` }} aria-label="Site Intelligence Reports in Birmingham">
     <div className="sic-hero-inner">
         <h1>Site Intelligence Reports<br />in Birmingham</h1>
         <p className="sic-sub">Coal Mining Legacy • HS2 Regeneration • Canal Heritage</p>

@@ -62,7 +62,7 @@ const CityPlymouth = () => {
 </nav>
 
 {/*  Hero  */}
-<section className="sic-hero" aria-label="Site Intelligence Reports in Plymouth">
+<section className="sic-hero" style={{ backgroundImage: `linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.8)), url('/images/plymouth_city_hero.png')` }} aria-label="Site Intelligence Reports in Plymouth">
     <div className="sic-hero-inner">
         <h1>Site Intelligence Reports<br />in Plymouth</h1>
         <p className="sic-sub">Coastal Erosion • Naval Brownfield • Marine Conservation Zones</p>

@@ -62,7 +62,7 @@ const CityBristol = () => {
 </nav>
 
 {/*  Hero  */}
-<section className="sic-hero" aria-label="Site Intelligence Reports in Bristol">
+<section className="sic-hero" style={{ backgroundImage: `linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.8)), url('/images/bristol_city_hero.png')` }} aria-label="Site Intelligence Reports in Bristol">
     <div className="sic-hero-inner">
         <h1>Site Intelligence Reports<br />in Bristol</h1>
         <p className="sic-sub">Avon Gorge Geology • Tidal Flooding • Conservation Areas</p>

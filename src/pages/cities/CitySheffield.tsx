@@ -62,7 +62,7 @@ const CitySheffield = () => {
 </nav>
 
 {/*  Hero  */}
-<section className="sic-hero" aria-label="Site Intelligence Reports in Sheffield">
+<section className="sic-hero" style={{ backgroundImage: `linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.8)), url('/images/sheffield_city_hero.png')` }} aria-label="Site Intelligence Reports in Sheffield">
     <div className="sic-hero-inner">
         <h1>Site Intelligence Reports<br />in Sheffield</h1>
         <p className="sic-sub">Steel Industry Brownfield • Don Valley Flooding • Peak District Ecology</p>
