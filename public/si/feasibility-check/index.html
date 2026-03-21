@@ -1,0 +1,1278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The 12-Point Site Feasibility Desktop Check — Site Intelligence</title>
+
+    <!-- Open Graph / LinkedIn -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.pfandco.com/si/feasibility-check">
+    <meta property="og:title" content="The 12-Point Site Feasibility Desktop Check">
+    <meta property="og:description" content="The 12 critical checks every developer should run before committing to a site. What to look for, where to find it, and what gets missed when you do it by hand.">
+    <meta property="og:site_name" content="Site Intelligence by PF & Co">
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The 12-Point Site Feasibility Desktop Check">
+    <meta name="twitter:description" content="The 12 critical checks every developer should run before committing to a site. Free desktop due diligence framework.">
+
+    <!-- SEO -->
+    <meta name="description" content="Free 12-point site feasibility checklist for property developers, land promoters, and investors. Desktop due diligence framework covering planning, flood, ground conditions, CIL, ecology, and market data.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="canonical" href="https://www.pfandco.com/si/feasibility-check">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f0f2f5;
+            color: #1a1a2e;
+            line-height: 1.6;
+        }
+
+        /* ── HERO ── */
+        .hero {
+            background: linear-gradient(135deg, #0a1628 0%, #0d2847 40%, #0a66c2 100%);
+            color: white;
+            padding: 80px 40px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 70%, rgba(10, 102, 194, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.03) 0%, transparent 40%);
+            pointer-events: none;
+        }
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 6px 20px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 28px;
+            position: relative;
+        }
+        .hero h1 {
+            font-size: 42px;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 20px;
+            position: relative;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .hero h1 span {
+            background: linear-gradient(90deg, #60a5fa, #93c5fd);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-sub {
+            font-size: 18px;
+            font-weight: 400;
+            opacity: 0.85;
+            max-width: 560px;
+            margin: 0 auto 36px;
+            line-height: 1.7;
+            position: relative;
+        }
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            position: relative;
+        }
+        .hero-stat {
+            text-align: center;
+        }
+        .hero-stat-number {
+            font-size: 36px;
+            font-weight: 800;
+            display: block;
+        }
+        .hero-stat-label {
+            font-size: 12px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.7;
+        }
+
+        /* ── CONTAINER ── */
+        .container {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ── INTRO SECTION ── */
+        .intro {
+            background: white;
+            margin: -30px auto 0;
+            max-width: 820px;
+            border-radius: 16px;
+            padding: 40px 48px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+            position: relative;
+            z-index: 2;
+        }
+        .intro h2 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #0a1628;
+        }
+        .intro p {
+            font-size: 15px;
+            color: #444;
+            line-height: 1.8;
+            margin-bottom: 14px;
+        }
+        .intro-who {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 24px;
+        }
+        .intro-who-item {
+            background: #f8fafc;
+            border-radius: 10px;
+            padding: 16px 20px;
+            border-left: 3px solid #0a66c2;
+        }
+        .intro-who-item strong {
+            display: block;
+            font-size: 13px;
+            font-weight: 700;
+            color: #0a1628;
+            margin-bottom: 4px;
+        }
+        .intro-who-item span {
+            font-size: 13px;
+            color: #666;
+        }
+
+        /* ── CHECKS SECTION ── */
+        .checks-section {
+            padding: 48px 0;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .section-title h2 {
+            font-size: 28px;
+            font-weight: 800;
+            color: #0a1628;
+            margin-bottom: 8px;
+        }
+        .section-title p {
+            font-size: 15px;
+            color: #666;
+        }
+
+        /* ── CHECK CARD ── */
+        .check-card {
+            background: white;
+            border-radius: 14px;
+            padding: 0;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+            overflow: hidden;
+            transition: box-shadow 0.2s;
+        }
+        .check-card:hover {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+        .check-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 24px 28px;
+            cursor: pointer;
+            user-select: none;
+        }
+        .check-number {
+            width: 48px;
+            height: 48px;
+            min-width: 48px;
+            background: linear-gradient(135deg, #0a66c2, #0d2847);
+            color: white;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: 800;
+        }
+        .check-title-area {
+            flex: 1;
+        }
+        .check-title {
+            font-size: 17px;
+            font-weight: 700;
+            color: #0a1628;
+            margin-bottom: 2px;
+        }
+        .check-subtitle {
+            font-size: 13px;
+            color: #888;
+        }
+        .check-time {
+            background: #fef3c7;
+            color: #92400e;
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+        .check-toggle {
+            font-size: 20px;
+            color: #ccc;
+            transition: transform 0.3s;
+            font-weight: 300;
+        }
+        .check-card.open .check-toggle {
+            transform: rotate(180deg);
+            color: #0a66c2;
+        }
+        .check-body {
+            display: none;
+            padding: 0 28px 28px;
+            border-top: 1px solid #f0f0f0;
+        }
+        .check-card.open .check-body {
+            display: block;
+        }
+        .check-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 20px;
+        }
+        .check-detail {
+            background: #f8fafc;
+            border-radius: 10px;
+            padding: 18px 20px;
+        }
+        .check-detail-label {
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: #0a66c2;
+            margin-bottom: 8px;
+        }
+        .check-detail p, .check-detail li {
+            font-size: 14px;
+            color: #444;
+            line-height: 1.7;
+        }
+        .check-detail ul {
+            list-style: none;
+            padding: 0;
+        }
+        .check-detail ul li {
+            padding: 4px 0 4px 16px;
+            position: relative;
+        }
+        .check-detail ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 12px;
+            width: 6px;
+            height: 6px;
+            background: #0a66c2;
+            border-radius: 50%;
+        }
+        .check-missed {
+            grid-column: 1 / -1;
+            background: #fef2f2;
+            border-left: 3px solid #ef4444;
+        }
+        .check-missed .check-detail-label {
+            color: #dc2626;
+        }
+
+        /* ── TOTAL BAR ── */
+        .total-bar {
+            background: linear-gradient(135deg, #0a1628, #0d2847);
+            color: white;
+            border-radius: 16px;
+            padding: 36px 40px;
+            margin: 12px 0 48px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .total-left h3 {
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            opacity: 0.7;
+            margin-bottom: 8px;
+        }
+        .total-left .total-number {
+            font-size: 48px;
+            font-weight: 900;
+            line-height: 1;
+        }
+        .total-left .total-number span {
+            font-size: 20px;
+            font-weight: 500;
+            opacity: 0.6;
+        }
+        .total-right {
+            text-align: right;
+        }
+        .total-right p {
+            font-size: 14px;
+            opacity: 0.8;
+            line-height: 1.7;
+            max-width: 320px;
+        }
+
+        /* ── COMPARISON ── */
+        .comparison {
+            background: white;
+            border-radius: 16px;
+            padding: 48px;
+            margin-bottom: 48px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+        }
+        .comparison h2 {
+            font-size: 24px;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 8px;
+            color: #0a1628;
+        }
+        .comparison > p {
+            text-align: center;
+            font-size: 15px;
+            color: #666;
+            margin-bottom: 36px;
+        }
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+        .comp-col {
+            border-radius: 12px;
+            padding: 32px 28px;
+        }
+        .comp-diy {
+            background: #fef2f2;
+            border: 2px solid #fecaca;
+        }
+        .comp-si {
+            background: #ecfdf5;
+            border: 2px solid #a7f3d0;
+        }
+        .comp-col h3 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid rgba(0,0,0,0.06);
+        }
+        .comp-diy h3 { color: #991b1b; }
+        .comp-si h3 { color: #065f46; }
+        .comp-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.04);
+            font-size: 14px;
+        }
+        .comp-row:last-child { border-bottom: none; }
+        .comp-row-label { color: #555; }
+        .comp-row-value { font-weight: 700; }
+        .comp-diy .comp-row-value { color: #dc2626; }
+        .comp-si .comp-row-value { color: #059669; }
+
+        /* ── METHODOLOGY ── */
+        .methodology {
+            background: white;
+            border-radius: 16px;
+            padding: 40px 48px;
+            margin-bottom: 48px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+        }
+        .methodology h2 {
+            font-size: 22px;
+            font-weight: 800;
+            color: #0a1628;
+            margin-bottom: 20px;
+        }
+        .methodology p {
+            font-size: 15px;
+            color: #444;
+            line-height: 1.8;
+            margin-bottom: 14px;
+        }
+        .methodology-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-top: 24px;
+        }
+        .meth-step {
+            text-align: center;
+            padding: 24px 16px;
+            background: #f8fafc;
+            border-radius: 12px;
+            position: relative;
+        }
+        .meth-step-num {
+            width: 32px;
+            height: 32px;
+            background: #0a66c2;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 700;
+            margin: 0 auto 12px;
+        }
+        .meth-step strong {
+            display: block;
+            font-size: 13px;
+            color: #0a1628;
+            margin-bottom: 6px;
+        }
+        .meth-step span {
+            font-size: 12px;
+            color: #888;
+            line-height: 1.5;
+        }
+
+        /* ── CTA ── */
+        .cta {
+            background: linear-gradient(135deg, #0a66c2 0%, #0d2847 100%);
+            color: white;
+            border-radius: 16px;
+            padding: 56px 48px;
+            text-align: center;
+            margin-bottom: 48px;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -30%;
+            width: 80%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .cta h2 {
+            font-size: 30px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            position: relative;
+        }
+        .cta p {
+            font-size: 17px;
+            opacity: 0.9;
+            max-width: 520px;
+            margin: 0 auto 32px;
+            line-height: 1.7;
+            position: relative;
+        }
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            position: relative;
+        }
+        .cta-btn {
+            display: inline-block;
+            padding: 16px 36px;
+            border-radius: 12px;
+            font-size: 15px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.2s;
+            cursor: pointer;
+            border: none;
+        }
+        .cta-btn-primary {
+            background: white;
+            color: #0a66c2;
+        }
+        .cta-btn-primary:hover {
+            background: #f0f7ff;
+            transform: translateY(-1px);
+        }
+        .cta-btn-secondary {
+            background: rgba(255, 255, 255, 0.12);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+        }
+        .cta-btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        .cta-note {
+            margin-top: 24px;
+            font-size: 13px;
+            opacity: 0.6;
+            position: relative;
+        }
+
+        /* ── FOOTER ── */
+        .footer {
+            text-align: center;
+            padding: 32px 24px;
+            font-size: 12px;
+            color: #999;
+        }
+        .footer-brand {
+            font-weight: 700;
+            color: #0a66c2;
+            margin-bottom: 4px;
+            display: block;
+            font-size: 13px;
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 700px) {
+            .hero { padding: 60px 24px 50px; }
+            .hero h1 { font-size: 28px; }
+            .hero-stats { gap: 24px; }
+            .hero-stat-number { font-size: 28px; }
+            .intro, .comparison, .methodology { padding: 28px 24px; }
+            .intro-who { grid-template-columns: 1fr; }
+            .check-grid { grid-template-columns: 1fr; }
+            .comparison-grid { grid-template-columns: 1fr; }
+            .methodology-steps { grid-template-columns: 1fr 1fr; }
+            .total-bar { flex-direction: column; text-align: center; padding: 28px 24px; }
+            .total-right { text-align: center; }
+            .cta { padding: 40px 24px; }
+            .cta h2 { font-size: 24px; }
+        }
+
+        @media print {
+            body { background: white; }
+            .check-body { display: block !important; }
+            .check-toggle { display: none; }
+            .hero { padding: 40px 24px 30px; }
+            .cta-btn { border: 2px solid white; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ═══ HERO ═══ -->
+    <div class="hero">
+        <div class="hero-badge">Free Resource</div>
+        <h1>The 12-Point Site Feasibility <span>Desktop Check</span></h1>
+        <p class="hero-sub">Everything you need to assess a development site from your desk — the checks, the sources, and the reality of doing it manually.</p>
+        <div class="hero-stats">
+            <div class="hero-stat">
+                <span class="hero-stat-number">12</span>
+                <span class="hero-stat-label">Critical Checks</span>
+            </div>
+            <div class="hero-stat">
+                <span class="hero-stat-number">18+</span>
+                <span class="hero-stat-label">Hours Manual</span>
+            </div>
+            <div class="hero-stat">
+                <span class="hero-stat-number">22</span>
+                <span class="hero-stat-label">Public Sources</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ INTRO ═══ -->
+    <div class="container">
+        <div class="intro">
+            <h2>Before you commit capital, commit to knowing the site.</h2>
+            <p>Every development scheme starts the same way: someone looks at a site and sees potential. The ones that deliver are the ones where the risks were understood early — before exchange, before the planning application, before the contractor is on site.</p>
+            <p>This checklist covers the 12 critical areas of desktop due diligence. For each one, we show you exactly what to check, where to find the data, and what typically gets missed when you do it by hand.</p>
+            <p>Use it as your pre-acquisition framework. If something flags, investigate further. If everything comes back clean, you've got a baseline to move forward with confidence.</p>
+
+            <div class="intro-who">
+                <div class="intro-who-item">
+                    <strong>Property Developers</strong>
+                    <span>Assessing sites for acquisition or planning viability</span>
+                </div>
+                <div class="intro-who-item">
+                    <strong>Land Promoters</strong>
+                    <span>Evaluating sites before option agreements</span>
+                </div>
+                <div class="intro-who-item">
+                    <strong>Project Managers</strong>
+                    <span>Front-end risk assessment before design stage</span>
+                </div>
+                <div class="intro-who-item">
+                    <strong>Investors & Lenders</strong>
+                    <span>Due diligence on development-backed lending</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ═══ THE 12 CHECKS ═══ -->
+        <div class="checks-section">
+            <div class="section-title">
+                <h2>The 12 Checks</h2>
+                <p>Click each check to expand the full methodology, sources, and common pitfalls.</p>
+            </div>
+
+            <!-- CHECK 1 -->
+            <div class="check-card open">
+                <div class="check-header" onclick="toggleCard(this)">
+                    <div class="check-number">1</div>
+                    <div class="check-title-area">
+                        <div class="check-title">Planning History & Live Applications</div>
+                        <div class="check-subtitle">What's been approved, refused, or is currently in play</div>
+                    </div>
+                    <div class="check-time">1.5 – 2 hrs</div>
+                    <div class="check-toggle">&#9662;</div>
+                </div>
+                <div class="check-body">
+                    <div class="check-grid">
+                        <div class="check-detail">
+                            <div class="check-detail-label">What to Look For</div>
+                            <ul>
+                                <li>Previous applications on or adjacent to the site</li>
+                                <li>Refusal reasons — they reveal what the LPA resists</li>
+                                <li>Live applications that could change the context</li>
+                                <li>Appeal decisions — they override local policy</li>
+                                <li>Conditions on existing permissions (especially pre-commencement)</li>
+                            </ul>
+                        </div>
+                        <div class="check-detail">
+                            <div class="check-detail-label">Where to Go</div>
+                            <ul>
+                                <li>Local Planning Authority website (planning search)</li>
+                                <li>Planning Portal (national search)</li>
+                                <li>PINS (Planning Inspectorate) for appeal decisions</li>
+                                <li>Council committee minutes for called-in applications</li>
+                            </ul>
+                        </div>
+                        <div class="check-detail check-missed">
+                            <div class="check-detail-label">What Gets Missed Doing This Manually</div>
+                            <p>Adjacent site applications that set precedent. Pre-commencement conditions from old permissions that still bind the site. Appeal decisions that override the LPA's stated position. Section 106 obligations attached to lapsed permissions that may still apply. Most people check the site itself — the context around it is where the risk hides.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CHECK 2 -->
+            <div class="check-card">
+                <div class="check-header" onclick="toggleCard(this)">
+                    <div class="check-number">2</div>
+                    <div class="check-title-area">
+                        <div class="check-title">Local Plan Allocation & Policy Status</div>
+                        <div class="check-subtitle">Whether the site sits within the policy framework or against it</div>
+                    </div>
+                    <div class="check-time">1 – 2 hrs</div>
+                    <div class="check-toggle">&#9662;</div>
+                </div>
+                <div class="check-body">
+                    <div class="check-grid">
+                        <div class="check-detail">
+                            <div class="check-detail-label">What to Look For</div>
+                            <ul>
+                                <li>Site allocation status in the adopted Local Plan</li>
+                                <li>Emerging Local Plan — draft allocations or policy changes</li>
+                                <li>Neighbourhood Plan policies (these carry real weight)</li>
+                                <li>Housing land supply position — is there a 5-year supply?</li>
+                                <li>Settlement boundary — inside or outside?</li>
+                            </ul>
+                        </div>
+                        <div class="check-detail">
+                            <div class="check-detail-label">Where to Go</div>
+                            <ul>
+                                <li>LPA Policies Map (interactive or PDF)</li>
+                                <li>Adopted Local Plan document</li>
+                                <li>Emerging / Regulation 19 Local Plan</li>
+                                <li>Annual Monitoring Report (housing supply figures)</li>
+                                <li>Made Neighbourhood Plans (parish level)</li>
+                            </ul>
+                        </div>
+                        <div class="check-detail check-missed">
+                            <div class="check-detail-label">What Gets Missed Doing This Manually</div>
+                            <p>The weight of emerging policy — a site that's allocated in the draft Local Plan but not yet adopted carries some weight but not full. Neighbourhood Plans that restrict density or design. The housing land supply calculation shifting the balance of NPPF paragraph 11(d) tilted balance. Most developers check if the site is allocated; few check the policy weight behind that allocation or the live supply position.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CHECK 3 -->
+            <div class="check-card">
+                <div class="check-header" onclick="toggleCard(this)">
+                    <div class="check-number">3</div>
+                    <div class="check-title-area">
+                        <div class="check-title">Flood Risk Assessment</div>
+                        <div class="check-subtitle">Fluvial, pluvial, surface water, and groundwater risk</div>
+                    </div>
+                    <div class="check-time">1 – 1.5 hrs</div>
+                    <div class="check-toggle">&#9662;</div>
+                </div>
+                <div class="check-body">
+                    <div class="check-grid">
+                        <div class="check-detail">
+                            <div class="check-detail-label">What to Look For</div>
+                            <ul>
+                                <li>Flood Zone classification (1, 2, 3a, 3b)</li>
+                                <li>Surface water flood risk (often worse than fluvial)</li>
+                                <li>Reservoir flood risk mapping</li>
+                                <li>Historic flood events from EA records</li>
+                                <li>Whether Sequential Test or Exception Test applies</li>
+                            </ul>
+                        </div>
+                        <div class="check-detail">
+                            <div class="check-detail-label">Where to Go</div>
+                            <ul>
+                                <li>EA Flood Map for Planning</li>
+                                <li>EA Long Term Flood Risk map (surface water layer)</li>
+                                <li>LLFA (Lead Local Flood Authority) SFRA documents</li>
+                                <li>EA Product 4 data (detailed, may need to request)</li>
+                            </ul>
+                        </div>
+                        <div class="check-detail check-missed">
+                            <div class="check-detail-label">What Gets Missed Doing This Manually</div>
+                            <p>Surface water risk — this is shown on a different map layer and often catches people out. A site in Flood Zone 1 (low fluvial risk) can still have high surface water risk. Climate change allowances that push Zone 2 sites into functional floodplain. The SFRA often contains site-specific data that doesn't appear on the national maps. Groundwater flood risk isn't shown on EA maps at all — you need BGS data for that.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CHECK 4 -->
+            <div class="check-card">
+                <div class="check-header" onclick="toggleCard(this)">
+                    <div class="check-number">4</div>
+                    <div class="check-title-area">
+                        <div class="check-title">Conservation & Heritage Constraints</div>
+                        <div class="check-subtitle">Listed buildings, conservation areas, scheduled monuments, and settings</div>
+                    </div>
+                    <div class="check-time">1 – 2 hrs</div>
+                    <div class="check-toggle">&#9662;</div>
+                </div>
+                <div class="check-body">
+                    <div class="check-grid">
+                        <div class="check-detail">
+                            <div class="check-detail-label">What to Look For</div>
+                            <ul>
+                                <li>Listed buildings on or adjacent to the site</li>
+                                <li>Conservation Area designation and appraisal</li>
+                                <li>Scheduled Monuments and their settings</li>
+                                <li>Registered Parks and Gardens</li>
+                                <li>Archaeological potential (HER records)</li>
+                                <li>Article 4 Directions removing permitted development</li>
+                            </ul>
+                        </div>
+                        <div class="check-detail">
+                            <div class="check-detail-label">Where to Go</div>
+                            <ul>
+                                <li>Historic England National Heritage List</li>
+                                <li>LPA Conservation Area maps and appraisals</li>
+                                <li>Historic Environment Record (county-level)</li>
+                                <li>MAGIC map (heritage designations layer)</li>
+                                <li>LPA Article 4 Direction register</li>
+                            </ul>
+                        </div>
+                        <div class="check-detail check-missed">
+                            <div class="check-detail-label">What Gets Missed Doing This Manually</div>
+                            <p>Setting — you don't need to be in a conservation area to be affected by it. Development within the setting of a listed building requires assessment under NPPF Section 16. The HER (Historic Environment Record) often shows archaeological potential that doesn't appear on any public map. Article 4 Directions that remove permitted development rights can block PD-to-resi conversions entirely. Most people check the site; the heritage constraints are often next door.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CHECK 5 -->
+            <div class="check-card">
+                <div class="check-header" onclick="toggleCard(this)">
+                    <div class="check-number">5</div>
+                    <div class="check-title-area">
+                        <div class="check-title">CIL & Section 106 Exposure</div>
+                        <div class="check-subtitle">What the scheme will owe before a brick is laid</div>
+                    </div>
+                    <div class="check-time">1 – 1.5 hrs</div>
+                    <div class="check-toggle">&#9662;</div>
+                </div>
+                <div class="check-body">
+                    <div class="check-grid">
+                        <div class="check-detail">
+                            <div class="check-detail-label">What to Look For</div>
+                            <ul>
+                                <li>CIL charging schedule — rate per sqm by use class and zone</li>
+                                <li>CIL exemptions (self-build, affordable, social housing)</li>
+                                <li>S106 requirements from Local Plan policy (affordable %, on-site vs off-site)</li>
+                                <li>S278 highways contributions (often missed in appraisals)</li>
+                                <li>Existing floorspace credits (demolition offset)</li>
+                            </ul>
+                        </div>
+                        <div class="check-detail">
+                            <div class="check-detail-label">Where to Go</div>
+                            <ul>
+                                <li>LPA CIL Charging Schedule (and current index rate)</li>
+                                <li>LPA Planning Obligations SPD</li>
+                                <li>Local Plan affordable housing policy</li>
+                                <li>CIL Regulation 123 list / Infrastructure Funding Statement</li>
+                            </ul>
+                        </div>
+                        <div class="check-detail check-missed">
+                            <div class="check-detail-label">What Gets Missed Doing This Manually</div>
+                            <p>CIL indexation — the published rate is the base rate, but the actual charge is indexed annually (BCIS). A 2019 charging schedule at 2026 index can be 30%+ higher than the face rate. Existing floorspace credits reduce CIL but only if the building has been in lawful use for 6 months in the prior 3 years. S106 viability arguments are possible but rarely quantified at feasibility stage. Most appraisals either miss CIL entirely or use the wrong rate.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CHECK 6 -->
+            <div class="check-card">
+                <div class="check-header" onclick="toggleCard(this)">
+                    <div class="check-number">6</div>
+                    <div class="check-title-area">
+                        <div class="check-title">Ground Conditions & Geology</div>
+                        <div class="check-subtitle">What's under the site and what it means for foundations</div>
+                    </div>
+                    <div class="check-time">1 – 2 hrs</div>
+                    <div class="check-toggle">&#9662;</div>
+                </div>
+                <div class="check-body">
+                    <div class="check-grid">
+                        <div class="check-detail">
+                            <div class="check-detail-label">What to Look For</div>
+                            <ul>
+                                <li>Superficial and bedrock geology (shrink-swell clay, peat, made ground)</li>
+                                <li>Historical borehole records near the site</li>
+                                <li>Mining risk — coal, tin, lead, chalk (depends on region)</li>
+                                <li>Radon potential</li>
+                                <li>Natural ground stability (landslip, dissolution, compressible ground)</li>
+                            </ul>
+                        </div>
+                        <div class="check-detail">
+                            <div class="check-detail-label">Where to Go</div>
+                            <ul>
+                                <li>BGS GeoIndex (geology, boreholes, hazards)</li>
+                                <li>BGS Geology of Britain viewer</li>
+                                <li>Coal Authority Interactive Map</li>
+                                <li>UKRadon map</li>
+                                <li>BGS GeoSure (shrink-swell, landslide, dissolution)</li>
+                            </ul>
+                        </div>
+                        <div class="check-detail check-missed">
+                            <div class="check-detail-label">What Gets Missed Doing This Manually</div>
+                            <p>The interplay between geology and foundation cost. Shrink-swell clay doesn't just mean deeper foundations — it means tree constraints, drain runs, and insurance implications. Made ground from former uses can mean piling instead of strip foundations. Historical boreholes 50m away might show a completely different ground profile than what's under your footprint. Most developers check the geology map; few cross-reference it with the borehole logs, the ground stability data, and the radon assessment together.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CHECK 7 -->
+            <div class="check-card">
+                <div class="check-header" onclick="toggleCard(this)">
+                    <div class="check-number">7</div>
+                    <div class="check-title-area">
+                        <div class="check-title">Contaminated Land & Environmental Permits</div>
+                        <div class="check-subtitle">Past uses, pollution sources, and remediation triggers</div>
+                    </div>
+                    <div class="check-time">1.5 – 2 hrs</div>
+                    <div class="check-toggle">&#9662;</div>
+                </div>
+                <div class="check-body">
+                    <div class="check-grid">
+                        <div class="check-detail">
+                            <div class="check-detail-label">What to Look For</div>
+                            <ul>
+                                <li>Historical land use (OS mapping back to 1840s)</li>
+                                <li>Contaminated Land Register entries (Part 2A EPA 1990)</li>
+                                <li>EA pollution incidents and permitted sites</li>
+                                <li>Proximity to landfill (gas migration risk)</li>
+                                <li>Source-pathway-receptor model for the proposed use</li>
+                            </ul>
+                        </div>
+                        <div class="check-detail">
+                            <div class="check-detail-label">Where to Go</div>
+                            <ul>
+                                <li>EA What's In Your Backyard (permits, incidents, landfill)</li>
+                                <li>LPA Environmental Health team (contaminated land register)</li>
+                                <li>Historical OS maps (NLS, Know Your Place, old-maps.co.uk)</li>
+                                <li>BGS Applied Geology maps</li>
+                            </ul>
+                        </div>
+                        <div class="check-detail check-missed">
+                            <div class="check-detail-label">What Gets Missed Doing This Manually</div>
+                            <p>Off-site sources. A petrol station 100m away with a groundwater plume. A former gasworks two streets over. Landfill gas migration from a closed tip 250m downhill. The contaminated land register only records sites formally determined under Part 2A — the vast majority of contaminated sites are dealt with through planning conditions, not the register. Historical mapping is critical but you need multiple eras, not just the most recent.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CHECK 8 -->
+            <div class="check-card">
+                <div class="check-header" onclick="toggleCard(this)">
+                    <div class="check-number">8</div>
+                    <div class="check-title-area">
+                        <div class="check-title">Highways & Access</div>
+                        <div class="check-subtitle">Can the site be safely and lawfully accessed?</div>
+                    </div>
+                    <div class="check-time">1 – 1.5 hrs</div>
+                    <div class="check-toggle">&#9662;</div>
+                </div>
+                <div class="check-body">
+                    <div class="check-grid">
+                        <div class="check-detail">
+                            <div class="check-detail-label">What to Look For</div>
+                            <ul>
+                                <li>Existing access point — adopted highway or private road?</li>
+                                <li>Visibility splays achievable from the access</li>
+                                <li>Traffic generation and trip rates for the proposed use</li>
+                                <li>Parking standards (LPA SPD or county standards)</li>
+                                <li>Public rights of way crossing or adjacent to the site</li>
+                            </ul>
+                        </div>
+                        <div class="check-detail">
+                            <div class="check-detail-label">Where to Go</div>
+                            <ul>
+                                <li>County Council Definitive Map (public rights of way)</li>
+                                <li>Highways Authority adopted roads map</li>
+                                <li>Google Street View (visibility, road width, speed)</li>
+                                <li>LPA Parking Standards SPD</li>
+                                <li>TRICS database (trip rates — paid access)</li>
+                            </ul>
+                        </div>
+                        <div class="check-detail check-missed">
+                            <div class="check-detail-label">What Gets Missed Doing This Manually</div>
+                            <p>Ransom strips. The access may look straightforward but a sliver of third-party land between the site and the highway can hold the entire scheme to ransom. Public rights of way can't be moved without a formal diversion order — and they get objected to. Speed limits affect visibility splay requirements, and a 30mph road needs very different splays to a 60mph road. Most developers eyeball the access; the highways authority will measure it to the millimetre.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CHECK 9 -->
+            <div class="check-card">
+                <div class="check-header" onclick="toggleCard(this)">
+                    <div class="check-number">9</div>
+                    <div class="check-title-area">
+                        <div class="check-title">Utilities & Drainage Capacity</div>
+                        <div class="check-subtitle">Water, foul, surface water, power, and telecoms</div>
+                    </div>
+                    <div class="check-time">2 – 3 hrs</div>
+                    <div class="check-toggle">&#9662;</div>
+                </div>
+                <div class="check-body">
+                    <div class="check-grid">
+                        <div class="check-detail">
+                            <div class="check-detail-label">What to Look For</div>
+                            <ul>
+                                <li>Foul and surface water sewer locations and capacity</li>
+                                <li>Water main location and pressure</li>
+                                <li>SuDS requirements (almost universal now)</li>
+                                <li>Power supply — DNO capacity and connection cost</li>
+                                <li>Nutrient neutrality requirements (affects 74+ LPAs)</li>
+                            </ul>
+                        </div>
+                        <div class="check-detail">
+                            <div class="check-detail-label">Where to Go</div>
+                            <ul>
+                                <li>Water company sewer records (varies by region)</li>
+                                <li>DNO connection quote / heat map</li>
+                                <li>LPA SuDS policy / LLFA standing advice</li>
+                                <li>Natural England nutrient neutrality catchment maps</li>
+                                <li>Openreach / fibre availability checker</li>
+                            </ul>
+                        </div>
+                        <div class="check-detail check-missed">
+                            <div class="check-detail-label">What Gets Missed Doing This Manually</div>
+                            <p>Nutrient neutrality. If the site drains to a protected habitat catchment (and 74+ English LPAs are affected), planning permission cannot be granted without demonstrating nutrient neutrality — typically through mitigation credits costing thousands per dwelling. Foul sewer capacity is a growing issue; water companies can require off-site upgrades funded by the developer. DNO reinforcement costs can run to six figures on greenfield sites. Most appraisals assume utilities are available and affordable — they often aren't.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CHECK 10 -->
+            <div class="check-card">
+                <div class="check-header" onclick="toggleCard(this)">
+                    <div class="check-number">10</div>
+                    <div class="check-title-area">
+                        <div class="check-title">Ecological Designations & TPOs</div>
+                        <div class="check-subtitle">Protected species, habitats, trees, and BNG requirements</div>
+                    </div>
+                    <div class="check-time">1 – 1.5 hrs</div>
+                    <div class="check-toggle">&#9662;</div>
+                </div>
+                <div class="check-body">
+                    <div class="check-grid">
+                        <div class="check-detail">
+                            <div class="check-detail-label">What to Look For</div>
+                            <ul>
+                                <li>SSSIs, SACs, SPAs, Ramsar sites within influence zone</li>
+                                <li>Local Wildlife Sites (non-statutory but material)</li>
+                                <li>Tree Preservation Orders on or adjacent to the site</li>
+                                <li>Ancient woodland (irreplaceable habitat — 15m buffer minimum)</li>
+                                <li>Biodiversity Net Gain requirement (10% mandatory from Feb 2024)</li>
+                            </ul>
+                        </div>
+                        <div class="check-detail">
+                            <div class="check-detail-label">Where to Go</div>
+                            <ul>
+                                <li>MAGIC map (all statutory designations)</li>
+                                <li>LPA TPO register</li>
+                                <li>Natural England (SSSI condition, HRA screening zones)</li>
+                                <li>Local Biological Records Centre</li>
+                                <li>DEFRA Biodiversity Metric 4.0 (BNG calculation)</li>
+                            </ul>
+                        </div>
+                        <div class="check-detail check-missed">
+                            <div class="check-detail-label">What Gets Missed Doing This Manually</div>
+                            <p>BNG is now mandatory and changes the maths significantly. A brownfield site with low baseline habitat value might achieve 10% on-site; a greenfield site with hedgerows, grassland, and mature trees may need off-site credits at considerable cost. TPOs aren't always on the LPA website — some need to be requested directly. Zone of influence for European sites (SACs/SPAs) can extend several kilometres, triggering Habitats Regulations Assessment. The ecological calendar also matters — surveys for bats, newts, and nesting birds are seasonal, and missing the window can delay a scheme by 6-12 months.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CHECK 11 -->
+            <div class="check-card">
+                <div class="check-header" onclick="toggleCard(this)">
+                    <div class="check-number">11</div>
+                    <div class="check-title-area">
+                        <div class="check-title">Title, Covenants & Legal Constraints</div>
+                        <div class="check-subtitle">What the deeds say you can and can't do</div>
+                    </div>
+                    <div class="check-time">1 – 2 hrs</div>
+                    <div class="check-toggle">&#9662;</div>
+                </div>
+                <div class="check-body">
+                    <div class="check-grid">
+                        <div class="check-detail">
+                            <div class="check-detail-label">What to Look For</div>
+                            <ul>
+                                <li>Restrictive covenants limiting use or development</li>
+                                <li>Easements and rights of way (legal, not just physical)</li>
+                                <li>Overage / clawback clauses from previous sales</li>
+                                <li>Chancel repair liability</li>
+                                <li>Land Registry title plan vs actual site boundary</li>
+                            </ul>
+                        </div>
+                        <div class="check-detail">
+                            <div class="check-detail-label">Where to Go</div>
+                            <ul>
+                                <li>HM Land Registry (title register and plan — £3 each)</li>
+                                <li>Flood search / environmental search providers</li>
+                                <li>Chancel repair liability search</li>
+                                <li>Solicitor's report on title</li>
+                            </ul>
+                        </div>
+                        <div class="check-detail check-missed">
+                            <div class="check-detail-label">What Gets Missed Doing This Manually</div>
+                            <p>Covenants that predate the current owner. A restrictive covenant from 1935 limiting the land to agricultural use is still enforceable if the benefiting party can be identified. Overage clauses triggered by planning permission — you get consent, then owe 30% of the uplift to the previous owner. Easements that don't appear on the plan but are noted in the register. Chancel repair liability is rare but can run to six figures. Planning permission does not override private law constraints — you can get permission and still not be able to build.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CHECK 12 -->
+            <div class="check-card">
+                <div class="check-header" onclick="toggleCard(this)">
+                    <div class="check-number">12</div>
+                    <div class="check-title-area">
+                        <div class="check-title">Market Comparables & Viability</div>
+                        <div class="check-subtitle">Does the deal actually work when you model the numbers?</div>
+                    </div>
+                    <div class="check-time">2 – 3 hrs</div>
+                    <div class="check-toggle">&#9662;</div>
+                </div>
+                <div class="check-body">
+                    <div class="check-grid">
+                        <div class="check-detail">
+                            <div class="check-detail-label">What to Look For</div>
+                            <ul>
+                                <li>Comparable sales within 1 mile / 6 months (new build and resale)</li>
+                                <li>Price per sqft by property type and specification</li>
+                                <li>Build cost benchmarks (BCIS or recent tender data)</li>
+                                <li>Abnormal costs identified from checks 1-11</li>
+                                <li>Gross Development Value vs total cost including land, build, fees, finance, CIL, S106</li>
+                            </ul>
+                        </div>
+                        <div class="check-detail">
+                            <div class="check-detail-label">Where to Go</div>
+                            <ul>
+                                <li>HM Land Registry Price Paid data</li>
+                                <li>Rightmove / Zoopla sold prices</li>
+                                <li>EPC Register (floor areas for £/sqft)</li>
+                                <li>BCIS (build cost data — subscription)</li>
+                                <li>New build developer websites (asking prices, spec)</li>
+                            </ul>
+                        </div>
+                        <div class="check-detail check-missed">
+                            <div class="check-detail-label">What Gets Missed Doing This Manually</div>
+                            <p>The gap between asking price and achieved price — new builds often sell at 5-10% below asking, especially with incentives. BCIS gives you a national benchmark but your actual build cost depends on ground conditions, site access, and specification. CIL, S106, BNG credits, nutrient mitigation, and abnormal foundations are all costs that erode margin — and they all come from checks 1-11 above. Most appraisals are done on the back of an envelope with headline GDV and a build cost guess. The margin sits in the detail.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ═══ TOTAL BAR ═══ -->
+            <div class="total-bar">
+                <div class="total-left">
+                    <h3>Total Manual Effort</h3>
+                    <div class="total-number">18 – 26 <span>hours</span></div>
+                </div>
+                <div class="total-right">
+                    <p>That's 2-3 full working days per site, assuming you know where to look, what to cross-reference, and how to interpret what you find. Most people don't — and the things that get missed are the things that cost the most.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ═══ COMPARISON ═══ -->
+        <div class="comparison">
+            <h2>The Manual Way vs. The Smart Way</h2>
+            <p>Same 12 checks. Very different experience.</p>
+            <div class="comparison-grid">
+                <div class="comp-col comp-diy">
+                    <h3>DIY Desktop Assessment</h3>
+                    <div class="comp-row">
+                        <span class="comp-row-label">Time per site</span>
+                        <span class="comp-row-value">18 – 26 hours</span>
+                    </div>
+                    <div class="comp-row">
+                        <span class="comp-row-label">Sources to check</span>
+                        <span class="comp-row-value">22+ websites</span>
+                    </div>
+                    <div class="comp-row">
+                        <span class="comp-row-label">Cross-referencing</span>
+                        <span class="comp-row-value">Manual / error-prone</span>
+                    </div>
+                    <div class="comp-row">
+                        <span class="comp-row-label">Data currency</span>
+                        <span class="comp-row-value">Point-in-time snapshot</span>
+                    </div>
+                    <div class="comp-row">
+                        <span class="comp-row-label">CIL calculation</span>
+                        <span class="comp-row-value">Often wrong rate / no index</span>
+                    </div>
+                    <div class="comp-row">
+                        <span class="comp-row-label">Consistency</span>
+                        <span class="comp-row-value">Varies by who does it</span>
+                    </div>
+                    <div class="comp-row">
+                        <span class="comp-row-label">Coverage gaps</span>
+                        <span class="comp-row-value">You don't know what you missed</span>
+                    </div>
+                </div>
+                <div class="comp-col comp-si">
+                    <h3>Site Intelligence</h3>
+                    <div class="comp-row">
+                        <span class="comp-row-label">Time per site</span>
+                        <span class="comp-row-value">Under 10 minutes</span>
+                    </div>
+                    <div class="comp-row">
+                        <span class="comp-row-label">Sources checked</span>
+                        <span class="comp-row-value">22+ automatically</span>
+                    </div>
+                    <div class="comp-row">
+                        <span class="comp-row-label">Cross-referencing</span>
+                        <span class="comp-row-value">Automated & verified</span>
+                    </div>
+                    <div class="comp-row">
+                        <span class="comp-row-label">Data currency</span>
+                        <span class="comp-row-value">Live at point of report</span>
+                    </div>
+                    <div class="comp-row">
+                        <span class="comp-row-label">CIL calculation</span>
+                        <span class="comp-row-value">Indexed to current BCIS</span>
+                    </div>
+                    <div class="comp-row">
+                        <span class="comp-row-label">Consistency</span>
+                        <span class="comp-row-value">Same rigour every time</span>
+                    </div>
+                    <div class="comp-row">
+                        <span class="comp-row-label">Coverage gaps</span>
+                        <span class="comp-row-value">Systematic — nothing skipped</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ═══ METHODOLOGY ═══ -->
+        <div class="methodology">
+            <h2>How to Use This Checklist</h2>
+            <p>This framework works for any site in England. Run it before you exchange, before you submit a planning application, or before you commit any serious capital.</p>
+            <div class="methodology-steps">
+                <div class="meth-step">
+                    <div class="meth-step-num">1</div>
+                    <strong>Identify</strong>
+                    <span>Pin the site. Get the postcode, title number, and LPA.</span>
+                </div>
+                <div class="meth-step">
+                    <div class="meth-step-num">2</div>
+                    <strong>Assess</strong>
+                    <span>Run all 12 checks. Don't skip any — the risk is always in the one you didn't look at.</span>
+                </div>
+                <div class="meth-step">
+                    <div class="meth-step-num">3</div>
+                    <strong>Cross-reference</strong>
+                    <span>The value is in the interplay. Geology affects foundations. Flood affects insurance. CIL affects viability.</span>
+                </div>
+                <div class="meth-step">
+                    <div class="meth-step-num">4</div>
+                    <strong>Decide</strong>
+                    <span>Go, no-go, or investigate further. The checklist tells you which.</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ═══ CTA ═══ -->
+        <div class="cta">
+            <h2>Or skip the 26 hours.</h2>
+            <p>Site Intelligence runs all 12 checks automatically — planning, environmental, ground conditions, flood, CIL, market data — and delivers a structured feasibility report in minutes.</p>
+            <div class="cta-buttons">
+                <a class="cta-btn cta-btn-primary" href="mailto:chris@pfandco.co.uk?subject=Site%20Intelligence%20—%20Tell%20Me%20More">Get in Touch</a>
+                <a class="cta-btn cta-btn-secondary" href="https://www.pfandco.com">Visit pfandco.com</a>
+            </div>
+            <div class="cta-note">No obligation. No hard sell. Just a conversation about your next site.</div>
+        </div>
+
+        <!-- ═══ FOOTER ═══ -->
+        <div class="footer">
+            <span class="footer-brand">Site Intelligence — by PF & Co</span>
+            Prepared March 2026 &nbsp;|&nbsp; chris@pfandco.co.uk &nbsp;|&nbsp; pfandco.com
+        </div>
+    </div>
+
+    <script>
+        function toggleCard(header) {
+            const card = header.closest('.check-card');
+            card.classList.toggle('open');
+        }
+
+        // Open first card by default, close others on mobile
+        document.addEventListener('DOMContentLoaded', function() {
+            // All cards start closed except the first
+        });
+    </script>
+</body>
+</html>
