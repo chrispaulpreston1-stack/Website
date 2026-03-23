@@ -89,7 +89,7 @@ const HowDevelopersAssessSites = () => {
   return (
     <div className="bg-brand-surface min-h-screen">
       <PageSEO 
-        title="How Developers Assess Sites: The 5-Stage Workflow | Site Intelligence"
+        title="How Developers Assess Sites: 5-Stage Workflow | SI"
         description="The standard 5-stage workflow every developer follows — from desktop screening to planning application. See what each stage covers, costs, and where desktop due diligence fits."
         path="/site-intelligence/how-developers-assess-sites"
         jsonLd={schema}
@@ -118,6 +118,11 @@ const HowDevelopersAssessSites = () => {
             <p className="text-xl md:text-2xl text-white/80 font-light max-w-2xl leading-relaxed mb-8">
               Every framework — RICS, LCRM, NPPF — says start with desktop. Here's the full picture of the 5-stage workflow.
             </p>
+            <img 
+              src="/images/data-layer-aerial.jpg" 
+              alt="Aerial view of a development site with flood zone, heritage, and ecology data layers overlaid"
+              className="mt-8 rounded-2xl shadow-2xl border border-white/10 w-full object-cover"
+            />
           </motion.div>
         </div>
       </section>
@@ -135,6 +140,18 @@ const HowDevelopersAssessSites = () => {
           </div>
           
           <WorkflowTimeline />
+
+          {/* Semantic List for SEO & AI Answer Engines */}
+          <div className="mt-16 max-w-4xl mx-auto bg-brand-surface p-8 rounded-3xl border border-brand-primary/10">
+            <h3 className="text-xl font-bold font-display text-brand-primary mb-6">Workflow Process Overview:</h3>
+            <ol className="list-decimal list-outside ml-6 space-y-4 text-brand-primary/80">
+              <li><strong>Stage 1: Initial Screening (Desktop)</strong> - Rapid assessment of planning policy, constraint mapping, title check, and preliminary market assessment.</li>
+              <li><strong>Stage 2: Detailed Desktop Due Diligence</strong> - In-depth analysis of environmental, heritage, transport, ground conditions, CIL/S106 obligations, and viability checks.</li>
+              <li><strong>Stage 3: Site Visit and Walkover</strong> - Tangible physical inspection to confirm desktop findings and assess immediately visible local context.</li>
+              <li><strong>Stage 4: Specialist Investigations</strong> - Targeted commissioning of Phase 2 ground intrusions, protected species eDNA ecology surveys, and granular flood modelling.</li>
+              <li><strong>Stage 5: Planning Application Preparation</strong> - Assembly of full report suite, architectural design work, and strategic pre-application engagement with the LPA.</li>
+            </ol>
+          </div>
         </div>
       </section>
 

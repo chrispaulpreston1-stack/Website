@@ -15,12 +15,27 @@ const PricingArchitecture = () => {
       "@type": "Brand",
       "name": "Site Intelligence"
     },
-    "offers": {
-      "@type": "AggregateOffer",
-      "lowPrice": "295",
-      "highPrice": "4295",
-      "priceCurrency": "GBP"
-    }
+      "url": "https://www.pfandco.co.uk/site-intelligence/pricing",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Desktop AI Reports (Tier 1)",
+          "price": "295",
+          "priceCurrency": "GBP"
+        },
+        {
+          "@type": "Offer",
+          "name": "Specialist Desktop Reports (Tier 2)",
+          "price": "375",
+          "priceCurrency": "GBP"
+        },
+        {
+          "@type": "Offer",
+          "name": "Bundled Packages (Tier 3)",
+          "price": "2375",
+          "priceCurrency": "GBP"
+        }
+      ]
   };
 
   const pricingTiers = [
@@ -67,8 +82,8 @@ const PricingArchitecture = () => {
   return (
     <div className="bg-brand-surface min-h-screen">
       <PageSEO 
-        title="Pricing & Packages | PF & Co Site Intelligence"
-        description="Clear, transparent pricing for all our Desktop AI and Specialist Reports. From £295. No VAT to add."
+        title="Site Assessment Pricing: Desktop Reports from £295 | SI"
+        description="Desktop site assessment reports from £295, no VAT. Three tiers covering planning, flood, ground, heritage, ecology, and transport. 48-hour delivery. All prices final."
         path="/site-intelligence/pricing"
         jsonLd={schema}
       />
@@ -93,6 +108,11 @@ const PricingArchitecture = () => {
             <p className="text-xl text-white/80 font-light mb-8">
               Straightforward pricing. No VAT. 48 hour turnaround.
             </p>
+            <img 
+              src="/images/abstract-report-composition.jpg" 
+              alt="Three overlapping site assessment reports with data visualisations on dark background"
+              className="mt-10 mx-auto rounded-3xl shadow-2xl border border-white/10 max-w-2xl w-full object-cover"
+            />
           </motion.div>
         </div>
       </section>
