@@ -156,6 +156,12 @@
         .card-title .icon { font-size: 20px; }
 
         /* ── Tables ──────────────────────────────────── */
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin-bottom: 16px;
+        }
         table {
             width: 100%;
             border-collapse: collapse;
@@ -468,17 +474,19 @@
 
     <div class="card">
         <div class="card-title"><span class="icon">&#9670;</span> Site Identification</div>
-        <table>
-            <tr><th style="width:30%">Address</th><td>Falconers, Road from Plympton Cross to Moult Hill, Salcombe, TQ8 8LF</td></tr>
-            <tr><th>UPRN</th><td>10004740884</td></tr>
-            <tr><th>Title 1</th><td>DN170405 (Absolute Freehold) &mdash; 4.22 acres (house &amp; gardens)</td></tr>
-            <tr><th>Title 2</th><td>DN263903 (Absolute Freehold) &mdash; 2.98 acres (paddock/western land)</td></tr>
-            <tr><th>Combined Area</th><td>7.20 acres (2.91 ha) &mdash; matches brochure</td></tr>
-            <tr><th>What3Words</th><td>///offerings.nuzzling.barrel</td></tr>
-            <tr><th>Centroid</th><td>50.2291, -3.7854</td></tr>
-            <tr><th>EPC</th><td>C (per brochure)</td></tr>
-            <tr><th>Services</th><td>Mains water, electricity, drainage. Oil-fired central heating.</td></tr>
-        </table>
+        <div class="table-responsive">
+            <table>
+                <tr><th style="width:30%">Address</th><td>Falconers, Road from Plympton Cross to Moult Hill, Salcombe, TQ8 8LF</td></tr>
+                <tr><th>UPRN</th><td>10004740884</td></tr>
+                <tr><th>Title 1</th><td>DN170405 (Absolute Freehold) &mdash; 4.22 acres (house &amp; gardens)</td></tr>
+                <tr><th>Title 2</th><td>DN263903 (Absolute Freehold) &mdash; 2.98 acres (paddock/western land)</td></tr>
+                <tr><th>Combined Area</th><td>7.20 acres (2.91 ha) &mdash; matches brochure</td></tr>
+                <tr><th>What3Words</th><td>///offerings.nuzzling.barrel</td></tr>
+                <tr><th>Centroid</th><td>50.2291, -3.7854</td></tr>
+                <tr><th>EPC</th><td>C (per brochure)</td></tr>
+                <tr><th>Services</th><td>Mains water, electricity, drainage. Oil-fired central heating.</td></tr>
+            </table>
+        </div>
     </div>
 
     <div class="card">
@@ -503,12 +511,14 @@
 
     <div class="card">
         <div class="card-title"><span class="icon">&#9670;</span> Neighbouring Heritage Assets</div>
-        <table>
-            <tr><th>Asset</th><th>Grade</th><th>HE Ref</th><th>Relationship</th></tr>
-            <tr><td>The Moult (1764)</td><td>II*</td><td>&mdash;</td><td>Adjacent &mdash; first villa in Salcombe</td></tr>
-            <tr><td>Former Lodge to The Moult</td><td>II</td><td>1213029</td><td>Adjacent &mdash; late C18, Gothick glazing bars</td></tr>
-            <tr><td>Moult Summerhouse</td><td>II</td><td>1213027</td><td>Adjacent &mdash; thatched, connected by high stone wall</td></tr>
-        </table>
+        <div class="table-responsive">
+            <table>
+                <tr><th>Asset</th><th>Grade</th><th>HE Ref</th><th>Relationship</th></tr>
+                <tr><td>The Moult (1764)</td><td>II*</td><td>&mdash;</td><td>Adjacent &mdash; first villa in Salcombe</td></tr>
+                <tr><td>Former Lodge to The Moult</td><td>II</td><td>1213029</td><td>Adjacent &mdash; late C18, Gothick glazing bars</td></tr>
+                <tr><td>Moult Summerhouse</td><td>II</td><td>1213027</td><td>Adjacent &mdash; thatched, connected by high stone wall</td></tr>
+            </table>
+        </div>
         <div class="callout callout-orange" style="margin-top: 16px;">
             <strong>Heritage Cluster</strong>
             Moult Hill contains a cluster of Grade II and II* listed structures. Any development at Falconers must assess impact on the setting of all four listed buildings, not just the application site. Historic England GPA3 (Setting of Heritage Assets) will be the key assessment framework.
@@ -517,13 +527,15 @@
 
     <div class="card">
         <div class="card-title"><span class="icon">&#9670;</span> Accommodation Schedule</div>
-        <table>
-            <tr><th>Floor</th><th>Accommodation</th></tr>
-            <tr><td>Ground Floor</td><td>Reception hall, great hall with galleried landing, drawing room, oak room, kitchen with breakfast area, sitting room, study, office</td></tr>
-            <tr><td>First Floor</td><td>Eight bedrooms (principal suite with balcony), six bathrooms (four en suite)</td></tr>
-            <tr><td>External</td><td>Detached outbuildings, double garage, lime-tree-lined driveway</td></tr>
-            <tr><td>Grounds</td><td>~7.2 acres: formal gardens, four-acre paddock, working helipad, wisteria-covered rear facade, espaliered fruit trees, former kitchen garden</td></tr>
-        </table>
+        <div class="table-responsive">
+            <table>
+                <tr><th>Floor</th><th>Accommodation</th></tr>
+                <tr><td>Ground Floor</td><td>Reception hall, great hall with galleried landing, drawing room, oak room, kitchen with breakfast area, sitting room, study, office</td></tr>
+                <tr><td>First Floor</td><td>Eight bedrooms (principal suite with balcony), six bathrooms (four en suite)</td></tr>
+                <tr><td>External</td><td>Detached outbuildings, double garage, lime-tree-lined driveway</td></tr>
+                <tr><td>Grounds</td><td>~7.2 acres: formal gardens, four-acre paddock, working helipad, wisteria-covered rear facade, espaliered fruit trees, former kitchen garden</td></tr>
+            </table>
+        </div>
     </div>
 </section>
 
@@ -602,80 +614,92 @@
 
     <div class="card">
         <div class="card-title"><span class="icon">&#9670;</span> Development Plan Hierarchy</div>
-        <table>
-            <tr><th style="width: 35%">Document</th><th>Status</th><th>Weight</th></tr>
-            <tr><td>NPPF (December 2024)</td><td>Published 12 Dec 2024</td><td>National policy &mdash; material consideration</td></tr>
-            <tr><td>Plymouth &amp; SW Devon Joint Local Plan</td><td>Adopted March 2019 (2014-2034)</td><td>Full weight &mdash; development plan</td></tr>
-            <tr><td>Salcombe Neighbourhood Plan</td><td>Made September 2018, amended 2021</td><td>Full weight &mdash; development plan</td></tr>
-            <tr><td>South Devon AONB Management Plan</td><td>Current</td><td>Material consideration</td></tr>
-            <tr><td>South Devon AONB Planning Guidance</td><td>Adopted March 2017</td><td>Material consideration</td></tr>
-        </table>
+        <div class="table-responsive">
+            <table>
+                <tr><th style="width: 35%">Document</th><th>Status</th><th>Weight</th></tr>
+                <tr><td>NPPF (December 2024)</td><td>Published 12 Dec 2024</td><td>National policy &mdash; material consideration</td></tr>
+                <tr><td>Plymouth &amp; SW Devon Joint Local Plan</td><td>Adopted March 2019 (2014-2034)</td><td>Full weight &mdash; development plan</td></tr>
+                <tr><td>Salcombe Neighbourhood Plan</td><td>Made September 2018, amended 2021</td><td>Full weight &mdash; development plan</td></tr>
+                <tr><td>South Devon AONB Management Plan</td><td>Current</td><td>Material consideration</td></tr>
+                <tr><td>South Devon AONB Planning Guidance</td><td>Adopted March 2017</td><td>Material consideration</td></tr>
+            </table>
+        </div>
     </div>
 
     <div class="card">
         <div class="card-title"><span class="icon">&#9670;</span> Key Policies</div>
 
         <h4 style="font-size: 15px; font-weight: 700; margin: 20px 0 12px; color: var(--orange);">Heritage</h4>
-        <table>
-            <tr><th style="width:15%">Policy</th><th style="width:25%">Title</th><th>Requirement</th></tr>
-            <tr><td><span class="policy-ref">NPPF 212</span></td><td>Conservation weight</td><td>Great weight to conservation irrespective of degree of harm. The more important the asset, the greater the weight.</td></tr>
-            <tr><td><span class="policy-ref">NPPF 213</span></td><td>Justification</td><td>Harm to Grade II must be <strong>exceptional</strong>. Clear and convincing justification required.</td></tr>
-            <tr><td><span class="policy-ref">NPPF 215</span></td><td>Less than substantial harm</td><td>Weighed against public benefits including securing optimum viable use. <em>Most likely test for Falconers.</em></td></tr>
-            <tr><td><span class="policy-ref">DEV21</span></td><td>Historic environment</td><td>Heritage Impact Assessment required. Significance, character, setting and local distinctiveness must be assessed.</td></tr>
-        </table>
+        <div class="table-responsive">
+            <table>
+                <tr><th style="width:15%">Policy</th><th style="width:25%">Title</th><th>Requirement</th></tr>
+                <tr><td><span class="policy-ref">NPPF 212</span></td><td>Conservation weight</td><td>Great weight to conservation irrespective of degree of harm. The more important the asset, the greater the weight.</td></tr>
+                <tr><td><span class="policy-ref">NPPF 213</span></td><td>Justification</td><td>Harm to Grade II must be <strong>exceptional</strong>. Clear and convincing justification required.</td></tr>
+                <tr><td><span class="policy-ref">NPPF 215</span></td><td>Less than substantial harm</td><td>Weighed against public benefits including securing optimum viable use. <em>Most likely test for Falconers.</em></td></tr>
+                <tr><td><span class="policy-ref">DEV21</span></td><td>Historic environment</td><td>Heritage Impact Assessment required. Significance, character, setting and local distinctiveness must be assessed.</td></tr>
+            </table>
+        </div>
 
         <h4 style="font-size: 15px; font-weight: 700; margin: 20px 0 12px; color: var(--orange);">Landscape</h4>
-        <table>
-            <tr><th style="width:15%">Policy</th><th style="width:25%">Title</th><th>Requirement</th></tr>
-            <tr><td><span class="policy-ref">NPPF 189</span></td><td>National Landscapes</td><td>Great weight to conserving and enhancing landscape and scenic beauty. Highest status of protection.</td></tr>
-            <tr><td><span class="policy-ref">NPPF 190</span></td><td>Major development</td><td>Refused unless exceptional circumstances and in the public interest. Three-part test applies.</td></tr>
-            <tr><td><span class="policy-ref">DEV25</span></td><td>Protected landscapes</td><td>Highest degree of protection. Development likely limited to small scale, clearly evidenced local need.</td></tr>
-            <tr><td><span class="policy-ref">SALC ENV1</span></td><td>AONB special qualities</td><td>New development must respect and maintain special qualities of the National Landscape.</td></tr>
-        </table>
+        <div class="table-responsive">
+            <table>
+                <tr><th style="width:15%">Policy</th><th style="width:25%">Title</th><th>Requirement</th></tr>
+                <tr><td><span class="policy-ref">NPPF 189</span></td><td>National Landscapes</td><td>Great weight to conserving and enhancing landscape and scenic beauty. Highest status of protection.</td></tr>
+                <tr><td><span class="policy-ref">NPPF 190</span></td><td>Major development</td><td>Refused unless exceptional circumstances and in the public interest. Three-part test applies.</td></tr>
+                <tr><td><span class="policy-ref">DEV25</span></td><td>Protected landscapes</td><td>Highest degree of protection. Development likely limited to small scale, clearly evidenced local need.</td></tr>
+                <tr><td><span class="policy-ref">SALC ENV1</span></td><td>AONB special qualities</td><td>New development must respect and maintain special qualities of the National Landscape.</td></tr>
+            </table>
+        </div>
 
         <h4 style="font-size: 15px; font-weight: 700; margin: 20px 0 12px; color: var(--orange);">Housing</h4>
-        <table>
-            <tr><th style="width:15%">Policy</th><th style="width:25%">Title</th><th>Requirement</th></tr>
-            <tr><td><span class="policy-ref">NPPF 84</span></td><td>Isolated homes</td><td>Permits: (b) heritage enabling, (c) reuse of redundant buildings, (d) subdivision of existing dwelling, (e) exceptional design.</td></tr>
-            <tr><td><span class="policy-ref">SALC H3</span></td><td>Principal residence</td><td>All new dwellings require S106 for principal residence only. Upheld at appeal June 2025.</td></tr>
-            <tr><td><span class="policy-ref">TTV1</span></td><td>Settlement hierarchy</td><td>Salcombe = "Smaller Town and Village." Limited growth allocation.</td></tr>
-            <tr><td><span class="policy-ref">DEV10</span></td><td>Housing quality</td><td>Nationally Described Space Standards. Must not appear as unrelated addition.</td></tr>
-        </table>
+        <div class="table-responsive">
+            <table>
+                <tr><th style="width:15%">Policy</th><th style="width:25%">Title</th><th>Requirement</th></tr>
+                <tr><td><span class="policy-ref">NPPF 84</span></td><td>Isolated homes</td><td>Permits: (b) heritage enabling, (c) reuse of redundant buildings, (d) subdivision of existing dwelling, (e) exceptional design.</td></tr>
+                <tr><td><span class="policy-ref">SALC H3</span></td><td>Principal residence</td><td>All new dwellings require S106 for principal residence only. Upheld at appeal June 2025.</td></tr>
+                <tr><td><span class="policy-ref">TTV1</span></td><td>Settlement hierarchy</td><td>Salcombe = "Smaller Town and Village." Limited growth allocation.</td></tr>
+                <tr><td><span class="policy-ref">DEV10</span></td><td>Housing quality</td><td>Nationally Described Space Standards. Must not appear as unrelated addition.</td></tr>
+            </table>
+        </div>
 
         <h4 style="font-size: 15px; font-weight: 700; margin: 20px 0 12px; color: var(--orange);">Design</h4>
-        <table>
-            <tr><th style="width:15%">Policy</th><th style="width:25%">Title</th><th>Requirement</th></tr>
-            <tr><td><span class="policy-ref">DEV20</span></td><td>Place shaping</td><td>Contribute positively to local townscape. Avoid significant adverse visual impacts.</td></tr>
-            <tr><td><span class="policy-ref">SALC B1</span></td><td>Design quality</td><td>Appropriate to context. Referenced alongside ENV1 in appeal decisions.</td></tr>
-        </table>
+        <div class="table-responsive">
+            <table>
+                <tr><th style="width:15%">Policy</th><th style="width:25%">Title</th><th>Requirement</th></tr>
+                <tr><td><span class="policy-ref">DEV20</span></td><td>Place shaping</td><td>Contribute positively to local townscape. Avoid significant adverse visual impacts.</td></tr>
+                <tr><td><span class="policy-ref">SALC B1</span></td><td>Design quality</td><td>Appropriate to context. Referenced alongside ENV1 in appeal decisions.</td></tr>
+            </table>
+        </div>
     </div>
 
     <div class="card">
         <div class="card-title"><span class="icon">&#9670;</span> Relevant Appeal Precedent</div>
-        <table>
-            <tr><th>Ref</th><th>Site</th><th>Proposal</th><th>Decision</th><th>Key Finding</th></tr>
-            <tr>
-                <td style="font-size: 12px;">APP/K1128/W/22/3301425</td>
-                <td>Sunny Ridge, Herbert Rd</td>
-                <td>Replacement dwelling</td>
-                <td><span class="tl tl-green">ALLOWED</span></td>
-                <td>Within built-up area; well-designed; no AONB harm. Complied with DEV20, DEV23, SALC ENV1, B1.</td>
-            </tr>
-            <tr>
-                <td style="font-size: 12px;">APP/K1128/D/18/3219559</td>
-                <td>Hangar Farm, Beadon Rd</td>
-                <td>Front porch</td>
-                <td><span class="tl tl-red">DISMISSED</span></td>
-                <td>Even modest porch refused where it affected AONB character outside built-up area.</td>
-            </tr>
-            <tr>
-                <td style="font-size: 12px;">3164/23/FUL</td>
-                <td>Cedar House, Moult Hill</td>
-                <td>Detached annexe</td>
-                <td><span class="tl tl-green">APPROVED</span></td>
-                <td>Direct Moult Hill precedent for freestanding ancillary structure.</td>
-            </tr>
-        </table>
+        <div class="table-responsive">
+            <table>
+                <tr><th>Ref</th><th>Site</th><th>Proposal</th><th>Decision</th><th>Key Finding</th></tr>
+                <tr>
+                    <td style="font-size: 12px;">APP/K1128/W/22/3301425</td>
+                    <td>Sunny Ridge, Herbert Rd</td>
+                    <td>Replacement dwelling</td>
+                    <td><span class="tl tl-green">ALLOWED</span></td>
+                    <td>Within built-up area; well-designed; no AONB harm. Complied with DEV20, DEV23, SALC ENV1, B1.</td>
+                </tr>
+                <tr>
+                    <td style="font-size: 12px;">APP/K1128/D/18/3219559</td>
+                    <td>Hangar Farm, Beadon Rd</td>
+                    <td>Front porch</td>
+                    <td><span class="tl tl-red">DISMISSED</span></td>
+                    <td>Even modest porch refused where it affected AONB character outside built-up area.</td>
+                </tr>
+                <tr>
+                    <td style="font-size: 12px;">3164/23/FUL</td>
+                    <td>Cedar House, Moult Hill</td>
+                    <td>Detached annexe</td>
+                    <td><span class="tl tl-green">APPROVED</span></td>
+                    <td>Direct Moult Hill precedent for freestanding ancillary structure.</td>
+                </tr>
+            </table>
+        </div>
     </div>
 </section>
 
@@ -928,15 +952,17 @@
 
     <div class="card">
         <div class="card-title"><span class="icon">&#9670;</span> Moult Hill Comparables</div>
-        <table>
-            <tr><th>Property</th><th>Type</th><th>Price</th><th>Date</th><th>&pound;/sq ft (est)</th></tr>
-            <tr><td>Beechwood</td><td>Detached</td><td class="comp-price">&pound;3,500,000</td><td>Sep 2022</td><td>&mdash;</td></tr>
-            <tr><td>Binnacle House</td><td>4-bed detached</td><td class="comp-price">&pound;1,550,000</td><td>Sep 2023</td><td>&mdash;</td></tr>
-            <tr><td>Hawks Ridge</td><td>2-bed detached</td><td class="comp-price">&pound;1,450,000</td><td>Sep 2019</td><td>&mdash;</td></tr>
-            <tr><td>White Horses</td><td>4-bed detached</td><td class="comp-price">&pound;815,000</td><td>Jun 2015</td><td>&mdash;</td></tr>
-            <tr><td>Bridleway House</td><td>5-bed new build (2017)</td><td class="comp-price">&pound;3,000,000</td><td>Currently listed</td><td>~&pound;510</td></tr>
-            <tr><td>Cedar House</td><td>5-bed detached</td><td class="comp-price">&pound;2,500,000</td><td>Currently listed</td><td>&mdash;</td></tr>
-        </table>
+        <div class="table-responsive">
+            <table>
+                <tr><th>Property</th><th>Type</th><th>Price</th><th>Date</th><th>&pound;/sq ft (est)</th></tr>
+                <tr><td>Beechwood</td><td>Detached</td><td class="comp-price">&pound;3,500,000</td><td>Sep 2022</td><td>&mdash;</td></tr>
+                <tr><td>Binnacle House</td><td>4-bed detached</td><td class="comp-price">&pound;1,550,000</td><td>Sep 2023</td><td>&mdash;</td></tr>
+                <tr><td>Hawks Ridge</td><td>2-bed detached</td><td class="comp-price">&pound;1,450,000</td><td>Sep 2019</td><td>&mdash;</td></tr>
+                <tr><td>White Horses</td><td>4-bed detached</td><td class="comp-price">&pound;815,000</td><td>Jun 2015</td><td>&mdash;</td></tr>
+                <tr><td>Bridleway House</td><td>5-bed new build (2017)</td><td class="comp-price">&pound;3,000,000</td><td>Currently listed</td><td>~&pound;510</td></tr>
+                <tr><td>Cedar House</td><td>5-bed detached</td><td class="comp-price">&pound;2,500,000</td><td>Currently listed</td><td>&mdash;</td></tr>
+            </table>
+        </div>
         <div class="callout callout-green" style="margin-top: 16px;">
             <strong>Moult Hill Commands a Premium</strong>
             Beechwood sold at &pound;3.5m (Sep 2022) having been purchased for &pound;950k in 2017 &mdash; a 268% increase in 5 years. Hawks Ridge achieved &pound;1.45m for just 2 bedrooms. This is arguably the most desirable road in one of England's most expensive coastal towns. New dwellings here, even with principal residence restrictions, would command exceptional values.
@@ -945,39 +971,41 @@
 
     <div class="card">
         <div class="card-title"><span class="icon">&#9670;</span> Viability Indicators</div>
-        <table>
-            <tr><th style="width:40%">Metric</th><th>Value</th><th>Commentary</th></tr>
-            <tr>
-                <td>Guide price</td>
-                <td>&pound;4,750,000</td>
-                <td>22% above estimated value (&pound;3.88m) &mdash; moderate premium reflecting acreage + potential</td>
-            </tr>
-            <tr>
-                <td>Build cost (premium spec)</td>
-                <td>&pound;350&ndash;500/sq ft</td>
-                <td>Heritage/AONB specification with oak, conservation-grade materials</td>
-            </tr>
-            <tr>
-                <td>Achievable GDV (new dwelling)</td>
-                <td>&pound;1.5&ndash;4.0m</td>
-                <td>Depending on size, spec, and views. Beechwood at &pound;3.5m is benchmark.</td>
-            </tr>
-            <tr>
-                <td>Professional fees</td>
-                <td>12&ndash;18% of build</td>
-                <td>Heritage architect, conservation consultant, LVIA, bat surveys, arboriculture</td>
-            </tr>
-            <tr>
-                <td>CIL</td>
-                <td>&pound;0</td>
-                <td>Not adopted by South Hams</td>
-            </tr>
-            <tr>
-                <td>S106</td>
-                <td>Principal residence only</td>
-                <td>No affordable housing contribution for schemes under 11 units</td>
-            </tr>
-        </table>
+        <div class="table-responsive">
+            <table>
+                <tr><th style="width:40%">Metric</th><th>Value</th><th>Commentary</th></tr>
+                <tr>
+                    <td>Guide price</td>
+                    <td>&pound;4,750,000</td>
+                    <td>22% above estimated value (&pound;3.88m) &mdash; moderate premium reflecting acreage + potential</td>
+                </tr>
+                <tr>
+                    <td>Build cost (premium spec)</td>
+                    <td>&pound;350&ndash;500/sq ft</td>
+                    <td>Heritage/AONB specification with oak, conservation-grade materials</td>
+                </tr>
+                <tr>
+                    <td>Achievable GDV (new dwelling)</td>
+                    <td>&pound;1.5&ndash;4.0m</td>
+                    <td>Depending on size, spec, and views. Beechwood at &pound;3.5m is benchmark.</td>
+                </tr>
+                <tr>
+                    <td>Professional fees</td>
+                    <td>12&ndash;18% of build</td>
+                    <td>Heritage architect, conservation consultant, LVIA, bat surveys, arboriculture</td>
+                </tr>
+                <tr>
+                    <td>CIL</td>
+                    <td>&pound;0</td>
+                    <td>Not adopted by South Hams</td>
+                </tr>
+                <tr>
+                    <td>S106</td>
+                    <td>Principal residence only</td>
+                    <td>No affordable housing contribution for schemes under 11 units</td>
+                </tr>
+            </table>
+        </div>
 
         <div class="callout callout-orange" style="margin-top: 16px;">
             <strong>Market Headwinds</strong>
@@ -991,50 +1019,52 @@
 
     <div class="card">
         <div class="card-title"><span class="icon">&#9670;</span> Development Scenario Risk Matrix</div>
-        <table>
-            <tr>
-                <th>Scenario</th>
-                <th>Planning Risk</th>
-                <th>Heritage Risk</th>
-                <th>Market Risk</th>
-                <th>Overall</th>
-            </tr>
-            <tr>
-                <td><strong>A.</strong> Outbuilding conversion/annexe</td>
-                <td><span class="tl tl-green">LOW</span></td>
-                <td><span class="tl tl-amber">MED</span></td>
-                <td><span class="tl tl-green">LOW</span></td>
-                <td><span class="tl tl-green">GOOD</span></td>
-            </tr>
-            <tr>
-                <td><strong>B.</strong> Sensitive extension</td>
-                <td><span class="tl tl-green">LOW</span></td>
-                <td><span class="tl tl-amber">MED</span></td>
-                <td><span class="tl tl-green">LOW</span></td>
-                <td><span class="tl tl-green">GOOD</span></td>
-            </tr>
-            <tr>
-                <td><strong>C.</strong> Subdivision (2 dwellings)</td>
-                <td><span class="tl tl-amber">MED</span></td>
-                <td><span class="tl tl-amber">MED</span></td>
-                <td><span class="tl tl-amber">MED</span></td>
-                <td><span class="tl tl-amber">MODERATE</span></td>
-            </tr>
-            <tr>
-                <td><strong>D.</strong> Paddock dwelling (separate title DN263903)</td>
-                <td><span class="tl tl-amber">MED</span></td>
-                <td><span class="tl tl-green">LOW</span></td>
-                <td><span class="tl tl-green">LOW</span></td>
-                <td><span class="tl tl-green">GOOD</span></td>
-            </tr>
-            <tr>
-                <td><strong>E.</strong> Enabling development</td>
-                <td><span class="tl tl-red">HIGH</span></td>
-                <td><span class="tl tl-amber">MED</span></td>
-                <td><span class="tl tl-amber">MED</span></td>
-                <td><span class="tl tl-amber">MODERATE</span></td>
-            </tr>
-        </table>
+        <div class="table-responsive">
+            <table>
+                <tr>
+                    <th>Scenario</th>
+                    <th>Planning Risk</th>
+                    <th>Heritage Risk</th>
+                    <th>Market Risk</th>
+                    <th>Overall</th>
+                </tr>
+                <tr>
+                    <td><strong>A.</strong> Outbuilding conversion/annexe</td>
+                    <td><span class="tl tl-green">LOW</span></td>
+                    <td><span class="tl tl-amber">MED</span></td>
+                    <td><span class="tl tl-green">LOW</span></td>
+                    <td><span class="tl tl-green">GOOD</span></td>
+                </tr>
+                <tr>
+                    <td><strong>B.</strong> Sensitive extension</td>
+                    <td><span class="tl tl-green">LOW</span></td>
+                    <td><span class="tl tl-amber">MED</span></td>
+                    <td><span class="tl tl-green">LOW</span></td>
+                    <td><span class="tl tl-green">GOOD</span></td>
+                </tr>
+                <tr>
+                    <td><strong>C.</strong> Subdivision (2 dwellings)</td>
+                    <td><span class="tl tl-amber">MED</span></td>
+                    <td><span class="tl tl-amber">MED</span></td>
+                    <td><span class="tl tl-amber">MED</span></td>
+                    <td><span class="tl tl-amber">MODERATE</span></td>
+                </tr>
+                <tr>
+                    <td><strong>D.</strong> Paddock dwelling (separate title DN263903)</td>
+                    <td><span class="tl tl-amber">MED</span></td>
+                    <td><span class="tl tl-green">LOW</span></td>
+                    <td><span class="tl tl-green">LOW</span></td>
+                    <td><span class="tl tl-green">GOOD</span></td>
+                </tr>
+                <tr>
+                    <td><strong>E.</strong> Enabling development</td>
+                    <td><span class="tl tl-red">HIGH</span></td>
+                    <td><span class="tl tl-amber">MED</span></td>
+                    <td><span class="tl tl-amber">MED</span></td>
+                    <td><span class="tl tl-amber">MODERATE</span></td>
+                </tr>
+            </table>
+        </div>
     </div>
 
     <div class="card">
@@ -1076,15 +1106,17 @@
         <p class="section-intro">
             This is the starting point, not the final answer. The next step is targeted professional engagement &mdash; but now you know exactly <em>which</em> professionals you need, <em>what</em> questions to ask them, and <em>where</em> the value sits.
         </p>
-        <table style="margin-top: 16px;">
-            <tr><th>What SI Delivered</th><th>Traditional Route</th></tr>
-            <tr><td>12 constraints identified and mapped</td><td>Site visit + manual policy search</td></tr>
-            <tr><td>5 development plan policies analysed</td><td>Consultant's desk research</td></tr>
-            <tr><td>3 appeal decisions reviewed</td><td>PINS database search</td></tr>
-            <tr><td>5 development scenarios with viability</td><td>Architect + planner feasibility study</td></tr>
-            <tr><td>6 comparable sales analysed</td><td>Agent's market appraisal</td></tr>
-            <tr><td>Phased recommendation with due diligence</td><td>Strategy meeting</td></tr>
-        </table>
+        <div class="table-responsive" style="margin-top: 16px;">
+            <table>
+                <tr><th>What SI Delivered</th><th>Traditional Route</th></tr>
+                <tr><td>12 constraints identified and mapped</td><td>Site visit + manual policy search</td></tr>
+                <tr><td>5 development plan policies analysed</td><td>Consultant's desk research</td></tr>
+                <tr><td>3 appeal decisions reviewed</td><td>PINS database search</td></tr>
+                <tr><td>5 development scenarios with viability</td><td>Architect + planner feasibility study</td></tr>
+                <tr><td>6 comparable sales analysed</td><td>Agent's market appraisal</td></tr>
+                <tr><td>Phased recommendation with due diligence</td><td>Strategy meeting</td></tr>
+            </table>
+        </div>
     </div>
 </section>
 
