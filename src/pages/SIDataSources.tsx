@@ -487,22 +487,28 @@ const SIDataSources = () => {
           <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-8 opacity-60">
             {/* Fallback to text if logos aren't ready, matching 04-assets-needed.md suggestions */}
             {[
-              "Environment Agency",
-              "British Geological Survey",
-              "Historic England",
-              "Natural England",
-              "Office for National Statistics",
-              "HM Land Registry",
-              "Ordnance Survey",
-              "DEFRA",
-              "Department for Transport",
-              "Transport for London",
-              "DLUHC",
-              "Companies House"
-            ].map((name, i) => (
-              <div key={i} className="font-display font-bold text-lg md:text-xl text-white whitespace-nowrap hover:text-brand-accent transition-colors">
-                {name}
-              </div>
+              { name: "Environment Agency", url: "https://www.gov.uk/government/organisations/environment-agency" },
+              { name: "British Geological Survey", url: "https://www.bgs.ac.uk/" },
+              { name: "Historic England", url: "https://historicengland.org.uk/" },
+              { name: "Natural England", url: "https://www.gov.uk/government/organisations/natural-england" },
+              { name: "Office for National Statistics", url: "https://www.ons.gov.uk/" },
+              { name: "HM Land Registry", url: "https://www.gov.uk/government/organisations/land-registry" },
+              { name: "Ordnance Survey", url: "https://www.ordnancesurvey.co.uk/" },
+              { name: "DEFRA", url: "https://www.gov.uk/government/organisations/department-for-environment-food-rural-affairs" },
+              { name: "Department for Transport", url: "https://www.gov.uk/government/organisations/department-for-transport" },
+              { name: "Transport for London", url: "https://tfl.gov.uk/" },
+              { name: "DLUHC", url: "https://www.gov.uk/government/organisations/department-for-levelling-up-housing-and-communities" },
+              { name: "Companies House", url: "https://www.gov.uk/government/organisations/companies-house" }
+            ].map((partner, i) => (
+              <a 
+                key={i} 
+                href={partner.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-display font-bold text-lg md:text-xl text-white whitespace-nowrap hover:text-brand-accent transition-colors block"
+              >
+                {partner.name}
+              </a>
             ))}
           </div>
         </div>
