@@ -185,6 +185,12 @@ const routes = [
     jsonLd: { '@type': 'Product', name: 'Daylight & Sunlight Screening', brand: { '@type': 'Organization', name: 'PF & Co Site Intelligence' }, offers: { '@type': 'Offer', price: '595', priceCurrency: 'GBP', availability: 'https://schema.org/InStock' } },
   },
   {
+    path: '/site-intelligence/data-sources',
+    title: 'Data Sources (40+ APIs) | Site Intelligence | PF & Co',
+    description: 'Explore the 40+ government data sources mapped and aggregated in our Site Intelligence reports for pre-construction planning.',
+    jsonLd: { '@type': 'Product', name: 'Site Intelligence Data Sources', brand: { '@type': 'Organization', name: 'PF & Co Site Intelligence' } },
+  },
+  {
     path: '/report-packages',
     title: 'Report Packages & Bundles | PF & Co Engineering',
     description: 'Save up to 63% with our report bundles. From the Triple Threat starter to The Complete Intelligence — every report we produce in one package.',
