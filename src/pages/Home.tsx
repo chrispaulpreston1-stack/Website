@@ -18,7 +18,7 @@ const Home = () => {
           '@type': 'WebSite',
           name: 'PF & Co Site Intelligence',
           url: 'https://www.pfandco.co.uk',
-          description: 'AI-powered site intelligence reports and planning evidence for development projects across England and Wales.',
+          description: 'AI-powered site intelligence reports and planning evidence for development projects across England.',
           publisher: { '@type': 'Organization', name: 'PF & Co Site Intelligence' }
         }}
       />
@@ -305,7 +305,7 @@ const Home = () => {
               <div className="absolute inset-0 p-8 flex flex-col justify-end text-white">
                 <Construction className="text-brand-accent mb-3" size={28} />
                 <h3 className="text-2xl font-bold mb-2">Construction</h3>
-                <p className="text-white/70 text-sm">Engineering-led build services across England and Wales.</p>
+                <p className="text-white/70 text-sm">Engineering-led build services across England.</p>
               </div>
             </Link>
           </div>

@@ -391,7 +391,7 @@ const Footer = () => {
               </div>
             </div>
             <p className="text-brand-primary/60 max-w-sm leading-relaxed mb-6 text-sm">
-              AI-powered site intelligence and planning reports. 60+ data sources. 48-hour turnaround. Nationwide across England and Wales.
+              AI-powered site intelligence and planning reports. 60+ data sources. 48-hour turnaround. Nationwide across England.
             </p>
             <div className="flex gap-4">
               <a
@@ -501,11 +501,11 @@ export default function App() {
         <div className="min-h-screen selection:bg-brand-accent/30">
           <Helmet>
             <title>PF & Co | AI-Powered Structural Engineering & Construction</title>
-            <meta name="description" content="AI-powered site intelligence and planning reports across England and Wales. 60+ data sources, 48-hour turnaround, fixed pricing." />
+            <meta name="description" content="AI-powered site intelligence and planning reports across England. 60+ data sources, 48-hour turnaround, fixed pricing." />
             <meta name="keywords" content="structural engineer nationwide, structural calculations uk, basement impact assessment, site feasibility report, AI structural engineering" />
             <link rel="canonical" href="https://www.pfandco.co.uk" />
             <meta property="og:title" content="PF & Co | Engineering-Led Construction" />
-            <meta property="og:description" content="Engineering-led construction & structural design across England and Wales. We don't just follow plans - we understand the physics." />
+            <meta property="og:description" content="Engineering-led construction & structural design across England. We don't just follow plans - we understand the physics." />
             <meta property="og:type" content="website" />
             <meta property="og:url" content="https://www.pfandco.co.uk" />
             <meta property="og:image" content="https://www.pfandco.co.uk/og-image.png" />
@@ -515,7 +515,7 @@ export default function App() {
                 "@context": "https://schema.org",
                 "@type": "LocalBusiness",
                 "name": "PF & Co Site Intelligence",
-                "description": "AI-powered site intelligence and planning reports across England and Wales.",
+                "description": "AI-powered site intelligence and planning reports across England.",
                 "url": "https://www.pfandco.co.uk",
                 "telephone": "01483 363210",
                 "email": "info@pfandco.co.uk",
@@ -611,7 +611,7 @@ export default function App() {
               <Route path="/ai-governance-policy" element={<AIGovernancePolicy />} />
               <Route path="/about" element={<About />} />
               <Route path="/honest-assessment" element={<HonestAssessment />} />
-              <Route path="/contact" element={<><PageSEO title="Contact Us | PF & Co Site Intelligence" description="Get in touch with PF & Co for structural engineering, construction, and site intelligence services nationwide across England and Wales." path="/contact" /><ContactSection /></>} />
+              <Route path="/contact" element={<><PageSEO title="Contact Us | PF & Co Site Intelligence" description="Get in touch with PF & Co for structural engineering, construction, and site intelligence services nationwide across England." path="/contact" /><ContactSection /></>} />
               <Route path="*" element={
                 <div className="min-h-screen flex items-center justify-center bg-brand-surface">
                   <div className="text-center px-6">

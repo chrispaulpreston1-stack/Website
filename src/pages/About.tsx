@@ -23,7 +23,7 @@ import {
 /* ------------------------------------------------------------------ */
 
 const KEY_STATS = [
-  { stat: '300+', label: 'Projects Delivered', sub: 'Across England and Wales', icon: <Building2 size={20} /> },
+  { stat: '300+', label: 'Projects Delivered', sub: 'Across England', icon: <Building2 size={20} /> },
   { stat: '127', label: 'AI Agents', sub: 'Interrogating 60+ data sources', icon: <Bot size={20} /> },
   { stat: '48hrs', label: 'Report Turnaround', sub: 'From order to delivery', icon: <Clock size={20} /> },
   { stat: '22', label: 'Report Types', sub: 'Planning-ready documentation', icon: <FileText size={20} /> },
@@ -89,7 +89,7 @@ export default function About() {
         jsonLd={{
           '@type': 'AboutPage',
           name: 'About PF & Co Site Intelligence',
-          description: 'AI-powered site intelligence and planning reports, founded by Chris Preston BEng (Hons), delivering across England and Wales.',
+          description: 'AI-powered site intelligence and planning reports, founded by Chris Preston BEng (Hons), delivering across England.',
           publisher: { '@type': 'Organization', name: 'PF & Co Site Intelligence', url: 'https://www.pfandco.co.uk' },
         }}
       />
@@ -161,7 +161,7 @@ export default function About() {
                 His engineering background means the company approaches every report as a technical problem: what does the data say, what are the risks, and what does the client actually need to know to make a decision?
               </p>
               <p className="text-sm text-brand-primary/50 leading-relaxed font-light">
-                Based in Surrey, PF & Co now operates across England and Wales, serving developers, architects, planning consultants, and homeowners on projects ranging from single extensions to multi-site portfolios.
+                Based in Surrey, PF & Co now operates across England, serving developers, architects, planning consultants, and homeowners on projects ranging from single extensions to multi-site portfolios.
               </p>
             </motion.div>
           </div>

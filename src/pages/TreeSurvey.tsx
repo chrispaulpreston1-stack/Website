@@ -53,7 +53,7 @@ const TreeSurvey = () => {
     <div className="pt-20">
       <PageSEO
         title="Arboricultural Constraints Appraisal | Desktop Tree Assessment | PF & Co"
-        description="Desktop arboricultural assessment using LiDAR canopy modelling, TPO register data, and aerial imagery. BS 5837 categorisation and RPA mapping for planning applications across England and Wales."
+        description="Desktop arboricultural assessment using LiDAR canopy modelling, TPO register data, and aerial imagery. BS 5837 categorisation and RPA mapping for planning applications across England."
         path="/site-intelligence/tree-survey"
         jsonLd={[
           {
