@@ -1,6 +1,7 @@
 {
   "rewrites": [
     { "source": "/si/feasibility-check(/?)", "destination": "/si/feasibility-check/index.html" },
+    { "source": "/demo/s(/?)", "destination": "/demo/s/index.html" },
     { "source": "/((?!api/).*)", "destination": "/index.html" }
   ]
 }

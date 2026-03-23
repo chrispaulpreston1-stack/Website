@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Falconers, Moult Hill, Salcombe &mdash; Development Appraisal | Site Intelligence</title>
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --navy: #0f172a;
+            --slate: #1e293b;
+            --orange: #f97316;
+            --warm-bg: #fefbf4;
+            --warm-bg-alt: #fdf6e9;
+            --text-primary: #1e293b;
+            --text-secondary: #475569;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --border-light: #f1f5f9;
+            --white: #ffffff;
+            --red: #dc2626;
+            --red-bg: #fef2f2;
+            --red-border: #fecaca;
+            --green: #16a34a;
+            --green-bg: #f0fdf4;
+            --green-border: #bbf7d0;
+            --amber: #d97706;
+            --amber-bg: #fffbeb;
+            --amber-border: #fde68a;
+            --blue: #2563eb;
+            --blue-bg: #eff6ff;
+            --blue-border: #bfdbfe;
+            --purple: #7c3aed;
+            --purple-bg: #f5f3ff;
+            --purple-border: #ddd6fe;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--warm-bg);
+            color: var(--text-primary);
+            line-height: 1.7;
+            font-size: 15px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ── Header ─────────────────────────────────── */
+        .site-header {
+            background: var(--navy);
+            color: white;
+            padding: 48px 0 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        .site-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--orange), var(--orange) 30%, transparent);
+        }
+        .header-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+        .header-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 28px;
+        }
+        .brand-mark {
+            width: 40px; height: 40px;
+            background: var(--orange);
+            border-radius: 8px;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 700; font-size: 16px; color: white;
+        }
+        .brand-text {
+            font-size: 14px; font-weight: 500;
+            letter-spacing: 0.5px; opacity: 0.9;
+        }
+        .header-title {
+            font-size: 34px; font-weight: 700;
+            line-height: 1.2; margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+        .header-subtitle {
+            font-size: 18px; font-weight: 400;
+            opacity: 0.75; margin-bottom: 20px;
+        }
+        .header-meta {
+            display: flex; flex-wrap: wrap; gap: 24px;
+            font-size: 13px; opacity: 0.7;
+        }
+        .header-meta span { display: flex; align-items: center; gap: 6px; }
+
+        /* ── Navigation Tabs ────────────────────────── */
+        .tab-nav {
+            background: var(--slate);
+            position: sticky; top: 0; z-index: 100;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .tab-nav-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 32px;
+            display: flex;
+            overflow-x: auto;
+        }
+        .tab-btn {
+            padding: 14px 20px;
+            font-size: 13px; font-weight: 500;
+            color: rgba(255,255,255,0.6);
+            background: none; border: none;
+            cursor: pointer;
+            white-space: nowrap;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s;
+        }
+        .tab-btn:hover { color: rgba(255,255,255,0.9); }
+        .tab-btn.active {
+            color: var(--orange);
+            border-bottom-color: var(--orange);
+        }
+
+        /* ── Main Content ───────────────────────────── */
+        .page-wrapper {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 32px 32px 80px;
+        }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+
+        /* ── Cards ───────────────────────────────────── */
+        .card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 20px;
+        }
+        .card-title {
+            font-size: 18px; font-weight: 700;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--orange);
+            display: flex; align-items: center; gap: 10px;
+        }
+        .card-title .icon { font-size: 20px; }
+
+        /* ── Tables ──────────────────────────────────── */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+        th, td {
+            padding: 10px 14px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-light);
+        }
+        th {
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            background: var(--warm-bg-alt);
+        }
+        tr:hover td { background: var(--warm-bg-alt); }
+
+        /* ── Traffic Lights ──────────────────────────── */
+        .tl { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; font-size: 13px; padding: 4px 12px; border-radius: 20px; }
+        .tl-green { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
+        .tl-amber { background: var(--amber-bg); color: var(--amber); border: 1px solid var(--amber-border); }
+        .tl-red { background: var(--red-bg); color: var(--red); border: 1px solid var(--red-border); }
+        .tl-blue { background: var(--blue-bg); color: var(--blue); border: 1px solid var(--blue-border); }
+
+        /* ── Key-Value Grid ──────────────────────────── */
+        .kv-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 16px;
+        }
+        .kv-item {
+            background: var(--warm-bg-alt);
+            border-radius: 8px;
+            padding: 14px 18px;
+        }
+        .kv-label {
+            font-size: 11px; font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            margin-bottom: 4px;
+        }
+        .kv-value {
+            font-size: 16px; font-weight: 600;
+            color: var(--text-primary);
+        }
+        .kv-value.large { font-size: 22px; font-weight: 800; }
+
+        /* ── Scenario Cards ──────────────────────────── */
+        .scenario {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        .scenario-header {
+            padding: 20px 28px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-light);
+            cursor: pointer;
+        }
+        .scenario-header:hover { background: var(--warm-bg-alt); }
+        .scenario-title {
+            font-size: 17px; font-weight: 700;
+            display: flex; align-items: center; gap: 10px;
+        }
+        .scenario-body {
+            padding: 24px 28px;
+        }
+        .scenario-body h4 {
+            font-size: 14px; font-weight: 600;
+            margin: 16px 0 8px;
+            color: var(--text-secondary);
+        }
+        .scenario-body h4:first-child { margin-top: 0; }
+        .scenario-body p, .scenario-body li {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 6px;
+        }
+        .scenario-body ul { padding-left: 20px; }
+
+        /* ── Constraint Badge Grid ───────────────────── */
+        .constraint-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 14px;
+            margin-top: 12px;
+        }
+        .constraint-badge {
+            border-radius: 10px;
+            padding: 16px 20px;
+            border-left: 4px solid;
+        }
+        .constraint-badge.high { background: var(--red-bg); border-color: var(--red); }
+        .constraint-badge.medium { background: var(--amber-bg); border-color: var(--amber); }
+        .constraint-badge.low { background: var(--green-bg); border-color: var(--green); }
+        .constraint-badge.info { background: var(--blue-bg); border-color: var(--blue); }
+        .constraint-badge .cb-title {
+            font-weight: 700; font-size: 14px;
+            margin-bottom: 4px;
+        }
+        .constraint-badge .cb-detail {
+            font-size: 12px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* ── Callout Boxes ───────────────────────────── */
+        .callout {
+            border-radius: 10px;
+            padding: 18px 22px;
+            margin: 16px 0;
+            font-size: 14px;
+        }
+        .callout-orange { background: #fff7ed; border-left: 4px solid var(--orange); }
+        .callout-green { background: var(--green-bg); border-left: 4px solid var(--green); }
+        .callout-red { background: var(--red-bg); border-left: 4px solid var(--red); }
+        .callout-blue { background: var(--blue-bg); border-left: 4px solid var(--blue); }
+        .callout strong { display: block; margin-bottom: 4px; }
+
+        /* ── Section Headers ─────────────────────────── */
+        .section-intro {
+            font-size: 16px;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+            line-height: 1.8;
+        }
+
+        /* ── Footer ──────────────────────────────────── */
+        .site-footer {
+            text-align: center;
+            padding: 32px;
+            font-size: 12px;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+        .site-footer .footer-brand {
+            font-weight: 700;
+            color: var(--orange);
+        }
+
+        /* ── Comparables Table ───────────────────────── */
+        .comp-price { font-weight: 700; color: var(--green); }
+
+        /* ── Policy Reference ────────────────────────── */
+        .policy-ref {
+            display: inline-block;
+            background: var(--slate);
+            color: white;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-right: 4px;
+        }
+
+        /* ── Print ───────────────────────────────────── */
+        @media print {
+            .tab-nav { display: none; }
+            .tab-content { display: block !important; page-break-before: always; }
+            .site-header { padding: 24px 0; }
+        }
+
+        /* ── Responsive ──────────────────────────────── */
+        @media (max-width: 768px) {
+            .header-title { font-size: 24px; }
+            .kv-grid { grid-template-columns: 1fr; }
+            .constraint-grid { grid-template-columns: 1fr; }
+            .tab-btn { padding: 12px 14px; font-size: 12px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════════════════ HEADER ════ -->
+<header class="site-header">
+    <div class="header-content">
+        <div class="header-brand">
+            <div class="brand-mark">SI</div>
+            <div class="brand-text">SITE INTELLIGENCE</div>
+        </div>
+        <div class="header-title">Falconers, Moult Hill, Salcombe</div>
+        <div class="header-subtitle">Desktop Development Appraisal &mdash; Tier 1</div>
+        <div class="header-meta">
+            <span>TQ8 8LF</span>
+            <span>UPRN 10004740884</span>
+            <span>Titles DN170405 + DN263903</span>
+            <span>Grade II Listed (1289162)</span>
+            <span>23 March 2026</span>
+        </div>
+    </div>
+</header>
+
+<!-- ════════════════════════════════════════════════════ TABS ══════ -->
+<nav class="tab-nav">
+    <div class="tab-nav-inner">
+        <button class="tab-btn active" data-tab="summary">Executive Summary</button>
+        <button class="tab-btn" data-tab="site">Site Profile</button>
+        <button class="tab-btn" data-tab="constraints">Constraints</button>
+        <button class="tab-btn" data-tab="policy">Policy Framework</button>
+        <button class="tab-btn" data-tab="scenarios">Development Scenarios</button>
+        <button class="tab-btn" data-tab="market">Market &amp; Viability</button>
+        <button class="tab-btn" data-tab="risk">Risk Matrix</button>
+    </div>
+</nav>
+
+<!-- ════════════════════════════════════════════════════ CONTENT ═══ -->
+<main class="page-wrapper">
+
+<!-- ──────────────────── TAB 1: EXECUTIVE SUMMARY ──────────────── -->
+<section class="tab-content active" id="tab-summary">
+
+    <div class="card">
+        <div class="card-title"><span class="icon">&#9670;</span> The Developer's View</div>
+        <p class="section-intro">
+            Falconers is a Grade II listed Kentish Wealden manor house set in approximately 7.2 acres on Moult Hill, Salcombe &mdash; one of England's most exclusive coastal addresses. Originally constructed for the 1925 British Empire Exhibition at Wembley in hand-crafted English oak, it was subsequently dismantled and reassembled on this elevated plot above North Sands beach.
+        </p>
+        <p class="section-intro">
+            From a development perspective, this site presents a fascinating tension: <strong>extraordinary land value trapped behind extraordinary constraints</strong>. The combination of Grade II listing, South Devon National Landscape (AONB), likely Conservation Area inclusion, principal residence restrictions, and a heritage-sensitive neighbourhood means any development must be surgically precise in both design and planning strategy.
+        </p>
+        <p class="section-intro">
+            That said, there <em>are</em> realistic opportunities &mdash; and the research reveals that comparable development on Moult Hill has been approved. The question is not whether anything can be done, but what can be done <em>well</em>.
+        </p>
+    </div>
+
+    <div class="kv-grid">
+        <div class="kv-item">
+            <div class="kv-label">Guide Price</div>
+            <div class="kv-value large">&pound;4,750,000</div>
+        </div>
+        <div class="kv-item">
+            <div class="kv-label">Estimated Value</div>
+            <div class="kv-value large">&pound;3,880,000</div>
+        </div>
+        <div class="kv-item">
+            <div class="kv-label">Title 1 (House &amp; Gardens)</div>
+            <div class="kv-value large">4.22 acres</div>
+        </div>
+        <div class="kv-item">
+            <div class="kv-label">Title 2 (Paddock/West)</div>
+            <div class="kv-value large">2.98 acres</div>
+        </div>
+        <div class="kv-item">
+            <div class="kv-label">Last Sold</div>
+            <div class="kv-value">30 Oct 2000 &mdash; &pound;1,125,000</div>
+        </div>
+        <div class="kv-item">
+            <div class="kv-label">Accommodation</div>
+            <div class="kv-value">8 bed / 6 bath / 6 reception</div>
+        </div>
+        <div class="kv-item">
+            <div class="kv-label">Listing</div>
+            <div class="kv-value">Grade II (HE 1289162)</div>
+        </div>
+        <div class="kv-item">
+            <div class="kv-label">Council Tax</div>
+            <div class="kv-value">Band H (&pound;4,984)</div>
+        </div>
+        <div class="kv-item">
+            <div class="kv-label">Tenure</div>
+            <div class="kv-value">Absolute Freehold</div>
+        </div>
+        <div class="kv-item">
+            <div class="kv-label">CIL Liability</div>
+            <div class="kv-value" style="color: var(--green);">None &mdash; South Hams has not adopted CIL</div>
+        </div>
+        <div class="kv-item">
+            <div class="kv-label">LPA</div>
+            <div class="kv-value">South Hams District Council</div>
+        </div>
+        <div class="kv-item">
+            <div class="kv-label">Current Use</div>
+            <div class="kv-value">Detached Dwelling (C3)</div>
+        </div>
+    </div>
+
+    <div class="callout callout-green" style="margin-top: 24px;">
+        <strong>Two Separate Titles &mdash; This Is Significant</strong>
+        The 7.2-acre site is held across two separate freehold titles: <strong>DN170405</strong> (4.22 acres &mdash; the house, formal gardens, outbuildings) and <strong>DN263903</strong> (2.98 acres &mdash; the paddock/western land, privately owned). The second parcel sits to the west/northwest, separated from the main curtilage. This split is significant for development potential:
+        <ul style="margin-top: 8px; padding-left: 20px;">
+            <li>The paddock land (DN263903) may <strong>not</strong> fall within the curtilage of the listed building &mdash; it's a separate registered title with a separate ownership history</li>
+            <li>If not curtilage-listed, it faces fewer heritage constraints (setting impact only, not direct LBC requirements)</li>
+            <li>It could theoretically be sold or developed independently of the listed house</li>
+            <li>2.98 acres of separate freehold in Salcombe is a major asset in its own right</li>
+        </ul>
+    </div>
+
+    <div class="callout callout-blue">
+        <strong>Headline Opportunities</strong>
+        <ul style="margin-top: 8px; padding-left: 20px;">
+            <li><strong>Outbuilding conversion/replacement</strong> &mdash; existing detached outbuildings, double garage, and barn offer realistic conversion potential with Moult Hill precedent</li>
+            <li><strong>Detached annexe</strong> &mdash; Cedar House on Moult Hill has approved annexe (3164/23/FUL), establishing clear local precedent</li>
+            <li><strong>Heritage-led enabling development</strong> &mdash; NPPF &sect;84(b) and &sect;221 provide a route if development secures the long-term future of the listed building</li>
+            <li><strong>Subdivision</strong> &mdash; NPPF &sect;84(d) permits subdivision of existing residential buildings in the countryside</li>
+            <li><strong>Principal residence restriction is a feature</strong> &mdash; SALC H3 means any new dwelling must be a primary home, but in a market where 57% of homes are second homes, a guaranteed principal-residence dwelling fills a genuine local need</li>
+        </ul>
+    </div>
+</section>
+
+<!-- ──────────────────── TAB 2: SITE PROFILE ───────────────────── -->
+<section class="tab-content" id="tab-site">
+
+    <div class="card">
+        <div class="card-title"><span class="icon">&#9670;</span> Site Identification</div>
+        <table>
+            <tr><th style="width:30%">Address</th><td>Falconers, Road from Plympton Cross to Moult Hill, Salcombe, TQ8 8LF</td></tr>
+            <tr><th>UPRN</th><td>10004740884</td></tr>
+            <tr><th>Title 1</th><td>DN170405 (Absolute Freehold) &mdash; 4.22 acres (house &amp; gardens)</td></tr>
+            <tr><th>Title 2</th><td>DN263903 (Absolute Freehold) &mdash; 2.98 acres (paddock/western land)</td></tr>
+            <tr><th>Combined Area</th><td>7.20 acres (2.91 ha) &mdash; matches brochure</td></tr>
+            <tr><th>What3Words</th><td>///offerings.nuzzling.barrel</td></tr>
+            <tr><th>Centroid</th><td>50.2291, -3.7854</td></tr>
+            <tr><th>EPC</th><td>C (per brochure)</td></tr>
+            <tr><th>Services</th><td>Mains water, electricity, drainage. Oil-fired central heating.</td></tr>
+        </table>
+    </div>
+
+    <div class="card">
+        <div class="card-title"><span class="icon">&#9670;</span> Heritage Significance</div>
+        <p class="section-intro">
+            Falconers (Historic England List Entry <strong>1289162</strong>) is a Grade II listed building of considerable architectural interest. Built in 1925 by the Federated Home Grown Timber Merchants Association for the British Empire Exhibition at Wembley Park, it demonstrates the traditional Kentish Wealden vernacular &mdash; a medieval hall-house form using English oak with exposed beams, king-post trusses, and a central open hall.
+        </p>
+        <p class="section-intro">
+            After the exhibition, the building was carefully dismantled and transported to Moult Hill, Salcombe, where it was reassembled. Features of special interest include:
+        </p>
+        <ul style="padding-left: 20px; margin-bottom: 16px; color: var(--text-secondary); font-size: 14px;">
+            <li>Full-height great hall with central timber truss and galleried landing</li>
+            <li>Stained glass windows</li>
+            <li>Studded oak entrance door</li>
+            <li>Original oak structural frame throughout</li>
+            <li>Grand fireplaces</li>
+        </ul>
+        <p style="font-size: 14px; color: var(--text-secondary);">
+            The west wing has been extended (indicating at least one prior LBC approval), demonstrating that sensitive alteration has been accepted. The gardens are believed to reflect the influence of <strong>Gertrude Jekyll</strong>, with naturalistic planting and herbaceous borders, which may constitute a non-designated heritage asset in their own right.
+        </p>
+    </div>
+
+    <div class="card">
+        <div class="card-title"><span class="icon">&#9670;</span> Neighbouring Heritage Assets</div>
+        <table>
+            <tr><th>Asset</th><th>Grade</th><th>HE Ref</th><th>Relationship</th></tr>
+            <tr><td>The Moult (1764)</td><td>II*</td><td>&mdash;</td><td>Adjacent &mdash; first villa in Salcombe</td></tr>
+            <tr><td>Former Lodge to The Moult</td><td>II</td><td>1213029</td><td>Adjacent &mdash; late C18, Gothick glazing bars</td></tr>
+            <tr><td>Moult Summerhouse</td><td>II</td><td>1213027</td><td>Adjacent &mdash; thatched, connected by high stone wall</td></tr>
+        </table>
+        <div class="callout callout-orange" style="margin-top: 16px;">
+            <strong>Heritage Cluster</strong>
+            Moult Hill contains a cluster of Grade II and II* listed structures. Any development at Falconers must assess impact on the setting of all four listed buildings, not just the application site. Historic England GPA3 (Setting of Heritage Assets) will be the key assessment framework.
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-title"><span class="icon">&#9670;</span> Accommodation Schedule</div>
+        <table>
+            <tr><th>Floor</th><th>Accommodation</th></tr>
+            <tr><td>Ground Floor</td><td>Reception hall, great hall with galleried landing, drawing room, oak room, kitchen with breakfast area, sitting room, study, office</td></tr>
+            <tr><td>First Floor</td><td>Eight bedrooms (principal suite with balcony), six bathrooms (four en suite)</td></tr>
+            <tr><td>External</td><td>Detached outbuildings, double garage, lime-tree-lined driveway</td></tr>
+            <tr><td>Grounds</td><td>~7.2 acres: formal gardens, four-acre paddock, working helipad, wisteria-covered rear facade, espaliered fruit trees, former kitchen garden</td></tr>
+        </table>
+    </div>
+</section>
+
+<!-- ──────────────────── TAB 3: CONSTRAINTS ────────────────────── -->
+<section class="tab-content" id="tab-constraints">
+
+    <div class="card">
+        <div class="card-title"><span class="icon">&#9670;</span> Constraint Mapping</div>
+        <p class="section-intro">
+            Falconers sits within a layered constraint environment. Every designation adds a policy test that any development proposal must satisfy. The key is understanding which constraints are absolute barriers and which can be navigated with the right approach.
+        </p>
+
+        <div class="constraint-grid">
+            <div class="constraint-badge high">
+                <div class="cb-title">Grade II Listed Building</div>
+                <div class="cb-detail">Listed Building Consent required for ANY works affecting character (internal or external). Curtilage structures pre-1948 also listed. Criminal offence to carry out unauthorised works. Permitted development severely curtailed.</div>
+            </div>
+            <div class="constraint-badge high">
+                <div class="cb-title">South Devon National Landscape (AONB)</div>
+                <div class="cb-detail">Highest status of landscape protection. Great weight to conserving and enhancing. Major development refused unless exceptional circumstances. CROW Act 2000 s.89 duty + LURA 2023 s.245 duty to further statutory purposes.</div>
+            </div>
+            <div class="constraint-badge high">
+                <div class="cb-title">Principal Residence Restriction (SALC H3)</div>
+                <div class="cb-detail">All new dwellings must be occupied as principal residence, secured by S106 in perpetuity. Upheld by Planning Inspector June 2025. No new second homes or unrestricted market housing.</div>
+            </div>
+            <div class="constraint-badge medium">
+                <div class="cb-title">Conservation Area (Check Required)</div>
+                <div class="cb-detail">Salcombe Conservation Area designated 1973, extended 1985/1989/2010. Moult Hill's elevated Victorian villas noted in the Conservation Area Appraisal. Boundary check needed to confirm inclusion. Demolition requires consent.</div>
+            </div>
+            <div class="constraint-badge medium">
+                <div class="cb-title">Heritage Cluster Setting</div>
+                <div class="cb-detail">Four listed buildings on Moult Hill including Grade II* The Moult. Any development requires assessment of impact on setting of all heritage assets (GPA3). Cumulative impact a material consideration.</div>
+            </div>
+            <div class="constraint-badge medium">
+                <div class="cb-title">South Hams SAC (Greater Horseshoe Bats)</div>
+                <div class="cb-detail">1,000+ adult greater horseshoe bats (31% UK population). Sustenance Zones and Landscape Connectivity Zones trigger Habitats Regulations Assessment. Lighting impacts critical. Survey evidence required.</div>
+            </div>
+            <div class="constraint-badge medium">
+                <div class="cb-title">Tree Preservation Orders (Likely)</div>
+                <div class="cb-detail">TPOs confirmed on Moult Hill (966 W1, 676 W1). Given mature woodland character and lime-tree-lined drive, TPOs highly likely on or adjacent to site. Works without consent is criminal offence.</div>
+            </div>
+            <div class="constraint-badge low">
+                <div class="cb-title">NPPF Footnote 7 &mdash; Tilted Balance Displaced</div>
+                <div class="cb-detail">AONB + listed building designations mean the presumption in favour of sustainable development (tilted balance) does not apply. Housing supply arguments cannot override heritage/landscape protection.</div>
+            </div>
+            <div class="constraint-badge info">
+                <div class="cb-title">Flood Risk &mdash; Zone 1</div>
+                <div class="cb-detail">Elevated hillside site. Less than 0.1% annual probability of river/sea flooding. Low constraint. Surface water drainage may still require assessment.</div>
+            </div>
+            <div class="constraint-badge info">
+                <div class="cb-title">Salcombe-Kingsbridge Estuary SSSI</div>
+                <div class="cb-detail">SSSI designation covers the estuary below, not the hill. Proximity is a material consideration but not a direct constraint on the site itself.</div>
+            </div>
+            <div class="constraint-badge info">
+                <div class="cb-title">No CIL Liability</div>
+                <div class="cb-detail">South Hams has not adopted CIL. S106 is used exclusively for developer contributions. For householder/minor development, unlikely to trigger S106 beyond the principal residence requirement.</div>
+            </div>
+            <div class="constraint-badge info">
+                <div class="cb-title">Article 2(3) Land</div>
+                <div class="cb-detail">Listed building within AONB. PD rights severely restricted: no side extensions, rear limited to 4m, no Class Q barn conversions. Most works require express planning permission.</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-title"><span class="icon">&#9670;</span> Enforcement Context</div>
+        <div class="callout callout-red">
+            <strong>Active Enforcement on Moult Hill</strong>
+            Appeal APP/K1128/C/20/3248023 involved enforcement action at Moult Hill Barn (inquiry 2022). Salcombe Town Council objected to application 3579/18/FUL (garden store near Bridleway House), calling it the "first new building for over 50 years on Moult Hill." The LPA actively monitors this area. Any unauthorised works would face swift enforcement.
+        </div>
+    </div>
+</section>
+
+<!-- ──────────────────── TAB 4: POLICY FRAMEWORK ───────────────── -->
+<section class="tab-content" id="tab-policy">
+
+    <div class="card">
+        <div class="card-title"><span class="icon">&#9670;</span> Development Plan Hierarchy</div>
+        <table>
+            <tr><th style="width: 35%">Document</th><th>Status</th><th>Weight</th></tr>
+            <tr><td>NPPF (December 2024)</td><td>Published 12 Dec 2024</td><td>National policy &mdash; material consideration</td></tr>
+            <tr><td>Plymouth &amp; SW Devon Joint Local Plan</td><td>Adopted March 2019 (2014-2034)</td><td>Full weight &mdash; development plan</td></tr>
+            <tr><td>Salcombe Neighbourhood Plan</td><td>Made September 2018, amended 2021</td><td>Full weight &mdash; development plan</td></tr>
+            <tr><td>South Devon AONB Management Plan</td><td>Current</td><td>Material consideration</td></tr>
+            <tr><td>South Devon AONB Planning Guidance</td><td>Adopted March 2017</td><td>Material consideration</td></tr>
+        </table>
+    </div>
+
+    <div class="card">
+        <div class="card-title"><span class="icon">&#9670;</span> Key Policies</div>
+
+        <h4 style="font-size: 15px; font-weight: 700; margin: 20px 0 12px; color: var(--orange);">Heritage</h4>
+        <table>
+            <tr><th style="width:15%">Policy</th><th style="width:25%">Title</th><th>Requirement</th></tr>
+            <tr><td><span class="policy-ref">NPPF 212</span></td><td>Conservation weight</td><td>Great weight to conservation irrespective of degree of harm. The more important the asset, the greater the weight.</td></tr>
+            <tr><td><span class="policy-ref">NPPF 213</span></td><td>Justification</td><td>Harm to Grade II must be <strong>exceptional</strong>. Clear and convincing justification required.</td></tr>
+            <tr><td><span class="policy-ref">NPPF 215</span></td><td>Less than substantial harm</td><td>Weighed against public benefits including securing optimum viable use. <em>Most likely test for Falconers.</em></td></tr>
+            <tr><td><span class="policy-ref">DEV21</span></td><td>Historic environment</td><td>Heritage Impact Assessment required. Significance, character, setting and local distinctiveness must be assessed.</td></tr>
+        </table>
+
+        <h4 style="font-size: 15px; font-weight: 700; margin: 20px 0 12px; color: var(--orange);">Landscape</h4>
+        <table>
+            <tr><th style="width:15%">Policy</th><th style="width:25%">Title</th><th>Requirement</th></tr>
+            <tr><td><span class="policy-ref">NPPF 189</span></td><td>National Landscapes</td><td>Great weight to conserving and enhancing landscape and scenic beauty. Highest status of protection.</td></tr>
+            <tr><td><span class="policy-ref">NPPF 190</span></td><td>Major development</td><td>Refused unless exceptional circumstances and in the public interest. Three-part test applies.</td></tr>
+            <tr><td><span class="policy-ref">DEV25</span></td><td>Protected landscapes</td><td>Highest degree of protection. Development likely limited to small scale, clearly evidenced local need.</td></tr>
+            <tr><td><span class="policy-ref">SALC ENV1</span></td><td>AONB special qualities</td><td>New development must respect and maintain special qualities of the National Landscape.</td></tr>
+        </table>
+
+        <h4 style="font-size: 15px; font-weight: 700; margin: 20px 0 12px; color: var(--orange);">Housing</h4>
+        <table>
+            <tr><th style="width:15%">Policy</th><th style="width:25%">Title</th><th>Requirement</th></tr>
+            <tr><td><span class="policy-ref">NPPF 84</span></td><td>Isolated homes</td><td>Permits: (b) heritage enabling, (c) reuse of redundant buildings, (d) subdivision of existing dwelling, (e) exceptional design.</td></tr>
+            <tr><td><span class="policy-ref">SALC H3</span></td><td>Principal residence</td><td>All new dwellings require S106 for principal residence only. Upheld at appeal June 2025.</td></tr>
+            <tr><td><span class="policy-ref">TTV1</span></td><td>Settlement hierarchy</td><td>Salcombe = "Smaller Town and Village." Limited growth allocation.</td></tr>
+            <tr><td><span class="policy-ref">DEV10</span></td><td>Housing quality</td><td>Nationally Described Space Standards. Must not appear as unrelated addition.</td></tr>
+        </table>
+
+        <h4 style="font-size: 15px; font-weight: 700; margin: 20px 0 12px; color: var(--orange);">Design</h4>
+        <table>
+            <tr><th style="width:15%">Policy</th><th style="width:25%">Title</th><th>Requirement</th></tr>
+            <tr><td><span class="policy-ref">DEV20</span></td><td>Place shaping</td><td>Contribute positively to local townscape. Avoid significant adverse visual impacts.</td></tr>
+            <tr><td><span class="policy-ref">SALC B1</span></td><td>Design quality</td><td>Appropriate to context. Referenced alongside ENV1 in appeal decisions.</td></tr>
+        </table>
+    </div>
+
+    <div class="card">
+        <div class="card-title"><span class="icon">&#9670;</span> Relevant Appeal Precedent</div>
+        <table>
+            <tr><th>Ref</th><th>Site</th><th>Proposal</th><th>Decision</th><th>Key Finding</th></tr>
+            <tr>
+                <td style="font-size: 12px;">APP/K1128/W/22/3301425</td>
+                <td>Sunny Ridge, Herbert Rd</td>
+                <td>Replacement dwelling</td>
+                <td><span class="tl tl-green">ALLOWED</span></td>
+                <td>Within built-up area; well-designed; no AONB harm. Complied with DEV20, DEV23, SALC ENV1, B1.</td>
+            </tr>
+            <tr>
+                <td style="font-size: 12px;">APP/K1128/D/18/3219559</td>
+                <td>Hangar Farm, Beadon Rd</td>
+                <td>Front porch</td>
+                <td><span class="tl tl-red">DISMISSED</span></td>
+                <td>Even modest porch refused where it affected AONB character outside built-up area.</td>
+            </tr>
+            <tr>
+                <td style="font-size: 12px;">3164/23/FUL</td>
+                <td>Cedar House, Moult Hill</td>
+                <td>Detached annexe</td>
+                <td><span class="tl tl-green">APPROVED</span></td>
+                <td>Direct Moult Hill precedent for freestanding ancillary structure.</td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+<!-- ──────────────────── TAB 5: DEVELOPMENT SCENARIOS ──────────── -->
+<section class="tab-content" id="tab-scenarios">
+
+    <p class="section-intro">
+        Five realistic development scenarios assessed against the constraint and policy framework. Each scenario is rated for feasibility and includes the planning route, key risks, and indicative value creation.
+    </p>
+
+    <!-- SCENARIO A -->
+    <div class="scenario">
+        <div class="scenario-header" onclick="this.parentElement.classList.toggle('open')">
+            <div class="scenario-title">
+                <span>A.</span> Outbuilding Conversion &amp; Annexe
+            </div>
+            <span class="tl tl-green">HIGH FEASIBILITY</span>
+        </div>
+        <div class="scenario-body">
+            <h4>The Proposition</h4>
+            <p>Convert existing detached outbuildings (garage, barn, ancillary structures) into habitable ancillary accommodation &mdash; a self-contained annexe tied to the main house by condition. Alternatively, replace an existing outbuilding with a new annexe of equivalent or reduced footprint.</p>
+
+            <h4>Planning Route</h4>
+            <ul>
+                <li><span class="policy-ref">NPPF 84(c)</span> Re-use of redundant or disused buildings enhancing the immediate setting</li>
+                <li>Householder application (HHO) if ancillary to main dwelling</li>
+                <li>Listed Building Consent required if within the curtilage (pre-1948 structures are curtilage listed)</li>
+                <li>If outbuildings post-date 1948, they are not curtilage listed &mdash; LBC may only be needed for setting impact</li>
+            </ul>
+
+            <h4>Precedent</h4>
+            <p><strong>Cedar House, Moult Hill</strong> (3164/23/FUL) &mdash; detached annexe approved 2023. This is a direct, recent, same-street precedent. The white-horses garage-with-office also establishes the principle.</p>
+
+            <h4>Key Risks</h4>
+            <ul>
+                <li>Structural condition of existing outbuildings may not support conversion without substantial rebuild</li>
+                <li>Scale and design must be subordinate to the principal building and not harm its setting</li>
+                <li>If the annexe becomes a separate dwelling in practice, enforcement risk (see Moult Hill Barn precedent)</li>
+                <li>Bat survey likely required given South Hams SAC</li>
+            </ul>
+
+            <h4>Indicative Value</h4>
+            <p>A well-executed 2-3 bedroom annexe in this location could add <strong>&pound;400,000&ndash;&pound;750,000</strong> to the overall property value as ancillary accommodation. As a separate dwelling (if achievable), potentially &pound;1m+.</p>
+        </div>
+    </div>
+
+    <!-- SCENARIO B -->
+    <div class="scenario">
+        <div class="scenario-header" onclick="this.parentElement.classList.toggle('open')">
+            <div class="scenario-title">
+                <span>B.</span> Sensitive Extension of the Listed Building
+            </div>
+            <span class="tl tl-green">HIGH FEASIBILITY</span>
+        </div>
+        <div class="scenario-body">
+            <h4>The Proposition</h4>
+            <p>Build on the precedent of the existing west-wing extension. A carefully designed, subordinate addition &mdash; perhaps a garden room, orangery, or pool house &mdash; that defers to the Wealden character while providing contemporary amenity.</p>
+
+            <h4>Planning Route</h4>
+            <ul>
+                <li>Full planning permission + Listed Building Consent</li>
+                <li>Heritage Impact Assessment demonstrating less than substantial harm, outweighed by public benefits</li>
+                <li><span class="policy-ref">NPPF 215</span> Less-than-substantial-harm test: balance against securing optimum viable use</li>
+                <li>Design must be "of the highest quality" &mdash; contemporary contrast or careful contextual response both viable approaches</li>
+            </ul>
+
+            <h4>Precedent</h4>
+            <p>The existing west-wing extension at Falconers itself proves the principle. LBC has previously been granted for an extension to this specific building.</p>
+
+            <h4>Key Risks</h4>
+            <ul>
+                <li>Historic England may object if the extension affects the great hall, principal elevations, or stained glass</li>
+                <li>Conservation officer will require detailed justification and reversibility assessment</li>
+                <li>AONB landscape impact if the extension increases the building's visual footprint when viewed from distance</li>
+            </ul>
+
+            <h4>Indicative Value</h4>
+            <p>A high-specification extension (pool house, orangery, or additional reception space) could add <strong>&pound;200,000&ndash;&pound;500,000</strong> while enhancing the property's market appeal at the &pound;5m+ level.</p>
+        </div>
+    </div>
+
+    <!-- SCENARIO C -->
+    <div class="scenario">
+        <div class="scenario-header" onclick="this.parentElement.classList.toggle('open')">
+            <div class="scenario-title">
+                <span>C.</span> Subdivision into Two Dwellings
+            </div>
+            <span class="tl tl-amber">MODERATE FEASIBILITY</span>
+        </div>
+        <div class="scenario-body">
+            <h4>The Proposition</h4>
+            <p>Subdivide the 8-bedroom listed building into two self-contained dwellings &mdash; retaining the principal house (5-6 beds) and creating a secondary dwelling (2-3 beds) from a wing, potentially the west wing extension. Each with its own access and curtilage.</p>
+
+            <h4>Planning Route</h4>
+            <ul>
+                <li><span class="policy-ref">NPPF 84(d)</span> Explicitly permits subdivision of existing residential buildings in the countryside</li>
+                <li>Full planning permission + Listed Building Consent</li>
+                <li>The secondary dwelling would require a <span class="policy-ref">SALC H3</span> principal residence S106</li>
+                <li>Heritage argument: subdivision may secure the building's long-term future by making it more viable as two smaller, more manageable residences rather than one unwieldy 8-bedroom house</li>
+            </ul>
+
+            <h4>The Case For</h4>
+            <ul>
+                <li>NPPF &sect;84(d) provides explicit policy support &mdash; this is not a "new dwelling in the countryside" issue</li>
+                <li>8 bedrooms is arguably beyond optimal viable use for a single household</li>
+                <li>Two principal-residence dwellings in Salcombe directly addresses the local housing imbalance (57% second homes)</li>
+                <li>Revenue from the second unit helps fund the ongoing maintenance of the Grade II listed fabric</li>
+            </ul>
+
+            <h4>Key Risks</h4>
+            <ul>
+                <li>LBC is the critical hurdle &mdash; subdivision must not harm the significance of the building (e.g., the great hall must remain intact and experienced as a single space)</li>
+                <li>Conservation officer may resist the loss of the "reading" of the building as a single grand residence</li>
+                <li>Parking, access, and bin storage for two dwellings in a heritage-sensitive setting</li>
+                <li>The Town Council's sensitivity to any intensification on Moult Hill</li>
+            </ul>
+
+            <h4>Indicative Value</h4>
+            <p>Two dwellings could collectively be worth <strong>more than the single house</strong>. A 5-bed principal house might achieve &pound;3.5&ndash;4.5m and a 2-3 bed secondary &pound;1.5&ndash;2m, total &pound;5&ndash;6.5m. Against a &pound;4.75m guide price, the upside here is genuine &mdash; even a conservative &pound;5m combined value covers the purchase with margin for works.</p>
+        </div>
+    </div>
+
+    <!-- SCENARIO D -->
+    <div class="scenario">
+        <div class="scenario-header" onclick="this.parentElement.classList.toggle('open')">
+            <div class="scenario-title">
+                <span>D.</span> Paddock Development &mdash; Separate Title Opportunity (DN263903)
+            </div>
+            <span class="tl tl-amber">MODERATE&ndash;HIGH FEASIBILITY</span>
+        </div>
+        <div class="scenario-body">
+            <h4>The Proposition</h4>
+            <p>The 2.98-acre paddock (DN263903) is held under a <strong>separate freehold title</strong> to the west/northwest of the main house. This is not curtilage garden &mdash; it is separately registered land that could potentially be developed or sold independently. A single architect-designed dwelling under NPPF &sect;84(e), or a small enabling development scheme, becomes significantly more viable when the land is not directly tied to the listing.</p>
+
+            <h4>Why the Separate Title Changes Everything</h4>
+            <ul>
+                <li><strong>Curtilage argument weakened:</strong> A separate registered title with its own ownership history is strong evidence that the paddock is <em>not</em> within the curtilage of the listed building. Curtilage listing only applies to structures within the curtilage &mdash; if the paddock falls outside, development faces setting-impact assessment only, not direct LBC requirements.</li>
+                <li><strong>Independent disposal:</strong> The paddock could be sold as a standalone development opportunity without affecting the listed house. A 2.98-acre plot on Moult Hill, Salcombe would command significant interest even without planning permission.</li>
+                <li><strong>Reduced heritage friction:</strong> Development on the paddock must still consider impact on the <em>setting</em> of Falconers and nearby listed buildings, but this is the "less than substantial harm" test (NPPF &sect;215) rather than the more onerous direct-harm test. Setting impact can be mitigated through landscaping, positioning, and design.</li>
+                <li><strong>Functional land, not designed landscape:</strong> The paddock contains a helipad and grazing &mdash; it is not the Gertrude Jekyll-influenced formal gardens. Its contribution to the significance of the listed building is limited.</li>
+            </ul>
+
+            <h4>Planning Routes</h4>
+            <ul>
+                <li><span class="policy-ref">NPPF 84(e)</span> Exceptional quality design &mdash; "truly outstanding, reflecting the highest standards in architecture." Design review panel likely required. This bar is high but Salcombe values justify the architectural spend.</li>
+                <li><span class="policy-ref">NPPF 84(b)</span> Optimal viable use of a heritage asset / enabling development &mdash; if structured as cross-subsidy for Falconers restoration.</li>
+                <li>Full planning application (not householder) as the paddock is a separate land parcel</li>
+                <li>Principal residence restriction via S106 (<span class="policy-ref">SALC H3</span>)</li>
+                <li>LVIA essential for AONB impact assessment</li>
+                <li>Bat survey and potential HRA for South Hams SAC</li>
+            </ul>
+
+            <h4>Key Risks</h4>
+            <ul>
+                <li>Town Council sensitivity &mdash; "first new building for over 50 years on Moult Hill"</li>
+                <li>AONB landscape impact from elevated site visible from distance</li>
+                <li>The &sect;84(e) bar is genuinely high &mdash; requires award-calibre architecture</li>
+                <li>Greater horseshoe bat habitat must be assessed</li>
+                <li>Access arrangements &mdash; does the paddock have independent access or does it rely on a right of way through DN170405?</li>
+            </ul>
+
+            <h4>Indicative Value</h4>
+            <p>An exceptional 4-5 bedroom dwelling on 2.98 acres of Moult Hill could achieve <strong>&pound;2.5&ndash;4.0m</strong>. Build costs of &pound;750k&ndash;1.2m for a 3,000 sq ft exceptional design. Residual land/profit: <strong>&pound;1.5&ndash;2.5m</strong>. Even without planning, the paddock as a standalone plot with potential could be worth <strong>&pound;500k&ndash;1m</strong> to a speculative buyer.</p>
+        </div>
+    </div>
+
+    <!-- SCENARIO E -->
+    <div class="scenario">
+        <div class="scenario-header" onclick="this.parentElement.classList.toggle('open')">
+            <div class="scenario-title">
+                <span>E.</span> Heritage-Led Enabling Development
+            </div>
+            <span class="tl tl-amber">MODERATE FEASIBILITY</span>
+        </div>
+        <div class="scenario-body">
+            <h4>The Proposition</h4>
+            <p>Use the enabling development route (<span class="policy-ref">NPPF 221</span> and <span class="policy-ref">NPPF 84(b)</span>) to justify a small number of new dwellings in the grounds, where the revenue directly funds comprehensive restoration and long-term maintenance of the Grade II listed building.</p>
+
+            <h4>Planning Route</h4>
+            <ul>
+                <li>Historic England's <strong>Enabling Development and the Conservation of Significant Places</strong> guidance</li>
+                <li>Must demonstrate: (a) the heritage asset needs significant investment; (b) market value alone cannot fund the work; (c) the development is the minimum necessary to secure the asset's future; (d) the public benefit outweighs the disbenefit</li>
+                <li>Independent conservation deficit assessment required</li>
+                <li>Open-book viability assessment</li>
+                <li>S106 to ring-fence enabling development proceeds for heritage restoration</li>
+            </ul>
+
+            <h4>The Case For</h4>
+            <ul>
+                <li>Grade II listed buildings of this size and age genuinely require substantial ongoing investment &mdash; oak structural maintenance, stained glass conservation, thatched/slate roofing</li>
+                <li>The guide price of &pound;4.75m vs estimated value of &pound;3.88m shows even at a reduced ask, the market premiums the acreage and potential above bricks-and-mortar value</li>
+                <li>Enabling development is an established, policy-backed route with Historic England support when genuine</li>
+                <li>Two or three high-quality dwellings tucked into the woodland could be almost invisible while generating &pound;3&ndash;5m+ in revenue</li>
+            </ul>
+
+            <h4>Key Risks</h4>
+            <ul>
+                <li>The enabling development bar is high and the process is slow (12&ndash;18 months minimum)</li>
+                <li>Historic England may dispute the conservation deficit if the building is in reasonable condition</li>
+                <li>AONB + local opposition make the "minimum necessary" test very strict</li>
+                <li>All new dwellings subject to SALC H3 principal residence restriction</li>
+            </ul>
+
+            <h4>Indicative Value</h4>
+            <p>If 2&ndash;3 dwellings achieved at &pound;1.5&ndash;2.5m each, gross development value of <strong>&pound;3&ndash;7.5m</strong>. But net proceeds after build costs, fees, and ring-fenced heritage spend would be significantly lower. This is a long-term play, not a quick profit.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ──────────────────── TAB 6: MARKET & VIABILITY ─────────────── -->
+<section class="tab-content" id="tab-market">
+
+    <div class="card">
+        <div class="card-title"><span class="icon">&#9670;</span> Salcombe Market Overview</div>
+        <div class="kv-grid">
+            <div class="kv-item">
+                <div class="kv-label">Average House Price (TQ8)</div>
+                <div class="kv-value large">&pound;767,727</div>
+            </div>
+            <div class="kv-item">
+                <div class="kv-label">Premium to National Average</div>
+                <div class="kv-value large">+170%</div>
+            </div>
+            <div class="kv-item">
+                <div class="kv-label">Avg Detached Price</div>
+                <div class="kv-value large">&pound;1,167,396</div>
+            </div>
+            <div class="kv-item">
+                <div class="kv-label">Price per sq m (TQ8)</div>
+                <div class="kv-value large">&pound;5,021</div>
+            </div>
+            <div class="kv-item">
+                <div class="kv-label">Second Homes in Parish</div>
+                <div class="kv-value large" style="color: var(--red);">45.3%</div>
+            </div>
+            <div class="kv-item">
+                <div class="kv-label">Second Home Council Tax Premium</div>
+                <div class="kv-value large">100% (from Apr 2025)</div>
+            </div>
+            <div class="kv-item">
+                <div class="kv-label">12-Month Price Trend</div>
+                <div class="kv-value" style="color: var(--red);">-7.2% (nominal) / -10.7% (real)</div>
+            </div>
+            <div class="kv-item">
+                <div class="kv-label">Holiday Let Tax Relief</div>
+                <div class="kv-value" style="color: var(--red);">Abolished April 2025</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-title"><span class="icon">&#9670;</span> Moult Hill Comparables</div>
+        <table>
+            <tr><th>Property</th><th>Type</th><th>Price</th><th>Date</th><th>&pound;/sq ft (est)</th></tr>
+            <tr><td>Beechwood</td><td>Detached</td><td class="comp-price">&pound;3,500,000</td><td>Sep 2022</td><td>&mdash;</td></tr>
+            <tr><td>Binnacle House</td><td>4-bed detached</td><td class="comp-price">&pound;1,550,000</td><td>Sep 2023</td><td>&mdash;</td></tr>
+            <tr><td>Hawks Ridge</td><td>2-bed detached</td><td class="comp-price">&pound;1,450,000</td><td>Sep 2019</td><td>&mdash;</td></tr>
+            <tr><td>White Horses</td><td>4-bed detached</td><td class="comp-price">&pound;815,000</td><td>Jun 2015</td><td>&mdash;</td></tr>
+            <tr><td>Bridleway House</td><td>5-bed new build (2017)</td><td class="comp-price">&pound;3,000,000</td><td>Currently listed</td><td>~&pound;510</td></tr>
+            <tr><td>Cedar House</td><td>5-bed detached</td><td class="comp-price">&pound;2,500,000</td><td>Currently listed</td><td>&mdash;</td></tr>
+        </table>
+        <div class="callout callout-green" style="margin-top: 16px;">
+            <strong>Moult Hill Commands a Premium</strong>
+            Beechwood sold at &pound;3.5m (Sep 2022) having been purchased for &pound;950k in 2017 &mdash; a 268% increase in 5 years. Hawks Ridge achieved &pound;1.45m for just 2 bedrooms. This is arguably the most desirable road in one of England's most expensive coastal towns. New dwellings here, even with principal residence restrictions, would command exceptional values.
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-title"><span class="icon">&#9670;</span> Viability Indicators</div>
+        <table>
+            <tr><th style="width:40%">Metric</th><th>Value</th><th>Commentary</th></tr>
+            <tr>
+                <td>Guide price</td>
+                <td>&pound;4,750,000</td>
+                <td>22% above estimated value (&pound;3.88m) &mdash; moderate premium reflecting acreage + potential</td>
+            </tr>
+            <tr>
+                <td>Build cost (premium spec)</td>
+                <td>&pound;350&ndash;500/sq ft</td>
+                <td>Heritage/AONB specification with oak, conservation-grade materials</td>
+            </tr>
+            <tr>
+                <td>Achievable GDV (new dwelling)</td>
+                <td>&pound;1.5&ndash;4.0m</td>
+                <td>Depending on size, spec, and views. Beechwood at &pound;3.5m is benchmark.</td>
+            </tr>
+            <tr>
+                <td>Professional fees</td>
+                <td>12&ndash;18% of build</td>
+                <td>Heritage architect, conservation consultant, LVIA, bat surveys, arboriculture</td>
+            </tr>
+            <tr>
+                <td>CIL</td>
+                <td>&pound;0</td>
+                <td>Not adopted by South Hams</td>
+            </tr>
+            <tr>
+                <td>S106</td>
+                <td>Principal residence only</td>
+                <td>No affordable housing contribution for schemes under 11 units</td>
+            </tr>
+        </table>
+
+        <div class="callout callout-orange" style="margin-top: 16px;">
+            <strong>Market Headwinds</strong>
+            The abolition of furnished holiday let tax relief (April 2025) and the 100% council tax premium on second homes are reshaping the Salcombe market. Prices are down 7&ndash;11% year-on-year. For a developer, this creates potential buying opportunities &mdash; but the principal residence restriction also limits your buyer pool to genuine owner-occupiers. In Salcombe, where 57% of homes are second homes, this is a meaningful constraint on exit values.
+        </div>
+    </div>
+</section>
+
+<!-- ──────────────────── TAB 7: RISK MATRIX ────────────────────── -->
+<section class="tab-content" id="tab-risk">
+
+    <div class="card">
+        <div class="card-title"><span class="icon">&#9670;</span> Development Scenario Risk Matrix</div>
+        <table>
+            <tr>
+                <th>Scenario</th>
+                <th>Planning Risk</th>
+                <th>Heritage Risk</th>
+                <th>Market Risk</th>
+                <th>Overall</th>
+            </tr>
+            <tr>
+                <td><strong>A.</strong> Outbuilding conversion/annexe</td>
+                <td><span class="tl tl-green">LOW</span></td>
+                <td><span class="tl tl-amber">MED</span></td>
+                <td><span class="tl tl-green">LOW</span></td>
+                <td><span class="tl tl-green">GOOD</span></td>
+            </tr>
+            <tr>
+                <td><strong>B.</strong> Sensitive extension</td>
+                <td><span class="tl tl-green">LOW</span></td>
+                <td><span class="tl tl-amber">MED</span></td>
+                <td><span class="tl tl-green">LOW</span></td>
+                <td><span class="tl tl-green">GOOD</span></td>
+            </tr>
+            <tr>
+                <td><strong>C.</strong> Subdivision (2 dwellings)</td>
+                <td><span class="tl tl-amber">MED</span></td>
+                <td><span class="tl tl-amber">MED</span></td>
+                <td><span class="tl tl-amber">MED</span></td>
+                <td><span class="tl tl-amber">MODERATE</span></td>
+            </tr>
+            <tr>
+                <td><strong>D.</strong> Paddock dwelling (separate title DN263903)</td>
+                <td><span class="tl tl-amber">MED</span></td>
+                <td><span class="tl tl-green">LOW</span></td>
+                <td><span class="tl tl-green">LOW</span></td>
+                <td><span class="tl tl-green">GOOD</span></td>
+            </tr>
+            <tr>
+                <td><strong>E.</strong> Enabling development</td>
+                <td><span class="tl tl-red">HIGH</span></td>
+                <td><span class="tl tl-amber">MED</span></td>
+                <td><span class="tl tl-amber">MED</span></td>
+                <td><span class="tl tl-amber">MODERATE</span></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="card">
+        <div class="card-title"><span class="icon">&#9670;</span> Recommended Approach</div>
+        <div class="callout callout-green">
+            <strong>Phase 1: Low-Hanging Fruit (Scenarios A + B)</strong>
+            Start with the outbuilding conversion/annexe and any extension works. These have clear precedent on Moult Hill, present the lowest planning risk, and add immediate value. The Cedar House annexe approval (3164/23/FUL) is your direct comparable. These works also build a positive relationship with the LPA and conservation officer.
+        </div>
+        <div class="callout callout-blue">
+            <strong>Phase 2: The Paddock Play (Scenario D)</strong>
+            The separate title (DN263903) is the real prize. 2.98 acres of freehold land on Moult Hill, likely outside the curtilage of the listing, with reduced heritage constraints. Pursue a single exceptional dwelling under NPPF &sect;84(e) &mdash; Salcombe values justify the &pound;500k+ architectural investment needed to clear the "truly outstanding" bar. Commission a heritage curtilage opinion and access/rights review early. If the paddock has independent access, it can be progressed in parallel with or independently of the main house works. Engage a design review panel-calibre architect (e.g., RIBA award winners with AONB experience).
+        </div>
+        <div class="callout callout-blue">
+            <strong>Phase 3: Optimisation (Scenario C or E)</strong>
+            If the paddock dwelling succeeds, consider whether the 8-bedroom main house would benefit from subdivision under NPPF &sect;84(d), creating two more manageable principal-residence dwellings. This could be the long-term exit strategy: three dwellings across 7.2 acres on Moult Hill, each with principal residence S106, collectively worth &pound;7&ndash;10m+.
+        </div>
+        <div class="callout callout-orange">
+            <strong>Critical Pre-Acquisition Due Diligence</strong>
+            <ul style="margin-top: 8px; padding-left: 20px;">
+                <li><strong>Curtilage opinion:</strong> DN263903 (2.98-acre paddock) is a separate title &mdash; obtain a heritage consultant's opinion on whether it falls within the curtilage of the listing. A separate title is strong evidence it does not, but not conclusive.</li>
+                <li><strong>Access rights:</strong> Confirm whether DN263903 has independent highway access or relies on a right of way through DN170405. This determines whether the paddock can be sold/developed independently.</li>
+                <li><strong>Conservation Area boundary:</strong> Confirm whether Moult Hill falls within the Salcombe Conservation Area</li>
+                <li><strong>Pre-application advice:</strong> Pay for a formal pre-app with South Hams DC (including conservation officer and AONB officer) before exchanging contracts</li>
+                <li><strong>TPO survey:</strong> Establish which trees are protected before assuming any development footprint</li>
+                <li><strong>Bat survey:</strong> Commission a preliminary ecological appraisal and check whether the site falls within a South Hams SAC sustenance zone</li>
+                <li><strong>Listed building condition survey:</strong> Quantify the conservation deficit &mdash; this supports both the enabling development route and the optimum viable use argument</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-title"><span class="icon">&#9670;</span> What This Report Demonstrates</div>
+        <p class="section-intro">
+            This is a <strong>Tier 1 desktop appraisal</strong> produced entirely from publicly available data &mdash; no site visit, no paid-for searches, no professional consultants. It took approximately 15 minutes.
+        </p>
+        <p class="section-intro">
+            A traditional planning consultant would charge &pound;2,000&ndash;5,000+ for an equivalent initial feasibility assessment and take 2&ndash;4 weeks to deliver. Site Intelligence produces this in minutes, identifying the policy framework, constraints, precedent, market context, and development scenarios that frame the commercial decision.
+        </p>
+        <p class="section-intro">
+            This is the starting point, not the final answer. The next step is targeted professional engagement &mdash; but now you know exactly <em>which</em> professionals you need, <em>what</em> questions to ask them, and <em>where</em> the value sits.
+        </p>
+        <table style="margin-top: 16px;">
+            <tr><th>What SI Delivered</th><th>Traditional Route</th></tr>
+            <tr><td>12 constraints identified and mapped</td><td>Site visit + manual policy search</td></tr>
+            <tr><td>5 development plan policies analysed</td><td>Consultant's desk research</td></tr>
+            <tr><td>3 appeal decisions reviewed</td><td>PINS database search</td></tr>
+            <tr><td>5 development scenarios with viability</td><td>Architect + planner feasibility study</td></tr>
+            <tr><td>6 comparable sales analysed</td><td>Agent's market appraisal</td></tr>
+            <tr><td>Phased recommendation with due diligence</td><td>Strategy meeting</td></tr>
+        </table>
+    </div>
+</section>
+
+</main>
+
+<!-- ════════════════════════════════════════════════════ FOOTER ════ -->
+<footer class="site-footer">
+    <span class="footer-brand">SITE INTELLIGENCE</span> &mdash; Desktop Development Appraisal<br>
+    Tier 1 &bull; Falconers, Moult Hill, Salcombe TQ8 8LF &bull; 23 March 2026<br><br>
+    <em>This report is a desktop appraisal only. It does not constitute professional planning or legal advice. All development scenarios are indicative and subject to formal planning assessment. No site visit has been conducted.</em>
+</footer>
+
+<!-- ════════════════════════════════════════════════════ SCRIPT ════ -->
+<script>
+    // Tab switching
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            btn.classList.add('active');
+            document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+        });
+    });
+</script>
+</body>
+</html>
