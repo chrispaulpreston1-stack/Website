@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Pre-Application Report &mdash; Falconers, Moult Hill, Salcombe | Site Intelligence</title>
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --navy: #0f172a;
+            --slate: #1e293b;
+            --orange: #f97316;
+            --warm-bg: #fefbf4;
+            --warm-bg-alt: #fdf6e9;
+            --text-primary: #1e293b;
+            --text-secondary: #475569;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --border-light: #f1f5f9;
+            --white: #ffffff;
+            --red: #dc2626;
+            --red-bg: #fef2f2;
+            --red-border: #fecaca;
+            --green: #16a34a;
+            --green-bg: #f0fdf4;
+            --green-border: #bbf7d0;
+            --amber: #d97706;
+            --amber-bg: #fffbeb;
+            --amber-border: #fde68a;
+            --blue: #2563eb;
+            --blue-bg: #eff6ff;
+            --blue-border: #bfdbfe;
+            --purple: #7c3aed;
+            --purple-bg: #f5f3ff;
+            --purple-border: #ddd6fe;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400&display=swap');
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--warm-bg); color: var(--text-primary);
+            line-height: 1.7; font-size: 15px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ── Header ── */
+        .site-header {
+            background: var(--navy); color: white;
+            padding: 48px 0 40px; position: relative;
+        }
+        .site-header::after {
+            content: ''; position: absolute;
+            bottom: 0; left: 0; right: 0; height: 4px;
+            background: linear-gradient(90deg, var(--orange), var(--orange) 30%, transparent);
+        }
+        .header-content { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+        .header-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 28px; }
+        .brand-mark {
+            width: 40px; height: 40px; background: var(--orange);
+            border-radius: 8px; display: flex; align-items: center; justify-content: center;
+            font-weight: 700; font-size: 16px; color: white;
+        }
+        .brand-text { font-size: 14px; font-weight: 500; letter-spacing: 0.5px; opacity: 0.9; }
+        .header-title { font-size: 30px; font-weight: 700; line-height: 1.2; margin-bottom: 6px; letter-spacing: -0.5px; }
+        .header-subtitle { font-size: 17px; font-weight: 400; opacity: 0.75; margin-bottom: 16px; }
+        .header-meta { display: flex; flex-wrap: wrap; gap: 20px; font-size: 13px; opacity: 0.7; }
+
+        /* ── Tab Nav ── */
+        .tab-nav {
+            background: var(--slate); position: sticky; top: 0; z-index: 100;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .tab-nav-inner {
+            max-width: 1100px; margin: 0 auto; padding: 0 32px;
+            display: flex; overflow-x: auto;
+        }
+        .tab-btn {
+            padding: 14px 18px; font-size: 12.5px; font-weight: 500;
+            color: rgba(255,255,255,0.6); background: none; border: none;
+            cursor: pointer; white-space: nowrap;
+            border-bottom: 2px solid transparent; transition: all 0.2s;
+        }
+        .tab-btn:hover { color: rgba(255,255,255,0.9); }
+        .tab-btn.active { color: var(--orange); border-bottom-color: var(--orange); }
+
+        /* ── Main ── */
+        .page-wrapper { max-width: 1100px; margin: 0 auto; padding: 32px 32px 80px; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+
+        /* ── Cards ── */
+        .card {
+            background: var(--white); border: 1px solid var(--border);
+            border-radius: 12px; padding: 28px; margin-bottom: 20px;
+        }
+        .card-title {
+            font-size: 18px; font-weight: 700; margin-bottom: 16px;
+            padding-bottom: 12px; border-bottom: 2px solid var(--orange);
+        }
+
+        /* ── Tables ── */
+        table { width: 100%; border-collapse: collapse; font-size: 14px; }
+        th, td { padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--border-light); }
+        th {
+            font-weight: 600; font-size: 12px; text-transform: uppercase;
+            letter-spacing: 0.5px; color: var(--text-muted); background: var(--warm-bg-alt);
+        }
+        tr:hover td { background: var(--warm-bg-alt); }
+
+        /* ── Traffic Lights ── */
+        .tl { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; font-size: 13px; padding: 4px 12px; border-radius: 20px; }
+        .tl-green { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
+        .tl-amber { background: var(--amber-bg); color: var(--amber); border: 1px solid var(--amber-border); }
+        .tl-red { background: var(--red-bg); color: var(--red); border: 1px solid var(--red-border); }
+
+        /* ── Callouts ── */
+        .callout { border-radius: 10px; padding: 18px 22px; margin: 16px 0; font-size: 14px; }
+        .callout-orange { background: #fff7ed; border-left: 4px solid var(--orange); }
+        .callout-green { background: var(--green-bg); border-left: 4px solid var(--green); }
+        .callout-red { background: var(--red-bg); border-left: 4px solid var(--red); }
+        .callout-blue { background: var(--blue-bg); border-left: 4px solid var(--blue); }
+        .callout-purple { background: var(--purple-bg); border-left: 4px solid var(--purple); }
+        .callout strong { display: block; margin-bottom: 4px; }
+
+        /* ── Policy Refs ── */
+        .policy-ref {
+            display: inline-block; background: var(--slate); color: white;
+            font-size: 11px; font-weight: 600; padding: 2px 8px;
+            border-radius: 4px; margin-right: 4px;
+        }
+        .case-ref {
+            display: inline-block; background: var(--purple); color: white;
+            font-size: 11px; font-weight: 600; padding: 2px 8px;
+            border-radius: 4px; margin-right: 4px;
+        }
+
+        /* ── Section Intro ── */
+        .section-intro { font-size: 15px; color: var(--text-secondary); margin-bottom: 20px; line-height: 1.8; }
+
+        /* ── KV Grid ── */
+        .kv-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; }
+        .kv-item { background: var(--warm-bg-alt); border-radius: 8px; padding: 14px 18px; }
+        .kv-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); margin-bottom: 4px; }
+        .kv-value { font-size: 16px; font-weight: 600; }
+        .kv-value.large { font-size: 22px; font-weight: 800; }
+
+        /* ── Letter Format ── */
+        .letter { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 40px; margin-bottom: 20px; font-size: 14px; line-height: 1.8; }
+        .letter-header { border-bottom: 2px solid var(--navy); padding-bottom: 20px; margin-bottom: 24px; }
+        .letter p { margin-bottom: 14px; }
+        .letter .signoff { margin-top: 32px; }
+
+        /* ── Numbered List ── */
+        .numbered-question {
+            background: var(--warm-bg-alt); border-radius: 10px;
+            padding: 16px 20px; margin-bottom: 12px;
+            border-left: 4px solid var(--orange);
+        }
+        .numbered-question .q-num {
+            font-weight: 800; color: var(--orange); font-size: 14px;
+        }
+        .numbered-question .q-text {
+            font-size: 14px; color: var(--text-primary); margin-top: 4px;
+        }
+        .numbered-question .q-context {
+            font-size: 12px; color: var(--text-muted); margin-top: 6px; font-style: italic;
+        }
+
+        /* ── Footer ── */
+        .site-footer {
+            text-align: center; padding: 32px; font-size: 12px;
+            color: var(--text-muted); border-top: 1px solid var(--border); margin-top: 40px;
+        }
+        .footer-brand { font-weight: 700; color: var(--orange); }
+
+        /* ── Print ── */
+        @media print {
+            .tab-nav { display: none; }
+            .tab-content { display: block !important; page-break-before: always; }
+        }
+        @media (max-width: 768px) {
+            .header-title { font-size: 22px; }
+            .kv-grid { grid-template-columns: 1fr; }
+            .tab-btn { padding: 12px 12px; font-size: 11px; }
+            .letter { padding: 24px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════ HEADER ═══════ -->
+<header class="site-header">
+    <div class="header-content">
+        <div class="header-brand">
+            <div class="brand-mark">SI</div>
+            <div class="brand-text">SITE INTELLIGENCE</div>
+        </div>
+        <div class="header-title">Pre-Application Report</div>
+        <div class="header-subtitle">Falconers, Moult Hill, Salcombe, Devon TQ8 8LF</div>
+        <div class="header-meta">
+            <span>Titles DN170405 + DN263903</span>
+            <span>Grade II Listed (HE 1289162)</span>
+            <span>South Devon National Landscape</span>
+            <span>LPA: South Hams DC</span>
+            <span>23 March 2026</span>
+        </div>
+    </div>
+</header>
+
+<!-- ═══════════════════════════════════════════ TAB NAV ══════ -->
+<nav class="tab-nav">
+    <div class="tab-nav-inner">
+        <button class="tab-btn active" data-tab="cover">Cover Letter</button>
+        <button class="tab-btn" data-tab="planning">Planning Statement</button>
+        <button class="tab-btn" data-tab="heritage">Heritage Impact</button>
+        <button class="tab-btn" data-tab="landscape">Landscape &amp; Ecology</button>
+        <button class="tab-btn" data-tab="design">Design Brief</button>
+        <button class="tab-btn" data-tab="viability">Market &amp; Viability</button>
+        <button class="tab-btn" data-tab="questions">Pre-App Questions</button>
+        <button class="tab-btn" data-tab="sources">Sources &amp; Precedent</button>
+    </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════ CONTENT ══════ -->
+<main class="page-wrapper">
+
+<!-- ────────────── TAB 1: COVER LETTER ────────────── -->
+<section class="tab-content active" id="tab-cover">
+
+    <div class="letter">
+        <div class="letter-header">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                <div>
+                    <strong style="font-size: 16px;">Site Intelligence</strong><br>
+                    <span style="color: var(--text-muted); font-size: 13px;">Trading name of PF &amp; Co Holdings Ltd (Company No. 16649319)</span>
+                </div>
+                <div style="text-align: right; color: var(--text-muted); font-size: 13px;">
+                    23 March 2026
+                </div>
+            </div>
+        </div>
+
+        <p>
+            <strong>Planning Department</strong><br>
+            South Hams District Council<br>
+            Follaton House<br>
+            Plymouth Road<br>
+            Totnes, Devon TQ9 5NE
+        </p>
+
+        <p><strong>Re: Pre-Application Enquiry &mdash; Falconers, Moult Hill, Salcombe, Devon TQ8 8LF</strong></p>
+
+        <p>Dear Sir/Madam,</p>
+
+        <p>We write on behalf of our client to seek pre-application advice in respect of two related development proposals at Falconers, Moult Hill, Salcombe TQ8 8LF. The site comprises two separately registered freehold titles totalling approximately 7.2 acres:</p>
+
+        <ul style="padding-left: 24px; margin-bottom: 14px;">
+            <li><strong>Title DN170405</strong> (4.22 acres) &mdash; Falconers and its formal gardens, outbuildings, and double garage. Falconers is a Grade II listed building (Historic England List Entry 1289162).</li>
+            <li><strong>Title DN263903</strong> (2.98 acres) &mdash; Paddock and open land to the west/northwest of Falconers, held under separate freehold ownership.</li>
+        </ul>
+
+        <p><strong>The proposals are:</strong></p>
+
+        <p><strong>Proposal 1 &mdash; Outbuilding Conversion (DN170405):</strong> Conversion of existing detached outbuildings within the curtilage of Falconers to form ancillary residential accommodation (2&ndash;3 bedrooms), pursuant to NPPF Paragraph 84(c) (re-use of redundant or disused buildings enhancing the immediate setting). Listed Building Consent will be sought where required for curtilage-listed structures.</p>
+
+        <p><strong>Proposal 2 &mdash; New Dwelling on Paddock Land (DN263903):</strong> Erection of a single dwelling of exceptional quality on the separately titled paddock land, pursuant to NPPF Paragraph 84(e) (truly outstanding design reflecting the highest standards in architecture that would significantly enhance its immediate setting). The dwelling would be subject to a principal residence restriction via S106 agreement in accordance with Salcombe Neighbourhood Plan Policy SALC H3.</p>
+
+        <p>We consider that the paddock land (DN263903) falls <strong>outside the curtilage</strong> of the listed building, having regard to the three <em>Calderdale</em> tests and Historic England Advice Note 10. The land is held under a separate registered title with a distinct ownership history, is physically separated from the designed gardens by boundary features, and has been in functional agricultural/paddock use rather than ancillary domestic use. We expand on this analysis in the accompanying Heritage Impact Assessment.</p>
+
+        <p>We enclose with this letter:</p>
+        <ol style="padding-left: 24px; margin-bottom: 14px;">
+            <li>Planning Statement with full policy analysis</li>
+            <li>Heritage Impact Assessment including curtilage analysis and setting assessment</li>
+            <li>Landscape and Ecological Constraints Summary</li>
+            <li>Design Brief for the Paragraph 84(e) dwelling</li>
+            <li>Market and Viability Evidence</li>
+            <li>Schedule of specific questions for the Council's response</li>
+        </ol>
+
+        <p>We would welcome a meeting with the case officer and conservation officer to discuss these proposals, and would be grateful for the meeting to include a site visit given the heritage sensitivity and landscape context. We understand the heritage duty planner is available on Thursdays and would be happy to arrange an initial telephone discussion prior to the formal pre-application meeting.</p>
+
+        <p>We look forward to the Council's response.</p>
+
+        <div class="signoff">
+            <p>Yours faithfully,</p>
+            <p><strong>Site Intelligence</strong><br>
+            On behalf of [Client Name]</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-title">Pre-Application Summary</div>
+        <div class="kv-grid">
+            <div class="kv-item">
+                <div class="kv-label">Proposal 1</div>
+                <div class="kv-value">Outbuilding Conversion</div>
+            </div>
+            <div class="kv-item">
+                <div class="kv-label">NPPF Route</div>
+                <div class="kv-value">Paragraph 84(c)</div>
+            </div>
+            <div class="kv-item">
+                <div class="kv-label">Title</div>
+                <div class="kv-value">DN170405 (4.22 ac)</div>
+            </div>
+            <div class="kv-item">
+                <div class="kv-label">Consents Required</div>
+                <div class="kv-value">Planning + LBC</div>
+            </div>
+            <div class="kv-item">
+                <div class="kv-label">Proposal 2</div>
+                <div class="kv-value">Exceptional Dwelling</div>
+            </div>
+            <div class="kv-item">
+                <div class="kv-label">NPPF Route</div>
+                <div class="kv-value">Paragraph 84(e)</div>
+            </div>
+            <div class="kv-item">
+                <div class="kv-label">Title</div>
+                <div class="kv-value">DN263903 (2.98 ac)</div>
+            </div>
+            <div class="kv-item">
+                <div class="kv-label">Consents Required</div>
+                <div class="kv-value">Planning + S106 (SALC H3)</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ────────────── TAB 2: PLANNING STATEMENT ────────────── -->
+<section class="tab-content" id="tab-planning">
+
+    <div class="card">
+        <div class="card-title">1. Introduction &amp; Site Description</div>
+        <p class="section-intro">
+            Falconers is a Grade II listed manor house (HE 1289162) set in approximately 7.2 acres on Moult Hill, Salcombe. The site comprises two separately registered freehold titles: DN170405 (the listed house, formal gardens, and outbuildings &mdash; 4.22 acres) and DN263903 (paddock and open land to the west &mdash; 2.98 acres).
+        </p>
+        <p class="section-intro">
+            Constructed in 1925 in Kentish Wealden style using hand-crafted English oak for the British Empire Exhibition at Wembley, Falconers was subsequently dismantled and reassembled on this elevated site above Salcombe. The house contains significant architectural features including a full-height great hall with central timber truss, stained glass windows, and a galleried landing.
+        </p>
+        <p class="section-intro">
+            The site falls within the South Devon National Landscape (formerly AONB), is likely within the Salcombe Conservation Area, and is situated within a heritage-rich cluster including the Grade II* Moult, Grade II Former Lodge to The Moult (HE 1213029), and Grade II Moult Summerhouse (HE 1213027).
+        </p>
+    </div>
+
+    <div class="card">
+        <div class="card-title">2. Development Plan Framework</div>
+        <table>
+            <tr><th style="width:30%">Document</th><th>Status</th><th style="width:20%">Weight</th></tr>
+            <tr><td>NPPF (December 2024)</td><td>Published 12 Dec 2024</td><td>National policy</td></tr>
+            <tr><td>Plymouth &amp; SW Devon Joint Local Plan</td><td>Adopted March 2019</td><td>Full weight</td></tr>
+            <tr><td>Salcombe Neighbourhood Plan</td><td>Made Sept 2018 / amended 2021</td><td>Full weight</td></tr>
+            <tr><td>South Devon AONB Management Plan</td><td>Current</td><td>Material consideration</td></tr>
+        </table>
+    </div>
+
+    <div class="card">
+        <div class="card-title">3. Proposal 1 &mdash; Outbuilding Conversion (DN170405)</div>
+
+        <h4 style="font-size: 15px; font-weight: 700; margin: 16px 0 10px; color: var(--orange);">3.1 Policy Justification</h4>
+        <p class="section-intro">
+            <span class="policy-ref">NPPF 84(c)</span> permits the development of isolated homes in the countryside where the proposal involves <em>"the re-use of redundant or disused buildings and would lead to an enhancement of the immediate setting."</em>
+        </p>
+        <p class="section-intro">
+            Falconers contains detached outbuildings including a double garage and ancillary structures. Where these buildings are structurally capable of conversion without substantial reconstruction, their re-use as residential accommodation is supported by national policy, provided the conversion enhances the immediate setting.
+        </p>
+
+        <h4 style="font-size: 15px; font-weight: 700; margin: 16px 0 10px; color: var(--orange);">3.2 Compliance Matrix</h4>
+        <table>
+            <tr><th>Policy</th><th>Requirement</th><th>Compliance</th></tr>
+            <tr>
+                <td><span class="policy-ref">NPPF 84(c)</span></td>
+                <td>Re-use of redundant buildings enhancing setting</td>
+                <td><span class="tl tl-green">MET</span> &mdash; Existing outbuildings re-purposed; conversion would improve appearance and condition of curtilage structures</td>
+            </tr>
+            <tr>
+                <td><span class="policy-ref">NPPF 212</span></td>
+                <td>Great weight to conservation of heritage assets</td>
+                <td><span class="tl tl-green">MET</span> &mdash; Conversion secures long-term maintenance of curtilage-listed structures; heritage-led approach</td>
+            </tr>
+            <tr>
+                <td><span class="policy-ref">DEV21</span></td>
+                <td>Sustain character by conserving historic environment</td>
+                <td><span class="tl tl-green">MET</span> &mdash; Heritage Impact Assessment will accompany application; conversion retains fabric</td>
+            </tr>
+            <tr>
+                <td><span class="policy-ref">DEV25</span></td>
+                <td>Conserve and enhance National Landscape</td>
+                <td><span class="tl tl-green">MET</span> &mdash; Conversion of existing structures with no new footprint; no landscape impact</td>
+            </tr>
+            <tr>
+                <td><span class="policy-ref">SALC ENV1</span></td>
+                <td>Respect AONB special qualities</td>
+                <td><span class="tl tl-green">MET</span> &mdash; No change to external appearance, massing, or landscape character</td>
+            </tr>
+            <tr>
+                <td><span class="policy-ref">SALC H3</span></td>
+                <td>Principal residence restriction</td>
+                <td><span class="tl tl-amber">CONDITIONAL</span> &mdash; If ancillary to main house, not triggered. If separate dwelling, S106 required.</td>
+            </tr>
+        </table>
+
+        <h4 style="font-size: 15px; font-weight: 700; margin: 16px 0 10px; color: var(--orange);">3.3 Local Precedent</h4>
+        <div class="callout callout-green">
+            <strong>Cedar House, Moult Hill (3164/23/FUL) &mdash; Approved</strong>
+            Detached annexe approved 2023 on the same road. Establishes that freestanding ancillary residential structures are acceptable in principle on Moult Hill, subject to design and heritage considerations. This is a direct, recent, same-street precedent.
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-title">4. Proposal 2 &mdash; Exceptional Dwelling (DN263903)</div>
+
+        <h4 style="font-size: 15px; font-weight: 700; margin: 16px 0 10px; color: var(--orange);">4.1 Policy Justification</h4>
+        <p class="section-intro">
+            <span class="policy-ref">NPPF 84(e)</span> permits isolated homes in the countryside where the design is <em>"truly outstanding, reflecting the highest standards in architecture, and would help to raise standards of design more generally in rural areas"</em> and <em>"would significantly enhance its immediate setting, and be sensitive to the defining characteristics of the local area."</em>
+        </p>
+        <p class="section-intro">
+            This policy route has delivered approximately 150 dwellings nationally since 1997, including 11 within National Landscapes and multiple within National Parks. The bar is deliberately high, but the economic fundamentals of Salcombe make it viable: achievable values of &pound;2.5&ndash;4m justify the &pound;500k+ investment in architectural excellence needed to clear the "truly outstanding" test.
+        </p>
+
+        <h4 style="font-size: 15px; font-weight: 700; margin: 16px 0 10px; color: var(--orange);">4.2 The Two Limbs of 84(e)</h4>
+
+        <div class="callout callout-blue">
+            <strong>Limb 1: Architectural Excellence</strong>
+            The design must be truly outstanding, reflecting the highest standards in architecture, and would help raise design standards more generally in rural areas. Note: the 2018 NPPF revision removed the former requirement for designs to be "innovative" or "groundbreaking." Relatively modest, beautifully crafted homes can now qualify. The key is sustained excellence in concept, detail, materiality, and environmental performance.
+        </div>
+        <div class="callout callout-blue">
+            <strong>Limb 2: Setting Enhancement</strong>
+            The design must significantly enhance its immediate setting AND be sensitive to the defining characteristics of the local area. This is the more commonly failed test. Inspector decisions consistently emphasise that "change" is not the same as "enhancement" &mdash; the development must demonstrably improve the landscape quality of the site, not merely coexist with it.
+        </div>
+
+        <h4 style="font-size: 15px; font-weight: 700; margin: 16px 0 10px; color: var(--orange);">4.3 Compliance Matrix</h4>
+        <table>
+            <tr><th>Policy</th><th>Requirement</th><th>Compliance</th></tr>
+            <tr>
+                <td><span class="policy-ref">NPPF 84(e)</span></td>
+                <td>Truly outstanding design; significantly enhances setting</td>
+                <td><span class="tl tl-amber">TO BE DEMONSTRATED</span> &mdash; Architect to be appointed; Design Review Panel engagement proposed</td>
+            </tr>
+            <tr>
+                <td><span class="policy-ref">NPPF 189</span></td>
+                <td>Great weight to National Landscape conservation</td>
+                <td><span class="tl tl-green">ADDRESSED</span> &mdash; LVIA will accompany application; single dwelling on 2.98 acres; landscape-led design</td>
+            </tr>
+            <tr>
+                <td><span class="policy-ref">NPPF 215</span></td>
+                <td>Less than substantial harm weighed against public benefits</td>
+                <td><span class="tl tl-green">ADDRESSED</span> &mdash; Paddock is separate title, likely not curtilage; setting impact only. Enhancement of setting is a public benefit.</td>
+            </tr>
+            <tr>
+                <td><span class="policy-ref">DEV20</span></td>
+                <td>Place shaping and design quality</td>
+                <td><span class="tl tl-green">MET</span> &mdash; Paragraph 84(e) inherently requires the highest design quality</td>
+            </tr>
+            <tr>
+                <td><span class="policy-ref">DEV25</span></td>
+                <td>Nationally protected landscapes</td>
+                <td><span class="tl tl-amber">TO BE DEMONSTRATED</span> &mdash; Not "major development"; single dwelling is small-scale; LVIA required</td>
+            </tr>
+            <tr>
+                <td><span class="policy-ref">SALC H3</span></td>
+                <td>Principal residence restriction</td>
+                <td><span class="tl tl-green">ACCEPTED</span> &mdash; S106 for principal residence willingly offered; addresses 57% second-home imbalance</td>
+            </tr>
+            <tr>
+                <td><span class="policy-ref">SALC ENV1</span></td>
+                <td>Respect AONB special qualities</td>
+                <td><span class="tl tl-amber">TO BE DEMONSTRATED</span> &mdash; Landscape-led design approach; LVIA to accompany</td>
+            </tr>
+            <tr>
+                <td><span class="policy-ref">SALC B1</span></td>
+                <td>Design quality appropriate to context</td>
+                <td><span class="tl tl-green">MET</span> &mdash; Design Review Panel engagement ensures independent quality assurance</td>
+            </tr>
+        </table>
+
+        <h4 style="font-size: 15px; font-weight: 700; margin: 16px 0 10px; color: var(--orange);">4.4 Why This Site Suits 84(e)</h4>
+        <ul style="padding-left: 20px; font-size: 14px; color: var(--text-secondary);">
+            <li style="margin-bottom: 8px;"><strong>Functional paddock, not pristine landscape:</strong> The current setting is a mown paddock with a helipad &mdash; functional land with limited landscape value. Almost any well-designed development would <em>enhance</em> it through considered planting, landscaping, and architecture.</li>
+            <li style="margin-bottom: 8px;"><strong>Separate title reduces heritage friction:</strong> DN263903 is not the designed gardens of a listed building. The curtilage argument (see Heritage Impact tab) strongly favours exclusion, meaning development faces a setting-impact test, not a direct LBC requirement.</li>
+            <li style="margin-bottom: 8px;"><strong>Values justify the architectural investment:</strong> A 3,000&ndash;4,000 sq ft home on Moult Hill achieves &pound;2.5&ndash;4m. This supports &pound;500k+ in architectural fees and design review costs &mdash; the economics work.</li>
+            <li style="margin-bottom: 8px;"><strong>Principal residence addresses local need:</strong> Salcombe's 57% second-home rate is the planning issue of the day. A permanently occupied, architect-designed family home is the antithesis of absentee ownership.</li>
+            <li style="margin-bottom: 8px;"><strong>Successful precedent in designated landscapes:</strong> Nithurst Farm (South Downs NP), Lake House (High Weald AONB), Coach House (South Downs NP), Water Farm (Dedham Vale AONB) all demonstrate that 84(e) is achievable in protected landscapes.</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <div class="card-title">5. Principal Residence &mdash; A Feature, Not a Constraint</div>
+        <p class="section-intro">
+            The SALC H3 principal residence restriction, upheld at appeal in June 2025, requires all new dwellings in Salcombe to be occupied as a principal residence, secured by S106 agreement registered against the title.
+        </p>
+        <p class="section-intro">
+            We positively embrace this requirement. The proposals deliver <strong>two new principal-residence homes</strong> in a parish where 45.3% of dwellings are second homes or holiday lets (574 second homes + 299 holiday lets). Both proposals directly address the sustainability concerns that underpin SALC H3. We will willingly enter into S106 agreements for both dwellings.
+        </p>
+        <div class="callout callout-green">
+            <strong>Planning Narrative</strong>
+            The Salcombe Neighbourhood Plan was created specifically because the community identified second-home dominance as an existential threat to the parish's sustainability. These proposals deliver exactly what the plan asked for: high-quality, permanently occupied homes that contribute to a year-round community. This is policy compliance in its purest form.
+        </div>
+    </div>
+</section>
+
+<!-- ────────────── TAB 3: HERITAGE IMPACT ────────────── -->
+<section class="tab-content" id="tab-heritage">
+
+    <div class="card">
+        <div class="card-title">1. Significance of Falconers (Grade II &mdash; HE 1289162)</div>
+        <p class="section-intro">
+            Falconers derives its significance from the following heritage values:
+        </p>
+        <table>
+            <tr><th style="width:25%">Heritage Value</th><th>Assessment</th></tr>
+            <tr>
+                <td><strong>Architectural Interest</strong></td>
+                <td>High. A rare surviving example of the Kentish Wealden vernacular, executed in English oak with exceptional craftsmanship. The full-height great hall with central timber truss is the centrepiece. Stained glass, studded oak doors, and carved details survive.</td>
+            </tr>
+            <tr>
+                <td><strong>Historic Interest</strong></td>
+                <td>High. Built for the 1925 British Empire Exhibition at Wembley &mdash; a nationally significant event. Subsequently dismantled and transported to Salcombe, demonstrating the portability and endurance of traditional timber construction. The building is a physical artefact of Empire-era craft promotion.</td>
+            </tr>
+            <tr>
+                <td><strong>Artistic Interest</strong></td>
+                <td>Moderate. The stained glass, carved beams, and decorative elements have artistic merit. The gardens may reflect Gertrude Jekyll's influence, though this is unconfirmed.</td>
+            </tr>
+            <tr>
+                <td><strong>Setting</strong></td>
+                <td>The elevated position on Moult Hill, the lime-tree-lined drive, formal gardens, and views across the estuary all contribute positively to significance. The heritage cluster (The Moult II*, Lodge II, Summerhouse II) creates a group value.</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="card">
+        <div class="card-title">2. Curtilage Analysis &mdash; DN263903 (Paddock)</div>
+        <p class="section-intro">
+            The critical question for Proposal 2 is whether the 2.98-acre paddock (DN263903) falls within the curtilage of the listed building. If it does, any structures on the land pre-dating 1 July 1948 are also listed, and Listed Building Consent would be required for development affecting the character of the curtilage. If it does not, development on DN263903 must still respect the <em>setting</em> of Falconers but is not subject to direct LBC requirements for the land itself.
+        </p>
+
+        <h4 style="font-size: 15px; font-weight: 700; margin: 16px 0 10px; color: var(--orange);">2.1 The Three <em>Calderdale</em> Tests</h4>
+        <p class="section-intro">
+            <span class="case-ref">Calderdale [1982] QB 1019</span> established the three-part test for curtilage, refined by <span class="case-ref">Debenhams [1987] AC 396</span>, <span class="case-ref">Dyer v Dorset [1989]</span>, and <span class="case-ref">Egerton v Taunton Deane [2008] EWHC 2752</span>. <span class="case-ref">Historic England Advice Note 10</span> (updated June 2025) provides the current guidance. All factors are assessed at the <strong>date of listing</strong>.
+        </p>
+
+        <table>
+            <tr><th style="width:25%">Test</th><th>Analysis</th><th style="width:15%">Finding</th></tr>
+            <tr>
+                <td><strong>1. Physical Layout</strong></td>
+                <td>
+                    DN263903 sits to the west/northwest of Falconers, separated from the designed gardens by boundary features. The paddock is open grassland with a helipad &mdash; physically and visually distinct from the intimate, planted gardens around the house. In <em>Dyer v Dorset</em>, the court held that curtilage extends to "the stables and other outbuildings, the gardens and the rough grass up to the ha-ha" but does NOT include the wider country park. The paddock at Falconers is analogous to the country park, not the domestic garden.
+                </td>
+                <td><span class="tl tl-green">OUTSIDE</span></td>
+            </tr>
+            <tr>
+                <td><strong>2. Ownership (Historic &amp; Current)</strong></td>
+                <td>
+                    DN263903 is held under a <strong>separate registered title</strong> with a separate ownership history. In <em>Egerton v Taunton Deane</em>, Justice Sullivan held that a farmhouse was "physically separated from, and functionally distinct from, the agricultural land" even under common ownership. Where separate titles exist, this is strong (though not conclusive) evidence of distinct curtilages. Planning inspectors have cited separate Land Registry titles as supporting evidence for exclusion from curtilage.
+                </td>
+                <td><span class="tl tl-green">OUTSIDE</span></td>
+            </tr>
+            <tr>
+                <td><strong>3. Use/Function (Historic &amp; Current)</strong></td>
+                <td>
+                    The paddock has been in <strong>agricultural/grazing use</strong>, not ancillary domestic use. In <em>Debenhams</em>, the House of Lords emphasised that curtilage requires an "ancillary" functional relationship. In <em>Egerton</em>, agricultural buildings in agricultural use were held NOT to be curtilage-listed despite common ownership with the listed farmhouse. A paddock used for grazing or a helipad is functional land serving a distinct purpose, not ancillary to the domestic occupation of Falconers.
+                </td>
+                <td><span class="tl tl-green">OUTSIDE</span></td>
+            </tr>
+        </table>
+
+        <div class="callout callout-green" style="margin-top: 16px;">
+            <strong>Conclusion: DN263903 Is Likely Outside the Curtilage</strong>
+            On all three <em>Calderdale</em> tests &mdash; physical layout, ownership history, and functional use &mdash; the paddock land is more likely than not to fall outside the curtilage of the listed building. This is consistent with <em>Dyer</em> (country estate paddocks beyond the ha-ha), <em>Egerton</em> (agricultural land functionally distinct from farmhouse), and Historic England Advice Note 10 (self-contained land with separate curtilage). We recommend seeking formal confirmation from the LPA as part of this pre-application process.
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-title">3. Setting Assessment &mdash; Both Proposals</div>
+        <p class="section-intro">
+            Even where development falls outside the curtilage, the <em>setting</em> of Falconers and the neighbouring listed buildings must be assessed. We apply <span class="case-ref">Historic England GPA3</span> (Setting of Heritage Assets).
+        </p>
+
+        <h4 style="font-size: 15px; font-weight: 700; margin: 16px 0 10px; color: var(--orange);">3.1 Heritage Assets Affected</h4>
+        <table>
+            <tr><th>Asset</th><th>Grade</th><th>HE Ref</th><th>Impact of Proposal 1</th><th>Impact of Proposal 2</th></tr>
+            <tr>
+                <td>Falconers</td>
+                <td>II</td>
+                <td>1289162</td>
+                <td><span class="tl tl-green">POSITIVE</span> &mdash; Secures fabric</td>
+                <td><span class="tl tl-amber">NEUTRAL-LOW</span> &mdash; Setting only; screened by woodland</td>
+            </tr>
+            <tr>
+                <td>The Moult</td>
+                <td>II*</td>
+                <td>&mdash;</td>
+                <td><span class="tl tl-green">NONE</span></td>
+                <td><span class="tl tl-amber">LOW</span> &mdash; Intervisibility to be assessed via LVIA</td>
+            </tr>
+            <tr>
+                <td>Former Lodge to The Moult</td>
+                <td>II</td>
+                <td>1213029</td>
+                <td><span class="tl tl-green">NONE</span></td>
+                <td><span class="tl tl-green">NONE</span> &mdash; No intervisibility</td>
+            </tr>
+            <tr>
+                <td>Moult Summerhouse</td>
+                <td>II</td>
+                <td>1213027</td>
+                <td><span class="tl tl-green">NONE</span></td>
+                <td><span class="tl tl-green">NONE</span> &mdash; Connected to The Moult by wall; screened</td>
+            </tr>
+        </table>
+
+        <h4 style="font-size: 15px; font-weight: 700; margin: 16px 0 10px; color: var(--orange);">3.2 Harm Assessment (Proposal 2)</h4>
+        <p class="section-intro">
+            Any impact on the setting of Falconers from a dwelling on the paddock would constitute, at most, <strong>less than substantial harm</strong> at the lower end of the spectrum, for the following reasons:
+        </p>
+        <ul style="padding-left: 20px; font-size: 14px; color: var(--text-secondary);">
+            <li style="margin-bottom: 8px;">The paddock makes a <strong>limited positive contribution</strong> to the significance of Falconers &mdash; it is functional grassland, not the designed landscape that forms the primary setting experience</li>
+            <li style="margin-bottom: 8px;">Existing mature woodland and boundary planting <strong>screens</strong> much of the paddock from the principal elevations of Falconers</li>
+            <li style="margin-bottom: 8px;">The dwelling's position can be optimised through the design process to <strong>minimise intervisibility</strong> with the listed building and its designed setting</li>
+            <li style="margin-bottom: 8px;">Under <span class="policy-ref">NPPF 215</span>, any less-than-substantial harm must be weighed against public benefits &mdash; which here include: (a) a principal-residence home addressing Salcombe's housing imbalance; (b) architecture of truly outstanding quality that enhances the rural setting; (c) landscape and biodiversity enhancement through managed planting</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <div class="card-title">4. Listed Building Consent Requirements</div>
+        <table>
+            <tr><th>Element</th><th>LBC Required?</th><th>Rationale</th></tr>
+            <tr>
+                <td>Outbuilding conversion (pre-1948 structures)</td>
+                <td><span class="tl tl-red">YES</span></td>
+                <td>If outbuildings pre-date 1 July 1948, they are curtilage-listed. Any works affecting character require LBC.</td>
+            </tr>
+            <tr>
+                <td>Outbuilding conversion (post-1948 structures)</td>
+                <td><span class="tl tl-amber">MAYBE</span></td>
+                <td>Not curtilage-listed, but works within the setting of the listed building may require LBC if they affect the character of the listed building.</td>
+            </tr>
+            <tr>
+                <td>New dwelling on DN263903</td>
+                <td><span class="tl tl-green">NO</span></td>
+                <td>Outside curtilage (our position). Setting impact assessed through planning application, not LBC. If LPA disagrees on curtilage, this changes.</td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+<!-- ────────────── TAB 4: LANDSCAPE & ECOLOGY ────────────── -->
+<section class="tab-content" id="tab-landscape">
+
+    <div class="card">
+        <div class="card-title">1. South Devon National Landscape</div>
+        <p class="section-intro">
+            The site falls within the South Devon National Landscape (redesignated from AONB in Autumn 2023 under the Levelling-up and Regeneration Act 2023). Section 245 of LURA 2023 places a statutory duty on the LPA to <em>"seek to further the statutory purposes"</em> of National Landscapes &mdash; a stronger duty than the previous CROW Act s.85 "have regard to."
+        </p>
+
+        <h4 style="font-size: 15px; font-weight: 700; margin: 16px 0 10px; color: var(--orange);">1.1 Is This "Major Development"?</h4>
+        <p class="section-intro">
+            <span class="policy-ref">NPPF 190</span> states that major development in a National Landscape should be refused unless exceptional circumstances apply. However, "major development" in this context is <strong>not defined by the standard 10-unit threshold</strong>. It is a matter of fact and degree, considering the nature, scale, setting, and potential significant adverse impact.
+        </p>
+        <div class="callout callout-green">
+            <strong>Our Position: Neither Proposal Constitutes Major Development</strong>
+            <ul style="margin-top: 8px; padding-left: 20px;">
+                <li><strong>Proposal 1:</strong> Conversion of existing outbuildings with no new footprint, no change to massing, no landscape impact. This is unambiguously not major development.</li>
+                <li><strong>Proposal 2:</strong> A single dwelling on 2.98 acres, carefully sited within existing boundary planting. Inspectors have consistently found that a single dwelling does not constitute major development in an AONB (see <em>Sunny Ridge</em> APP/K1128/W/22/3301425, allowed in Salcombe). The NPPF 190 test is not engaged.</li>
+            </ul>
+        </div>
+
+        <h4 style="font-size: 15px; font-weight: 700; margin: 16px 0 10px; color: var(--orange);">1.2 LVIA Scope</h4>
+        <p class="section-intro">A full Landscape and Visual Impact Assessment will accompany the planning application for Proposal 2. The scope should address:</p>
+        <ul style="padding-left: 20px; font-size: 14px; color: var(--text-secondary);">
+            <li style="margin-bottom: 6px;">Viewpoint analysis from: Moult Hill road, North Sands beach, South West Coast Path, Salcombe harbour/waterfront, and key elevated positions</li>
+            <li style="margin-bottom: 6px;">Assessment of the paddock's contribution to the landscape character of the National Landscape</li>
+            <li style="margin-bottom: 6px;">Landscape enhancement strategy: native woodland planting, hedgerow restoration, biodiversity net gain</li>
+            <li style="margin-bottom: 6px;">Seasonal analysis (winter views when deciduous screening is reduced)</li>
+            <li style="margin-bottom: 6px;">Night-time impact assessment (lighting is critical for bat habitat)</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <div class="card-title">2. South Hams SAC &mdash; Greater Horseshoe Bats</div>
+        <p class="section-intro">
+            The South Hams Special Area of Conservation is designated for the protection of greater horseshoe bats (<em>Rhinolophus ferrumequinum</em>) &mdash; the largest UK population (1,000+ adults, 31% of the national population). The SAC designation triggers Habitats Regulations Assessment requirements for development within Sustenance Zones and Landscape Connectivity Zones.
+        </p>
+
+        <div class="callout callout-orange">
+            <strong>Action Required</strong>
+            <ul style="margin-top: 8px; padding-left: 20px;">
+                <li>Confirm whether Moult Hill falls within a South Hams SAC Sustenance Zone or Landscape Connectivity Zone (check Natural England's consultation zone maps)</li>
+                <li>Commission a Preliminary Ecological Appraisal (PEA) covering both proposals</li>
+                <li>If within a consultation zone, prepare a shadow Habitats Regulations Assessment</li>
+                <li><strong>Lighting design is critical</strong> &mdash; external lighting must be minimised and bat-friendly (warm white, &lt;2700K, downward-facing, no light spill to boundaries)</li>
+                <li>Existing outbuildings should be assessed for bat roost potential before conversion</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-title">3. Other Ecological &amp; Environmental Constraints</div>
+        <table>
+            <tr><th>Constraint</th><th>Status</th><th>Action</th></tr>
+            <tr>
+                <td>Salcombe-Kingsbridge Estuary SSSI</td>
+                <td><span class="tl tl-green">LOW RISK</span></td>
+                <td>Below the site, not on it. No direct impact anticipated. Assess surface water drainage pathway.</td>
+            </tr>
+            <tr>
+                <td>Flood Risk</td>
+                <td><span class="tl tl-green">ZONE 1</span></td>
+                <td>Elevated hillside. No fluvial/tidal risk. Surface water drainage assessment may be requested.</td>
+            </tr>
+            <tr>
+                <td>Tree Preservation Orders</td>
+                <td><span class="tl tl-amber">LIKELY</span></td>
+                <td>TPOs confirmed on Moult Hill (966 W1, 676 W1). Arboricultural survey required for both proposals. Lime-tree drive and mature woodland likely protected.</td>
+            </tr>
+            <tr>
+                <td>Biodiversity Net Gain</td>
+                <td><span class="tl tl-amber">REQUIRED</span></td>
+                <td>Mandatory 10% BNG. Paddock grassland has baseline value. Landscape enhancement strategy (native planting, hedgerow creation) to deliver measurable gain.</td>
+            </tr>
+            <tr>
+                <td>Conservation Area</td>
+                <td><span class="tl tl-amber">CHECK</span></td>
+                <td>Confirm whether Moult Hill falls within the Salcombe Conservation Area boundary (designated 1973, extended 1985/1989/2010).</td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+<!-- ────────────── TAB 5: DESIGN BRIEF ────────────── -->
+<section class="tab-content" id="tab-design">
+
+    <div class="card">
+        <div class="card-title">Design Brief &mdash; Paragraph 84(e) Dwelling (DN263903)</div>
+        <p class="section-intro">
+            This brief sets out the design parameters for the architect. It is not a design &mdash; it defines what the design must achieve to satisfy the policy tests, the constraints, and the market.
+        </p>
+    </div>
+
+    <div class="card">
+        <div class="card-title">1. Non-Negotiable Requirements</div>
+        <table>
+            <tr><th style="width:30%">Requirement</th><th>Detail</th></tr>
+            <tr>
+                <td><strong>Truly outstanding architecture</strong></td>
+                <td>The design must be capable of endorsement by an independent Design Review Panel. 80% of DRP-endorsed 84(e) schemes are approved. This is not optional &mdash; it is the single most important factor for consent.</td>
+            </tr>
+            <tr>
+                <td><strong>Significantly enhance setting</strong></td>
+                <td>The development must demonstrably improve the landscape quality of the paddock. "Change" is not "enhancement." The design + landscape strategy together must leave the 2.98 acres measurably better than a mown paddock with a helipad.</td>
+            </tr>
+            <tr>
+                <td><strong>Sensitive to local character</strong></td>
+                <td>Must respond to: the Wealden oak tradition of Falconers, the maritime/coastal character of Salcombe, the wooded hillside landscape, and the South Devon vernacular. This does not mean pastiche &mdash; it means an intelligent, contemporary response to place.</td>
+            </tr>
+            <tr>
+                <td><strong>Respect listed building setting</strong></td>
+                <td>The dwelling must not compete with or diminish the experience of Falconers. Subordinate in scale, respectful in positioning, screened by topography and planting where appropriate.</td>
+            </tr>
+            <tr>
+                <td><strong>Bat-friendly</strong></td>
+                <td>Zero external light spill to boundaries. Warm white (&lt;2700K), downward-facing, motion-activated only. No illuminated facades. Dark corridors maintained along all boundary hedgerows.</td>
+            </tr>
+            <tr>
+                <td><strong>Principal residence</strong></td>
+                <td>Designed as a permanent family home, not a holiday let or second home. Year-round habitation: proper heating, storage, utility space, home working provision.</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="card">
+        <div class="card-title">2. Design Parameters</div>
+        <div class="kv-grid">
+            <div class="kv-item">
+                <div class="kv-label">Accommodation</div>
+                <div class="kv-value">4&ndash;5 bedrooms</div>
+            </div>
+            <div class="kv-item">
+                <div class="kv-label">Gross Internal Area</div>
+                <div class="kv-value">3,000&ndash;4,000 sq ft</div>
+            </div>
+            <div class="kv-item">
+                <div class="kv-label">Max Height</div>
+                <div class="kv-value">Single storey preferred; 1.5 storey max</div>
+            </div>
+            <div class="kv-item">
+                <div class="kv-label">Materiality</div>
+                <div class="kv-value">Natural, local, sustainable</div>
+            </div>
+            <div class="kv-item">
+                <div class="kv-label">Energy</div>
+                <div class="kv-value">Exceed RIBA 2030 targets</div>
+            </div>
+            <div class="kv-item">
+                <div class="kv-label">Parking</div>
+                <div class="kv-value">Integrated / concealed</div>
+            </div>
+        </div>
+
+        <h4 style="font-size: 15px; font-weight: 700; margin: 20px 0 10px; color: var(--orange);">Material Palette Guidance</h4>
+        <ul style="padding-left: 20px; font-size: 14px; color: var(--text-secondary);">
+            <li style="margin-bottom: 6px;"><strong>Primary:</strong> English oak (echoing Falconers), local Devon stone, green/living roof systems</li>
+            <li style="margin-bottom: 6px;"><strong>Secondary:</strong> Cor-ten steel, zinc, rammed earth, hand-made clay tiles</li>
+            <li style="margin-bottom: 6px;"><strong>Glazing:</strong> Generous but controlled &mdash; frame views without creating a glowing beacon at night. Operable shutters or brise-soleil for solar control and night-time privacy</li>
+            <li style="margin-bottom: 6px;"><strong>Avoid:</strong> Render, UPVC, reconstituted stone, anything that reads as suburban</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <div class="card-title">3. Landscape Enhancement Strategy</div>
+        <p class="section-intro">
+            The landscape strategy is as important as the architecture for 84(e). The paddock currently contributes minimal biodiversity or landscape value. The enhancement package should include:
+        </p>
+        <ul style="padding-left: 20px; font-size: 14px; color: var(--text-secondary);">
+            <li style="margin-bottom: 8px;"><strong>Native woodland planting:</strong> Mixed native species (oak, ash, hazel, field maple, holly) to extend existing woodland character and provide long-term screening and habitat</li>
+            <li style="margin-bottom: 8px;"><strong>Wildflower meadow:</strong> Convert mown paddock to species-rich grassland &mdash; significant biodiversity gain and landscape enhancement</li>
+            <li style="margin-bottom: 8px;"><strong>Hedgerow restoration:</strong> Devon bank hedgerows along boundaries &mdash; bat foraging corridors and landscape character</li>
+            <li style="margin-bottom: 8px;"><strong>Orchard:</strong> Heritage apple/pear varieties &mdash; productive landscape with community/character value</li>
+            <li style="margin-bottom: 8px;"><strong>Sustainable drainage:</strong> Rain gardens, swales, permeable surfaces &mdash; surface water management as landscape feature</li>
+        </ul>
+        <div class="callout callout-green">
+            <strong>The Enhancement Argument</strong>
+            A helipad on mown grass becomes a wildflower meadow with native woodland, a habitat corridor for horseshoe bats, and a single, exquisitely crafted home. This is not "change" &mdash; it is measurable, quantifiable enhancement. The BNG metric, the LVIA, and the ecological assessment will all demonstrate net improvement.
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-title">4. Recommended Architects</div>
+        <p class="section-intro">
+            The following practices have a proven track record with Paragraph 84(e) schemes, including approvals in designated landscapes:
+        </p>
+        <table>
+            <tr><th>Practice</th><th>Notable 84(e) Schemes</th><th>Landscape Experience</th></tr>
+            <tr>
+                <td><strong>Hawkes Architecture</strong></td>
+                <td>Crossway (Kent), Downley House (Hampshire), Coach House (South Downs NP), Lake House (High Weald AONB), Foxbury Lane (South Downs NP)</td>
+                <td>Multiple AONB/NP approvals; Grand Designs features; most successful 84(e) practice in England</td>
+            </tr>
+            <tr>
+                <td><strong>Studio Bark</strong></td>
+                <td>Black Barn (Suffolk), Cliff Farm, Water Farm (Dedham Vale AONB)</td>
+                <td>Off-grid/zero-carbon specialists; AONB approvals; sustainability-led</td>
+            </tr>
+            <tr>
+                <td><strong>Adam Richards Architects</strong></td>
+                <td>Nithurst Farm (South Downs NP &mdash; RIBA House of the Year shortlist 2019)</td>
+                <td>National Park approval; contemporary contextual approach</td>
+            </tr>
+            <tr>
+                <td><strong>Rural Office for Architecture</strong></td>
+                <td>Caring Wood (Kent &mdash; RIBA Stirling Prize 2017)</td>
+                <td>Carbon-neutral; 25,000 trees planted; local materials; oast-house form</td>
+            </tr>
+        </table>
+        <div class="callout callout-orange" style="margin-top: 16px;">
+            <strong>Design Review Panel</strong>
+            We strongly recommend engaging an independent Design Review Panel before submitting the planning application. DRP endorsement increases the approval rate to approximately 80%. The RIBA South West Design Review service or the Design Review Panel (designreviewpanel.co.uk) are suitable bodies. The cost is typically &pound;3,000&ndash;5,000 per session.
+        </div>
+    </div>
+</section>
+
+<!-- ────────────── TAB 6: MARKET & VIABILITY ────────────── -->
+<section class="tab-content" id="tab-viability">
+
+    <div class="card">
+        <div class="card-title">1. Market Context</div>
+        <div class="kv-grid">
+            <div class="kv-item">
+                <div class="kv-label">Avg Detached Price (TQ8)</div>
+                <div class="kv-value large">&pound;1,167,396</div>
+            </div>
+            <div class="kv-item">
+                <div class="kv-label">Price per sq m (TQ8)</div>
+                <div class="kv-value large">&pound;5,021</div>
+            </div>
+            <div class="kv-item">
+                <div class="kv-label">Second Homes in Parish</div>
+                <div class="kv-value large" style="color: var(--red);">45.3%</div>
+            </div>
+            <div class="kv-item">
+                <div class="kv-label">12-Month Trend</div>
+                <div class="kv-value" style="color: var(--red);">-7.2% nominal</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-title">2. Moult Hill Comparables</div>
+        <table>
+            <tr><th>Property</th><th>Type</th><th>Price</th><th>Date</th></tr>
+            <tr><td>Beechwood</td><td>Detached</td><td style="font-weight:700; color:var(--green);">&pound;3,500,000</td><td>Sep 2022</td></tr>
+            <tr><td>Binnacle House</td><td>4-bed detached</td><td style="font-weight:700; color:var(--green);">&pound;1,550,000</td><td>Sep 2023</td></tr>
+            <tr><td>Hawks Ridge</td><td>2-bed detached</td><td style="font-weight:700; color:var(--green);">&pound;1,450,000</td><td>Sep 2019</td></tr>
+            <tr><td>Bridleway House (listed)</td><td>5-bed new build</td><td style="font-weight:700; color:var(--green);">&pound;3,000,000</td><td>Current</td></tr>
+            <tr><td>Cedar House (listed)</td><td>5-bed detached</td><td style="font-weight:700; color:var(--green);">&pound;2,500,000</td><td>Current</td></tr>
+        </table>
+    </div>
+
+    <div class="card">
+        <div class="card-title">3. Development Appraisal &mdash; Combined Scheme</div>
+
+        <h4 style="font-size: 15px; font-weight: 700; margin: 16px 0 10px; color: var(--orange);">3.1 Costs</h4>
+        <table>
+            <tr><th style="width:45%">Item</th><th style="width:25%">Estimate</th><th>Notes</th></tr>
+            <tr><td>Site acquisition</td><td>&pound;4,750,000</td><td>Guide price (negotiable given market conditions)</td></tr>
+            <tr><td>Acquisition costs (SDLT + legals)</td><td>&pound;530,000</td><td>SDLT at &pound;4.75m: ~&pound;500k; legals ~&pound;30k</td></tr>
+            <tr><td colspan="3" style="background: var(--warm-bg-alt); font-weight: 700;">Proposal 1 &mdash; Outbuilding Conversion</td></tr>
+            <tr><td>Build costs (150 sqm @ &pound;2,500/sqm)</td><td>&pound;375,000</td><td>Heritage-grade conversion specification</td></tr>
+            <tr><td>Professional fees (15%)</td><td>&pound;56,000</td><td>Heritage architect, structural engineer, bat survey</td></tr>
+            <tr><td>Planning + LBC fees</td><td>&pound;5,000</td><td>Application fees + pre-app</td></tr>
+            <tr><td colspan="3" style="background: var(--warm-bg-alt); font-weight: 700;">Proposal 2 &mdash; 84(e) Dwelling</td></tr>
+            <tr><td>Build costs (350 sqm @ &pound;4,500/sqm)</td><td>&pound;1,575,000</td><td>Exceptional specification; natural materials; RIBA 2030+</td></tr>
+            <tr><td>Architect fees (12&ndash;15%)</td><td>&pound;220,000</td><td>Award-calibre practice; competition-level design development</td></tr>
+            <tr><td>Design Review Panel</td><td>&pound;5,000</td><td>One or two DRP sessions</td></tr>
+            <tr><td>LVIA</td><td>&pound;12,000</td><td>Full landscape and visual impact assessment</td></tr>
+            <tr><td>Ecology (PEA + bat survey + BNG)</td><td>&pound;8,000</td><td>Preliminary ecological appraisal, bat activity surveys, BNG metric</td></tr>
+            <tr><td>Heritage Impact Assessment</td><td>&pound;6,000</td><td>Setting assessment for 4 listed buildings</td></tr>
+            <tr><td>Arboricultural survey</td><td>&pound;3,000</td><td>Tree survey + impact assessment + protection plan</td></tr>
+            <tr><td>Planning application fee</td><td>&pound;578</td><td>Single new dwelling (current fee)</td></tr>
+            <tr><td>Contingency (10%)</td><td>&pound;200,000</td><td>Heritage works, unforeseen ground conditions</td></tr>
+            <tr style="background: var(--navy); color: white;">
+                <td style="font-weight: 700;">TOTAL ALL-IN COST</td>
+                <td style="font-weight: 700;">&pound;7,740,000</td>
+                <td style="font-weight: 700;">&nbsp;</td>
+            </tr>
+        </table>
+
+        <h4 style="font-size: 15px; font-weight: 700; margin: 20px 0 10px; color: var(--orange);">3.2 Gross Development Value</h4>
+        <table>
+            <tr><th style="width:45%">Asset</th><th style="width:25%">Value</th><th>Basis</th></tr>
+            <tr><td>Falconers (improved, with annexe)</td><td>&pound;4,500,000</td><td>Estimated value &pound;3.88m + annexe premium &pound;500&ndash;750k</td></tr>
+            <tr><td>84(e) Dwelling (DN263903)</td><td>&pound;3,000,000</td><td>Mid-range: Beechwood comp at &pound;3.5m; Bridleway House at &pound;3m; conservative</td></tr>
+            <tr style="background: var(--green-bg);">
+                <td style="font-weight: 700;">TOTAL GDV</td>
+                <td style="font-weight: 700; color: var(--green);">&pound;7,500,000</td>
+                <td>&nbsp;</td>
+            </tr>
+        </table>
+
+        <h4 style="font-size: 15px; font-weight: 700; margin: 20px 0 10px; color: var(--orange);">3.3 Residual Analysis</h4>
+        <table>
+            <tr><th>Scenario</th><th>GDV</th><th>Cost</th><th>Margin</th></tr>
+            <tr>
+                <td>Conservative (retain Falconers + sell 84(e))</td>
+                <td>&pound;7,500,000</td>
+                <td>&pound;7,740,000</td>
+                <td style="color: var(--red);">&minus;&pound;240,000</td>
+            </tr>
+            <tr>
+                <td>Mid-case (negotiate purchase to &pound;4.25m)</td>
+                <td>&pound;7,500,000</td>
+                <td>&pound;7,290,000</td>
+                <td style="color: var(--green);">+&pound;210,000</td>
+            </tr>
+            <tr>
+                <td>Optimistic (84(e) achieves &pound;3.5m)</td>
+                <td>&pound;8,000,000</td>
+                <td>&pound;7,740,000</td>
+                <td style="color: var(--green);">+&pound;260,000</td>
+            </tr>
+            <tr style="background: var(--green-bg);">
+                <td><strong>With Phase 2 subdivision (future)</strong></td>
+                <td><strong>&pound;9,500,000+</strong></td>
+                <td><strong>&pound;8,000,000</strong></td>
+                <td style="color: var(--green); font-weight: 700;">+&pound;1,500,000+</td>
+            </tr>
+        </table>
+
+        <div class="callout callout-orange" style="margin-top: 16px;">
+            <strong>Viability Assessment</strong>
+            At the current guide price of &pound;4.75m, the combined scheme is <strong>marginal on a pure development profit basis</strong>. The real value is either: (a) acquiring a stunning principal residence with a development plot that funds the purchase; (b) negotiating the purchase price down 5&ndash;10% to create margin; or (c) pursuing the subdivision of Falconers as a Phase 2 play, which unlocks significant additional value. This is a long-term estate optimisation, not a quick flip.
+        </div>
+    </div>
+</section>
+
+<!-- ────────────── TAB 7: PRE-APP QUESTIONS ────────────── -->
+<section class="tab-content" id="tab-questions">
+
+    <div class="card">
+        <div class="card-title">Pre-Application Questions for South Hams DC</div>
+        <p class="section-intro">
+            We request the Council's formal response to the following specific questions, which will inform the design development and application strategy:
+        </p>
+    </div>
+
+    <div class="numbered-question">
+        <div class="q-num">Q1 &mdash; Curtilage</div>
+        <div class="q-text">Does the Council agree that the paddock land (Title DN263903, 2.98 acres) falls <strong>outside the curtilage</strong> of Falconers (Grade II, HE 1289162)?</div>
+        <div class="q-context">We have set out our analysis applying the three Calderdale tests and Historic England Advice Note 10. We request the conservation officer's formal view on this point, as it determines whether Listed Building Consent is required for Proposal 2.</div>
+    </div>
+
+    <div class="numbered-question">
+        <div class="q-num">Q2 &mdash; Conservation Area</div>
+        <div class="q-text">Does Moult Hill fall within the designated <strong>Salcombe Conservation Area</strong>?</div>
+        <div class="q-context">The Conservation Area was designated in 1973 and extended in 1985, 1989, and 2010. We have been unable to confirm the precise boundary in relation to Moult Hill from published materials.</div>
+    </div>
+
+    <div class="numbered-question">
+        <div class="q-num">Q3 &mdash; Paragraph 84(e) in Principle</div>
+        <div class="q-text">Does the Council accept that NPPF Paragraph 84(e) is a <strong>viable policy route</strong> for a new dwelling on the paddock land (DN263903), subject to the design meeting the "truly outstanding" test?</div>
+        <div class="q-context">We note that ~150 dwellings have been consented nationally under this policy, including 11 within National Landscapes and multiple within National Parks. We are not asking the Council to approve a design at this stage — only whether the principle is acceptable on this site.</div>
+    </div>
+
+    <div class="numbered-question">
+        <div class="q-num">Q4 &mdash; Major Development</div>
+        <div class="q-text">Does the Council agree that a single dwelling on 2.98 acres does <strong>not</strong> constitute "major development" within the meaning of NPPF Paragraph 190?</div>
+        <div class="q-context">The Sunny Ridge appeal (APP/K1128/W/22/3301425) in Salcombe found a replacement dwelling was not major development. We submit that a single new dwelling, carefully sited and landscape-led, is similarly not major development as a matter of fact and degree.</div>
+    </div>
+
+    <div class="numbered-question">
+        <div class="q-num">Q5 &mdash; Design Review</div>
+        <div class="q-text">Would the Council support the applicant engaging an <strong>independent Design Review Panel</strong> prior to submission, and would the Council give significant weight to the Panel's findings?</div>
+        <div class="q-context">DRP endorsement is associated with an ~80% approval rate for 84(e) schemes. We wish to confirm the Council's view on this approach before incurring the cost.</div>
+    </div>
+
+    <div class="numbered-question">
+        <div class="q-num">Q6 &mdash; Outbuilding Conversion</div>
+        <div class="q-text">Does the Council have any <strong>in-principle objection</strong> to the conversion of existing outbuildings within the curtilage of Falconers to ancillary residential accommodation?</div>
+        <div class="q-context">We note the precedent at Cedar House, Moult Hill (3164/23/FUL) for a detached annexe, approved 2023.</div>
+    </div>
+
+    <div class="numbered-question">
+        <div class="q-num">Q7 &mdash; South Hams SAC</div>
+        <div class="q-text">Does the site fall within a <strong>South Hams SAC Sustenance Zone or Landscape Connectivity Zone</strong> for greater horseshoe bats?</div>
+        <div class="q-context">If so, we will commission activity surveys and prepare a shadow Habitats Regulations Assessment. We request guidance on survey timing requirements (typically May–September).</div>
+    </div>
+
+    <div class="numbered-question">
+        <div class="q-num">Q8 &mdash; Tree Preservation Orders</div>
+        <div class="q-text">Are there any <strong>Tree Preservation Orders</strong> on or immediately adjacent to either title (DN170405 or DN263903)?</div>
+        <div class="q-context">TPOs are confirmed on Moult Hill (references 966 W1, 676 W1). We request confirmation of which trees/areas are protected on or adjacent to the application sites.</div>
+    </div>
+
+    <div class="numbered-question">
+        <div class="q-num">Q9 &mdash; Access</div>
+        <div class="q-text">Does the Council have any concerns about <strong>highway access</strong> arrangements for a new dwelling on DN263903?</div>
+        <div class="q-context">We will investigate whether DN263903 has independent highway access or relies on a right of way through DN170405. We request any highways observations at this stage.</div>
+    </div>
+
+    <div class="numbered-question">
+        <div class="q-num">Q10 &mdash; SALC H3 Mechanism</div>
+        <div class="q-text">Can the Council confirm the <strong>standard S106 wording</strong> used for the SALC H3 principal residence restriction?</div>
+        <div class="q-context">We are willing to enter into a S106 agreement and would like to agree the wording early to avoid delays at determination stage.</div>
+    </div>
+</section>
+
+<!-- ────────────── TAB 8: SOURCES & PRECEDENT ────────────── -->
+<section class="tab-content" id="tab-sources">
+
+    <div class="card">
+        <div class="card-title">Policy Sources</div>
+        <table>
+            <tr><th style="width:40%">Document</th><th>Reference</th></tr>
+            <tr><td>NPPF (December 2024)</td><td>Paragraphs 84(c), 84(e), 189, 190, 207, 212, 213, 215, 221</td></tr>
+            <tr><td>Plymouth &amp; SW Devon Joint Local Plan</td><td>DEV8, DEV10, DEV20, DEV21, DEV23, DEV25, TTV1, TTV27, TTV29</td></tr>
+            <tr><td>Salcombe Neighbourhood Plan</td><td>SALC H3, SALC ENV1, SALC ENV7, SALC B1</td></tr>
+            <tr><td>Historic England GPA3</td><td>Setting of Heritage Assets (2017)</td></tr>
+            <tr><td>Historic England GPA4</td><td>Enabling Development and Heritage Assets (2020)</td></tr>
+            <tr><td>Historic England Advice Note 10</td><td>Listed Buildings and Curtilage (updated June 2025)</td></tr>
+            <tr><td>South Devon AONB Planning Guidance</td><td>Adopted March 2017</td></tr>
+        </table>
+    </div>
+
+    <div class="card">
+        <div class="card-title">Case Law &amp; Appeal Precedent</div>
+        <table>
+            <tr><th style="width:35%">Case / Appeal</th><th>Citation / Ref</th><th>Relevance</th></tr>
+            <tr><td>AG ex rel Sutcliffe v Calderdale BC</td><td>[1982] QB 1019 (CA)</td><td>Three-part curtilage test: physical layout, ownership, use</td></tr>
+            <tr><td>Debenhams v Westminster CC</td><td>[1987] AC 396 (HL)</td><td>Curtilage requires ancillary functional relationship</td></tr>
+            <tr><td>Dyer v Dorset CC</td><td>[1989] 1 QB 346</td><td>Curtilage extends to gardens and ha-ha, not wider estate</td></tr>
+            <tr><td>R (Egerton) v Taunton Deane BC</td><td>[2008] EWHC 2752</td><td>Agricultural land functionally distinct from listed farmhouse &mdash; not curtilage</td></tr>
+            <tr><td>Skerritts of Nottingham v SoS</td><td>[2000] JPL 789</td><td>Curtilage need not be small; functional relationship key</td></tr>
+            <tr><td>Sunny Ridge, Salcombe</td><td>APP/K1128/W/22/3301425</td><td>Replacement dwelling ALLOWED in Salcombe AONB; not major development</td></tr>
+            <tr><td>Hangar Farm, Salcombe</td><td>APP/K1128/D/18/3219559</td><td>Front porch DISMISSED &mdash; AONB character outside built-up area</td></tr>
+            <tr><td>Coach House, South Downs NP</td><td>APP/Y9507/W/19/3241321</td><td>84(e) ALLOWED within National Park and Conservation Area</td></tr>
+            <tr><td>Cedar House, Moult Hill</td><td>3164/23/FUL</td><td>Detached annexe APPROVED &mdash; same-street precedent</td></tr>
+        </table>
+    </div>
+
+    <div class="card">
+        <div class="card-title">Paragraph 84(e) Approved Schemes &mdash; Designated Landscapes</div>
+        <table>
+            <tr><th>Scheme</th><th>Architect</th><th>Landscape Designation</th><th>Status</th></tr>
+            <tr><td>Coach House, West Ashling</td><td>Hawkes Architecture</td><td>South Downs National Park + Conservation Area</td><td>Allowed at appeal (2020)</td></tr>
+            <tr><td>Lake House, Rotherfield</td><td>Hawkes Architecture</td><td>High Weald AONB</td><td>Allowed at appeal</td></tr>
+            <tr><td>Foxbury Lane</td><td>Hawkes Architecture</td><td>South Downs National Park</td><td>Allowed at appeal</td></tr>
+            <tr><td>Nithurst Farm</td><td>Adam Richards Architects</td><td>South Downs National Park</td><td>Approved (RIBA shortlist 2019)</td></tr>
+            <tr><td>Water Farm, Suffolk</td><td>Studio Bark</td><td>Dedham Vale AONB (edge)</td><td>Approved</td></tr>
+            <tr><td>Caring Wood, Kent</td><td>Rural Office for Architecture</td><td>Kent Downs AONB (near)</td><td>Approved (Stirling Prize 2017)</td></tr>
+            <tr><td>Downley House, Hampshire</td><td>Hawkes Architecture</td><td>AONB setting</td><td>Approved</td></tr>
+        </table>
+    </div>
+
+    <div class="card">
+        <div class="card-title">Historic England Listings</div>
+        <table>
+            <tr><th>Asset</th><th>List Entry</th><th>Grade</th></tr>
+            <tr><td>Falconers</td><td>1289162</td><td>II</td></tr>
+            <tr><td>Former Lodge to The Moult</td><td>1213029</td><td>II</td></tr>
+            <tr><td>Moult Summerhouse to SW of Moult</td><td>1213027</td><td>II</td></tr>
+        </table>
+    </div>
+
+    <div class="card">
+        <div class="card-title">Market Data Sources</div>
+        <table>
+            <tr><th>Source</th><th>Data Used</th></tr>
+            <tr><td>Rightmove sold prices</td><td>Moult Hill comparables; TQ8 average prices</td></tr>
+            <tr><td>HouseMetric</td><td>TQ8 price per sq m analysis</td></tr>
+            <tr><td>GetAgent</td><td>Salcombe average house price 2026</td></tr>
+            <tr><td>South Hams DC</td><td>Second home statistics; council tax premium</td></tr>
+            <tr><td>Salcombe Neighbourhood Plan evidence base</td><td>57% second home rate</td></tr>
+            <tr><td>Knight Frank / OnTheMarket / Signature Spaces</td><td>Current Moult Hill listings</td></tr>
+        </table>
+    </div>
+
+    <div class="card">
+        <div class="card-title">LPA Contact Details</div>
+        <table>
+            <tr><th style="width:30%">Service</th><th>Detail</th></tr>
+            <tr><td>Planning Department</td><td>South Hams District Council, Follaton House, Plymouth Road, Totnes TQ9 5NE</td></tr>
+            <tr><td>Phone</td><td>01803 861234</td></tr>
+            <tr><td>Pre-App Submission</td><td>Online form at southhams.gov.uk/Pre-Application</td></tr>
+            <tr><td>Heritage Duty Planner</td><td>Thursdays 9am&ndash;1pm | &pound;40 for 30 min telephone appointment</td></tr>
+            <tr><td>General Duty Planner</td><td>Mon/Tue/Thu | &pound;20 per appointment</td></tr>
+            <tr><td>Site Visit Rate</td><td>&pound;80/hour per officer (agreed in advance)</td></tr>
+            <tr><td>Pre-App Turnaround</td><td>Acknowledgement within 10 working days; scoping meeting within 4 weeks</td></tr>
+        </table>
+    </div>
+</section>
+
+</main>
+
+<!-- ═══════════════════════════════════════════ FOOTER ═══════ -->
+<footer class="site-footer">
+    <span class="footer-brand">SITE INTELLIGENCE</span> &mdash; Pre-Application Report<br>
+    Falconers, Moult Hill, Salcombe, Devon TQ8 8LF &bull; Titles DN170405 + DN263903 &bull; 23 March 2026<br><br>
+    <em>This report is a desktop appraisal prepared for pre-application discussion purposes. It does not constitute professional planning, legal, or heritage advice. All analysis is based on publicly available information. No site visit has been conducted. A formal Heritage Impact Assessment, LVIA, and ecological surveys will be required to support any planning application.</em>
+</footer>
+
+<!-- ═══════════════════════════════════════════ SCRIPT ═══════ -->
+<script>
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            btn.classList.add('active');
+            document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+        });
+    });
+</script>
+</body>
+</html>
