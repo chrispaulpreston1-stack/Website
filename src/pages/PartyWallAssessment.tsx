@@ -42,7 +42,7 @@ const PartyWallAssessment = () => {
                     name: 'Party Wall Pre-Assessment',
                     description: 'Premium Party Wall Assessment and Notice service for structural engineering projects.',
                     brand: { '@type': 'Organization', name: 'PF & Co Site Intelligence' },
-                    offers: { '@type': 'Offer', price: '425', priceCurrency: 'GBP' }
+                    offers: { '@type': 'Offer', price: '1200', priceCurrency: 'GBP' }
                 }}
             />
 
@@ -73,18 +73,18 @@ const PartyWallAssessment = () => {
                             Let's be clear: we are a high-end structural engineering practice, not a volume party wall surveying factory. We step in when the engineering complexity demands a surveyor who truly understands the structural mechanics behind the legal notices.
                         </p>
                         <div className="flex flex-wrap gap-6 items-center">
-                            <Link to="/contact" className="px-8 py-4 bg-indigo-600 text-white rounded-full font-bold hover:bg-indigo-700 transition-all shadow-xl shadow-indigo-500/20 flex items-center gap-2">
-                                Get a Quote <Zap size={20} className="text-indigo-200" />
+                            <Link to="/order-report?report=party-wall-assessment" className="px-8 py-4 bg-indigo-600 text-white rounded-full font-bold hover:bg-indigo-700 transition-all shadow-xl shadow-indigo-500/20 flex items-center gap-2">
+                                Buy Desktop Report <Zap size={20} className="text-indigo-200" />
                             </Link>
                             <div className="flex flex-col">
                                 <div className="inline-block px-3 py-1 bg-indigo-500/20 border border-indigo-500/30 rounded-full text-indigo-400 text-[10px] uppercase tracking-widest font-bold mb-3 self-start">
-                                    Early Access Pricing - Up to 40% off.
+                                    Early Access Pricing - Fixed Fee
                                 </div>
                                 <div className="flex items-baseline gap-3 mb-1">
-                                    <span className="text-3xl font-mono font-bold text-white">Early Access: £425</span>
-                                    <span className="text-base text-white/50 line-through font-medium">Was £700</span>
+                                    <span className="text-3xl font-mono font-bold text-white">Early Access: £1,200</span>
+                                    <span className="text-base text-white/50 line-through font-medium">Was £1,800</span>
                                 </div>
-                                <span className="text-xs text-white/70 italic">First 50 reports at early access pricing</span>
+                                <span className="text-xs text-white/70 italic">Price is for desktop production and notices. Site visits are subject to an additional fee.</span>
                             </div>
                         </div>
                     </motion.div>
@@ -112,8 +112,11 @@ const PartyWallAssessment = () => {
                                 </div>
 
                                 <h3 className="text-2xl font-bold mb-4 font-accent italic">Engineering-Led Dispute Resolution</h3>
-                                <p className="text-white/60 text-sm leading-relaxed mb-8">
+                                <p className="text-white/60 text-sm leading-relaxed mb-4">
                                     Most Party Wall disputes escalate because the surveyor doesn't understand the engineering drawings. When we act as your surveyor, we preempt neighbour concerns by clearly explaining the structural methodology, preventing minor technically-driven disputes from becoming legal nightmares.
+                                </p>
+                                <p className="text-white/80 font-medium text-sm leading-relaxed mb-8 border-l-2 border-indigo-500 pl-4 py-1">
+                                    We will produce the report and all notices dynamically. This £1,200 fee covers all desktop production. It does not include a site visit. If you or your neighbour require a site visit, this can be accommodated subject to an additional fee.
                                 </p>
 
                                 <div className="space-y-4 pt-8 border-t border-white/10">
@@ -227,8 +230,8 @@ const PartyWallAssessment = () => {
                         </div>
 
                         <div className="mt-12">
-                            <Link to="/contact" className="inline-flex items-center gap-2 px-8 py-4 bg-brand-primary text-white font-bold rounded-xl hover:bg-brand-primary/90 transition-colors">
-                                Discuss Your Party Wall <ArrowRight size={20} />
+                            <Link to="/order-report?report=party-wall-assessment" className="inline-flex items-center gap-2 px-8 py-4 bg-brand-primary text-white font-bold rounded-xl hover:bg-brand-primary/90 transition-colors">
+                                Buy Desktop Report <ArrowRight size={20} />
                             </Link>
                         </div>
                     </div>
@@ -261,8 +264,8 @@ const PartyWallAssessment = () => {
                         Appoint a Party Wall Surveyor who understands the engineering behind the notices.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <Link to="/contact" className="px-8 py-4 bg-indigo-600 text-white font-bold rounded-xl hover:bg-indigo-700 transition-colors inline-block">
-                            Appoint a Surveyor
+                        <Link to="/order-report?report=party-wall-assessment" className="px-8 py-4 bg-indigo-600 text-white font-bold rounded-xl hover:bg-indigo-700 transition-colors inline-block">
+                            Buy Desktop Report
                         </Link>
                     </div>
                 </div>
