@@ -57,6 +57,7 @@ const NoiseImpactAssessment = lazy(() => import('./pages/NoiseImpactAssessment')
 const AirQualityScreening = lazy(() => import('./pages/AirQualityScreening'));
 const Phase1Contamination = lazy(() => import('./pages/Phase1Contamination'));
 const DaylightSunlightAssessment = lazy(() => import('./pages/DaylightSunlightAssessment'));
+const SIDataSources = lazy(() => import('./pages/SIDataSources'));
 const OrderReport = lazy(() => import('./pages/OrderReport'));
 const OrderSuccess = lazy(() => import('./pages/OrderSuccess'));
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
@@ -115,6 +116,7 @@ const Navbar = () => {
         { name: 'Flood Risk Assessment', href: '/site-intelligence/flood-risk-assessment' },
         { name: 'BNG Screening', href: '/site-intelligence/biodiversity-net-gain' },
         { name: 'Geotechnical Desk Study', href: '/site-intelligence/geotechnical-desk-study' },
+        { name: 'Our Data Sources', href: '/site-intelligence/data-sources' },
         { name: 'All Reports', href: '/site-intelligence' },
         { name: 'Report Packages', href: '/report-packages' }
       ]
@@ -577,6 +579,7 @@ export default function App() {
               <Route path="/site-intelligence/air-quality-screening" element={<AirQualityScreening />} />
               <Route path="/site-intelligence/phase-1-contamination" element={<Phase1Contamination />} />
               <Route path="/site-intelligence/daylight-sunlight-assessment" element={<DaylightSunlightAssessment />} />
+              <Route path="/site-intelligence/data-sources" element={<SIDataSources />} />
               <Route path="/subscriptions" element={<Subscriptions />} />
               <Route path="/report-packages" element={<ReportPackages />} />
               <Route path="/for-architects" element={<ForArchitects />} />
