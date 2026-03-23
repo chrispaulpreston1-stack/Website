@@ -23,7 +23,7 @@ const Construction = () => {
           name: 'Precision Construction Services',
           description: 'Expert construction services led by engineers, specializing in structural alterations, extensions, and basement builds.',
           provider: { '@type': 'Organization', name: 'PF & Co Site Intelligence' },
-          areaServed: ['England', 'Wales', 'UK'],
+          areaServed: ['England'],
           serviceType: 'Construction',
         }}
       />

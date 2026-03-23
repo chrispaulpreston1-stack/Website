@@ -1,4 +1,6 @@
 import PackageCrossSellBanner from '../components/PackageCrossSellBanner';
+import TrustStats from '../components/TrustStats';
+import WorkflowTimeline from '../components/WorkflowTimeline';
 import { motion } from 'motion/react';
 import { Search, Check, ArrowRight, HelpCircle, AlertTriangle, Building2, Map, Zap, Clock, X, FileText } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -198,6 +200,15 @@ const SiteFeasibilityReport = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Trust & Workflow */}
+      <div className="py-24 bg-brand-surface border-b border-brand-primary/5">
+        <TrustStats variant="general" className="mb-24" />
+        <div className="max-w-7xl mx-auto px-6">
+          <WorkflowTimeline />
+        </div>
+      </div>
+
 
       {/* Feature Grid - Brutalist Editorial */}
       <section className="py-32 bg-brand-primary text-white">

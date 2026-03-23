@@ -5,6 +5,10 @@ import { Link } from 'react-router-dom';
 import PageSEO from '../components/PageSEO';
 import VideoExplainer from '../components/VideoExplainer';
 import { reports } from '../data/reports';
+import WorkflowTimeline from '../components/WorkflowTimeline';
+import ComparisonBlock from '../components/ComparisonBlock';
+import ValuePropositionCards from '../components/ValuePropositionCards';
+import TrustStats from '../components/TrustStats';
 
 const SiteIntelligenceHub = () => {
   const [roleFilter, setRoleFilter] = useState<string>('all');
@@ -143,7 +147,7 @@ const SiteIntelligenceHub = () => {
             name: 'Site Intelligence',
             description: 'Data-driven pre-construction screening interrogating 60+ authoritative data sources to identify planning, flood, and ground risks.',
             provider: { '@type': 'Organization', name: 'PF & Co Site Intelligence' },
-            areaServed: ['England', 'Wales', 'UK'],
+            areaServed: ['England'],
             serviceType: 'Site Intelligence',
           },
           {
@@ -176,7 +180,7 @@ const SiteIntelligenceHub = () => {
               transition={{ delay: 0.1 }}
               className="text-6xl md:text-7xl font-bold mb-4 leading-[1.1]"
             >
-              Get the Data <span className="text-brand-accent">Before the Market Does</span>
+              Desktop-First <span className="text-brand-accent">Pre-Planning Due Diligence</span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -184,7 +188,7 @@ const SiteIntelligenceHub = () => {
               transition={{ delay: 0.15 }}
               className="text-2xl font-bold text-brand-accent mb-6"
             >
-              22 Reports. 60+ data sources. 48 Hours.
+              Screen 60+ constraint layers. 48-hour delivery.
             </motion.p>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -270,17 +274,19 @@ const SiteIntelligenceHub = () => {
       </section>
 
       {/* Trust Stats Bar */}
-      <section className="bg-brand-surface border-y border-brand-primary/10 mb-24 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 py-12 relative z-10">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 divide-x-0 lg:divide-x divide-brand-primary/10">
-            {stats.map((stat, i) => (
-              <div key={i} className="flex flex-col items-center text-center px-4">
-                <span className="text-4xl md:text-5xl font-display font-bold text-brand-accent mb-2">{stat.num}</span>
-                <span className="text-xs md:text-sm font-bold uppercase tracking-widest text-brand-primary/60">{stat.label}</span>
-              </div>
-            ))}
-          </div>
+      <TrustStats variant="general" className="mb-24" />
+
+      {/* 5-Stage Workflow */}
+      <section className="max-w-7xl mx-auto px-6 mb-24">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-brand-primary mb-6">
+            The 5-Stage Assessment Workflow
+          </h2>
+          <p className="text-brand-primary/70 text-lg">
+            See exactly how Desktop Due Diligence fits into the wider development process.
+          </p>
         </div>
+        <WorkflowTimeline />
       </section>
 
       {/* Report Wizard */}
@@ -715,63 +721,17 @@ const SiteIntelligenceHub = () => {
         </motion.div>
       </section>
 
-      {/* The PF&Co Advantage - Condensed Comparison */}
+      {/* Value Props & Comparison */}
       <section className="max-w-7xl mx-auto px-6 mb-32">
         <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold mb-6 tracking-tight">Why Our Reports <span className="text-brand-accent italic font-serif font-light">Win.</span></h2>
+          <h2 className="text-5xl font-display font-bold mb-6 tracking-tight">Why Desktop-First <span className="text-brand-accent italic font-light">Wins.</span></h2>
           <p className="text-brand-primary/60 max-w-2xl mx-auto font-light text-lg">
-            We don't just provide data; we provide engineering interpretation. See how we compare to traditional consultants and automated searches.
+            We don't just provide data; we provide engineering interpretation. See how we compare to the traditional approach.
           </p>
         </div>
-
-        <div className="bg-brand-surface border border-brand-primary/5 rounded-[4rem] p-8 md:p-20 overflow-hidden shadow-2xl shadow-brand-primary/5">
-          <div className="overflow-x-auto">
-            <table className="w-full text-left border-collapse min-w-[600px]">
-              <thead>
-                <tr className="border-b border-brand-primary/10">
-                  <th className="py-8 font-mono text-xs uppercase tracking-[0.3em] text-brand-primary/60 border-b border-brand-primary/10 w-[40%]">Capability</th>
-                  <th className="py-8 font-mono text-xs uppercase tracking-[0.3em] text-brand-primary/60 text-center border-b border-brand-primary/10 w-[20%]">Traditional Consultant</th>
-                  <th className="py-8 font-mono text-xs uppercase tracking-[0.3em] text-brand-primary/60 text-center border-b border-brand-primary/10 w-[20%]">Online Map Check</th>
-                  <th className="py-8 font-mono text-xs uppercase tracking-[0.3em] text-brand-accent text-center bg-brand-primary text-white rounded-t-3xl border-b border-brand-primary/10 w-[20%]">Site Intelligence</th>
-                </tr>
-              </thead>
-              <tbody className="text-sm">
-                {[
-                  { cap: "Planning constraint analysis", trad: true, map: false, si: true },
-                  { cap: "Flood risk (all sources)", trad: true, map: "Partial", si: true },
-                  { cap: "Ground conditions & geology", trad: true, map: false, si: true },
-                  { cap: "Heritage & ecology screening", trad: "Sometimes", map: false, si: true },
-                  { cap: "Engineer interpretation", trad: true, map: false, si: true },
-                  { cap: "Source-provenance audit trail", trad: "Sometimes", map: false, si: true },
-                  { cap: "Cross-report consistency checks", trad: "Rare", map: false, si: true },
-                  { cap: "Appeal-ready formatting (SI 2026/122)", trad: false, map: false, si: true },
-                  { cap: "Turnaround", trad: "2-4 weeks", map: "Instant", si: "48 hours" },
-                  { cap: "Typical cost", trad: "£1,500-£5,000+", map: "Free-£50", si: "From £245" },
-                ].map((row, i) => (
-                  <tr key={i} className="border-b border-brand-primary/5 hover:bg-brand-primary/5 transition-colors group">
-                    <td className="py-6 font-bold text-brand-primary/80 group-hover:text-brand-primary transition-colors">{row.cap}</td>
-                    <td className="py-6 text-center text-brand-primary/60">
-                      <div className="flex justify-center">
-                        {row.trad === true ? <Check size={24} strokeWidth={3} className="text-green-600" /> : row.trad === false ? <X size={24} strokeWidth={3} className="text-red-400" /> : <span className="text-sm font-bold italic opacity-80">{row.trad}</span>}
-                      </div>
-                    </td>
-                    <td className="py-6 text-center text-brand-primary/60">
-                      <div className="flex justify-center">
-                        {row.map === true ? <Check size={24} strokeWidth={3} className="text-green-600" /> : row.map === false ? <X size={24} strokeWidth={3} className="text-red-400" /> : <span className="text-sm font-bold italic opacity-80">{row.map}</span>}
-                      </div>
-                    </td>
-                    <td className="py-6 text-center font-bold text-brand-primary bg-brand-primary/5 border-x border-brand-primary/5">
-                      <div className="flex justify-center">
-                        {row.si === true ? <Check size={24} strokeWidth={3} className="text-brand-accent" /> : <span className="text-sm font-bold italic text-brand-accent">{row.si}</span>}
-                      </div>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-
-        </div>
+        <ValuePropositionCards />
+        <div className="mt-24" />
+        <ComparisonBlock />
       </section>
 
       {/* Built for Scrutiny */}
@@ -822,6 +782,25 @@ const SiteIntelligenceHub = () => {
               />
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* FAQs */}
+      <section className="max-w-3xl mx-auto px-6 mb-24">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-display font-bold text-brand-primary">Frequently Asked Questions</h2>
+        </div>
+        <div className="space-y-4">
+          {[
+            { q: "Is a desktop assessment a real assessment?", a: "Yes. Desktop assessment is the mandatory first stage of every recognised framework in the industry. RICS Red Book Global Standards (2024) mandates reasonable due diligence on all relevant matters including desktop investigations." },
+            { q: "When would I need to go beyond desktop?", a: "Desktop assessment tells you whether to proceed and exactly what further investigation is needed. You commission specialist investigations when you need Phase 2 intrusive ground investigation to confirm findings, protected species surveys following a PEA, or detailed flood modelling." },
+            { q: "Do these reports guarantee planning permission?", a: "No absolute guarantees exist in the planning system. However, starting with comprehensive desktop due diligence identifies the show-stopping constraints before you spend serious money, drastically improving your chances and reducing your financial exposure." }
+          ].map((faq, i) => (
+            <div key={i} className="bg-white p-6 rounded-2xl border border-brand-primary/10">
+              <h3 className="font-bold text-brand-primary mb-2 text-lg">{faq.q}</h3>
+              <p className="text-brand-primary/70">{faq.a}</p>
+            </div>
+          ))}
         </div>
       </section>
 

@@ -66,7 +66,7 @@ const CityManchester = () => {
     <div className="sic-hero-inner">
         <h1>Site Intelligence Reports<br />in Manchester</h1>
         <p className="sic-sub">Mersey Flood Plain • Former Industrial Land • Major Regeneration Zones</p>
-        <p className="sic-subtitle">Desktop environmental reports for Manchester development projects. We screen flood risk, contamination, ground conditions, and heritage constraints across all 10 Greater Manchester planning authorities — typically within 48 hours.</p>
+        <p className="sic-subtitle"><strong>Desktop-First Pre-Planning Due Diligence:</strong> Desktop environmental reports for Manchester development projects. We screen flood risk, contamination, ground conditions, and heritage constraints across all 10 Greater Manchester planning authorities — typically within 48 hours.</p>
     </div>
 </section>
 
@@ -82,7 +82,7 @@ const CityManchester = () => {
 {/*  Local Expertise Callout  */}
 <div className="sic-container">
     <div className="sic-expertise">
-        <h2>Why Manchester Sites Need Environmental Screening</h2>
+        <h2>Why Manchester Sites Need Desktop Screening First</h2>
         <p className="sic-expertise-sub">10 Planning Authorities. Complex Industrial Legacy. One Report.</p>
         <ul>
             <li><strong>Mersey and Irwell flood risk</strong> — the Mersey, Irwell, and Medlock river corridors create extensive Flood Zone 2 and 3 areas across central Manchester and Salford; surface water flooding compounds the risk in low-lying areas</li>

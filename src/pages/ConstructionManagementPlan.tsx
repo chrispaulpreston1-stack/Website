@@ -1,4 +1,6 @@
 import PackageCrossSellBanner from '../components/PackageCrossSellBanner';
+import TrustStats from '../components/TrustStats';
+import WorkflowTimeline from '../components/WorkflowTimeline';
 import { motion } from 'motion/react';
 import { HardHat, Check, ArrowRight, Info, HelpCircle, Clock, Zap, ShieldCheck, FileText } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -190,6 +192,15 @@ const ConstructionManagementPlan = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Trust & Workflow */}
+      <div className="py-24 bg-brand-surface border-b border-brand-primary/5">
+        <TrustStats variant="general" className="mb-24" />
+        <div className="max-w-7xl mx-auto px-6">
+          <WorkflowTimeline />
+        </div>
+      </div>
+
 
       <VideoExplainer
         title="Construction Management Plan"

@@ -66,7 +66,7 @@ const CityNottingham = () => {
     <div className="sic-hero-inner">
         <h1>Site Intelligence Reports<br />in Nottingham</h1>
         <p className="sic-sub">Sherwood Sandstone Aquifer • Cave Systems • Lace Industry Contamination</p>
-        <p className="sic-subtitle">Desktop environmental reports for Nottingham development projects. We screen flood risk, contamination, aquifer sensitivity, and ground conditions across Nottingham and the surrounding boroughs — typically within 48 hours.</p>
+        <p className="sic-subtitle"><strong>Desktop-First Pre-Planning Due Diligence:</strong> Desktop environmental reports for Nottingham development projects. We screen flood risk, contamination, aquifer sensitivity, and ground conditions across Nottingham and the surrounding boroughs — typically within 48 hours.</p>
     </div>
 </section>
 
@@ -82,7 +82,7 @@ const CityNottingham = () => {
 {/*  Local Expertise Callout  */}
 <div className="sic-container">
     <div className="sic-expertise">
-        <h2>Why Nottingham Sites Need Environmental Screening</h2>
+        <h2>Why Nottingham Sites Need Desktop Screening First</h2>
         <p className="sic-expertise-sub">Sandstone Aquifer. Cave Systems. Industrial Legacy. One Report.</p>
         <ul>
             <li><strong>Sherwood Sandstone Aquifer</strong> — a principal aquifer and major drinking water source; development near it triggers groundwater protection requirements from the Environment Agency under Source Protection Zone policies</li>

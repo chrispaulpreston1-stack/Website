@@ -66,7 +66,7 @@ const CitySheffield = () => {
     <div className="sic-hero-inner">
         <h1>Site Intelligence Reports<br />in Sheffield</h1>
         <p className="sic-sub">Steel Industry Brownfield • Don Valley Flooding • Peak District Ecology</p>
-        <p className="sic-subtitle">Desktop environmental reports for Sheffield development projects. We screen contamination, flood risk, ecology, and ground conditions across the Sheffield district — typically within 48 hours.</p>
+        <p className="sic-subtitle"><strong>Desktop-First Pre-Planning Due Diligence:</strong> Desktop environmental reports for Sheffield development projects. We screen contamination, flood risk, ecology, and ground conditions across the Sheffield district — typically within 48 hours.</p>
     </div>
 </section>
 
@@ -82,7 +82,7 @@ const CitySheffield = () => {
 {/*  Local Expertise Callout  */}
 <div className="sic-container">
     <div className="sic-expertise">
-        <h2>Why Sheffield Sites Need Environmental Screening</h2>
+        <h2>Why Sheffield Sites Need Desktop Screening First</h2>
         <p className="sic-expertise-sub">Steel City Legacy. National Park Fringe. Complex Terrain.</p>
         <ul>
             <li><strong>Steel industry brownfield contamination</strong> — Sheffield’s steel, cutlery, and heavy engineering past has left widespread heavy metal contamination across the Don Valley, Attercliffe, and the Lower Don corridor; sites often contain slag, metallic waste, and hydrocarbon contamination</li>

@@ -66,7 +66,7 @@ const CityLiverpool = () => {
     <div className="sic-hero-inner">
         <h1>Site Intelligence Reports<br />in Liverpool</h1>
         <p className="sic-sub">Mersey Estuary Flooding • Docklands Brownfield • Maritime Heritage</p>
-        <p className="sic-subtitle">Desktop environmental reports for Liverpool development projects. We screen flood risk, contamination, heritage constraints, and ground conditions across Liverpool and Merseyside — typically within 48 hours. All reports are prepared under English planning frameworks (TCPA 1990 and NPPF).</p>
+        <p className="sic-subtitle"><strong>Desktop-First Pre-Planning Due Diligence:</strong> Desktop environmental reports for Liverpool development projects. We screen flood risk, contamination, heritage constraints, and ground conditions across Liverpool and Merseyside — typically within 48 hours. All reports are prepared under English planning frameworks (TCPA 1990 and NPPF).</p>
     </div>
 </section>
 
@@ -82,7 +82,7 @@ const CityLiverpool = () => {
 {/*  Local Expertise Callout  */}
 <div className="sic-container">
     <div className="sic-expertise">
-        <h2>Why Liverpool Sites Need Environmental Screening</h2>
+        <h2>Why Liverpool Sites Need Desktop Screening First</h2>
         <p className="sic-expertise-sub">5 Merseyside LPAs. Docklands Legacy. One Report.</p>
         <ul>
             <li><strong>Mersey estuary tidal flooding</strong> — the Mersey estuary creates significant tidal flood risk along Liverpool’s waterfront and docklands; spring tides combined with storm surges can push water levels well above normal, affecting development sites along the river corridor</li>

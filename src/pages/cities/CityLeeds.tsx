@@ -66,7 +66,7 @@ const CityLeeds = () => {
     <div className="sic-hero-inner">
         <h1>Site Intelligence Reports<br />in Leeds</h1>
         <p className="sic-sub">Aire Valley Flood Risk • Mining Subsidence • South Bank Regeneration</p>
-        <p className="sic-subtitle">Desktop environmental reports for Leeds development projects. We screen flood risk, contamination, mining subsidence, and ground conditions across the Leeds district — typically within 48 hours.</p>
+        <p className="sic-subtitle"><strong>Desktop-First Pre-Planning Due Diligence:</strong> Desktop environmental reports for Leeds development projects. We screen flood risk, contamination, mining subsidence, and ground conditions across the Leeds district — typically within 48 hours.</p>
     </div>
 </section>
 
@@ -82,7 +82,7 @@ const CityLeeds = () => {
 {/*  Local Expertise Callout  */}
 <div className="sic-container">
     <div className="sic-expertise">
-        <h2>Why Leeds Sites Need Environmental Screening</h2>
+        <h2>Why Leeds Sites Need Desktop Screening First</h2>
         <p className="sic-expertise-sub">One Unitary Authority. Complex Terrain. Multiple Risk Layers.</p>
         <ul>
             <li><strong>Aire Valley flood risk</strong> — the River Aire and its tributaries flooded catastrophically in December 2015, inundating over 3,000 properties; the Leeds Flood Alleviation Scheme has improved defences but residual risk remains across the valley corridor</li>

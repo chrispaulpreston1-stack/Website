@@ -66,7 +66,7 @@ const CityLondon = () => {
     <div className="sic-hero-inner">
         <h1>Site Intelligence Reports<br />in London</h1>
         <p className="sic-sub">Thames Flood Zones • Heritage Density • Brownfield Screening</p>
-        <p className="sic-subtitle">Desktop environmental reports for London development projects. We screen flood risk, contamination, heritage constraints, and ground conditions across all 33 London planning authorities — typically within 48 hours.</p>
+        <p className="sic-subtitle"><strong>Desktop-First Pre-Planning Due Diligence:</strong> Desktop environmental reports for London development projects. We screen flood risk, contamination, heritage constraints, and ground conditions across all 33 London planning authorities — typically within 48 hours.</p>
     </div>
 </section>
 
@@ -82,7 +82,7 @@ const CityLondon = () => {
 {/*  Local Expertise Callout  */}
 <div className="sic-container">
     <div className="sic-expertise">
-        <h2>Why London Sites Need Environmental Screening</h2>
+        <h2>Why London Sites Need Desktop Screening First</h2>
         <p className="sic-expertise-sub">33 Planning Authorities. Thousands of Constraints. One Report.</p>
         <ul>
             <li><strong>Thames flood zones</strong> — large parts of central and east London sit within Flood Zones 2 and 3; the Thames Barrier protects against tidal surge but surface water and groundwater flooding remain significant risks</li>

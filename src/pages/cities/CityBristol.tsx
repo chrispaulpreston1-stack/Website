@@ -66,7 +66,7 @@ const CityBristol = () => {
     <div className="sic-hero-inner">
         <h1>Site Intelligence Reports<br />in Bristol</h1>
         <p className="sic-sub">Avon Gorge Geology • Tidal Flooding • Conservation Areas</p>
-        <p className="sic-subtitle">Desktop environmental reports for Bristol development projects. We screen tidal flood risk, contamination, conservation area constraints, and ground conditions across all 4 Bristol-area planning authorities — typically within 48 hours.</p>
+        <p className="sic-subtitle"><strong>Desktop-First Pre-Planning Due Diligence:</strong> Desktop environmental reports for Bristol development projects. We screen tidal flood risk, contamination, conservation area constraints, and ground conditions across all 4 Bristol-area planning authorities — typically within 48 hours.</p>
     </div>
 </section>
 
@@ -82,7 +82,7 @@ const CityBristol = () => {
 {/*  Local Expertise Callout  */}
 <div className="sic-container">
     <div className="sic-expertise">
-        <h2>Why Bristol Sites Need Environmental Screening</h2>
+        <h2>Why Bristol Sites Need Desktop Screening First</h2>
         <p className="sic-expertise-sub">4 Planning Authorities. Dramatic Geology. One Report.</p>
         <ul>
             <li><strong>Avon Gorge and Carboniferous Limestone geology</strong> — Bristol sits on complex geology including Carboniferous Limestone, sandstone, and Mercia Mudstone; the Avon Gorge exposes dramatic geological features that affect ground stability and foundation design</li>

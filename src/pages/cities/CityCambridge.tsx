@@ -66,7 +66,7 @@ const CityCambridge = () => {
     <div className="sic-hero-inner">
         <h1>Site Intelligence Reports<br />in Cambridge</h1>
         <p className="sic-sub">Chalk Aquifer Sensitivity • Green Belt Constraints • Extreme Planning Scrutiny</p>
-        <p className="sic-subtitle">Desktop environmental reports for Cambridge development projects. We screen aquifer sensitivity, conservation constraints, flood risk, and ground conditions across Cambridge and the surrounding districts — typically within 48 hours.</p>
+        <p className="sic-subtitle"><strong>Desktop-First Pre-Planning Due Diligence:</strong> Desktop environmental reports for Cambridge development projects. We screen aquifer sensitivity, conservation constraints, flood risk, and ground conditions across Cambridge and the surrounding districts — typically within 48 hours.</p>
     </div>
 </section>
 
@@ -82,7 +82,7 @@ const CityCambridge = () => {
 {/*  Local Expertise Callout  */}
 <div className="sic-container">
     <div className="sic-expertise">
-        <h2>Why Cambridge Sites Need Environmental Screening</h2>
+        <h2>Why Cambridge Sites Need Desktop Screening First</h2>
         <p className="sic-expertise-sub">Aquifer Sensitivity. Green Belt. Conservation. One Report.</p>
         <ul>
             <li><strong>Chalk aquifer sensitivity</strong> — Cambridge sits on the Chalk principal aquifer with multiple groundwater Source Protection Zones; development proposals must demonstrate that groundwater quality will not be compromised</li>

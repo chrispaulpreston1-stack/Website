@@ -66,7 +66,7 @@ const CityBirmingham = () => {
     <div className="sic-hero-inner">
         <h1>Site Intelligence Reports<br />in Birmingham</h1>
         <p className="sic-sub">Coal Mining Legacy • HS2 Regeneration • Canal Heritage</p>
-        <p className="sic-subtitle">Desktop environmental reports for Birmingham development projects. We screen coal mining risk, contamination, flood risk, and heritage constraints across all 6 West Midlands planning authorities — typically within 48 hours.</p>
+        <p className="sic-subtitle"><strong>Desktop-First Pre-Planning Due Diligence:</strong> Desktop environmental reports for Birmingham development projects. We screen coal mining risk, contamination, flood risk, and heritage constraints across all 6 West Midlands planning authorities — typically within 48 hours.</p>
     </div>
 </section>
 
@@ -82,7 +82,7 @@ const CityBirmingham = () => {
 {/*  Local Expertise Callout  */}
 <div className="sic-container">
     <div className="sic-expertise">
-        <h2>Why Birmingham Sites Need Environmental Screening</h2>
+        <h2>Why Birmingham Sites Need Desktop Screening First</h2>
         <p className="sic-expertise-sub">6 Planning Authorities. Deep Industrial Roots. One Report.</p>
         <ul>
             <li><strong>Coal mining subsidence risk</strong> — large parts of Birmingham and the Black Country fall within Coal Authority Development High Risk Areas where shallow coal seams, mine shafts, and former workings can cause ground instability</li>

@@ -42,7 +42,7 @@ const ForDevelopers = () => {
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-500 italic font-accent font-light">before you sign.</span>
               </h1>
               <p className="text-xl text-brand-secondary leading-relaxed mb-10 font-light max-w-lg">
-                Identify constraints, quantify development viability, and de-risk your acquisitions with our comprehensive intelligence reports—delivered in 48 hours.
+                Identify constraints, quantify development viability, and de-risk your acquisitions with our Desktop Portfolio Screening—comprehensive intelligence reports delivered in 48 hours.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
@@ -99,8 +99,8 @@ const ForDevelopers = () => {
             {[
               {
                 icon: ShieldCheck,
-                title: 'Constraint Mapping',
-                desc: 'Our AI agents automatically screen your site against 27+ constraint categories, identifying hidden issues like Article 4 Directions, TPOs, and complex flood zones before you buy.'
+                title: 'Desktop Site Screening',
+                desc: 'Our desktop-first approach automatically screens your site against 27+ constraint categories, identifying hidden issues like Article 4 Directions, TPOs, and complex flood zones before you buy.'
               },
               {
                 icon: LineChart,
@@ -145,9 +145,9 @@ const ForDevelopers = () => {
               <span className="inline-block px-4 py-1.5 rounded-full bg-blue-500/20 text-blue-300 font-bold text-xs uppercase tracking-widest mb-6 border border-blue-500/30">
                 Membership Options
               </span>
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">Full project packs on demand.</h2>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">Desktop portfolio screening on demand.</h2>
               <p className="text-xl text-white/70 mb-8 font-light leading-relaxed">
-                Appraising multiple sites per month? Our Developer subscription tier gives your acquisition team rapid intelligence across all prospect sites at wholesale pricing.
+                Appraising multiple sites per month? Our Developer subscription tier provides rapid desktop intelligence across all your prospect sites at wholesale pricing.
               </p>
               
               <ul className="space-y-4 mb-10">

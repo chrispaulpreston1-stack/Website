@@ -24,7 +24,7 @@ import {
 
 const KEY_STATS = [
   { stat: '300+', label: 'Projects Delivered', sub: 'Across England', icon: <Building2 size={20} /> },
-  { stat: '127', label: 'AI Agents', sub: 'Interrogating 60+ data sources', icon: <Bot size={20} /> },
+  { stat: '60+', label: 'Authoritative Sources', sub: 'Interrogated for every site', icon: <Database size={20} /> },
   { stat: '48hrs', label: 'Report Turnaround', sub: 'From order to delivery', icon: <Clock size={20} /> },
   { stat: '22', label: 'Report Types', sub: 'Planning-ready documentation', icon: <FileText size={20} /> },
 ];
@@ -36,18 +36,18 @@ const METHODOLOGY_POINTS = [
     icon: <Database size={22} />,
   },
   {
-    title: 'Multi-Agent Architecture',
-    text: '127 specialised AI agents work across defined domains: flood, ecology, heritage, geology, planning policy, transport, and energy. Each agent has a specific scope, input contract, and output schema. No single model tries to do everything.',
-    icon: <Bot size={22} />,
+    title: 'Engineering Logic at Scale',
+    text: 'We use strict engineering rules engines and spatial analysis to process data across defined domains: flood, ecology, heritage, geology, and planning policy. Every check has a specific scope and output schema.',
+    icon: <Database size={22} />,
   },
   {
     title: '24-Category QA Pipeline',
-    text: 'Every report passes through automated quality assurance checks covering accuracy, regulatory compliance, cross-report consistency, citation validity, and formatting. Problems are caught before a human ever sees the draft.',
+    text: 'Every report passes through strict logic checks covering accuracy, regulatory compliance, cross-report consistency, citation validity, and formatting. Problems are caught before a human ever sees the draft.',
     icon: <CheckCircle2 size={22} />,
   },
   {
     title: 'Human Engineering Review',
-    text: 'AI produces drafts. Engineers produce reports. Every document is reviewed and signed off by a qualified professional. Accountability cannot be delegated to an algorithm.',
+    text: 'Software surfaces constraints. Engineers interpret the risk. Every document is reviewed and signed off by a qualified professional. Accountability cannot be delegated to an algorithm.',
     icon: <User size={22} />,
   },
 ];
@@ -55,7 +55,7 @@ const METHODOLOGY_POINTS = [
 const VALUES = [
   {
     title: 'Transparency',
-    text: 'We disclose our methodology openly. Clients know that AI contributes to their reports, how it contributes, and where human judgement takes over.',
+    text: 'We disclose our methodology openly. Clients know how software contributes to their reports, how data is parsed, and where human judgement takes over.',
     icon: <Scale size={22} />,
   },
   {
@@ -69,8 +69,8 @@ const VALUES = [
     icon: <PoundSterling size={22} />,
   },
   {
-    title: 'RICS AI Standard Aligned',
-    text: 'Our framework is designed to align with the RICS standard on the use of artificial intelligence in surveying services: transparency, accountability, fairness, and data governance.',
+    title: 'RICS & RTPI Aligned',
+    text: 'Our methodology is designed to align with RICS and RTPI professional standards: transparency, accountability, fairness, and strict data governance.',
     icon: <ShieldCheck size={22} />,
   },
 ];
@@ -89,7 +89,7 @@ export default function About() {
         jsonLd={{
           '@type': 'AboutPage',
           name: 'About PF & Co Site Intelligence',
-          description: 'AI-powered site intelligence and planning reports, founded by Chris Preston BEng (Hons), delivering across England.',
+          description: 'Desktop-first site intelligence and planning reports, founded by Chris Preston BEng (Hons), delivering across England.',
           publisher: { '@type': 'Organization', name: 'PF & Co Site Intelligence', url: 'https://www.pfandco.co.uk' },
         }}
       />
@@ -135,7 +135,7 @@ export default function About() {
                 Planning reports have always been slow and expensive. A single flood risk assessment or heritage impact assessment can take weeks to commission and cost thousands of pounds. For most projects, the core data already exists in public registers and government APIs, but consultants still compile it by hand.
               </p>
               <p className="text-brand-primary/60 text-lg leading-relaxed font-light mb-6">
-                PF & Co was founded to change that. We built a multi-agent AI system that interrogates 60+ authoritative data sources, applies a rigorous quality assurance pipeline, and delivers planning-ready reports in 48 hours at a fraction of the traditional cost.
+                PF & Co was founded to change that. We built a proprietary desktop intelligence platform that interrogates 60+ authoritative data sources, applies a rigorous quality assurance pipeline, and delivers planning-ready reports in 48 hours at a fraction of the traditional cost.
               </p>
               <p className="text-brand-primary/60 text-lg leading-relaxed font-light">
                 This is not about replacing professional judgement. It is about giving professionals better tools: faster data extraction, wider coverage, and consistent methodology applied equally to every site.
@@ -206,9 +206,9 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <p className="text-sm font-bold uppercase tracking-widest text-brand-accent mb-3">Our Approach</p>
-            <h2 className="text-4xl font-bold text-brand-primary mb-4">AI as a Tool, Not a Gimmick</h2>
+            <h2 className="text-4xl font-bold text-brand-primary mb-4">Desktop Intelligence as a Tool, Not a Gimmick</h2>
             <p className="text-brand-primary/60 max-w-2xl mx-auto text-lg font-light">
-              We use AI where it adds genuine value: processing large volumes of authoritative data, applying consistent methodology, and catching errors humans would miss. We use engineers where they are irreplaceable: interpreting results, exercising judgement, and taking accountability.
+              We use software where it adds genuine value: processing large volumes of authoritative data, applying consistent methodology, and catching errors humans would miss. We use engineers where they are irreplaceable: interpreting results, exercising judgement, and taking accountability.
             </p>
           </div>
 

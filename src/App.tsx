@@ -69,6 +69,10 @@ const AIGovernancePolicy = lazy(() => import('./pages/AIGovernancePolicy'));
 const About = lazy(() => import('./pages/About'));
 const HonestAssessment = lazy(() => import('./pages/HonestAssessment'));
 
+const HowDevelopersAssessSites = lazy(() => import('./pages/HowDevelopersAssessSites'));
+const PricingArchitecture = lazy(() => import('./pages/PricingArchitecture'));
+const BlogDesktopDueDiligence = lazy(() => import('./pages/BlogDesktopDueDiligence'));
+
 // Audience Pages
 const ForArchitects = lazy(() => import('./pages/ForArchitects'));
 const ForDevelopers = lazy(() => import('./pages/ForDevelopers'));
@@ -602,6 +606,12 @@ export default function App() {
               <Route path="/si-sheffield" element={<CitySheffield />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/insights/:slug" element={<BlogArticle />} />
+              
+              {/* New Desktop-First Landing Pages */}
+              <Route path="/site-intelligence/how-developers-assess-sites" element={<HowDevelopersAssessSites />} />
+              <Route path="/site-intelligence/pricing" element={<PricingArchitecture />} />
+              <Route path="/blog/desktop-due-diligence-before-spending" element={<BlogDesktopDueDiligence />} />
+
               <Route path="/ai-innovation" element={<AIInnovation />} />
               <Route path="/order-report" element={<OrderReport />} />
               <Route path="/order-success" element={<OrderSuccess />} />

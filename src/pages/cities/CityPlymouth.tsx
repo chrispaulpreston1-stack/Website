@@ -66,7 +66,7 @@ const CityPlymouth = () => {
     <div className="sic-hero-inner">
         <h1>Site Intelligence Reports<br />in Plymouth</h1>
         <p className="sic-sub">Coastal Erosion • Naval Brownfield • Marine Conservation Zones</p>
-        <p className="sic-subtitle">Desktop environmental reports for Plymouth development projects. We screen coastal risk, brownfield contamination, marine conservation, and ground conditions across Plymouth and the surrounding districts — typically within 48 hours.</p>
+        <p className="sic-subtitle"><strong>Desktop-First Pre-Planning Due Diligence:</strong> Desktop environmental reports for Plymouth development projects. We screen coastal risk, brownfield contamination, marine conservation, and ground conditions across Plymouth and the surrounding districts — typically within 48 hours.</p>
     </div>
 </section>
 
@@ -82,7 +82,7 @@ const CityPlymouth = () => {
 {/*  Local Expertise Callout  */}
 <div className="sic-container">
     <div className="sic-expertise">
-        <h2>Why Plymouth Sites Need Environmental Screening</h2>
+        <h2>Why Plymouth Sites Need Desktop Screening First</h2>
         <p className="sic-expertise-sub">Coastal Risk. Naval Heritage. Marine Protection. One Report.</p>
         <ul>
             <li><strong>Coastal erosion and cliff instability</strong> — Plymouth’s coastline includes actively eroding cliffs, particularly along the Hoe, Mount Batten, and the Sound; development near the coast requires erosion risk assessment and may be affected by Shoreline Management Plan policies</li>
