@@ -129,7 +129,7 @@ const Navbar = () => {
 
   const hasDarkHero = 
     location.pathname === '/ai-innovation' || 
-    location.pathname === '/site-intelligence/data-sources';
+    location.pathname.includes('/site-intelligence/data-sources');
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'glass py-3 shadow-sm' : 'bg-transparent py-6'}`}>
