@@ -3,6 +3,7 @@
     { "source": "/si/feasibility-check(/?)", "destination": "/si/feasibility-check/index.html" },
     { "source": "/demo/s(/?)", "destination": "/demo/s/index.html" },
     { "source": "/preapp/s(/?)", "destination": "/preapp/s/index.html" },
+    { "source": "/discover(/?)", "destination": "/discover/index.html" },
     { "source": "/((?!api/).*)", "destination": "/index.html" }
   ]
 }

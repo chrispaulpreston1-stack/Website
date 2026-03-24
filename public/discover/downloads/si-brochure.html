@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Site Intelligence — Brochure</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', sans-serif;
+    color: #0f172a;
+    line-height: 1.6;
+    background: #fff;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    width: 210mm;
+    height: 297mm;
+    margin: 0 auto;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    page-break-after: always;
+    page-break-inside: avoid;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ── PAGE 1: COVER / OVERVIEW ── */
+  .p1-header {
+    background: #0F172A;
+    color: white;
+    padding: 36px 48px 28px;
+    position: relative;
+    overflow: hidden;
+  }
+  .p1-header::after {
+    content: '';
+    position: absolute;
+    top: -40%;
+    right: -15%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(6,182,212,0.12) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .p1-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+  }
+  .p1-logo-mark {
+    width: 44px;
+    height: 44px;
+    background: #0F172A;
+    border: 2px solid rgba(249,115,22,0.4);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    color: white;
+  }
+  .p1-logo-mark .amp { color: #F97316; font-size: 11px; }
+  .p1-logo-text {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .p1-headline {
+    font-size: 32px;
+    font-weight: 900;
+    line-height: 1.15;
+    letter-spacing: -0.5px;
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 1;
+  }
+  .p1-headline span { color: #06b6d4; }
+  .p1-sub {
+    font-size: 14px;
+    color: rgba(255,255,255,0.7);
+    max-width: 440px;
+    line-height: 1.7;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Stats strip */
+  .stats-strip {
+    display: flex;
+    background: #f8fafc;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .stat {
+    flex: 1;
+    text-align: center;
+    padding: 14px 12px;
+    border-right: 1px solid #e2e8f0;
+  }
+  .stat:last-child { border-right: none; }
+  .stat-num {
+    font-size: 22px;
+    font-weight: 900;
+    color: #0891b2;
+    letter-spacing: -0.5px;
+  }
+  .stat-label {
+    font-size: 10px;
+    font-weight: 600;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 2px;
+  }
+
+  /* Body content */
+  .p1-body { padding: 24px 48px; }
+  .section-head {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #0891b2;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-head::before {
+    content: '';
+    width: 20px;
+    height: 2px;
+    background: #0891b2;
+    border-radius: 2px;
+  }
+  .section-title {
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 10px;
+    color: #0f172a;
+  }
+  .section-text {
+    font-size: 12px;
+    color: #475569;
+    line-height: 1.7;
+    margin-bottom: 24px;
+  }
+
+  /* Capability cards */
+  .cap-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .cap-card {
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    background: #f8fafc;
+  }
+  .cap-icon {
+    font-size: 15px;
+    margin-bottom: 4px;
+  }
+  .cap-name {
+    font-size: 11px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 4px;
+  }
+  .cap-desc {
+    font-size: 10px;
+    color: #64748b;
+    line-height: 1.5;
+  }
+
+  /* How it works */
+  .steps {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 0;
+  }
+  .step {
+    flex: 1;
+    text-align: center;
+    padding: 10px 8px;
+    border-radius: 10px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+  }
+  .step-num {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #0891b2;
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 6px;
+  }
+  .step-name {
+    font-size: 9px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 3px;
+  }
+  .step-desc {
+    font-size: 9px;
+    color: #64748b;
+    line-height: 1.4;
+  }
+
+  /* Body sections need to grow */
+  .p1-body, .p2-body, .p3-body { flex: 1; }
+
+  /* Footer */
+  .p-footer {
+    padding: 12px 48px;
+    border-top: 1px solid #e2e8f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 9px;
+    color: #94a3b8;
+    margin-top: auto;
+  }
+  .p-footer strong { color: #475569; }
+
+  /* ── PAGE 2: WHO IT'S FOR + CONTACT ── */
+  .p2-body { padding: 32px 48px; }
+
+  .persona-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .persona {
+    padding: 14px;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    background: #f8fafc;
+  }
+  .persona-role {
+    font-size: 13px;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 2px;
+  }
+  .persona-who {
+    font-size: 10px;
+    font-weight: 600;
+    color: #0891b2;
+    margin-bottom: 8px;
+  }
+  .persona-text {
+    font-size: 10px;
+    color: #475569;
+    line-height: 1.6;
+  }
+
+  /* Data sources */
+  .data-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-bottom: 20px;
+  }
+  .d-chip {
+    font-size: 9px;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 50px;
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    color: #475569;
+  }
+
+  /* CTA */
+  .cta-box {
+    background: #0F172A;
+    color: white;
+    border-radius: 14px;
+    padding: 24px;
+    text-align: center;
+    margin-bottom: 0;
+  }
+  .cta-box h3 {
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 8px;
+  }
+  .cta-box h3 span { color: #06b6d4; }
+  .cta-box p {
+    font-size: 12px;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 20px;
+  }
+  .cta-contacts {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+  }
+  .cta-contact {
+    text-align: center;
+  }
+  .cta-contact .cl {
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 4px;
+  }
+  .cta-contact .cv {
+    font-size: 14px;
+    font-weight: 600;
+    color: #06b6d4;
+  }
+
+  /* Collab banner */
+  .collab-bar {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 16px;
+    border-radius: 10px;
+    border: 1px solid rgba(249,115,22,0.2);
+    background: rgba(249,115,22,0.04);
+    margin-bottom: 20px;
+  }
+  .collab-icon { font-size: 24px; flex-shrink: 0; }
+  .collab-text { font-size: 11px; color: #475569; line-height: 1.6; }
+  .collab-text strong { color: #0f172a; }
+
+  /* Print button */
+  .print-bar {
+    text-align: center;
+    padding: 20px;
+    background: #f8fafc;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .print-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #0891b2;
+    color: white;
+    border: none;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 12px 28px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  .print-btn:hover { background: #0e7490; }
+
+  /* ── PAGE 3: COMPETITOR COMPARISON ── */
+  .p3-header {
+    background: #0F172A;
+    color: white;
+    padding: 28px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .p3-header-left { display: flex; align-items: center; gap: 12px; }
+  .p3-header-title { font-size: 20px; font-weight: 800; }
+  .p3-header-title span { color: #06b6d4; }
+  .p3-header-sub { font-size: 11px; color: rgba(255,255,255,0.5); font-weight: 500; }
+  .p3-body { padding: 28px 48px; }
+  .p3-intro { font-size: 12px; color: #475569; line-height: 1.7; margin-bottom: 20px; max-width: 580px; }
+  .cost-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 20px; }
+  .cost-card { padding: 14px; border-radius: 8px; border: 1px solid #e2e8f0; text-align: center; }
+  .cost-card.si-card { border-color: #0891b2; background: rgba(6,182,212,0.04); }
+  .cost-type { font-size: 10px; font-weight: 700; color: #475569; margin-bottom: 2px; }
+  .cost-example { font-size: 8px; color: #94a3b8; margin-bottom: 6px; }
+  .cost-price { font-size: 17px; font-weight: 900; color: #0f172a; margin-bottom: 2px; }
+  .si-card .cost-price { color: #0891b2; }
+  .cost-note { font-size: 8px; color: #94a3b8; }
+  .comp-table { width: 100%; border-collapse: collapse; font-size: 10px; margin-bottom: 18px; }
+  .comp-table th { text-align: left; padding: 8px 10px; font-weight: 700; font-size: 9px; letter-spacing: 0.3px; border-bottom: 2px solid #e2e8f0; color: #475569; }
+  .comp-table th.si-th { background: rgba(6,182,212,0.06); color: #0891b2; border-bottom-color: #0891b2; }
+  .comp-table td { padding: 7px 10px; border-bottom: 1px solid #f1f5f9; }
+  .comp-table .si-td { background: rgba(6,182,212,0.04); font-weight: 600; }
+  .yes { color: #059669; font-weight: 700; }
+  .no { color: #cbd5e1; }
+  .partial { color: #d97706; font-weight: 600; }
+  .feat-name { font-weight: 600; color: #0f172a; }
+  .speed-section { margin-bottom: 18px; }
+  .speed-title { font-size: 11px; font-weight: 700; margin-bottom: 10px; color: #0f172a; }
+  .speed-row { display: flex; align-items: center; gap: 12px; margin-bottom: 6px; }
+  .speed-label { width: 100px; font-size: 9px; font-weight: 500; color: #475569; text-align: right; flex-shrink: 0; }
+  .speed-bar-bg { flex: 1; height: 22px; background: #f1f5f9; border-radius: 6px; overflow: hidden; }
+  .speed-bar { height: 100%; border-radius: 6px; display: flex; align-items: center; padding: 0 10px; font-size: 9px; font-weight: 700; color: white; }
+  .speed-bar.si { width: 6%; background: linear-gradient(90deg, #0891b2, #1d4ed8); min-width: 70px; }
+  .speed-bar.mid { width: 35%; background: #f59e0b; }
+  .speed-bar.slow { width: 100%; background: #ef4444; opacity: 0.7; }
+  .bottom-cta { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; }
+  .bottom-cta .bc-text { font-size: 13px; font-weight: 700; color: #0f172a; }
+  .bottom-cta .bc-sub { font-size: 10px; color: #475569; margin-top: 2px; }
+  .bc-contact { text-align: right; }
+  .bc-email { font-size: 12px; font-weight: 600; color: #0891b2; }
+  .bc-phone { font-size: 10px; color: #64748b; }
+
+  @media print {
+    .print-bar { display: none !important; }
+    body { background: white !important; margin: 0 !important; padding: 0 !important; }
+    .page {
+      margin: 0 !important;
+      box-shadow: none !important;
+      border-radius: 0 !important;
+      width: 100% !important;
+      height: 297mm !important;
+      page-break-after: always;
+      page-break-inside: avoid;
+      overflow: hidden !important;
+    }
+    .page:last-child { page-break-after: auto; }
+    * {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+  }
+
+  @media screen {
+    .page {
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      margin: 20px auto;
+      border-radius: 4px;
+    }
+    body { background: #e2e8f0; padding: 0 0 40px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="print-bar">
+  <button class="print-btn" onclick="window.print()">&#128196; Save as PDF</button>
+  <div style="font-size: 11px; color: #64748b; margin-top: 8px;">Tip: In the print dialog, select <strong>"Save as PDF"</strong> as the destination, set margins to <strong>"None"</strong>, and tick <strong>"Background graphics"</strong></div>
+</div>
+
+<!-- ══════ PAGE 1 ══════ -->
+<div class="page">
+  <div class="p1-header">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+      <div class="p1-logo">
+        <div class="p1-logo-mark">PF<span class="amp">&amp;</span>CO</div>
+        <div class="p1-logo-text">Site Intelligence</div>
+      </div>
+      <div style="text-align: center; flex-shrink: 0; position: relative; z-index: 1;">
+        <canvas id="qr-page1" width="72" height="72" style="border-radius: 6px; background: white; padding: 3px;"></canvas>
+        <div style="font-size: 7px; color: rgba(255,255,255,0.5); margin-top: 3px; font-weight: 600;">Full interactive overview</div>
+        <div style="font-size: 6px; color: rgba(255,255,255,0.35);">pfandco.co.uk/discover</div>
+      </div>
+    </div>
+    <div class="p1-headline">Every site constraint.<br><span>Analysed in hours, not weeks.</span></div>
+    <div class="p1-sub">We do the data crunching that currently takes weeks — so developers, consultants, and architects can make faster, better-informed decisions. England-wide coverage.</div>
+  </div>
+
+  <div class="stats-strip">
+    <div class="stat"><div class="stat-num">23</div><div class="stat-label">Constraint datasets</div></div>
+    <div class="stat"><div class="stat-num">40+</div><div class="stat-label">Report types</div></div>
+    <div class="stat"><div class="stat-num">250+</div><div class="stat-label">Appeal precedents</div></div>
+    <div class="stat"><div class="stat-num">15+</div><div class="stat-label">Government APIs</div></div>
+    <div class="stat"><div class="stat-num">Same day</div><div class="stat-label">Turnaround</div></div>
+  </div>
+
+  <div class="p1-body">
+    <div class="section-head">What We Deliver</div>
+    <div class="section-title">Six capabilities in one platform</div>
+
+    <div class="cap-grid">
+      <div class="cap-card">
+        <div class="cap-icon">&#9881;</div>
+        <div class="cap-name">23-Point Constraint Screening</div>
+        <div class="cap-desc">Flood, heritage, ecology, contamination, archaeology, air quality, and 17 more — all from live government APIs.</div>
+      </div>
+      <div class="cap-card">
+        <div class="cap-icon">&#9878;</div>
+        <div class="cap-name">Submission-Ready Reports</div>
+        <div class="cap-desc">Planning Statements, Heritage Statements, FRAs, D&amp;A Statements, Transport Statements — to submission standard.</div>
+      </div>
+      <div class="cap-card">
+        <div class="cap-icon">&#9888;</div>
+        <div class="cap-name">CIL &amp; S106 Forecasting</div>
+        <div class="cap-desc">BCIS index-linked liability, exemption screening, HMO conversion traps, obligation forecasts.</div>
+      </div>
+      <div class="cap-card">
+        <div class="cap-icon">&#9733;</div>
+        <div class="cap-name">Market Intelligence</div>
+        <div class="cap-desc">Comparable sales, rental yields, GDV estimates, housing need evidence, development economics.</div>
+      </div>
+      <div class="cap-card">
+        <div class="cap-icon">&#10003;</div>
+        <div class="cap-name">250+ Appeal Precedents</div>
+        <div class="cap-desc">Analysis calibrated against verified PINS appeal decisions. Inspector-tested reasoning, not textbook theory.</div>
+      </div>
+      <div class="cap-card">
+        <div class="cap-icon">&#128100;</div>
+        <div class="cap-name">Expert Review</div>
+        <div class="cap-desc">Every report reviewed by our team. Human oversight ensures accuracy, context, and professional judgement.</div>
+      </div>
+    </div>
+
+    <div class="section-head">How It Works</div>
+    <div class="section-title">From address to report pack in five steps</div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-name">Site Address</div>
+        <div class="step-desc">Give us the address. We geocode and identify the LPA.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-name">Live Data</div>
+        <div class="step-desc">21 modules query 15+ government APIs in parallel.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-name">Analysis</div>
+        <div class="step-desc">Data analysed against NPPF policy and 250+ precedents.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-name">Expert Review</div>
+        <div class="step-desc">Our team reviews every report for accuracy and context.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-name">Delivery</div>
+        <div class="step-desc">Quality pipeline, then branded PDF. Same day.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="p-footer">
+    <div><strong>Site Intelligence</strong> — PF &amp; Co Holdings Ltd (16649319)</div>
+    <div>info@pfandco.co.uk &nbsp;|&nbsp; 01483 363 210</div>
+    <div>Page 1 of 3</div>
+  </div>
+</div>
+
+<!-- ══════ PAGE 2 ══════ -->
+<div class="page">
+  <div class="p2-body">
+    <div class="collab-bar">
+      <div class="collab-icon">&#129309;</div>
+      <div class="collab-text"><strong>How we work with you</strong> — We handle the data-intensive groundwork: pulling live government data, cross-referencing constraints, generating technical reports. You keep doing what you do best: making strategic decisions, managing client relationships, and applying your professional expertise. We make the whole process faster for everyone.</div>
+    </div>
+
+    <div class="section-head">Who It's For</div>
+    <div class="section-title">We do the heavy data lifting. You make the decisions.</div>
+    <div class="section-text">Covering all of England — every local planning authority.</div>
+
+    <div class="persona-grid">
+      <div class="persona">
+        <div class="persona-role">Land Promoters</div>
+        <div class="persona-who">Screening sites for option agreements</div>
+        <div class="persona-text">We do the data crunching — constraint analysis, planning risk scores, development economics — in hours rather than weeks. You screen at volume and focus on the sites with genuine potential.</div>
+      </div>
+      <div class="persona">
+        <div class="persona-role">Developers</div>
+        <div class="persona-who">Residential schemes of all sizes</div>
+        <div class="persona-text">We front-load the data-intensive due diligence so you know exactly what you're dealing with — and which specialist surveys are actually needed — before committing serious spend.</div>
+      </div>
+      <div class="persona">
+        <div class="persona-role">Planning Consultants</div>
+        <div class="persona-who">Your data engine, not your replacement</div>
+        <div class="persona-text">You bring the planning strategy and client relationships. We handle the heavy technical data work — flood risk, heritage, transport, D&amp;A — same-day turnaround so you can move faster for your clients.</div>
+      </div>
+      <div class="persona">
+        <div class="persona-role">Architects &amp; Designers</div>
+        <div class="persona-who">Constraint-informed design from day one</div>
+        <div class="persona-text">We crunch the constraint data and give you the design parameters up front — heritage, flood, height, density — so your scheme responds to real constraints from day one.</div>
+      </div>
+    </div>
+
+    <div class="section-head">Data Sources</div>
+    <div class="section-title">21 live feeds from official government sources</div>
+    <div class="section-text">Every statement traces back to a verifiable source. Not estimated. Not scraped. Not out of date.</div>
+
+    <div class="data-chips">
+      <div class="d-chip">Environment Agency — Flood Zones</div>
+      <div class="d-chip">Historic England — Listed Buildings</div>
+      <div class="d-chip">Natural England — Ecology</div>
+      <div class="d-chip">BGS — Geology &amp; Boreholes</div>
+      <div class="d-chip">DEFRA — Air Quality</div>
+      <div class="d-chip">ONS / NOMIS — Census</div>
+      <div class="d-chip">DfT — Traffic &amp; Accidents</div>
+      <div class="d-chip">Coal Authority</div>
+      <div class="d-chip">planning.data.gov.uk</div>
+      <div class="d-chip">DLUHC — Housing Delivery</div>
+      <div class="d-chip">OS Geocoder</div>
+      <div class="d-chip">EA — LIDAR Elevation</div>
+      <div class="d-chip">DEFRA MAGIC — Land Class</div>
+      <div class="d-chip">TfL — PTAL Algorithm</div>
+      <div class="d-chip">PropertyData — Comparables</div>
+      <div class="d-chip">UKRadon — Radon Risk</div>
+    </div>
+
+    <div class="cta-box">
+      <div style="display: flex; align-items: center; gap: 28px;">
+        <div style="flex: 1;">
+          <h3 style="text-align: left;">Send us a site. <span>See what comes back.</span></h3>
+          <p style="text-align: left; margin-bottom: 14px;">The fastest way to understand what we do is to try it. Send us an address — anywhere in England.</p>
+          <div class="cta-contacts" style="justify-content: flex-start; gap: 24px;">
+            <div class="cta-contact" style="text-align: left;">
+              <div class="cl">Email</div>
+              <div class="cv">info@pfandco.co.uk</div>
+            </div>
+            <div class="cta-contact" style="text-align: left;">
+              <div class="cl">Phone</div>
+              <div class="cv">01483 363 210</div>
+            </div>
+            <div class="cta-contact" style="text-align: left;">
+              <div class="cl">Website</div>
+              <div class="cv">pfandco.co.uk</div>
+            </div>
+          </div>
+        </div>
+        <div style="text-align: center; flex-shrink: 0;">
+          <canvas id="qr-page2" width="80" height="80" style="border-radius: 6px; background: white; padding: 4px;"></canvas>
+          <div style="font-size: 8px; color: rgba(255,255,255,0.6); margin-top: 4px; font-weight: 600;">Send us a site</div>
+          <div style="font-size: 6px; color: rgba(255,255,255,0.35); margin-top: 1px;">Opens your email</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="p-footer">
+    <div><strong>Site Intelligence</strong> — PF &amp; Co Holdings Ltd (16649319)</div>
+    <div>Tier 1 desktop assessments. Specialist surveys recommended where required.</div>
+    <div>Page 2 of 3</div>
+  </div>
+</div>
+
+<!-- ══════ PAGE 3: COMPETITOR COMPARISON ══════ -->
+<div class="page">
+  <div class="p3-header">
+    <div>
+      <div class="p3-header-left">
+        <div class="p1-logo-mark" style="width:36px;height:36px;font-size:11px;">PF<span class="amp">&amp;</span>CO</div>
+        <div>
+          <div class="p3-header-title">How We <span>Compare</span></div>
+          <div class="p3-header-sub">Site Intelligence vs the current market</div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align: right; font-size: 10px; color: rgba(255,255,255,0.5);">PF &amp; Co Holdings Ltd<br>England-wide coverage</div>
+  </div>
+
+  <div class="p3-body">
+    <div class="p3-intro">The UK planning consultancy market is worth <strong>&pound;877 million</strong>. Environmental search providers sell raw data for conveyancing. Consultancies sell time. We do the data crunching — so everyone in the process can move faster.</div>
+
+    <div class="cost-grid">
+      <div class="cost-card">
+        <div class="cost-type">Conveyancing Searches</div>
+        <div class="cost-example">Groundsure, Landmark, FCI</div>
+        <div class="cost-price">&pound;50–425</div>
+        <div class="cost-note">Data only — no analysis</div>
+      </div>
+      <div class="cost-card">
+        <div class="cost-type">Phase 1 Consultancies</div>
+        <div class="cost-example">Arbtech, GeoSmart, Ashfield</div>
+        <div class="cost-price">&pound;500–2,000</div>
+        <div class="cost-note">Single report, single discipline</div>
+      </div>
+      <div class="cost-card">
+        <div class="cost-type">Multi-Discipline Firms</div>
+        <div class="cost-example">WSP, Arcadis, Stantec, Savills</div>
+        <div class="cost-price">&pound;5k–15k+</div>
+        <div class="cost-note">Full pack — 4 to 8 weeks</div>
+      </div>
+      <div class="cost-card si-card">
+        <div class="cost-type" style="color: #0891b2;">Site Intelligence</div>
+        <div class="cost-example">PF &amp; Co Holdings</div>
+        <div class="cost-price">Fraction of cost</div>
+        <div class="cost-note">Full multi-discipline — same day</div>
+      </div>
+    </div>
+
+    <table class="comp-table">
+      <thead>
+        <tr>
+          <th style="width:22%">Capability</th>
+          <th>Conveyancing Searches</th>
+          <th>Phase 1 Consultancies</th>
+          <th>Multi-Discipline Firms</th>
+          <th class="si-th">Site Intelligence</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="feat-name">Turnaround</td><td>1hr – 5 days</td><td>5 – 14 days</td><td>4 – 8 weeks</td><td class="si-td yes">Same day</td></tr>
+        <tr><td class="feat-name">Planning policy analysis</td><td class="no">&#10007;</td><td class="partial">Limited</td><td class="yes">&#10003;</td><td class="si-td yes">&#10003;</td></tr>
+        <tr><td class="feat-name">Heritage assessment</td><td class="no">&#10007;</td><td class="no">&#10007;</td><td class="yes">&#10003;</td><td class="si-td yes">&#10003;</td></tr>
+        <tr><td class="feat-name">Flood risk analysis</td><td class="no">Raw data</td><td class="partial">Basic</td><td class="yes">&#10003;</td><td class="si-td yes">&#10003;</td></tr>
+        <tr><td class="feat-name">CIL / S106 forecast</td><td class="no">&#10007;</td><td class="no">&#10007;</td><td class="yes">&#10003;</td><td class="si-td yes">&#10003;</td></tr>
+        <tr><td class="feat-name">Market viability</td><td class="no">&#10007;</td><td class="no">&#10007;</td><td class="partial">Separate fee</td><td class="si-td yes">&#10003;</td></tr>
+        <tr><td class="feat-name">Submission-ready docs</td><td class="no">&#10007;</td><td class="partial">Single report</td><td class="yes">&#10003;</td><td class="si-td yes">&#10003;</td></tr>
+        <tr><td class="feat-name">Appeal precedents</td><td class="no">&#10007;</td><td class="no">&#10007;</td><td class="partial">Ad hoc</td><td class="si-td yes">250+ cases</td></tr>
+        <tr><td class="feat-name">Multi-discipline pack</td><td class="no">&#10007;</td><td class="no">&#10007;</td><td class="yes">&#10003;</td><td class="si-td yes">&#10003;</td></tr>
+      </tbody>
+    </table>
+
+    <div class="speed-section">
+      <div class="speed-title">Turnaround Comparison</div>
+      <div class="speed-row">
+        <div class="speed-label">Site Intelligence</div>
+        <div class="speed-bar-bg"><div class="speed-bar si">Same day</div></div>
+      </div>
+      <div class="speed-row">
+        <div class="speed-label">Phase 1 Consultancy</div>
+        <div class="speed-bar-bg"><div class="speed-bar mid">5 – 14 days</div></div>
+      </div>
+      <div class="speed-row">
+        <div class="speed-label">Multi-Discipline Firm</div>
+        <div class="speed-bar-bg"><div class="speed-bar slow">4 – 8 weeks</div></div>
+      </div>
+    </div>
+
+    <div class="bottom-cta">
+      <div style="display: flex; align-items: center; gap: 16px; flex: 1;">
+        <canvas id="qr-page3" width="56" height="56" style="border-radius: 4px; flex-shrink: 0;"></canvas>
+        <div>
+          <div class="bc-text">Visit our website</div>
+          <div class="bc-sub">Scan to go to <strong style="color: #0891b2;">pfandco.co.uk</strong> — or visit <strong style="color: #0891b2;">pfandco.co.uk/discover</strong> for the full interactive overview with audio</div>
+        </div>
+      </div>
+      <div class="bc-contact">
+        <div class="bc-email">info@pfandco.co.uk</div>
+        <div class="bc-phone">01483 363 210</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="p-footer">
+    <div><strong>Site Intelligence</strong> — PF &amp; Co Holdings Ltd (16649319)</div>
+    <div>All reports are Tier 1 desktop assessments</div>
+    <div>Page 3 of 3</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function drawQR(canvasId, size, url) {
+    var canvas = document.getElementById(canvasId);
+    if (!canvas) return;
+    var ctx = canvas.getContext('2d');
+    var img = new Image();
+    img.crossOrigin = 'anonymous';
+    img.onload = function() {
+      ctx.fillStyle = '#ffffff';
+      ctx.fillRect(0, 0, size, size);
+      ctx.drawImage(img, 0, 0, size, size);
+    };
+    img.onerror = function() {
+      ctx.fillStyle = '#ffffff';
+      ctx.fillRect(0, 0, size, size);
+      ctx.fillStyle = '#0891b2';
+      ctx.font = 'bold ' + (size * 0.14) + 'px Inter, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText('QR', size/2, size * 0.55);
+    };
+    img.src = 'https://api.qrserver.com/v1/create-qr-code/?size=' + (size*2) + 'x' + (size*2) + '&data=' + encodeURIComponent(url) + '&margin=1';
+  }
+
+  // Page 1: Full interactive overview
+  drawQR('qr-page1', 72, 'https://pfandco.co.uk/discover');
+
+  // Page 2: Send us a site (opens email with subject line)
+  drawQR('qr-page2', 80, 'mailto:info@pfandco.co.uk?subject=Site%20Intelligence%20%E2%80%94%20Site%20for%20Analysis&body=Hi%2C%0A%0AI%E2%80%99d%20like%20to%20get%20a%20Site%20Intelligence%20report%20for%20the%20following%20site%3A%0A%0ASite%20address%3A%20%0APostcode%3A%20%0A%0AThanks');
+
+  // Page 3: Main website
+  drawQR('qr-page3', 56, 'https://pfandco.co.uk');
+})();
+</script>
+</body>
+</html>

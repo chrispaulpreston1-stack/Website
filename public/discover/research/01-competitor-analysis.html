@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Competitor Data Source Analysis — Site Intelligence</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --si-dark: #0a0a0a;
+            --si-orange: #f97316;
+            --si-white: #f1f5f9;
+            --si-muted: #94a3b8;
+            --si-card: #141414;
+            --si-border: #1e1e1e;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: var(--si-dark);
+            color: var(--si-white);
+            line-height: 1.7;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%);
+            padding: 80px 40px 60px;
+            text-align: center;
+            border-bottom: 3px solid var(--si-orange);
+        }
+        .hero h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 42px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+        }
+        .hero h1 span { color: var(--si-orange); }
+        .hero p {
+            font-size: 18px;
+            color: var(--si-muted);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .hero .doc-label {
+            display: inline-block;
+            background: var(--si-orange);
+            color: #000;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 6px 20px;
+            border-radius: 20px;
+            margin-bottom: 24px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 40px;
+        }
+
+        h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 28px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 32px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--si-orange);
+            color: var(--si-white);
+        }
+        h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 20px;
+            font-weight: 500;
+            color: var(--si-orange);
+            margin-bottom: 16px;
+            margin-top: 40px;
+        }
+        h3:first-child { margin-top: 0; }
+
+        p { margin-bottom: 16px; color: #cbd5e1; font-size: 15px; }
+        strong { color: var(--si-white); }
+
+        /* Competitor Cards */
+        .competitor-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 32px;
+            margin-bottom: 60px;
+        }
+        .competitor-card {
+            background: var(--si-card);
+            border: 1px solid var(--si-border);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        .competitor-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--si-orange);
+        }
+        .competitor-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 28px;
+            background: linear-gradient(90deg, var(--si-card), #1a1a1a);
+            border-bottom: 1px solid var(--si-border);
+            cursor: pointer;
+        }
+        .competitor-name {
+            font-family: 'Oswald', sans-serif;
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--si-white);
+        }
+        .competitor-type {
+            font-size: 12px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 4px 14px;
+            border-radius: 12px;
+            background: rgba(249, 115, 22, 0.15);
+            color: var(--si-orange);
+        }
+        .competitor-body {
+            padding: 28px;
+        }
+        .competitor-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .meta-box {
+            background: rgba(255,255,255,0.03);
+            border-radius: 8px;
+            padding: 16px;
+        }
+        .meta-label {
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--si-muted);
+            margin-bottom: 6px;
+        }
+        .meta-value {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--si-white);
+        }
+
+        .data-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+        .data-list li {
+            padding: 8px 0 8px 20px;
+            position: relative;
+            font-size: 14px;
+            color: #cbd5e1;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+        }
+        .data-list li:last-child { border-bottom: none; }
+        .data-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 14px;
+            width: 8px;
+            height: 8px;
+            background: var(--si-orange);
+            border-radius: 50%;
+        }
+
+        .unique-edge {
+            background: rgba(249, 115, 22, 0.08);
+            border-left: 3px solid var(--si-orange);
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-top: 16px;
+        }
+        .unique-edge .label {
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--si-orange);
+            margin-bottom: 8px;
+        }
+        .unique-edge p { margin-bottom: 0; font-size: 14px; }
+
+        /* Comparison Table */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 40px;
+            font-size: 14px;
+        }
+        .comparison-table th {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 13px;
+            color: var(--si-orange);
+            background: var(--si-card);
+            padding: 14px 16px;
+            text-align: left;
+            border-bottom: 2px solid var(--si-orange);
+        }
+        .comparison-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--si-border);
+            color: #cbd5e1;
+            vertical-align: top;
+        }
+        .comparison-table tr:hover td {
+            background: rgba(249, 115, 22, 0.04);
+        }
+        .comparison-table .provider-col {
+            font-weight: 600;
+            color: var(--si-white);
+            white-space: nowrap;
+        }
+
+        /* Gaps Section */
+        .gap-card {
+            background: var(--si-card);
+            border: 1px solid var(--si-border);
+            border-radius: 12px;
+            padding: 24px 28px;
+            margin-bottom: 20px;
+        }
+        .gap-card .gap-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--si-white);
+            margin-bottom: 8px;
+        }
+        .gap-card .gap-who {
+            font-size: 12px;
+            color: var(--si-muted);
+            margin-bottom: 12px;
+        }
+        .gap-card p { font-size: 14px; margin-bottom: 0; }
+
+        /* Key Takeaway */
+        .takeaway {
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.12), rgba(249, 115, 22, 0.04));
+            border: 1px solid rgba(249, 115, 22, 0.3);
+            border-radius: 12px;
+            padding: 32px;
+            margin: 40px 0;
+        }
+        .takeaway h3 {
+            margin-top: 0;
+            margin-bottom: 12px;
+        }
+        .takeaway p { margin-bottom: 0; }
+
+        .footer {
+            text-align: center;
+            padding: 32px;
+            border-top: 1px solid var(--si-border);
+            font-size: 13px;
+            color: var(--si-muted);
+        }
+
+        /* Toggles */
+        .toggle-arrow {
+            font-size: 18px;
+            color: var(--si-muted);
+            transition: transform 0.3s;
+        }
+        .competitor-card.open .toggle-arrow {
+            transform: rotate(180deg);
+        }
+        .competitor-body {
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 28px;
+            transition: max-height 0.4s ease, padding 0.3s ease;
+        }
+        .competitor-card.open .competitor-body {
+            max-height: 2000px;
+            padding: 28px;
+        }
+    /* Back link */
+    .back-bar {
+        background: rgba(249,115,22,0.08);
+        border-bottom: 1px solid rgba(249,115,22,0.2);
+        padding: 12px 40px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    .back-bar a {
+        color: var(--si-orange);
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        transition: opacity 0.3s;
+    }
+    .back-bar a:hover { opacity: 0.8; }
+    @media (max-width: 600px) {
+        .back-bar { padding: 10px 20px; }
+        .back-bar a { font-size: 13px; }
+    }
+    </style>
+</head>
+<body>
+    <div class="back-bar">
+        <a href="../index.html">&#8592; Back to Site Intelligence Overview</a>
+    </div>
+    <div class="hero">
+        <div class="doc-label">Research Document 01 of 04</div>
+        <h1>Competitor <span>Data Source</span> Analysis</h1>
+        <p>How Site Intelligence's data spine compares to Landmark, Groundsure, Searchland, LandTech, and every other competitor in the market.</p>
+    </div>
+
+    <div class="container">
+
+        <!-- KEY TAKEAWAY -->
+        <div class="takeaway">
+            <h3>The Key Insight</h3>
+            <p>Every competitor in the environmental search and site sourcing market pulls from the <strong>same government open data spine</strong> — Environment Agency, BGS, Historic England, Natural England, ONS, HM Land Registry, and Ordnance Survey. Differentiation comes from three things: <strong>(a)</strong> proprietary models or exclusive data partnerships, <strong>(b)</strong> the presentation and analysis layer, and <strong>(c)</strong> speed of integration. Site Intelligence's edge is <strong>full AI-automated analysis</strong> across all sources simultaneously — no other competitor does that.</p>
+        </div>
+
+        <!-- OVERVIEW TABLE -->
+        <h2>Competitor Landscape at a Glance</h2>
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Competitor</th>
+                    <th>Type</th>
+                    <th>Datasets Claimed</th>
+                    <th>Core Data Spine</th>
+                    <th>Unique Edge</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="provider-col">Landmark / Envirocheck</td>
+                    <td>Environmental search</td>
+                    <td>150+ datasets, 170 yrs mapping</td>
+                    <td>BGS, EA, OS, Coal Authority</td>
+                    <td>Proprietary "Legend" historical map database — deepest mapping archive in market</td>
+                </tr>
+                <tr>
+                    <td class="provider-col">Groundsure</td>
+                    <td>Environmental search</td>
+                    <td>150+ datasets, 106M+ data points</td>
+                    <td>BGS, EA, OS, Coal Authority</td>
+                    <td>ClimateIndex forward modelling, Ambiental flood analytics, proprietary NBRM contamination model</td>
+                </tr>
+                <tr>
+                    <td class="provider-col">Searchland</td>
+                    <td>Site sourcing platform</td>
+                    <td>28M+ titles, 30+ constraint layers</td>
+                    <td>HMLR, OS, Companies House</td>
+                    <td>DNO infrastructure from all 6 operators, GAIA BNG partnership, Rightmove integration</td>
+                </tr>
+                <tr>
+                    <td class="provider-col">LandTech / LandInsight</td>
+                    <td>Site sourcing platform</td>
+                    <td>343 LPAs, daily refresh</td>
+                    <td>planning.data.gov.uk, HMLR, OS</td>
+                    <td>60+ person data team, Hometrack (Zoopla) comparables, Mining Remediation Authority</td>
+                </tr>
+                <tr>
+                    <td class="provider-col">Nimbus Maps</td>
+                    <td>Site sourcing platform</td>
+                    <td>"1,000+ sources"</td>
+                    <td>HMLR, OS, EA</td>
+                    <td>Rightmove integration, 30M+ comparables</td>
+                </tr>
+                <tr>
+                    <td class="provider-col">Future Climate Info (FCI)</td>
+                    <td>Specialist search</td>
+                    <td>CON29M + specialist</td>
+                    <td>Coal Authority, JBA, BGS</td>
+                    <td>EXCLUSIVE: EarthSense air quality, Property Assure subsidence claims data</td>
+                </tr>
+                <tr>
+                    <td class="provider-col">Argyll Environmental</td>
+                    <td>Consultant-reviewed</td>
+                    <td>Consultant-reviewed</td>
+                    <td>Landmark stack (reseller)</td>
+                    <td>Only fully consultant-led contaminated land + flood review</td>
+                </tr>
+                <tr>
+                    <td class="provider-col">Site Intelligence</td>
+                    <td>AI-automated analysis</td>
+                    <td>40+ APIs, 23 constraint checks</td>
+                    <td>EA, BGS, HE, NE, ONS, HMLR, DEFRA, DfT</td>
+                    <td>Full AI analysis pipeline — cross-references all sources, flags conflicts, planning-grade report same day</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- DETAILED COMPETITOR BREAKDOWNS -->
+        <h2>Detailed Competitor Profiles</h2>
+        <div class="competitor-grid">
+
+            <!-- Landmark -->
+            <div class="competitor-card open">
+                <div class="competitor-header" onclick="this.parentElement.classList.toggle('open')">
+                    <span class="competitor-name">Landmark / Envirocheck</span>
+                    <span class="competitor-type">Environmental Search Provider</span>
+                    <span class="toggle-arrow">&#9660;</span>
+                </div>
+                <div class="competitor-body">
+                    <div class="competitor-meta">
+                        <div class="meta-box">
+                            <div class="meta-label">Market Position</div>
+                            <div class="meta-value">Market leader in conveyancing searches. Used by most law firms as default.</div>
+                        </div>
+                        <div class="meta-box">
+                            <div class="meta-label">Data Volume</div>
+                            <div class="meta-value">150+ datasets, 170 years of historical mapping</div>
+                        </div>
+                        <div class="meta-box">
+                            <div class="meta-label">Delivery</div>
+                            <div class="meta-value">Static PDF report, typically 3-5 working days</div>
+                        </div>
+                    </div>
+                    <h3>Shared Government Data (Same as SI)</h3>
+                    <ul class="data-list">
+                        <li>Environment Agency — flood zones, surface water, historic floods, pollution incidents, permitted sites</li>
+                        <li>British Geological Survey — bedrock geology, superficial deposits, borehole records</li>
+                        <li>Historic England — listed buildings, scheduled monuments, registered parks & gardens</li>
+                        <li>Natural England — SSSIs, SACs, SPAs, Ramsar sites, priority habitats</li>
+                        <li>Ordnance Survey — current mapping, address data</li>
+                        <li>Coal Authority — mining data (CON29M)</li>
+                    </ul>
+                    <h3>Data SI Does Not Currently Have</h3>
+                    <ul class="data-list">
+                        <li>Proprietary "Legend" historical map database — 170 years of raster mapping, not available via open APIs</li>
+                        <li>Coal Authority CON29M licensed data (~&pound;40/search)</li>
+                        <li>Proprietary ground stability assessment models</li>
+                        <li>Chancel repair liability database</li>
+                    </ul>
+                    <div class="unique-edge">
+                        <div class="label">Their Unique Edge</div>
+                        <p>The historical mapping archive is genuinely proprietary and difficult to replicate. Their market dominance in conveyancing makes them the default choice for law firms. However, their analysis layer is static — a consultant reviews maps and produces a PDF. No AI cross-referencing, no planning policy integration.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Groundsure -->
+            <div class="competitor-card">
+                <div class="competitor-header" onclick="this.parentElement.classList.toggle('open')">
+                    <span class="competitor-name">Groundsure</span>
+                    <span class="competitor-type">Environmental Search Provider</span>
+                    <span class="toggle-arrow">&#9660;</span>
+                </div>
+                <div class="competitor-body">
+                    <div class="competitor-meta">
+                        <div class="meta-box">
+                            <div class="meta-label">Market Position</div>
+                            <div class="meta-value">Second largest environmental search provider. Strong in flood and contamination.</div>
+                        </div>
+                        <div class="meta-box">
+                            <div class="meta-label">Data Volume</div>
+                            <div class="meta-value">150+ datasets, 106M+ data points</div>
+                        </div>
+                        <div class="meta-box">
+                            <div class="meta-label">Delivery</div>
+                            <div class="meta-value">PDF report, 1-3 working days</div>
+                        </div>
+                    </div>
+                    <h3>Shared Government Data (Same as SI)</h3>
+                    <ul class="data-list">
+                        <li>Environment Agency — flood zones, surface water, historic flood events, permits, waste sites</li>
+                        <li>British Geological Survey — geology, ground stability, borehole data</li>
+                        <li>Historic England — designated heritage assets</li>
+                        <li>Natural England — protected sites, priority habitats</li>
+                        <li>Ordnance Survey — mapping and address data</li>
+                    </ul>
+                    <h3>Data SI Does Not Currently Have</h3>
+                    <ul class="data-list">
+                        <li>Ambiental flood analytics — proprietary 5m resolution flood modelling (higher resolution than EA free data)</li>
+                        <li>ClimateIndex — forward climate scenario modelling (flood, subsidence, coastal erosion projections)</li>
+                        <li>Proprietary NBRM contamination model — their own National Baseline Radon Model</li>
+                        <li>Coal Authority CON29M licensed data</li>
+                        <li>Historical mapping archive (licensed from Ordnance Survey)</li>
+                    </ul>
+                    <div class="unique-edge">
+                        <div class="label">Their Unique Edge</div>
+                        <p>Groundsure's proprietary flood modelling (Ambiental) and forward climate projections (ClimateIndex) are genuinely differentiated — they go beyond EA data to model future scenarios. Their NBRM contamination model adds a layer SI doesn't have. However, like Landmark, the output is a static PDF with no planning policy or AI analysis layer.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Searchland -->
+            <div class="competitor-card">
+                <div class="competitor-header" onclick="this.parentElement.classList.toggle('open')">
+                    <span class="competitor-name">Searchland</span>
+                    <span class="competitor-type">Site Sourcing Platform</span>
+                    <span class="toggle-arrow">&#9660;</span>
+                </div>
+                <div class="competitor-body">
+                    <div class="competitor-meta">
+                        <div class="meta-box">
+                            <div class="meta-label">Market Position</div>
+                            <div class="meta-value">Land sourcing platform for developers. Constraint-led site finding.</div>
+                        </div>
+                        <div class="meta-box">
+                            <div class="meta-label">Data Volume</div>
+                            <div class="meta-value">28M+ titles, 30+ constraint layers</div>
+                        </div>
+                        <div class="meta-box">
+                            <div class="meta-label">Delivery</div>
+                            <div class="meta-value">Interactive map platform, &pound;200-400/month subscription</div>
+                        </div>
+                    </div>
+                    <h3>Shared Government Data (Same as SI)</h3>
+                    <ul class="data-list">
+                        <li>HM Land Registry — title boundaries, ownership, price paid</li>
+                        <li>Ordnance Survey — mapping</li>
+                        <li>planning.data.gov.uk — planning applications, constraints</li>
+                        <li>Environment Agency — flood zones</li>
+                        <li>Companies House — ownership data</li>
+                    </ul>
+                    <h3>Data SI Does Not Currently Have</h3>
+                    <ul class="data-list">
+                        <li>DNO infrastructure data from all 6 distribution network operators (grid capacity at substation level)</li>
+                        <li>GAIA BNG (Biodiversity Net Gain) partnership data</li>
+                        <li>Rightmove live listing integration</li>
+                    </ul>
+                    <div class="unique-edge">
+                        <div class="label">Their Unique Edge</div>
+                        <p>Searchland is a site-finding tool, not a report provider. Their DNO data from all 6 operators is valuable and not easy to replicate. However, they present raw layers on a map — the user interprets the data themselves. No automated analysis, no planning policy context, no report output.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LandTech -->
+            <div class="competitor-card">
+                <div class="competitor-header" onclick="this.parentElement.classList.toggle('open')">
+                    <span class="competitor-name">LandTech / LandInsight</span>
+                    <span class="competitor-type">Site Sourcing Platform</span>
+                    <span class="toggle-arrow">&#9660;</span>
+                </div>
+                <div class="competitor-body">
+                    <div class="competitor-meta">
+                        <div class="meta-box">
+                            <div class="meta-label">Market Position</div>
+                            <div class="meta-value">Largest site sourcing platform. Comprehensive planning data.</div>
+                        </div>
+                        <div class="meta-box">
+                            <div class="meta-label">Data Volume</div>
+                            <div class="meta-value">343 LPAs, daily planning data refresh</div>
+                        </div>
+                        <div class="meta-box">
+                            <div class="meta-label">Delivery</div>
+                            <div class="meta-value">Interactive platform, subscription model</div>
+                        </div>
+                    </div>
+                    <h3>Shared Government Data (Same as SI)</h3>
+                    <ul class="data-list">
+                        <li>planning.data.gov.uk — planning applications, allocations, constraints</li>
+                        <li>HM Land Registry — ownership, titles, price paid</li>
+                        <li>Ordnance Survey — mapping</li>
+                        <li>Environment Agency — flood zones</li>
+                        <li>Natural England — protected sites</li>
+                    </ul>
+                    <h3>Data SI Does Not Currently Have</h3>
+                    <ul class="data-list">
+                        <li>Hometrack (Zoopla) comparables — commercial property valuation data</li>
+                        <li>Mining Remediation Authority data (separate from Coal Authority CON29M)</li>
+                        <li>60+ person data team manually curating planning data across 343 LPAs</li>
+                    </ul>
+                    <div class="unique-edge">
+                        <div class="label">Their Unique Edge</div>
+                        <p>LandTech's 60-person data team gives them the most comprehensive planning application coverage in the market. Their Hometrack integration provides valuation comparables. However, they're a site-finding platform — they show you where to build, not whether you should. No environmental analysis, no planning policy assessment, no risk report.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Nimbus Maps -->
+            <div class="competitor-card">
+                <div class="competitor-header" onclick="this.parentElement.classList.toggle('open')">
+                    <span class="competitor-name">Nimbus Maps</span>
+                    <span class="competitor-type">Site Sourcing Platform</span>
+                    <span class="toggle-arrow">&#9660;</span>
+                </div>
+                <div class="competitor-body">
+                    <div class="competitor-meta">
+                        <div class="meta-box">
+                            <div class="meta-label">Market Position</div>
+                            <div class="meta-value">Growing site sourcing platform. Strong on comparables.</div>
+                        </div>
+                        <div class="meta-box">
+                            <div class="meta-label">Data Volume</div>
+                            <div class="meta-value">"1,000+ sources", 30M+ comparables</div>
+                        </div>
+                        <div class="meta-box">
+                            <div class="meta-label">Delivery</div>
+                            <div class="meta-value">Interactive map platform</div>
+                        </div>
+                    </div>
+                    <h3>Shared Government Data (Same as SI)</h3>
+                    <ul class="data-list">
+                        <li>HM Land Registry — title data, price paid</li>
+                        <li>Ordnance Survey — mapping</li>
+                        <li>Environment Agency — flood zones</li>
+                        <li>planning.data.gov.uk — planning applications</li>
+                    </ul>
+                    <h3>Data SI Does Not Currently Have</h3>
+                    <ul class="data-list">
+                        <li>Rightmove live listing integration</li>
+                        <li>30M+ property comparables database</li>
+                    </ul>
+                    <div class="unique-edge">
+                        <div class="label">Their Unique Edge</div>
+                        <p>Nimbus's "1,000+ sources" claim is marketing-heavy — many are derived layers from the same core datasets. Their Rightmove integration and comparables database are useful for developers assessing GDV. Like other sourcing platforms, they present data layers without analysis.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FCI -->
+            <div class="competitor-card">
+                <div class="competitor-header" onclick="this.parentElement.classList.toggle('open')">
+                    <span class="competitor-name">Future Climate Info (FCI)</span>
+                    <span class="competitor-type">Specialist Search Provider</span>
+                    <span class="toggle-arrow">&#9660;</span>
+                </div>
+                <div class="competitor-body">
+                    <div class="competitor-meta">
+                        <div class="meta-box">
+                            <div class="meta-label">Market Position</div>
+                            <div class="meta-value">Niche specialist. Strong on coal mining and air quality.</div>
+                        </div>
+                        <div class="meta-box">
+                            <div class="meta-label">Data Volume</div>
+                            <div class="meta-value">CON29M + specialist datasets</div>
+                        </div>
+                        <div class="meta-box">
+                            <div class="meta-label">Delivery</div>
+                            <div class="meta-value">PDF report, specialist search products</div>
+                        </div>
+                    </div>
+                    <h3>Shared Government Data (Same as SI)</h3>
+                    <ul class="data-list">
+                        <li>Coal Authority — mining data</li>
+                        <li>British Geological Survey — geology, ground stability</li>
+                        <li>Environment Agency — flood data, pollution incidents</li>
+                    </ul>
+                    <h3>Data SI Does Not Currently Have</h3>
+                    <ul class="data-list">
+                        <li>EarthSense air quality data — EXCLUSIVE partnership, hyperlocal air quality modelling</li>
+                        <li>Property Assure subsidence claims data — EXCLUSIVE, insurance claims history not publicly available</li>
+                        <li>JBA flood modelling — commercial 5m resolution (separate from EA)</li>
+                    </ul>
+                    <div class="unique-edge">
+                        <div class="label">Their Unique Edge</div>
+                        <p>FCI has two genuinely exclusive datasets: EarthSense air quality (hyperlocal modelling beyond DEFRA background data) and Property Assure subsidence claims (insurance data not available anywhere else). These are real differentiators that SI cannot replicate without commercial partnerships.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Argyll -->
+            <div class="competitor-card">
+                <div class="competitor-header" onclick="this.parentElement.classList.toggle('open')">
+                    <span class="competitor-name">Argyll Environmental</span>
+                    <span class="competitor-type">Consultant-Reviewed Search</span>
+                    <span class="toggle-arrow">&#9660;</span>
+                </div>
+                <div class="competitor-body">
+                    <div class="competitor-meta">
+                        <div class="meta-box">
+                            <div class="meta-label">Market Position</div>
+                            <div class="meta-value">Premium consultant-reviewed environmental reports.</div>
+                        </div>
+                        <div class="meta-box">
+                            <div class="meta-label">Data Volume</div>
+                            <div class="meta-value">Uses Landmark data stack (reseller)</div>
+                        </div>
+                        <div class="meta-box">
+                            <div class="meta-label">Delivery</div>
+                            <div class="meta-value">Consultant-reviewed PDF, 5-10 working days</div>
+                        </div>
+                    </div>
+                    <h3>How They Work</h3>
+                    <p>Argyll buys Landmark/Envirocheck data and adds a qualified environmental consultant review on top. They're a reseller with a human analysis layer — the only provider in this list that offers fully consultant-led interpretation of contaminated land and flood risk data.</p>
+                    <div class="unique-edge">
+                        <div class="label">Their Unique Edge</div>
+                        <p>The only provider offering a fully consultant-reviewed opinion on the data. This appeals to risk-averse buyers (solicitors, mortgage lenders) who want a named professional's assessment. However, it's slow (5-10 days) and expensive. SI's AI analysis provides a similar interpretive layer at a fraction of the time and cost.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- WHAT EVERYONE SHARES -->
+        <h2>The Shared Data Spine</h2>
+        <p>Every competitor in this market — regardless of their marketing claims about "150+ datasets" or "1,000+ sources" — uses the same core government data:</p>
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Government Provider</th>
+                    <th>Data</th>
+                    <th>Used By</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="provider-col">Environment Agency</td>
+                    <td>Flood zones, surface water, historic floods, permits, pollution incidents, LIDAR</td>
+                    <td>Everyone</td>
+                </tr>
+                <tr>
+                    <td class="provider-col">British Geological Survey</td>
+                    <td>Bedrock geology, superficial deposits, borehole records, ground stability</td>
+                    <td>Everyone</td>
+                </tr>
+                <tr>
+                    <td class="provider-col">Historic England</td>
+                    <td>Listed buildings, scheduled monuments, registered parks & gardens</td>
+                    <td>Everyone (to varying degrees)</td>
+                </tr>
+                <tr>
+                    <td class="provider-col">Natural England</td>
+                    <td>SSSIs, SACs, SPAs, Ramsar, priority habitats, NCAs</td>
+                    <td>Everyone (to varying degrees)</td>
+                </tr>
+                <tr>
+                    <td class="provider-col">Ordnance Survey</td>
+                    <td>Current mapping, address data</td>
+                    <td>Everyone</td>
+                </tr>
+                <tr>
+                    <td class="provider-col">HM Land Registry</td>
+                    <td>Titles, ownership, price paid data</td>
+                    <td>Searchland, LandTech, Nimbus, SI</td>
+                </tr>
+                <tr>
+                    <td class="provider-col">ONS / NOMIS</td>
+                    <td>Census demographics, housing data, deprivation indices</td>
+                    <td>LandTech, Nimbus, SI</td>
+                </tr>
+                <tr>
+                    <td class="provider-col">DEFRA</td>
+                    <td>Agricultural land classification, air quality, MAGIC map data</td>
+                    <td>Landmark, Groundsure, SI</td>
+                </tr>
+                <tr>
+                    <td class="provider-col">planning.data.gov.uk</td>
+                    <td>Planning applications, constraints, designations</td>
+                    <td>LandTech, Searchland, SI</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- GAPS ANALYSIS -->
+        <h2>What Competitors Have That SI Doesn't (Yet)</h2>
+        <p>An honest assessment of data gaps. These are datasets that require commercial licenses or exclusive partnerships — they cannot be replicated with government open data alone.</p>
+
+        <div class="gap-card">
+            <div class="gap-title">Coal Authority CON29M Mining Search</div>
+            <div class="gap-who">Who has it: Groundsure, Landmark, FCI &mdash; Licensed dataset, ~&pound;40/search</div>
+            <p>Required for properties in coal mining areas. SI should flag coal areas and recommend a separate CON29M search.</p>
+        </div>
+
+        <div class="gap-card">
+            <div class="gap-title">170+ Years Historical Mapping Archive</div>
+            <div class="gap-who">Who has it: Landmark (proprietary "Legend" database), Groundsure (OS licensed) &mdash; Commercially licensed raster data</div>
+            <p>Full historical map regression from 1840s onwards. SI uses historic map references and descriptive analysis but does not have the full raster archive for visual map regression.</p>
+        </div>
+
+        <div class="gap-card">
+            <div class="gap-title">Proprietary Flood Modelling</div>
+            <div class="gap-who">Who has it: Groundsure (Ambiental), FCI (JBA) &mdash; Commercial 5m resolution models</div>
+            <p>Higher-resolution flood modelling than EA free data. SI uses authoritative EA data which is the official government position, but commercial models offer more granular analysis.</p>
+        </div>
+
+        <div class="gap-card">
+            <div class="gap-title">Subsidence Claims Data</div>
+            <div class="gap-who">Who has it: FCI (Property Assure exclusive) &mdash; Insurance claims data, not publicly available</div>
+            <p>Historical insurance claims for subsidence. This is genuinely exclusive to FCI and cannot be replicated.</p>
+        </div>
+
+        <div class="gap-card">
+            <div class="gap-title">Rightmove / Zoopla Live Listings</div>
+            <div class="gap-who">Who has it: Searchland, Nimbus, LandTech (Hometrack) &mdash; Commercial API subscriptions</div>
+            <p>Live property listings and valuation comparables. Useful for site sourcing but not core to SI's environmental/planning analysis mission.</p>
+        </div>
+
+        <div class="gap-card">
+            <div class="gap-title">BNG Biodiversity Net Gain Data</div>
+            <div class="gap-who">Who has it: Searchland (GAIA partnership) &mdash; Emerging commercial dataset</div>
+            <p>Biodiversity net gain unit calculations. An emerging requirement — SI could partner or build this capability as the market matures.</p>
+        </div>
+
+        <div class="gap-card">
+            <div class="gap-title">Forward Climate Modelling</div>
+            <div class="gap-who">Who has it: Groundsure (ClimateIndex) &mdash; Proprietary climate scenario projection</div>
+            <p>Projects future flood, subsidence, and coastal erosion scenarios under climate change. A growing differentiator as climate risk becomes more prominent in planning.</p>
+        </div>
+
+        <!-- SI POSITIONING -->
+        <h2>Where Site Intelligence Wins</h2>
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Traditional Search Providers<br><small style="color: var(--si-muted); font-weight: 400;">(Landmark, Groundsure)</small></th>
+                    <th>Site Sourcing Platforms<br><small style="color: var(--si-muted); font-weight: 400;">(Searchland, LandTech)</small></th>
+                    <th style="color: var(--si-orange);">Site Intelligence</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="provider-col">Data sources</td>
+                    <td>Same government APIs</td>
+                    <td>Same government APIs</td>
+                    <td>Same government APIs</td>
+                </tr>
+                <tr>
+                    <td class="provider-col">Delivery</td>
+                    <td>Static PDF, 3-5 days</td>
+                    <td>Interactive map layers</td>
+                    <td><strong>AI-analysed report, same day</strong></td>
+                </tr>
+                <tr>
+                    <td class="provider-col">Analysis</td>
+                    <td>Consultant reviews maps</td>
+                    <td>You interpret the layers</td>
+                    <td><strong>AI cross-references all sources</strong></td>
+                </tr>
+                <tr>
+                    <td class="provider-col">Planning context</td>
+                    <td>Limited or none</td>
+                    <td>Limited — planning data only</td>
+                    <td><strong>Full policy + appeal precedent</strong></td>
+                </tr>
+                <tr>
+                    <td class="provider-col">Source traceability</td>
+                    <td>Map references only</td>
+                    <td>Data layer attribution</td>
+                    <td><strong>Every fact linked to API + date</strong></td>
+                </tr>
+                <tr>
+                    <td class="provider-col">Cost</td>
+                    <td>&pound;200-500 per search</td>
+                    <td>&pound;200-400/month subscription</td>
+                    <td><strong>Competitive per-report pricing</strong></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="takeaway">
+            <h3>The Bottom Line for the Web Page</h3>
+            <p>Don't claim SI has different data — claim SI uses the <strong>same authoritative data differently</strong>. Every competitor draws from the same government well. SI's differentiation is the AI analysis layer that cross-references every source, identifies conflicts, and produces a planning-grade report with full source traceability. The honest acknowledgement of gaps (CON29M, historical mapping, proprietary flood models) builds trust and positions SI as a knowledgeable advisor, not just another data vendor.</p>
+        </div>
+
+    </div>
+
+    <div class="footer">Site Intelligence &mdash; Competitor Data Source Analysis &mdash; Prepared March 2026</div>
+</body>
+</html>
