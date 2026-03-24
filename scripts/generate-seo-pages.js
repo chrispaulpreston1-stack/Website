@@ -362,7 +362,7 @@ function injectMeta(template, route) {
   let html = template;
 
   // Replace title
-  html = html.replace(/<title>[^<]*<\/title>/, `<title>${title}</title>`);
+  html = html.replace(/<title[^>]*>[^<]*<\/title>/, `<title data-rh="true">${title}</title>`);
 
   // Replace meta title
   html = html.replace(
@@ -390,12 +390,12 @@ function injectMeta(template, route) {
 
   // Add canonical link (before </head>)
   if (!html.includes('rel="canonical"')) {
-    html = html.replace('</head>', `  <link rel="canonical" href="${canonical}" />\n</head>`);
+    html = html.replace('</head>', `  <link rel="canonical" href="${canonical}" data-rh="true" />\n</head>`);
   }
 
   // Add noindex meta tag for pages that should not be indexed (e.g. post-purchase)
   if (route.noindex) {
-    html = html.replace('</head>', `  <meta name="robots" content="noindex, nofollow" />\n</head>`);
+    html = html.replace('</head>', `  <meta name="robots" content="noindex, nofollow" data-rh="true" />\n</head>`);
   }
 
   // Add route-specific JSON-LD if provided (before </head>)
@@ -412,7 +412,7 @@ function injectMeta(template, route) {
       }
     }
 
-    html = html.replace('</head>', `  <script type="application/ld+json">${JSON.stringify(ld)}</script>\n</head>`);
+    html = html.replace('</head>', `  <script type="application/ld+json" data-rh="true">${JSON.stringify(ld)}</script>\n</head>`);
   }
 
   return html;
