@@ -291,7 +291,7 @@ export default function HomePage() {
               >
                 <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#0f3460] to-[#2980b9]" />
                 <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[rgba(15,52,96,0.08)] to-[rgba(15,52,96,0.15)] flex items-center justify-center mb-6">
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0f3460" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0f3460" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M7 20h10M10 20V10a4 4 0 0 1 8 0M6 14h8"/></svg>
                 </div>
                 <div className="text-[2.5rem] font-extrabold text-[#0f3460] leading-none mb-2">85-93%</div>
                 <h3 className="text-xl font-bold mb-3">Cost</h3>

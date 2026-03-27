@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import {
   Clock,
-  DollarSign,
+  Banknote,
   ShieldCheck,
   Scale,
 } from 'lucide-react';
@@ -61,7 +61,7 @@ const valueCards = [
     desc: 'No more chasing flood risk consultants, heritage assessors, ecologists. One order, one delivery, 48 hours.',
   },
   {
-    icon: <DollarSign size={28} />,
+    icon: <Banknote size={28} />,
     title: 'Save your client \u00A320k-\u00A330k',
     desc: 'Desktop reports at a fraction of traditional consultant fees. Your clients get the same evidence for less.',
   },

@@ -195,7 +195,7 @@ export default function ForDevelopersPage() {
             <FadeUp delay={0.08}>
               <div className="flex items-start gap-4 p-6 rounded-xl bg-white border border-[#e2e5ed]">
                 <div className="w-11 h-11 rounded-lg bg-gradient-to-br from-[rgba(15,52,96,0.1)] to-[rgba(15,52,96,0.2)] flex items-center justify-center shrink-0">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0f3460" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0f3460" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M7 20h10M10 20V10a4 4 0 0 1 8 0M6 14h8"/></svg>
                 </div>
                 <div>
                   <div className="text-lg font-bold text-[#0f3460]">85-93% Saving</div>
