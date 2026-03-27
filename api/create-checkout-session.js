@@ -1,3 +1,27 @@
+// NEW: Product-based pricing (dwelling count tiers)
+const PRODUCT_PRICES = {
+  // Product 1: Site Screening — fixed price
+  'screening': { name: 'Site Screening', price: 199 },
+
+  // Product 2: Feasibility Intelligence — by dwelling count
+  'feasibility-1': { name: 'Feasibility Intelligence (1 dwelling)', price: 695 },
+  'feasibility-2-9': { name: 'Feasibility Intelligence (2-9 dwellings)', price: 1295 },
+  'feasibility-10-50': { name: 'Feasibility Intelligence (10-50 dwellings)', price: 2495 },
+  'feasibility-51-100': { name: 'Feasibility Intelligence (51-100 dwellings)', price: 3495 },
+
+  // Product 3: Pre-Application Pack — by dwelling count
+  'preapp-1': { name: 'Pre-Application Pack (1 dwelling)', price: 995 },
+  'preapp-2-9': { name: 'Pre-Application Pack (2-9 dwellings)', price: 1795 },
+  'preapp-10-50': { name: 'Pre-Application Pack (10-50 dwellings)', price: 3495 },
+  'preapp-51-100': { name: 'Pre-Application Pack (51-100 dwellings)', price: 4995 },
+
+  // Product 4: Planning Intelligence Pack — by dwelling count
+  'fullpack-1': { name: 'Planning Intelligence Pack (1 dwelling)', price: 1495 },
+  'fullpack-2-9': { name: 'Planning Intelligence Pack (2-9 dwellings)', price: 2495 },
+  'fullpack-10-50': { name: 'Planning Intelligence Pack (10-50 dwellings)', price: 4995 },
+  'fullpack-51-100': { name: 'Planning Intelligence Pack (51-100 dwellings)', price: 7995 },
+};
+
 // IMPORTANT: These prices must match stripePrice values in src/data/reports.ts.
 // When updating prices, update BOTH files. See reports.ts as the source of truth.
 const REPORT_PRICES = {
@@ -36,6 +60,9 @@ const REPORT_PRICES = {
   'triple-threat': { name: 'The Triple Threat', price: 995 },
 };
 
+// Merged lookup: supports both legacy individual reports AND new product-based orders
+const ALL_PRICES = { ...REPORT_PRICES, ...PRODUCT_PRICES };
+
 const DISCOUNT_CODES = {
   'SITE10': { type: 'percent', value: 10 },
   'WELCOME': { type: 'fixed', value: 50 },
@@ -65,7 +92,7 @@ export default async function handler(req, res) {
     let totalPrice = 0;
 
     for (const rt of types) {
-      const report = REPORT_PRICES[rt];
+      const report = ALL_PRICES[rt];
       if (!report) {
         return res.status(400).json({ error: `Invalid report type: ${rt}` });
       }

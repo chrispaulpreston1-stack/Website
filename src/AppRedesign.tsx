@@ -23,6 +23,7 @@ const ForProfessionalsPage = lazy(() => import('./pages/new/ForProfessionalsPage
 const WhatsIncludedPage = lazy(() => import('./pages/new/WhatsIncludedPage'));
 const TrustPage = lazy(() => import('./pages/new/TrustPage'));
 const InsightsPage = lazy(() => import('./pages/new/InsightsPage'));
+const OrderPage = lazy(() => import('./pages/new/OrderPage'));
 
 /* ------------------------------------------------------------------ */
 /*  Lazy-loaded existing pages                                         */
@@ -278,6 +279,7 @@ export default function AppRedesign() {
                 {/* --- Existing pages (kept) --- */}
                 <Route path="/blog" element={<Blog />} />
                 <Route path="/insights/:slug" element={<BlogArticle />} />
+                <Route path="/order" element={<OrderPage />} />
                 <Route path="/order-report" element={<OrderReport />} />
                 <Route path="/order-success" element={<OrderSuccess />} />
                 <Route path="/privacy-policy" element={<PrivacyPolicy />} />

@@ -290,7 +290,7 @@ export default function ForDevelopersPage() {
                       cta.style === 'primary' ? (
                         <Link
                           key={cta.label}
-                          to="/order-report"
+                          to="/order"
                           className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-[10px] text-sm font-semibold text-white bg-gradient-to-br ${p.btnClass} hover:-translate-y-px hover:scale-[1.02] active:scale-[0.98] transition-all`}
                         >
                           {cta.label} <ArrowRight size={14} />
@@ -298,7 +298,7 @@ export default function ForDevelopersPage() {
                       ) : (
                         <Link
                           key={cta.label}
-                          to="/order-report"
+                          to="/order"
                           className="inline-flex items-center gap-2 px-5 py-2.5 rounded-[10px] text-sm font-semibold text-[#0f3460] border-[1.5px] border-[#e2e5ed] hover:border-[#0f3460] hover:bg-[#eff6ff] hover:scale-[1.02] active:scale-[0.98] transition-all"
                         >
                           {cta.label}
