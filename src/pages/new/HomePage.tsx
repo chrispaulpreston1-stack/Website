@@ -249,6 +249,89 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ---------- THREE USPs: SPEED, COST, INTEGRATION ---------- */}
+      <section className="py-[120px] bg-white relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, rgba(15,52,96,0.03) 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
+        <div className="max-w-[1120px] mx-auto px-6 relative z-10">
+          <FadeUp>
+            <div className="text-center max-w-[700px] mx-auto mb-16">
+              <h2 className="text-3xl md:text-[2.75rem] font-bold leading-tight tracking-tight">Why Site Intelligence</h2>
+              <div className="w-12 h-[3px] bg-gradient-to-r from-[#27ae60] to-[#2ecc71] rounded mx-auto my-5" />
+              <p className="text-[1.1rem] text-[#6b7280] leading-relaxed">
+                Three things no traditional consultancy can match.
+              </p>
+            </div>
+          </FadeUp>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* SPEED */}
+            <FadeUp delay={0}>
+              <motion.div
+                whileHover={{ y: -4, boxShadow: '0 12px 40px rgba(39,174,96,0.12)' }}
+                className="relative bg-white rounded-2xl p-10 border border-[#e2e5ed] overflow-hidden transition-all"
+              >
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#27ae60] to-[#2ecc71]" />
+                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[rgba(39,174,96,0.08)] to-[rgba(39,174,96,0.15)] flex items-center justify-center mb-6">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#27ae60" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </div>
+                <div className="text-[2.5rem] font-extrabold text-[#27ae60] leading-none mb-2">48hrs</div>
+                <h3 className="text-xl font-bold mb-3">Speed</h3>
+                <p className="text-[0.95rem] text-[#6b7280] leading-relaxed mb-4">
+                  Traditional consultants take 3-6 months coordinating 8-12 separate firms. We deliver the same desktop intelligence in 48 hours. One order. One delivery.
+                </p>
+                <div className="text-sm font-semibold text-[#27ae60]">vs. 3-6 months traditional</div>
+              </motion.div>
+            </FadeUp>
+
+            {/* COST */}
+            <FadeUp delay={0.1}>
+              <motion.div
+                whileHover={{ y: -4, boxShadow: '0 12px 40px rgba(15,52,96,0.12)' }}
+                className="relative bg-white rounded-2xl p-10 border border-[#e2e5ed] overflow-hidden transition-all"
+              >
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#0f3460] to-[#2980b9]" />
+                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[rgba(15,52,96,0.08)] to-[rgba(15,52,96,0.15)] flex items-center justify-center mb-6">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0f3460" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                </div>
+                <div className="text-[2.5rem] font-extrabold text-[#0f3460] leading-none mb-2">85-93%</div>
+                <h3 className="text-xl font-bold mb-3">Cost</h3>
+                <p className="text-[0.95rem] text-[#6b7280] leading-relaxed mb-4">
+                  A 15-unit scheme typically costs &pound;17,000-&pound;52,000 in desktop consultant reports. Same scope from Site Intelligence: a fraction of that. Same data sources. Same quality.
+                </p>
+                <div className="text-sm font-semibold text-[#0f3460]">saving vs. traditional consultancy</div>
+              </motion.div>
+            </FadeUp>
+
+            {/* INTEGRATION */}
+            <FadeUp delay={0.2}>
+              <motion.div
+                whileHover={{ y: -4, boxShadow: '0 12px 40px rgba(124,58,237,0.12)' }}
+                className="relative bg-white rounded-2xl p-10 border border-[#e2e5ed] overflow-hidden transition-all"
+              >
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#7c3aed] to-[#9b59b6]" />
+                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[rgba(124,58,237,0.08)] to-[rgba(124,58,237,0.15)] flex items-center justify-center mb-6">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="3"/><circle cx="4" cy="6" r="2"/><circle cx="20" cy="6" r="2"/><circle cx="4" cy="18" r="2"/><circle cx="20" cy="18" r="2"/><line x1="6" y1="6" x2="9.5" y2="10.5"/><line x1="18" y1="6" x2="14.5" y2="10.5"/><line x1="6" y1="18" x2="9.5" y2="13.5"/><line x1="18" y1="18" x2="14.5" y2="13.5"/></svg>
+                </div>
+                <div className="text-[2.5rem] font-extrabold text-[#7c3aed] leading-none mb-2">1 system</div>
+                <h3 className="text-xl font-bold mb-3">Integration</h3>
+                <p className="text-[0.95rem] text-[#6b7280] leading-relaxed mb-4">
+                  Traditional consultants work in silos. Our system connects every data point across every discipline — when flood mitigation adds &pound;200k to your build costs, your viability assessment already knows.
+                </p>
+                <div className="text-sm font-semibold text-[#7c3aed]">vs. 10+ separate consultants</div>
+              </motion.div>
+            </FadeUp>
+          </div>
+
+          <FadeUp delay={0.3}>
+            <div className="mt-14 text-center">
+              <p className="text-lg text-[#6b7280] max-w-[700px] mx-auto leading-relaxed">
+                Every report references every other report. Flood risk feeds viability. Ecology shapes layout. Heritage constrains design. CIL affects finance. <span className="font-semibold text-[#2c2c3a]">One integrated intelligence system, not 15 disconnected PDFs.</span>
+              </p>
+            </div>
+          </FadeUp>
+        </div>
+      </section>
+
       {/* ---------- STATS BAR ---------- */}
       <section className="relative py-[160px] overflow-hidden" style={{ background: 'linear-gradient(135deg, #0d0d1a, #1a1a2e, #0f3460)' }}>
         <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse at 50% 50%, rgba(39,174,96,0.06) 0%, transparent 60%)' }} />

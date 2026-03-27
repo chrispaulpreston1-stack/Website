@@ -177,6 +177,47 @@ export default function ForDevelopersPage() {
         </div>
       </section>
 
+      {/* ---------- THREE USPs ---------- */}
+      <section className="py-16 bg-gradient-to-b from-[#f7f8fc] to-white border-b border-[#e2e5ed]">
+        <div className="max-w-[1120px] mx-auto px-6">
+          <div className="grid md:grid-cols-3 gap-6">
+            <FadeUp delay={0}>
+              <div className="flex items-start gap-4 p-6 rounded-xl bg-white border border-[#e2e5ed]">
+                <div className="w-11 h-11 rounded-lg bg-gradient-to-br from-[rgba(39,174,96,0.1)] to-[rgba(39,174,96,0.2)] flex items-center justify-center shrink-0">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#27ae60" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </div>
+                <div>
+                  <div className="text-lg font-bold text-[#27ae60]">48 Hours</div>
+                  <p className="text-sm text-[#6b7280]">vs. 3-6 months coordinating 10+ consultants</p>
+                </div>
+              </div>
+            </FadeUp>
+            <FadeUp delay={0.08}>
+              <div className="flex items-start gap-4 p-6 rounded-xl bg-white border border-[#e2e5ed]">
+                <div className="w-11 h-11 rounded-lg bg-gradient-to-br from-[rgba(15,52,96,0.1)] to-[rgba(15,52,96,0.2)] flex items-center justify-center shrink-0">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0f3460" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                </div>
+                <div>
+                  <div className="text-lg font-bold text-[#0f3460]">85-93% Saving</div>
+                  <p className="text-sm text-[#6b7280]">Same desktop intelligence, fraction of the cost</p>
+                </div>
+              </div>
+            </FadeUp>
+            <FadeUp delay={0.16}>
+              <div className="flex items-start gap-4 p-6 rounded-xl bg-white border border-[#e2e5ed]">
+                <div className="w-11 h-11 rounded-lg bg-gradient-to-br from-[rgba(124,58,237,0.1)] to-[rgba(124,58,237,0.2)] flex items-center justify-center shrink-0">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="3"/><circle cx="4" cy="6" r="2"/><circle cx="20" cy="6" r="2"/><circle cx="4" cy="18" r="2"/><circle cx="20" cy="18" r="2"/><line x1="6" y1="6" x2="9.5" y2="10.5"/><line x1="18" y1="6" x2="14.5" y2="10.5"/><line x1="6" y1="18" x2="9.5" y2="13.5"/><line x1="18" y1="18" x2="14.5" y2="13.5"/></svg>
+                </div>
+                <div>
+                  <div className="text-lg font-bold text-[#7c3aed]">Fully Integrated</div>
+                  <p className="text-sm text-[#6b7280]">Every report cross-references every other. One system, not 15 silos.</p>
+                </div>
+              </div>
+            </FadeUp>
+          </div>
+        </div>
+      </section>
+
       {/* ---------- PRODUCTS ---------- */}
       <section className="py-[120px]">
         <div className="max-w-[1120px] mx-auto px-6">
