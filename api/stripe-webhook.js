@@ -114,9 +114,65 @@ export default async function handler(req, res) {
   if (event.type === 'checkout.session.completed') {
     const session = event.data.object;
 
-    // Only process subscription checkouts
+    // Handle one-off product purchases
+    if (session.mode === 'payment') {
+      try {
+        const metadata = session.metadata || {};
+        const customerEmail = session.customer_email || session.customer_details?.email || '';
+        const customerName = metadata.customerName || session.customer_details?.name || 'Customer';
+        const product = metadata.product || 'Unknown product';
+        const address = metadata.address || 'Not provided';
+        const dwellings = metadata.dwellings || 'N/A';
+        const phone = metadata.phone || 'N/A';
+        const company = metadata.company || '';
+        const amount = session.amount_total ? `£${(session.amount_total / 100).toLocaleString()}` : 'N/A';
+
+        console.log(`Product order: ${product} for ${address} by ${customerName} (${amount})`);
+
+        // Notify Chris via Formspree
+        fetch('https://formspree.io/f/xdalrdyj', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify({
+            _subject: `New Order: ${product} — ${address} — ${amount}`,
+            name: customerName,
+            email: customerEmail,
+            company: company || 'Individual',
+            phone: phone,
+            product: product,
+            address: address,
+            dwellings: dwellings,
+            amount: amount,
+            project_type: metadata.projectType || 'N/A',
+          }),
+        }).catch(err => console.warn('Formspree notification failed:', err.message));
+
+        // Send confirmation email to customer via Resend
+        if (resendKey && customerEmail) {
+          const { Resend } = await import('resend');
+          const resend = new Resend(resendKey);
+          const firstName = customerName.split(' ')[0];
+
+          await resend.emails.send({
+            from: 'Site Intelligence <orders@pfandco.co.uk>',
+            to: [customerEmail],
+            bcc: ['info@pfandco.co.uk'],
+            subject: `Order Confirmed — ${product} for ${address}`,
+            html: `<!DOCTYPE html><html><head><meta charset="utf-8"><style>body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;color:#1a1a2e;line-height:1.6;margin:0;padding:0;background:#f8f8fa}.container{max-width:600px;margin:0 auto;background:#fff}.header{background:linear-gradient(135deg,#1a1a2e,#0f3460);padding:40px 32px;text-align:center}.header h1{color:#fff;font-size:22px;margin:0 0 4px}.header p{color:#27ae60;font-size:13px;margin:0;font-weight:600;letter-spacing:1px;text-transform:uppercase}.body{padding:32px}.body p{margin:0 0 16px;font-size:15px}.details td{padding:10px 14px;font-size:14px;border-bottom:1px solid #f0f0f0}.details td:first-child{font-weight:600;width:40%}.cta{background:#f8f8fa;border-radius:12px;padding:24px;margin:24px 0;text-align:center}.cta a{display:inline-block;background:#27ae60;color:#fff;padding:12px 28px;border-radius:8px;text-decoration:none;font-weight:700;font-size:14px}.footer{padding:24px 32px;background:#f8f8fa;border-top:1px solid #eee;text-align:center}.footer p{font-size:12px;color:#999;margin:0 0 4px}.footer a{color:#27ae60;text-decoration:none}</style></head><body><div class="container"><div class="header"><h1>Order Confirmed</h1><p>${product}</p></div><div class="body"><p>Dear ${firstName},</p><p>Thank you for your order. We've received your request and work begins immediately.</p><table class="details" style="width:100%;border-collapse:collapse;margin:24px 0"><tr style="background:#f0fdf4"><td>Product</td><td><strong>${product}</strong></td></tr><tr><td>Site</td><td>${address}</td></tr><tr><td>Dwellings</td><td>${dwellings}</td></tr><tr><td>Amount Paid</td><td><strong>${amount}</strong></td></tr></table><p><strong>What happens next:</strong></p><ol style="padding-left:20px;margin:16px 0"><li style="margin-bottom:8px">Our team reviews your order and site details within the hour.</li><li style="margin-bottom:8px">We query 76+ authoritative data sources and run your site through our analysis pipeline.</li><li style="margin-bottom:8px">Every report passes a 24-layer QA pipeline before delivery.</li><li style="margin-bottom:8px">Your completed report pack is delivered to this email — typically within 48 hours.</li></ol><div class="cta"><p style="margin:0 0 8px;font-size:14px;color:#666">Questions about your order?</p><a href="mailto:info@pfandco.co.uk?subject=Order Query — ${encodeURIComponent(address)}">Email Us</a></div><p>Or call us on <strong>01483 363 210</strong></p><p>Best regards,<br><strong>Site Intelligence</strong><br>PF & Co Holdings Ltd</p></div><div class="footer"><p>PF & Co Holdings Ltd — Company No. 16649319</p><p><a href="https://www.pfandco.co.uk">www.pfandco.co.uk</a> | <a href="mailto:info@pfandco.co.uk">info@pfandco.co.uk</a> | 01483 363 210</p></div></div></body></html>`,
+          });
+          console.log('Order confirmation email sent to:', customerEmail);
+        }
+
+        return res.status(200).json({ received: true, product_order: true });
+      } catch (err) {
+        console.error('Product order handling failed:', err);
+        return res.status(200).json({ received: true, error: err.message });
+      }
+    }
+
+    // Only process subscription checkouts below
     if (session.mode !== 'subscription') {
-      return res.status(200).json({ received: true, skipped: 'not a subscription' });
+      return res.status(200).json({ received: true, skipped: 'unknown mode' });
     }
 
     try {

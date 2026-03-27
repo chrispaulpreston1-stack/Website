@@ -134,7 +134,7 @@ const OrderSuccess = () => {
               { step: "4", text: "Your credits refresh each month. Unused credits roll over per your tier's rollover policy." },
             ] : [
               { step: "1", text: "Our team reviews your order and site details within the hour." },
-              { step: "2", text: "We query 60+ authoritative data sources and run your site through our AI analysis pipeline." },
+              { step: "2", text: "We query 76+ authoritative data sources and run your site through our analysis pipeline." },
               { step: "3", text: "A qualified engineer reviews and verifies every output before sign-off." },
               { step: "4", text: "Your completed report is delivered to your email — typically within 48 hours." },
             ]).map((item, i) => (
@@ -165,11 +165,11 @@ const OrderSuccess = () => {
             </>
           ) : (
             <>
-              <Link to="/site-intelligence" className="px-10 py-5 bg-brand-primary text-white rounded-2xl font-bold hover:scale-105 transition-all flex items-center justify-center gap-2 text-lg shadow-lg">
-                Explore More Reports <ArrowRight size={20} />
+              <Link to="/whats-included" className="px-10 py-5 bg-brand-primary text-white rounded-2xl font-bold hover:scale-105 transition-all flex items-center justify-center gap-2 text-lg shadow-lg">
+                See What's Included <ArrowRight size={20} />
               </Link>
-              <Link to="/subscriptions" className="px-10 py-5 bg-white text-brand-primary border-2 border-brand-primary/5 rounded-2xl font-bold hover:bg-brand-surface transition-all flex items-center justify-center gap-2">
-                Save with Subscriptions
+              <Link to="/for-professionals" className="px-10 py-5 bg-white text-brand-primary border-2 border-brand-primary/5 rounded-2xl font-bold hover:bg-brand-surface transition-all flex items-center justify-center gap-2">
+                Volume Pricing for Practices
               </Link>
             </>
           )}
