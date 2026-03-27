@@ -154,7 +154,7 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 32 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3, ease: [0.4, 0, 0.2, 1] }}
-            className="flex flex-wrap gap-3 justify-center mb-0"
+            className="flex flex-col sm:flex-row gap-3 justify-center items-center mb-0"
           >
             <Link
               to="/for-developers"
@@ -175,21 +175,21 @@ export default function HomePage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.7, delay: 0.5 }}
-            className="mt-10 flex items-center justify-center gap-6 flex-wrap"
+            className="mt-10 flex items-center justify-center gap-4 sm:gap-6 flex-wrap"
           >
-            <span className="flex items-center gap-2 text-[#b0b8cc]/60 text-[0.85rem]">
-              <Star size={16} className="text-[#27ae60]/60" fill="rgba(39,174,96,0.6)" />
-              76+ government data sources
+            <span className="flex items-center gap-2 text-[#b0b8cc]/60 text-xs sm:text-[0.85rem]">
+              <Star size={14} className="text-[#27ae60]/60 shrink-0" fill="rgba(39,174,96,0.6)" />
+              76+ data sources
             </span>
-            <span className="w-px h-4 bg-white/10" />
-            <span className="flex items-center gap-2 text-[#b0b8cc]/60 text-[0.85rem]">
-              <CheckCircle2 size={16} className="text-[#27ae60]/60" />
-              24-layer QA pipeline
+            <span className="hidden sm:block w-px h-4 bg-white/10" />
+            <span className="flex items-center gap-2 text-[#b0b8cc]/60 text-xs sm:text-[0.85rem]">
+              <CheckCircle2 size={14} className="text-[#27ae60]/60 shrink-0" />
+              24-layer QA
             </span>
-            <span className="w-px h-4 bg-white/10" />
-            <span className="flex items-center gap-2 text-[#b0b8cc]/60 text-[0.85rem]">
-              <Heart size={16} className="text-[#27ae60]/60" fill="rgba(39,174,96,0.6)" />
-              England-wide coverage
+            <span className="hidden sm:block w-px h-4 bg-white/10" />
+            <span className="flex items-center gap-2 text-[#b0b8cc]/60 text-xs sm:text-[0.85rem]">
+              <Heart size={14} className="text-[#27ae60]/60 shrink-0" fill="rgba(39,174,96,0.6)" />
+              England-wide
             </span>
           </motion.div>
         </div>
