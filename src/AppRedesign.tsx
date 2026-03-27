@@ -106,7 +106,7 @@ function Navbar() {
           </Link>
 
           {/* Desktop links */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6 lg:gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
@@ -125,6 +125,12 @@ function Navbar() {
                 />
               </Link>
             ))}
+            <a
+              href="tel:+441483363210"
+              className="hidden lg:inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold text-white bg-gradient-to-br from-[#27ae60] to-[#219a52] hover:-translate-y-px hover:scale-[1.02] active:scale-[0.98] transition-all shadow-[0_2px_8px_rgba(39,174,96,0.3)]"
+            >
+              01483 363 210
+            </a>
           </div>
 
           {/* Hamburger */}
@@ -140,7 +146,7 @@ function Navbar() {
         {/* Mobile menu */}
         <div
           className={`md:hidden overflow-hidden transition-all duration-300 bg-[#1a1a2e]/[0.98] backdrop-blur-[20px] border-b border-white/[0.06] ${
-            mobileOpen ? 'max-h-[400px] opacity-100 py-4' : 'max-h-0 opacity-0 py-0'
+            mobileOpen ? 'max-h-[500px] opacity-100 py-4' : 'max-h-0 opacity-0 py-0'
           }`}
         >
           <div className="px-6 flex flex-col">
@@ -155,6 +161,14 @@ function Navbar() {
                 {link.name}
               </Link>
             ))}
+            <div className="pt-4 mt-2 border-t border-white/[0.06] flex flex-col gap-3">
+              <a href="tel:+441483363210" className="flex items-center gap-2 text-[#27ae60] text-base font-semibold">
+                01483 363 210
+              </a>
+              <a href="mailto:info@pfandco.co.uk" className="flex items-center gap-2 text-[#9ca3af] text-sm">
+                info@pfandco.co.uk
+              </a>
+            </div>
           </div>
         </div>
       </nav>
@@ -187,12 +201,20 @@ function Footer() {
               <p className="text-sm text-[#6b7280] italic mb-2">
                 Planning intelligence. 48 hours. Any site in England.
               </p>
-              <a
-                href="mailto:info@pfandco.co.uk"
-                className="text-sm text-[#27ae60] hover:opacity-80 transition-opacity"
-              >
-                info@pfandco.co.uk
-              </a>
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-6">
+                <a
+                  href="mailto:info@pfandco.co.uk"
+                  className="text-sm text-[#27ae60] hover:opacity-80 transition-opacity"
+                >
+                  info@pfandco.co.uk
+                </a>
+                <a
+                  href="tel:+441483363210"
+                  className="text-sm text-[#27ae60] hover:opacity-80 transition-opacity"
+                >
+                  01483 363 210
+                </a>
+              </div>
             </div>
 
             {/* Right — nav links */}
