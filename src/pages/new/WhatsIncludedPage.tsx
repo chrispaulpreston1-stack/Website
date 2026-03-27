@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { motion } from 'motion/react';
 import {
   Star,
@@ -155,6 +156,13 @@ export default function WhatsIncludedPage() {
 
   return (
     <>
+      <Helmet>
+        <title>What's Included | 36+ Planning Reports Tailored to Your Site</title>
+        <meta name="description" content="36+ desktop planning reports auto-selected by your site constraints. Flood risk, heritage, ecology, transport, contamination and more. 76+ data sources." />
+        <meta property="og:title" content="What's Included — Site Intelligence" />
+        <meta property="og:description" content="36+ reports tailored to your site. Constraint-triggered selection from 76+ data sources." />
+        <link rel="canonical" href="https://www.pfandco.co.uk/whats-included" />
+      </Helmet>
       {/* ---------- HERO ---------- */}
       <section
         className="relative min-h-screen flex items-center justify-center overflow-hidden text-center py-[120px] pt-[120px]"

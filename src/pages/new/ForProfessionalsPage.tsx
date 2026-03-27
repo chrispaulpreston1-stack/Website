@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import {
@@ -91,6 +92,13 @@ export default function ForProfessionalsPage() {
 
   return (
     <>
+      <Helmet>
+        <title>For Architects & Professionals | Site Intelligence</title>
+        <meta name="description" content="Stop coordinating 10 consultants. One order, 48 hours, every desktop report your submissions need. Volume pricing for practices." />
+        <meta property="og:title" content="For Professionals — Site Intelligence" />
+        <meta property="og:description" content="One order replaces 10 consultants. Desktop planning reports in 48 hours." />
+        <link rel="canonical" href="https://www.pfandco.co.uk/for-professionals" />
+      </Helmet>
       {/* ---------- HERO ---------- */}
       <section
         className="relative min-h-screen flex items-center justify-center overflow-hidden text-center py-[120px] pt-[120px]"

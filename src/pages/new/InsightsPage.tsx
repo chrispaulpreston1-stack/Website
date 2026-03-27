@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 
@@ -96,6 +97,13 @@ export default function InsightsPage() {
 
   return (
     <>
+      <Helmet>
+        <title>Insights | Planning Intelligence, Policy Updates & Analysis</title>
+        <meta name="description" content="Planning intelligence, policy updates, and industry analysis. Guides on planning permission, flood risk, BNG, and more." />
+        <meta property="og:title" content="Insights — Site Intelligence" />
+        <meta property="og:description" content="Planning intelligence, policy updates, and industry analysis from Site Intelligence." />
+        <link rel="canonical" href="https://www.pfandco.co.uk/blog" />
+      </Helmet>
       {/* ---------- HERO ---------- */}
       <section
         className="relative min-h-screen flex items-center justify-center overflow-hidden text-center py-[120px] pt-[120px]"

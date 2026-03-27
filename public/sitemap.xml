@@ -3,12 +3,44 @@
   <!-- Homepage -->
   <url>
     <loc>https://www.pfandco.co.uk/</loc>
-    <lastmod>2026-03-16</lastmod>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
-  <!-- Main Service Pages -->
+  <!-- NEW: Redesigned Core Pages -->
+  <url>
+    <loc>https://www.pfandco.co.uk/for-developers</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.pfandco.co.uk/for-professionals</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.pfandco.co.uk/whats-included</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.pfandco.co.uk/trust</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.pfandco.co.uk/order</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Main Service Pages (legacy — 301 redirects active) -->
   <url>
     <loc>https://www.pfandco.co.uk/structural-engineering</loc>
     <lastmod>2026-03-16</lastmod>

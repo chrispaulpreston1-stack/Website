@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import {
@@ -165,6 +166,13 @@ export default function OrderPage() {
 
   return (
     <>
+      <Helmet>
+        <title>Order Your Pack | Site Intelligence — From £199</title>
+        <meta name="description" content="Order your planning intelligence pack. Enter your site address, choose your product, pay securely. Reports delivered in 48 hours." />
+        <meta property="og:title" content="Order Your Pack — Site Intelligence" />
+        <meta property="og:description" content="Planning intelligence from £199. Choose your product, pay online, receive in 48 hours." />
+        <link rel="canonical" href="https://www.pfandco.co.uk/order" />
+      </Helmet>
       {/* Hero */}
       <section
         className="relative min-h-[60vh] flex items-center justify-center overflow-hidden text-center py-[120px] pt-[120px]"

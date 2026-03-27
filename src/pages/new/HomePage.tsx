@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { motion, useInView } from 'motion/react';
 import {
@@ -110,6 +111,13 @@ export default function HomePage() {
 
   return (
     <>
+      <Helmet>
+        <title>Site Intelligence | Planning Intelligence. 48 Hours. Any Site in England.</title>
+        <meta name="description" content="Complete planning intelligence for any development site in England. 76+ data sources, 24-layer QA, 48-hour delivery. From £199." />
+        <meta property="og:title" content="Site Intelligence — Planning Intelligence. 48 Hours." />
+        <meta property="og:description" content="Every desktop planning report your application needs, delivered in 48 hours." />
+        <link rel="canonical" href="https://www.pfandco.co.uk/" />
+      </Helmet>
       {/* ---------- HERO ---------- */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden text-center pt-[67px]">
         {/* Animated gradient BG */}

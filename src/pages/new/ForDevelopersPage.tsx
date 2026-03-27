@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import {
@@ -147,6 +148,13 @@ export default function ForDevelopersPage() {
 
   return (
     <>
+      <Helmet>
+        <title>For Developers | Site Intelligence — Planning Reports in 48 Hours</title>
+        <meta name="description" content="Complete planning intelligence for any development site. Same desktop reports you would wait months for from 10 consultants, delivered in 48 hours. From £199." />
+        <meta property="og:title" content="For Developers — Site Intelligence" />
+        <meta property="og:description" content="Complete planning intelligence for any development site in 48 hours. From £199." />
+        <link rel="canonical" href="https://www.pfandco.co.uk/for-developers" />
+      </Helmet>
       {/* ---------- HERO ---------- */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden text-center py-[120px] pt-[120px]"
         style={{ background: 'linear-gradient(135deg, #0d0d1a, #1a1a2e, #0f3460)', backgroundSize: '300% 300%' }}

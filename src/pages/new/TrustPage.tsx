@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { Sparkles } from 'lucide-react';
@@ -54,6 +55,13 @@ export default function TrustPage() {
 
   return (
     <>
+      <Helmet>
+        <title>Trust & Data Sources | 76+ Authoritative Government Sources</title>
+        <meta name="description" content="Every number traces to its source. 76+ government data sources, 24-layer QA pipeline, 361+ verified case law references." />
+        <meta property="og:title" content="Built on Authoritative Data — Site Intelligence" />
+        <meta property="og:description" content="76+ government data sources. 24-layer QA pipeline. Every number traced to source." />
+        <link rel="canonical" href="https://www.pfandco.co.uk/trust" />
+      </Helmet>
       {/* ---------- HERO ---------- */}
       <section
         className="relative min-h-screen flex items-center justify-center overflow-hidden text-center py-[120px] pt-[120px]"
