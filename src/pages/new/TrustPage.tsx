@@ -57,9 +57,9 @@ export default function TrustPage() {
     <>
       <Helmet>
         <title>Trust & Data Sources | 76+ Authoritative Government Sources</title>
-        <meta name="description" content="Every number traces to its source. 76+ government data sources, 24-layer QA pipeline, 620+ verified case law references. 302 LPAs covered across England." />
+        <meta name="description" content="Every number traces to its source. 76+ government data sources, 34-layer QA pipeline, 650+ verified case law references. 302 LPAs covered across England." />
         <meta property="og:title" content="Built on Authoritative Data — Site Intelligence" />
-        <meta property="og:description" content="76+ government data sources. 24-layer QA pipeline. Every number traced to source." />
+        <meta property="og:description" content="76+ government data sources. 34-layer QA pipeline. Every number traced to source." />
         <link rel="canonical" href="https://www.pfandco.co.uk/trust" />
       </Helmet>
       {/* ---------- HERO ---------- */}
@@ -83,7 +83,7 @@ export default function TrustPage() {
           </FadeUp>
           <FadeUp delay={0.2}>
             <div className="mt-8">
-              <span className="inline-block text-6xl md:text-7xl font-extrabold text-[#27ae60] leading-none">24+</span>
+              <span className="inline-block text-6xl md:text-7xl font-extrabold text-[#27ae60] leading-none">34+</span>
               <br />
               <span className="text-sm text-[#8892a8] uppercase tracking-widest font-semibold">QA pipeline checks on every report</span>
             </div>
@@ -128,7 +128,7 @@ export default function TrustPage() {
             <h2 className="text-3xl md:text-[2.75rem] font-bold leading-tight tracking-tight">Our quality process</h2>
             <div className="w-12 h-[3px] bg-gradient-to-r from-[#27ae60] to-[#2ecc71] rounded my-5" />
             <p className="text-[1.0625rem] text-[#6b7280] leading-relaxed mb-12">
-              Every report passes through a 24-layer quality assurance pipeline before delivery. This is not a manual review — it is a systematic, automated verification of every data point, every calculation, and every regulatory reference.
+              Every report passes through a 34-layer quality assurance pipeline before delivery. This is not a manual review — it is a systematic, automated verification of every data point, every calculation, and every regulatory reference.
             </p>
           </FadeUp>
 

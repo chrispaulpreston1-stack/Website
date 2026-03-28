@@ -67,11 +67,11 @@ const FadeUp = ({
 /* ------------------------------------------------------------------ */
 const stats = [
   { end: 76, suffix: '+', label: 'Data sources & APIs' },
-  { end: 34, suffix: '+', label: 'Constraint checkers' },
-  { end: 620, suffix: '+', label: 'Verified case law refs' },
-  { end: 302, suffix: '', label: 'LPAs covered' },
-  { end: 24, suffix: '+', label: 'QA pipeline checks' },
+  { end: 650, suffix: '+', label: 'Verified case law refs' },
   { end: 48, suffix: 'hr', label: 'Turnaround' },
+  { end: 302, suffix: '', label: 'LPAs covered' },
+  { end: 34, suffix: '+', label: 'QA pipeline layers' },
+  { end: 34, suffix: '+', label: 'Constraint checkers' },
 ];
 
 const dataBadges = [

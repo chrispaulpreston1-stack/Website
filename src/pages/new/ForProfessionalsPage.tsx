@@ -69,7 +69,7 @@ const valueCards = [
   {
     icon: <ShieldCheck size={28} />,
     title: 'Consistent quality',
-    desc: 'Every report passes a 24-layer QA pipeline. Every number traced to source. No variation between projects.',
+    desc: 'Every report passes a 34-layer QA pipeline. Every number traced to source. No variation between projects.',
   },
   {
     icon: <Scale size={28} />,
