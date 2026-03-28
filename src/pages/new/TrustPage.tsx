@@ -57,7 +57,7 @@ export default function TrustPage() {
     <>
       <Helmet>
         <title>Trust & Data Sources | 76+ Authoritative Government Sources</title>
-        <meta name="description" content="Every number traces to its source. 76+ government data sources, 24-layer QA pipeline, 361+ verified case law references." />
+        <meta name="description" content="Every number traces to its source. 76+ government data sources, 24-layer QA pipeline, 620+ verified case law references. 308 LPAs covered across England." />
         <meta property="og:title" content="Built on Authoritative Data — Site Intelligence" />
         <meta property="og:description" content="76+ government data sources. 24-layer QA pipeline. Every number traced to source." />
         <link rel="canonical" href="https://www.pfandco.co.uk/trust" />
