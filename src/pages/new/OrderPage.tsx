@@ -110,9 +110,14 @@ export default function OrderPage() {
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
   const [step, setStep] = useState(1);
-  const [address, setAddress] = useState(searchParams.get('address') || '');
-  const [projectType, setProjectType] = useState('residential');
+  const [postcode, setPostcode] = useState(searchParams.get('address') || '');
+  const [postcodeVerified, setPostcodeVerified] = useState(!!searchParams.get('lat'));
+  const [postcodeInfo, setPostcodeInfo] = useState(searchParams.get('lpa') || '');
+  const [lat, setLat] = useState(searchParams.get('lat') || '');
+  const [lon, setLon] = useState(searchParams.get('lon') || '');
+  const [siteDescription, setSiteDescription] = useState('');
   const [dwellings, setDwellings] = useState(1);
+  const [dwellingBand, setDwellingBand] = useState('');
   const [selectedProduct, setSelectedProduct] = useState('');
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
@@ -120,6 +125,8 @@ export default function OrderPage() {
   const [company, setCompany] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const [postcodeError, setPostcodeError] = useState('');
+  const [postcodeLoading, setPostcodeLoading] = useState(false);
 
   const band = getBand(dwellings);
   const overLimit = dwellings > 100;
@@ -140,15 +147,15 @@ export default function OrderPage() {
           email,
           fullName,
           metadata: {
-            address,
-            projectType,
+            postcode,
+            siteDescription,
             dwellings: String(dwellings),
             product: selectedProduct,
             company,
             phone,
-            latitude: searchParams.get('lat') || '',
-            longitude: searchParams.get('lon') || '',
-            lpa: searchParams.get('lpa') || '',
+            latitude: lat,
+            longitude: lon,
+            lpa: postcodeInfo,
           },
         }),
       });
@@ -197,7 +204,7 @@ export default function OrderPage() {
       <div className="bg-white border-b border-[#e2e5ed] sticky top-[67px] z-40">
         <div className="max-w-[900px] mx-auto px-6 py-4">
           <div className="flex items-center justify-center gap-2 sm:gap-4">
-            {['Your Site', 'Choose Product', 'Your Details', 'Pay'].map((label, i) => (
+            {['Your Site', 'See Prices', 'Your Details', 'Pay'].map((label, i) => (
               <React.Fragment key={label}>
                 {i > 0 && <div className="w-6 sm:w-10 h-px bg-[#e2e5ed]" />}
                 <button
@@ -235,57 +242,138 @@ export default function OrderPage() {
           {step === 1 && (
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
               <h2 className="text-2xl font-bold mb-2">Tell us about your site</h2>
-              <p className="text-[#6b7280] mb-8">We just need the basics to get started.</p>
+              <p className="text-[#6b7280] mb-8">Three quick fields and we'll show you prices.</p>
 
               <div className="space-y-6">
+                {/* Postcode — validated against Postcodes.io */}
                 <div>
-                  <label className="block text-sm font-semibold text-[#2c2c3a] mb-2">Site address or postcode</label>
-                  <div className="relative">
-                    <MapPin size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-[#9ca3af]" />
-                    <input
-                      type="text"
-                      value={address}
-                      onChange={(e) => setAddress(e.target.value)}
-                      placeholder="e.g. Land north of High Street, Sidmouth, EX10 8EQ"
-                      className="w-full pl-12 pr-4 py-3.5 rounded-xl border border-[#e2e5ed] text-base focus:outline-none focus:ring-2 focus:ring-[#27ae60]/30 focus:border-[#27ae60] transition-all"
-                    />
-                  </div>
+                  <label className="block text-sm font-semibold text-[#2c2c3a] mb-2">Site postcode</label>
+                  {postcodeVerified ? (
+                    <div className="flex items-center gap-3">
+                      <div className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#f0fdf4] border border-[#bbf7d0] text-[#166534] font-semibold text-base">
+                        <Check size={16} className="text-[#27ae60]" />
+                        {postcode}
+                        <span className="text-sm font-normal text-[#6b7280] ml-1">{postcodeInfo}</span>
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() => { setPostcodeVerified(false); setPostcodeError(''); }}
+                        className="text-sm text-[#6b7280] hover:text-[#2c2c3a] transition-colors"
+                      >
+                        Change
+                      </button>
+                    </div>
+                  ) : (
+                    <div>
+                      <div className="flex gap-3">
+                        <div className="relative flex-grow max-w-[240px]">
+                          <MapPin size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-[#9ca3af]" />
+                          <input
+                            type="text"
+                            value={postcode}
+                            onChange={(e) => { setPostcode(e.target.value.toUpperCase()); setPostcodeError(''); }}
+                            placeholder="e.g. EX10 8EQ"
+                            className="w-full pl-12 pr-4 py-3.5 rounded-xl border border-[#e2e5ed] text-base focus:outline-none focus:ring-2 focus:ring-[#27ae60]/30 focus:border-[#27ae60] transition-all"
+                            maxLength={10}
+                          />
+                        </div>
+                        <button
+                          type="button"
+                          disabled={postcodeLoading || postcode.trim().length < 3}
+                          onClick={async () => {
+                            setPostcodeLoading(true);
+                            setPostcodeError('');
+                            try {
+                              const res = await fetch(`https://api.postcodes.io/postcodes/${encodeURIComponent(postcode.trim())}`);
+                              const data = await res.json();
+                              if (data.status === 200 && data.result) {
+                                if (data.result.country !== 'England') {
+                                  setPostcodeError('Site Intelligence currently covers England only.');
+                                } else {
+                                  setPostcodeVerified(true);
+                                  setPostcode(data.result.postcode);
+                                  setPostcodeInfo(data.result.admin_district || '');
+                                  setLat(String(data.result.latitude));
+                                  setLon(String(data.result.longitude));
+                                }
+                              } else {
+                                setPostcodeError('Postcode not found. Please check and try again.');
+                              }
+                            } catch {
+                              setPostcodeError('Could not verify postcode. Please try again.');
+                            }
+                            setPostcodeLoading(false);
+                          }}
+                          className="px-5 py-3.5 rounded-xl text-sm font-semibold text-white bg-gradient-to-br from-[#0f3460] to-[#0b2848] hover:-translate-y-px hover:scale-[1.02] active:scale-[0.98] transition-all disabled:opacity-40 disabled:cursor-not-allowed disabled:transform-none"
+                        >
+                          {postcodeLoading ? <Loader2 size={16} className="animate-spin" /> : 'Verify'}
+                        </button>
+                      </div>
+                      {postcodeError && (
+                        <p className="mt-2 text-sm text-red-600">{postcodeError}</p>
+                      )}
+                    </div>
+                  )}
                 </div>
 
-                <div className="grid sm:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm font-semibold text-[#2c2c3a] mb-2">What are you planning?</label>
-                    <select
-                      value={projectType}
-                      onChange={(e) => setProjectType(e.target.value)}
-                      className="w-full px-4 py-3.5 rounded-xl border border-[#e2e5ed] text-base focus:outline-none focus:ring-2 focus:ring-[#27ae60]/30 focus:border-[#27ae60] transition-all bg-white"
-                    >
-                      <option value="residential">Residential</option>
-                      <option value="commercial">Commercial</option>
-                      <option value="mixed">Mixed Use</option>
-                    </select>
-                  </div>
+                {/* Site description */}
+                <div>
+                  <label className="block text-sm font-semibold text-[#2c2c3a] mb-2">Site address or description</label>
+                  <textarea
+                    value={siteDescription}
+                    onChange={(e) => setSiteDescription(e.target.value)}
+                    placeholder="e.g. 42 Oak Lane, Sidmouth  /  Land north of High Street, Sidford"
+                    rows={2}
+                    className="w-full px-4 py-3.5 rounded-xl border border-[#e2e5ed] text-base focus:outline-none focus:ring-2 focus:ring-[#27ae60]/30 focus:border-[#27ae60] transition-all resize-none"
+                  />
+                  <p className="mt-1.5 text-xs text-[#9ca3af]">The address, or a description of where the site is.</p>
+                </div>
 
-                  <div>
-                    <label className="block text-sm font-semibold text-[#2c2c3a] mb-2">How many dwellings?</label>
-                    <input
-                      type="number"
-                      min={1}
-                      value={dwellings}
-                      onChange={(e) => setDwellings(Math.max(1, parseInt(e.target.value) || 1))}
-                      className="w-full px-4 py-3.5 rounded-xl border border-[#e2e5ed] text-base focus:outline-none focus:ring-2 focus:ring-[#27ae60]/30 focus:border-[#27ae60] transition-all"
-                    />
+                {/* Dwelling count — band buttons */}
+                <div>
+                  <label className="block text-sm font-semibold text-[#2c2c3a] mb-3">How many dwellings?</label>
+                  <div className="flex flex-wrap gap-2">
+                    {[
+                      { label: '1', value: 1, band: '1' },
+                      { label: '2\u20139', value: 5, band: '2-9' },
+                      { label: '10\u201350', value: 25, band: '10-50' },
+                      { label: '51\u2013100', value: 75, band: '51-100' },
+                      { label: '100+', value: 101, band: '100+' },
+                    ].map((opt) => (
+                      <button
+                        key={opt.label}
+                        type="button"
+                        onClick={() => { setDwellings(opt.value); setDwellingBand(opt.band); }}
+                        className={`px-5 py-3 rounded-xl text-sm font-semibold border-2 transition-all ${
+                          dwellingBand === opt.band
+                            ? 'border-[#27ae60] bg-[#f0fdf4] text-[#166534]'
+                            : 'border-[#e2e5ed] bg-white text-[#6b7280] hover:border-[#27ae60]/40'
+                        }`}
+                      >
+                        {opt.label}
+                      </button>
+                    ))}
                   </div>
+                  {dwellingBand === '100+' && (
+                    <div className="mt-3 p-4 rounded-xl bg-[#fffbeb] border border-[#fde68a] text-sm text-[#92400e]">
+                      For 100+ dwellings, we'll prepare a tailored quote. <a href="mailto:info@pfandco.co.uk" className="font-semibold underline">Email us</a> or call <a href="tel:+441483363210" className="font-semibold underline">01483 363210</a>.
+                    </div>
+                  )}
+                  {dwellingBand && dwellingBand !== '100+' && (
+                    <p className="mt-2 text-xs text-[#27ae60] font-medium">
+                      Screening from {'\u00A3'}199 &middot; Feasibility from {'\u00A3'}{dwellingBand === '1' ? '695' : dwellingBand === '2-9' ? '1,295' : dwellingBand === '10-50' ? '2,495' : '3,495'}
+                    </p>
+                  )}
                 </div>
               </div>
 
               <div className="mt-10 flex justify-end">
                 <button
-                  onClick={() => { if (address.length >= 5) setStep(2); }}
-                  disabled={address.length < 5}
+                  onClick={() => { if (postcodeVerified && siteDescription.length >= 5 && dwellingBand && dwellingBand !== '100+') setStep(2); }}
+                  disabled={!postcodeVerified || siteDescription.length < 5 || !dwellingBand || dwellingBand === '100+'}
                   className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl text-base font-semibold text-white bg-gradient-to-br from-[#27ae60] to-[#219a52] hover:-translate-y-px hover:scale-[1.02] active:scale-[0.98] transition-all shadow-[0_2px_8px_rgba(39,174,96,0.3)] disabled:opacity-40 disabled:cursor-not-allowed disabled:transform-none"
                 >
-                  Next: Choose Product <ArrowRight size={18} />
+                  Next: See Prices <ArrowRight size={18} />
                 </button>
               </div>
             </motion.div>
@@ -477,11 +565,12 @@ export default function OrderPage() {
                 <div className="grid sm:grid-cols-2 gap-6 mb-8 pb-8 border-b border-[#e2e5ed]">
                   <div>
                     <div className="text-xs font-semibold text-[#9ca3af] uppercase tracking-wide mb-1">Site</div>
-                    <div className="text-base font-medium">{address}</div>
+                    <div className="text-base font-medium">{siteDescription}</div>
+                    <div className="text-sm text-[#6b7280]">{postcode} &middot; {postcodeInfo}</div>
                   </div>
                   <div>
                     <div className="text-xs font-semibold text-[#9ca3af] uppercase tracking-wide mb-1">Development</div>
-                    <div className="text-base font-medium">{dwellings} dwelling{dwellings !== 1 ? 's' : ''}, {projectType}</div>
+                    <div className="text-base font-medium">{dwellingBand === '1' ? '1 dwelling' : `${dwellingBand} dwellings`}</div>
                   </div>
                   <div>
                     <div className="text-xs font-semibold text-[#9ca3af] uppercase tracking-wide mb-1">Name</div>
