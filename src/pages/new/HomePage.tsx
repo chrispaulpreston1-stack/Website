@@ -67,11 +67,10 @@ const FadeUp = ({
 /* ------------------------------------------------------------------ */
 const stats = [
   { end: 76, suffix: '+', label: 'Data sources & APIs' },
-  { end: 650, suffix: '+', label: 'Verified case law refs' },
   { end: 48, suffix: 'hr', label: 'Turnaround' },
-  { end: 302, suffix: '', label: 'LPAs covered' },
+  { end: 650, suffix: '+', label: 'Verified case law refs' },
   { end: 34, suffix: '+', label: 'QA pipeline layers' },
-  { end: 34, suffix: '+', label: 'Constraint checkers' },
+  { end: 302, suffix: '', label: 'LPAs covered' },
 ];
 
 const dataBadges = [
@@ -345,7 +344,7 @@ export default function HomePage() {
       <section className="relative py-[160px] overflow-hidden" style={{ background: 'linear-gradient(135deg, #0d0d1a, #1a1a2e, #0f3460)' }}>
         <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse at 50% 50%, rgba(39,174,96,0.06) 0%, transparent 60%)' }} />
         <div className="max-w-[1120px] mx-auto px-6 relative z-10">
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-px">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-px">
             {stats.map((s) => (
               <StatItem key={s.label} end={s.end} suffix={s.suffix} label={s.label} />
             ))}
