@@ -87,7 +87,7 @@ const BlogArticle = () => {
   return (
     <div className="pt-32 pb-24">
       <PageSEO
-        title={`${post.title} | PF & Co Insights`}
+        title={`${post.title} | Site Intelligence Insights`}
         description={post.excerpt}
         path={`/insights/${post.slug}`}
         ogType="article"
@@ -98,8 +98,8 @@ const BlogArticle = () => {
             description: post.excerpt,
             image: post.image,
             datePublished: post.date,
-            author: { '@type': 'Organization', name: 'PF & Co Site Intelligence' },
-            publisher: { '@type': 'Organization', name: 'PF & Co Site Intelligence' },
+            author: { '@type': 'Organization', name: 'Site Intelligence' },
+            publisher: { '@type': 'Organization', name: 'Site Intelligence' },
           },
           ...(post.faq ? [{
             '@type': 'FAQPage',
@@ -211,21 +211,15 @@ const BlogArticle = () => {
                   <div>
                     <div className="text-[10px] font-mono uppercase tracking-widest text-brand-primary/40 font-bold mb-1">Related Report</div>
                     <h3 className="text-lg font-bold text-brand-primary mb-1">{post.relatedReport.title}</h3>
-                    <p className="text-sm text-brand-primary/50">Planning-ready report from <span className="font-bold text-brand-accent">{'\u00A3'}{post.relatedReport.price}</span> — delivered within 48hrs</p>
+                    <p className="text-sm text-brand-primary/50">Planning-ready intelligence from <span className="font-bold text-brand-accent">{post.relatedReport.price}</span> — delivered within 48hrs</p>
                   </div>
                 </div>
                 <div className="flex gap-3 w-full sm:w-auto">
                   <Link
                     to={post.relatedReport.path}
-                    className="px-6 py-3 bg-white border border-brand-primary/10 text-brand-primary rounded-xl font-bold text-sm hover:border-brand-accent transition-all whitespace-nowrap"
-                  >
-                    Learn More
-                  </Link>
-                  <Link
-                    to={`/order-report?report=${post.relatedReport.orderSlug}`}
                     className="px-6 py-3 bg-brand-primary text-white rounded-xl font-bold text-sm hover:bg-brand-primary/90 transition-all whitespace-nowrap flex items-center gap-2"
                   >
-                    Order Now <Zap size={16} />
+                    View Products <ArrowRight size={16} />
                   </Link>
                 </div>
               </div>
@@ -239,14 +233,14 @@ const BlogArticle = () => {
             <div className="absolute inset-0 opacity-10 engineering-grid" />
             <div className="relative z-10 flex flex-col sm:flex-row items-center justify-between gap-6">
               <div>
-                <h3 className="text-xl font-bold mb-2">Need expert advice on your project?</h3>
-                <p className="text-white/50 text-sm">Get in touch with our engineering team for a free initial consultation.</p>
+                <h3 className="text-xl font-bold mb-2">Ready to get started?</h3>
+                <p className="text-white/50 text-sm">Complete desktop planning intelligence for any site in England. From £199.</p>
               </div>
               <Link
-                to="/contact"
+                to="/for-developers"
                 className="px-8 py-4 bg-brand-accent text-brand-primary rounded-xl font-bold hover:bg-brand-accent/90 transition-all whitespace-nowrap flex items-center gap-2"
               >
-                Get in Touch <ArrowRight size={18} />
+                View Products <ArrowRight size={18} />
               </Link>
             </div>
           </div>
