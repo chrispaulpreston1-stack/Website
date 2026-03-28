@@ -69,7 +69,7 @@ const stats = [
   { end: 76, suffix: '+', label: 'Data sources & APIs' },
   { end: 34, suffix: '+', label: 'Constraint checkers' },
   { end: 620, suffix: '+', label: 'Verified case law refs' },
-  { end: 308, suffix: '', label: 'LPAs covered' },
+  { end: 302, suffix: '', label: 'LPAs covered' },
   { end: 24, suffix: '+', label: 'QA pipeline checks' },
   { end: 48, suffix: 'hr', label: 'Turnaround' },
 ];
