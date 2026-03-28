@@ -299,6 +299,9 @@ export default function AppRedesign() {
                 <Route path="/for-self-builders" element={<Navigate to="/for-developers" replace />} />
                 <Route path="/for-architects" element={<Navigate to="/for-professionals" replace />} />
                 <Route path="/ai-*" element={<Navigate to="/trust" replace />} />
+                <Route path="/contact" element={<Navigate to="/for-developers" replace />} />
+                <Route path="/contact-pf-co-construction" element={<Navigate to="/for-developers" replace />} />
+                <Route path="/blog" element={<Navigate to="/insights" replace />} />
 
                 {/* Catch-all */}
                 <Route path="*" element={<Navigate to="/" replace />} />

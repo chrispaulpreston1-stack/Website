@@ -157,13 +157,21 @@ export default function TrustPage() {
               <p className="text-[1.1rem] text-[#6b7280] leading-relaxed">
                 Request a sample report for a site you know, so you can verify our accuracy against your own knowledge. Pick a site you've worked on — compare what we produce against what you already know about the constraints.
               </p>
-              <div className="mt-6">
+              <div className="mt-6 flex flex-wrap gap-4 justify-center">
                 <Link
-                  to="/order-report"
+                  to="/order"
                   className="inline-flex items-center gap-2 px-7 py-3.5 rounded-[10px] text-[15px] font-semibold text-white bg-gradient-to-br from-[#27ae60] to-[#219a52] shadow-[0_2px_8px_rgba(39,174,96,0.3)] hover:from-[#2ecc71] hover:to-[#27ae60] hover:-translate-y-px hover:scale-[1.02] active:scale-[0.98] transition-all"
                 >
                   Request a Sample Report
                 </Link>
+                <a
+                  href="/samples/site-feasibility-report-sample.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-7 py-3.5 rounded-[10px] text-[15px] font-semibold text-[#0f3460] border-[1.5px] border-[#e2e5ed] hover:border-[#0f3460] hover:bg-[#eff6ff] hover:scale-[1.02] active:scale-[0.98] transition-all"
+                >
+                  Download Sample Feasibility Report (PDF)
+                </a>
               </div>
             </div>
           </FadeUp>

@@ -354,11 +354,15 @@ export default function ForDevelopersPage() {
             <FadeUp delay={0.1}>
               <div className="rounded-2xl p-9 bg-[#f0fdf4] border border-[#bbf7d0]">
                 <h4 className="text-xl font-semibold mb-6">Site Intelligence</h4>
-                {['15-unit scheme', '50-unit scheme', 'Single new build'].map((scheme) => (
-                  <div key={scheme} className="py-3.5 border-b border-black/[0.06] last:border-b-0 text-[0.9375rem]">
-                    <strong className="text-[#2c2c3a]">{scheme}</strong>
+                {[
+                  { scheme: '15-unit scheme', cost: 'From \u00A32,495 in 48 hours' },
+                  { scheme: '50-unit scheme', cost: 'From \u00A32,495 in 48 hours' },
+                  { scheme: 'Single new build', cost: 'From \u00A3695 in 48 hours' },
+                ].map((r) => (
+                  <div key={r.scheme} className="py-3.5 border-b border-black/[0.06] last:border-b-0 text-[0.9375rem]">
+                    <strong className="text-[#2c2c3a]">{r.scheme}</strong>
                     <br />
-                    <span className="text-[#6b7280]">48 hours</span>
+                    <span className="text-[#27ae60] font-semibold">{r.cost}</span>
                   </div>
                 ))}
               </div>

@@ -21,7 +21,7 @@ const PRICING: Record<string, Record<string, number>> = {
   screening: { '1': 199, '2-9': 199, '10-50': 199, '51-100': 199 },
   feasibility: { '1': 695, '2-9': 1295, '10-50': 2495, '51-100': 3495 },
   preapp: { '1': 995, '2-9': 1795, '10-50': 3495, '51-100': 4995 },
-  fullpack: { '1': 1495, '2-9': 2495, '10-50': 4995, '51-100': 7995 },
+  fullpack: { '1': 0, '2-9': 0, '10-50': 0, '51-100': 0 },
 };
 
 function getBand(dwellings: number): string | null {
@@ -305,7 +305,7 @@ export default function OrderPage() {
                     <motion.div
                       key={p.id}
                       whileHover={{ y: -2 }}
-                      onClick={() => !overLimit && setSelectedProduct(p.id)}
+                      onClick={() => !overLimit && p.id !== 'fullpack' && setSelectedProduct(p.id)}
                       className={`relative rounded-2xl p-6 sm:p-8 pl-8 sm:pl-10 border-2 cursor-pointer transition-all overflow-hidden ${
                         isSelected
                           ? 'shadow-lg'
@@ -347,6 +347,13 @@ export default function OrderPage() {
                                 <Phone size={16} /> Call Us
                               </a>
                               <div className="text-xs text-[#9ca3af] mt-2">100+ dwellings</div>
+                            </div>
+                          ) : p.id === 'fullpack' ? (
+                            <div className="text-center sm:text-right">
+                              <a href="mailto:info@pfandco.co.uk?subject=Planning Intelligence Pack enquiry" className="inline-flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-semibold text-white bg-gradient-to-br from-[#e67e22] to-[#cf6d17]">
+                                Get a Quote
+                              </a>
+                              <div className="text-xs text-[#9ca3af] mt-2">Tailored to your site</div>
                             </div>
                           ) : (
                             <>

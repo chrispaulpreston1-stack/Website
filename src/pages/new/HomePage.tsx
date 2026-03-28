@@ -404,10 +404,10 @@ export default function HomePage() {
                 Get Started
               </Link>
               <Link
-                to="/trust"
+                to="/whats-included"
                 className="inline-flex items-center gap-2 px-7 py-3.5 rounded-[10px] text-[15px] font-semibold text-white border-[1.5px] border-white/25 hover:border-white/50 hover:bg-white/5 hover:-translate-y-px hover:scale-[1.02] active:scale-[0.98] transition-all"
               >
-                See How It Works
+                See What's Included
               </Link>
             </div>
           </FadeUp>

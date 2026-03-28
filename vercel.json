@@ -25,7 +25,11 @@
     { "source": "/si-manchester", "destination": "/", "permanent": true },
     { "source": "/si-nottingham", "destination": "/", "permanent": true },
     { "source": "/si-plymouth", "destination": "/", "permanent": true },
-    { "source": "/si-sheffield", "destination": "/", "permanent": true }
+    { "source": "/si-sheffield", "destination": "/", "permanent": true },
+    { "source": "/contact", "destination": "/for-developers", "permanent": true },
+    { "source": "/contact-pf-co-construction", "destination": "/for-developers", "permanent": true },
+    { "source": "/blog", "destination": "/insights", "permanent": true },
+    { "source": "/blog/:path*", "destination": "/insights", "permanent": true }
   ],
   "rewrites": [
     { "source": "/si/feasibility-check(/?)", "destination": "/si/feasibility-check/index.html" },

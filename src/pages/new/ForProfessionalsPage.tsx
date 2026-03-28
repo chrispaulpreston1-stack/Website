@@ -221,7 +221,7 @@ export default function ForProfessionalsPage() {
           <FadeUp delay={0.3}>
             <div className="flex justify-center">
               <Link
-                to="/order-report"
+                to="/order"
                 className="inline-flex items-center gap-2 px-7 py-3.5 rounded-[10px] text-[15px] font-semibold text-white bg-gradient-to-br from-[#27ae60] to-[#219a52] shadow-[0_2px_8px_rgba(39,174,96,0.3)] hover:from-[#2ecc71] hover:to-[#27ae60] hover:-translate-y-px hover:scale-[1.02] active:scale-[0.98] transition-all"
               >
                 Talk to Us About Volume Pricing
