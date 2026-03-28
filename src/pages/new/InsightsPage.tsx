@@ -39,13 +39,13 @@ interface Article {
 
 const articles: Article[] = [
   {
-    slug: 'what-reports-do-you-need-for-planning-permission',
-    title: 'What Reports Do You Need for Planning Permission? The Complete 2026 Guide',
-    excerpt: 'Every document your application needs, when you need it, and what triggers each requirement. From householder extensions to major residential schemes.',
-    tag: 'Guide',
-    tagColor: '#27ae60',
-    barGradient: 'linear-gradient(90deg, #27ae60, #2ecc71)',
-    readTime: '15 min read',
+    slug: 'development-costings-desktop-intelligence',
+    title: 'What Does It Really Cost to Build? How Desktop Intelligence Is Changing Development Costings',
+    excerpt: 'Standard cost plans use regional averages. But site-specific abnormals \u2014 piled foundations, heritage materials, BNG, S106 \u2014 can add 15-25% that blindsides developers. Here\u2019s what desktop intelligence changes.',
+    tag: 'Analysis',
+    tagColor: '#0f3460',
+    barGradient: 'linear-gradient(90deg, #0f3460, #2980b9)',
+    readTime: '8 min read',
     featured: true,
   },
   {
@@ -76,13 +76,13 @@ const articles: Article[] = [
     readTime: '10 min',
   },
   {
-    slug: 'environmental-reports-for-land-promoters',
-    title: 'Environmental Reports for Land Promoters: What You Need Before You Option a Site',
-    excerpt: 'The desktop intelligence that separates good sites from money pits. What to check before you commit capital.',
+    slug: 'what-reports-do-you-need-for-planning-permission',
+    title: 'What Reports Do You Need for Planning Permission? The Complete 2026 Guide',
+    excerpt: 'Every document your application needs, when you need it, and what triggers each requirement. From householder extensions to major residential schemes.',
     tag: 'Guide',
     tagColor: '#27ae60',
     barGradient: 'linear-gradient(90deg, #27ae60, #2ecc71)',
-    readTime: '7 min',
+    readTime: '15 min read',
   },
 ];
 

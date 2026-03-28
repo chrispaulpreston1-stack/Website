@@ -83,7 +83,7 @@ const products: Product[] = [
       'All constraint-triggered technical reports included',
       '20+ map overlays covering every planning constraint layer',
       'Indicative site layout with dwelling positions',
-      'Viability overview with cost and revenue estimates',
+      'Elemental cost plan with site-specific abnormals identified',
     ],
     ideal: 'Due diligence before site acquisition or option agreement',
     price: 'From \u00A3695',
