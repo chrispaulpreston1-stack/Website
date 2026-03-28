@@ -102,17 +102,85 @@ function StatItem({ end, suffix, label }: { end: number; suffix: string; label: 
 }
 
 /* ------------------------------------------------------------------ */
-/*  Hero address input                                                 */
+/*  Hero address input with Postcodes.io autocomplete                  */
 /* ------------------------------------------------------------------ */
+interface PostcodeResult {
+  postcode: string;
+  admin_district: string;
+  latitude: number;
+  longitude: number;
+}
+
 function HeroAddressInput() {
-  const [address, setAddress] = useState('');
+  const [input, setInput] = useState('');
+  const [suggestions, setSuggestions] = useState<PostcodeResult[]>([]);
+  const [selected, setSelected] = useState<PostcodeResult | null>(null);
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const lookupPostcode = async (query: string) => {
+    const clean = query.trim().replace(/\s+/g, '');
+    if (clean.length < 2) { setSuggestions([]); return; }
+
+    setLoading(true);
+    try {
+      /* Try autocomplete first (partial postcodes) */
+      const acRes = await fetch(`https://api.postcodes.io/postcodes/${encodeURIComponent(clean)}/autocomplete`);
+      const acData = await acRes.json();
+
+      if (acData.result && acData.result.length > 0) {
+        /* Lookup full details for top 5 suggestions */
+        const lookups = acData.result.slice(0, 5);
+        const bulkRes = await fetch('https://api.postcodes.io/postcodes', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ postcodes: lookups }),
+        });
+        const bulkData = await bulkRes.json();
+
+        const results: PostcodeResult[] = (bulkData.result || [])
+          .filter((r: any) => r.result)
+          .map((r: any) => ({
+            postcode: r.result.postcode,
+            admin_district: r.result.admin_district || '',
+            latitude: r.result.latitude,
+            longitude: r.result.longitude,
+          }));
+        setSuggestions(results);
+      } else {
+        setSuggestions([]);
+      }
+    } catch {
+      setSuggestions([]);
+    }
+    setLoading(false);
+  };
+
+  const handleChange = (val: string) => {
+    setInput(val);
+    setSelected(null);
+    if (debounceRef.current) clearTimeout(debounceRef.current);
+    debounceRef.current = setTimeout(() => lookupPostcode(val), 300);
+  };
+
+  const handleSelect = (result: PostcodeResult) => {
+    setInput(result.postcode);
+    setSelected(result);
+    setSuggestions([]);
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const trimmed = address.trim();
+    const trimmed = input.trim();
     if (!trimmed) return;
-    navigate(`/order?address=${encodeURIComponent(trimmed)}`);
+    const params = new URLSearchParams({ address: trimmed });
+    if (selected) {
+      params.set('lat', String(selected.latitude));
+      params.set('lon', String(selected.longitude));
+      params.set('lpa', selected.admin_district);
+    }
+    navigate(`/order?${params.toString()}`);
   };
 
   return (
@@ -122,16 +190,20 @@ function HeroAddressInput() {
       transition={{ duration: 0.7, delay: 0.3, ease: [0.4, 0, 0.2, 1] }}
       className="flex flex-col items-center mb-0"
     >
-      <form onSubmit={handleSubmit} className="w-full max-w-[560px]">
+      <form onSubmit={handleSubmit} className="w-full max-w-[560px] relative">
         <div className="flex items-center bg-white/10 backdrop-blur-sm border border-white/15 rounded-[14px] overflow-hidden transition-all focus-within:border-[#27ae60]/50 focus-within:shadow-[0_0_24px_rgba(39,174,96,0.15)]">
           <MapPin size={20} className="text-[#b0b8cc]/60 ml-4 shrink-0" />
           <input
             type="text"
-            value={address}
-            onChange={(e) => setAddress(e.target.value)}
-            placeholder="Enter your site address or postcode..."
+            value={input}
+            onChange={(e) => handleChange(e.target.value)}
+            placeholder="Enter your site postcode..."
             className="flex-1 bg-transparent text-white placeholder-[#b0b8cc]/50 text-[15px] px-3 py-4 outline-none"
+            autoComplete="off"
           />
+          {loading && (
+            <div className="shrink-0 mr-2 w-5 h-5 border-2 border-[#27ae60]/40 border-t-[#27ae60] rounded-full animate-spin" />
+          )}
           <button
             type="submit"
             className="shrink-0 mr-1.5 px-5 py-2.5 rounded-[10px] text-[14px] font-semibold text-white bg-gradient-to-br from-[#27ae60] to-[#219a52] shadow-[0_2px_8px_rgba(39,174,96,0.3)] hover:from-[#2ecc71] hover:to-[#27ae60] hover:shadow-[0_4px_20px_rgba(39,174,96,0.3)] active:scale-[0.97] transition-all"
@@ -139,10 +211,44 @@ function HeroAddressInput() {
             Get Started
           </button>
         </div>
+
+        {/* Dropdown suggestions */}
+        {suggestions.length > 0 && (
+          <div className="absolute left-0 right-0 top-full mt-2 bg-[#1a1a2e]/95 backdrop-blur-md border border-white/10 rounded-xl overflow-hidden shadow-[0_12px_40px_rgba(0,0,0,0.4)] z-50">
+            {suggestions.map((s) => (
+              <button
+                key={s.postcode}
+                type="button"
+                onClick={() => handleSelect(s)}
+                className="w-full text-left px-4 py-3 flex items-center gap-3 hover:bg-white/10 transition-colors border-b border-white/5 last:border-b-0"
+              >
+                <MapPin size={14} className="text-[#27ae60] shrink-0" />
+                <div>
+                  <span className="text-white text-sm font-medium">{s.postcode}</span>
+                  <span className="text-[#b0b8cc]/60 text-xs ml-2">{s.admin_district}</span>
+                </div>
+              </button>
+            ))}
+          </div>
+        )}
       </form>
-      <p className="mt-3 text-[13px] text-[#b0b8cc]/50">
-        e.g. Land north of High Street, Sidmouth, EX10 8EQ
-      </p>
+
+      {/* Selected postcode info */}
+      {selected && (
+        <motion.p
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="mt-3 text-[13px] text-[#27ae60]/80"
+        >
+          {selected.admin_district} &middot; {selected.latitude.toFixed(4)}, {selected.longitude.toFixed(4)}
+        </motion.p>
+      )}
+
+      {!selected && (
+        <p className="mt-3 text-[13px] text-[#b0b8cc]/50">
+          Start typing a postcode &mdash; e.g. EX10 8EQ, GU1 4QA, PL1 2AA
+        </p>
+      )}
       <Link
         to="/for-developers"
         className="mt-2 text-[13px] text-[#27ae60]/70 hover:text-[#27ae60] transition-colors"

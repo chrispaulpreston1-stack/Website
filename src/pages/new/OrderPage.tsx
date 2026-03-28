@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { motion } from 'motion/react';
 import {
   MapPin,
@@ -106,10 +106,11 @@ const PRODUCTS = [
 /*  Component                                                          */
 /* ------------------------------------------------------------------ */
 export default function OrderPage() {
+  const [searchParams] = useSearchParams();
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
   const [step, setStep] = useState(1);
-  const [address, setAddress] = useState('');
+  const [address, setAddress] = useState(searchParams.get('address') || '');
   const [projectType, setProjectType] = useState('residential');
   const [dwellings, setDwellings] = useState(1);
   const [selectedProduct, setSelectedProduct] = useState('');
@@ -145,6 +146,9 @@ export default function OrderPage() {
             product: selectedProduct,
             company,
             phone,
+            latitude: searchParams.get('lat') || '',
+            longitude: searchParams.get('lon') || '',
+            lpa: searchParams.get('lpa') || '',
           },
         }),
       });
