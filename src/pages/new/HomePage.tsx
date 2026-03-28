@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { motion, useInView } from 'motion/react';
 import {
   MapPin,
@@ -101,6 +101,58 @@ function StatItem({ end, suffix, label }: { end: number; suffix: string; label: 
   );
 }
 
+/* ------------------------------------------------------------------ */
+/*  Hero address input                                                 */
+/* ------------------------------------------------------------------ */
+function HeroAddressInput() {
+  const [address, setAddress] = useState('');
+  const navigate = useNavigate();
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const trimmed = address.trim();
+    if (!trimmed) return;
+    navigate(`/order?address=${encodeURIComponent(trimmed)}`);
+  };
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 32 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, delay: 0.3, ease: [0.4, 0, 0.2, 1] }}
+      className="flex flex-col items-center mb-0"
+    >
+      <form onSubmit={handleSubmit} className="w-full max-w-[560px]">
+        <div className="flex items-center bg-white/10 backdrop-blur-sm border border-white/15 rounded-[14px] overflow-hidden transition-all focus-within:border-[#27ae60]/50 focus-within:shadow-[0_0_24px_rgba(39,174,96,0.15)]">
+          <MapPin size={20} className="text-[#b0b8cc]/60 ml-4 shrink-0" />
+          <input
+            type="text"
+            value={address}
+            onChange={(e) => setAddress(e.target.value)}
+            placeholder="Enter your site address or postcode..."
+            className="flex-1 bg-transparent text-white placeholder-[#b0b8cc]/50 text-[15px] px-3 py-4 outline-none"
+          />
+          <button
+            type="submit"
+            className="shrink-0 mr-1.5 px-5 py-2.5 rounded-[10px] text-[14px] font-semibold text-white bg-gradient-to-br from-[#27ae60] to-[#219a52] shadow-[0_2px_8px_rgba(39,174,96,0.3)] hover:from-[#2ecc71] hover:to-[#27ae60] hover:shadow-[0_4px_20px_rgba(39,174,96,0.3)] active:scale-[0.97] transition-all"
+          >
+            Get Started
+          </button>
+        </div>
+      </form>
+      <p className="mt-3 text-[13px] text-[#b0b8cc]/50">
+        e.g. Land north of High Street, Sidmouth, EX10 8EQ
+      </p>
+      <Link
+        to="/for-developers"
+        className="mt-2 text-[13px] text-[#27ae60]/70 hover:text-[#27ae60] transition-colors"
+      >
+        Or explore our products &rarr;
+      </Link>
+    </motion.div>
+  );
+}
+
 /* ================================================================== */
 /*  HOME PAGE                                                          */
 /* ================================================================== */
@@ -113,7 +165,7 @@ export default function HomePage() {
     <>
       <Helmet>
         <title>Site Intelligence | Planning Intelligence. 48 Hours. Any Site in England.</title>
-        <meta name="description" content="Complete planning intelligence for any development site in England. 76+ data sources, 24-layer QA, 48-hour delivery. From £199." />
+        <meta name="description" content="Complete planning intelligence for any development site in England. 76+ data sources, 34-layer QA, 48-hour delivery. From £199." />
         <meta property="og:title" content="Site Intelligence — Planning Intelligence. 48 Hours." />
         <meta property="og:description" content="Every desktop planning report your application needs, delivered in 48 hours." />
         <link rel="canonical" href="https://www.pfandco.co.uk/" />
@@ -158,25 +210,7 @@ export default function HomePage() {
             Every desktop planning report your application needs — feasibility, flood risk, heritage, ecology, transport, and more — in a single integrated pack.
           </motion.p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 32 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.3, ease: [0.4, 0, 0.2, 1] }}
-            className="flex flex-col sm:flex-row gap-3 justify-center items-center mb-0"
-          >
-            <Link
-              to="/for-developers"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-[10px] text-[15px] font-semibold text-white bg-gradient-to-br from-[#27ae60] to-[#219a52] shadow-[0_2px_8px_rgba(39,174,96,0.3)] hover:from-[#2ecc71] hover:to-[#27ae60] hover:-translate-y-px hover:scale-[1.02] hover:shadow-[0_4px_20px_rgba(39,174,96,0.3)] active:scale-[0.98] transition-all"
-            >
-              I'm a Developer
-            </Link>
-            <Link
-              to="/for-professionals"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-[10px] text-[15px] font-semibold text-white border-[1.5px] border-white/25 hover:border-white/50 hover:bg-white/5 hover:-translate-y-px hover:scale-[1.02] active:scale-[0.98] transition-all"
-            >
-              I'm a Professional
-            </Link>
-          </motion.div>
+          <HeroAddressInput />
 
           {/* Trust mini-badges */}
           <motion.div
@@ -192,7 +226,7 @@ export default function HomePage() {
             <span className="hidden sm:block w-px h-4 bg-white/10" />
             <span className="flex items-center gap-2 text-[#b0b8cc]/60 text-xs sm:text-[0.85rem]">
               <CheckCircle2 size={14} className="text-[#27ae60]/60 shrink-0" />
-              24-layer QA
+              34-layer QA
             </span>
             <span className="hidden sm:block w-px h-4 bg-white/10" />
             <span className="flex items-center gap-2 text-[#b0b8cc]/60 text-xs sm:text-[0.85rem]">
