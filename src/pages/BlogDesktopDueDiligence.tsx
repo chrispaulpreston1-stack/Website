@@ -17,7 +17,7 @@ const BlogDesktopDueDiligence = () => {
         },
         "publisher": {
           "@type": "Organization",
-          "name": "PF & Co Site Intelligence",
+          "name": "Site Intelligence",
           "logo": {
             "@type": "ImageObject",
             "url": "https://www.pfandco.co.uk/logo.png"
@@ -92,7 +92,7 @@ const BlogDesktopDueDiligence = () => {
     <div className="bg-brand-surface min-h-screen">
       <PageSEO 
         title="Desktop Due Diligence: The 5-Stage Site Assessment | SI"
-        description="RICS, LCRM, and NPPF all mandate desktop assessment first. Learn the 5-stage developer workflow, what it costs the old way (£10,000–£50,000+), and how to do it in 48 hours from £295."
+        description="RICS, LCRM, and NPPF all mandate desktop assessment first. Learn the 5-stage developer workflow, what it costs the old way (£10,000–£50,000+), and how to do it in 48 hours from £199."
         path="/blog/desktop-due-diligence-before-spending"
         ogImage="https://www.pfandco.co.uk/images/desktop-first-assessment-hero.jpg"
         jsonLd={schema}
@@ -108,7 +108,7 @@ const BlogDesktopDueDiligence = () => {
             Why Smart Developers Do <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-amber-300">Desktop Due Diligence</span> Before Spending a Penny on Site
           </h1>
           <p className="text-xl text-brand-primary/60 mb-8 max-w-2xl mx-auto speakable-intro">
-            A £295 initial report could save you from burning £35,000 on a structurally doomed development.
+            A £199 initial screening could save you from burning £35,000 on a structurally doomed development.
           </p>
           <div className="flex items-center justify-center gap-4 text-sm font-medium text-brand-primary/50">
             <span>By Site Intelligence Team</span>
@@ -216,7 +216,7 @@ const BlogDesktopDueDiligence = () => {
           <p>Desktop assessment is the essential first stage, not the only stage. It does not replace Phase 2 intrusive ground investigation, protected species surveys, detailed flood modelling, or measured surveys. It simply tells you what you need.</p>
 
           <h2>How Can You Do Desktop Due Diligence in 48 Hours?</h2>
-          <p><Link to="/site-intelligence">Site Intelligence</Link> delivers comprehensive Tier 1 desktop assessment — the same staged approach mandated by RICS, LCRM, and the NPPF — from a single platform, querying <Link to="/site-intelligence/data-sources">60+ government data sources</Link> simultaneously, cross-referencing findings across all constraint categories, in 48 hours. <Link to="/site-intelligence/pricing">From £295</Link>.</p>
+          <p><Link to="/for-developers">Site Intelligence</Link> delivers comprehensive Tier 1 desktop assessment — the same staged approach mandated by RICS, LCRM, and the NPPF — from a single platform, querying 60+ government data sources simultaneously, cross-referencing findings across all constraint categories. Site Screening from £199 same-day, Feasibility Intelligence from £695 in 48 hours. <Link to="/for-developers">View Products</Link>.</p>
 
           <hr className="my-12 border-brand-primary/10" />
 
@@ -267,26 +267,32 @@ const BlogDesktopDueDiligence = () => {
             </h3>
             <ul className="space-y-4">
               <li>
-                <Link to="/site-intelligence/site-feasibility-report" className="block group">
-                  <div className="font-bold text-brand-primary group-hover:text-brand-accent transition-colors">Site Feasibility Report</div>
-                  <div className="text-sm text-brand-primary/60">Comprehensive Tier 1 screening</div>
+                <Link to="/for-developers" className="block group">
+                  <div className="font-bold text-brand-primary group-hover:text-brand-accent transition-colors">Site Screening</div>
+                  <div className="text-sm text-brand-primary/60">£199 — same-day turnaround</div>
                 </Link>
               </li>
               <li>
-                <Link to="/site-intelligence/geotechnical-desk-study" className="block group">
-                  <div className="font-bold text-brand-primary group-hover:text-brand-accent transition-colors">Ground & Desktop Study</div>
-                  <div className="text-sm text-brand-primary/60">LCRM compliant Phase 1</div>
+                <Link to="/for-developers" className="block group">
+                  <div className="font-bold text-brand-primary group-hover:text-brand-accent transition-colors">Feasibility Intelligence</div>
+                  <div className="text-sm text-brand-primary/60">From £695 — 48 hours</div>
                 </Link>
               </li>
               <li>
-                <Link to="/site-intelligence/flood-risk-assessment" className="block group">
-                  <div className="font-bold text-brand-primary group-hover:text-brand-accent transition-colors">Flood Risk Assessment</div>
-                  <div className="text-sm text-brand-primary/60">Desktop NPPF sequential testing</div>
+                <Link to="/for-developers" className="block group">
+                  <div className="font-bold text-brand-primary group-hover:text-brand-accent transition-colors">Pre-Application Pack</div>
+                  <div className="text-sm text-brand-primary/60">From £995 — 1 week</div>
+                </Link>
+              </li>
+              <li>
+                <Link to="/for-developers" className="block group">
+                  <div className="font-bold text-brand-primary group-hover:text-brand-accent transition-colors">Planning Intelligence Pack</div>
+                  <div className="text-sm text-brand-primary/60">Custom quote — 1–2 weeks</div>
                 </Link>
               </li>
             </ul>
-            <Link to="/order-report" className="mt-8 block w-full bg-brand-primary text-white text-center py-3 rounded-xl font-bold hover:bg-brand-primary/90 transition-colors shadow-lg shadow-brand-primary/20">
-              Order a Report
+            <Link to="/for-developers" className="mt-8 block w-full bg-brand-primary text-white text-center py-3 rounded-xl font-bold hover:bg-brand-primary/90 transition-colors shadow-lg shadow-brand-primary/20">
+              Get Started
             </Link>
           </div>
         </aside>
