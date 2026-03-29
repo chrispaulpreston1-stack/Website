@@ -423,7 +423,7 @@ export default function HomePage() {
         </script>
       </Helmet>
       {/* ---------- HERO ---------- */}
-      <section className="relative min-h-[70vh] md:min-h-screen flex items-center justify-center overflow-hidden text-center pt-[67px]">
+      <section className="relative min-h-[70vh] md:min-h-screen flex items-center justify-center overflow-x-hidden overflow-y-visible text-center pt-[67px]">
         {/* Animated gradient BG */}
         <div className="absolute inset-0 z-0 animate-[heroGradient_20s_ease_infinite] bg-[length:400%_400%]"
           style={{
