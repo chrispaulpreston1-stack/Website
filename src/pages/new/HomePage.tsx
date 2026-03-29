@@ -132,6 +132,7 @@ function HeroAddressInput() {
 
   const findAddresses = async (override?: string) => {
     const clean = (override || input).trim();
+    console.log('[SI] findAddresses called, clean:', clean, 'key:', IDEAL_API_KEY?.slice(0, 6));
     if (clean.length < 3) return;
 
     setLoading(true);
@@ -142,8 +143,10 @@ function HeroAddressInput() {
 
     try {
       /* Step 1: Validate postcode + get LPA via Postcodes.io (free) */
+      console.log('[SI] Step 1: Postcodes.io lookup...');
       const pioRes = await fetch(`https://api.postcodes.io/postcodes/${encodeURIComponent(clean)}`);
       const pioData = await pioRes.json();
+      console.log('[SI] Postcodes.io status:', pioData.status, 'country:', pioData.result?.country);
 
       if (pioData.status !== 200 || !pioData.result) {
         setError('Postcode not found. Please check and try again.');
@@ -168,8 +171,11 @@ function HeroAddressInput() {
       setInput(meta.postcode);
 
       /* Step 2: Fetch individual addresses via Ideal Postcodes */
-      const idRes = await fetch(`https://api.ideal-postcodes.co.uk/v1/postcodes/${encodeURIComponent(meta.postcode)}?api_key=${IDEAL_API_KEY}`);
+      const idealUrl = `https://api.ideal-postcodes.co.uk/v1/postcodes/${encodeURIComponent(meta.postcode)}?api_key=${IDEAL_API_KEY}`;
+      console.log('[SI] Step 2: Ideal Postcodes...', idealUrl.replace(IDEAL_API_KEY, '***'));
+      const idRes = await fetch(idealUrl);
       const idData = await idRes.json();
+      console.log('[SI] Ideal code:', idData.code, 'results:', idData.result?.length || 0);
 
       if (idData.result && idData.result.length > 0) {
         const results: AddressResult[] = idData.result.map((a: any) => ({
@@ -183,9 +189,11 @@ function HeroAddressInput() {
           longitude: a.longitude || meta.lon,
           admin_district: meta.admin_district,
         }));
+        console.log('[SI] Setting', results.length, 'addresses, showList=true');
         setAddresses(results);
         setShowList(true);
       } else {
+        console.log('[SI] No Ideal results, using fallback');
         /* Ideal Postcodes returned nothing — show postcode-level result so user can still proceed */
         setPostcodeMeta(meta);
         setAddresses([{
