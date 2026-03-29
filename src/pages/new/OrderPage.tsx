@@ -109,13 +109,19 @@ export default function OrderPage() {
   const [searchParams] = useSearchParams();
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
+  /* Ideal Postcodes API key — test key for development, swap for real key in .env */
+  const IDEAL_API_KEY = import.meta.env.VITE_IDEAL_POSTCODES_KEY || 'iddqd';
+
   const [step, setStep] = useState(1);
   const [postcode, setPostcode] = useState(searchParams.get('address') || '');
   const [postcodeVerified, setPostcodeVerified] = useState(!!searchParams.get('lat'));
   const [postcodeInfo, setPostcodeInfo] = useState(searchParams.get('lpa') || '');
   const [lat, setLat] = useState(searchParams.get('lat') || '');
   const [lon, setLon] = useState(searchParams.get('lon') || '');
+  const [uprn, setUprn] = useState('');
   const [siteDescription, setSiteDescription] = useState('');
+  const [addresses, setAddresses] = useState<any[]>([]);
+  const [showAddressList, setShowAddressList] = useState(false);
   const [dwellings, setDwellings] = useState(1);
   const [dwellingBand, setDwellingBand] = useState('');
   const [selectedProduct, setSelectedProduct] = useState('');
@@ -156,6 +162,7 @@ export default function OrderPage() {
             latitude: lat,
             longitude: lon,
             lpa: postcodeInfo,
+            uprn,
           },
         }),
       });
@@ -245,88 +252,151 @@ export default function OrderPage() {
               <p className="text-[#6b7280] mb-8">Three quick fields and we'll show you prices.</p>
 
               <div className="space-y-6">
-                {/* Postcode — validated against Postcodes.io */}
+                {/* Postcode + Address Lookup via Ideal Postcodes */}
                 <div>
                   <label className="block text-sm font-semibold text-[#2c2c3a] mb-2">Site postcode</label>
-                  {postcodeVerified ? (
-                    <div className="flex items-center gap-3">
-                      <div className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#f0fdf4] border border-[#bbf7d0] text-[#166534] font-semibold text-base">
-                        <Check size={16} className="text-[#27ae60]" />
-                        {postcode}
-                        <span className="text-sm font-normal text-[#6b7280] ml-1">{postcodeInfo}</span>
+                  {postcodeVerified && siteDescription ? (
+                    /* Confirmed state — show green pill with address */
+                    <div className="flex flex-col gap-2">
+                      <div className="inline-flex items-center gap-2 px-4 py-3 rounded-xl bg-[#f0fdf4] border border-[#bbf7d0] text-[#166534] text-base flex-wrap">
+                        <Check size={16} className="text-[#27ae60] shrink-0" />
+                        <span className="font-semibold">{siteDescription}</span>
+                        <span className="text-sm font-normal text-[#6b7280]">{postcode} &middot; {postcodeInfo}</span>
                       </div>
                       <button
                         type="button"
-                        onClick={() => { setPostcodeVerified(false); setPostcodeError(''); }}
-                        className="text-sm text-[#6b7280] hover:text-[#2c2c3a] transition-colors"
+                        onClick={() => { setPostcodeVerified(false); setSiteDescription(''); setAddresses([]); setShowAddressList(false); setPostcodeError(''); setUprn(''); }}
+                        className="text-sm text-[#6b7280] hover:text-[#2c2c3a] transition-colors self-start"
                       >
-                        Change
+                        Change address
                       </button>
                     </div>
                   ) : (
                     <div>
+                      {/* Postcode input + Find Address button */}
                       <div className="flex gap-3">
                         <div className="relative flex-grow max-w-[240px]">
                           <MapPin size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-[#9ca3af]" />
                           <input
                             type="text"
                             value={postcode}
-                            onChange={(e) => { setPostcode(e.target.value.toUpperCase()); setPostcodeError(''); }}
+                            onChange={(e) => { setPostcode(e.target.value.toUpperCase()); setPostcodeError(''); setAddresses([]); setShowAddressList(false); }}
                             placeholder="e.g. EX10 8EQ"
                             className="w-full pl-12 pr-4 py-3.5 rounded-xl border border-[#e2e5ed] text-base focus:outline-none focus:ring-2 focus:ring-[#27ae60]/30 focus:border-[#27ae60] transition-all"
                             maxLength={10}
+                            onKeyDown={(e) => { if (e.key === 'Enter') { e.preventDefault(); document.getElementById('findAddressBtn')?.click(); } }}
                           />
                         </div>
                         <button
+                          id="findAddressBtn"
                           type="button"
                           disabled={postcodeLoading || postcode.trim().length < 3}
                           onClick={async () => {
                             setPostcodeLoading(true);
                             setPostcodeError('');
+                            setAddresses([]);
+                            setShowAddressList(false);
                             try {
-                              const res = await fetch(`https://api.postcodes.io/postcodes/${encodeURIComponent(postcode.trim())}`);
-                              const data = await res.json();
-                              if (data.status === 200 && data.result) {
-                                if (data.result.country !== 'England') {
-                                  setPostcodeError('Site Intelligence currently covers England only.');
-                                } else {
-                                  setPostcodeVerified(true);
-                                  setPostcode(data.result.postcode);
-                                  setPostcodeInfo(data.result.admin_district || '');
-                                  setLat(String(data.result.latitude));
-                                  setLon(String(data.result.longitude));
-                                }
-                              } else {
+                              /* First validate with Postcodes.io (free, England-only check) */
+                              const pioRes = await fetch(`https://api.postcodes.io/postcodes/${encodeURIComponent(postcode.trim())}`);
+                              const pioData = await pioRes.json();
+                              if (pioData.status !== 200 || !pioData.result) {
                                 setPostcodeError('Postcode not found. Please check and try again.');
+                                setPostcodeLoading(false);
+                                return;
+                              }
+                              if (pioData.result.country !== 'England') {
+                                setPostcodeError('Site Intelligence currently covers England only.');
+                                setPostcodeLoading(false);
+                                return;
+                              }
+                              setPostcode(pioData.result.postcode);
+                              setPostcodeInfo(pioData.result.admin_district || '');
+                              setLat(String(pioData.result.latitude));
+                              setLon(String(pioData.result.longitude));
+
+                              /* Then fetch addresses from Ideal Postcodes */
+                              const idRes = await fetch(`https://api.ideal-postcodes.co.uk/v1/postcodes/${encodeURIComponent(pioData.result.postcode)}?api_key=${IDEAL_API_KEY}`);
+                              const idData = await idRes.json();
+                              if (idData.result && idData.result.length > 0) {
+                                setAddresses(idData.result);
+                                setShowAddressList(true);
+                              } else {
+                                /* No addresses found — let them type manually */
+                                setPostcodeVerified(true);
+                                setShowAddressList(false);
                               }
                             } catch {
-                              setPostcodeError('Could not verify postcode. Please try again.');
+                              setPostcodeError('Could not look up postcode. Please try again.');
                             }
                             setPostcodeLoading(false);
                           }}
-                          className="px-5 py-3.5 rounded-xl text-sm font-semibold text-white bg-gradient-to-br from-[#0f3460] to-[#0b2848] hover:-translate-y-px hover:scale-[1.02] active:scale-[0.98] transition-all disabled:opacity-40 disabled:cursor-not-allowed disabled:transform-none"
+                          className="px-5 py-3.5 rounded-xl text-sm font-semibold text-white bg-gradient-to-br from-[#27ae60] to-[#219a52] hover:-translate-y-px hover:scale-[1.02] active:scale-[0.98] transition-all shadow-[0_2px_8px_rgba(39,174,96,0.3)] disabled:opacity-40 disabled:cursor-not-allowed disabled:transform-none whitespace-nowrap"
                         >
-                          {postcodeLoading ? <Loader2 size={16} className="animate-spin" /> : 'Verify'}
+                          {postcodeLoading ? <Loader2 size={16} className="animate-spin" /> : <><Search size={16} /> Find Address</>}
                         </button>
                       </div>
                       {postcodeError && (
                         <p className="mt-2 text-sm text-red-600">{postcodeError}</p>
                       )}
+
+                      {/* Address dropdown from Ideal Postcodes */}
+                      {showAddressList && addresses.length > 0 && (
+                        <div className="mt-3">
+                          <label className="block text-sm font-semibold text-[#2c2c3a] mb-2">
+                            Select your address <span className="font-normal text-[#9ca3af]">({addresses.length} found)</span>
+                          </label>
+                          <select
+                            className="w-full px-4 py-3.5 rounded-xl border border-[#e2e5ed] text-base focus:outline-none focus:ring-2 focus:ring-[#27ae60]/30 focus:border-[#27ae60] transition-all bg-white"
+                            defaultValue=""
+                            onChange={(e) => {
+                              const idx = parseInt(e.target.value, 10);
+                              if (isNaN(idx)) return;
+                              const addr = addresses[idx];
+                              const line = [addr.line_1, addr.line_2, addr.line_3].filter(Boolean).join(', ');
+                              setSiteDescription(line + ', ' + addr.post_town);
+                              setUprn(String(addr.uprn || ''));
+                              if (addr.latitude && addr.longitude) {
+                                setLat(String(addr.latitude));
+                                setLon(String(addr.longitude));
+                              }
+                              setPostcodeVerified(true);
+                              setShowAddressList(false);
+                            }}
+                          >
+                            <option value="" disabled>Choose an address...</option>
+                            {addresses.map((addr: any, i: number) => {
+                              const line = [addr.line_1, addr.line_2, addr.line_3].filter(Boolean).join(', ');
+                              return <option key={i} value={i}>{line}, {addr.post_town}</option>;
+                            })}
+                          </select>
+                          <button
+                            type="button"
+                            onClick={() => { setPostcodeVerified(true); setShowAddressList(false); }}
+                            className="mt-2 text-sm text-[#27ae60] hover:text-[#219a52] transition-colors font-medium"
+                          >
+                            My address isn't listed &mdash; I'll type it manually
+                          </button>
+                        </div>
+                      )}
+
+                      {/* Manual site description — shown after postcode verified but no address selected */}
+                      {postcodeVerified && !siteDescription && (
+                        <div className="mt-3">
+                          <label className="block text-sm font-semibold text-[#2c2c3a] mb-2">Describe the site location</label>
+                          <textarea
+                            value={siteDescription}
+                            onChange={(e) => setSiteDescription(e.target.value)}
+                            placeholder="e.g. Land north of High Street, Sidford  /  42 Oak Lane, Sidmouth"
+                            rows={2}
+                            className="w-full px-4 py-3.5 rounded-xl border border-[#e2e5ed] text-base focus:outline-none focus:ring-2 focus:ring-[#27ae60]/30 focus:border-[#27ae60] transition-all resize-none"
+                            autoFocus
+                          />
+                          <p className="mt-1.5 text-xs text-[#9ca3af]">The site address, field name, or a description of where it is.</p>
+                        </div>
+                      )}
                     </div>
                   )}
-                </div>
-
-                {/* Site description */}
-                <div>
-                  <label className="block text-sm font-semibold text-[#2c2c3a] mb-2">Site address or description</label>
-                  <textarea
-                    value={siteDescription}
-                    onChange={(e) => setSiteDescription(e.target.value)}
-                    placeholder="e.g. 42 Oak Lane, Sidmouth  /  Land north of High Street, Sidford"
-                    rows={2}
-                    className="w-full px-4 py-3.5 rounded-xl border border-[#e2e5ed] text-base focus:outline-none focus:ring-2 focus:ring-[#27ae60]/30 focus:border-[#27ae60] transition-all resize-none"
-                  />
-                  <p className="mt-1.5 text-xs text-[#9ca3af]">The address, or a description of where the site is.</p>
                 </div>
 
                 {/* Dwelling count — band buttons */}
