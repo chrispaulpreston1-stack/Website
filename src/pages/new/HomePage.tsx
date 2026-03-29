@@ -198,7 +198,7 @@ function HeroAddressInput() {
             value={input}
             onChange={(e) => handleChange(e.target.value)}
             placeholder="Enter your site postcode..."
-            className="flex-1 bg-transparent text-white placeholder-[#b0b8cc]/50 text-[15px] px-3 py-4 outline-none"
+            className="flex-1 bg-transparent text-white placeholder-[#b0b8cc]/50 text-base px-3 py-4 outline-none"
             autoComplete="off"
           />
           {loading && (
@@ -270,14 +270,16 @@ export default function HomePage() {
   return (
     <>
       <Helmet>
-        <title>Site Intelligence | Planning Intelligence. 48 Hours. Any Site in England.</title>
+        <title>Site Intelligence | Planning Reports in 48 Hours</title>
         <meta name="description" content="Complete planning intelligence for any development site in England. 76+ data sources, 34-layer QA, 48-hour delivery. From £199." />
-        <meta property="og:title" content="Site Intelligence — Planning Intelligence. 48 Hours." />
+        <meta property="og:title" content="Site Intelligence | Planning Reports in 48 Hours" />
         <meta property="og:description" content="Every desktop planning report your application needs, delivered in 48 hours." />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://www.pfandco.co.uk/og-image.png" />
         <link rel="canonical" href="https://www.pfandco.co.uk/" />
       </Helmet>
       {/* ---------- HERO ---------- */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden text-center pt-[67px]">
+      <section className="relative min-h-[70vh] md:min-h-screen flex items-center justify-center overflow-hidden text-center pt-[67px]">
         {/* Animated gradient BG */}
         <div className="absolute inset-0 z-0 animate-[heroGradient_20s_ease_infinite] bg-[length:400%_400%]"
           style={{
@@ -286,10 +288,10 @@ export default function HomePage() {
           }}
         />
         {/* Glow orbs */}
-        <div className="absolute top-[10%] right-[15%] w-[600px] h-[600px] rounded-full pointer-events-none animate-[heroGlow1_12s_ease-in-out_infinite]"
+        <div className="absolute top-[10%] right-[15%] w-[300px] h-[300px] md:w-[600px] md:h-[600px] rounded-full pointer-events-none animate-[heroGlow1_12s_ease-in-out_infinite]"
           style={{ background: 'radial-gradient(circle, rgba(39,174,96,0.1) 0%, transparent 70%)' }}
         />
-        <div className="absolute bottom-[10%] left-[10%] w-[500px] h-[500px] rounded-full pointer-events-none animate-[heroGlow2_15s_ease-in-out_infinite]"
+        <div className="absolute bottom-[10%] left-[10%] w-[250px] h-[250px] md:w-[500px] md:h-[500px] rounded-full pointer-events-none animate-[heroGlow2_15s_ease-in-out_infinite]"
           style={{ background: 'radial-gradient(circle, rgba(15,52,96,0.25) 0%, transparent 70%)' }}
         />
 
@@ -349,7 +351,7 @@ export default function HomePage() {
       </section>
 
       {/* ---------- HOW IT WORKS ---------- */}
-      <section className="py-[140px] bg-gradient-to-b from-white to-[#f7f8fc]">
+      <section className="py-20 md:py-[140px] bg-gradient-to-b from-white to-[#f7f8fc]">
         <div className="max-w-[1120px] mx-auto px-6">
           <FadeUp>
             <div className="text-center max-w-[660px] mx-auto mb-14">
@@ -388,7 +390,7 @@ export default function HomePage() {
                   <div className="w-[72px] h-[72px] rounded-full bg-gradient-to-br from-[#27ae60] to-[#2ecc71] text-white inline-flex items-center justify-center text-[1.75rem] font-extrabold mb-7 shadow-[0_8px_24px_rgba(39,174,96,0.25)] group-hover:scale-105 group-hover:shadow-[0_12px_32px_rgba(39,174,96,0.35)] transition-all">
                     {step.num}
                   </div>
-                  <h4 className="text-[1.25rem] font-semibold mb-3">{step.title}</h4>
+                  <h3 className="text-[1.25rem] font-semibold mb-3">{step.title}</h3>
                   <p className="text-base text-[#6b7280] max-w-[320px] mx-auto leading-relaxed">{step.desc}</p>
                 </div>
               </FadeUp>
@@ -398,7 +400,7 @@ export default function HomePage() {
       </section>
 
       {/* ---------- THREE USPs: SPEED, COST, INTEGRATION ---------- */}
-      <section className="py-[120px] bg-white relative overflow-hidden">
+      <section className="py-16 md:py-[120px] bg-white relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, rgba(15,52,96,0.03) 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
         <div className="max-w-[1120px] mx-auto px-6 relative z-10">
           <FadeUp>
@@ -481,7 +483,7 @@ export default function HomePage() {
       </section>
 
       {/* ---------- STATS BAR ---------- */}
-      <section className="relative py-[160px] overflow-hidden" style={{ background: 'linear-gradient(135deg, #0d0d1a, #1a1a2e, #0f3460)' }}>
+      <section className="relative py-20 md:py-[160px] overflow-hidden" style={{ background: 'linear-gradient(135deg, #0d0d1a, #1a1a2e, #0f3460)' }}>
         <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse at 50% 50%, rgba(39,174,96,0.06) 0%, transparent 60%)' }} />
         <div className="max-w-[1120px] mx-auto px-6 relative z-10">
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-px">
@@ -493,7 +495,7 @@ export default function HomePage() {
       </section>
 
       {/* ---------- DATA SOURCE BADGES ---------- */}
-      <section className="py-[120px] bg-gradient-to-b from-[#f7f8fc] to-white">
+      <section className="py-16 md:py-[120px] bg-gradient-to-b from-[#f7f8fc] to-white">
         <div className="max-w-[1120px] mx-auto px-6">
           <FadeUp>
             <div className="text-center max-w-[660px] mx-auto mb-14">
@@ -521,7 +523,7 @@ export default function HomePage() {
       </section>
 
       {/* ---------- FINAL CTA ---------- */}
-      <section className="relative py-[160px] text-center overflow-hidden" style={{ background: 'linear-gradient(135deg, #1a1a2e, #16213e, #0f3460)' }}>
+      <section className="relative py-20 md:py-[160px] text-center overflow-hidden" style={{ background: 'linear-gradient(135deg, #1a1a2e, #16213e, #0f3460)' }}>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(39,174,96,0.08) 0%, transparent 60%)' }} />
         <div className="max-w-[1120px] mx-auto px-6 relative z-10">
           <FadeUp>

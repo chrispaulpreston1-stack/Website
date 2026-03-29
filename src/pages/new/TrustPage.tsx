@@ -60,11 +60,13 @@ export default function TrustPage() {
         <meta name="description" content="Every number traces to its source. 76+ government data sources, 34-layer QA pipeline, 650+ verified case law references. 302 LPAs covered across England." />
         <meta property="og:title" content="Built on Authoritative Data — Site Intelligence" />
         <meta property="og:description" content="76+ government data sources. 34-layer QA pipeline. Every number traced to source." />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://www.pfandco.co.uk/og-image.png" />
         <link rel="canonical" href="https://www.pfandco.co.uk/trust" />
       </Helmet>
       {/* ---------- HERO ---------- */}
       <section
-        className="relative min-h-screen flex items-center justify-center overflow-hidden text-center py-[120px] pt-[120px]"
+        className="relative min-h-[70vh] md:min-h-screen flex items-center justify-center overflow-hidden text-center py-16 pt-24 md:py-[120px] md:pt-[120px]"
         style={{ background: 'linear-gradient(135deg, #0d0d1a, #1a1a2e, #0f3460)', backgroundSize: '300% 300%' }}
       >
         <div className="absolute top-[10%] right-[15%] w-[500px] h-[500px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(39,174,96,0.1) 0%, transparent 70%)' }} />
@@ -92,7 +94,7 @@ export default function TrustPage() {
       </section>
 
       {/* ---------- DATA SOURCES ---------- */}
-      <section className="py-[120px]">
+      <section className="py-16 md:py-[120px]">
         <div className="max-w-[1120px] mx-auto px-6">
           <FadeUp>
             <h2 className="text-3xl md:text-[2.75rem] font-bold leading-tight tracking-tight">Our data sources</h2>
@@ -122,7 +124,7 @@ export default function TrustPage() {
       </section>
 
       {/* ---------- QA PROCESS ---------- */}
-      <section className="py-[120px] bg-gradient-to-b from-[#f7f8fc] to-white">
+      <section className="py-16 md:py-[120px] bg-gradient-to-b from-[#f7f8fc] to-white">
         <div className="max-w-[1120px] mx-auto px-6">
           <FadeUp>
             <h2 className="text-3xl md:text-[2.75rem] font-bold leading-tight tracking-tight">Our quality process</h2>
@@ -148,7 +150,7 @@ export default function TrustPage() {
       </section>
 
       {/* ---------- SAMPLE REPORT CTA ---------- */}
-      <section className="py-[120px]">
+      <section className="py-16 md:py-[120px]">
         <div className="max-w-[1120px] mx-auto px-6">
           <FadeUp>
             <div className="text-center max-w-[660px] mx-auto">
@@ -168,7 +170,7 @@ export default function TrustPage() {
                   href="/samples/site-feasibility-report-sample.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-7 py-3.5 rounded-[10px] text-[15px] font-semibold text-[#0f3460] border-[1.5px] border-[#e2e5ed] hover:border-[#0f3460] hover:bg-[#eff6ff] hover:scale-[1.02] active:scale-[0.98] transition-all"
+                  className="inline-flex items-center gap-2 px-4 sm:px-7 py-3.5 rounded-[10px] text-[15px] font-semibold text-[#0f3460] border-[1.5px] border-[#e2e5ed] hover:border-[#0f3460] hover:bg-[#eff6ff] hover:scale-[1.02] active:scale-[0.98] transition-all"
                 >
                   Download Sample Feasibility Report (PDF)
                 </a>
@@ -179,10 +181,10 @@ export default function TrustPage() {
       </section>
 
       {/* ---------- HONESTY ---------- */}
-      <section className="py-[120px] bg-gradient-to-b from-[#f7f8fc] to-white">
+      <section className="py-16 md:py-[120px] bg-gradient-to-b from-[#f7f8fc] to-white">
         <div className="max-w-[1120px] mx-auto px-6">
           <FadeUp>
-            <div className="p-12 rounded-[20px] border border-[#e2e5ed] bg-gradient-to-br from-[#f7f8fc] to-white">
+            <div className="p-6 sm:p-12 rounded-[20px] border border-[#e2e5ed] bg-gradient-to-br from-[#f7f8fc] to-white">
               <h3 className="text-[1.35rem] font-semibold mb-6">What we're not</h3>
               <ul className="space-y-2.5">
                 {[

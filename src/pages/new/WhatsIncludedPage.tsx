@@ -161,11 +161,13 @@ export default function WhatsIncludedPage() {
         <meta name="description" content="36+ desktop planning reports auto-selected by your site constraints. Flood risk, heritage, ecology, transport, contamination and more. 76+ data sources." />
         <meta property="og:title" content="What's Included — Site Intelligence" />
         <meta property="og:description" content="36+ reports tailored to your site. Constraint-triggered selection from 76+ data sources." />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://www.pfandco.co.uk/og-image.png" />
         <link rel="canonical" href="https://www.pfandco.co.uk/whats-included" />
       </Helmet>
       {/* ---------- HERO ---------- */}
       <section
-        className="relative min-h-screen flex items-center justify-center overflow-hidden text-center py-[120px] pt-[120px]"
+        className="relative min-h-[70vh] md:min-h-screen flex items-center justify-center overflow-hidden text-center py-16 pt-24 md:py-[120px] md:pt-[120px]"
         style={{ background: 'linear-gradient(135deg, #0d0d1a, #1a1a2e, #0f3460)', backgroundSize: '300% 300%' }}
       >
         <div className="absolute top-[10%] right-[15%] w-[500px] h-[500px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(124,58,237,0.08) 0%, transparent 70%)' }} />
@@ -193,7 +195,7 @@ export default function WhatsIncludedPage() {
       </section>
 
       {/* ---------- ALWAYS INCLUDED ---------- */}
-      <section className="py-[120px]">
+      <section className="py-16 md:py-[120px]">
         <div className="max-w-[1120px] mx-auto px-6">
           <FadeUp>
             <h2 className="text-3xl md:text-[2.75rem] font-bold leading-tight tracking-tight">Reports that are always included</h2>
@@ -214,7 +216,7 @@ export default function WhatsIncludedPage() {
       </section>
 
       {/* ---------- TRIGGERED REPORTS ---------- */}
-      <section className="py-[120px] bg-gradient-to-b from-[#f7f8fc] to-white">
+      <section className="py-16 md:py-[120px] bg-gradient-to-b from-[#f7f8fc] to-white">
         <div className="max-w-[1120px] mx-auto px-6">
           <FadeUp>
             <h2 className="text-3xl md:text-[2.75rem] font-bold leading-tight tracking-tight">Reports triggered by your site's constraints</h2>
@@ -241,10 +243,10 @@ export default function WhatsIncludedPage() {
       </section>
 
       {/* ---------- HONESTY ---------- */}
-      <section className="py-[120px]">
+      <section className="py-16 md:py-[120px]">
         <div className="max-w-[1120px] mx-auto px-6">
           <FadeUp>
-            <div className="p-12 rounded-[20px] border border-[#e2e5ed] bg-gradient-to-br from-[#f7f8fc] to-white">
+            <div className="p-6 sm:p-12 rounded-[20px] border border-[#e2e5ed] bg-gradient-to-br from-[#f7f8fc] to-white">
               <h3 className="text-[1.35rem] font-semibold mb-6">What we don't produce (and why)</h3>
               <ul className="space-y-2.5">
                 {[
@@ -266,7 +268,7 @@ export default function WhatsIncludedPage() {
       </section>
 
       {/* ---------- DATA SOURCES ---------- */}
-      <section className="py-[120px] bg-gradient-to-b from-[#f7f8fc] to-white">
+      <section className="py-16 md:py-[120px] bg-gradient-to-b from-[#f7f8fc] to-white">
         <div className="max-w-[1120px] mx-auto px-6">
           <FadeUp>
             <div className="text-center max-w-[660px] mx-auto mb-14">

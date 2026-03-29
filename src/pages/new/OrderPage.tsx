@@ -189,11 +189,13 @@ export default function OrderPage() {
         <meta name="description" content="Order your planning intelligence pack. Enter your site address, choose your product, pay securely. Reports delivered in 48 hours." />
         <meta property="og:title" content="Order Your Pack — Site Intelligence" />
         <meta property="og:description" content="Planning intelligence from £199. Choose your product, pay online, receive in 48 hours." />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://www.pfandco.co.uk/og-image.png" />
         <link rel="canonical" href="https://www.pfandco.co.uk/order" />
       </Helmet>
       {/* Hero */}
       <section
-        className="relative min-h-[60vh] flex items-center justify-center overflow-hidden text-center py-[120px] pt-[120px]"
+        className="relative min-h-[60vh] flex items-center justify-center overflow-hidden text-center py-16 pt-24 md:py-[120px] md:pt-[120px]"
         style={{ background: 'linear-gradient(135deg, #0d0d1a, #1a1a2e, #0f3460)' }}
       >
         <div className="absolute top-[10%] right-[15%] w-[500px] h-[500px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(39,174,96,0.08) 0%, transparent 70%)' }} />
@@ -216,7 +218,7 @@ export default function OrderPage() {
                 {i > 0 && <div className="w-6 sm:w-10 h-px bg-[#e2e5ed]" />}
                 <button
                   onClick={() => { if (i + 1 < step) setStep(i + 1); }}
-                  className={`flex items-center gap-2 text-xs sm:text-sm font-medium transition-colors ${
+                  className={`flex items-center gap-2 text-xs sm:text-sm font-medium transition-colors min-h-[44px] min-w-[44px] ${
                     step === i + 1
                       ? 'text-[#27ae60]'
                       : step > i + 1
@@ -274,8 +276,8 @@ export default function OrderPage() {
                   ) : (
                     <div>
                       {/* Postcode input + Find Address button */}
-                      <div className="flex gap-3">
-                        <div className="relative flex-grow max-w-[240px]">
+                      <div className="flex flex-col sm:flex-row gap-3">
+                        <div className="relative flex-grow max-w-full sm:max-w-[240px]">
                           <MapPin size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-[#9ca3af]" />
                           <input
                             type="text"
@@ -691,7 +693,7 @@ export default function OrderPage() {
                 <button
                   onClick={handleCheckout}
                   disabled={loading}
-                  className="inline-flex items-center gap-2 px-10 py-4 rounded-xl text-lg font-bold text-white bg-gradient-to-br from-[#27ae60] to-[#219a52] hover:-translate-y-px hover:scale-[1.02] active:scale-[0.98] transition-all shadow-[0_4px_20px_rgba(39,174,96,0.3)] disabled:opacity-60 disabled:cursor-not-allowed disabled:transform-none"
+                  className="inline-flex items-center gap-2 px-6 sm:px-10 py-4 rounded-xl text-base sm:text-lg font-bold text-white bg-gradient-to-br from-[#27ae60] to-[#219a52] hover:-translate-y-px hover:scale-[1.02] active:scale-[0.98] transition-all shadow-[0_4px_20px_rgba(39,174,96,0.3)] disabled:opacity-60 disabled:cursor-not-allowed disabled:transform-none"
                 >
                   {loading ? (
                     <><Loader2 size={20} className="animate-spin" /> Processing...</>

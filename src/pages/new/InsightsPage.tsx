@@ -77,6 +77,8 @@ export default function InsightsPage() {
         <meta name="description" content="Planning intelligence, policy updates, and industry analysis. Guides on planning permission, flood risk, BNG, and more." />
         <meta property="og:title" content="Insights — Site Intelligence" />
         <meta property="og:description" content="Planning intelligence, policy updates, and industry analysis from Site Intelligence." />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://www.pfandco.co.uk/og-image.png" />
         <link rel="canonical" href="https://www.pfandco.co.uk/insights" />
       </Helmet>
 
@@ -105,7 +107,7 @@ export default function InsightsPage() {
         <div className="max-w-[1120px] mx-auto px-6 py-3 flex gap-2 overflow-x-auto">
           <button
             onClick={() => setFilter(null)}
-            className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all whitespace-nowrap ${
+            className={`px-4 py-2.5 rounded-full text-xs font-semibold transition-all whitespace-nowrap ${
               !filter ? 'bg-[#1a1a2e] text-white' : 'bg-[#f7f8fc] text-[#6b7280] hover:bg-[#e2e5ed]'
             }`}
           >
@@ -118,7 +120,7 @@ export default function InsightsPage() {
               <button
                 key={cat}
                 onClick={() => setFilter(cat)}
-                className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all whitespace-nowrap ${
+                className={`px-4 py-2.5 rounded-full text-xs font-semibold transition-all whitespace-nowrap ${
                   filter === cat ? 'text-white' : 'bg-[#f7f8fc] text-[#6b7280] hover:bg-[#e2e5ed]'
                 }`}
                 style={filter === cat ? { background: tag.color } : undefined}

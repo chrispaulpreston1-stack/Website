@@ -1,11 +1,11 @@
 {
   "name": "PF & Co Site Intelligence",
   "short_name": "PF & Co",
-  "description": "Engineering-led construction and structural design.",
+  "description": "Planning intelligence for any development site in England.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#0a0a0a",
+  "theme_color": "#27ae60",
   "icons": [
     {
       "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'%3E%3Crect width='192' height='192' rx='32' fill='%230a0a0a'/%3E%3Ctext x='96' y='120' font-family='sans-serif' font-weight='bold' font-size='80' fill='%23f59e0b' text-anchor='middle'%3EPF%3C/text%3E%3C/svg%3E",

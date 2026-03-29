@@ -153,10 +153,12 @@ export default function ForDevelopersPage() {
         <meta name="description" content="Complete planning intelligence for any development site. Same desktop reports you would wait months for from 10 consultants, delivered in 48 hours. From £199." />
         <meta property="og:title" content="For Developers — Site Intelligence" />
         <meta property="og:description" content="Complete planning intelligence for any development site in 48 hours. From £199." />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://www.pfandco.co.uk/og-image.png" />
         <link rel="canonical" href="https://www.pfandco.co.uk/for-developers" />
       </Helmet>
       {/* ---------- HERO ---------- */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden text-center py-[120px] pt-[120px]"
+      <section className="relative min-h-[70vh] md:min-h-screen flex items-center justify-center overflow-hidden text-center py-16 pt-24 md:py-[120px] md:pt-[120px]"
         style={{ background: 'linear-gradient(135deg, #0d0d1a, #1a1a2e, #0f3460)', backgroundSize: '300% 300%' }}
       >
         <div className="absolute top-[10%] right-[15%] w-[500px] h-[500px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(39,174,96,0.1) 0%, transparent 70%)' }} />
@@ -177,7 +179,7 @@ export default function ForDevelopersPage() {
           </FadeUp>
           <FadeUp delay={0.2}>
             <div className="mt-8">
-              <span className="inline-block text-6xl md:text-7xl font-extrabold text-[#27ae60] leading-none">48hrs</span>
+              <span className="inline-block text-5xl sm:text-6xl md:text-7xl font-extrabold text-[#27ae60] leading-none">48hrs</span>
               <br />
               <span className="text-sm text-[#8892a8] uppercase tracking-widest font-semibold">Same intelligence. Fraction of the cost.</span>
             </div>
@@ -227,8 +229,14 @@ export default function ForDevelopersPage() {
       </section>
 
       {/* ---------- PRODUCTS ---------- */}
-      <section className="py-[120px]">
+      <section className="py-16 md:py-[120px]">
         <div className="max-w-[1120px] mx-auto px-6">
+          <FadeUp>
+            <div className="text-center max-w-[660px] mx-auto mb-14">
+              <h2 className="text-3xl md:text-[2.75rem] font-bold leading-tight tracking-tight">Choose your product</h2>
+              <div className="w-12 h-[3px] bg-gradient-to-r from-[#27ae60] to-[#2ecc71] rounded mx-auto my-5" />
+            </div>
+          </FadeUp>
           {products.map((p, i) => (
             <FadeUp key={p.tag} delay={i * 0.05}>
               <motion.div
@@ -322,7 +330,7 @@ export default function ForDevelopersPage() {
       </section>
 
       {/* ---------- COST COMPARISON ---------- */}
-      <section className="py-[120px] bg-gradient-to-b from-white to-[#f7f8fc]">
+      <section className="py-16 md:py-[120px] bg-gradient-to-b from-white to-[#f7f8fc]">
         <div className="max-w-[1120px] mx-auto px-6">
           <FadeUp>
             <div className="text-center max-w-[660px] mx-auto mb-14">
@@ -337,7 +345,7 @@ export default function ForDevelopersPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
             <FadeUp>
               <div className="rounded-2xl p-9 bg-[#fef2f2] border border-[#fecaca]">
-                <h4 className="text-xl font-semibold mb-6">Traditional route</h4>
+                <h3 className="text-xl font-semibold mb-6">Traditional route</h3>
                 {[
                   { scheme: '15-unit scheme', cost: '\u00A317,000 - \u00A352,000 over 6-16 weeks' },
                   { scheme: '50-unit scheme', cost: '\u00A348,000 - \u00A3153,000 over 9-24 months' },
@@ -353,7 +361,7 @@ export default function ForDevelopersPage() {
             </FadeUp>
             <FadeUp delay={0.1}>
               <div className="rounded-2xl p-9 bg-[#f0fdf4] border border-[#bbf7d0]">
-                <h4 className="text-xl font-semibold mb-6">Site Intelligence</h4>
+                <h3 className="text-xl font-semibold mb-6">Site Intelligence</h3>
                 {[
                   { scheme: '15-unit scheme', cost: 'From \u00A32,495 in 48 hours' },
                   { scheme: '50-unit scheme', cost: 'From \u00A32,495 in 48 hours' },
@@ -372,10 +380,10 @@ export default function ForDevelopersPage() {
       </section>
 
       {/* ---------- HONESTY ---------- */}
-      <section className="py-[120px]">
+      <section className="py-16 md:py-[120px]">
         <div className="max-w-[1120px] mx-auto px-6">
           <FadeUp>
-            <div className="p-12 rounded-[20px] border border-[#e2e5ed] bg-gradient-to-br from-[#f7f8fc] to-white">
+            <div className="p-6 sm:p-12 rounded-[20px] border border-[#e2e5ed] bg-gradient-to-br from-[#f7f8fc] to-white">
               <h3 className="text-[1.35rem] font-semibold mb-6">What you still need from others</h3>
               <ul className="space-y-2.5">
                 {[

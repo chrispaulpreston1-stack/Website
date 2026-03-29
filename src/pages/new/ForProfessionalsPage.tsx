@@ -97,11 +97,13 @@ export default function ForProfessionalsPage() {
         <meta name="description" content="Stop coordinating 10 consultants. One order, 48 hours, every desktop report your submissions need. Volume pricing for practices." />
         <meta property="og:title" content="For Professionals — Site Intelligence" />
         <meta property="og:description" content="One order replaces 10 consultants. Desktop planning reports in 48 hours." />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://www.pfandco.co.uk/og-image.png" />
         <link rel="canonical" href="https://www.pfandco.co.uk/for-professionals" />
       </Helmet>
       {/* ---------- HERO ---------- */}
       <section
-        className="relative min-h-screen flex items-center justify-center overflow-hidden text-center py-[120px] pt-[120px]"
+        className="relative min-h-[70vh] md:min-h-screen flex items-center justify-center overflow-hidden text-center py-16 pt-24 md:py-[120px] md:pt-[120px]"
         style={{ background: 'linear-gradient(135deg, #0d0d1a, #1a1a2e, #0f3460)', backgroundSize: '300% 300%' }}
       >
         <div className="absolute top-[10%] right-[15%] w-[500px] h-[500px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(15,52,96,0.15) 0%, transparent 70%)' }} />
@@ -131,7 +133,7 @@ export default function ForProfessionalsPage() {
       </section>
 
       {/* ---------- PROCESS STEPS ---------- */}
-      <section className="py-[120px]" style={{ background: 'linear-gradient(135deg, #1a1a2e, #16213e, #0f3460)' }}>
+      <section className="py-16 md:py-[120px]" style={{ background: 'linear-gradient(135deg, #1a1a2e, #16213e, #0f3460)' }}>
         <div className="max-w-[1120px] mx-auto px-6">
           <FadeUp>
             <div className="text-center max-w-[660px] mx-auto mb-14">
@@ -150,7 +152,7 @@ export default function ForProfessionalsPage() {
                   className="text-center p-7 rounded-2xl bg-white/[0.04] border border-white/[0.08] transition-all"
                 >
                   <div className="text-[2.5rem] font-extrabold text-[#27ae60] mb-4 tracking-tight">{step.num}</div>
-                  <h4 className="text-white font-semibold text-[0.9375rem] mb-2.5">{step.title}</h4>
+                  <h3 className="text-white font-semibold text-[0.9375rem] mb-2.5">{step.title}</h3>
                   <p className="text-[0.8125rem] text-[#b0b8cc]">{step.desc}</p>
                 </motion.div>
               </FadeUp>
@@ -160,7 +162,7 @@ export default function ForProfessionalsPage() {
       </section>
 
       {/* ---------- VALUE PROPS ---------- */}
-      <section className="py-[120px]">
+      <section className="py-16 md:py-[120px]">
         <div className="max-w-[1120px] mx-auto px-6">
           <FadeUp>
             <div className="text-center max-w-[660px] mx-auto mb-14">
@@ -179,7 +181,7 @@ export default function ForProfessionalsPage() {
                   className="p-9 rounded-2xl bg-white border border-[#e2e5ed] transition-all"
                 >
                   <div className="text-[#27ae60] mb-3.5">{card.icon}</div>
-                  <h4 className="text-[1.2rem] font-semibold text-[#27ae60] mb-2.5">{card.title}</h4>
+                  <h3 className="text-[1.2rem] font-semibold text-[#27ae60] mb-2.5">{card.title}</h3>
                   <p className="text-[1.0625rem] text-[#6b7280] leading-relaxed">{card.desc}</p>
                 </motion.div>
               </FadeUp>
@@ -189,7 +191,7 @@ export default function ForProfessionalsPage() {
       </section>
 
       {/* ---------- VOLUME PRICING ---------- */}
-      <section className="py-[120px] bg-gradient-to-b from-white to-[#f7f8fc]">
+      <section className="py-16 md:py-[120px] bg-gradient-to-b from-white to-[#f7f8fc]">
         <div className="max-w-[1120px] mx-auto px-6">
           <FadeUp>
             <div className="text-center max-w-[660px] mx-auto mb-10">

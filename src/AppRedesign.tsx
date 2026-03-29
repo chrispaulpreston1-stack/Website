@@ -28,7 +28,6 @@ const OrderPage = lazy(() => import('./pages/new/OrderPage'));
 /* ------------------------------------------------------------------ */
 /*  Lazy-loaded existing pages                                         */
 /* ------------------------------------------------------------------ */
-const Blog = lazy(() => import('./pages/Blog'));
 const BlogArticle = lazy(() => import('./pages/BlogArticle'));
 const OrderReport = lazy(() => import('./pages/OrderReport'));
 const OrderSuccess = lazy(() => import('./pages/OrderSuccess'));
@@ -277,7 +276,6 @@ export default function AppRedesign() {
                 <Route path="/insights" element={<InsightsPage />} />
 
                 {/* --- Existing pages (kept) --- */}
-                <Route path="/blog" element={<Blog />} />
                 <Route path="/insights/:slug" element={<BlogArticle />} />
                 <Route path="/order" element={<OrderPage />} />
                 <Route path="/order-report" element={<OrderReport />} />
