@@ -247,9 +247,9 @@ function HeroAddressInput() {
       initial={{ opacity: 0, y: 32 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7, delay: 0.3, ease: [0.4, 0, 0.2, 1] }}
-      className="flex flex-col items-center mb-0"
+      className="flex flex-col items-center mb-0 overflow-visible"
     >
-      <form onSubmit={handleSubmit} className="w-full max-w-[560px] relative">
+      <form onSubmit={handleSubmit} className="w-full max-w-[560px] relative overflow-visible" style={{ zIndex: 60 }}>
         <div className="flex items-center bg-white/10 backdrop-blur-sm border border-white/15 rounded-[14px] overflow-hidden transition-all focus-within:border-[#27ae60]/50 focus-within:shadow-[0_0_24px_rgba(39,174,96,0.15)]">
           <MapPin size={20} className="text-[#b0b8cc]/60 ml-4 shrink-0" />
           <input
@@ -423,9 +423,9 @@ export default function HomePage() {
         </script>
       </Helmet>
       {/* ---------- HERO ---------- */}
-      <section className="relative min-h-[70vh] md:min-h-screen flex items-center justify-center overflow-x-hidden overflow-y-visible text-center pt-[67px]">
+      <section className="relative min-h-[70vh] md:min-h-screen flex items-center justify-center text-center pt-[67px]">
         {/* Animated gradient BG */}
-        <div className="absolute inset-0 z-0 animate-[heroGradient_20s_ease_infinite] bg-[length:400%_400%]"
+        <div className="absolute inset-0 z-0 overflow-hidden animate-[heroGradient_20s_ease_infinite] bg-[length:400%_400%]"
           style={{
             background: 'linear-gradient(135deg, #0d0d1a, #1a1a2e, #16213e, #0f3460, #1a1a2e)',
             backgroundSize: '400% 400%',
