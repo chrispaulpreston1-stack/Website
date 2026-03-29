@@ -63,6 +63,30 @@ export default function TrustPage() {
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://www.pfandco.co.uk/og-image.png" />
         <link rel="canonical" href="https://www.pfandco.co.uk/trust" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How do you ensure accuracy?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Every report passes through a 34-layer automated QA pipeline that verifies data sources, cross-references constraints, checks regulatory currency, and validates internal consistency. We reference 650+ verified case law precedents."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I see a sample report before ordering?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. You can download a sample feasibility report from our Trust page, or request a sample for a specific site you know so you can verify our accuracy against your own knowledge."
+                }
+              }
+            ]
+          })}
+        </script>
       </Helmet>
       {/* ---------- HERO ---------- */}
       <section

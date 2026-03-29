@@ -156,6 +156,54 @@ export default function ForDevelopersPage() {
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://www.pfandco.co.uk/og-image.png" />
         <link rel="canonical" href="https://www.pfandco.co.uk/for-developers" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How long does it take to get planning reports?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Our Feasibility Intelligence pack is delivered within 48 hours. Site Screening is same-day. Pre-Application Packs take approximately one week."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What reports are included?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Every desktop planning report your application needs \u2014 feasibility, flood risk, heritage, ecology, transport, contaminated land, geotechnical, BNG, CIL, and more. Reports are triggered automatically based on your site\u2019s constraints."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How much does it cost?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Site Screening starts at \u00a3199. Feasibility Intelligence starts at \u00a3695 for a single dwelling, with tiered pricing for larger schemes. Pre-Application Packs start at \u00a3995."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do I still need an architect?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. We produce the desktop planning intelligence \u2014 you still need an architect for drawings (floor plans, elevations, sections) and a land surveyor for topographic survey."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What area do you cover?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "We cover every site in England \u2014 all 302 Local Planning Authorities."
+                }
+              }
+            ]
+          })}
+        </script>
       </Helmet>
       {/* ---------- HERO ---------- */}
       <section className="relative min-h-[70vh] md:min-h-screen flex items-center justify-center overflow-hidden text-center py-16 pt-24 md:py-[120px] md:pt-[120px]"

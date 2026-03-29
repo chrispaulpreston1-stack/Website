@@ -164,6 +164,38 @@ export default function WhatsIncludedPage() {
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://www.pfandco.co.uk/og-image.png" />
         <link rel="canonical" href="https://www.pfandco.co.uk/whats-included" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How many reports do I get?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Up to 36+ reports, tailored to your site. You always receive the core reports (feasibility, contaminated land, geotechnical, ecology, BNG, CIL, executive summaries). Additional reports are triggered automatically when your site\u2019s constraints require them."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What data sources do you use?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "We draw from 76+ authoritative government sources including the Environment Agency, British Geological Survey, Historic England, Natural England, DEFRA, Ordnance Survey, ONS, DfT, and HM Land Registry."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Are these real planning reports?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. Every report is a desktop assessment that follows the same methodology and references the same data sources that planning officers rely on. They are not AI summaries \u2014 they are structured technical assessments with source traceability."
+                }
+              }
+            ]
+          })}
+        </script>
       </Helmet>
       {/* ---------- HERO ---------- */}
       <section
