@@ -100,6 +100,54 @@ export default function ForProfessionalsPage() {
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://www.pfandco.co.uk/og-image.png" />
         <link rel="canonical" href="https://www.pfandco.co.uk/for-professionals" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Can architects order planning reports for clients?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. Many architects and planning professionals use Site Intelligence to provide clients with complete desktop planning intelligence. One order replaces coordinating multiple specialist consultants for flood risk, ecology, heritage, transport, contamination, and other assessments. Volume pricing is available for practices."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How does this replace multiple planning consultants?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Instead of briefing separate consultants for flood risk, ecology, heritage, transport, contaminated land, and geotechnical assessments, you place one order. Our system analyses the site against 76+ data sources and generates every desktop report needed, delivered as a single coordinated pack within 48 hours."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Are the reports accepted by planning officers?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. Our reports are desktop assessments that reference the same authoritative government data sources planning officers use \u2014 Environment Agency, Natural England, Historic England, BGS, and more. Every report includes full source traceability so officers can verify any data point. Reports are validated against 650+ case law precedents."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is there volume pricing for architectural practices?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. We offer tiered pricing based on dwelling count and can arrange account terms for practices ordering regularly. Contact us to discuss volume arrangements. Screening is \u00a3199 per site regardless of volume; Feasibility packs are priced by dwelling band."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What do I still need to provide as the architect?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "You still provide architectural drawings (floor plans, elevations, sections, site layout) and coordinate any specialist surveys that our reports identify as needed \u2014 such as protected species surveys, ground investigation, or topographic survey. We handle all the desktop planning intelligence."
+                }
+              }
+            ]
+          })}
+        </script>
       </Helmet>
       {/* ---------- HERO ---------- */}
       <section

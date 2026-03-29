@@ -277,6 +277,54 @@ export default function HomePage() {
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://www.pfandco.co.uk/og-image.png" />
         <link rel="canonical" href="https://www.pfandco.co.uk/" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is Site Intelligence?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Site Intelligence is a planning intelligence service that delivers complete desktop planning reports for any development site in England within 48 hours. We cover all 302 Local Planning Authorities and generate up to 36+ reports per site, from feasibility and flood risk to heritage, ecology, transport, and contaminated land."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How long does a planning feasibility report take?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Our Feasibility Intelligence pack is delivered within 48 hours of ordering. Site Screening reports are delivered same-day. We use 76+ authoritative government data sources and automated analysis to deliver reports significantly faster than traditional consultants, who typically take 8\u201312 weeks."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What planning reports do I need for a housing development?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The reports you need depend on your site\u2019s constraints. Common requirements include a site feasibility report, flood risk assessment, heritage impact assessment, preliminary ecological appraisal, BNG assessment, contaminated land assessment, geotechnical appraisal, transport statement, and CIL/S106 analysis. Our system automatically identifies which reports your specific site needs."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How much do planning reports cost?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Site Screening starts at \u00a3199. Feasibility Intelligence starts at \u00a3695. Pre-Application Packs start at \u00a3995. Traditional consultants charge \u00a317,000\u2013\u00a352,000 for equivalent desktop reports on a 15-unit scheme. All our prices include every report your site needs with no hidden extras."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do you cover my area in England?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. We cover every site in England across all 302 Local Planning Authorities. Our data sources include the Environment Agency, British Geological Survey, Historic England, Natural England, DEFRA, Ordnance Survey, ONS, and HM Land Registry."
+                }
+              }
+            ]
+          })}
+        </script>
       </Helmet>
       {/* ---------- HERO ---------- */}
       <section className="relative min-h-[70vh] md:min-h-screen flex items-center justify-center overflow-hidden text-center pt-[67px]">

@@ -83,6 +83,30 @@ export default function TrustPage() {
                   "@type": "Answer",
                   "text": "Yes. You can download a sample feasibility report from our Trust page, or request a sample for a specific site you know so you can verify our accuracy against your own knowledge."
                 }
+              },
+              {
+                "@type": "Question",
+                "name": "What data sources do planning reports use?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "We use 76+ authoritative government data sources including the Environment Agency (flood risk, contaminated land), British Geological Survey (geology, ground stability), Historic England (listed buildings, scheduled monuments, conservation areas), Natural England (SSSIs, priority habitats, designated sites), DEFRA, Ordnance Survey, ONS, DfT, and HM Land Registry. Every data point is traceable to its source."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How are planning reports quality checked?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Every report passes through a 34-layer automated QA pipeline. This verifies data source currency, cross-references constraints between reports, validates regulatory compliance, checks internal consistency, and confirms case law references against our database of 650+ verified precedents. Reports that fail any critical check are flagged for review before delivery."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Are desktop planning assessments reliable?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. Desktop assessments are the standard Tier 1 methodology for planning applications and are accepted by all 302 English LPAs. They use the same government datasets that planning officers consult when determining applications. Our reports identify where further specialist investigation may be needed, such as protected species surveys or ground investigation."
+                }
               }
             ]
           })}

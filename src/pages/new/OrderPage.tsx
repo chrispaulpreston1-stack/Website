@@ -192,6 +192,54 @@ export default function OrderPage() {
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://www.pfandco.co.uk/og-image.png" />
         <link rel="canonical" href="https://www.pfandco.co.uk/order" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How do I order a planning report online?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Enter your site address or What3Words location, tell us how many dwellings you\u2019re planning, choose your product (Screening, Feasibility, Pre-App, or Full Pack), add your details, and pay securely online. Your reports are delivered to your email within the stated turnaround \u2014 same-day for Screening, 48 hours for Feasibility."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How much does a planning feasibility report cost?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Site Screening is \u00a3199 for any site. Feasibility Intelligence starts at \u00a3695 for a single dwelling, \u00a31,295 for 2\u20139 dwellings, \u00a32,495 for 10\u201350, and \u00a33,495 for 51\u2013100. Pre-Application Packs start at \u00a3995. All prices include every report your site needs \u2014 no hidden extras."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How long does it take to get planning reports?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Site Screening is delivered same-day. Feasibility Intelligence packs are delivered within 48 hours. Pre-Application Packs take approximately one week. Full Packs are quoted individually based on scheme complexity."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What happens after I pay?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "You receive an immediate order confirmation email. Our system begins analysing your site against 76+ government data sources, generating every report your site\u2019s constraints require. Your complete report pack is delivered as a PDF bundle to your email within the stated turnaround time."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I order reports for multiple sites?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. You can place separate orders for each site, or contact us for volume pricing if you have a portfolio of sites. We offer tiered pricing based on dwelling count, and practices ordering regularly can discuss account arrangements."
+                }
+              }
+            ]
+          })}
+        </script>
       </Helmet>
       {/* Hero */}
       <section

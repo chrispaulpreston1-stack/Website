@@ -200,6 +200,46 @@ export default function ForDevelopersPage() {
                   "@type": "Answer",
                   "text": "We cover every site in England \u2014 all 302 Local Planning Authorities."
                 }
+              },
+              {
+                "@type": "Question",
+                "name": "What is a site screening report?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A Site Screening report is a rapid desktop assessment that identifies the key planning constraints affecting a development site \u2014 flood risk zones, heritage assets, ecology designations, contaminated land indicators, and more. It\u2019s delivered same-day and costs \u00a3199, making it ideal for initial site appraisal before committing to a purchase."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What\u2019s included in a planning feasibility report?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Our Feasibility Intelligence pack includes a full site feasibility report, contaminated land assessment, preliminary geotechnical appraisal, preliminary ecological appraisal, BNG screening, flood risk assessment, heritage impact assessment, transport statement, CIL/S106 analysis, and executive summaries. Additional constraint-triggered reports are added automatically. Delivered within 48 hours from \u00a3695."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What\u2019s in a pre-application pack for planning?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The Pre-Application Pack includes everything in Feasibility Intelligence plus a pre-application advice report, planning statement, and design and access statement. It\u2019s designed to support formal pre-application engagement with the LPA, giving officers a complete evidence base. From \u00a3995 with approximately one week turnaround."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do I need a site visit for a desktop planning study?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. All our reports are Tier 1 desktop assessments using 76+ authoritative government data sources including the Environment Agency, British Geological Survey, Historic England, Natural England, and Ordnance Survey. Desktop studies are the standard starting point for planning applications and are accepted by all 302 English LPAs."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How is this different from hiring a planning consultant?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Traditional planning consultants typically charge \u00a317,000\u2013\u00a352,000 for desktop reports on a 15-unit scheme and take 8\u201312 weeks. We deliver the same desktop intelligence in 48 hours from \u00a3695, with automated QA that checks every report against 650+ verified case law precedents. You still need an architect for drawings and may need specialist surveys for protected species or ground investigation."
+                }
               }
             ]
           })}

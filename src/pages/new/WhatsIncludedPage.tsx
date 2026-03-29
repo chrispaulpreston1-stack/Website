@@ -192,6 +192,46 @@ export default function WhatsIncludedPage() {
                   "@type": "Answer",
                   "text": "Yes. Every report is a desktop assessment that follows the same methodology and references the same data sources that planning officers rely on. They are not AI summaries \u2014 they are structured technical assessments with source traceability."
                 }
+              },
+              {
+                "@type": "Question",
+                "name": "What is a constraint-triggered report?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "When you order a pack, our system analyses your site against 76+ data sources and automatically determines which reports are needed. For example, a site near a listed building triggers a heritage impact assessment; a site in Flood Zone 2 or 3 triggers a sequential test and flood risk assessment. You never choose individual reports \u2014 you choose a product and get everything your site requires."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do I get a flood risk assessment?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, if your site requires one. Our system checks Environment Agency flood maps, surface water flood risk, reservoir flood risk, and historical flood records. Sites in Flood Zones 2 or 3 automatically receive a full flood risk assessment and sequential test. Sites in Flood Zone 1 receive a flood risk screening statement."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is a preliminary ecological appraisal included?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. Every Feasibility pack and above includes a desktop preliminary ecological appraisal covering designated sites (SSSIs, SACs, SPAs, Ramsar, local wildlife sites), priority habitats, protected species indicators, and habitat mapping using Natural England and DEFRA data. It identifies whether further specialist ecological surveys may be needed."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What planning documents do I need for a full application?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A full planning application typically requires a planning statement, design and access statement, flood risk assessment, heritage impact assessment, ecological appraisal, BNG assessment, transport statement, contaminated land assessment, and CIL forms. Our Full Pack (Product 4) generates all the desktop documents in a single order, with a submission pack index and covering letter."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How does the CIL and S106 analysis work?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "We check your LPA\u2019s adopted CIL charging schedule, calculate the estimated CIL liability based on your proposed development, and identify any S106 obligations that may apply. The analysis includes current rates, exemptions you may qualify for, and the CIL forms pre-populated for your scheme."
+                }
               }
             ]
           })}
