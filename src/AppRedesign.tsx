@@ -228,6 +228,15 @@ function Footer() {
                   {link.name}
                 </Link>
               ))}
+              <div className="mt-4 pt-3 border-t border-white/[0.06] flex flex-col">
+                <span className="text-[0.6875rem] font-semibold uppercase tracking-wider text-[#4b5563] mb-1">Legal</span>
+                <Link to="/privacy-policy" className="py-1.5 text-sm text-[#6b7280] hover:text-white transition-colors">
+                  Privacy Policy
+                </Link>
+                <Link to="/terms-of-service" className="py-1.5 text-sm text-[#6b7280] hover:text-white transition-colors">
+                  Terms of Service
+                </Link>
+              </div>
             </div>
           </div>
 

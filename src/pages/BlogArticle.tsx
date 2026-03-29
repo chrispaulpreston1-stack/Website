@@ -98,8 +98,17 @@ const BlogArticle = () => {
             description: post.excerpt,
             image: post.image,
             datePublished: post.date,
+            url: `https://www.pfandco.co.uk/insights/${post.slug}`,
             author: { '@type': 'Organization', name: 'Site Intelligence' },
-            publisher: { '@type': 'Organization', name: 'Site Intelligence' },
+            publisher: {
+              '@type': 'Organization',
+              name: 'Site Intelligence',
+              url: 'https://www.pfandco.co.uk',
+              logo: {
+                '@type': 'ImageObject',
+                url: 'https://www.pfandco.co.uk/og-image.png',
+              },
+            },
           },
           ...(post.faq ? [{
             '@type': 'FAQPage',
