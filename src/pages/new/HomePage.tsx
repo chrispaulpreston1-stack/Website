@@ -10,6 +10,7 @@ import {
   Star,
   CheckCircle2,
   Heart,
+  Search,
 } from 'lucide-react';
 
 /* ------------------------------------------------------------------ */
@@ -102,85 +103,131 @@ function StatItem({ end, suffix, label }: { end: number; suffix: string; label: 
 }
 
 /* ------------------------------------------------------------------ */
-/*  Hero address input with Postcodes.io autocomplete                  */
+/*  Hero address input — postcode → address list → navigate to order   */
 /* ------------------------------------------------------------------ */
-interface PostcodeResult {
+interface AddressResult {
+  line_1: string;
+  line_2: string;
+  line_3: string;
+  post_town: string;
   postcode: string;
-  admin_district: string;
+  uprn: string;
   latitude: number;
   longitude: number;
+  admin_district: string;
 }
 
 function HeroAddressInput() {
-  const [input, setInput] = useState('');
-  const [suggestions, setSuggestions] = useState<PostcodeResult[]>([]);
-  const [selected, setSelected] = useState<PostcodeResult | null>(null);
-  const [loading, setLoading] = useState(false);
-  const navigate = useNavigate();
-  const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const IDEAL_API_KEY = import.meta.env.VITE_IDEAL_POSTCODES_KEY || 'iddqd';
 
-  const lookupPostcode = async (query: string) => {
-    const clean = query.trim().replace(/\s+/g, '');
-    if (clean.length < 2) { setSuggestions([]); return; }
+  const [input, setInput] = useState('');
+  const [addresses, setAddresses] = useState<AddressResult[]>([]);
+  const [postcodeMeta, setPostcodeMeta] = useState<{ postcode: string; admin_district: string; lat: number; lon: number } | null>(null);
+  const [selected, setSelected] = useState<AddressResult | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+  const [showList, setShowList] = useState(false);
+  const navigate = useNavigate();
+
+  const findAddresses = async () => {
+    const clean = input.trim();
+    if (clean.length < 3) return;
 
     setLoading(true);
+    setError('');
+    setAddresses([]);
+    setSelected(null);
+    setShowList(false);
+
     try {
-      /* Try autocomplete first (partial postcodes) */
-      const acRes = await fetch(`https://api.postcodes.io/postcodes/${encodeURIComponent(clean)}/autocomplete`);
-      const acData = await acRes.json();
+      /* Step 1: Validate postcode + get LPA via Postcodes.io (free) */
+      const pioRes = await fetch(`https://api.postcodes.io/postcodes/${encodeURIComponent(clean)}`);
+      const pioData = await pioRes.json();
 
-      if (acData.result && acData.result.length > 0) {
-        /* Lookup full details for top 5 suggestions */
-        const lookups = acData.result.slice(0, 5);
-        const bulkRes = await fetch('https://api.postcodes.io/postcodes', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ postcodes: lookups }),
-        });
-        const bulkData = await bulkRes.json();
+      if (pioData.status !== 200 || !pioData.result) {
+        setError('Postcode not found. Please check and try again.');
+        setLoading(false);
+        return;
+      }
 
-        const results: PostcodeResult[] = (bulkData.result || [])
-          .filter((r: any) => r.result)
-          .map((r: any) => ({
-            postcode: r.result.postcode,
-            admin_district: r.result.admin_district || '',
-            latitude: r.result.latitude,
-            longitude: r.result.longitude,
-          }));
-        setSuggestions(results);
+      const country = pioData.result.country;
+      if (country && country !== 'England') {
+        setError('Site Intelligence currently covers England only.');
+        setLoading(false);
+        return;
+      }
+
+      const meta = {
+        postcode: pioData.result.postcode,
+        admin_district: pioData.result.admin_district || '',
+        lat: pioData.result.latitude,
+        lon: pioData.result.longitude,
+      };
+      setPostcodeMeta(meta);
+      setInput(meta.postcode);
+
+      /* Step 2: Fetch individual addresses via Ideal Postcodes */
+      const idRes = await fetch(`https://api.ideal-postcodes.co.uk/v1/postcodes/${encodeURIComponent(meta.postcode)}?api_key=${IDEAL_API_KEY}`);
+      const idData = await idRes.json();
+
+      if (idData.result && idData.result.length > 0) {
+        const results: AddressResult[] = idData.result.map((a: any) => ({
+          line_1: a.line_1 || '',
+          line_2: a.line_2 || '',
+          line_3: a.line_3 || '',
+          post_town: a.post_town || '',
+          postcode: a.postcode || meta.postcode,
+          uprn: a.uprn || '',
+          latitude: a.latitude || meta.lat,
+          longitude: a.longitude || meta.lon,
+          admin_district: meta.admin_district,
+        }));
+        setAddresses(results);
+        setShowList(true);
       } else {
-        setSuggestions([]);
+        /* Fallback: go straight to order with postcode only */
+        const params = new URLSearchParams({ address: meta.postcode, lat: String(meta.lat), lon: String(meta.lon), lpa: meta.admin_district });
+        navigate(`/order?${params.toString()}`);
       }
     } catch {
-      setSuggestions([]);
+      setError('Could not look up postcode. Please try again.');
     }
     setLoading(false);
   };
 
-  const handleChange = (val: string) => {
-    setInput(val);
-    setSelected(null);
-    if (debounceRef.current) clearTimeout(debounceRef.current);
-    debounceRef.current = setTimeout(() => lookupPostcode(val), 300);
-  };
-
-  const handleSelect = (result: PostcodeResult) => {
-    setInput(result.postcode);
-    setSelected(result);
-    setSuggestions([]);
+  const handleSelect = (addr: AddressResult) => {
+    setSelected(addr);
+    setShowList(false);
+    const desc = [addr.line_1, addr.line_2, addr.line_3].filter(Boolean).join(', ');
+    setInput(desc);
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const trimmed = input.trim();
-    if (!trimmed) return;
-    const params = new URLSearchParams({ address: trimmed });
     if (selected) {
-      params.set('lat', String(selected.latitude));
-      params.set('lon', String(selected.longitude));
-      params.set('lpa', selected.admin_district);
+      /* Navigate to order with full address details */
+      const desc = [selected.line_1, selected.line_2, selected.line_3].filter(Boolean).join(', ');
+      const params = new URLSearchParams({
+        address: selected.postcode,
+        lat: String(selected.latitude),
+        lon: String(selected.longitude),
+        lpa: selected.admin_district,
+        site: desc,
+        uprn: selected.uprn,
+      });
+      navigate(`/order?${params.toString()}`);
+    } else if (postcodeMeta) {
+      /* Postcode validated but no address selected — go to order */
+      const params = new URLSearchParams({
+        address: postcodeMeta.postcode,
+        lat: String(postcodeMeta.lat),
+        lon: String(postcodeMeta.lon),
+        lpa: postcodeMeta.admin_district,
+      });
+      navigate(`/order?${params.toString()}`);
+    } else {
+      findAddresses();
     }
-    navigate(`/order?${params.toString()}`);
   };
 
   return (
@@ -196,57 +243,85 @@ function HeroAddressInput() {
           <input
             type="text"
             value={input}
-            onChange={(e) => handleChange(e.target.value)}
+            onChange={(e) => { setInput(e.target.value); setError(''); setSelected(null); setShowList(false); setAddresses([]); setPostcodeMeta(null); }}
             placeholder="Enter your site postcode..."
             className="flex-1 bg-transparent text-white placeholder-[#b0b8cc]/50 text-base px-3 py-4 outline-none"
             autoComplete="off"
+            onKeyDown={(e) => { if (e.key === 'Enter' && !selected && addresses.length === 0) { e.preventDefault(); findAddresses(); } }}
           />
           {loading && (
             <div className="shrink-0 mr-2 w-5 h-5 border-2 border-[#27ae60]/40 border-t-[#27ae60] rounded-full animate-spin" />
           )}
           <button
-            type="submit"
-            className="shrink-0 mr-1.5 px-5 py-2.5 rounded-[10px] text-[14px] font-semibold text-white bg-gradient-to-br from-[#27ae60] to-[#219a52] shadow-[0_2px_8px_rgba(39,174,96,0.3)] hover:from-[#2ecc71] hover:to-[#27ae60] hover:shadow-[0_4px_20px_rgba(39,174,96,0.3)] active:scale-[0.97] transition-all"
+            type={selected ? 'submit' : 'button'}
+            onClick={selected ? undefined : findAddresses}
+            disabled={loading || input.trim().length < 3}
+            className="shrink-0 mr-1.5 px-5 py-2.5 rounded-[10px] text-[14px] font-semibold text-white bg-gradient-to-br from-[#27ae60] to-[#219a52] shadow-[0_2px_8px_rgba(39,174,96,0.3)] hover:from-[#2ecc71] hover:to-[#27ae60] hover:shadow-[0_4px_20px_rgba(39,174,96,0.3)] active:scale-[0.97] transition-all disabled:opacity-40 disabled:cursor-not-allowed"
           >
-            Get Started
+            {selected ? 'Get Started' : 'Find Address'}
           </button>
         </div>
 
-        {/* Dropdown suggestions */}
-        {suggestions.length > 0 && (
-          <div className="absolute left-0 right-0 top-full mt-2 bg-[#1a1a2e]/95 backdrop-blur-md border border-white/10 rounded-xl overflow-hidden shadow-[0_12px_40px_rgba(0,0,0,0.4)] z-50">
-            {suggestions.map((s) => (
-              <button
-                key={s.postcode}
-                type="button"
-                onClick={() => handleSelect(s)}
-                className="w-full text-left px-4 py-3 flex items-center gap-3 hover:bg-white/10 transition-colors border-b border-white/5 last:border-b-0"
-              >
-                <MapPin size={14} className="text-[#27ae60] shrink-0" />
-                <div>
-                  <span className="text-white text-sm font-medium">{s.postcode}</span>
-                  <span className="text-[#b0b8cc]/60 text-xs ml-2">{s.admin_district}</span>
-                </div>
-              </button>
-            ))}
+        {/* Address dropdown */}
+        {showList && addresses.length > 0 && (
+          <div className="absolute left-0 right-0 top-full mt-2 bg-[#1a1a2e]/95 backdrop-blur-md border border-white/10 rounded-xl overflow-hidden shadow-[0_12px_40px_rgba(0,0,0,0.4)] z-50 max-h-[320px] overflow-y-auto">
+            <div className="px-4 py-2 text-[11px] font-semibold text-[#b0b8cc]/50 uppercase tracking-wider border-b border-white/5">
+              {addresses.length} addresses found &mdash; select yours
+            </div>
+            {addresses.map((a, i) => {
+              const line = [a.line_1, a.line_2, a.line_3].filter(Boolean).join(', ');
+              return (
+                <button
+                  key={a.uprn || i}
+                  type="button"
+                  onClick={() => handleSelect(a)}
+                  className="w-full text-left px-4 py-3 flex items-center gap-3 hover:bg-white/10 transition-colors border-b border-white/5 last:border-b-0"
+                >
+                  <MapPin size={14} className="text-[#27ae60] shrink-0" />
+                  <div>
+                    <span className="text-white text-sm font-medium">{line}</span>
+                    <span className="text-[#b0b8cc]/60 text-xs ml-2">{a.postcode}</span>
+                  </div>
+                </button>
+              );
+            })}
+            <button
+              type="button"
+              onClick={() => {
+                setShowList(false);
+                if (postcodeMeta) {
+                  const params = new URLSearchParams({ address: postcodeMeta.postcode, lat: String(postcodeMeta.lat), lon: String(postcodeMeta.lon), lpa: postcodeMeta.admin_district });
+                  navigate(`/order?${params.toString()}`);
+                }
+              }}
+              className="w-full text-left px-4 py-3 flex items-center gap-3 hover:bg-white/10 transition-colors text-[#b0b8cc]/70 text-sm"
+            >
+              <Search size={14} className="shrink-0" />
+              <span>My address isn&apos;t listed &mdash; continue with postcode</span>
+            </button>
           </div>
+        )}
+
+        {/* Error message */}
+        {error && (
+          <p className="mt-2 text-[13px] text-red-400">{error}</p>
         )}
       </form>
 
-      {/* Selected postcode info */}
+      {/* Selected address confirmation */}
       {selected && (
         <motion.p
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           className="mt-3 text-[13px] text-[#27ae60]/80"
         >
-          {selected.admin_district} &middot; {selected.latitude.toFixed(4)}, {selected.longitude.toFixed(4)}
+          {selected.admin_district} &middot; Click &ldquo;Get Started&rdquo; to continue
         </motion.p>
       )}
 
-      {!selected && (
+      {!selected && !error && addresses.length === 0 && (
         <p className="mt-3 text-[13px] text-[#b0b8cc]/50">
-          Start typing a postcode &mdash; e.g. EX10 8EQ, GU1 4QA, PL1 2AA
+          Enter a postcode to find your site address &mdash; e.g. EX10 8EQ, GU1 4QA, PL1 2AA
         </p>
       )}
       <Link
