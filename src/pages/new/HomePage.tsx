@@ -128,9 +128,10 @@ function HeroAddressInput() {
   const [error, setError] = useState('');
   const [showList, setShowList] = useState(false);
   const navigate = useNavigate();
+  const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  const findAddresses = async () => {
-    const clean = input.trim();
+  const findAddresses = async (override?: string) => {
+    const clean = (override || input).trim();
     if (clean.length < 3) return;
 
     setLoading(true);
@@ -185,9 +186,20 @@ function HeroAddressInput() {
         setAddresses(results);
         setShowList(true);
       } else {
-        /* Fallback: go straight to order with postcode only */
-        const params = new URLSearchParams({ address: meta.postcode, lat: String(meta.lat), lon: String(meta.lon), lpa: meta.admin_district });
-        navigate(`/order?${params.toString()}`);
+        /* Ideal Postcodes returned nothing — show postcode-level result so user can still proceed */
+        setPostcodeMeta(meta);
+        setAddresses([{
+          line_1: meta.postcode,
+          line_2: meta.admin_district,
+          line_3: '',
+          post_town: '',
+          postcode: meta.postcode,
+          uprn: '',
+          latitude: meta.lat,
+          longitude: meta.lon,
+          admin_district: meta.admin_district,
+        }]);
+        setShowList(true);
       }
     } catch {
       setError('Could not look up postcode. Please try again.');
@@ -243,7 +255,16 @@ function HeroAddressInput() {
           <input
             type="text"
             value={input}
-            onChange={(e) => { setInput(e.target.value); setError(''); setSelected(null); setShowList(false); setAddresses([]); setPostcodeMeta(null); }}
+            onChange={(e) => {
+              const val = e.target.value;
+              setInput(val); setError(''); setSelected(null); setShowList(false); setAddresses([]); setPostcodeMeta(null);
+              /* Auto-lookup when input looks like a full UK postcode */
+              if (debounceRef.current) clearTimeout(debounceRef.current);
+              const stripped = val.replace(/\s+/g, '');
+              if (stripped.length >= 5 && /^[A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2}$/i.test(stripped)) {
+                debounceRef.current = setTimeout(() => findAddresses(val), 400);
+              }
+            }}
             placeholder="Enter your site postcode..."
             className="flex-1 bg-transparent text-white placeholder-[#b0b8cc]/50 text-base px-3 py-4 outline-none"
             autoComplete="off"
