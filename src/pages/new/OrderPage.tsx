@@ -118,8 +118,8 @@ export default function OrderPage() {
   const [postcodeInfo, setPostcodeInfo] = useState(searchParams.get('lpa') || '');
   const [lat, setLat] = useState(searchParams.get('lat') || '');
   const [lon, setLon] = useState(searchParams.get('lon') || '');
-  const [uprn, setUprn] = useState('');
-  const [siteDescription, setSiteDescription] = useState('');
+  const [uprn, setUprn] = useState(searchParams.get('uprn') || '');
+  const [siteDescription, setSiteDescription] = useState(searchParams.get('site') || '');
   const [addresses, setAddresses] = useState<any[]>([]);
   const [showAddressList, setShowAddressList] = useState(false);
   const [dwellings, setDwellings] = useState(1);
