@@ -38,8 +38,8 @@
     { "source": "/demo/s(/?)", "destination": "/demo/s/index.html" },
     { "source": "/preapp/s(/?)", "destination": "/preapp/s/index.html" },
     { "source": "/discover(/?)", "destination": "/discover/index.html" },
-    { "source": "/internal(/?)", "destination": "/internal/index.html" },
-    { "source": "/internal/:path*", "destination": "/internal/:path*" },
+    { "source": "/internal", "destination": "/api/internal" },
+    { "source": "/internal/:path*", "destination": "/api/internal" },
     { "source": "/((?!api/).*)", "destination": "/index.html" }
   ],
   "headers": [
