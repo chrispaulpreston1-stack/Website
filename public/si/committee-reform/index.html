@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Site Intelligence — Planning Committee Reform Consultation Package</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    background: #f1f5f9;
+    color: #1e293b;
+    min-height: 100vh;
+  }
+
+  .hero {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #fff;
+    padding: 60px 40px 50px;
+    text-align: center;
+  }
+  .hero h1 { font-size: 28pt; font-weight: 800; margin-bottom: 8px; }
+  .hero h1 span { color: #f97316; }
+  .hero .subtitle { font-size: 12pt; opacity: 0.7; margin-bottom: 30px; }
+  .hero .deadline { display: inline-block; background: #dc2626; color: #fff; padding: 8px 20px; border-radius: 20px; font-size: 10pt; font-weight: 700; }
+
+  .stat-bar {
+    display: flex; justify-content: center; gap: 24px; flex-wrap: wrap;
+    margin-top: -25px; padding: 0 40px; position: relative; z-index: 2;
+  }
+  .stat-pill {
+    background: #fff; border-top: 4px solid #f97316; border-radius: 0 0 12px 12px;
+    padding: 16px 24px; text-align: center; min-width: 140px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+  .stat-pill .val { font-size: 22pt; font-weight: 800; color: #0f172a; }
+  .stat-pill .lab { font-size: 8pt; color: #64748b; margin-top: 2px; }
+
+  .container { max-width: 900px; margin: 40px auto; padding: 0 24px; }
+
+  .doc-card {
+    background: #fff; border-radius: 12px; padding: 32px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06); margin-bottom: 24px;
+    display: flex; gap: 24px; align-items: flex-start;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-decoration: none; color: inherit; cursor: pointer;
+  }
+  .doc-card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.12); }
+
+  .doc-icon {
+    width: 64px; height: 64px; border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 28px; flex-shrink: 0;
+  }
+  .doc-icon.summary { background: #fff7ed; color: #f97316; }
+  .doc-icon.report { background: #eff6ff; color: #0f172a; }
+
+  .doc-info h2 { font-size: 14pt; font-weight: 700; color: #0f172a; margin-bottom: 6px; }
+  .doc-info p { font-size: 10pt; color: #64748b; line-height: 1.5; margin-bottom: 10px; }
+  .doc-info .badge { display: inline-block; padding: 3px 10px; border-radius: 10px; font-size: 8pt; font-weight: 600; margin-right: 6px; }
+  .doc-info .badge.pages { background: #f1f5f9; color: #64748b; }
+  .doc-info .badge.new { background: #f0fdf4; color: #16a34a; }
+  .doc-info .badge.data { background: #eff6ff; color: #0a66c2; }
+
+  .findings { margin-top: 40px; }
+  .findings h2 { font-size: 14pt; font-weight: 700; color: #0f172a; margin-bottom: 16px; border-bottom: 3px solid #f97316; padding-bottom: 6px; }
+
+  .finding-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .finding-box {
+    background: #fff; border-radius: 10px; padding: 20px;
+    border-left: 4px solid #f97316;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+  .finding-box h3 { font-size: 10pt; font-weight: 700; color: #0f172a; margin-bottom: 6px; }
+  .finding-box p { font-size: 9pt; color: #64748b; line-height: 1.5; }
+  .finding-box .num { font-size: 20pt; font-weight: 800; color: #f97316; }
+
+  .methodology {
+    background: #fff; border-radius: 12px; padding: 24px 32px;
+    margin-top: 32px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .methodology h2 { font-size: 12pt; font-weight: 700; margin-bottom: 10px; }
+  .methodology p { font-size: 9pt; color: #64748b; line-height: 1.6; }
+
+  .footer {
+    text-align: center; padding: 30px; font-size: 8pt; color: #94a3b8;
+  }
+  .footer strong { color: #f97316; }
+
+  @media print {
+    @page { margin: 0; }
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+    body { background: #fff; padding: 10mm; }
+    .hero { padding: 30px 20px 25px; }
+    .doc-card:hover { transform: none; }
+    .stat-pill, .stat-bar, .doc-card, .finding-box, .methodology { break-inside: avoid !important; page-break-inside: avoid !important; }
+    .finding-grid { grid-template-columns: 1fr !important; }
+    h2 { page-break-after: avoid; }
+  }
+  .print-btn { position: fixed; top: 12px; right: 12px; z-index: 9999; background: #0f172a; color: #fff; border: none; padding: 10px 20px; font-size: 9pt; font-weight: 600; border-radius: 6px; cursor: pointer; }
+  .print-btn:hover { background: #f97316; }
+  @media print { .print-btn { display: none; } }
+</style>
+</head>
+<body>
+
+<button class="print-btn" onclick="window.print()">Print / Save PDF</button>
+
+<div class="hero">
+  <h1>Planning Committee Reform: <span>The Evidence</span></h1>
+  <div class="subtitle">Site Intelligence's response to the statutory consultation on draft Regulations and Guidance</div>
+  <div class="deadline">Consultation deadline: 23 April 2026</div>
+</div>
+
+<div class="stat-bar">
+  <div class="stat-pill">
+    <div class="val">114,700</div>
+    <div class="lab">PINS appeals analysed</div>
+  </div>
+  <div class="stat-pill">
+    <div class="val">40.9%</div>
+    <div class="lab">Major residential overturn rate</div>
+  </div>
+  <div class="stat-pill">
+    <div class="val">&pound;66m&ndash;&pound;166m</div>
+    <div class="lab">Taxpayer costs burden</div>
+  </div>
+  <div class="stat-pill">
+    <div class="val">10 years</div>
+    <div class="lab">Full dataset (2015&ndash;2025)</div>
+  </div>
+</div>
+
+<div class="container">
+
+  <a class="doc-card" href="executive-summary.html">
+    <div class="doc-icon summary">&#9889;</div>
+    <div class="doc-info">
+      <h2>Executive Summary</h2>
+      <p>One-page key findings sheet. Six stat boxes, three recommendations, cost-benefit table, regional analysis, showcase cases, and sector alignment. Designed for printing and pinning.</p>
+      <span class="badge pages">1 page</span>
+      <span class="badge new">A4 printable</span>
+      <span class="badge data">All key stats</span>
+    </div>
+  </a>
+
+  <a class="doc-card" href="response.html">
+    <div class="doc-icon report">&#128220;</div>
+    <div class="doc-info">
+      <h2>Full Consultation Response</h2>
+      <p>Sharp, evidence-led response to all three consultation questions. Leads with proposed Reg 5 amendments, supported by PINS primary analysis, costs burden, and sector alignment. Democratic accountability addressed.</p>
+      <span class="badge pages">~15 pages</span>
+      <span class="badge new">Draft Reg 5 wording on p.2</span>
+      <span class="badge data">114,700 appeals</span>
+    </div>
+  </a>
+
+  <a class="doc-card" href="evidence.html">
+    <div class="doc-icon report" style="background:#f0fdf4;color:#16a34a;">&#128202;</div>
+    <div class="doc-info">
+      <h2>Evidence Reference Document</h2>
+      <p>Complete data companion: full 20-LPA overturn table, regional breakdown, 500 verified case studies, showcase cases, constraint analysis, and all source citations. Referenced by the main response.</p>
+      <span class="badge pages">~8 pages</span>
+      <span class="badge data">Full tables</span>
+      <span class="badge new">500 case studies</span>
+    </div>
+  </a>
+
+  <a class="doc-card" href="explained.html">
+    <div class="doc-icon report" style="background:#fefce8;color:#ca8a04;">&#128218;</div>
+    <div class="doc-info">
+      <h2>The Explained Guide</h2>
+      <p>Plain English breakdown of every key finding. Written for councillors, planning officers, and developers. 10 sections answering the questions people actually ask: "What does the overturn rate mean?", "What does a costs award cost?", "Does my constraint justify refusal?"</p>
+      <span class="badge new">Plain English</span>
+      <span class="badge data">Action points per audience</span>
+    </div>
+  </a>
+
+  <a class="doc-card" href="heatmap.html">
+    <div class="doc-icon report" style="background:#fef2f2;color:#dc2626;">&#127758;</div>
+    <div class="doc-info">
+      <h2>Interactive LPA Heatmap</h2>
+      <p>Map of England showing LPA appeal overturn rates colour-coded from green (low) to red (high). Click any LPA to see total appeals, allowed count, costs applications, and major residential rate. Powered by PINS Casework Database.</p>
+      <span class="badge new">Interactive</span>
+      <span class="badge data">All LPAs mapped</span>
+    </div>
+  </a>
+
+  <div class="findings">
+    <h2>Key Findings at a Glance</h2>
+    <div class="finding-grid">
+      <div class="finding-box">
+        <div class="num">40.9%</div>
+        <h3>Major residential appeals allowed</h3>
+        <p>Nearly half of all refused major schemes are overturned on appeal. Double the 23.1% rate for minor residential. The trend is worsening — 5-year rate is higher than the 10-year average.</p>
+      </div>
+      <div class="finding-box">
+        <div class="num">&pound;66m&ndash;&pound;166m</div>
+        <h3>Taxpayer costs burden</h3>
+        <p>Estimated direct costs to LPAs from 2,670 allowed appeals where costs were awarded. Includes 60 public inquiries, 223 hearings, 2,327 written representations.</p>
+      </div>
+      <div class="finding-box">
+        <div class="num">3,046</div>
+        <h3>Green Belt appeals allowed</h3>
+        <p>The largest single constraint category. Each represents a case where the LPA refused and an inspector found the evidence insufficient to justify refusal.</p>
+      </div>
+      <div class="finding-box">
+        <div class="num">749</div>
+        <h3>Committee decisions identified</h3>
+        <p>From 30,000 decision letters (91.8% coverage). 87 explicitly against officer recommendation. Committee refusals account for 89.7% of identifiable decision routes in overturned appeals.</p>
+      </div>
+      <div class="finding-box">
+        <div class="num">Reg 5(2)</div>
+        <h3>Proposed amendment</h3>
+        <p>Four specific, measurable gateway test triggers to replace the subjective "significant planning matters" criterion. Drafted for direct insertion into the Regulations.</p>
+      </div>
+      <div class="finding-box">
+        <div class="num">1,900/yr</div>
+        <h3>Homes delivered faster</h3>
+        <p>If the reform reduces the major residential overturn rate to 30%, approximately 1,900 additional homes per year would be delivered without appeal delay.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="methodology">
+    <h2>Methodology &amp; Data Sources</h2>
+    <p><strong>Primary source:</strong> PINS Casework Database downloaded from GOV.UK on 28 March 2026 under Open Government Licence. 188,933 total records parsed, of which 114,700 are planning appeals decided between 2015 and 2025. Zero hallucination — every figure independently verifiable from the source dataset.</p>
+    <p style="margin-top:8px;"><strong>Decision letter classification:</strong> 30,000 decision letters retrieved from the PINS Appeals Casework Portal (91.8% of all allowed appeals). Text extracted and classified by decision route. 749 committee decisions identified, 87 against officer recommendation. The largest systematic analysis of committee vs delegated planning decisions from primary PINS data.</p>
+    <p style="margin-top:8px;"><strong>Case studies:</strong> 500 verified case studies mined from 8,063 qualifying appeals using a scoring framework prioritising major residential schemes, costs awards, constrained sites, and inquiry-level proceedings.</p>
+    <p style="margin-top:8px;"><strong>Supplementary sources:</strong> 86 retrospective case studies across 59 English LPAs (Site Intelligence platform validation), Lichfields (<em>"Refused for Good Reason?"</em>, 2018), PAS Modernising Planning Committees National Survey (December 2024), PINS Statistical Release (July 2025).</p>
+  </div>
+
+</div>
+
+<div class="footer">
+  <strong>Site Intelligence</strong> &mdash; PF &amp; Co Holdings Ltd &mdash; info@pfandco.co.uk<br>
+  30 March 2026
+</div>
+
+</body>
+</html>

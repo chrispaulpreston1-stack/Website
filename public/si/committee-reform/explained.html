@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Site Intelligence — Planning Committee Reform: The Explained Guide</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  @media print {
+    @page { margin: 0; }
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+    body { padding: 12mm; }
+    .no-print { display: none !important; }
+    .data-box, .callout, .callout-blue, .callout-red, .action, .bar-row, .link-card, .intro { break-inside: avoid !important; page-break-inside: avoid !important; }
+    .actions { grid-template-columns: 1fr !important; }
+    .links { grid-template-columns: 1fr !important; }
+    h2 { page-break-after: avoid; break-after: avoid; }
+    .section-num { page-break-after: avoid; }
+  }
+  body {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 11pt;
+    line-height: 1.65;
+    color: #1e293b;
+    background: #f8fafc;
+  }
+
+  .print-btn { position: fixed; top: 16px; right: 16px; z-index: 9999; background: #0f172a; color: #fff; border: none; padding: 12px 24px; font-size: 10pt; font-weight: 600; border-radius: 6px; cursor: pointer; box-shadow: 0 2px 12px rgba(0,0,0,0.2); }
+  .print-btn:hover { background: #f97316; }
+  @media print { .print-btn { display: none; } }
+
+  /* Hero */
+  .hero {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #fff;
+    padding: 60px 40px;
+    text-align: center;
+  }
+  .hero .badge { display: inline-block; background: #f97316; color: #fff; padding: 4px 14px; border-radius: 20px; font-size: 8pt; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 16px; }
+  .hero h1 { font-size: 28pt; font-weight: 800; line-height: 1.2; margin-bottom: 12px; }
+  .hero h1 span { color: #f97316; }
+  .hero .subtitle { font-size: 13pt; opacity: 0.7; max-width: 700px; margin: 0 auto 24px; }
+  .hero .who { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-top: 20px; }
+  .hero .who-pill { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; padding: 8px 20px; font-size: 9pt; }
+
+  /* Container */
+  .container { max-width: 800px; margin: 0 auto; padding: 40px 24px; }
+
+  /* Intro */
+  .intro { background: #fff; border-radius: 12px; padding: 32px; margin-bottom: 32px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); border-left: 4px solid #f97316; }
+  .intro h2 { font-size: 14pt; color: #0f172a; margin-bottom: 12px; }
+  .intro p { color: #475569; margin-bottom: 10px; }
+
+  /* Section */
+  .section { background: #fff; border-radius: 12px; padding: 32px; margin-bottom: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+  .section-num { display: inline-block; background: #0f172a; color: #f97316; width: 36px; height: 36px; border-radius: 50%; text-align: center; line-height: 36px; font-weight: 800; font-size: 14pt; margin-bottom: 12px; }
+  .section h2 { font-size: 16pt; color: #0f172a; margin-bottom: 6px; }
+  .section .question { font-size: 12pt; color: #f97316; font-weight: 600; margin-bottom: 16px; font-style: italic; }
+  .section p { color: #475569; margin-bottom: 12px; }
+  .section strong { color: #0f172a; }
+
+  /* Data box */
+  .data-box { background: #f1f5f9; border-radius: 8px; padding: 20px 24px; margin: 16px 0; }
+  .data-box .data-title { font-size: 9pt; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+  .data-box .data-row { display: flex; justify-content: space-between; align-items: center; padding: 6px 0; border-bottom: 1px solid #e2e8f0; font-size: 10pt; }
+  .data-box .data-row:last-child { border-bottom: none; }
+  .data-box .data-value { font-weight: 700; color: #0f172a; }
+  .data-box .data-value.red { color: #dc2626; }
+  .data-box .data-value.orange { color: #f97316; }
+  .data-box .data-value.green { color: #16a34a; }
+
+  /* Callout */
+  .callout { background: #fff7ed; border-left: 4px solid #f97316; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+  .callout strong { color: #0f172a; }
+  .callout p { color: #475569; font-size: 10pt; margin-bottom: 0; }
+  .callout-blue { background: #eff6ff; border-left: 4px solid #0f172a; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+  .callout-red { background: #fef2f2; border-left: 4px solid #dc2626; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+
+  /* Action boxes */
+  .actions { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin: 16px 0; }
+  .action { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 14px; }
+  .action .role { font-size: 8pt; font-weight: 700; color: #16a34a; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+  .action p { font-size: 9pt; color: #475569; margin: 0; }
+
+  /* Bar chart */
+  .bar-row { display: flex; align-items: center; margin-bottom: 6px; }
+  .bar-label { width: 140px; font-size: 9pt; color: #334155; text-align: right; padding-right: 12px; flex-shrink: 0; }
+  .bar-track { flex: 1; height: 24px; background: #f1f5f9; border-radius: 4px; overflow: hidden; }
+  .bar-fill { height: 100%; border-radius: 4px; display: flex; align-items: center; padding-left: 8px; font-size: 8pt; font-weight: 600; color: #fff; }
+  .bar-value { margin-left: 8px; font-size: 9pt; color: #0f172a; font-weight: 600; flex-shrink: 0; width: 50px; }
+
+  /* Links section */
+  .links { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
+  .link-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 20px; text-decoration: none; color: inherit; transition: transform 0.2s, box-shadow 0.2s; }
+  .link-card:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
+  .link-card h3 { font-size: 11pt; color: #0f172a; margin-bottom: 4px; }
+  .link-card p { font-size: 9pt; color: #64748b; margin: 0; }
+
+  /* Footer */
+  .footer { text-align: center; padding: 40px 24px; font-size: 9pt; color: #94a3b8; }
+  .footer strong { color: #f97316; }
+
+  @media (max-width: 700px) {
+    .actions { grid-template-columns: 1fr; }
+    .links { grid-template-columns: 1fr; }
+    .hero { padding: 30px 20px; }
+    .hero h1 { font-size: 20pt; }
+  }
+</style>
+</head>
+<body>
+
+<button class="print-btn no-print" onclick="window.print()">Print / Save PDF</button>
+
+<div class="hero">
+  <div class="badge">PLAIN ENGLISH GUIDE</div>
+  <h1>Planning Committee Reform: <span>Explained</span></h1>
+  <div class="subtitle">What the data tells us, why it matters, and what you can do about it. Based on the largest independent analysis of planning appeal decisions in England.</div>
+  <div class="who">
+    <div class="who-pill">For councillors</div>
+    <div class="who-pill">For planning officers</div>
+    <div class="who-pill">For developers &amp; agents</div>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- ============================================================ -->
+<!-- INTRO                                                          -->
+<!-- ============================================================ -->
+
+<div class="intro">
+  <h2>Why this guide exists</h2>
+  <p>The government has published draft Regulations and Guidance to reform how planning committees work. The consultation closes on <strong>23 April 2026</strong>. The reforms will change which applications go to committee and which are decided by officers.</p>
+  <p>Site Intelligence has parsed <strong>188,933 official PINS records</strong>, analysed <strong>114,700 planning appeals over 10 years</strong>, and classified <strong>30,000 decision letters</strong> to understand what's actually happening when committees make decisions. This guide explains the findings in plain English.</p>
+  <p>No jargon. No assumptions about what you already know. Just the data and what it means.</p>
+</div>
+
+<!-- ============================================================ -->
+<!-- SECTION 1                                                      -->
+<!-- ============================================================ -->
+
+<div class="section">
+  <div class="section-num">1</div>
+  <h2>What happens when a council refuses a planning application?</h2>
+  <div class="question">And how often are they wrong?</div>
+
+  <p>When a local planning authority (council) refuses a planning application, the applicant can appeal to an independent inspector appointed by the Planning Inspectorate (PINS). The inspector reviews the evidence and makes a decision: either <strong>allow</strong> the appeal (overturn the refusal) or <strong>dismiss</strong> it (uphold the refusal).</p>
+
+  <p>Over the last 10 years, inspectors have <strong>overturned 28.5% of all refusals</strong>. That means roughly <strong>1 in 3.5 refusals</strong> was wrong &mdash; the inspector found the council didn't have sufficient grounds to refuse.</p>
+
+  <div class="data-box">
+    <div class="data-title">The headline numbers (2015&ndash;2025)</div>
+    <div class="data-row"><span>Total planning appeals decided</span><span class="data-value">114,700</span></div>
+    <div class="data-row"><span>Appeals allowed (refusal overturned)</span><span class="data-value orange">32,687 (28.5%)</span></div>
+    <div class="data-row"><span>Appeals dismissed (refusal upheld)</span><span class="data-value green">79,175</span></div>
+    <div class="data-row"><span>Costs applied for by appellants</span><span class="data-value red">6,108</span></div>
+  </div>
+
+  <p>But those averages hide a much bigger problem with major development...</p>
+
+  <div class="actions">
+    <div class="action">
+      <div class="role">If you're a councillor</div>
+      <p>1 in 3.5 of your council's refusals are being overturned. Each one costs time, money, and reputation. Ask your planning officer for your council's specific overturn rate.</p>
+    </div>
+    <div class="action">
+      <div class="role">If you're a planning officer</div>
+      <p>Use these national benchmarks to calibrate your recommendations. If your authority's rate is above 28.5%, there's a systemic issue worth investigating.</p>
+    </div>
+    <div class="action">
+      <div class="role">If you're a developer</div>
+      <p>Check your council's overturn rate before deciding whether to appeal. Some councils lose nearly half their appeals &mdash; appeal may be a realistic strategy.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SECTION 2                                                      -->
+<!-- ============================================================ -->
+
+<div class="section">
+  <div class="section-num">2</div>
+  <h2>Why are major developments refused more than they should be?</h2>
+  <div class="question">The 40.9% problem</div>
+
+  <p>Here's the most important statistic: <strong>40.9% of all refused major residential applications (10+ homes) are overturned on appeal</strong>. That's nearly double the 23.1% rate for smaller developments.</p>
+
+  <p>This means that for every 10 major housing schemes a council refuses, <strong>4 are overturned by an inspector</strong>. Those 4 schemes were delayed &mdash; sometimes by years &mdash; causing real harm: homes not built, costs incurred, communities waiting.</p>
+
+  <div class="bar-row">
+    <div class="bar-label">Major residential</div>
+    <div class="bar-track"><div class="bar-fill" style="width:40.9%;background:#dc2626;">40.9%</div></div>
+    <div class="bar-value">2,247 / 5,490</div>
+  </div>
+  <div class="bar-row">
+    <div class="bar-label">Minor residential</div>
+    <div class="bar-track"><div class="bar-fill" style="width:23.1%;background:#f97316;">23.1%</div></div>
+    <div class="bar-value">9,659 / 41,861</div>
+  </div>
+
+  <p>Why the gap? Major applications are more likely to go to <strong>planning committee</strong> rather than being decided by a professional planning officer. And that's where the problem lies.</p>
+
+  <div class="callout">
+    <strong>What does this mean in practice?</strong>
+    <p>Over 10 years, 2,247 major housing schemes were refused by councils and then allowed by inspectors. Each appeal takes months. Each delays homes. The reform is designed to reduce this number by ensuring only genuinely complex applications go to committee.</p>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SECTION 3                                                      -->
+<!-- ============================================================ -->
+
+<div class="section">
+  <div class="section-num">3</div>
+  <h2>What happens when committees ignore their own officers?</h2>
+  <div class="question">The officer override problem</div>
+
+  <p>Planning officers are qualified professionals who assess applications against policy and evidence. They make a recommendation to the committee: approve or refuse. The committee can follow the recommendation or override it.</p>
+
+  <p>We analysed <strong>30,000 appeal decision letters</strong> &mdash; covering 91.8% of all allowed appeals in the 10-year dataset. From the text of each letter, we identified whether the original refusal was made by committee or under delegated authority, and whether the committee went against the officer's recommendation.</p>
+
+  <div class="data-box">
+    <div class="data-title">Decision letter classification results</div>
+    <div class="data-row"><span>Decision letters analysed</span><span class="data-value">30,000</span></div>
+    <div class="data-row"><span>Committee decisions identified</span><span class="data-value orange">749</span></div>
+    <div class="data-row"><span>Committee refused against officer recommendation</span><span class="data-value red">87</span></div>
+    <div class="data-row"><span>Committee decisions as % of identifiable routes</span><span class="data-value red">89.7%</span></div>
+    <div class="data-row"><span>Delegated decisions identified</span><span class="data-value green">56</span></div>
+  </div>
+
+  <p>That 89.7% figure is striking. Among appeals that were overturned, <strong>committee refusals outnumber delegated refusals by roughly 9 to 1</strong> where the decision route is identifiable. This doesn't mean committees are always wrong &mdash; but it does mean that when a refusal is overturned, it was overwhelmingly likely to have been a committee decision.</p>
+
+  <p>In all 87 cases where we could identify that the committee went against their officer's recommendation, the inspector sided with the officer. Independent research by Lichfields confirms this pattern nationally: <strong>65% of all appeals succeed where committees refuse against officer recommendation</strong>, compared with 40% where the refusal followed the officer's advice.</p>
+
+  <div class="callout-red">
+    <strong>What does "against officer recommendation" mean?</strong>
+    <p>The planning officer's report recommended that the application be <em>approved</em>. The committee voted to <em>refuse</em> it anyway. The applicant appealed. The inspector reviewed the evidence and agreed with the officer &mdash; the application should have been approved. In many cases, the inspector awarded costs against the council, meaning the taxpayer paid for both sides.</p>
+  </div>
+
+  <div class="actions">
+    <div class="action">
+      <div class="role">If you're a councillor</div>
+      <p>When you override your officer, you're betting the council's money on being right. The data shows that bet loses far more often than it wins. Make sure your reasons are specific, evidenced, and defensible at appeal.</p>
+    </div>
+    <div class="action">
+      <div class="role">If you're a planning officer</div>
+      <p>If your recommendation is overridden, document the officer's report thoroughly. The appeal inspector will read it. Clear, evidence-based reports protect both you and the authority.</p>
+    </div>
+    <div class="action">
+      <div class="role">If you're a developer</div>
+      <p>If your application is refused against officer recommendation, appeal prospects are strong. The Lichfields data shows 65% success rate. Ensure your appeal evidence mirrors the officer's reasoning.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SECTION 4                                                      -->
+<!-- ============================================================ -->
+
+<div class="section">
+  <div class="section-num">4</div>
+  <h2>What does a costs award actually cost the taxpayer?</h2>
+  <div class="question">The hidden bill</div>
+
+  <p>When an inspector finds that a council behaved <strong>"unreasonably"</strong> in refusing an application, they can award costs. This means the council has to pay not just its own costs, but the applicant's costs too &mdash; legal fees, consultant fees, expert witnesses, the lot.</p>
+
+  <p>Over 10 years, costs were applied for in <strong>6,108 planning appeals</strong>. Of those, <strong>2,670 were in appeals that were allowed</strong> &mdash; meaning the inspector found both that the refusal was wrong <em>and</em> that the council's behaviour was unreasonable.</p>
+
+  <div class="data-box">
+    <div class="data-title">What does an appeal cost?</div>
+    <div class="data-row"><span>Public inquiry (major scheme)</span><span class="data-value red">&pound;120,000 &ndash; &pound;300,000</span></div>
+    <div class="data-row"><span>Hearing</span><span class="data-value orange">&pound;50,000 &ndash; &pound;120,000</span></div>
+    <div class="data-row"><span>Written representations</span><span class="data-value">&pound;20,000 &ndash; &pound;50,000</span></div>
+    <div class="data-row"><span><strong>Estimated total taxpayer burden (10 years)</strong></span><span class="data-value red"><strong>&pound;66m &ndash; &pound;166m</strong></span></div>
+  </div>
+
+  <p>That's between <strong>&pound;66 million and &pound;166 million of public money</strong> spent defending refusals that inspectors found to be unjustified. To put that in context: it's enough to fund hundreds of planning officer posts, or invest in the evidence-based decision support tools that could prevent these refusals in the first place.</p>
+
+  <div class="callout">
+    <strong>Which councils have the worst costs exposure?</strong>
+    <p>Cornwall Council tops the list with 87 costs awards in allowed appeals over 10 years. Wiltshire (43), Barnet (44), Bromley (36), and Cheshire East (33) follow. South Somerset has the highest costs <em>rate</em> at 13.6% &mdash; meaning 1 in 7 of their appeals result in costs against the council.</p>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SECTION 5                                                      -->
+<!-- ============================================================ -->
+
+<div class="section">
+  <div class="section-num">5</div>
+  <h2>Do site constraints justify committee refusal?</h2>
+  <div class="question">Green Belt, heritage, flooding &mdash; when are they genuine reasons to refuse?</div>
+
+  <p>Many committee refusals cite site constraints &mdash; Green Belt, listed building settings, flood risk, AONB/National Landscape, ecological designations. These are legitimate planning considerations. But the data shows that inspectors frequently find the evidence doesn't support refusal, even where constraints exist.</p>
+
+  <div class="data-box">
+    <div class="data-title">Allowed appeals in constrained locations (10 years)</div>
+    <div class="data-row"><span>Green Belt</span><span class="data-value red">3,046 allowed</span></div>
+    <div class="data-row"><span>Listed building / conservation area</span><span class="data-value orange">733 allowed</span></div>
+    <div class="data-row"><span>AONB / National Landscape</span><span class="data-value orange">293 allowed</span></div>
+    <div class="data-row"><span>Flood risk</span><span class="data-value">90 allowed</span></div>
+    <div class="data-row"><span>SSSI / SAC / SPA</span><span class="data-value">64 allowed</span></div>
+    <div class="data-row"><span><strong>Total constrained allowed</strong></span><span class="data-value red"><strong>4,056</strong></span></div>
+  </div>
+
+  <p><strong>3,046 Green Belt appeals allowed.</strong> That doesn't mean Green Belt policy is wrong &mdash; it means councils are applying it inconsistently. In many cases, the inspector found that "Very Special Circumstances" existed, or that the development was not inappropriate, or that the harm to openness was outweighed by the benefits.</p>
+
+  <p>The key point for the reform: the <strong>presence of a constraint should not automatically trigger committee referral</strong>. Constraints are technical matters with defined assessment methodologies (sequential test, heritage balance, landscape character assessment). They benefit from structured, evidence-based analysis &mdash; exactly what professional officers provide.</p>
+
+  <div class="actions">
+    <div class="action">
+      <div class="role">If you're a councillor</div>
+      <p>A constraint is not an automatic reason to refuse. Ask your officer: "What does the structured assessment show?" If the officer's report says the tests are met, you need strong, specific evidence to disagree.</p>
+    </div>
+    <div class="action">
+      <div class="role">If you're a planning officer</div>
+      <p>When recommending approval on a constrained site, make the structured assessment explicit. Show the sequential test, the heritage balance, the landscape assessment. Give the committee the evidence to make an informed decision.</p>
+    </div>
+    <div class="action">
+      <div class="role">If you're a developer</div>
+      <p>If your site has constraints, invest in robust technical evidence upfront. The data shows inspectors allow constrained applications when the evidence is thorough. Front-load the technical work.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SECTION 6                                                      -->
+<!-- ============================================================ -->
+
+<div class="section">
+  <div class="section-num">6</div>
+  <h2>What is the gateway test and why does it matter?</h2>
+  <div class="question">The centrepiece of the reform</div>
+
+  <p>Under the proposed reforms, planning applications are split into two tiers:</p>
+
+  <p><strong>Tier A (Schedule 1)</strong> &mdash; householder applications, minor development, discharge of conditions, lawful development certificates. These <strong>must be delegated to officers</strong> in all circumstances. The committee never sees them.</p>
+
+  <p><strong>Tier B (Schedule 2)</strong> &mdash; everything else, including major residential. These <strong>can</strong> go to committee, but only if they pass the <strong>gateway test</strong>.</p>
+
+  <p>The gateway test is the filter. It asks: does this application raise <em>"significant planning matters having regard to the development plan"</em> or <em>"economic, social or environmental significance to the local area"</em>? If yes, it goes to committee. If no, the officer decides.</p>
+
+  <div class="callout-red">
+    <strong>The problem with the current wording</strong>
+    <p>The terms "significant planning matters" and "significance to the local area" are subjective. The draft guidance gives examples including "a change of use of a community shop in a rural area" &mdash; a threshold so low that almost any non-trivial application could qualify. Without tighter criteria, the gateway test risks becoming a rubber stamp for referral rather than a genuine filter.</p>
+  </div>
+
+  <p>Site Intelligence's analysis of 114,700 appeals suggests the test needs <strong>specific, measurable triggers</strong>. We've proposed four:</p>
+
+  <div class="data-box">
+    <div class="data-title">Proposed gateway test triggers (amendment to Regulation 5)</div>
+    <div class="data-row"><span>(a) Material departure from a development plan allocation</span><span class="data-value">Objective test</span></div>
+    <div class="data-row"><span>(b) Unresolved statutory consultee objection (EA, HE, NE, LLFA)</span><span class="data-value">Objective test</span></div>
+    <div class="data-row"><span>(c) 50+ individual representations raising material considerations</span><span class="data-value">Measurable threshold</span></div>
+    <div class="data-row"><span>(d) Officer certifies a novel planning issue</span><span class="data-value">Professional judgment</span></div>
+  </div>
+
+  <p>If none of these conditions is met, the application must be delegated. This gives committees the cases that genuinely need democratic oversight, while ensuring that routine applications &mdash; even large ones &mdash; are decided efficiently by qualified professionals.</p>
+</div>
+
+<!-- ============================================================ -->
+<!-- SECTION 7                                                      -->
+<!-- ============================================================ -->
+
+<div class="section">
+  <div class="section-num">7</div>
+  <h2>What about out-of-date local plans?</h2>
+  <div class="question">The 78% problem</div>
+
+  <p>The gateway test assumes you can assess whether an application complies with the development plan. But what if the plan is out of date?</p>
+
+  <p>According to Lichfields research, <strong>only about 22% of local plans in England are up to date</strong> (adopted within the last five years). The remaining 78% are older, and their policies carry reduced weight under national planning policy.</p>
+
+  <p>When a council can't demonstrate a <strong>five-year housing land supply</strong>, the <em>"tilted balance"</em> under NPPF paragraph 11(d) kicks in. This means there's a <strong>presumption in favour of granting permission</strong> unless the harm significantly outweighs the benefits. Committees that refuse applications in these circumstances are more likely to be overturned.</p>
+
+  <div class="callout-blue">
+    <strong>The gap in the draft guidance</strong>
+    <p>The draft guidance does not mention the tilted balance anywhere. It doesn't address what happens when the development plan is out of date. This is a significant omission &mdash; for the majority of English councils, the gateway test will be applied against a policy base of uncertain weight. The guidance needs explicit provision for this.</p>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SECTION 8                                                      -->
+<!-- ============================================================ -->
+
+<div class="section">
+  <div class="section-num">8</div>
+  <h2>Does training help?</h2>
+  <div class="question">What the PAS survey found</div>
+
+  <p>The Planning Advisory Service (PAS) surveyed 120+ councils in December 2024 about planning committee effectiveness. The result: <strong>45% of respondents said committee members did not have a good understanding of planning after training</strong>. Only 17% said "yes".</p>
+
+  <p>The draft guidance is <strong>entirely silent on training</strong>. There's no requirement for the nominated member (the person who decides whether to refer applications to committee) to have completed any training at all.</p>
+
+  <p>This matters because the gateway test is only as good as the person applying it. If nearly half of members don't understand planning after training, the quality of gateway test decisions will be variable &mdash; and the reform's effectiveness will be undermined.</p>
+
+  <div class="callout">
+    <strong>Our recommendation</strong>
+    <p>Add a new guidance paragraph requiring that nominated members have completed accredited planning training within the preceding 12 months. This isn't about excluding people &mdash; it's about ensuring that the person making the gateway test decision has the knowledge to make it well.</p>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SECTION 9                                                      -->
+<!-- ============================================================ -->
+
+<div class="section">
+  <div class="section-num">9</div>
+  <h2>How does this affect my council / my application / my constituency?</h2>
+  <div class="question">Making it personal</div>
+
+  <p>Every council in England has a different appeal overturn rate. Some are well below the national average. Others are consistently above 40%. Your council's rate tells you something important about the quality of planning decisions being made in your area.</p>
+
+  <div class="data-box">
+    <div class="data-title">What does your council's overturn rate mean?</div>
+    <div class="data-row"><span>Below 25%</span><span class="data-value green">Better than average &mdash; decisions are generally sound</span></div>
+    <div class="data-row"><span>25% &ndash; 35%</span><span class="data-value orange">Around average &mdash; room for improvement</span></div>
+    <div class="data-row"><span>Above 35%</span><span class="data-value red">Significantly above average &mdash; systemic issues likely</span></div>
+    <div class="data-row"><span>Above 40%</span><span class="data-value red">Top quartile &mdash; more refusals overturned than upheld for major applications</span></div>
+  </div>
+
+  <p>Site Intelligence has profiled <strong>303 local planning authorities</strong> in England with appeal intelligence data. Each profile includes the authority's overturn rate, costs exposure, constraint-specific success rates, and how they compare to the national average.</p>
+
+  <p>The interactive heatmap (linked below) lets you explore this data visually &mdash; click any LPA to see its appeal track record.</p>
+</div>
+
+<!-- ============================================================ -->
+<!-- SECTION 10                                                     -->
+<!-- ============================================================ -->
+
+<div class="section">
+  <div class="section-num">10</div>
+  <h2>Where can I read the full evidence?</h2>
+  <div class="question">The complete package</div>
+
+  <p>This guide is one part of a comprehensive evidence package submitted to the planning committee reform consultation. The full documents are:</p>
+
+  <div class="links">
+    <a class="link-card" href="executive-summary.html">
+      <h3>Executive Summary</h3>
+      <p>One-page key findings. Six stat boxes, five recommendations with clause references, cost-benefit table.</p>
+    </a>
+    <a class="link-card" href="response.html">
+      <h3>Full Consultation Response</h3>
+      <p>Formal submission responding to all three consultation questions. Every recommendation mapped to a specific Regulation or Guidance paragraph.</p>
+    </a>
+    <a class="link-card" href="evidence.html">
+      <h3>Evidence Reference Document</h3>
+      <p>Complete data tables: LPA overturn rates, regional breakdown, 500 verified case studies, costs analysis.</p>
+    </a>
+    <a class="link-card" href="heatmap.html">
+      <h3>Interactive LPA Heatmap</h3>
+      <p>Map of England colour-coded by appeal overturn rate. Click any LPA to see their appeal track record.</p>
+    </a>
+  </div>
+
+  <div class="callout-blue">
+    <strong>About the data</strong>
+    <p>Every figure in this guide comes from the official <strong>PINS Casework Database</strong> published by GOV.UK under Open Government Licence, or from the <strong>30,000 decision letters</strong> retrieved from the PINS Appeals Casework Portal. No figures are estimated, modelled, or inferred. Every number is independently verifiable from the source data. This is the largest independent analysis of planning appeal decisions in England.</p>
+  </div>
+</div>
+
+</div>
+
+<div class="footer">
+  <strong>Site Intelligence</strong> &mdash; PF &amp; Co Holdings Ltd &mdash; info@pfandco.co.uk<br>
+  Planning Committee Reform: The Explained Guide &mdash; 30 March 2026<br><br>
+  <em>This guide is provided as a public interest resource. Site Intelligence is a planning technology platform<br>
+  that provides automated site assessment, constraint detection, and evidence-based reporting.</em>
+</div>
+
+</body>
+</html>

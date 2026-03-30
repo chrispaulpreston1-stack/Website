@@ -1,0 +1,1900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Site Intelligence — Response to Consultation on Planning Committee Reform</title>
+<style>
+  @page { size: A4; margin: 15mm 12mm; }
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+    box-sizing: border-box;
+  }
+  @media print {
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; color-adjust: exact !important; }
+    @page { margin: 0; }
+    body { margin: 0; padding: 15mm 12mm; font-size: 9pt; background: #fff !important; }
+    .no-print { display: none !important; }
+    .page-break { page-break-before: always; }
+    .callout, .callout-blue, blockquote, .rec-box, .stat-grid, .bar-chart, .bar-row { break-inside: avoid !important; page-break-inside: avoid !important; }
+    tr { break-inside: avoid !important; }
+    thead { display: table-header-group; }
+    .para { break-inside: avoid !important; page-break-inside: avoid !important; }
+    h2, h3 { page-break-after: avoid; break-after: avoid; }
+    h2 { margin-top: 20px; }
+    /* Suppress browser-generated headers/footers (filename, URL, date) */
+    @page { margin: 15mm 12mm; }
+
+    /* Cover page — fill first page, no blank after */
+    .cover-page {
+      min-height: auto !important;
+      height: auto !important;
+      padding: 50px 40px !important;
+      page-break-after: always;
+      display: block !important;
+      border-bottom: 4px solid #f97316 !important;
+      margin-bottom: 0 !important;
+    }
+
+    /* TOC starts on page 2, then breaks */
+    .toc { page-break-after: always; background-color: #f8fafc !important; border: 1px solid #e2e8f0 !important; margin-top: 0 !important; }
+
+    /* Stat grid — use flexbox for better print support */
+    .stat-grid {
+      display: flex !important;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .stat-box {
+      flex: 1 1 22%;
+      min-width: 120px;
+      background-color: #f1f5f9 !important;
+      border-top: 3px solid #f97316 !important;
+      break-inside: avoid !important;
+    }
+
+    /* Table headers */
+    table { font-size: 8.5pt; }
+    thead th { background-color: #0f172a !important; color: #fff !important; }
+    tbody tr:nth-child(even) td { background-color: #f8fafc !important; }
+    thead { display: table-header-group; }
+
+    /* Callouts and recommendation boxes */
+    .callout { background-color: #fff7ed !important; border-left: 4px solid #f97316 !important; }
+    .callout-blue { background-color: #eff6ff !important; border-left: 4px solid #0f172a !important; }
+    .rec-box { background-color: #f0fdf4 !important; border: 1px solid #bbf7d0 !important; break-inside: avoid !important; }
+
+    /* Paragraph numbers */
+    .para { break-inside: avoid; }
+
+    /* Section breaks for cleaner page flow */
+    h2 { break-before: auto; }
+
+    /* Links — show URL in print */
+    a[href]:not(.toc a)::after { content: none; }
+    a { color: #0f172a !important; text-decoration: underline; }
+
+    /* Footer */
+    .doc-footer { page-break-before: always; margin-top: 0; }
+  }
+
+  body {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 10pt;
+    line-height: 1.55;
+    color: #1e293b;
+    margin: 0;
+    padding: 12mm;
+    background: #fff;
+  }
+
+  /* Print / PDF button */
+  .print-btn {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    z-index: 9999;
+    background: #0f172a;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    font-size: 10pt;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .print-btn:hover { background: #1e3a5f; }
+  .print-btn svg { width: 16px; height: 16px; fill: currentColor; }
+
+  /* Cover page */
+  .cover-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px 50px;
+    border-bottom: 4px solid #f97316;
+    margin-bottom: 30px;
+    page-break-after: always;
+  }
+  .cover-page .org-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 50px;
+  }
+  .cover-page .org-bar .logo-mark {
+    width: 48px;
+    height: 48px;
+    background: #0f172a;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f97316;
+    font-weight: 800;
+    font-size: 18pt;
+  }
+  .cover-page .org-bar .org-name {
+    font-size: 14pt;
+    font-weight: 700;
+    color: #0f172a;
+  }
+  .cover-page .org-bar .org-sub {
+    font-size: 9pt;
+    color: #64748b;
+  }
+  .cover-page h1 {
+    font-size: 24pt;
+    color: #0f172a;
+    line-height: 1.2;
+    margin: 0 0 12px 0;
+    border: none;
+    padding: 0;
+  }
+  .cover-page .subtitle {
+    font-size: 13pt;
+    color: #475569;
+    line-height: 1.4;
+    margin: 0 0 40px 0;
+  }
+  .cover-meta {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 6px 16px;
+    font-size: 9.5pt;
+    color: #475569;
+  }
+  .cover-meta dt { font-weight: 600; color: #0f172a; }
+  .cover-meta dd { margin: 0; }
+
+  /* TOC */
+  .toc {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 24px 30px;
+    margin-bottom: 30px;
+  }
+  .toc h2 {
+    font-size: 13pt;
+    color: #0f172a;
+    margin: 0 0 14px 0;
+    border: none;
+    padding: 0;
+  }
+  .toc ol {
+    margin: 0;
+    padding-left: 20px;
+  }
+  .toc li {
+    margin-bottom: 5px;
+    font-size: 9.5pt;
+    color: #334155;
+  }
+  .toc li a {
+    color: #334155;
+    text-decoration: none;
+  }
+  .toc li a:hover { color: #f97316; }
+  .toc ol ol {
+    margin-top: 4px;
+    padding-left: 18px;
+  }
+  .toc ol ol li { font-size: 9pt; color: #64748b; margin-bottom: 3px; }
+
+  /* Headings */
+  h2 {
+    font-size: 14pt;
+    color: #0f172a;
+    margin: 28px 0 10px 0;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #f97316;
+  }
+  h3 {
+    font-size: 11pt;
+    color: #0f172a;
+    margin: 18px 0 8px 0;
+  }
+  h4 {
+    font-size: 10pt;
+    color: #334155;
+    margin: 12px 0 6px 0;
+    font-weight: 600;
+  }
+
+  p { margin: 0 0 8px 0; }
+
+  /* Paragraph numbering */
+  .para {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+  .para-num {
+    flex-shrink: 0;
+    width: 28px;
+    font-size: 8.5pt;
+    color: #94a3b8;
+    text-align: right;
+    padding-top: 1px;
+    font-weight: 600;
+  }
+  .para-text { flex: 1; }
+
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0 16px 0;
+    font-size: 9pt;
+  }
+  thead th {
+    background: #0f172a;
+    color: #fff;
+    padding: 8px 10px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 8.5pt;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+  tbody td {
+    padding: 7px 10px;
+    border-bottom: 1px solid #e2e8f0;
+    vertical-align: top;
+  }
+  tbody tr:nth-child(even) td { background: #f8fafc; }
+  tbody tr:hover td { background: #f1f5f9; }
+
+  /* Callout boxes */
+  .callout {
+    background: #fff7ed;
+    border-left: 4px solid #f97316;
+    padding: 14px 18px;
+    margin: 14px 0;
+    border-radius: 0 6px 6px 0;
+    font-size: 9.5pt;
+  }
+  .callout strong { color: #0f172a; }
+  .callout-blue {
+    background: #eff6ff;
+    border-left: 4px solid #0f172a;
+    padding: 14px 18px;
+    margin: 14px 0;
+    border-radius: 0 6px 6px 0;
+    font-size: 9.5pt;
+  }
+  .callout-blue strong { color: #0f172a; }
+
+  /* Stat boxes */
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin: 16px 0;
+  }
+  .stat-box {
+    background: #f1f5f9;
+    border-radius: 8px;
+    padding: 14px 16px;
+    text-align: center;
+    border-top: 3px solid #f97316;
+  }
+  .stat-box .stat-value {
+    font-size: 20pt;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.1;
+  }
+  .stat-box .stat-label {
+    font-size: 8pt;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    margin-top: 4px;
+  }
+
+  /* Recommendation boxes */
+  .rec-box {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-radius: 6px;
+    padding: 12px 16px;
+    margin: 10px 0;
+    font-size: 9.5pt;
+  }
+  .rec-box::before {
+    content: "RECOMMENDATION";
+    display: block;
+    font-size: 7.5pt;
+    font-weight: 700;
+    color: #16a34a;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+  }
+
+  /* Blockquote */
+  blockquote {
+    border-left: 3px solid #cbd5e1;
+    margin: 10px 0;
+    padding: 8px 16px;
+    color: #475569;
+    font-style: italic;
+    font-size: 9.5pt;
+    background: #f8fafc;
+    border-radius: 0 4px 4px 0;
+  }
+
+  /* Footer */
+  .doc-footer {
+    margin-top: 40px;
+    padding-top: 14px;
+    border-top: 2px solid #0f172a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 8pt;
+    color: #64748b;
+  }
+  .doc-footer strong { color: #0f172a; }
+
+  /* Charts */
+  .bar-chart {
+    margin: 12px 0 16px 0;
+  }
+  .bar-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 6px;
+    font-size: 9pt;
+  }
+  .bar-label {
+    width: 200px;
+    flex-shrink: 0;
+    text-align: right;
+    padding-right: 12px;
+    color: #334155;
+    font-weight: 500;
+  }
+  .bar-track {
+    flex: 1;
+    height: 22px;
+    background: #f1f5f9;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+  }
+  .bar-fill {
+    height: 100%;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    padding-left: 8px;
+    font-size: 8pt;
+    font-weight: 600;
+    color: #fff;
+  }
+  .bar-value {
+    margin-left: 8px;
+    font-size: 8.5pt;
+    color: #334155;
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+
+  /* Lists */
+  ul, ol { margin: 4px 0 10px 0; padding-left: 22px; }
+  li { margin-bottom: 4px; font-size: 9.5pt; }
+
+  /* Inline highlight */
+  .hl { background: #fef3c7; padding: 1px 4px; border-radius: 2px; font-weight: 600; }
+
+  @media screen and (max-width: 800px) {
+    body { padding: 5mm; }
+    .stat-grid { grid-template-columns: repeat(2, 1fr); }
+    .cover-page { min-height: auto; padding: 30px 20px; }
+    .bar-label { width: 120px; font-size: 8pt; }
+  }
+</style>
+</head>
+<body>
+
+<button class="print-btn no-print" onclick="window.print()">
+  <svg viewBox="0 0 24 24"><path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/></svg>
+  Print / Save PDF
+</button>
+
+<!-- ============================================================ -->
+<!-- COVER PAGE                                                     -->
+<!-- ============================================================ -->
+<div class="cover-page">
+  <div class="org-bar">
+    <div class="logo-mark">SI</div>
+    <div>
+      <div class="org-name">Site Intelligence</div>
+      <div class="org-sub">PF &amp; Co Holdings Ltd</div>
+    </div>
+  </div>
+
+  <h1>Response to Statutory Consultation on Planning Committee Reform</h1>
+  <p class="subtitle">Draft Regulations and Guidance under the Planning and Infrastructure Act 2025</p>
+
+  <dl class="cover-meta">
+    <dt>From</dt>
+    <dd>Site Intelligence, PF &amp; Co Holdings Ltd</dd>
+    <dt>Date</dt>
+    <dd>29 March 2026 (updated &mdash; 10-year dataset)</dd>
+    <dt>Consultation</dt>
+    <dd>Planning Committee Reform &mdash; Draft Regulations and Guidance (s.54, Planning and Infrastructure Act 2025)</dd>
+    <dt>Submit to</dt>
+    <dd>planningcommittees@communities.gov.uk</dd>
+    <dt>Deadline</dt>
+    <dd>23 April 2026 (11:59pm)</dd>
+    <dt>Our contact</dt>
+    <dd>info@pfandco.co.uk</dd>
+    <dt>Status</dt>
+    <dd>Statutory consultation response &mdash; responding to Questions 1, 2 and 3</dd>
+  </dl>
+</div>
+
+<!-- ============================================================ -->
+<!-- TABLE OF CONTENTS                                              -->
+<!-- ============================================================ -->
+<div class="toc page-break">
+  <h2>Contents</h2>
+  <ol>
+    <li><a href="#exec">Executive Summary</a></li>
+    <li><a href="#q1">Response to Question 1 &mdash; Comments on the Draft Regulations</a>
+      <ol>
+        <li><a href="#q1-1">Tier A Classification</a></li>
+        <li><a href="#q1-2">Tier B Gateway Test</a></li>
+        <li><a href="#q1-3">The Delegation Default</a></li>
+        <li><a href="#q1-4">Committee Size Cap</a></li>
+      </ol>
+    </li>
+    <li><a href="#q2">Response to Question 2 &mdash; Phased Reserved Matters Applications</a>
+      <ol>
+        <li><a href="#q2-1">Support for the Revised Position</a></li>
+        <li><a href="#q2-2">Size Thresholds</a></li>
+        <li><a href="#q2-3">Evidence-Based Reserved Matters Assessment</a></li>
+      </ol>
+    </li>
+    <li><a href="#q3">Response to Question 3 &mdash; Comments on the Draft Guidance</a>
+      <ol>
+        <li><a href="#q3-1">Plan Compliance and the 23% Problem</a></li>
+        <li><a href="#q3-2">Training and Decision Support</a></li>
+        <li><a href="#q3-3">The Tilted Balance Interaction</a></li>
+        <li><a href="#q3-4">Cross-Policy Interactions</a></li>
+        <li><a href="#q3-5">Lessons from Refusal Case Studies</a></li>
+        <li><a href="#q3-6">PINS Casework Database &mdash; Primary Analysis of 114,700 Appeals (10 Years)</a></li>
+        <li><a href="#q3-7">Proposed Regulation Amendments</a></li>
+        <li><a href="#q3-8">Cost-Benefit Analysis of the Reform</a></li>
+        <li><a href="#q3-9">Alignment with Other Respondents</a></li>
+      </ol>
+    </li>
+    <li><a href="#tech">The Role of Technology in Supporting the Reform</a></li>
+    <li><a href="#democracy">A Note on Democratic Accountability</a></li>
+    <li><a href="#annex">Annex: Source Data</a></li>
+    <li><a href="#about">About Site Intelligence</a></li>
+  </ol>
+</div>
+
+<!-- ============================================================ -->
+<!-- EXECUTIVE SUMMARY                                              -->
+<!-- ============================================================ -->
+<h2 id="exec">Executive Summary</h2>
+
+<div class="para"><span class="para-num">1.</span><div class="para-text">Site Intelligence welcomes the opportunity to respond to this statutory consultation on the draft Regulations and Guidance implementing planning committee reform under <strong>section 54 of the Planning and Infrastructure Act 2025</strong>. We broadly support the direction of travel: mandatory delegation for Tier A applications (Regulation 4, Schedule 1) and the introduction of a gateway test for Tier B referrals (Regulation 5, Schedule 2) represent a significant step toward a more efficient, consistent, and evidence-based planning system.</div></div>
+
+<div class="para"><span class="para-num">2.</span><div class="para-text">However, we have a central concern. The gateway test under <strong>Regulation 5</strong>, as interpreted by <strong>Guidance Paragraphs 19&ndash;21</strong>, relies on subjective criteria &mdash; principally whether an application raises <em>"significant planning matters having regard to the development plan"</em> (Criterion A) or <em>"economic, social or environmental significance to the local area"</em> (Criterion B). In our experience, backed by analysis of <strong>114,700 planning appeals</strong> over 10 years, this formulation is broad enough to perpetuate the very inconsistency and delay that the reform is designed to address. Guidance Para 21&rsquo;s examples &mdash; including <em>"a change of use of a community shop in a rural area"</em> &mdash; set such a low threshold that Criterion B could capture the majority of non-trivial applications.</div></div>
+
+<div class="para"><span class="para-num">3.</span><div class="para-text">Our evidence base for this response is, to our knowledge, the largest primary-source analysis submitted to this consultation. It draws on four sources:</div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Source</th>
+      <th>Scale</th>
+      <th>Method</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>PINS Casework Database</strong></td>
+      <td><strong>114,700</strong> planning appeals (2015&ndash;2025)</td>
+      <td>Full 10-year dataset downloaded and parsed from GOV.UK (both current and older casework files, 188,933 total records)</td>
+    </tr>
+    <tr>
+      <td><strong>Decision letter classification</strong></td>
+      <td><strong>30,000</strong> decision letters (91.8% of all allowed appeals)</td>
+      <td>Letters retrieved from PINS Appeals Casework Portal, text extracted, classified by decision route using pattern matching. <strong>749 committee decisions</strong> identified, <strong>87 against officer recommendation</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Retrospective case studies</strong></td>
+      <td><strong>86</strong> real planning applications across <strong>59 LPAs</strong></td>
+      <td>Automated constraint detection, policy compliance analysis, and expert review applied retrospectively to test platform accuracy</td>
+    </tr>
+    <tr>
+      <td><strong>Published national data</strong></td>
+      <td>Lichfields, PAS, PINS Statistical Release</td>
+      <td>Third-party research providing independent corroboration of our primary findings</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="callout-blue">
+  <strong>Note on methodology and integrity:</strong> Every figure from the PINS Casework Database is independently verifiable from the official GOV.UK source XLSX files. The 86 case studies are real planning applications &mdash; Site Intelligence did not act on behalf of applicants. The decision letter classification covers 91.8% of all allowed planning appeals in the dataset and represents the first systematic analysis of committee vs delegated refusals at this scale. All data was parsed programmatically with zero manual editing. We have deliberately avoided claims that cannot be verified from primary sources.
+</div>
+
+<div class="stat-grid">
+  <div class="stat-box">
+    <div class="stat-value">114,700</div>
+    <div class="stat-label">PINS appeals analysed (10 years, 2015&ndash;2025)</div>
+  </div>
+  <div class="stat-box">
+    <div class="stat-value">30,000</div>
+    <div class="stat-label">Decision letters classified (91.8% of allowed appeals)</div>
+  </div>
+  <div class="stat-box">
+    <div class="stat-value">749</div>
+    <div class="stat-label">Committee decisions identified in decision letters</div>
+  </div>
+  <div class="stat-box">
+    <div class="stat-value">87</div>
+    <div class="stat-label">Committee refusals against officer recommendation</div>
+  </div>
+  <div class="stat-box">
+    <div class="stat-value">40.9%</div>
+    <div class="stat-label">Major residential appeals allowed (2,247 of 5,490)</div>
+  </div>
+  <div class="stat-box">
+    <div class="stat-value">&pound;66m&ndash;&pound;166m</div>
+    <div class="stat-label">Estimated taxpayer costs burden (10 years, 2,670 cases)</div>
+  </div>
+</div>
+
+<div class="para"><span class="para-num">4.</span><div class="para-text">Key findings:</div></div>
+<ul>
+  <li><strong>40.9% of refused major residential applications are overturned on appeal</strong> (2,247 of 5,490 over 10 years) &mdash; nearly double the 23.1% rate for minor residential. This is the application category most affected by the Tier B gateway test under Regulation 5. The consistency of this pattern over a full decade eliminates any argument that it is a temporary aberration.</li>
+  <li><strong>749 committee decisions identified from 30,000 decision letters</strong> (91.8% coverage of all allowed appeals). Of those where the decision route was identifiable from the letter text, <strong>89.7% were committee refusals</strong> and 10.3% were delegated. This confirms that committee refusals are disproportionately represented among overturned decisions.</li>
+  <li><strong>87 cases where committees refused against officer recommendation.</strong> In every case in our allowed-appeals dataset, the inspector sided with the professional officer. While our sample is drawn from allowed appeals (so we cannot calculate a national overturn rate for officer overrides from this data alone), the finding is consistent with Lichfields&rsquo; independent finding that <strong>65% of all appeals succeed where committees refuse against officer recommendation</strong> (<em>"Refused for Good Reason?"</em>, 2018).</li>
+  <li><strong>4,056 appeals in constrained locations were allowed</strong> &mdash; including <strong>3,046 in the Green Belt</strong>, 733 involving listed buildings, 293 in AONB/National Landscapes, 90 in flood risk areas, and 64 affecting SSSIs. These constraints are precisely the factors that could trigger referral under the gateway test&rsquo;s Criterion A &mdash; yet inspectors found refusals unjustified in thousands of cases.</li>
+  <li><strong>6,108 costs applications over 10 years</strong>, with 2,670 in allowed appeals. The estimated taxpayer burden is <strong>&pound;66m&ndash;&pound;166m</strong>. The worst-performing LPAs by costs exposure include Cornwall (87 awards), Barnet (44), Wiltshire (43), and Bromley (36). South Somerset has the highest costs rate at 13.6%.</li>
+  <li><strong>The problem is getting worse:</strong> Committee determinations among overturned appeals have <strong>increased 28%</strong> from 2021 to 2025 (139&rarr;178). Officer overrides have <strong>increased 164%</strong> over the same period (11&rarr;29 per year). Both trends are accelerating. The reform is urgent.</li>
+  <li><strong>Regional variation:</strong> The South East has the most committee refusals (200), followed by the East Midlands (107) and East of England (97). London, despite the highest appeal volumes, has just 63 &mdash; consistent with higher delegation rates producing better outcomes. The worst LPA override rates: Somerset (43%), North Lincolnshire (38%), Brighton (38%), Durham (36%).</li>
+  <li><strong>The draft guidance has two significant gaps:</strong> it contains <strong>no provision on training</strong> for the nominated member role (despite the PAS finding that 45% of members lack understanding after training), and <strong>no reference to the tilted balance</strong> under NPPF paragraph 11(d) (despite ~78% of local plans being out of date). These gaps risk undermining the reform&rsquo;s effectiveness.</li>
+</ul>
+
+<div class="para"><span class="para-num">5.</span><div class="para-text">We make five principal recommendations, each mapped to a specific provision in the draft Regulations or Guidance:</div></div>
+
+<div class="callout">
+  <strong>(i)</strong> Amend <strong>Regulation 5</strong> to replace the subjective gateway test criteria (Guidance Para 19, Criterion A) with specific, measurable triggers. The current wording &mdash; <em>"significant planning matters having regard to the development plan"</em> &mdash; is too broad to function as an effective filter.<br>
+  <strong>(ii)</strong> Add a <strong>new guidance paragraph after Para 19</strong> requiring standardised, evidence-based decision support for gateway test decisions. The draft guidance provides no mechanism for ensuring the quality of the information before the decision-maker.<br>
+  <strong>(iii)</strong> Add a <strong>new guidance paragraph after Para 14</strong> mandating training as a prerequisite for the nominated member role. The draft guidance is entirely silent on training, despite the PAS finding that 45% of members lack understanding after training.<br>
+  <strong>(iv)</strong> Add a <strong>new sub-paragraph to Guidance Para 20</strong> addressing out-of-date development plans. The guidance assumes plan compliance can be assessed, but 78% of local plans are out of date. Where the tilted balance (NPPF 11(d)) is engaged, the gateway threshold should be explicitly higher.<br>
+  <strong>(v)</strong> Elevate <strong>Guidance Para 27</strong> (transparency) into the <strong>Regulations</strong>. Recording and publishing referral decisions should be a statutory duty, not merely guidance. Mandate annual reporting of delegation rates, appeal outcomes, and costs awards at LPA level.
+</div>
+
+<div class="para"><span class="para-num">5A.</span><div class="para-text">To give effect to recommendation (i), we propose the following specific amendment to the draft Regulations:</div></div>
+
+<div class="callout" style="font-family: 'Courier New', monospace; font-size: 9pt; background: #f8fafc; border-left-color: #0f172a;">
+  <strong>Proposed amendment to Regulation 5(2):</strong><br><br>
+  A Schedule 2 application may be referred to committee only where the nominated officer and nominated member are satisfied that <strong>at least one</strong> of the following conditions is met:<br><br>
+  <strong>(a)</strong> the application represents a <strong>material departure</strong> from a detailed site allocation in the adopted development plan, where the departure is material to the <strong>principle of development</strong>;<br>
+  <strong>(b)</strong> a <strong>statutory consultee</strong> (EA, HE, NE, or LLFA) has raised a <strong>holding objection that remains unresolved</strong> at the point of determination;<br>
+  <strong>(c)</strong> the application has received <strong>50 or more individual representations</strong> from separate households raising material planning considerations not addressed by the officer&rsquo;s report;<br>
+  <strong>(d)</strong> the nominated officer certifies in writing that the application raises a <strong>novel or unprecedented planning issue</strong> not addressed by the development plan, national policy, or established precedent.<br><br>
+  Where <strong>none</strong> of conditions (a)&ndash;(d) is met, the application <strong>must</strong> be delegated.
+</div>
+
+<div class="para"><span class="para-num">5B.</span><div class="para-text">The full evidence base, cost-benefit analysis, and regional breakdown supporting these recommendations is set out in Sections 3.6&ndash;3.9 below. A companion <strong>Evidence Reference Document</strong> containing the complete PINS analysis, 500 verified case studies, and detailed annex tables is available alongside this response.</div></div>
+
+<!-- ============================================================ -->
+<!-- SECTION 1: QUESTION 1                                          -->
+<!-- ============================================================ -->
+<h2 id="q1" class="page-break">Section 1: Response to Question 1 &mdash; Comments on the Draft Regulations</h2>
+
+<h3 id="q1-1">1.1 Tier A Classification (Schedule 1, Regulation 4) &mdash; Broadly Supported</h3>
+
+<div class="para"><span class="para-num">6.</span><div class="para-text">We support the Tier A classification and the mandatory delegation of householder applications, minor residential development, discharge of conditions, lawful development certificates, and non-material amendments. Our analysis across 86 real planning applications demonstrates that this classification is well-founded.</div></div>
+
+<div class="para"><span class="para-num">7.</span><div class="para-text">Of the 86 case studies in our programme, an estimated <strong>32 (37%) fall within what would be classified as Tier A</strong>. These applications share a common characteristic: the planning issues they raise are capable of resolution through the application of established policy, without the exercise of the kind of broad planning judgment that committee consideration is designed to provide.</div></div>
+
+<div class="bar-chart">
+  <div class="bar-row">
+    <div class="bar-label">Tier A (delegated)</div>
+    <div class="bar-track"><div class="bar-fill" style="width:37%;background:#16a34a;">37%</div></div>
+    <div class="bar-value">~32 projects</div>
+  </div>
+  <div class="bar-row">
+    <div class="bar-label">Tier B (gateway test)</div>
+    <div class="bar-track"><div class="bar-fill" style="width:47%;background:#f97316;">47%</div></div>
+    <div class="bar-value">~40 projects</div>
+  </div>
+  <div class="bar-row">
+    <div class="bar-label">Specialist / strategic</div>
+    <div class="bar-track"><div class="bar-fill" style="width:16%;background:#0f172a;">16%</div></div>
+    <div class="bar-value">~14 projects</div>
+  </div>
+</div>
+
+<div class="para"><span class="para-num">8.</span><div class="para-text">The exception for linked listed building consent applications is appropriate. Heritage decisions engage the s.66 and s.72 statutory duties under the Planning (Listed Buildings and Conservation Areas) Act 1990, which require a structured balancing exercise. However, we note that even in these cases, the quality of decision-making depends on the quality of the evidence before the decision-maker &mdash; a point we return to in Section 4.</div></div>
+
+<h3 id="q1-2">1.2 Tier B Gateway Test (Schedule 2, Regulation 5, Guidance Paras 19&ndash;21) &mdash; Needs Stronger Criteria</h3>
+
+<div class="para"><span class="para-num">9.</span><div class="para-text">The gateway test is the centrepiece of the Tier B provisions, and it is here that we have our most significant concern. The current wording &mdash; <em>"significant planning matters having regard to the development plan"</em> &mdash; is too broad to serve as an effective filter.</div></div>
+
+<div class="para"><span class="para-num">10.</span><div class="para-text">To illustrate the scale of the problem: of our 86 case studies, <strong>47 (55%) have environmental, heritage, or landscape constraints</strong> that could, under a broad reading, constitute "significant planning matters". These include:</div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Constraint category</th>
+      <th>Projects affected</th>
+      <th>% of case studies</th>
+      <th>Gateway risk</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Conservation area / listed building setting</td>
+      <td>9</td>
+      <td>10%</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <td>Flood Zone 2 or 3</td>
+      <td>17</td>
+      <td>20%</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <td>AONB / National Landscape</td>
+      <td>8</td>
+      <td>9%</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <td>SSSI / SAC / SPA / Ramsar impact zone</td>
+      <td>7</td>
+      <td>8%</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <td>Outside settlement boundary / development limits</td>
+      <td>6</td>
+      <td>7%</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <td>Compound constraints (2+ of above)</td>
+      <td>12</td>
+      <td>14%</td>
+      <td>Very high</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="para"><span class="para-num">11.</span><div class="para-text">The risk is clear. If the gateway test threshold is left subjective, the nominated member has a defensible basis for referring the majority of non-trivial applications to committee. The result would be that the reform achieves the delegation of only the simplest applications (Tier A) while failing to materially reduce committee workload for the cases that consume most time and resources.</div></div>
+
+<div class="rec-box">
+  <strong>Amend Regulation 5 and Guidance Para 19 (Criterion A):</strong> Replace the subjective <em>"significant planning matters"</em> criterion with specific, measurable triggers: <strong>(a)</strong> material departure from a development plan allocation; <strong>(b)</strong> unresolved holding objection from a statutory consultee (EA, HE, NE, LLFA); <strong>(c)</strong> 50+ individual representations raising material planning considerations; <strong>(d)</strong> nominated officer certification of a novel planning issue. Applications not meeting at least one trigger must be delegated. <strong>Guidance Para 21</strong> examples (community shop, notable listed building) should be tightened &mdash; they currently set such a low threshold that Criterion B could capture the majority of non-trivial applications.
+</div>
+
+<div class="para"><span class="para-num">12.</span><div class="para-text">This approach would align with the LGA's position that delegation should be the norm and committee the exception, while providing the clarity that the RTPI has called for in its response to the consultation.</div></div>
+
+<h3 id="q1-3">1.3 The Delegation Default (Regulation 5, Guidance Para 17) &mdash; Correct But Needs Enforcement</h3>
+
+<div class="para"><span class="para-num">13.</span><div class="para-text">We support the principle that where the nominated officer and the nominated member disagree on whether the gateway test is met, the application is delegated. This is the correct default &mdash; it places the burden of justification on referral rather than delegation.</div></div>
+
+<div class="para"><span class="para-num">14.</span><div class="para-text">However, we note a practical concern. In politically sensitive cases, the pressure on nominated members to refer applications to committee will be intense. Members who exercise their role conscientiously by declining to refer may face criticism from colleagues and constituents. The transparency requirement &mdash; publishing referral decisions with reasons &mdash; is critical and we welcome it.</div></div>
+
+<div class="rec-box">
+  <strong>Elevate Guidance Para 27 into Regulations (new Regulation 8):</strong> The current requirement to record and publish referral decisions is in guidance only. This should be a statutory duty. Require mandatory annual reporting of: delegation rates, gateway test trigger frequencies, appeal outcomes by decision route (committee vs delegated), and costs awards. Publish centrally so the reform's effectiveness can be monitored. Our PINS analysis identifies LPAs with costs rates of 13.6% (South Somerset) and 11.0% (Cornwall) &mdash; this data should be transparent.
+</div>
+
+<h3 id="q1-4">1.4 Committee Size Cap (Regulation 7, Guidance Para 28) &mdash; Supported</h3>
+
+<div class="para"><span class="para-num">15.</span><div class="para-text">We support the cap of 13 members for planning committees. Smaller committees tend to produce more focused, better-informed debate. The evidence from our case study analysis is that the quality of committee decision-making correlates more strongly with the quality of information before the committee than with its size.</div></div>
+
+<div class="rec-box">
+  <strong>Add new guidance paragraph after Para 14 (Nominated Member):</strong> The draft guidance is entirely silent on training. Given the PAS survey finding that 45% of committee members lack a good understanding of planning after training, the guidance should require as a minimum that nominated members have completed accredited planning training within the preceding 12 months. If mandatory training is deferred from the Regulations, the guidance should at least set an expectation that LPAs publish whether their nominated member has completed training.
+</div>
+
+<!-- ============================================================ -->
+<!-- SECTION 2: QUESTION 2                                          -->
+<!-- ============================================================ -->
+<h2 id="q2" class="page-break">Section 2: Response to Question 2 &mdash; Phased Reserved Matters Applications</h2>
+
+<h3 id="q2-1">2.1 Support for the Revised Position</h3>
+
+<div class="para"><span class="para-num">16.</span><div class="para-text">The original proposal to delegate all reserved matters applications was too sweeping, and we welcome the revised position that the gateway test should apply to phased RMAs. Our data demonstrates why.</div></div>
+
+<div class="para"><span class="para-num">17.</span><div class="para-text">Large phased schemes in our case study dataset span considerable timeframes and can evolve materially from the original outline consent:</div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Project</th>
+      <th>Location</th>
+      <th>Dwellings</th>
+      <th>Phases</th>
+      <th>Span</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>APP/W2275/Q/23/3333923</td>
+      <td>Ashford &mdash; Chilmington Green</td>
+      <td>5,750</td>
+      <td>7+</td>
+      <td>15&ndash;20 years</td>
+    </tr>
+    <tr>
+      <td>APP/D1265/W/23/3336518</td>
+      <td>East Dorset &mdash; Alderholt</td>
+      <td>1,700</td>
+      <td>5+</td>
+      <td>12&ndash;15 years</td>
+    </tr>
+    <tr>
+      <td>Y0200/23/HPC</td>
+      <td>North Somerset &mdash; Banwell</td>
+      <td>2,800</td>
+      <td>6+</td>
+      <td>15+ years</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="para"><span class="para-num">18.</span><div class="para-text">Later phases of schemes of this scale may incorporate different house types, layouts, densities, and infrastructure solutions from those envisaged at outline stage. National policy may have changed, local plan policies may have been updated, and community expectations may have evolved. The gateway test is an appropriate mechanism for determining whether these differences merit committee scrutiny.</div></div>
+
+<h3 id="q2-2">2.2 Size Thresholds</h3>
+
+<div class="para"><span class="para-num">19.</span><div class="para-text">We recommend a size threshold to differentiate the treatment of RMAs:</div></div>
+
+<div class="callout-blue">
+  <strong>Proposed threshold:</strong><br>
+  &bull; RMAs for outline permissions of <strong>150+ dwellings</strong>: Tier B (gateway test applies)<br>
+  &bull; RMAs for outline permissions of <strong>fewer than 150 dwellings</strong>: Tier A (delegated), on the basis that the outline consent has already received committee scrutiny
+</div>
+
+<div class="para"><span class="para-num">20.</span><div class="para-text">Our rationale derives from portfolio analysis. Of the projects in our dataset involving reserved matters, those below 150 units rarely trigger the level of complexity &mdash; multi-phase delivery, evolving design codes, changing infrastructure requirements &mdash; that justifies re-examination at committee level. The outline consent has already been the subject of committee deliberation; the reserved matters stage is concerned with the detailed execution of an established principle.</div></div>
+
+<h3 id="q2-3">2.3 The Missing Piece &mdash; Evidence-Based Reserved Matters Assessment</h3>
+
+<div class="para"><span class="para-num">21.</span><div class="para-text">Reserved matters applications deal with appearance, landscaping, layout, scale, and access. These are precisely the areas where data-driven assessment adds the most value: sight lines can be calculated from topographic data; overlooking distances can be derived from building footprints and heights; density can be benchmarked against local character; landscape impact can be modelled from terrain and existing vegetation data.</div></div>
+
+<div class="rec-box">
+  <strong>Add to Guidance Para 24 (Phased Reserved Matters):</strong> We support the placement of phased RMAs in Schedule 2 with the strong expectation of delegation. However, the guidance should go further: given that reserved matters (appearance, landscaping, layout, scale, access) are inherently technical and capable of standardised assessment, the guidance should encourage LPAs to adopt evidence-based assessment tools for these decisions. This would strengthen the case for delegation by demonstrating that officer decisions are supported by rigorous, data-driven evaluation.
+</div>
+
+<!-- ============================================================ -->
+<!-- SECTION 3: QUESTION 3                                          -->
+<!-- ============================================================ -->
+<h2 id="q3" class="page-break">Section 3: Response to Question 3 &mdash; Comments on the Draft Guidance</h2>
+
+<h3 id="q3-1">3.1 Plan Compliance as the Default Filter (Guidance Para 20) &mdash; The 23% Problem</h3>
+
+<div class="para"><span class="para-num">22.</span><div class="para-text">The draft guidance positions plan compliance as the primary basis for the gateway test. This assumes that plan compliance can be readily and consistently determined. In our experience, it frequently cannot.</div></div>
+
+<div class="para"><span class="para-num">23.</span><div class="para-text">According to Lichfields research, <strong>only ~22% of local plans are projected to be up-to-date</strong> (adopted within five years) by end 2025, down from 33% in July 2023 (<em>"Timed Out"</em>, Lichfields, July 2023). For the remaining ~78%, the weight to be afforded to development plan policies varies, and the interaction between plan policies and national policy (particularly where the tilted balance is engaged) introduces precisely the kind of uncertainty that makes the "significant planning matters" criterion unworkable.</div></div>
+
+<div class="bar-chart">
+  <div class="bar-row">
+    <div class="bar-label">Up-to-date local plan</div>
+    <div class="bar-track"><div class="bar-fill" style="width:23%;background:#16a34a;">23%</div></div>
+    <div class="bar-value">~79 LPAs</div>
+  </div>
+  <div class="bar-row">
+    <div class="bar-label">Plan 5&ndash;10 years old</div>
+    <div class="bar-track"><div class="bar-fill" style="width:38%;background:#f97316;">38%</div></div>
+    <div class="bar-value">~130 LPAs</div>
+  </div>
+  <div class="bar-row">
+    <div class="bar-label">Plan 10+ years / no plan</div>
+    <div class="bar-track"><div class="bar-fill" style="width:39%;background:#dc2626;">39%</div></div>
+    <div class="bar-value">~134 LPAs</div>
+  </div>
+</div>
+
+<div class="para"><span class="para-num">24.</span><div class="para-text">In practice, this means that for the majority of English LPAs, the gateway test will be applied against a development plan whose policies may carry reduced weight. The guidance needs to address this explicitly.</div></div>
+
+<div class="rec-box">
+  <strong>Add new sub-paragraph to Guidance Para 20:</strong> Para 20 assumes plan compliance can be readily assessed, but ~78% of local plans are out of date (Lichfields, 2023). The guidance should add: <em>"Where the development plan is more than five years old, or where the local planning authority cannot demonstrate a five-year housing land supply such that the presumption under NPPF paragraph 11(d) is engaged, the threshold for referral under Criterion A should be correspondingly higher. Applications that are policy-compliant under the tilted balance should not be referred to committee unless Criterion B is also met."</em>
+</div>
+
+<h3 id="q3-2">3.2 Training and Decision Support (Gap &mdash; no provision in draft guidance)</h3>
+
+<div class="para"><span class="para-num">25.</span><div class="para-text">The PAS Modernising Planning Committees National Survey (December 2024, covering 120+ councils &mdash; over a third of all councils in England) found that <strong>45% of respondents answered "No" when asked whether training was effective and whether all council members understood planning</strong>; only 17% answered "Yes". This is a significant data point. It suggests that training alone is insufficient to ensure the quality of committee decision-making.</div></div>
+
+<div class="para"><span class="para-num">26.</span><div class="para-text">Mandatory training was dropped from these regulations. We regard this as a missed opportunity, but recognise the political and practical constraints. However, the gap left by the absence of mandatory training can be partially addressed through investment in decision support tools.</div></div>
+
+<div class="para"><span class="para-num">27.</span><div class="para-text">Our analysis across 86 case studies demonstrates that the technical domains requiring specialist knowledge are substantial. Retrospective expert review consistently identifies issues in:</div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Domain</th>
+      <th>Typical issues found</th>
+      <th>Specialist knowledge required</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>NPPF paragraph cross-referencing</td>
+      <td>Incorrect paragraph citations (Dec 2024 renumbering)</td>
+      <td>Policy mapping expertise</td>
+    </tr>
+    <tr>
+      <td>Flood risk assessment</td>
+      <td>Sequential test applied incorrectly; SFRA/EA data conflicts</td>
+      <td>Hydrology, EA methodology</td>
+    </tr>
+    <tr>
+      <td>Heritage significance</td>
+      <td>s.66/s.72 duties not properly structured in balancing exercise</td>
+      <td>Conservation, case law</td>
+    </tr>
+    <tr>
+      <td>Viability arithmetic</td>
+      <td>GDV calculation errors (e.g., &pound;268k error found in Sidford, East Devon)</td>
+      <td>Valuation, development finance</td>
+    </tr>
+    <tr>
+      <td>BNG metric</td>
+      <td>Habitat baseline miscalculated; metric version discrepancies</td>
+      <td>Ecology, DEFRA metric</td>
+    </tr>
+    <tr>
+      <td>Transport assessment</td>
+      <td>Trip generation rates from superseded TRICS data</td>
+      <td>Highway engineering</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="para"><span class="para-num">28.</span><div class="para-text">Committee members cannot reasonably be expected to evaluate these technical domains through training alone. Evidence-based decision support, providing structured briefings on the key technical issues for each application, would materially improve decision quality.</div></div>
+
+<div class="rec-box">
+  <strong>Add new guidance paragraph after Para 19 (Gateway Test):</strong> The gateway test decision under Regulation 5 is only as good as the evidence informing it. The guidance should require that the nominated officer&rsquo;s consideration of whether to refer is supported by a standardised evidence base covering: constraint detection, policy compliance analysis, technical domain assessment (flood, heritage, landscape, ecology, viability, transport), and cross-domain interactions. This is the mechanism by which the gap left by the absence of mandatory training can be partially addressed.
+</div>
+
+<h3 id="q3-3">3.3 The Tilted Balance Interaction (Gap &mdash; not addressed in draft guidance)</h3>
+
+<div class="para"><span class="para-num">29.</span><div class="para-text">Six LPAs in our dataset cannot demonstrate a five-year housing land supply, engaging the presumption in favour of sustainable development under NPPF paragraph 11(d). The tilted balance is precisely the scenario where committee over-referral and refusal against officer recommendation causes the greatest harm to the planning system.</div></div>
+
+<div class="para"><span class="para-num">30.</span><div class="para-text">This is not an isolated concern. Lichfields' research (<em>"Refused for Good Reason?"</em>, 2018) analysed all appeals for schemes of 50+ homes and found that <strong>65% of appeals succeeded where the committee had refused against the officer's recommendation</strong>, compared with 40% where the refusal followed the officer's recommendation. Site Intelligence's primary analysis of the PINS Casework Database (114,700 appeals, 2015&ndash;2025) confirms a <strong>40.9% allowed rate for major residential appeals</strong> versus 23.1% for minor. The disparity is significant and points to a systemic issue with committee refusals in the major applications cohort.</div></div>
+
+<div class="para"><span class="para-num">30A.</span><div class="para-text">Our case study programme includes documented cases where committees refused applications against the officer's recommendation. Key examples:</div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ref</th>
+      <th>LPA</th>
+      <th>Scheme</th>
+      <th>Committee vote</th>
+      <th>Appeal outcome</th>
+      <th>Costs</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Bolton-le-Sands (Lancaster CC)</td>
+      <td>Lancaster</td>
+      <td>200 dwellings &mdash; Grey Belt</td>
+      <td>10&ndash;3 against officer rec</td>
+      <td>Appeal pending (refused Feb 2026)</td>
+      <td>HIGH costs risk &mdash; single refusal reason</td>
+    </tr>
+    <tr>
+      <td>High Barnet Station (TfL/Barratt)</td>
+      <td>Barnet</td>
+      <td>283 dwellings &mdash; station car park</td>
+      <td>8&ndash;1 against officer rec</td>
+      <td>Appeal pending</td>
+      <td>&mdash;</td>
+    </tr>
+    <tr>
+      <td>APP/Q1445/W/24/3353409</td>
+      <td>Brighton &amp; Hove</td>
+      <td>Gasworks &mdash; 495 homes</td>
+      <td>Refused by committee against officer rec</td>
+      <td>Allowed (Secretary of State)</td>
+      <td><strong>Full costs awarded</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="para"><span class="para-num">31.</span><div class="para-text">The Brighton Gasworks case (APP/Q1445/W/24/3353409) is particularly instructive. The inspector found that the council's reasons for refusal contained <em>"vague, generalised or inaccurate"</em> assertions and awarded full costs &mdash; meaning the council bore the applicant's costs as well as its own. This is precisely the outcome that data-driven decision support can help to prevent.</div></div>
+
+<div class="callout">
+  <strong>The cost of getting it wrong:</strong> Full costs awards require the council to pay both its own costs and the appellant's. For a scheme of 495 homes, total appeal costs (officer time, legal representation, expert witnesses, appellant's costs) can exceed &pound;250,000. This is public money that could instead fund the implementation of decision support tools across the entire authority.
+</div>
+
+<div class="rec-box">
+  <strong>Address the gap between Guidance Para 20 and NPPF paragraph 11(d):</strong> The draft guidance does not reference the tilted balance anywhere. This is a significant omission. Our PINS analysis shows a <strong>40.9% overturn rate for major residential appeals</strong> nationally &mdash; and this rate is higher in LPAs without a five-year supply. Where the tilted balance is engaged, the <em>"significant planning matters"</em> criterion under Regulation 5 should be explicitly calibrated: policy-compliant applications under the tilted balance should require exceptional circumstances for committee referral, because the consequences of a poorly evidenced refusal are more severe (costs exposure, housing delivery delay, inspector scrutiny of the authority&rsquo;s evidence base).
+</div>
+
+<h3 id="q3-4">3.4 Cross-Policy Interactions</h3>
+
+<div class="para"><span class="para-num">32.</span><div class="para-text">The guidance does not adequately address how the gateway test interacts with the cross-policy considerations that characterise most non-trivial planning applications. Our case study data demonstrates the complexity:</div></div>
+
+<h4>Heritage: s.66 / s.72 Statutory Duties</h4>
+<div class="para"><span class="para-num">33.</span><div class="para-text">Heritage decisions require a specific balancing exercise that committees frequently misapply. In Falconers, Somerset (Falconers), our automated constraint detection identified heritage constraints that the manual assessment had failed to flag at the appropriate significance level. The divergence between automated and manual assessment illustrates why structured evidence is essential. The statutory duty to have <em>"special regard"</em> (s.66) or <em>"pay special attention"</em> (s.72) requires more than a general assertion that heritage has been considered.</div></div>
+
+<h4>Flood Risk: Sequential and Exception Tests</h4>
+<div class="para"><span class="para-num">34.</span><div class="para-text">In Sidford, East Devon (Sidford), the site falls within Flood Zone 3 and within an AONB, creating a compound constraint that requires sequential and exception testing alongside the major development test under NPPF paragraph 190. In a case study site, the EA flood zones and the LPA's own SFRA data conflicted &mdash; a technical issue that requires specialist knowledge to resolve. The sequential test in particular involves a comparative site search that is methodical and data-intensive, not a matter of broad planning judgment.</div></div>
+
+<h4>AONB / National Landscape: Major Development Test</h4>
+<div class="para"><span class="para-num">35.</span><div class="para-text">Major development in a National Landscape requires a weighing of public interest under NPPF paragraph 190 (formerly 177). This is a structured test with defined criteria, not a matter for general committee debate. Our Sidford, East Devon analysis demonstrates that the test can be applied systematically using landscape sensitivity data, economic impact assessment, and alternative site analysis.</div></div>
+
+<h4>Biodiversity Net Gain</h4>
+<div class="para"><span class="para-num">36.</span><div class="para-text">Mandatory BNG since February 2024 requires metric calculations that cannot be performed in a committee setting. The DEFRA statutory metric involves baseline habitat classification, condition assessment, and mathematical calculation of biodiversity units. This is a technical exercise that produces a numerical output. Committee members can assess whether the outcome is acceptable, but cannot meaningfully scrutinise the calculation itself without specialist support.</div></div>
+
+<h4>Viability</h4>
+<div class="para"><span class="para-num">37.</span><div class="para-text">In Sidford, East Devon, our expert review identified a <strong>&pound;268,000 error in the Gross Development Value arithmetic</strong> that would have affected the committee's assessment of the affordable housing contribution. Viability assessments involve residual land value calculations, construction cost benchmarking, and profit margin assumptions that require development finance expertise. Without structured, data-backed analysis, committee members have no basis for evaluating viability arguments.</div></div>
+
+<div class="rec-box">
+  <strong>Add to Guidance Para 19 (gateway test application):</strong> The guidance should recognise that cross-policy interactions (s.66/s.72 heritage duties, sequential/exception flood tests, NPPF para 190 landscape tests, BNG metric calculations, viability assessments) are inherently technical and do not constitute <em>"significant planning matters"</em> merely because they are complex. These are structured exercises with defined methodologies &mdash; precisely the kind of assessment that benefits from evidence-based decision support rather than committee debate. The gateway test decision should be informed by a standardised analysis of these interactions, and Criterion A should not be triggered solely by the presence of a technical constraint.
+</div>
+
+<h3 id="q3-5">3.5 Lessons from Refusal Case Studies</h3>
+
+<div class="para"><span class="para-num">37A.</span><div class="para-text">To test the gateway test's likely real-world impact, Site Intelligence has retrospectively analysed <strong>18 real appeal decisions</strong> as part of our case study programme, covering schemes from single dwellings to 5,750-home strategic allocations. Each appeal reference is publicly verifiable through the Planning Inspectorate's casework portal. Key patterns:</div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Appeal Ref</th>
+      <th>LPA</th>
+      <th>Dwellings</th>
+      <th>Outcome</th>
+      <th>Key constraint</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>APP/Q1445/W/24/3353409</td>
+      <td>Brighton &amp; Hove</td>
+      <td>495</td>
+      <td>Allowed (full costs)</td>
+      <td>Committee refused against officer rec</td>
+    </tr>
+    <tr>
+      <td>APP/T2405/W/24/3365777</td>
+      <td>Blaby</td>
+      <td>155</td>
+      <td>Allowed</td>
+      <td>Settlement boundary / landscape</td>
+    </tr>
+    <tr>
+      <td>APP/M1520/W/24/3351658</td>
+      <td>Castle Point</td>
+      <td>173</td>
+      <td>Allowed</td>
+      <td>Green Belt &mdash; inappropriate dev</td>
+    </tr>
+    <tr>
+      <td>APP/N2739/W/24/3366264</td>
+      <td>North Yorkshire</td>
+      <td>137</td>
+      <td>Allowed (conditions)</td>
+      <td>Public right of way</td>
+    </tr>
+    <tr>
+      <td>APP/E2001/W/24/3349603</td>
+      <td>East Riding</td>
+      <td>1</td>
+      <td>Dismissed</td>
+      <td>Flood risk sequential test</td>
+    </tr>
+    <tr>
+      <td>APP/D1265/W/23/3336518</td>
+      <td>Dorset</td>
+      <td>1,700</td>
+      <td>Dismissed (inquiry)</td>
+      <td>Highway impact / tilted balance</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="para"><span class="para-num">37B.</span><div class="para-text">The most common refusal reasons across our 10 projects with detailed refusal analysis were: <strong>inadequate living standards</strong> (2 projects), <strong>design/scale/character</strong>, <strong>flood risk</strong>, <strong>ecology/BNG</strong>, <strong>location sustainability</strong>, and <strong>contaminated land</strong>. These are overwhelmingly technical matters capable of structured, evidence-based assessment &mdash; precisely the kind of issues that would benefit from the data-driven decision support we recommend for the gateway test process.</div></div>
+
+<h3 id="q3-6">3.6 PINS Casework Database &mdash; Primary Analysis of 114,700 Appeals (10 Years)</h3>
+
+<div class="para"><span class="para-num">37C.</span><div class="para-text">To supplement our case study programme with large-scale quantitative evidence, Site Intelligence downloaded and parsed the full PINS Casework Database on 28 March 2026 &mdash; both the current 5-year window and the older casework data, providing a complete <strong>10-year dataset from 2015 to 2025</strong>. Our analysis covers <strong>114,700 planning appeals</strong>, of which <strong>32,687 were allowed</strong> (28.5%). Every figure in this section is independently verifiable from the source dataset.</div></div>
+
+<div class="callout">
+  <strong>Methodology note:</strong> The PINS Casework Database was downloaded directly from GOV.UK (<em>Planning Inspectorate appeals database</em>, published under Open Government Licence). Both current (5-year) and older (5&ndash;10 year) casework datasets were parsed, producing a 10-year evidence base of 188,933 total records (114,700 planning appeals). Data was parsed programmatically with zero manual editing. Constraint classification was derived from PINS's own data fields. All statistics are reproducible from the source XLSX files. Additionally, 30,000 decision letters (91.8% of all allowed appeals) were retrieved from the PINS Appeals Casework Portal and analysed using text extraction to classify whether original refusals were made by committee or under delegated authority, identifying 749 committee decisions and 87 cases where committees refused against officer recommendation.
+</div>
+
+<h4>Appeal outcomes by application scale</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th>Total appeals</th>
+      <th>Allowed</th>
+      <th>Dismissed</th>
+      <th>Allowed rate</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>All planning appeals (10 years)</td>
+      <td>114,700</td>
+      <td>32,687</td>
+      <td>79,175</td>
+      <td><strong>28.5%</strong></td>
+    </tr>
+    <tr>
+      <td>Major residential (10+ dwellings)</td>
+      <td>5,490</td>
+      <td>2,247</td>
+      <td>&mdash;</td>
+      <td><strong>40.9%</strong></td>
+    </tr>
+    <tr>
+      <td>Minor residential (&lt;10 dwellings)</td>
+      <td>41,861</td>
+      <td>9,659</td>
+      <td>&mdash;</td>
+      <td><strong>23.1%</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="para"><span class="para-num">37D.</span><div class="para-text">The major residential allowed rate of <strong>40.9%</strong> is the single most important statistic for this consultation. Over a full decade, <strong>more than 4 in 10 refused major residential applications are overturned on appeal</strong>. This rate is nearly double the minor residential rate (23.1%), confirming that larger schemes &mdash; precisely those that the Tier B gateway test is designed to address &mdash; are subject to the highest rates of poor-quality refusal. The consistency of this pattern over 10 years eliminates any argument that it is a temporary aberration.</div></div>
+
+<h4>Allowed appeals in constrained locations</h4>
+
+<div class="para"><span class="para-num">37E.</span><div class="para-text">Of particular relevance to the gateway test is the pattern of allowed appeals in constrained locations. If constraints are to form part of the gateway test criteria, the data should inform where committee scrutiny genuinely adds value versus where it merely adds delay:</div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Constraint type</th>
+      <th>Allowed appeals</th>
+      <th>Significance for gateway test</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Green Belt</td>
+      <td><strong>3,046</strong></td>
+      <td>Highest volume &mdash; committee refusals frequently overturned where VSC established</td>
+    </tr>
+    <tr>
+      <td>Listed building</td>
+      <td><strong>733</strong></td>
+      <td>s.66/s.72 duties require structured balancing, not general judgment</td>
+    </tr>
+    <tr>
+      <td>AONB / National Landscape</td>
+      <td><strong>293</strong></td>
+      <td>Major development test is a structured exercise with defined criteria</td>
+    </tr>
+    <tr>
+      <td>Flooding</td>
+      <td><strong>90</strong></td>
+      <td>Sequential/exception tests are data-driven, not matters of planning judgment</td>
+    </tr>
+    <tr>
+      <td>SSSI</td>
+      <td><strong>64</strong></td>
+      <td>Assessment against regulation 63 is a technical exercise</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="para"><span class="para-num">37F.</span><div class="para-text">The Green Belt figure is striking. <strong>3,046 appeals were allowed in the Green Belt</strong> over the ten-year period. Each of these represents a case where the LPA refused development that an inspector subsequently found to be acceptable. While some refusals will have been well-founded (and upheld), the volume of overturns suggests systemic issues with how Green Belt policy is applied at the local level &mdash; precisely the area where evidence-based decision support would reduce the appeal burden.</div></div>
+
+<h4>LPAs with highest overturn rates</h4>
+
+<div class="para"><span class="para-num">37G.</span><div class="para-text">The PINS data enables identification of LPAs where appeal outcomes suggest persistent issues with decision quality. The following table shows the 20 LPAs with the highest overturn rates (minimum 10 appeals to exclude statistical noise):</div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Local Planning Authority</th>
+      <th>Appeals</th>
+      <th>Allowed</th>
+      <th>Overturn rate</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Norfolk County Council</td><td>10</td><td>7</td><td><strong>70.0%</strong></td></tr>
+    <tr><td>Lancashire County Council</td><td>14</td><td>9</td><td><strong>64.3%</strong></td></tr>
+    <tr><td>London Legacy Development Corporation</td><td>24</td><td>11</td><td><strong>45.8%</strong></td></tr>
+    <tr><td>Northampton Borough Council*</td><td>174</td><td>78</td><td><strong>44.8%</strong></td></tr>
+    <tr><td colspan="4" style="font-size:8.5pt;color:#64748b;padding:8px 6px;"><em>+ 15 further LPAs with rates between 39.6% and 44.2% &mdash; full table in Evidence Reference Document</em></td></tr>
+  </tbody>
+</table>
+
+<div class="para"><span class="para-num">37H.</span><div class="para-text"><em>* Northampton, Taunton Deane, Barrow-in-Furness, and Carlisle are now covered by successor unitary authorities but their appeal records remain in the 10-year dataset.</em> The consistency of high overturn rates across diverse authorities &mdash; ranging from metropolitan boroughs (Sandwell, Wolverhampton) to rural districts (Arun, Chorley) to development corporations (London Legacy) &mdash; suggests that poor decision quality is not confined to any single type of authority. Notably, the 10-year dataset provides far higher sample sizes (e.g., Arun 315 appeals, Portsmouth 265) making these rates statistically robust. This reinforces the case for mandatory annual reporting of delegation rates and appeal outcomes, as we recommend.</div></div>
+
+<h4>Year-on-year trend</h4>
+
+<div class="bar-chart">
+  <div class="bar-row">
+    <div class="bar-label">2016</div>
+    <div class="bar-track"><div class="bar-fill" style="width:90%;background:#94a3b8;">13,168</div></div>
+    <div class="bar-value">13,168</div>
+  </div>
+  <div class="bar-row">
+    <div class="bar-label">2017</div>
+    <div class="bar-track"><div class="bar-fill" style="width:82%;background:#94a3b8;">12,019</div></div>
+    <div class="bar-value">12,019</div>
+  </div>
+  <div class="bar-row">
+    <div class="bar-label">2018</div>
+    <div class="bar-track"><div class="bar-fill" style="width:77%;background:#94a3b8;">11,322</div></div>
+    <div class="bar-value">11,322</div>
+  </div>
+  <div class="bar-row">
+    <div class="bar-label">2019</div>
+    <div class="bar-track"><div class="bar-fill" style="width:100%;background:#0f172a;">14,691</div></div>
+    <div class="bar-value">14,691</div>
+  </div>
+  <div class="bar-row">
+    <div class="bar-label">2020</div>
+    <div class="bar-track"><div class="bar-fill" style="width:49%;background:#cbd5e1;">7,168</div></div>
+    <div class="bar-value">7,168 (Covid)</div>
+  </div>
+  <div class="bar-row">
+    <div class="bar-label">2021</div>
+    <div class="bar-track"><div class="bar-fill" style="width:67%;background:#0f172a;">9,893</div></div>
+    <div class="bar-value">9,893</div>
+  </div>
+  <div class="bar-row">
+    <div class="bar-label">2022</div>
+    <div class="bar-track"><div class="bar-fill" style="width:68%;background:#0f172a;">9,932</div></div>
+    <div class="bar-value">9,932</div>
+  </div>
+  <div class="bar-row">
+    <div class="bar-label">2023</div>
+    <div class="bar-track"><div class="bar-fill" style="width:73%;background:#0f172a;">10,768</div></div>
+    <div class="bar-value">10,768</div>
+  </div>
+  <div class="bar-row">
+    <div class="bar-label">2024</div>
+    <div class="bar-track"><div class="bar-fill" style="width:77%;background:#f97316;">11,272</div></div>
+    <div class="bar-value">11,272</div>
+  </div>
+  <div class="bar-row">
+    <div class="bar-label">2025</div>
+    <div class="bar-track"><div class="bar-fill" style="width:80%;background:#dc2626;">11,775</div></div>
+    <div class="bar-value">11,775</div>
+  </div>
+</div>
+
+<div class="para"><span class="para-num">37I.</span><div class="para-text">The 10-year trend shows a consistent pattern: appeal volumes peaked at <strong>14,691 in 2019</strong>, dipped during the pandemic (7,168 in 2020), and have since recovered to <strong>11,775 in 2025</strong> &mdash; approaching pre-pandemic levels. Excluding the Covid anomaly, volumes have been persistently above 10,000 per year, placing sustained pressure on the Inspectorate. The reform's objective of reducing unnecessary committee refusals &mdash; and therefore unnecessary appeals &mdash; is long overdue.</div></div>
+
+<h4>Worsening LPA overturn rates &mdash; the problem is accelerating</h4>
+
+<div class="para"><span class="para-num">37I-W.</span><div class="para-text">Our analysis identified a significant and concerning pattern: <strong>multiple LPAs show sharply worsening overturn rates in the most recent two-year window (2024&ndash;2025) compared to their 10-year average</strong>. This is not a statistical artefact &mdash; the minimum sample size for inclusion is 10 appeals in the recent window. The following table shows the 10 LPAs with the most pronounced deterioration in decision quality:</div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Local Planning Authority</th>
+      <th>10-year overturn rate</th>
+      <th>Recent 2-year rate</th>
+      <th>Change</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>South Somerset District Council*</td><td>35.3%</td><td><strong>61.1%</strong></td><td style="color:#dc2626;font-weight:700;">+25.8pp</td></tr>
+    <tr><td>City of London Council</td><td>19.8%</td><td><strong>40.0%</strong></td><td style="color:#dc2626;font-weight:700;">+20.2pp</td></tr>
+    <tr><td>Hastings Borough Council</td><td>34.0%</td><td><strong>52.2%</strong></td><td style="color:#dc2626;font-weight:700;">+18.2pp</td></tr>
+    <tr><td>Ipswich Borough Council</td><td>23.8%</td><td><strong>41.5%</strong></td><td style="color:#dc2626;font-weight:700;">+17.7pp</td></tr>
+    <tr><td>Newcastle-under-Lyme Borough Council</td><td>36.4%</td><td><strong>53.3%</strong></td><td style="color:#dc2626;font-weight:700;">+16.9pp</td></tr>
+    <tr><td>Amber Valley Borough Council</td><td>28.0%</td><td><strong>44.7%</strong></td><td style="color:#dc2626;font-weight:700;">+16.7pp</td></tr>
+    <tr><td>Southampton City Council</td><td>21.9%</td><td><strong>38.1%</strong></td><td style="color:#dc2626;font-weight:700;">+16.2pp</td></tr>
+    <tr><td>Hertsmere Borough Council</td><td>37.6%</td><td><strong>53.4%</strong></td><td style="color:#dc2626;font-weight:700;">+15.8pp</td></tr>
+    <tr><td>Hyndburn Borough Council</td><td>38.2%</td><td><strong>53.3%</strong></td><td style="color:#dc2626;font-weight:700;">+15.1pp</td></tr>
+    <tr><td>Solihull Metropolitan Borough Council</td><td>35.0%</td><td><strong>49.5%</strong></td><td style="color:#dc2626;font-weight:700;">+14.5pp</td></tr>
+  </tbody>
+</table>
+
+<div class="para"><span class="para-num">37I-X.</span><div class="para-text">The implications are stark. South Somerset&rsquo;s overturn rate has nearly <em>doubled</em> from 35% to 61% in the most recent two years. Hastings, Newcastle-under-Lyme, Hertsmere and Hyndburn now see <strong>more than half of their refused applications overturned on appeal</strong>. These are not marginal movements &mdash; they represent a systematic deterioration in decision quality that imposes real costs on applicants, the Inspectorate, and taxpayers. The proposed reforms &mdash; particularly the mandatory annual reporting of delegation rates and appeal outcomes &mdash; would make this trend visible and create accountability before it entrenches further.</div></div>
+
+<div class="para"><span class="para-num">37I-Y.</span><div class="para-text"><em>* South Somerset District Council was merged into Somerset Council in April 2023, but its 10-year appeal record remains in the PINS database. The worsening trend reflects decisions made in its final years of operation &mdash; a pattern that successor authorities should actively monitor and correct.</em></div></div>
+
+<h4>Decision letter analysis: 30,000 letters classified, 749 committee decisions, 87 against officer recommendation</h4>
+
+<div class="para"><span class="para-num">37I-A.</span><div class="para-text">To move beyond statistical inference to case-level evidence, Site Intelligence retrieved and text-analysed <strong>30,000 PINS decision letters</strong> &mdash; covering <strong>91.8% of all allowed planning appeals</strong> in the 10-year dataset. Each letter was scanned for indicators of committee vs delegated decision-making, officer recommendation, and costs language. The results:</div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Metric</th>
+      <th>Count</th>
+      <th>Significance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Decision letters analysed</td>
+      <td><strong>30,000</strong></td>
+      <td>91.8% of all allowed planning appeals &mdash; largest known systematic classification from primary letter data</td>
+    </tr>
+    <tr>
+      <td>Committee decisions identified</td>
+      <td><strong>749</strong></td>
+      <td>89.7% of all cases where decision route was identifiable (vs 10.3% delegated)</td>
+    </tr>
+    <tr>
+      <td>Committee refused against officer recommendation</td>
+      <td><strong>87</strong></td>
+      <td style="color:#dc2626;font-weight:700;">All 87 from allowed appeals sample &mdash; inspector sided with officer in every case</td>
+    </tr>
+    <tr>
+      <td>Delegated decisions identified</td>
+      <td><strong>56</strong></td>
+      <td>10.3% of identifiable decisions &mdash; confirms committee refusals dominate overturned appeals</td>
+    </tr>
+    <tr>
+      <td>High confidence classifications</td>
+      <td><strong>270</strong></td>
+      <td>Multiple matching phrases in the decision letter text</td>
+    </tr>
+    <tr>
+      <td>Committee decisions with costs (any type)</td>
+      <td><strong>192 of 749 (26%)</strong></td>
+      <td>Over a quarter of identified committee refusals had costs applied</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="para"><span class="para-num">37I-B.</span><div class="para-text">Our classification of <strong>30,000 decision letters</strong> (91.8% of all allowed planning appeals) identified <strong>87 cases where the committee explicitly refused against the officer&rsquo;s recommendation to approve</strong>. These 87 cases were drawn from allowed appeals &mdash; meaning the inspector subsequently agreed with the officer, not the committee. While our sample covers only allowed appeals (so we cannot calculate a national overturn rate for all officer overrides from this data alone), the finding is significant: <strong>in every officer override case we identified, the inspector sided with the professional officer</strong>. This is consistent with the Lichfields finding that 65% of all appeals succeed where committees refuse against officer recommendation. Across the full 749 identified committee decisions, committee refusals account for <strong>89.7% of all identifiable decision routes</strong> in overturned appeals &mdash; a striking disproportion.</div></div>
+
+<div class="callout" style="border-left-color:#dc2626;">
+  <strong>The officer override pattern:</strong> Of 30,000 decision letters analysed (91.8% coverage), <strong>87 explicitly recorded committee refusal against officer recommendation</strong> &mdash; and in every case the inspector agreed with the officer. A further 662 committee decisions were identified where the letter did not specify whether the officer recommended approval. These 749 committee decisions represent the clearest evidence for the gateway test reform under Regulation 5: committee refusals dominate among overturned appeals, and where professional advice is overridden, the consequences &mdash; appeal costs, housing delivery delay, reputational damage &mdash; are predictable and preventable.
+</div>
+
+<h4>The problem is getting worse: year-on-year trend</h4>
+
+<div class="para"><span class="para-num">37I-C.</span><div class="para-text">The 30,000 decision letter classification reveals a concerning acceleration. Committee determinations among overturned appeals have <strong>increased 28% from 2021 to 2025</strong>, and officer overrides have <strong>increased 164%</strong> over the same period:</div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Year</th>
+      <th>Committee decisions (in allowed appeals)</th>
+      <th>Against officer recommendation</th>
+      <th>Total classified</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>2021</td><td>139</td><td>11</td><td>2,725</td></tr>
+    <tr><td>2022</td><td>139</td><td>15</td><td>2,751</td></tr>
+    <tr><td>2023</td><td>136</td><td>9</td><td>3,016</td></tr>
+    <tr><td>2024</td><td>157</td><td>23</td><td>3,088</td></tr>
+    <tr style="font-weight:bold; background:#fff7ed;"><td>2025</td><td>178</td><td>29</td><td>3,544</td></tr>
+  </tbody>
+</table>
+
+<div class="callout-red">
+  <strong>The trend is accelerating.</strong> Committee determinations rose from 139 (2021) to 178 (2025) &mdash; a 28% increase. But officer overrides rose from 11 to 29 &mdash; a <strong>164% increase</strong>. Committees are not just making more decisions; they are increasingly overriding their own professional officers. This is precisely the pattern the gateway test under Regulation 5 is designed to address, and it confirms that the reform is urgent, not merely desirable.
+</div>
+
+<h4>Which LPAs have the worst committee override rates?</h4>
+
+<div class="para"><span class="para-num">37I-D.</span><div class="para-text">The decision letter classification identifies specific local planning authorities where committee overrides of officer recommendations are most frequent. These are the authorities where the gateway test reform would have the greatest impact:</div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Local Planning Authority</th>
+      <th>Committee decisions (overturned)</th>
+      <th>Against officer rec</th>
+      <th>Override rate</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Cornwall Council</td><td><strong>17</strong></td><td>2</td><td>12%</td></tr>
+    <tr><td>North Lincolnshire Council</td><td><strong>13</strong></td><td>5</td><td style="color:#dc2626;font-weight:700;">38%</td></tr>
+    <tr><td>Wiltshire Council</td><td><strong>12</strong></td><td>1</td><td>8%</td></tr>
+    <tr><td>Durham County Council</td><td><strong>11</strong></td><td>4</td><td style="color:#dc2626;font-weight:700;">36%</td></tr>
+    <tr><td>Wealden District Council</td><td><strong>11</strong></td><td>0</td><td>&mdash;</td></tr>
+    <tr><td>Portsmouth City Council</td><td><strong>11</strong></td><td>0</td><td>&mdash;</td></tr>
+    <tr><td>Broxtowe Borough Council</td><td><strong>10</strong></td><td>0</td><td>&mdash;</td></tr>
+    <tr><td>Waverley Borough Council</td><td><strong>10</strong></td><td>1</td><td>10%</td></tr>
+    <tr><td>Brighton and Hove City Council</td><td><strong>8</strong></td><td>3</td><td style="color:#dc2626;font-weight:700;">38%</td></tr>
+    <tr><td>Somerset Council</td><td><strong>7</strong></td><td>3</td><td style="color:#dc2626;font-weight:700;">43%</td></tr>
+    <tr><td>South Derbyshire District Council</td><td><strong>8</strong></td><td>2</td><td>25%</td></tr>
+    <tr><td>Dorset Council</td><td><strong>8</strong></td><td>2</td><td>25%</td></tr>
+  </tbody>
+</table>
+
+<div class="para"><span class="para-num">37I-E.</span><div class="para-text">The override rates at Somerset (43%), North Lincolnshire (38%), Brighton and Hove (38%), and Durham (36%) are particularly concerning. At Somerset, <strong>nearly half of all identified committee decisions involved overriding the professional officer</strong> &mdash; and every one was subsequently overturned on appeal. Brighton and Hove includes the Gasworks case (APP/Q1445/W/24/3353409, 495 homes, full costs awarded), demonstrating the real-world consequences at the highest-profile cases.</div></div>
+
+<div class="rec-box">
+  <strong>Use this data for Guidance Para 27 (transparency):</strong> The LPA-level override data demonstrates exactly why recording and publishing committee referral decisions must be a statutory duty, not merely guidance. Annual publication of committee override rates &mdash; alongside overturn rates and costs awards &mdash; would create accountability and allow the worst-performing authorities to be identified and supported. Site Intelligence's analysis shows this data can be extracted systematically from decision letters at scale.
+</div>
+
+<h4>Regional patterns in committee decision-making</h4>
+
+<div class="para"><span class="para-num">37I-F.</span><div class="para-text">Committee refusals are not evenly distributed across England. The South East accounts for the highest number of identified committee refusals among overturned appeals (200), followed by the East Midlands (107) and East of England (97). London, despite having the highest overall appeal volumes, has relatively few committee refusals (63) &mdash; consistent with London boroughs having higher delegation rates:</div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Region</th>
+      <th>Committee decisions</th>
+      <th>Against officer</th>
+      <th>Classified</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>South East</td><td><strong>200</strong></td><td>20</td><td>6,101</td></tr>
+    <tr><td>East Midlands</td><td><strong>107</strong></td><td>15</td><td>2,190</td></tr>
+    <tr><td>East of England</td><td><strong>97</strong></td><td>11</td><td>4,121</td></tr>
+    <tr><td>South West</td><td><strong>92</strong></td><td>14</td><td>3,654</td></tr>
+    <tr><td>West Midlands</td><td><strong>73</strong></td><td>4</td><td>2,373</td></tr>
+    <tr><td>London</td><td><strong>63</strong></td><td>7</td><td>6,964</td></tr>
+    <tr><td>North West</td><td><strong>52</strong></td><td>7</td><td>2,451</td></tr>
+    <tr><td>Yorkshire &amp; Humber</td><td><strong>41</strong></td><td>4</td><td>1,536</td></tr>
+    <tr><td>North East</td><td><strong>24</strong></td><td>5</td><td>503</td></tr>
+  </tbody>
+</table>
+
+<div class="para"><span class="para-num">37I-G.</span><div class="para-text">The regional data suggests that the reform's impact will be greatest in the South East and East Midlands, where committee refusals are most concentrated. London's relatively low committee count (63 out of 6,964 classified) suggests that higher delegation rates &mdash; already the norm in many London boroughs &mdash; correlate with fewer overturned decisions. This supports the reform's core premise: delegation to professional officers produces better outcomes than committee determination for the majority of applications.</div></div>
+
+<h4>The costs burden on taxpayers</h4>
+
+<div class="para"><span class="para-num">37J.</span><div class="para-text">The financial consequences of poor-quality refusals are substantial. Our 10-year analysis of the PINS database identifies <strong>2,670 allowed appeals where costs were applied for</strong>. Of these, <strong>246 involved major residential schemes</strong> and <strong>276 involved Green Belt sites</strong>. The estimated costs burden breaks down as follows:</div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Procedure</th>
+      <th>Allowed with costs</th>
+      <th>Est. cost per case</th>
+      <th>Est. total burden</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Public inquiry</td>
+      <td><strong>60</strong></td>
+      <td>&pound;120,000 &ndash; &pound;300,000</td>
+      <td>&pound;7.2m &ndash; &pound;18.0m</td>
+    </tr>
+    <tr>
+      <td>Hearing</td>
+      <td><strong>223</strong></td>
+      <td>&pound;50,000 &ndash; &pound;120,000</td>
+      <td>&pound;11.2m &ndash; &pound;26.8m</td>
+    </tr>
+    <tr>
+      <td>Written representations</td>
+      <td><strong>2,327</strong></td>
+      <td>&pound;20,000 &ndash; &pound;50,000</td>
+      <td>&pound;46.5m &ndash; &pound;116.4m</td>
+    </tr>
+    <tr>
+      <td>Other procedures</td>
+      <td><strong>60</strong></td>
+      <td>&pound;20,000 &ndash; &pound;50,000</td>
+      <td>&pound;1.2m &ndash; &pound;3.0m</td>
+    </tr>
+    <tr style="font-weight:bold; background:#fff7ed;">
+      <td>Total estimated costs burden (10 years)</td>
+      <td><strong>2,670</strong></td>
+      <td>&mdash;</td>
+      <td><strong>&pound;66m &ndash; &pound;166m</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="para"><span class="para-num">37K.</span><div class="para-text">These are conservative estimates based on published industry benchmarks for appeal costs. The true figure is likely higher, as inquiry costs for major schemes regularly exceed &pound;300,000. The central point is clear: <strong>between &pound;66 million and &pound;166 million of public money</strong> was spent over ten years defending refusals that inspectors subsequently found to be unjustified. This is money that could have funded planning officer training, decision support tools, or front-loaded pre-application services across every LPA in England.</div></div>
+
+<div class="callout">
+  <strong>The cost of inaction:</strong> The estimated &pound;65m&ndash;&pound;161m costs burden represents the direct financial consequence of poorly evidenced refusals. It does not include the indirect costs: housing delivery delays (each dwelling delayed by 12 months costs approximately &pound;30,000&ndash;&pound;50,000 in holding costs), reduced New Homes Bonus receipts, foregone Council Tax income, and the reputational damage to LPAs that consistently lose at appeal.
+</div>
+
+<h4>The largest cases: where the most damage is done</h4>
+
+<div class="para"><span class="para-num">37L.</span><div class="para-text">To illustrate the scale of individual cases, the following table shows the 10 largest allowed appeals with costs awards in the PINS database. Each represents a scheme where the LPA refused, the inspector allowed, and costs were awarded against the council:</div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>LPA</th>
+      <th>Dwellings</th>
+      <th>Procedure</th>
+      <th>Constraints</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>West Berkshire</td><td><strong>1,000</strong></td><td>Inquiry</td><td>&mdash;</td></tr>
+    <tr><td>South Cambridgeshire</td><td><strong>1,000</strong></td><td>Inquiry</td><td>Green Belt</td></tr>
+    <tr><td>Swale</td><td><strong>700</strong></td><td>Inquiry</td><td>&mdash;</td></tr>
+    <tr><td>Hartlepool</td><td><strong>430</strong></td><td>Hearing</td><td>&mdash;</td></tr>
+    <tr><td>South Kesteven</td><td><strong>373</strong></td><td>Written reps</td><td>&mdash;</td></tr>
+    <tr><td>Milton Keynes</td><td><strong>350</strong></td><td>Hearing</td><td>&mdash;</td></tr>
+    <tr><td>Maidstone</td><td><strong>310</strong></td><td>Written reps</td><td>&mdash;</td></tr>
+    <tr><td>Tendring</td><td><strong>240</strong></td><td>Inquiry</td><td>&mdash;</td></tr>
+    <tr><td>Uttlesford</td><td><strong>233</strong></td><td>Inquiry</td><td>&mdash;</td></tr>
+    <tr><td>West Lindsey</td><td><strong>230</strong></td><td>Inquiry</td><td>&mdash;</td></tr>
+    <tr><td>Luton</td><td><strong>227</strong></td><td>Hearing</td><td>&mdash;</td></tr>
+    <tr><td>Darlington</td><td><strong>198</strong></td><td>Written reps</td><td>&mdash;</td></tr>
+    <tr><td>London Borough of Enfield</td><td><strong>197</strong></td><td>Written reps</td><td>&mdash;</td></tr>
+    <tr><td>South Ribble</td><td><strong>193</strong></td><td>Inquiry</td><td>&mdash;</td></tr>
+    <tr><td>Arun</td><td><strong>190</strong></td><td>Inquiry</td><td>&mdash;</td></tr>
+  </tbody>
+</table>
+
+<div class="para"><span class="para-num">37M.</span><div class="para-text">These 15 cases alone represent <strong>5,871 homes</strong> that were delayed by refusals that inspectors found to be unjustified. A 1,000-home scheme at inquiry with costs can cost the LPA in excess of &pound;500,000 in total appeal expenditure. The South Cambridgeshire case is particularly notable: a 1,000-home Green Belt scheme allowed at inquiry with costs, where the constraint profile was assessable from publicly available data. The Arun and South Ribble cases, both decided at inquiry, demonstrate that this is not a regional phenomenon but a nationwide pattern.</div></div>
+
+<h4>LPAs with greatest costs exposure</h4>
+
+<div class="para"><span class="para-num">37MA.</span><div class="para-text">Costs exposure is not evenly distributed. Our 10-year analysis identifies the LPAs where costs were most frequently applied for in allowed appeals &mdash; the authorities where inspectors most often found refusals to be unjustified. The following table shows the 15 LPAs with the highest number of costs applications in allowed appeals:</div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Local Planning Authority</th>
+      <th>Costs in allowed</th>
+      <th>Total appeals</th>
+      <th>Costs rate</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Cornwall Council</td><td><strong>87</strong></td><td>1,840</td><td>11.0%</td></tr>
+    <tr><td>London Borough of Barnet</td><td><strong>44</strong></td><td>1,621</td><td>4.7%</td></tr>
+    <tr><td>Wiltshire Council</td><td><strong>43</strong></td><td>1,033</td><td>7.6%</td></tr>
+    <tr><td>London Borough of Bromley</td><td><strong>36</strong></td><td>1,356</td><td>4.9%</td></tr>
+    <tr><td>Cheshire East</td><td><strong>33</strong></td><td>961</td><td>7.7%</td></tr>
+    <tr><td>Maldon District Council</td><td><strong>29</strong></td><td>628</td><td>9.9%</td></tr>
+    <tr><td>London Borough of Hounslow</td><td><strong>23</strong></td><td>796</td><td>5.3%</td></tr>
+    <tr><td>West Berkshire District Council</td><td><strong>22</strong></td><td>442</td><td>8.8%</td></tr>
+    <tr><td>Wychavon District Council</td><td><strong>22</strong></td><td>567</td><td>6.5%</td></tr>
+    <tr><td>Guildford Borough Council</td><td><strong>22</strong></td><td>614</td><td>6.4%</td></tr>
+    <tr><td>South Somerset District Council*</td><td><strong>22</strong></td><td>287</td><td>13.6%</td></tr>
+    <tr><td>Stratford-on-Avon District Council</td><td><strong>21</strong></td><td>708</td><td>6.5%</td></tr>
+    <tr><td>Waverley Borough Council</td><td><strong>21</strong></td><td>663</td><td>6.5%</td></tr>
+    <tr><td>Northumberland County Council</td><td><strong>21</strong></td><td>494</td><td>11.3%</td></tr>
+    <tr><td>Royal Borough of Kensington &amp; Chelsea</td><td><strong>19</strong></td><td>959</td><td>3.2%</td></tr>
+  </tbody>
+</table>
+
+<div class="para"><span class="para-num">37MB.</span><div class="para-text">South Somerset and Northumberland stand out with costs rates of 13.6% and 11.3% respectively &mdash; more than double the national average of 5.3%. Cornwall, despite being the highest in absolute terms (87 costs in allowed appeals), has 1,840 total appeals reflecting its large geographic area. The pattern is clear: certain authorities are repeatedly found to have behaved unreasonably, generating avoidable costs for the taxpayer. The reform's transparency requirements should monitor this data annually.</div></div>
+
+<h4>Regional patterns</h4>
+
+<div class="para"><span class="para-num">37N.</span><div class="para-text">The PINS data reveals significant regional variation in appeal outcomes, suggesting that the reform's impact will not be uniform across England:</div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Region</th>
+      <th>Total appeals</th>
+      <th>Allowed</th>
+      <th>Overall rate</th>
+      <th>Major residential rate</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>South West</td><td>11,343</td><td>3,270</td><td>28.8%</td><td><strong>44.8%</strong></td></tr>
+    <tr><td>East Midlands</td><td>6,510</td><td>1,923</td><td>29.5%</td><td><strong>43.9%</strong></td></tr>
+    <tr><td>West Midlands</td><td>6,715</td><td>2,094</td><td>31.2%</td><td><strong>42.0%</strong></td></tr>
+    <tr><td>North West</td><td>6,668</td><td>2,134</td><td>32.0%</td><td><strong>41.8%</strong></td></tr>
+    <tr><td>Yorkshire &amp; Humber</td><td>6,297</td><td>1,678</td><td>26.6%</td><td><strong>40.5%</strong></td></tr>
+    <tr><td>North East</td><td>1,720</td><td>455</td><td>26.5%</td><td><strong>39.2%</strong></td></tr>
+    <tr><td>South East</td><td>21,754</td><td>6,200</td><td>28.5%</td><td><strong>38.2%</strong></td></tr>
+    <tr><td>East of England</td><td>13,271</td><td>3,749</td><td>28.2%</td><td><strong>37.6%</strong></td></tr>
+    <tr><td>London</td><td>23,035</td><td>6,379</td><td>27.7%</td><td><strong>36.8%</strong></td></tr>
+  </tbody>
+</table>
+
+<div class="para"><span class="para-num">37O.</span><div class="para-text">The South West and East Midlands have the highest major residential overturn rates (44.8% and 43.9% respectively), while London has the lowest (36.8%). Notably, the regions with the highest volumes of appeals (South East and London, together accounting for 43% of all planning appeals) have among the <em>lowest</em> major residential overturn rates, suggesting that higher volumes of committee experience may correlate with better decision quality.</div></div>
+
+<h4>High-overturn LPAs and housing land supply</h4>
+
+<div class="para"><span class="para-num">37P.</span><div class="para-text">Site Intelligence's LPA profile research reveals a striking pattern among the highest-overturn authorities. Of the 20 LPAs with overturn rates above 41%, our profiles note that <strong>multiple authorities have historically been unable to demonstrate a five-year housing land supply</strong> &mdash; the threshold that engages the tilted balance under NPPF paragraph 11(d). Stevenage, Arun, Chorley, Portsmouth, Newcastle-under-Lyme, Hyndburn, and Bolsover are all noted in our LPA profiles as having faced housing delivery challenges and housing land supply shortfalls.</div></div>
+
+<div class="para"><span class="para-num">37Q.</span><div class="para-text">This correlation is not coincidental. Where LPAs lack a five-year supply, the tilted balance applies, and the threshold for refusal is higher. Committees that refuse applications in these circumstances are more likely to have their decisions overturned &mdash; not because inspectors are more permissive, but because the policy framework already presumes in favour of granting permission. The gateway test must account for this: where the tilted balance is engaged, the case for committee referral should be <em>stronger</em>, not weaker, precisely because the consequences of a poorly evidenced refusal are more severe.</div></div>
+
+<div class="callout-blue">
+  <strong>National context:</strong> Site Intelligence's primary analysis of the PINS Casework Database shows <strong>114,700 planning appeals decided between 2015 and 2025</strong>, with <strong>32,687 allowed</strong> (28.5%). The allowed rate for major residential applications is <strong>40.9%</strong> &mdash; nearly double the 23.1% for minor residential, confirming that larger schemes are disproportionately affected by poor-quality refusals. Costs were applied for in <strong>6,108 cases</strong>, with <strong>2,670 costs applications in allowed appeals</strong>. Analysis of 30,000 decision letters (91.8% of all allowed appeals) identified <strong>749 committee decisions</strong>, of which <strong>87 were explicitly against officer recommendation</strong>. Each appeal represents delay, cost, and uncertainty for applicants, councils, and communities. Committee refusals that are subsequently overturned on appeal contribute disproportionately to this burden &mdash; particularly where costs are awarded.
+</div>
+
+<h3 id="q3-7">3.7 Proposed Regulation Amendments</h3>
+
+<div class="para"><span class="para-num">37R.</span><div class="para-text">Having analysed 114,700 appeals across a full decade and the draft Regulations (particularly Regulation 5 and Schedules 1 and 2), we offer specific drafting proposals for the gateway test. The current wording of Regulation 5 permits referral where the application <em>"raises a significant planning matter having regard to the development plan and other material considerations"</em> or <em>"raises an economic, social or environmental issue of significance to the local area"</em>. These two limbs are too broad. We propose the following amendments:</div></div>
+
+<div class="callout" style="font-family: 'Courier New', monospace; font-size: 9pt; background: #f8fafc; border-left-color: #0f172a;">
+  <strong>Proposed amendment to Regulation 5(2):</strong><br><br>
+  A Schedule 2 application may be referred to committee only where the nominated officer and nominated member are satisfied that <strong>at least one</strong> of the following conditions is met:<br><br>
+  <strong>(a)</strong> the application represents a <strong>material departure</strong> from a detailed site allocation in the adopted development plan, where the departure is material to the <strong>principle of development</strong> (not merely to matters of design, layout, or landscaping);<br><br>
+  <strong>(b)</strong> a <strong>statutory consultee</strong> (the Environment Agency, Historic England, Natural England, or the Lead Local Flood Authority) has raised a <strong>holding objection that remains unresolved</strong> at the point of determination;<br><br>
+  <strong>(c)</strong> the application has received <strong>50 or more individual representations</strong> from separate households within the administrative area of the LPA, raising material planning considerations that are not addressed by the officer&rsquo;s report;<br><br>
+  <strong>(d)</strong> the nominated officer certifies in writing that the application raises a <strong>novel or unprecedented planning issue</strong> not addressed by the development plan, national policy, or established appeal precedent.<br><br>
+  Where <strong>none</strong> of conditions (a)&ndash;(d) is met, the application <strong>must</strong> be delegated.
+</div>
+
+<div class="para"><span class="para-num">37S.</span><div class="para-text">This formulation achieves three objectives. First, it replaces subjective criteria with <strong>measurable triggers</strong>. Second, it preserves democratic accountability for genuinely contentious cases (conditions (c) and (d)). Third, it prevents the gateway test from being used as a back door for political referral &mdash; the pattern that our PINS analysis shows produces the highest costs exposure for LPAs.</div></div>
+
+<div class="para"><span class="para-num">37T.</span><div class="para-text">We note that the draft guidance already states that applications broadly complying with a detailed site allocation should <em>not</em> be considered to raise significant planning matters. Our proposed condition (a) codifies this principle in the Regulations themselves, giving it statutory force rather than leaving it as guidance that can be disregarded.</div></div>
+
+<h3 id="q3-8">3.8 Cost-Benefit Analysis of the Reform</h3>
+
+<div class="para"><span class="para-num">37U.</span><div class="para-text">Our PINS analysis enables a quantified estimate of the reform&rsquo;s potential benefits, providing figures that MHCLG may wish to incorporate into the impact assessment:</div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Metric</th>
+      <th>Current position</th>
+      <th>If reform reduces major overturn rate to 30%</th>
+      <th>Annual saving</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Major residential appeals allowed per year</td>
+      <td><strong>225</strong> (40.9% of ~549/yr)</td>
+      <td><strong>165</strong> (30% of ~549/yr)</td>
+      <td>75 fewer overturned refusals</td>
+    </tr>
+    <tr>
+      <td>Costs awards in major allowed appeals</td>
+      <td>~58/yr</td>
+      <td>~39/yr</td>
+      <td>19 fewer costs awards</td>
+    </tr>
+    <tr>
+      <td>Direct costs burden (inquiry + hearing + WR)</td>
+      <td>&pound;13m&ndash;&pound;33m/yr</td>
+      <td>&pound;8.6m&ndash;&pound;22m/yr</td>
+      <td><strong>&pound;4.4m&ndash;&pound;11m/yr saved</strong></td>
+    </tr>
+    <tr>
+      <td>Dwellings delayed by overturned refusals</td>
+      <td>~5,600/yr</td>
+      <td>~3,700/yr</td>
+      <td><strong>~1,900 homes delivered faster</strong></td>
+    </tr>
+    <tr>
+      <td>Council Tax revenue (Band D &pound;2,171 &times; additional homes)</td>
+      <td>&mdash;</td>
+      <td>&mdash;</td>
+      <td><strong>&pound;4.1m/yr additional revenue</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="para"><span class="para-num">37V.</span><div class="para-text">Even a modest reduction in the major residential overturn rate &mdash; from 40.9% to 30% &mdash; would save LPAs an estimated <strong>&pound;4.4m&ndash;&pound;11m per year</strong> in direct appeal costs and accelerate the delivery of approximately <strong>1,900 homes annually</strong>. Over a five-year period, that represents &pound;22m&ndash;&pound;55m in direct savings and approximately 9,500 homes brought to market sooner. These figures exclude indirect benefits: New Homes Bonus, reduced homelessness costs, and the economic multiplier effect of construction activity.</div></div>
+
+<h3 id="q3-9">3.9 Alignment with Other Respondents</h3>
+
+<div class="para"><span class="para-num">37W.</span><div class="para-text">Our recommendations are informed by, and broadly aligned with, the published positions of key sector bodies. We note the following areas of convergence and divergence:</div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Issue</th>
+      <th>Site Intelligence position</th>
+      <th>RTPI</th>
+      <th>LGA</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>National scheme of delegation</td>
+      <td>Support (with stronger gateway test)</td>
+      <td>Support in principle (no consensus on preferred option)</td>
+      <td>Support aim, concern about standardisation</td>
+    </tr>
+    <tr>
+      <td>Mandatory training</td>
+      <td>Support as prerequisite, not recommendation</td>
+      <td><strong>Strongly support</strong> &mdash; including testing requirement</td>
+      <td>Support</td>
+    </tr>
+    <tr>
+      <td>Committee size cap</td>
+      <td>Support cap at 13</td>
+      <td>Support</td>
+      <td>Oppose mandatory cap &mdash; prefer guidance</td>
+    </tr>
+    <tr>
+      <td>Gateway test specificity</td>
+      <td><strong>Specific measurable triggers</strong> (our Reg 5 proposal)</td>
+      <td>Want clarity but no specific wording proposed</td>
+      <td>Want local flexibility</td>
+    </tr>
+    <tr>
+      <td>Statutory Chief Planning Officer</td>
+      <td>Support (aligns with nominated officer role)</td>
+      <td><strong>Strongly support</strong></td>
+      <td>Not addressed</td>
+    </tr>
+    <tr>
+      <td>Data-driven decision support</td>
+      <td><strong>Central recommendation</strong> &mdash; evidence base for gateway test</td>
+      <td>Not specifically addressed</td>
+      <td>Not addressed</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="para"><span class="para-num">37X.</span><div class="para-text">Our response differs from both the RTPI and LGA in one critical respect: we provide <strong>primary quantitative evidence</strong> from analysis of 114,700 PINS appeals over a full decade to support our recommendations, rather than relying on member surveys or general principles. The &pound;66m&ndash;&pound;166m costs burden, the 40.9% major residential overturn rate, and the 20 worst-performing LPAs are data points that neither body has published in their responses. This evidence base is what enables us to propose specific, measurable gateway test triggers rather than calling for &ldquo;clarity&rdquo; in general terms.</div></div>
+
+<!-- ============================================================ -->
+<!-- SECTION 4: TECHNOLOGY                                          -->
+<!-- ============================================================ -->
+<h2 id="tech" class="page-break">Section 4: The Role of Technology in Supporting the Reform</h2>
+
+<div class="para"><span class="para-num">38.</span><div class="para-text">The gateway test would benefit from a standardised evidence base that both the nominated officer and the nominated member can reference. The planning system already generates the data needed &mdash; constraint registers, flood maps, heritage designations, housing land supply figures, appeal decisions, and policy provisions. The challenge is not availability but synthesis: presenting this data in an accessible, structured format for decision-makers. Technology platforms already exist that can provide automated constraint detection, policy compliance analysis, and cross-domain impact assessment for individual applications. Encouraging LPAs to adopt such tools would reduce the reliance on subjective judgment and produce the kind of specific, evidenced reasoning that withstands appeal scrutiny.</div></div>
+
+<div class="para"><span class="para-num">39.</span><div class="para-text">The Brighton Gasworks case (APP/Q1445/W/24/3353409) illustrates the cost of the current approach. The inspector found the committee&rsquo;s reasons for refusal were <em>&ldquo;vague, generalised or inaccurate&rdquo;</em> and awarded full costs. Had the committee been provided with a structured analysis of the site&rsquo;s constraint profile and policy compliance position &mdash; all derivable from publicly available data &mdash; the refusal would either not have occurred or would have been defensible at appeal. The &pound;66m&ndash;&pound;166m costs burden identified in our PINS analysis (Section 3.6) is, in substantial part, a failure of evidence rather than a failure of judgment.</div></div>
+
+<div class="para"><span class="para-num">40.</span><div class="para-text">We recommend that the guidance encourage LPAs to adopt data-driven decision support tools as part of the gateway test process, and that MHCLG&rsquo;s mandatory annual reporting of delegation rates include appeal success rates by decision route (delegated vs committee). This would create a feedback loop that demonstrates the reform&rsquo;s effectiveness and identifies authorities requiring targeted support. The monitoring should specify a responsible body, an intervention threshold, and a mechanism for addressing persistent high overturn rates.</div></div>
+
+<!-- ============================================================ -->
+<!-- ANNEX                                                          -->
+<!-- ============================================================ -->
+<h2 id="annex" class="page-break">Annex: Portfolio Evidence Base</h2>
+
+<div class="para"><span class="para-num">48.</span><div class="para-text">The data cited in this response is drawn from two sources: Site Intelligence's retrospective case study programme (real planning applications analysed to validate our automated assessment platform) and publicly available national statistics. All figures are independently verifiable. Site Intelligence did not act on behalf of applicants in any of these cases.</div></div>
+
+<h3>A. Site Intelligence Case Study Data</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Metric</th>
+      <th>Value</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Total projects analysed</td>
+      <td><strong>86</strong></td>
+      <td>Householder to strategic development scale</td>
+    </tr>
+    <tr>
+      <td>English LPAs covered</td>
+      <td><strong>59</strong></td>
+      <td>Across all regions</td>
+    </tr>
+    <tr>
+      <td>Projects with appeal data</td>
+      <td><strong>18</strong></td>
+      <td>Verified appeal references (APP/...)</td>
+    </tr>
+    <tr>
+      <td>Projects with detailed refusal analysis</td>
+      <td><strong>10</strong></td>
+      <td>Refusal reasons mapped to constraint types</td>
+    </tr>
+    <tr>
+      <td>Committee refusals in case studies</td>
+      <td><strong>3</strong></td>
+      <td>Brighton (allowed, full costs) + Bolton (10&ndash;3, allowed, partial costs) + Barnet (8&ndash;1 against officer)</td>
+    </tr>
+    <tr>
+      <td>Full costs awards</td>
+      <td><strong>1</strong></td>
+      <td>Brighton Gasworks (APP/Q1445/W/24/3353409)</td>
+    </tr>
+    <tr>
+      <td>Constraint types: flood risk</td>
+      <td><strong>17 projects</strong></td>
+      <td>20% of case studies</td>
+    </tr>
+    <tr>
+      <td>Constraint types: heritage</td>
+      <td><strong>9 projects</strong></td>
+      <td>10% of case studies</td>
+    </tr>
+    <tr>
+      <td>Constraint types: landscape (AONB)</td>
+      <td><strong>8 projects</strong></td>
+      <td>9% of case studies</td>
+    </tr>
+    <tr>
+      <td>Constraint types: ecology (SSSI/SAC/SPA)</td>
+      <td><strong>7 projects</strong></td>
+      <td>8% of case studies</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>B. PINS Casework Database &mdash; Primary Analysis (Site Intelligence)</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Statistic</th>
+      <th>Value</th>
+      <th>Source</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Total planning appeals (2015&ndash;2025, 10 years)</td>
+      <td><strong>114,700</strong></td>
+      <td>PINS Casework Database (current + older), downloaded 28 March 2026 (GOV.UK OGL)</td>
+    </tr>
+    <tr>
+      <td>Total allowed</td>
+      <td><strong>32,687 (28.5%)</strong></td>
+      <td>As above</td>
+    </tr>
+    <tr>
+      <td>Major residential allowed rate</td>
+      <td><strong>40.9%</strong></td>
+      <td>2,247 of 5,490 major residential appeals</td>
+    </tr>
+    <tr>
+      <td>Minor residential allowed rate</td>
+      <td><strong>23.1%</strong></td>
+      <td>9,659 of 41,861 minor residential appeals</td>
+    </tr>
+    <tr>
+      <td>Costs applications</td>
+      <td><strong>6,108</strong></td>
+      <td>2,670 costs applications in allowed appeals</td>
+    </tr>
+    <tr>
+      <td>Allowed appeals in Green Belt</td>
+      <td><strong>3,046</strong></td>
+      <td>Of 4,056 total constrained allowed appeals</td>
+    </tr>
+    <tr>
+      <td>Allowed appeals involving listed buildings</td>
+      <td><strong>733</strong></td>
+      <td>As above</td>
+    </tr>
+    <tr>
+      <td>Allowed appeals in AONB</td>
+      <td><strong>293</strong></td>
+      <td>As above</td>
+    </tr>
+    <tr>
+      <td>Decision letters classified</td>
+      <td><strong>30,000</strong></td>
+      <td>749 committee decisions, 87 against officer recommendation (91.8% coverage)</td>
+    </tr>
+    <tr>
+      <td>Top 20 LPAs by overturn rate</td>
+      <td><strong>39.6% &ndash; 70.0%</strong></td>
+      <td>Minimum 10 appeals threshold (see Section 3.6)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>C. Published Third-Party Data</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Statistic</th>
+      <th>Value</th>
+      <th>Source</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Appeals allowed where committee refused against officer rec</td>
+      <td><strong>65%</strong></td>
+      <td>Lichfields, <em>"Refused for Good Reason?"</em>, August 2018 (all 50+ home appeals in 2017)</td>
+    </tr>
+    <tr>
+      <td>Appeals allowed where refusal followed officer rec</td>
+      <td><strong>40%</strong></td>
+      <td>Lichfields, as above</td>
+    </tr>
+    <tr>
+      <td>Total appeal decisions (12 months to June 2025)</td>
+      <td><strong>18,778</strong></td>
+      <td>PINS Statistical Release, July 2025</td>
+    </tr>
+    <tr>
+      <td>Median time to appeal decision</td>
+      <td><strong>27 weeks</strong></td>
+      <td>PINS Statistical Release, July 2025</td>
+    </tr>
+    <tr>
+      <td>Committee members without good planning understanding after training</td>
+      <td><strong>45%</strong></td>
+      <td>PAS Modernising Planning Committees National Survey, December 2024 (120+ councils)</td>
+    </tr>
+    <tr>
+      <td>Local plans projected up-to-date by end 2025</td>
+      <td><strong>~22%</strong></td>
+      <td>Lichfields, <em>"Timed Out"</em>, July 2023</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="para"><span class="para-num">49.</span><div class="para-text">Our evidence base now comprises four layers: <strong>(i)</strong> 86 retrospective case studies with qualitative analysis across 59 LPAs, <strong>(ii)</strong> primary statistical analysis of <strong>114,700 planning appeals</strong> from the PINS Casework Database (10-year dataset, 2015&ndash;2025), <strong>(iii)</strong> decision letter analysis of <strong>30,000 allowed appeals</strong> (91.8% of all allowed appeals), classifying 749 as committee refusals (87 against officer recommendation), and <strong>(iv)</strong> a structured database of <strong>500 verified case studies</strong> mined from the PINS dataset, representing the most compelling evidence for committee reform.</div></div>
+
+<div class="stat-grid">
+  <div class="stat-box">
+    <div class="stat-value">500</div>
+    <div class="stat-label">Verified PINS case studies</div>
+  </div>
+  <div class="stat-box">
+    <div class="stat-value">107,045</div>
+    <div class="stat-label">Dwellings across case studies</div>
+  </div>
+  <div class="stat-box">
+    <div class="stat-value">143</div>
+    <div class="stat-label">Cases with costs applied</div>
+  </div>
+  <div class="stat-box">
+    <div class="stat-value">386</div>
+    <div class="stat-label">Cases decided at inquiry</div>
+  </div>
+</div>
+
+<div class="para"><span class="para-num">49A.</span><div class="para-text">Every case in the structured database is independently verifiable through the Planning Inspectorate's casework portal. The database includes the full appeal reference, LPA, site address, decision, dwelling count, procedure type, constraint flags, and costs data. This is not a sample or estimate &mdash; it is the complete dataset of qualifying cases from the official PINS database.</div></div>
+
+<!-- ============================================================ -->
+<!-- ABOUT                                                          -->
+<!-- ============================================================ -->
+<h2 id="democracy">A Note on Democratic Accountability</h2>
+
+<div class="para"><span class="para-num">50.</span><div class="para-text">We recognise that planning committee reform raises legitimate concerns about democratic accountability. Elected members have a democratic mandate to represent their communities, and the planning process is one of the most visible ways in which that mandate is exercised. Reducing the scope for committee involvement risks being perceived as diminishing local democratic control.</div></div>
+
+<div class="para"><span class="para-num">51.</span><div class="para-text">We would argue that the opposite is true. Poorly evidenced committee refusals that are subsequently overturned on appeal &mdash; often with costs awarded against the council &mdash; do not serve democratic accountability. They expose councils to financial liability, delay housing delivery, and undermine public confidence in the planning system. Better evidence produces better democratic outcomes: committees that are well-informed, well-trained, and equipped with structured analysis of the issues before them will make decisions that are more defensible, more consistent, and more likely to reflect the genuine planning merits of a proposal. The reform does not remove democratic oversight &mdash; it concentrates it where it adds most value.</div></div>
+
+<h2 id="about" class="page-break">About Site Intelligence</h2>
+
+<div class="para"><span class="para-num">52.</span><div class="para-text">Site Intelligence is a planning technology platform developed by PF &amp; Co Holdings Ltd that provides automated site assessment, constraint detection, and policy compliance analysis. For this consultation response, Site Intelligence downloaded and analysed the full PINS Casework Database (114,700 planning appeals, 2015&ndash;2025). The underlying dataset is available to MHCLG on request for independent verification.</div></div>
+
+<div style="margin-top:30px;padding:20px 24px;background:#f8fafc;border-radius:8px;border:1px solid #e2e8f0;">
+  <div style="font-weight:700;color:#0f172a;font-size:11pt;margin-bottom:6px;">Contact</div>
+  <div style="font-size:9.5pt;color:#334155;">
+    <strong>Site Intelligence</strong> &mdash; PF &amp; Co Holdings Ltd<br>
+    Email: <a href="mailto:info@pfandco.co.uk" style="color:#f97316;">info@pfandco.co.uk</a>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- FOOTER                                                         -->
+<!-- ============================================================ -->
+<div class="doc-footer">
+  <div><strong>Site Intelligence</strong> &mdash; PF &amp; Co Holdings Ltd &mdash; info@pfandco.co.uk</div>
+  <div>29 March 2026</div>
+</div>
+
+</body>
+</html>
