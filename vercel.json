@@ -40,7 +40,7 @@
     { "source": "/discover(/?)", "destination": "/discover/index.html" },
     { "source": "/internal", "destination": "/api/internal" },
     { "source": "/internal/:path*", "destination": "/api/internal" },
-    { "source": "/((?!api/).*)", "destination": "/index.html" }
+    { "source": "/((?!api/|internal(?:/|$)|_internal_static/).*)", "destination": "/index.html" }
   ],
   "headers": [
     {
