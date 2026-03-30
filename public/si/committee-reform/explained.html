@@ -7,15 +7,45 @@
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   @media print {
-    @page { margin: 0; }
+    @page { margin: 0; size: A4; }
     * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
-    body { padding: 12mm; }
+    body { padding: 14mm 12mm; background: #fff !important; font-size: 10pt; }
     .no-print { display: none !important; }
-    .data-box, .callout, .callout-blue, .callout-red, .action, .bar-row, .link-card, .intro { break-inside: avoid !important; page-break-inside: avoid !important; }
-    .actions { grid-template-columns: 1fr !important; }
-    .links { grid-template-columns: 1fr !important; }
-    h2 { page-break-after: avoid; break-after: avoid; }
-    .section-num { page-break-after: avoid; }
+
+    /* Hero — compact for print */
+    .hero { padding: 30px 24px !important; }
+    .hero h1 { font-size: 20pt !important; }
+    .hero .subtitle { font-size: 10pt !important; }
+    .hero .who { gap: 8px !important; }
+
+    /* Container — tighter */
+    .container { padding: 16px 0 !important; }
+
+    /* Each section starts on a new page for clean breaks */
+    .section { page-break-before: always; background: none !important; box-shadow: none !important; padding: 16px 0 !important; margin-bottom: 0 !important; }
+    .section:first-of-type { page-break-before: auto; }
+    .intro { page-break-before: auto; background: none !important; box-shadow: none !important; border-left: 4px solid #f97316; padding: 12px 16px !important; }
+
+    /* Keep these blocks together */
+    .data-box, .callout, .callout-blue, .callout-red, .action, .bar-row, .link-card { break-inside: avoid !important; page-break-inside: avoid !important; }
+
+    /* Actions — single column in print */
+    .actions { grid-template-columns: 1fr !important; gap: 6px !important; }
+    .action { padding: 8px 12px !important; }
+
+    /* Links — single column */
+    .links { grid-template-columns: 1fr !important; gap: 8px !important; }
+
+    /* Headings stay with content */
+    h2, .section-num, .question { page-break-after: avoid !important; break-after: avoid !important; }
+
+    /* Data boxes — compact */
+    .data-box { padding: 12px 16px !important; margin: 8px 0 !important; }
+    .data-row { padding: 4px 0 !important; font-size: 9pt !important; }
+
+    /* Bar charts */
+    .bar-row { margin-bottom: 4px !important; }
+    .bar-label { width: 110px !important; font-size: 8pt !important; }
   }
   body {
     font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
@@ -112,7 +142,11 @@
 
 <button class="print-btn no-print" onclick="window.print()">Print / Save PDF</button>
 
-<div class="hero">
+<div class="hero" style="position:relative;">
+  <div style="position:absolute;top:16px;right:16px;text-align:center;">
+    <img src="data:image/png;base64,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" alt="QR" style="width:64px;height:64px;border:2px solid rgba(255,255,255,0.2);border-radius:6px;">
+    <div style="font-size:6pt;color:rgba(255,255,255,0.5);margin-top:3px;">Full evidence package</div>
+  </div>
   <div class="badge">PLAIN ENGLISH GUIDE</div>
   <h1>Planning Committee Reform: <span>Explained</span></h1>
   <div class="subtitle">What the data tells us, why it matters, and what you can do about it. Based on the largest independent analysis of planning appeal decisions in England.</div>
