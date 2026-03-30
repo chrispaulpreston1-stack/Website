@@ -4,6 +4,19 @@ export const config = {
 
 export default async function handler(request) {
   const auth = request.headers.get('authorization');
+  const validUser = process.env.INTERNAL_USERNAME;
+  const validPass = process.env.INTERNAL_PASSWORD;
+
+  // Debug: check if env vars are loaded
+  if (new URL(request.url).searchParams.has('debug')) {
+    return new Response(JSON.stringify({
+      hasAuth: !!auth,
+      hasUser: !!validUser,
+      hasPass: !!validPass,
+      userLen: validUser?.length,
+      passLen: validPass?.length,
+    }), { headers: { 'Content-Type': 'application/json' } });
+  }
 
   if (auth) {
     const [scheme, encoded] = auth.split(' ');
@@ -11,7 +24,7 @@ export default async function handler(request) {
       const decoded = atob(encoded);
       const [user, pass] = decoded.split(':');
 
-      if (user === process.env.INTERNAL_USERNAME && pass === process.env.INTERNAL_PASSWORD) {
+      if (user === validUser && pass === validPass) {
         // Authenticated — fetch the actual static file from the same origin
         const url = new URL(request.url);
         let path = url.pathname.replace(/^\/internal\/?/, '') || 'index.html';
