@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>B2B Recruitment Intelligence — Site Intelligence</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #0a0e1a; color: #e0e6f0; line-height: 1.6; }
+
+.header { background: linear-gradient(135deg, #0f1629, #1a2340); padding: 40px; border-bottom: 3px solid #2563eb; }
+.header h1 { font-size: 28px; color: #fff; margin-bottom: 8px; }
+.header .subtitle { color: #94a3b8; font-size: 16px; }
+.header .date { color: #64748b; font-size: 13px; margin-top: 4px; }
+
+.tabs { display: flex; gap: 2px; padding: 0 20px; background: #0f1629; border-bottom: 1px solid #1e293b; overflow-x: auto; }
+.tab { padding: 14px 24px; cursor: pointer; color: #94a3b8; font-size: 14px; font-weight: 500; border-bottom: 3px solid transparent; transition: all 0.2s; white-space: nowrap; }
+.tab:hover { color: #e0e6f0; background: rgba(37, 99, 235, 0.1); }
+.tab.active { color: #60a5fa; border-bottom-color: #2563eb; background: rgba(37, 99, 235, 0.05); }
+
+.content { display: none; padding: 30px; max-width: 1400px; margin: 0 auto; }
+.content.active { display: block; }
+
+/* Stats Banner */
+.stats-banner { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 30px; }
+.stat-card { background: linear-gradient(135deg, #1a2340, #1e293b); border: 1px solid #2d3a52; border-radius: 12px; padding: 20px; text-align: center; }
+.stat-card .number { font-size: 32px; font-weight: 700; color: #60a5fa; }
+.stat-card .number.red { color: #f87171; }
+.stat-card .number.green { color: #4ade80; }
+.stat-card .number.amber { color: #fbbf24; }
+.stat-card .label { font-size: 12px; color: #94a3b8; margin-top: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+h2 { font-size: 22px; color: #fff; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid #2d3a52; }
+h3 { font-size: 18px; color: #60a5fa; margin: 24px 0 12px; }
+h4 { font-size: 15px; color: #94a3b8; margin: 16px 0 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+p { margin-bottom: 12px; color: #cbd5e1; }
+strong { color: #e0e6f0; }
+
+/* Tables */
+table { width: 100%; border-collapse: collapse; margin: 16px 0 24px; font-size: 14px; }
+th { background: #1a2340; color: #60a5fa; padding: 12px 16px; text-align: left; font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 2px solid #2563eb; }
+td { padding: 12px 16px; border-bottom: 1px solid #1e293b; color: #cbd5e1; vertical-align: top; }
+tr:hover td { background: rgba(37, 99, 235, 0.05); }
+
+/* Tags */
+.tag { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 11px; font-weight: 600; margin: 2px; }
+.tag-hot { background: rgba(239, 68, 68, 0.15); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3); }
+.tag-warm { background: rgba(251, 191, 36, 0.15); color: #fbbf24; border: 1px solid rgba(251, 191, 36, 0.3); }
+.tag-enterprise { background: rgba(96, 165, 250, 0.15); color: #60a5fa; border: 1px solid rgba(96, 165, 250, 0.3); }
+.tag-builder { background: rgba(74, 222, 128, 0.15); color: #4ade80; border: 1px solid rgba(74, 222, 128, 0.3); }
+.tag-si { background: rgba(168, 85, 247, 0.15); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.3); }
+
+/* Dream Team Cards */
+.dream-team { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 20px; margin: 20px 0; }
+.dt-card { background: linear-gradient(135deg, #1a2340, #1e293b); border: 1px solid #2d3a52; border-radius: 12px; padding: 24px; }
+.dt-card .name { font-size: 16px; font-weight: 700; color: #fbbf24; margin-bottom: 4px; }
+.dt-card .role { font-size: 12px; color: #64748b; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+.dt-card .verdict { color: #cbd5e1; font-size: 14px; }
+.dt-card .verdict strong { color: #60a5fa; }
+.dt-card .quote { font-style: italic; color: #94a3b8; margin-top: 12px; padding-top: 12px; border-top: 1px solid #2d3a52; font-size: 13px; }
+
+/* Comparison bars */
+.comparison-row { margin: 12px 0; }
+.comparison-label { font-size: 13px; color: #94a3b8; margin-bottom: 4px; }
+.comparison-bar { height: 28px; border-radius: 6px; display: flex; align-items: center; padding: 0 12px; font-size: 12px; font-weight: 600; color: #fff; }
+.bar-traditional { background: linear-gradient(90deg, #ef4444, #dc2626); }
+.bar-si { background: linear-gradient(90deg, #2563eb, #3b82f6); }
+
+/* Killer Quote */
+.killer-quote { background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(168, 85, 247, 0.1)); border: 1px solid #2563eb; border-radius: 12px; padding: 30px; margin: 24px 0; text-align: center; }
+.killer-quote .text { font-size: 20px; color: #fff; font-weight: 300; line-height: 1.5; }
+.killer-quote .text strong { color: #60a5fa; font-weight: 700; }
+.killer-quote .source { font-size: 13px; color: #64748b; margin-top: 12px; }
+
+/* Action items */
+.action-list { list-style: none; padding: 0; }
+.action-list li { padding: 12px 16px; margin: 8px 0; background: rgba(37, 99, 235, 0.08); border-left: 3px solid #2563eb; border-radius: 0 8px 8px 0; color: #cbd5e1; }
+.action-list li strong { color: #60a5fa; }
+
+/* Pitch section */
+.pitch-box { background: linear-gradient(135deg, #1a2340, #1e293b); border: 2px solid #2563eb; border-radius: 12px; padding: 24px; margin: 16px 0; }
+.pitch-box h4 { color: #60a5fa; margin-top: 0; }
+
+/* Print */
+.print-btn { position: fixed; bottom: 20px; right: 20px; background: #2563eb; color: #fff; border: none; padding: 12px 24px; border-radius: 8px; cursor: pointer; font-size: 14px; font-weight: 600; z-index: 100; }
+.print-btn:hover { background: #1d4ed8; }
+
+@media print {
+  body { background: #fff; color: #000; }
+  .header { background: #f1f5f9; border-bottom-color: #2563eb; }
+  .header h1 { color: #000; }
+  .tabs, .print-btn { display: none; }
+  .content { display: block !important; page-break-before: always; }
+  .stat-card { background: #f8fafc; border-color: #e2e8f0; }
+  .stat-card .number { color: #2563eb; }
+  .dt-card { background: #f8fafc; border-color: #e2e8f0; }
+  td, th { color: #000; }
+  table { font-size: 11px; }
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>B2B Recruitment Intelligence Dashboard</h1>
+  <div class="subtitle">UK Planning Consultancies Hiring Direct — Potential SI Customers</div>
+  <div class="date">Site Intelligence | 30 March 2026</div>
+</div>
+
+<div class="tabs">
+  <div class="tab active" onclick="showTab('crisis')">The Crisis</div>
+  <div class="tab" onclick="showTab('prospects')">Hot Prospects</div>
+  <div class="tab" onclick="showTab('jobs')">Job Listings</div>
+  <div class="tab" onclick="showTab('mapping')">Task Mapping</div>
+  <div class="tab" onclick="showTab('economics')">Economics</div>
+  <div class="tab" onclick="showTab('contacts')">Contacts & Salaries</div>
+  <div class="tab" onclick="showTab('dreamteam')">Dream Team</div>
+  <div class="tab" onclick="showTab('pitch')">The Pitch</div>
+  <div class="tab" onclick="showTab('actions')">Next Steps</div>
+</div>
+
+<!-- TAB 1: THE CRISIS -->
+<div id="crisis" class="content active">
+  <h2>The UK Planning Recruitment Crisis</h2>
+
+  <div class="stats-banner">
+    <div class="stat-card"><div class="number red">884</div><div class="label">Unfilled Planning Posts (England)</div></div>
+    <div class="stat-card"><div class="number red">11%</div><div class="label">Vacancy Rate</div></div>
+    <div class="stat-card"><div class="number red">80%</div><div class="label">LPAs Below Capacity</div></div>
+    <div class="stat-card"><div class="number red">2,200</div><div class="label">Officers Needed</div></div>
+    <div class="stat-card"><div class="number amber">5-7 yrs</div><div class="label">To Train a Chartered Planner</div></div>
+    <div class="stat-card"><div class="number amber">1 in 5</div><div class="label">Plan to Leave Within 3 Years</div></div>
+  </div>
+
+  <div class="killer-quote">
+    <div class="text">"Only <strong>21% of planning departments</strong> are fully staffed. <strong>57% of planners</strong> feel overstretched frequently or all the time."</div>
+    <div class="source">RTPI State of the Profession 2025 / UNISON 2025</div>
+  </div>
+
+  <h3>Key Statistics</h3>
+  <table>
+    <tr><th>Metric</th><th>Figure</th><th>Source</th></tr>
+    <tr><td>Total UK planning workforce</td><td><strong>~22,000</strong></td><td>RTPI 2025</td></tr>
+    <tr><td>National vacancy count (England)</td><td><strong>884 posts</strong></td><td>UNISON 2025</td></tr>
+    <tr><td>LPAs struggling to recruit</td><td><strong>9 in 10</strong></td><td>MHCLG 2023</td></tr>
+    <tr><td>Principal/Team Leader posts hard to fill</td><td><strong>96.9%</strong></td><td>Spencer Clarke Group</td></tr>
+    <tr><td>Public sector declined (2009-2020)</td><td><strong>25%</strong></td><td>RTPI 2023</td></tr>
+    <tr><td>Private sector grew (same period)</td><td><strong>50%</strong></td><td>RTPI 2023</td></tr>
+    <tr><td>Real-terms pay decline since 2005</td><td><strong>30%</strong> (£48k → £34k median)</td><td>Macdonald & Company</td></tr>
+    <tr><td>Applications decided by officers (desk-based)</td><td><strong>96%</strong></td><td>LGA</td></tr>
+    <tr><td>Caseload benchmark per officer</td><td><strong>150 cases</strong></td><td>LGA</td></tr>
+    <tr><td>Government funding pledged</td><td><strong>£46m for 300 officers</strong> (15% of shortfall)</td><td>MHCLG 2024</td></tr>
+    <tr><td>SME builders waiting 1yr+ for planning</td><td><strong>51%</strong></td><td>HBF 2025</td></tr>
+  </table>
+
+  <h3>Why This Won't Fix Itself</h3>
+  <table>
+    <tr><th>Factor</th><th>Impact</th></tr>
+    <tr><td>Training pipeline</td><td>5-7 years to charter a planner. Level 7 apprenticeship restrictions could cut 200 new entrants/year</td></tr>
+    <tr><td>Pay gap</td><td>Private sector pays 35-80% more. LAs can't compete. Agency staff premiums waste £2bn/yr across councils</td></tr>
+    <tr><td>Demand surge</td><td>Government's 1.5m homes target, 370,000/year. April 2026 planning reforms increase throughput requirements</td></tr>
+    <tr><td>Demographic cliff</td><td>1 in 5 planners planning to leave within 3 years. Largest cohort aged 40-44, retirement wave coming</td></tr>
+    <tr><td>Abuse driving exits</td><td>Almost two-thirds of planners have experienced abuse. Contributing to exodus</td></tr>
+  </table>
+
+  <div class="killer-quote">
+    <div class="text">This is a structural crisis, not a cycle. <strong>You cannot hire your way out of a 2,200-person shortfall when it takes 5-7 years to train each one.</strong> The only solution is to make existing planners radically more productive.</div>
+    <div class="source">Site Intelligence Thesis</div>
+  </div>
+</div>
+
+<!-- TAB 2: HOT PROSPECTS -->
+<div id="prospects" class="content">
+  <h2>Target Companies — Hiring Direct</h2>
+  <p>23 firms identified, 85+ open planning roles. Sorted by outreach priority.</p>
+
+  <h3><span class="tag tag-hot">TIER 1</span> Hot Prospects — Hiring Aggressively, Mid-Size Sweet Spot</h3>
+  <table>
+    <tr><th>Company</th><th>Size</th><th>Offices</th><th>Open Roles</th><th>Why They Need SI</th></tr>
+    <tr>
+      <td><strong>Lanpro</strong></td>
+      <td>~80 staff</td>
+      <td>7 (Norwich, London, Lincoln, Sheffield, Leeds, Nottingham, Peterborough)</td>
+      <td>6 roles: Graduate → Regional Director</td>
+      <td>Environment-led. Hiring at every level = capacity crisis. Mid-size = can't build their own tech.</td>
+    </tr>
+    <tr>
+      <td><strong>DLP Consultants</strong></td>
+      <td>~70 staff</td>
+      <td>7 (Bedford, Bristol, Cardiff, Leeds, London, Milton Keynes, Sheffield)</td>
+      <td>7 roles inc. "Research & Analysis"</td>
+      <td><strong>Has a "Research & Analysis" service line</strong> — literally what SI automates. Employee-owned = progressive culture.</td>
+    </tr>
+    <tr>
+      <td><strong>Turley</strong></td>
+      <td>~300 staff</td>
+      <td>12 offices</td>
+      <td>9 roles (4 at Director/AD level)</td>
+      <td>Director-level gaps = senior time wasted on desk research. Residential, logistics, renewables. 20+ templates relevant.</td>
+    </tr>
+    <tr>
+      <td><strong>Pegasus Group</strong></td>
+      <td>~350 staff</td>
+      <td>12 offices</td>
+      <td>7+ roles</td>
+      <td>One of UK's fastest-growing. Growth = pain = buyer intent. Multi-discipline (planning, environment, design).</td>
+    </tr>
+    <tr>
+      <td><strong>Firstplan</strong></td>
+      <td>~30 staff</td>
+      <td>London, Manchester</td>
+      <td>Hiring due to "growing workloads"</td>
+      <td>Explicitly citing workload as reason. Small enough to feel pain acutely. Perfect size for Product 2-3.</td>
+    </tr>
+    <tr>
+      <td><strong>Boyer</strong></td>
+      <td>~90 staff</td>
+      <td>Multiple UK</td>
+      <td>Multiple (fastest-growing rankings)</td>
+      <td>Ranked in fastest-growing consultancies. Growth creates hiring pressure.</td>
+    </tr>
+  </table>
+
+  <h3><span class="tag tag-warm">TIER 2</span> Warm Prospects — Growing, Actively Recruiting</h3>
+  <table>
+    <tr><th>Company</th><th>Size</th><th>Open Roles</th><th>Notes</th></tr>
+    <tr><td><strong>Quod</strong></td><td>~80 staff</td><td>Multiple ("rapidly growing")</td><td>London-focused, "rapidly growing" — capacity constraint</td></tr>
+    <tr><td><strong>Carter Jonas</strong></td><td>~800 staff (multi-discipline)</td><td>Planning team hiring</td><td>"Fastest growing infrastructure team in the country"</td></tr>
+    <tr><td><strong>LUC</strong></td><td>~250 staff</td><td>Multiple</td><td>Highest proportional growth in top-50 planning consultancies</td></tr>
+    <tr><td><strong>Nexus Planning</strong></td><td>~50 staff</td><td>Multiple</td><td>RTPI Consultancy of the Year — prestigious, growth phase</td></tr>
+    <tr><td><strong>Bidwells</strong></td><td>~500 staff (multi-discipline)</td><td>Graduate Heritage Planner +</td><td>Cambridge-based, rural/heritage focus — strong SI overlap</td></tr>
+    <tr><td><strong>Fisher German</strong></td><td>~600 staff (multi-discipline)</td><td>Graduate + placements</td><td>Rural property focus, opening 2026 graduate schemes</td></tr>
+    <tr><td><strong>Montagu Evans</strong></td><td>~200 staff</td><td>Graduate programme</td><td>London-focused, graduate pipeline suggests growth</td></tr>
+  </table>
+
+  <h3><span class="tag tag-enterprise">TIER 3</span> Enterprise — Volume Buyers if Proven at Scale</h3>
+  <table>
+    <tr><th>Company</th><th>Size</th><th>Market Position</th><th>SI Opportunity</th></tr>
+    <tr><td><strong>Savills</strong></td><td>300+ planners</td><td>#1 UK planning consultancy</td><td>Screening 100s of sites. Product 1 (£199) at volume = huge pipeline</td></tr>
+    <tr><td><strong>Lichfields</strong></td><td>~200 staff</td><td>#3, hiring grads across 7+ cities</td><td>Economics + planning. Viability appraisals overlap with SI</td></tr>
+    <tr><td><strong>Stantec (ex-Barton Willmore)</strong></td><td>#2 by revenue</td><td>53 promotions = backfill needed</td><td>Massive scale. 53 internal promotions creating junior gaps</td></tr>
+    <tr><td><strong>Tetra Tech</strong></td><td>500+ UK roles</td><td>Engineering + environment</td><td>Environmental desk studies at scale</td></tr>
+    <tr><td><strong>RPS Group</strong></td><td>~5,000 globally</td><td>Planning + environment</td><td>Multi-discipline. Could use SI for initial site screening</td></tr>
+  </table>
+
+  <h3><span class="tag tag-builder">TIER 4</span> Housebuilders — In-House Planning Teams</h3>
+  <table>
+    <tr><th>Company</th><th>Annual Output</th><th>SI Use Case</th></tr>
+    <tr><td><strong>Barratt Redrow</strong></td><td>~17,000 homes/yr</td><td>Land acquisition screening. 100s of sites assessed per year</td></tr>
+    <tr><td><strong>Taylor Wimpey</strong></td><td>~10,000 homes/yr</td><td>Feasibility assessment pipeline</td></tr>
+    <tr><td><strong>Persimmon</strong></td><td>~10,000 homes/yr</td><td>Rapid constraint checking for site options</td></tr>
+    <tr><td><strong>Bellway</strong></td><td>~8,000 homes/yr</td><td>Regional land team support</td></tr>
+    <tr><td><strong>Berkeley Group</strong></td><td>~4,000 homes/yr (complex urban)</td><td>Brownfield constraint analysis</td></tr>
+  </table>
+
+  <div class="killer-quote">
+    <div class="text">The fastest-growing firms are in the most pain. <strong>Growth = hiring pressure = buyer intent.</strong><br>Pegasus, Boyer, Firstplan, Fisher German, Lanpro, LUC — all ranked fastest-growing by Planning Resource.</div>
+  </div>
+</div>
+
+<!-- TAB 3: JOB LISTINGS -->
+<div id="jobs" class="content">
+  <h2>Live Job Listings — Direct Employer Only</h2>
+  <p>Focus on roles where the desk-based research component is what SI automates. Recruiter listings excluded.</p>
+
+  <h4>Market Overview</h4>
+  <div class="stats-banner">
+    <div class="stat-card"><div class="number">4,000+</div><div class="label">Planning Jobs on LinkedIn UK</div></div>
+    <div class="stat-card"><div class="number">85+</div><div class="label">Roles at Target Companies</div></div>
+    <div class="stat-card"><div class="number">£28-65k</div><div class="label">Salary Range</div></div>
+    <div class="stat-card"><div class="number">£42-82k</div><div class="label">Fully-Loaded Cost</div></div>
+  </div>
+
+  <table>
+    <tr><th>Company</th><th>Role</th><th>Location</th><th>Salary</th><th>Key Desk Tasks (SI Replaces)</th><th>SI Products</th></tr>
+    <tr>
+      <td><strong>DLP Consultants</strong></td>
+      <td>Planning Research Analyst</td>
+      <td>Various (7 offices)</td>
+      <td>~£25-30k</td>
+      <td>Policy research, constraint analysis, site appraisals, planning history</td>
+      <td><span class="tag tag-si">Screening</span> <span class="tag tag-si">Feasibility</span></td>
+    </tr>
+    <tr>
+      <td><strong>DLP Consultants</strong></td>
+      <td>Planner (Graduate-Senior)</td>
+      <td>Multiple</td>
+      <td>£25-45k</td>
+      <td>Desktop assessments, planning statements, policy review</td>
+      <td><span class="tag tag-si">Feasibility</span> <span class="tag tag-si">Pre-App</span></td>
+    </tr>
+    <tr>
+      <td><strong>Lanpro</strong></td>
+      <td>Graduate Planner</td>
+      <td>Norwich / Lincoln</td>
+      <td>~£24-28k</td>
+      <td>Site analysis, constraint mapping, planning history research</td>
+      <td><span class="tag tag-si">Screening</span> <span class="tag tag-si">Feasibility</span></td>
+    </tr>
+    <tr>
+      <td><strong>Lanpro</strong></td>
+      <td>Senior Planner</td>
+      <td>London / Leeds</td>
+      <td>~£35-42k</td>
+      <td>Feasibility reports, planning statements, policy assessment</td>
+      <td><span class="tag tag-si">Feasibility</span> <span class="tag tag-si">Pre-App</span></td>
+    </tr>
+    <tr>
+      <td><strong>Lanpro</strong></td>
+      <td>Regional Director</td>
+      <td>Sheffield</td>
+      <td>~£55-70k</td>
+      <td>Client presentations, site appraisals, strategic advice</td>
+      <td><span class="tag tag-si">Full Pack</span></td>
+    </tr>
+    <tr>
+      <td><strong>Turley</strong></td>
+      <td>Planner / Senior Planner</td>
+      <td>Multiple (5 roles)</td>
+      <td>£30-48k</td>
+      <td>Constraint analysis, heritage assessment, planning appraisals</td>
+      <td><span class="tag tag-si">Feasibility</span> <span class="tag tag-si">Pre-App</span></td>
+    </tr>
+    <tr>
+      <td><strong>Turley</strong></td>
+      <td>Associate Director</td>
+      <td>London / Manchester</td>
+      <td>£55-70k</td>
+      <td>Client-facing, but reviews all desk research output</td>
+      <td><span class="tag tag-si">Full Pack</span></td>
+    </tr>
+    <tr>
+      <td><strong>Pegasus Group</strong></td>
+      <td>Planning Consultant</td>
+      <td>Multiple</td>
+      <td>£28-38k</td>
+      <td>Site appraisals, heritage analysis, planning statements, flood risk</td>
+      <td><span class="tag tag-si">Feasibility</span> <span class="tag tag-si">Pre-App</span></td>
+    </tr>
+    <tr>
+      <td><strong>Pegasus Group</strong></td>
+      <td>Senior Planning Consultant</td>
+      <td>Multiple</td>
+      <td>£40-52k</td>
+      <td>Complex site assessments, EIA screening, policy analysis</td>
+      <td><span class="tag tag-si">Pre-App</span> <span class="tag tag-si">Full Pack</span></td>
+    </tr>
+    <tr>
+      <td><strong>Firstplan</strong></td>
+      <td>Planner</td>
+      <td>London / Manchester</td>
+      <td>~£30-38k</td>
+      <td>Planning research, constraint checks, application support</td>
+      <td><span class="tag tag-si">Screening</span> <span class="tag tag-si">Feasibility</span></td>
+    </tr>
+    <tr>
+      <td><strong>Boyer</strong></td>
+      <td>Planning Consultant (various levels)</td>
+      <td>Multiple UK</td>
+      <td>£26-50k</td>
+      <td>Desktop studies, planning appraisals, site promotions</td>
+      <td><span class="tag tag-si">Feasibility</span> <span class="tag tag-si">Pre-App</span></td>
+    </tr>
+    <tr>
+      <td><strong>Quod</strong></td>
+      <td>Planner / Senior Planner</td>
+      <td>London</td>
+      <td>£35-55k</td>
+      <td>EIA, planning statements, heritage, townscape analysis</td>
+      <td><span class="tag tag-si">Pre-App</span> <span class="tag tag-si">Full Pack</span></td>
+    </tr>
+    <tr>
+      <td><strong>LUC</strong></td>
+      <td>Environmental Planner</td>
+      <td>Multiple</td>
+      <td>£28-42k</td>
+      <td>Landscape assessment, ecology desk study, heritage settings</td>
+      <td><span class="tag tag-si">Feasibility</span></td>
+    </tr>
+    <tr>
+      <td><strong>Nexus Planning</strong></td>
+      <td>Planning Consultant</td>
+      <td>London / Leeds</td>
+      <td>£28-40k</td>
+      <td>Site appraisals, planning statements, policy review</td>
+      <td><span class="tag tag-si">Feasibility</span> <span class="tag tag-si">Pre-App</span></td>
+    </tr>
+    <tr>
+      <td><strong>Lichfields</strong></td>
+      <td>Graduate Planner</td>
+      <td>7+ cities</td>
+      <td>~£27-32k</td>
+      <td>Research, data gathering, policy analysis, housing studies</td>
+      <td><span class="tag tag-si">Screening</span> <span class="tag tag-si">Feasibility</span></td>
+    </tr>
+    <tr>
+      <td><strong>Carter Jonas</strong></td>
+      <td>Planning Associate</td>
+      <td>Multiple</td>
+      <td>£35-48k</td>
+      <td>Planning appraisals, constraint mapping, client reports</td>
+      <td><span class="tag tag-si">Feasibility</span> <span class="tag tag-si">Pre-App</span></td>
+    </tr>
+    <tr>
+      <td><strong>Bidwells</strong></td>
+      <td>Graduate Heritage Planner</td>
+      <td>Cambridge</td>
+      <td>~£26-30k</td>
+      <td>Heritage research, listed building assessments, conservation area analysis</td>
+      <td><span class="tag tag-si">Feasibility</span></td>
+    </tr>
+    <tr>
+      <td><strong>Savills</strong></td>
+      <td>Planner (Graduate Programme)</td>
+      <td>Multiple</td>
+      <td>~£28-32k</td>
+      <td>Site appraisals, research, planning application support</td>
+      <td><span class="tag tag-si">Screening</span></td>
+    </tr>
+    <tr>
+      <td><strong>Fisher German</strong></td>
+      <td>Graduate Planner / Year Placement</td>
+      <td>Rural offices</td>
+      <td>~£24-28k</td>
+      <td>Rural planning research, agricultural land assessment</td>
+      <td><span class="tag tag-si">Screening</span> <span class="tag tag-si">Feasibility</span></td>
+    </tr>
+    <tr>
+      <td><strong>RPS Group</strong></td>
+      <td>Environmental Consultant</td>
+      <td>Multiple UK</td>
+      <td>£28-42k</td>
+      <td>Phase 1 desk studies, constraint assessment, EIA screening</td>
+      <td><span class="tag tag-si">Feasibility</span></td>
+    </tr>
+  </table>
+
+  <h3>Key Observation</h3>
+  <p>Every single one of these roles includes <strong>desk-based research tasks</strong> that SI already automates: constraint checking, policy review, planning history, heritage assessment, flood risk, ecology desktop, site appraisal. The question isn't whether SI can help — it's how much of each role's time it can free up.</p>
+</div>
+
+<!-- TAB 4: TASK MAPPING -->
+<div id="mapping" class="content">
+  <h2>What SI Automates vs What Planners Do</h2>
+  <p>Mapping common job description tasks against SI's 74 report templates and 21 enrichment modules.</p>
+
+  <table>
+    <tr><th>JD Task</th><th>% of Role Time</th><th>SI Automated?</th><th>SI Product</th><th>Quality vs Manual</th></tr>
+    <tr>
+      <td>Constraint & policy checking</td>
+      <td>15-25%</td>
+      <td style="color:#4ade80;">&#10004; FULLY</td>
+      <td>All products — 21 enrichment modules, 308 LPA profiles</td>
+      <td>Better — checks 23 datasets simultaneously</td>
+    </tr>
+    <tr>
+      <td>Planning history research</td>
+      <td>5-10%</td>
+      <td style="color:#4ade80;">&#10004; FULLY</td>
+      <td>Enrichment module + Planning History report</td>
+      <td>Better — automated scraping of council portals</td>
+    </tr>
+    <tr>
+      <td>Flood risk assessment (desktop)</td>
+      <td>5-8%</td>
+      <td style="color:#4ade80;">&#10004; FULLY</td>
+      <td>FRA template + EA flood data enrichment</td>
+      <td>Better — EA data, climate projections, flood zone maps</td>
+    </tr>
+    <tr>
+      <td>Heritage/conservation desk study</td>
+      <td>5-10%</td>
+      <td style="color:#4ade80;">&#10004; FULLY</td>
+      <td>Heritage Assessment template + Historic England data</td>
+      <td>Better — automated significance assessment, settings analysis</td>
+    </tr>
+    <tr>
+      <td>Ecology desktop assessment</td>
+      <td>5-8%</td>
+      <td style="color:#4ade80;">&#10004; FULLY</td>
+      <td>PEA template + MAGIC/habitat map enrichment</td>
+      <td>Better — Living England + PHI + 13 designation layers</td>
+    </tr>
+    <tr>
+      <td>Transport/access desk study</td>
+      <td>3-5%</td>
+      <td style="color:#4ade80;">&#10004; FULLY</td>
+      <td>Transport Assessment template</td>
+      <td>Comparable — accessibility mapping, accident data</td>
+    </tr>
+    <tr>
+      <td>Ground conditions desk study</td>
+      <td>3-5%</td>
+      <td style="color:#4ade80;">&#10004; FULLY</td>
+      <td>Phase 1 Geo template + BGS/borehole enrichment</td>
+      <td>Better — BGS + borehole + GeoSure + contamination</td>
+    </tr>
+    <tr>
+      <td>CIL/S106 calculation</td>
+      <td>2-3%</td>
+      <td style="color:#4ade80;">&#10004; FULLY</td>
+      <td>CIL calculator + Viability template</td>
+      <td>Better — all 308 LPA rates, auto-indexed</td>
+    </tr>
+    <tr>
+      <td>Viability appraisal (basic)</td>
+      <td>5-8%</td>
+      <td style="color:#4ade80;">&#10004; FULLY</td>
+      <td>Viability template + elemental costings</td>
+      <td>Comparable — market data + build costs + CIL/S106</td>
+    </tr>
+    <tr>
+      <td>Report writing / formatting</td>
+      <td>15-25%</td>
+      <td style="color:#4ade80;">&#10004; FULLY</td>
+      <td>V2 Typst engine — 55 templates, auto-assembled</td>
+      <td>Better — consistent, cross-referenced, 4-gate QA</td>
+    </tr>
+    <tr>
+      <td style="background:rgba(251,191,36,0.1);">Site visits / walkover surveys</td>
+      <td>10-15%</td>
+      <td style="color:#fbbf24;">&#9888; NOT AUTOMATED</td>
+      <td>N/A — human task</td>
+      <td>N/A — this is the human work planners should focus on</td>
+    </tr>
+    <tr>
+      <td style="background:rgba(251,191,36,0.1);">Client meetings & negotiations</td>
+      <td>10-15%</td>
+      <td style="color:#fbbf24;">&#9888; NOT AUTOMATED</td>
+      <td>N/A — human task</td>
+      <td>N/A — relationship management, professional judgment</td></tr>
+    <tr>
+      <td style="background:rgba(251,191,36,0.1);">Planning committee / appeals</td>
+      <td>5-10%</td>
+      <td style="color:#fbbf24;">&#9888; NOT AUTOMATED</td>
+      <td>SI provides case law intelligence (650 verified cases)</td>
+      <td>SI gives the ammo; planner fires the gun</td>
+    </tr>
+    <tr>
+      <td style="background:rgba(251,191,36,0.1);">Professional judgment / advocacy</td>
+      <td>10-15%</td>
+      <td style="color:#fbbf24;">&#9888; NOT AUTOMATED</td>
+      <td>N/A — human task</td>
+      <td>N/A — this is what makes a planner worth £300/day</td>
+    </tr>
+  </table>
+
+  <div class="stats-banner">
+    <div class="stat-card"><div class="number green">60-75%</div><div class="label">of JD Tasks SI Automates</div></div>
+    <div class="stat-card"><div class="number amber">25-40%</div><div class="label">Remains Human (the valuable part)</div></div>
+  </div>
+
+  <div class="killer-quote">
+    <div class="text">SI doesn't replace planners. It replaces <strong>60-75% of what planners spend their time on</strong> — the desk research, data gathering, constraint checking, and report formatting. <strong>The 25-40% that remains IS the job</strong> — judgment, advocacy, client relationships, site knowledge.</div>
+  </div>
+
+  <h3>The Multiplier Effect</h3>
+  <p>A planner handling 150 cases/year currently spends ~60-75% of their time on desk work SI automates. If SI handles that:</p>
+  <table>
+    <tr><th>Metric</th><th>Without SI</th><th>With SI</th><th>Improvement</th></tr>
+    <tr><td>Cases per planner per year</td><td>150</td><td>250-375</td><td><strong>+67% to +150%</strong></td></tr>
+    <tr><td>Time on human judgment</td><td>25-40%</td><td>70-90%</td><td>Planners do what they trained for</td></tr>
+    <tr><td>Effective capacity (5-person team)</td><td>5 planners</td><td>8-12 equivalent</td><td>Without hiring anyone</td></tr>
+    <tr><td>Report turnaround</td><td>2-6 weeks</td><td>48 hours (desk part)</td><td>Clients get answers faster</td></tr>
+  </table>
+</div>
+
+<!-- TAB 5: ECONOMICS -->
+<div id="economics" class="content">
+  <h2>The Economics — Why This Is a No-Brainer</h2>
+
+  <h3>Cost of a Planner vs Cost of SI</h3>
+  <table>
+    <tr><th></th><th>Hire a Junior Planner</th><th>Hire a Mid-Level Planner</th><th>Use SI Instead</th></tr>
+    <tr><td>Annual cost</td><td><strong>£34,000-37,000</strong></td><td><strong>£42,000-52,000</strong></td><td><strong>£8,340-30,000</strong> (10-25 projects)</td></tr>
+    <tr><td>Salary</td><td>£24,000-28,000</td><td>£35,000-42,000</td><td>—</td></tr>
+    <tr><td>Employer NI (15%)</td><td>£2,850-3,450</td><td>£4,500-5,550</td><td>—</td></tr>
+    <tr><td>Pension (3%)</td><td>£720-840</td><td>£1,050-1,260</td><td>—</td></tr>
+    <tr><td>Workspace/IT/RTPI</td><td>£3,000-5,000</td><td>£3,000-5,000</td><td>—</td></tr>
+    <tr><td>Recruitment cost</td><td>£4,000-6,000</td><td>£6,000-10,000</td><td>—</td></tr>
+    <tr><td>Training time</td><td>6-12 months to productive</td><td>3-6 months</td><td>Same day</td></tr>
+    <tr><td>Output capacity</td><td>~80 projects/yr (learning)</td><td>~150 projects/yr</td><td>Unlimited (per project pricing)</td></tr>
+    <tr><td>Desk research quality</td><td>Variable, learning</td><td>Good but manual</td><td>Consistent, 23 datasets, 4-gate QA</td></tr>
+    <tr><td>Risk if they leave</td><td>Start again — 9/10 LPAs can't fill</td><td>Start again — 4+ months to fill</td><td>None — always available</td></tr>
+  </table>
+
+  <h3>Per-Project Comparison</h3>
+  <div class="comparison-row">
+    <div class="comparison-label">Feasibility Report — Traditional Consultant</div>
+    <div class="comparison-bar bar-traditional" style="width: 80%;">£1,500 - £5,000 | 2-4 weeks</div>
+  </div>
+  <div class="comparison-row">
+    <div class="comparison-label">Feasibility Report — In-House Junior Planner (allocated cost)</div>
+    <div class="comparison-bar bar-traditional" style="width: 50%;">£800 - £2,000 | 3-5 days</div>
+  </div>
+  <div class="comparison-row">
+    <div class="comparison-label">Feasibility Intelligence — Site Intelligence</div>
+    <div class="comparison-bar bar-si" style="width: 20%;">£695 - £2,495 | 48 hours</div>
+  </div>
+
+  <h3>The B2B Volume Play</h3>
+  <table>
+    <tr><th>Scenario</th><th>Projects/Month</th><th>SI Cost/Month</th><th>Equivalent Planner Cost</th><th>Saving</th></tr>
+    <tr><td>Small consultancy (5-10 staff)</td><td>5</td><td>£3,475 (5× Feasibility @ 15% discount)</td><td>£3,500/mo (1 junior planner pro-rata)</td><td>Same cost, 3× faster, no recruitment risk</td></tr>
+    <tr><td>Mid-size (20-50 staff)</td><td>15</td><td>£8,310 (15× Feasibility @ 25% discount)</td><td>£10,500/mo (3 junior planners pro-rata)</td><td><strong>£2,190/mo saved + 3 planners freed up</strong></td></tr>
+    <tr><td>Large consultancy (100+ staff)</td><td>50</td><td>£24,875 (50× Screening @ volume)</td><td>£17,500/mo (5 junior planners)</td><td>More than 5 planners' desk output at comparable cost</td></tr>
+    <tr><td>Housebuilder land team</td><td>30+</td><td>£4,478 (30× Screening @ volume)</td><td>£10,500/mo (3 analysts)</td><td><strong>£6,022/mo saved + same-day turnaround</strong></td></tr>
+  </table>
+
+  <div class="killer-quote">
+    <div class="text">A mid-size consultancy spending <strong>£42,000/year</strong> to employ one junior planner could get <strong>the equivalent desk research output from SI for £30,000/year</strong> — with no recruitment risk, no training time, no sick leave, and <strong>48-hour turnaround vs 2 weeks</strong>.</div>
+  </div>
+
+  <h3>Salary Data (2025/26)</h3>
+  <table>
+    <tr><th>Role</th><th>Salary</th><th>Fully Loaded</th><th>Day Rate Equivalent</th></tr>
+    <tr><td>Graduate Planner</td><td>£24-28k</td><td>£34-37k</td><td>~£145-160/day</td></tr>
+    <tr><td>Planning Officer (mid)</td><td>£31-36k</td><td>£42-48k</td><td>~£180-205/day</td></tr>
+    <tr><td>Senior Planning Officer</td><td>£37-46k</td><td>£49-60k</td><td>~£210-260/day</td></tr>
+    <tr><td>Principal Planner</td><td>£48-60k</td><td>£62-78k</td><td>~£270-335/day</td></tr>
+    <tr><td>Planning Consultant (private avg)</td><td>£43k avg</td><td>£55-60k</td><td>Charges out £300-700/day</td></tr>
+    <tr><td>London Planning Consultant</td><td>£62k avg</td><td>£80-90k</td><td>Charges out £400-1,000/day</td></tr>
+    <tr><td>Senior Partner (top firms)</td><td>£100k+</td><td>£130k+</td><td>Charges out £1,500-2,325/day</td></tr>
+  </table>
+</div>
+
+<!-- TAB 6: CONTACTS & SALARIES -->
+<div id="contacts" class="content">
+  <h2>Contacts & Salary Intelligence</h2>
+  <p>Decision-makers at target companies, what they're paying, and how to reach them. Emails marked * are inferred from confirmed company format.</p>
+
+  <div class="stats-banner">
+    <div class="stat-card"><div class="number">23</div><div class="label">Target Companies</div></div>
+    <div class="stat-card"><div class="number">85+</div><div class="label">Open Planning Roles</div></div>
+    <div class="stat-card"><div class="number">£24-70k</div><div class="label">Salary Range Offered</div></div>
+    <div class="stat-card"><div class="number">£34-90k</div><div class="label">Fully Loaded Cost</div></div>
+  </div>
+
+  <h3><span class="tag tag-hot">TIER 1</span> Hot Prospects — Full Contact Details</h3>
+
+  <!-- FIRSTPLAN -->
+  <div class="pitch-box" style="margin-bottom: 16px;">
+    <h4 style="margin-top:0;">Firstplan <span class="tag tag-hot">30 staff, growing fast</span></h4>
+    <p><strong>CH:</strong> 08635891 | <strong>HQ:</strong> Broadwall House, 21 Broadwall, London SE1 9PL<br>
+    <strong>Phone:</strong> 020 3096 7000 | <strong>Email:</strong> info@firstplan.co.uk<br>
+    <strong>Email format:</strong> firstinitial + surname @firstplan.co.uk</p>
+    <table style="font-size: 13px;">
+      <tr><th>Name</th><th>Title</th><th>Direct Phone</th><th>Email</th></tr>
+      <tr><td>Sam Harper</td><td>Director</td><td>020 4513 2310</td><td>sharper@firstplan.co.uk</td></tr>
+      <tr><td>Sally Miles</td><td>Director</td><td>020 4513 2301 / 07867 905 499</td><td>smiles@firstplan.co.uk</td></tr>
+      <tr><td>Michael Mills</td><td>Director</td><td>020 4513 2304</td><td>mmills@firstplan.co.uk</td></tr>
+      <tr><td>Tim Williams</td><td>Director</td><td>020 4513 2303</td><td>twilliams@firstplan.co.uk</td></tr>
+      <tr><td>Kate Matthews</td><td>Director</td><td>020 4513 2312</td><td>kmatthews@firstplan.co.uk</td></tr>
+      <tr><td>Chris Piris-Jones</td><td>Director</td><td>020 4513 2302</td><td>cjones@firstplan.co.uk</td></tr>
+      <tr><td>Mark Shearman</td><td>Director</td><td>020 4513 2307</td><td>mshearman@firstplan.co.uk</td></tr>
+      <tr><td>Vilna Walsh</td><td>Director</td><td>020 4513 2311</td><td>vwalsh@firstplan.co.uk</td></tr>
+      <tr><td>Mike Woolner</td><td>Director</td><td>020 3096 7000</td><td>mwoolner@firstplan.co.uk</td></tr>
+    </table>
+    <p><strong>What they're paying:</strong> ~£30-38k (Planner) | Hiring explicitly due to "growing workloads"<br>
+    <strong>Fully loaded cost:</strong> ~£40-50k per hire | <strong>SI equivalent:</strong> £695-1,295/project, no recruitment needed<br>
+    <strong>Why approach:</strong> Small enough to feel recruitment pain acutely. All 9 directors listed publicly. Most transparent contacts of any target.</p>
+  </div>
+
+  <!-- DLP -->
+  <div class="pitch-box" style="margin-bottom: 16px;">
+    <h4 style="margin-top:0;">DLP Consultants <span class="tag tag-hot">70 staff, employee-owned</span></h4>
+    <p><strong>CH:</strong> Look up "DLP Planning Ltd" | <strong>HQ:</strong> Bedford<br>
+    <strong>Offices:</strong> Bedford, Bristol, Cardiff, Leeds, London, Milton Keynes, Sheffield<br>
+    <strong>Website:</strong> dlpconsultants.co.uk | <strong>Careers:</strong> dlpconsultants.co.uk/careers/</p>
+    <table style="font-size: 13px;">
+      <tr><th>Name</th><th>Title</th><th>Contact</th></tr>
+      <tr><td colspan="3"><em>DLP does not publicly list individual emails — use careers page contact form or main switchboard</em></td></tr>
+    </table>
+    <p><strong>What they're paying:</strong> ~£25-45k across 7 roles (Graduate to Senior Planner)<br>
+    <strong>Fully loaded cost:</strong> £34-58k per hire | <strong>They're hiring 7 people</strong> = £238-406k/yr recruitment spend<br>
+    <strong>Key angle:</strong> Has a <strong>"Research & Analysis" service line</strong> — this is literally what SI automates. Employee-owned = progressive, open to innovation.<br>
+    <strong>Action:</strong> LinkedIn search for DLP directors/partners. Contact via careers@ or team page.</p>
+  </div>
+
+  <!-- LANPRO -->
+  <div class="pitch-box" style="margin-bottom: 16px;">
+    <h4 style="margin-top:0;">Lanpro <span class="tag tag-hot">80 staff, 6 roles open</span></h4>
+    <p><strong>Website:</strong> lanpro.co.uk | <strong>Careers:</strong> lanpro.co.uk/about-us/careers/<br>
+    <strong>Offices:</strong> Norwich, London, Lincoln, Sheffield, Leeds, Nottingham, Peterborough</p>
+    <table style="font-size: 13px;">
+      <tr><th>Name</th><th>Title</th><th>Contact</th></tr>
+      <tr><td colspan="3"><em>Individual contacts not publicly listed — use website contact form. Check LinkedIn for MD/Directors.</em></td></tr>
+    </table>
+    <p><strong>What they're paying:</strong> ~£24-28k (Graduate) | ~£35-42k (Senior) | ~£55-70k (Regional Director)<br>
+    <strong>Fully loaded cost of 6 hires:</strong> £240-360k/year<br>
+    <strong>Key angle:</strong> Hiring at every level from Graduate to Regional Director = capacity crisis across the board. Environment-led = strong SI overlap.<br>
+    <strong>Action:</strong> LinkedIn search for Lanpro directors. "Environment-led" positioning matches SI's multi-discipline approach.</p>
+  </div>
+
+  <!-- PEGASUS -->
+  <div class="pitch-box" style="margin-bottom: 16px;">
+    <h4 style="margin-top:0;">Pegasus Group <span class="tag tag-hot">400+ staff, 7+ roles open</span></h4>
+    <p><strong>CH:</strong> 07277000 | <strong>HQ:</strong> 33 Sheep Street, Cirencester GL7 1RQ<br>
+    <strong>Phone:</strong> 0333 016 0777 | <strong>Email:</strong> enquiries@pegasusgroup.co.uk<br>
+    <strong>13 offices:</strong> Cirencester, London, Birmingham, Manchester, Leeds, Bristol, Cambridge, etc.</p>
+    <table style="font-size: 13px;">
+      <tr><th>Name</th><th>Title</th><th>Email*</th></tr>
+      <tr><td>Jeremy Peachey</td><td>Chairman</td><td>enquiries@pegasusgroup.co.uk (route via)</td></tr>
+      <tr><td>Douglas McCormick</td><td>CEO (appointed Mar 2025)</td><td>enquiries@pegasusgroup.co.uk</td></tr>
+      <tr><td>Sandra Manson</td><td>Executive Director, Planning</td><td>enquiries@pegasusgroup.co.uk</td></tr>
+      <tr><td>Paul Burrell</td><td>Head of Planning</td><td>enquiries@pegasusgroup.co.uk</td></tr>
+      <tr><td>Andrew Cook</td><td>Head of Environment</td><td>enquiries@pegasusgroup.co.uk</td></tr>
+      <tr><td>Gail Stoten</td><td>Head of Heritage</td><td>enquiries@pegasusgroup.co.uk</td></tr>
+    </table>
+    <p><strong>What they're paying:</strong> ~£28-38k (Consultant) | ~£40-52k (Senior) | Director level £55-70k+<br>
+    <strong>Fully loaded 7 hires:</strong> £280-450k/year<br>
+    <strong>Key angle:</strong> One of UK's fastest-growing. Sandra Manson (Exec Dir Planning) or Paul Burrell (Head of Planning) are the decision-makers. Route via enquiries or LinkedIn.<br>
+    <strong>Target person:</strong> <strong>Sandra Manson</strong> — newly appointed Exec Director of Planning (Mar 2025), likely shaping strategy.</p>
+  </div>
+
+  <!-- TURLEY -->
+  <div class="pitch-box" style="margin-bottom: 16px;">
+    <h4 style="margin-top:0;">Turley <span class="tag tag-hot">300 staff, 9 roles inc 4 Director-level</span></h4>
+    <p><strong>Website:</strong> turley.co.uk | <strong>Vacancies:</strong> turley.co.uk/vacancies<br>
+    <strong>12 offices across UK</strong></p>
+    <table style="font-size: 13px;">
+      <tr><th>Name</th><th>Title</th><th>Contact</th></tr>
+      <tr><td colspan="3"><em>Turley routes via website contact forms. Check LinkedIn for Managing Partner and regional directors.</em></td></tr>
+    </table>
+    <p><strong>What they're paying:</strong> ~£30-48k (Planner/Senior) | ~£55-70k (Associate Director) | Director £70k+<br>
+    <strong>Fully loaded 9 hires:</strong> £360-580k/year<br>
+    <strong>Key angle:</strong> 4 Director-level vacancies means the whole org is shifted down a gear — seniors doing junior work. SI takes the desk research off the bottom of the chain so everyone operates at the level they're paid for.</p>
+  </div>
+
+  <!-- BOYER -->
+  <div class="pitch-box" style="margin-bottom: 16px;">
+    <h4 style="margin-top:0;">Boyer Planning <span class="tag tag-hot">90 staff, fastest-growing</span></h4>
+    <p><strong>CH:</strong> 02529151 | <strong>HQ:</strong> Building 1, Meadows Business Park, Blackwater, Camberley GU17 9AB<br>
+    <strong>Parent:</strong> Leaders Romans Group (LRG) | <strong>Email:</strong> hello@boyerplanning.co.uk</p>
+    <table style="font-size: 13px;">
+      <tr><th>Name</th><th>Title</th><th>Phone</th></tr>
+      <tr><td>Andrew Williams</td><td>Executive Chair</td><td>Via hello@boyerplanning.co.uk</td></tr>
+      <tr><td>Grant Leggett</td><td>Executive Director, Head of London</td><td>020 3268 2431 / 07791 144 750</td></tr>
+      <tr><td>Alyson Jones</td><td>Director (Wokingham)</td><td>01344 835 722 / 07742 402 949</td></tr>
+      <tr><td>Ananya Banerjee</td><td>Director, Head of Boyer Design</td><td>Via hello@boyerplanning.co.uk</td></tr>
+      <tr><td>David Hutchinson</td><td>Director, Head of Midlands</td><td>Via hello@boyerplanning.co.uk</td></tr>
+      <tr><td>Ian Barnett</td><td>National Land Director</td><td>Via hello@boyerplanning.co.uk</td></tr>
+    </table>
+    <p><strong>What they're paying:</strong> ~£26-50k range across multiple roles<br>
+    <strong>Key angle:</strong> Ranked in fastest-growing consultancies. Part of LRG = could be a gateway to whole group. Grant Leggett has direct mobile.<br>
+    <strong>Target person:</strong> <strong>Grant Leggett</strong> — Executive Director, Head of London. Has direct phone AND mobile published.</p>
+  </div>
+
+  <h3><span class="tag tag-warm">TIER 2</span> Warm Prospects</h3>
+
+  <!-- NEXUS -->
+  <div class="pitch-box" style="margin-bottom: 16px;">
+    <h4 style="margin-top:0;">Nexus Planning <span class="tag tag-warm">~50 staff, RTPI Consultancy of the Year</span></h4>
+    <p><strong>CH:</strong> 08491440 | <strong>Phone:</strong> 020 7261 4240<br>
+    <strong>Email format:</strong> initial.surname@nexusplanning.co.uk</p>
+    <table style="font-size: 13px;">
+      <tr><th>Name</th><th>Title</th><th>Email</th><th>Phone</th></tr>
+      <tr><td><strong>Roger Tustain</strong></td><td>MD & Co-Founder</td><td>r.tustain@nexusplanning.co.uk</td><td>07919 045 191</td></tr>
+      <tr><td>Tony Clements</td><td>Executive Director (Bristol)</td><td>t.clements@nexusplanning.co.uk*</td><td>020 7261 4240</td></tr>
+    </table>
+    <p><strong>What they're paying:</strong> ~£28-40k (Planning Consultant)<br>
+    <strong>Why approach:</strong> RTPI Consultancy of the Year — prestigious, innovative. Roger Tustain's direct mobile and email confirmed.<br>
+    <strong>Target person:</strong> <strong>Roger Tustain</strong> — MD, co-founder. Direct mobile published.</p>
+  </div>
+
+  <!-- QUOD -->
+  <div class="pitch-box" style="margin-bottom: 16px;">
+    <h4 style="margin-top:0;">Quod <span class="tag tag-warm">~80 staff, rapidly growing, EOT since 2022</span></h4>
+    <p><strong>CH:</strong> 07917483 | <strong>Phone:</strong> 0203 597 1000 | <strong>Email:</strong> hello@quod.com<br>
+    <strong>Email format:</strong> firstname.lastname@quod.com</p>
+    <table style="font-size: 13px;">
+      <tr><th>Name</th><th>Title</th><th>Email*</th></tr>
+      <tr><td>Tom Dobson</td><td>Managing Director</td><td>tom.dobson@quod.com*</td></tr>
+      <tr><td>John Rhodes OBE</td><td>Senior Director & Founder</td><td>john.rhodes@quod.com*</td></tr>
+      <tr><td>Tim Rainbird</td><td>Senior Director</td><td>tim.rainbird@quod.com*</td></tr>
+    </table>
+    <p><strong>What they're paying:</strong> ~£35-55k (Planner/Senior)<br>
+    <strong>Key angle:</strong> Employee-owned (EOT since 2022) = progressive. "Rapidly growing" = capacity pain. London-focused = high salaries.<br>
+    <strong>Target person:</strong> <strong>Tom Dobson</strong> — MD.</p>
+  </div>
+
+  <!-- CARTER JONAS -->
+  <div class="pitch-box" style="margin-bottom: 16px;">
+    <h4 style="margin-top:0;">Carter Jonas <span class="tag tag-warm">~800 staff, "fastest growing infrastructure team"</span></h4>
+    <p><strong>CH:</strong> OC304417 | <strong>Email format:</strong> firstname.lastname@carterjonas.co.uk</p>
+    <table style="font-size: 13px;">
+      <tr><th>Name</th><th>Title</th><th>Email</th><th>Phone</th></tr>
+      <tr><td><strong>Colin Brown</strong></td><td>Head of Planning & Development</td><td>colin.brown@carterjonas.co.uk</td><td>Confirmed (via website)</td></tr>
+      <tr><td>Katy Davis</td><td>National Head of Planning</td><td>katy.davis@carterjonas.co.uk*</td><td>Via switchboard</td></tr>
+      <tr><td>Jon Pinkerton</td><td>Planning Director</td><td>jon.pinkerton@carterjonas.co.uk</td><td>Confirmed</td></tr>
+      <tr><td>James Cordery</td><td>Planning Director</td><td>james.cordery@carterjonas.co.uk</td><td>Confirmed</td></tr>
+    </table>
+    <p><strong>What they're paying:</strong> ~£35-48k (Planning Associate)<br>
+    <strong>Key angle:</strong> Major restructure Aug 2025 into 4 business units. Claims "fastest growing infrastructure team in the country."<br>
+    <strong>Target person:</strong> <strong>Colin Brown</strong> — Head of P&D, email and phone confirmed on website.</p>
+  </div>
+
+  <!-- BIDWELLS -->
+  <div class="pitch-box" style="margin-bottom: 16px;">
+    <h4 style="margin-top:0;">Bidwells <span class="tag tag-warm">~500 staff, Cambridge-based, rural/heritage</span></h4>
+    <p><strong>CH:</strong> OC344553 | <strong>Phone:</strong> 01223 841841 | <strong>Email:</strong> info@bidwells.co.uk<br>
+    <strong>Email format:</strong> Firstname.Lastname@bidwells.co.uk</p>
+    <table style="font-size: 13px;">
+      <tr><th>Name</th><th>Title</th><th>Email*</th></tr>
+      <tr><td><strong>Chris Pattison</strong></td><td>Head of Planning (joined 2022)</td><td>Chris.Pattison@bidwells.co.uk*</td></tr>
+      <tr><td>James Alflatt</td><td>Planning Partner</td><td>James.Alflatt@bidwells.co.uk (confirmed + mobile)</td></tr>
+      <tr><td>Jamie Sullivan</td><td>Planning Partner</td><td>Jamie.Sullivan@bidwells.co.uk*</td></tr>
+    </table>
+    <p><strong>What they're paying:</strong> ~£26-30k (Graduate Heritage Planner)<br>
+    <strong>Key angle:</strong> Rural/heritage focus = strong SI overlap. Heritage Planner role = SI heritage assessment template is a direct match.</p>
+  </div>
+
+  <!-- LUC -->
+  <div class="pitch-box" style="margin-bottom: 16px;">
+    <h4 style="margin-top:0;">LUC (Land Use Consultants) <span class="tag tag-warm">~250 staff, highest proportional growth</span></h4>
+    <p><strong>CH:</strong> 02549296 | <strong>Phone:</strong> 020 7199 5801 | <strong>Email:</strong> london@landuse.co.uk<br>
+    <strong>Email format:</strong> firstname.lastname@landuse.co.uk</p>
+    <table style="font-size: 13px;">
+      <tr><th>Name</th><th>Title</th><th>Email*</th></tr>
+      <tr><td><strong>Sarah Young</strong></td><td>Executive Director, Planning (RTPI Woman of Influence 2020)</td><td>sarah.young@landuse.co.uk*</td></tr>
+      <tr><td>Jon Grantham</td><td>Managing Director</td><td>jon.grantham@landuse.co.uk*</td></tr>
+      <tr><td>Helen Kent</td><td>Director, Environmental Planning</td><td>helen.kent@landuse.co.uk*</td></tr>
+    </table>
+    <p><strong>What they're paying:</strong> ~£28-42k (Environmental Planner)<br>
+    <strong>Key angle:</strong> Highest proportional growth in top-50. Landscape/ecology focus = strong SI environmental overlap.</p>
+  </div>
+
+  <!-- FISHER GERMAN -->
+  <div class="pitch-box" style="margin-bottom: 16px;">
+    <h4 style="margin-top:0;">Fisher German <span class="tag tag-warm">~600 staff, rural property, opening grad schemes</span></h4>
+    <p><strong>CH:</strong> OC317554 | <strong>Phone:</strong> 01530 412821<br>
+    <strong>Email format:</strong> Firstname.Lastname@fishergerman.co.uk</p>
+    <table style="font-size: 13px;">
+      <tr><th>Name</th><th>Title</th><th>Email*</th></tr>
+      <tr><td><strong>Sarah DeRenzy-Tomson</strong></td><td>Head of Planning (3 sub-teams)</td><td>Sarah.DeRenzy-Tomson@fishergerman.co.uk*</td></tr>
+    </table>
+    <p><strong>What they're paying:</strong> ~£24-28k (Graduate/Placement)<br>
+    <strong>Key angle:</strong> Rural property = many SI use cases (agricultural tie, Class Q, ecology). Opening 2026 graduate schemes = growth mode.</p>
+  </div>
+
+  <h3><span class="tag tag-enterprise">TIER 3</span> Enterprise Contacts</h3>
+
+  <!-- SAVILLS -->
+  <div class="pitch-box" style="margin-bottom: 16px;">
+    <h4 style="margin-top:0;">Savills <span class="tag tag-enterprise">#1 UK, 300+ planners</span></h4>
+    <p><strong>CH:</strong> 02605138 | <strong>Phone:</strong> 020 7499 8644 | <strong>HQ:</strong> 33 Margaret Street, London W1G 0JD<br>
+    <strong>Email format:</strong> firstname.lastname@savills.com</p>
+    <table style="font-size: 13px;">
+      <tr><th>Name</th><th>Title</th><th>Email*</th></tr>
+      <tr><td><strong>David Jackson</strong></td><td>National Head of Planning & Head of Savills Earth</td><td>david.jackson@savills.com*</td></tr>
+    </table>
+    <p><strong>What they're paying:</strong> ~£28-32k (Graduate) | Senior roles £45-65k+<br>
+    <strong>Key angle:</strong> Screening 100s of sites. Product 1 (£199) at volume = huge pipeline. Enterprise deal potential.</p>
+  </div>
+
+  <!-- LICHFIELDS -->
+  <div class="pitch-box" style="margin-bottom: 16px;">
+    <h4 style="margin-top:0;">Lichfields <span class="tag tag-enterprise">#3, 200 staff, hiring grads across 7+ cities</span></h4>
+    <p><strong>CH:</strong> 02778116 | <strong>Phone:</strong> 020 7837 4477 | <strong>HQ:</strong> The Minster Building, 21 Mincing Lane, London EC3R 7AG<br>
+    <strong>Email format:</strong> firstname.lastname@lichfields.uk</p>
+    <table style="font-size: 13px;">
+      <tr><th>Name</th><th>Title</th><th>Email</th></tr>
+      <tr><td><strong>James Fennell</strong></td><td>CEO & Senior Director (MRICS, MRTPI)</td><td>james.fennell@lichfields.uk</td></tr>
+      <tr><td>Matthew Spry</td><td>Senior Director, Head of London</td><td>matthew.spry@lichfields.uk</td></tr>
+    </table>
+    <p><strong>What they're paying:</strong> ~£27-32k (Graduate) | Senior roles £40-55k<br>
+    <strong>Key angle:</strong> Economics + planning crossover. Viability appraisals, housing needs studies — strong SI overlap.</p>
+  </div>
+
+  <!-- STANTEC -->
+  <div class="pitch-box" style="margin-bottom: 16px;">
+    <h4 style="margin-top:0;">Stantec (ex-Barton Willmore) <span class="tag tag-enterprise">#2 by revenue, 53 promotions = backfill</span></h4>
+    <p><strong>CH:</strong> 01188070 | <strong>London email:</strong> london.uk@stantec.com<br>
+    <strong>HQ:</strong> Stantec House, Kelburn Court, Birchwood, Warrington WA3 6UT<br>
+    <strong>Email format:</strong> firstname.lastname@stantec.com</p>
+    <table style="font-size: 13px;">
+      <tr><th>Name</th><th>Title</th><th>Email*</th></tr>
+      <tr><td><strong>Simon Carter</strong></td><td>Director of Operations, UK Planning & Design</td><td>simon.carter@stantec.com*</td></tr>
+      <tr><td>Mark Sitch</td><td>Planning Director (practice lead)</td><td>mark.sitch@stantec.com*</td></tr>
+    </table>
+    <p><strong>What they're paying:</strong> Senior roles £40-60k+ | 53 internal promotions creating junior gaps<br>
+    <strong>Key angle:</strong> Massive scale. Acquired Barton Willmore (300 staff, 13 offices) in 2022. Internal promotions = backfill recruitment pressure.</p>
+  </div>
+
+  <!-- MONTAGU EVANS -->
+  <div class="pitch-box" style="margin-bottom: 16px;">
+    <h4 style="margin-top:0;">Montagu Evans <span class="tag tag-enterprise">~200 staff, London-focused</span></h4>
+    <p><strong>CH:</strong> OC312072 | <strong>Phone:</strong> 020 7493 4002 | <strong>HQ:</strong> 70 St Mary Axe, London EC3A 8BE<br>
+    <strong>Email format:</strong> firstname.lastname@montagu-evans.co.uk</p>
+    <table style="font-size: 13px;">
+      <tr><th>Name</th><th>Title</th><th>Phone</th><th>Email*</th></tr>
+      <tr><td><strong>Craig Blatchford</strong></td><td>Partner & Head of Planning</td><td>07984 458 485</td><td>craig.blatchford@montagu-evans.co.uk*</td></tr>
+      <tr><td>Tim Price</td><td>Equity Partner, Head of Commercial Planning</td><td>Via switchboard</td><td>tim.price@montagu-evans.co.uk*</td></tr>
+      <tr><td>Guy Bransby</td><td>Head of London Planning</td><td>Via switchboard</td><td>guy.bransby@montagu-evans.co.uk*</td></tr>
+    </table>
+    <p><strong>What they're paying:</strong> Graduate programme salaries ~£28-32k<br>
+    <strong>Target person:</strong> <strong>Craig Blatchford</strong> — direct mobile published.</p>
+  </div>
+
+  <!-- RPS / TETRA TECH -->
+  <div class="pitch-box" style="margin-bottom: 16px;">
+    <h4 style="margin-top:0;">RPS Group (Tetra Tech) <span class="tag tag-enterprise">5,000+ globally, 500+ UK roles</span></h4>
+    <p><strong>CH:</strong> 02087786 | <strong>Email format:</strong> firstname.lastname@rpsgroup.com<br>
+    <strong>Acquired by Tetra Tech (NYSE: TTEK) Jan 2023</strong></p>
+    <table style="font-size: 13px;">
+      <tr><th>Name</th><th>Title</th><th>Phone</th><th>Email*</th></tr>
+      <tr><td><strong>Darren Parker</strong></td><td>Ops Director, Planning (Eng/Scot/Wales)</td><td>029 2066 8662</td><td>darren.parker@rpsgroup.com*</td></tr>
+      <tr><td>Karen Jones</td><td>Ops Director, Planning (London)</td><td>020 7280 3300</td><td>karen.jones@rpsgroup.com*</td></tr>
+      <tr><td>Paul Hill</td><td>Senior Director, Planning (Midlands)</td><td>0121 622 8520</td><td>paul.hill@rpsgroup.com*</td></tr>
+    </table>
+    <p><strong>What they're paying:</strong> ~£28-42k (Environmental Consultant)<br>
+    <strong>Key angle:</strong> Phase 1 desk studies at massive scale. Enterprise API potential.</p>
+  </div>
+
+  <h3>Salary Summary — What The Market Is Paying</h3>
+  <div class="killer-quote">
+    <div class="text">These companies are collectively spending <strong>£2-4 million per year</strong> trying to fill 85+ planning roles at <strong>£24-70k each</strong>. That's before recruitment fees (15-20% of salary = £4-14k per hire), training time (6-12 months), and the risk they leave within 2 years. <strong>SI replaces the desk research component of every single one of these roles.</strong></div>
+  </div>
+
+  <table>
+    <tr><th>Role Level</th><th>Salary Range</th><th>Fully Loaded</th><th>Recruitment Fee</th><th>Time to Productive</th><th>SI Alternative</th></tr>
+    <tr><td>Graduate Planner</td><td>£24-28k</td><td>£34-37k</td><td>£4-6k</td><td>6-12 months</td><td>£199/project (Screening) — same day</td></tr>
+    <tr><td>Planning Consultant</td><td>£28-38k</td><td>£38-50k</td><td>£5-8k</td><td>3-6 months</td><td>£695-1,295/project (Feasibility) — 48hrs</td></tr>
+    <tr><td>Senior Planner</td><td>£35-48k</td><td>£48-62k</td><td>£7-10k</td><td>3 months</td><td>£995-2,495/project (Pre-App) — 48hrs</td></tr>
+    <tr><td>Associate Director</td><td>£48-60k</td><td>£62-78k</td><td>£10-12k</td><td>1-3 months</td><td>Full Pack (quoted) — frees AD for client work</td></tr>
+    <tr><td>Director</td><td>£55-70k+</td><td>£72-90k+</td><td>£11-14k</td><td>Immediate</td><td>N/A — these roles are human judgment</td></tr>
+  </table>
+</div>
+
+<!-- TAB 7: DREAM TEAM -->
+<div id="dreamteam" class="content">
+  <h2>Dream Team Analysis — B2B Recruitment Strategy</h2>
+  <p>Running the 6-framework analysis on this go-to-market approach.</p>
+
+  <div class="dream-team">
+    <div class="dt-card">
+      <div class="name">Jeff Bezos</div>
+      <div class="role">Work Backwards From The Customer</div>
+      <div class="verdict">
+        <strong>The customer isn't the developer here. It's the practice manager or MD of a 20-50 person consultancy</strong> who's been trying to hire a planner for 4 months, is losing fee-earning work, and their senior staff are doing junior-level desk research instead of client-facing work.<br><br>
+        What do they Google? Not "AI planning tool." They Google <strong>"planning consultant jobs" because they're posting job ads that aren't working.</strong><br><br>
+        The press release: <em>"UK planning consultancy cuts report turnaround from 3 weeks to 48 hours — without hiring a single extra planner."</em>
+      </div>
+      <div class="quote">"Start with the customer and work backwards. Their problem isn't technology — it's that they can't hire fast enough to service their pipeline."</div>
+    </div>
+
+    <div class="dt-card">
+      <div class="name">Steve Jobs</div>
+      <div class="role">What Do You Actually Need?</div>
+      <div class="verdict">
+        <strong>The 2x2 grid for B2B:</strong><br><br>
+        <table style="font-size:13px; margin: 8px 0;">
+          <tr><td></td><td><strong>Small (5-20)</strong></td><td><strong>Medium-Large (20+)</strong></td></tr>
+          <tr><td><strong>Growing</strong></td><td>Feasibility<br>(£695-2,495)</td><td>Pre-App Pack<br>(Volume deal)</td></tr>
+          <tr><td><strong>Stable</strong></td><td>Screening<br>(£199)</td><td>Enterprise API<br>(Custom quote)</td></tr>
+        </table>
+        <br>
+        <strong>One sentence:</strong> "We do the desk work so your planners can do the planning."<br><br>
+        If that's not on a billboard by next week, you've overcomplicated it.
+      </div>
+      <div class="quote">"People don't know what they want until you show them. Show them their junior planner's job done in 48 hours."</div>
+    </div>
+
+    <div class="dt-card">
+      <div class="name">Elon Musk</div>
+      <div class="role">The 5-Step Algorithm</div>
+      <div class="verdict">
+        <strong>Step 1 — Make the requirements less dumb:</strong> "We need to hire a planner" → No, you need 150 desk studies done. A human is one way to do that.<br><br>
+        <strong>Step 2 — Delete:</strong> Delete the recruitment process. Delete the 6-month training period. Delete the job ad budget. Delete the agency fee (15-20% of salary = £5-8k).<br><br>
+        <strong>Step 3 — Simplify:</strong> One subscription. Upload a site. Get reports. That's it.<br><br>
+        <strong>Step 4 — Accelerate:</strong> 2-6 weeks → 48 hours. Do this 50 times.<br><br>
+        <strong>Step 5 — Automate:</strong> Already done. 125 agents, 74 templates, 21 enrichment modules. The system IS the automation.
+      </div>
+      <div class="quote">"The best part is no part. The best process is no process. If you're not adding back 10% of what you delete, you're not deleting enough."</div>
+    </div>
+
+    <div class="dt-card">
+      <div class="name">W. Edwards Deming</div>
+      <div class="role">Quality Is The System</div>
+      <div class="verdict">
+        <strong>The current system is broken.</strong> Consultancies hire graduates, spend 6-12 months training them, then lose them to higher-paying firms. The quality of output depends entirely on which individual planner you get.<br><br>
+        SI's 4-gate QA pipeline means <strong>every report is consistent.</strong> No bad days. No junior mistakes. No senior shortcuts. The process produces quality — you don't inspect it in afterwards.<br><br>
+        <strong>Pitch angle:</strong> "Your quality shouldn't depend on who's not on holiday this week."
+      </div>
+      <div class="quote">"A bad system will beat a good person every time. Give good people a good system."</div>
+    </div>
+
+    <div class="dt-card">
+      <div class="name">Isambard Kingdom Brunel</div>
+      <div class="role">Work Within The Victorian System</div>
+      <div class="verdict">
+        <strong>This is the critical insight:</strong> Don't position SI as replacing planners. Position it as <strong>making planners more effective within the existing RTPI framework.</strong><br><br>
+        Planning consultancies have professional obligations, RTPI standards, PI insurance requirements. SI doesn't threaten any of that. It's a <strong>tool that sits behind their brand.</strong><br><br>
+        <strong>White-label potential:</strong> "Your firm's reports, powered by Site Intelligence." The consultancy keeps the client relationship, the professional judgment, the sign-off. SI does the 60-75% that's data gathering and formatting.<br><br>
+        <strong>Brunel's approach:</strong> Don't fight the planning system. Make it work 3x faster from the inside.
+      </div>
+      <div class="quote">"I build what the system needs, but I build it so well that the system can't imagine going back."</div>
+    </div>
+
+    <div class="dt-card">
+      <div class="name">Ben Horowitz</div>
+      <div class="role">Lead Bullets, Not Silver Bullets</div>
+      <div class="verdict">
+        <strong>No silver bullet here.</strong> You're not going to get a Savills contract from a cold email. This is 50 lead bullets:<br><br>
+        1. Find 50 firms hiring planners right now<br>
+        2. Send each one a personalised example using THEIR type of sites<br>
+        3. Offer a free Screening report on a site they're working on<br>
+        4. Follow up. Follow up. Follow up.<br>
+        5. Convert 5 of them. Get testimonials. Use those to convert 20 more.<br><br>
+        <strong>The grind:</strong> DLP has a "Research & Analysis" service line. Run a DLP-style site through SI. Show them. That's one lead bullet. Do it 49 more times.
+      </div>
+      <div class="quote">"There are no silver bullets for this, only lead bullets. You just have to do the work."</div>
+    </div>
+  </div>
+
+  <h3>Dream Team Verdict</h3>
+  <div class="killer-quote">
+    <div class="text">
+      <strong>Bezos:</strong> The customer is the stressed practice manager who can't hire. Speak their language.<br>
+      <strong>Jobs:</strong> "We do the desk work so your planners can do the planning." One sentence. One billboard.<br>
+      <strong>Musk:</strong> Delete the recruitment process entirely. 48 hours vs 6 months.<br>
+      <strong>Deming:</strong> Consistent quality every time, not dependent on who's in the office.<br>
+      <strong>Brunel:</strong> Work inside the system. White-label. Don't threaten RTPI — empower it.<br>
+      <strong>Horowitz:</strong> 50 lead bullets. Personalised demos. No shortcuts.
+    </div>
+  </div>
+</div>
+
+<!-- TAB 7: THE PITCH -->
+<div id="pitch" class="content">
+  <h2>The B2B Pitch Framework</h2>
+
+  <div class="pitch-box">
+    <h4>The Opener (for LinkedIn / Email / Call)</h4>
+    <p style="font-size: 18px; color: #fff; line-height: 1.8;">
+      "I noticed you're recruiting for a [Senior Planner / Planning Consultant]. <strong>We've built something that does the desk research part of that role in 48 hours.</strong><br><br>
+      We're not replacing your planners — we're freeing them up to do the human part. The site visits, the client meetings, the professional judgment. <strong>The stuff a £40k salary is actually for.</strong><br><br>
+      Right now your seniors are probably doing constraint checks and writing up flood risk assessments when they should be in front of clients. We automate that entire desk workflow — 23 datasets, 74 report templates, same-day turnaround."
+    </p>
+  </div>
+
+  <h3>Pitch by Company Type</h3>
+
+  <div class="pitch-box">
+    <h4>For DLP Consultants (has "Research & Analysis" service line)</h4>
+    <p>"Your Research & Analysis team does exactly what our system automates — policy analysis, constraint checking, site appraisals. Imagine if that team could handle 3x the volume with the same headcount. We can show you a sample output for a site in your Bedford patch — same quality, same data sources, 48-hour turnaround."</p>
+  </div>
+
+  <div class="pitch-box">
+    <h4>For Lanpro (hiring Graduate through to Regional Director)</h4>
+    <p>"You're hiring at every level from graduate to Regional Director — that tells me you're growing fast and capacity is the bottleneck. What if your graduates started their APC journey doing real planning judgment from day one, instead of spending their first year on data gathering? Our system handles the desk research so your team focuses on the work that actually builds their career."</p>
+  </div>
+
+  <div class="pitch-box">
+    <h4>For Turley (4 Director-level vacancies)</h4>
+    <p>"When you've got 4 Director vacancies, your Associates are doing Director work and your Senior Planners are doing Associate work. The whole chain shifts down. We can take the desk-level research off the bottom of that chain, so everyone operates at the level you're actually paying them for."</p>
+  </div>
+
+  <div class="pitch-box">
+    <h4>For Housebuilders (Barratt, Taylor Wimpey, etc.)</h4>
+    <p>"Your land team assesses hundreds of sites per year. Most get rejected at feasibility. Right now that rejection costs you a planner's time. With our Screening product at £199/site, you can filter your pipeline in 24 hours instead of 2 weeks — and only put senior resource on the sites that pass."</p>
+  </div>
+
+  <h3>Objection Handling</h3>
+  <table>
+    <tr><th>Objection</th><th>Response</th></tr>
+    <tr><td>"We need chartered planners to sign off reports"</td><td>Absolutely. SI produces the desk research layer — your chartered planners review, apply judgment, and sign off. We're the engine, you're the driver. Your PI insurance, your professional standards, your client relationship.</td></tr>
+    <tr><td>"AI can't replace professional judgment"</td><td>We agree completely. That's why we only automate the 60-75% that IS automatable — constraint checks, data gathering, policy identification, report formatting. The 25-40% that requires judgment is exactly what your planners should be spending 100% of their time on.</td></tr>
+    <tr><td>"How do we know the data is reliable?"</td><td>Every data point traces back to its source — EA, BGS, Historic England, MAGIC, OS, Land Registry. We have a 4-gate QA pipeline with 17 check layers. We use the same data sources your planners use — we just check all 23 simultaneously instead of one at a time.</td></tr>
+    <tr><td>"We already have our own templates and processes"</td><td>Perfect. Think of SI as the research layer that feeds into your existing processes. Your templates, your branding, your sign-off. We provide the raw intelligence — you provide the interpretation.</td></tr>
+    <tr><td>"£695 per site is expensive"</td><td>Your junior planner costs £160/day fully loaded. A feasibility report takes 3-5 days desk time. That's £480-800 of their time — plus the 4-month wait to hire them, plus the training, plus the risk they leave after 18 months. £695 for a 48-hour turnaround with no recruitment risk is the cheaper option.</td></tr>
+  </table>
+</div>
+
+<!-- TAB 8: NEXT STEPS -->
+<div id="actions" class="content">
+  <h2>Recommended Next Steps</h2>
+
+  <h3>Immediate (This Week)</h3>
+  <ul class="action-list">
+    <li><strong>1. Build the target list:</strong> LinkedIn search for practice managers/MDs at the 23 identified firms. Find the person who owns the hiring decision, not the planner who'd use the tool.</li>
+    <li><strong>2. Create 3 demo packs:</strong> Run SI on sites typical for DLP (Bedfordshire), Lanpro (Norfolk/Lincolnshire), and Firstplan (London). Real sites, real output. Show don't tell.</li>
+    <li><strong>3. Draft personalised outreach:</strong> 6 LinkedIn messages (one per Tier 1 company) using the pitch frameworks above. Reference their specific job ads.</li>
+    <li><strong>4. Add "For Consultancies" page to pfandco.co.uk:</strong> Speak directly to the practice manager persona. "Your planners are doing data entry. We fix that."</li>
+  </ul>
+
+  <h3>Short-Term (Next 2 Weeks)</h3>
+  <ul class="action-list">
+    <li><strong>5. Free Screening offer:</strong> Offer one free Screening report (£199 value) to any consultancy that responds. Low friction, demonstrates value.</li>
+    <li><strong>6. LinkedIn content:</strong> Post about the recruitment crisis stats with SI positioning. Target planning community. Use the UNISON/RTPI data above.</li>
+    <li><strong>7. B2B pricing page:</strong> Volume discounts (15% for 3+/mo, 25% for 5+/mo) with annual subscription option.</li>
+    <li><strong>8. White-label exploration:</strong> For Tier 3/Enterprise prospects, explore white-label positioning — "their brand, our engine."</li>
+  </ul>
+
+  <h3>Medium-Term (Next Month)</h3>
+  <ul class="action-list">
+    <li><strong>9. Case study from first B2B client:</strong> Convert one Tier 1 prospect, document the before/after, use as social proof for the rest.</li>
+    <li><strong>10. RTPI event presence:</strong> Identify RTPI networking events. "We're not replacing planners — we're making them 3x more productive."</li>
+    <li><strong>11. Planning Resource advertorial:</strong> "How AI is solving the planning recruitment crisis" — positioned as thought leadership, not sales.</li>
+    <li><strong>12. Job board monitoring:</strong> Set up weekly monitoring of planning job boards. Every new direct-hire listing = a warm lead for outreach.</li>
+  </ul>
+
+  <h3>The Killer Metric</h3>
+  <div class="killer-quote">
+    <div class="text">If <strong>5 mid-size consultancies</strong> each use SI for <strong>10 projects/month</strong> at Feasibility tier:<br><br>
+    50 projects × £1,295 average × 85% discount = <strong>£55,038/month = £660,450/year</strong><br><br>
+    At 90% margins, that's <strong>£594,405 gross profit</strong> from just 5 clients.</div>
+  </div>
+</div>
+
+<button class="print-btn" onclick="window.print()">Print / Save PDF</button>
+
+<script>
+function showTab(id) {
+  document.querySelectorAll('.content').forEach(c => c.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  event.target.classList.add('active');
+}
+</script>
+
+<div style="text-align: center; padding: 20px; color: #475569; font-size: 12px; border-top: 1px solid #1e293b; margin-top: 40px;">
+  Site Intelligence | PF & Co Holdings Ltd | info@pfandco.co.uk
+</div>
+
+</body>
+</html>
