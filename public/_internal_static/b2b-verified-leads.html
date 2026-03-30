@@ -95,7 +95,8 @@ tr:hover td { background: rgba(37, 99, 235, 0.05); }
 </div>
 
 <div class="tabs">
-  <div class="tab active" onclick="showTab('priority')">Priority Targets</div>
+  <div class="tab active" onclick="showTab('explainer')">How To Use This</div>
+  <div class="tab" onclick="showTab('priority')">Priority Targets</div>
   <div class="tab" onclick="showTab('tier1')">Tier 1 — Hot</div>
   <div class="tab" onclick="showTab('tier2')">Tier 2 — Warm</div>
   <div class="tab" onclick="showTab('tier3')">Tier 3 — Enterprise</div>
@@ -103,8 +104,147 @@ tr:hover td { background: rgba(37, 99, 235, 0.05); }
   <div class="tab" onclick="showTab('warnings')">Stale Data Flags</div>
 </div>
 
+<!-- EXPLAINER -->
+<div id="explainer" class="content active">
+  <h2>Harry's Briefing Pack — What This Is & How To Use It</h2>
+
+  <div class="company-block" style="border-color: #2563eb;">
+    <h4 style="color: #60a5fa;">What Is Site Intelligence?</h4>
+    <p style="font-size: 16px; color: #fff; line-height: 1.8;">
+      Site Intelligence is a <strong>planning research automation platform</strong>. When a developer or planning consultancy needs to assess a site — checking constraints, flood risk, heritage, ecology, transport, ground conditions, policy compliance, viability — their planners currently spend <strong>days or weeks</strong> doing desk-based research across dozens of data sources, then writing it up into reports.
+    </p>
+    <p style="font-size: 16px; color: #fff; line-height: 1.8;">
+      <strong>We do all of that in 48 hours.</strong> 125 AI agents pull data from 23 official sources (Environment Agency, BGS, Historic England, MAGIC, OS, Land Registry, etc.), cross-reference it, and produce submission-ready reports through a 4-gate quality pipeline. 74 report templates covering everything from flood risk assessments to viability appraisals to heritage impact assessments.
+    </p>
+  </div>
+
+  <div class="company-block">
+    <h4>The One-Liner</h4>
+    <p style="font-size: 20px; color: #fff; text-align: center; padding: 16px 0;">
+      "We do the desk work so your planners can do the planning."
+    </p>
+  </div>
+
+  <div class="company-block">
+    <h4>Why These Companies?</h4>
+    <p>Every company in this pack is <strong>actively hiring planners right now</strong>. The UK has an 884-vacancy planning staff shortage — only 21% of planning departments are fully staffed. These firms are spending £35,000-70,000+ per hire, waiting 4+ months to fill roles, and losing senior staff time to junior-level desk research.</p>
+    <p><strong>Our pitch:</strong> Instead of hiring another planner to do data gathering, use Site Intelligence. Same output, 48 hours, fraction of the cost. Your existing planners then spend 100% of their time on the human stuff — site visits, client meetings, professional judgment, advocacy — the work that actually earns fees.</p>
+  </div>
+
+  <div class="company-block">
+    <h4>What We Sell (4 Products)</h4>
+    <table>
+      <tr><th>Product</th><th>Price</th><th>What It Does</th><th>Who Buys It</th></tr>
+      <tr>
+        <td><strong>Site Screening</strong></td>
+        <td>£199 fixed</td>
+        <td>Quick constraint check — is this site worth pursuing? Flags showstoppers in 24 hours.</td>
+        <td>Land teams screening pipeline sites. Housebuilders. Anyone doing volume site assessment.</td>
+      </tr>
+      <tr>
+        <td><strong>Feasibility Intelligence</strong></td>
+        <td>From £695</td>
+        <td>Full desk-based feasibility: constraints, flood, heritage, ecology, transport, ground conditions, policy, viability. 20+ reports.</td>
+        <td>Planning consultancies doing site appraisals. Developers before buying land.</td>
+      </tr>
+      <tr>
+        <td><strong>Pre-Application Pack</strong></td>
+        <td>From £995</td>
+        <td>Everything in Feasibility plus planning statement drafts, D&A support, pre-app meeting prep.</td>
+        <td>Consultancies preparing pre-app submissions. Architects needing planning context.</td>
+      </tr>
+      <tr>
+        <td><strong>Planning Intelligence Pack</strong></td>
+        <td>Quoted</td>
+        <td>Full suite — everything we produce. Cross-domain intelligence, case law briefs, appeal precedents.</td>
+        <td>Complex sites. Large schemes. Firms wanting the complete picture.</td>
+      </tr>
+    </table>
+    <p style="margin-top: 12px;"><strong>B2B Volume Discounts:</strong> 3+ projects/month = 15% off | 5+ projects/month = 25% off</p>
+  </div>
+
+  <div class="company-block">
+    <h4>The Economics (Harry's Killer Stat)</h4>
+    <p style="font-size: 16px; color: #fff;">A mid-level planner costs <strong>£42,000-52,000/year</strong> fully loaded (salary + NI + pension + workspace + RTPI). They take <strong>4+ months to hire</strong> and <strong>6-12 months to train</strong>. They handle ~150 cases/year and spend <strong>60-75% of their time on desk research</strong> that SI automates.</p>
+    <p style="font-size: 16px; color: #fff;">SI's Feasibility product at £1,295/project = <strong>£19,425 for 15 projects</strong>. That's the desk research output of roughly one planner, at <strong>half the cost, with no recruitment risk, no training time, and 48-hour turnaround</strong>.</p>
+  </div>
+
+  <div class="company-block">
+    <h4>What SI Does NOT Do (Important for Credibility)</h4>
+    <p>We're very clear about this — it builds trust:</p>
+    <ul style="color: #cbd5e1; padding-left: 20px;">
+      <li><strong>No site visits</strong> — all desktop. Their planners still do walkovers and surveys.</li>
+      <li><strong>No professional sign-off</strong> — their chartered planners review and sign off. Their PI insurance, their brand.</li>
+      <li><strong>No client meetings</strong> — relationship management stays with them.</li>
+      <li><strong>No planning committee / appeal advocacy</strong> — we give them the intelligence and case law; they make the arguments.</li>
+    </ul>
+    <p style="margin-top: 12px;"><strong>Position it as:</strong> "We're the engine, you're the driver. Your brand, your client relationships, your professional judgment. We just make the research part instant."</p>
+  </div>
+
+  <div class="company-block">
+    <h4>Harry's Opening Script</h4>
+    <p style="font-size: 16px; color: #fff; line-height: 1.8; background: rgba(37,99,235,0.1); padding: 20px; border-radius: 8px;">
+      "Hi [Name], I'm Harry from Site Intelligence. I noticed you're recruiting for [role from their job ads]. We've built a platform that automates the desk research side of planning work — constraint checks, flood risk, heritage, ecology, policy analysis — all in 48 hours.<br><br>
+      We're not replacing planners. We free them up to do the human part — the judgment, the client work, the advocacy. The stuff a £40k salary is actually for.<br><br>
+      Would it be worth 15 minutes to show you what we produce? I can run a sample report on a site in your area so you can see the output."
+    </p>
+  </div>
+
+  <div class="company-block">
+    <h4>Handling Common Objections</h4>
+    <table>
+      <tr><th>They Say</th><th>Harry Says</th></tr>
+      <tr>
+        <td>"We need chartered planners to sign off"</td>
+        <td>"Absolutely — and they still do. We produce the research layer; your chartered planners review, apply judgment, and sign off. Your PI insurance, your standards, your client."</td>
+      </tr>
+      <tr>
+        <td>"AI can't do professional judgment"</td>
+        <td>"We completely agree. That's why we only automate the data gathering — the 60-75% that doesn't need judgment. Your planners should spend 100% of their time on the part that does."</td>
+      </tr>
+      <tr>
+        <td>"How reliable is the data?"</td>
+        <td>"Same sources your planners use — EA, BGS, Historic England, MAGIC, OS, Land Registry — we just check all 23 simultaneously. Every data point traces back to its source, and we run a 4-gate, 17-layer QA pipeline on every report."</td>
+      </tr>
+      <tr>
+        <td>"£695 per site seems expensive"</td>
+        <td>"Your junior planner costs about £160/day fully loaded. A feasibility takes 3-5 days desk time — that's £480-800 of their time, plus months of recruitment and training. £695 for 48-hour turnaround with no hiring risk is actually the cheaper option."</td>
+      </tr>
+      <tr>
+        <td>"We've got our own processes"</td>
+        <td>"Perfect — think of us as the research layer that feeds into your existing workflow. Your templates, your branding, your sign-off. We provide the raw intelligence."</td>
+      </tr>
+      <tr>
+        <td>"Can we try it first?"</td>
+        <td>"Yes — I'll run a free Screening report on any site you choose. You'll see the output quality before committing to anything."</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="company-block">
+    <h4>How This Pack Is Organised</h4>
+    <table>
+      <tr><th>Tab</th><th>What's In It</th></tr>
+      <tr><td><strong>Priority Targets</strong></td><td>Top 10 people to call first — ranked by conversion likelihood, all with direct contact details</td></tr>
+      <tr><td><strong>Tier 1 — Hot</strong></td><td>6 companies hiring aggressively (7+ roles each). Full contact details, salaries, and who to approach</td></tr>
+      <tr><td><strong>Tier 2 — Warm</strong></td><td>7 growing companies with verified contacts</td></tr>
+      <tr><td><strong>Tier 3 — Enterprise</strong></td><td>5 large firms (Savills, Lichfields, Stantec, etc.) — bigger deals but longer sales cycles</td></tr>
+      <tr><td><strong>Master List</strong></td><td>All 32 verified contacts in one flat table — ready for CRM import</td></tr>
+      <tr><td><strong>Stale Data Flags</strong></td><td>People who've left, retired, or changed roles — do NOT contact at old firms</td></tr>
+    </table>
+    <p style="margin-top: 12px;"><strong>Every contact has been verified</strong> via company websites, Companies House, and LinkedIn as of 30 March 2026. Confidence levels are marked: <span class="tag tag-confirmed">CONFIRMED</span> = on current website + CH/LinkedIn | <span class="tag tag-likely">LIKELY</span> = listed but couldn't fully verify activity.</p>
+  </div>
+
+  <div class="killer-quote">
+    <div class="text">
+      <strong>Harry's goal:</strong> Get 15-minute demo calls booked. Offer a free Screening report (£199 value) on any site they choose. Let the output sell itself.<br><br>
+      Start with the top 3: <strong>Carol Maughan</strong> (Turley — Digital Innovation), <strong>Angela Dimbleby</strong> (DLP — MD, 07867 418 568), <strong>Roger Tustain</strong> (Nexus — MD, 07919 045 191).
+    </div>
+  </div>
+</div>
+
 <!-- PRIORITY TARGETS -->
-<div id="priority" class="content active">
+<div id="priority" class="content">
   <h2>Top 10 Priority Contacts for Harry</h2>
   <p>These are the people most likely to buy SI, verified as current, with the best available contact details. Ordered by likelihood of conversion.</p>
 
