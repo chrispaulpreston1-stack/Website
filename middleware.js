@@ -2,6 +2,8 @@ export const config = {
   matcher: '/internal/:path*',
 };
 
+import { next } from '@vercel/edge';
+
 export default function middleware(request) {
   const auth = request.headers.get('authorization');
 
@@ -15,7 +17,7 @@ export default function middleware(request) {
       const validPass = process.env.INTERNAL_PASSWORD;
 
       if (user === validUser && pass === validPass) {
-        return; // Authenticated — let the request through
+        return next();
       }
     }
   }
