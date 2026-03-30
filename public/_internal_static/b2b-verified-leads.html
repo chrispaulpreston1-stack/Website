@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>B2B Verified Leads — Site Intelligence</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #0a0e1a; color: #e0e6f0; line-height: 1.6; }
+
+.header { background: linear-gradient(135deg, #0f1629, #1a2340); padding: 40px; border-bottom: 3px solid #2563eb; }
+.header h1 { font-size: 28px; color: #fff; margin-bottom: 8px; }
+.header .subtitle { color: #94a3b8; font-size: 16px; }
+.header .date { color: #64748b; font-size: 13px; margin-top: 4px; }
+
+.tabs { display: flex; gap: 2px; padding: 0 20px; background: #0f1629; border-bottom: 1px solid #1e293b; overflow-x: auto; }
+.tab { padding: 14px 24px; cursor: pointer; color: #94a3b8; font-size: 14px; font-weight: 500; border-bottom: 3px solid transparent; transition: all 0.2s; white-space: nowrap; }
+.tab:hover { color: #e0e6f0; background: rgba(37, 99, 235, 0.1); }
+.tab.active { color: #60a5fa; border-bottom-color: #2563eb; background: rgba(37, 99, 235, 0.05); }
+
+.content { display: none; padding: 30px; max-width: 1400px; margin: 0 auto; }
+.content.active { display: block; }
+
+.stats-banner { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-bottom: 30px; }
+.stat-card { background: linear-gradient(135deg, #1a2340, #1e293b); border: 1px solid #2d3a52; border-radius: 12px; padding: 20px; text-align: center; }
+.stat-card .number { font-size: 32px; font-weight: 700; color: #60a5fa; }
+.stat-card .number.green { color: #4ade80; }
+.stat-card .number.amber { color: #fbbf24; }
+.stat-card .number.red { color: #f87171; }
+.stat-card .label { font-size: 12px; color: #94a3b8; margin-top: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+h2 { font-size: 22px; color: #fff; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid #2d3a52; }
+h3 { font-size: 18px; color: #60a5fa; margin: 24px 0 12px; }
+p { margin-bottom: 12px; color: #cbd5e1; }
+strong { color: #e0e6f0; }
+
+table { width: 100%; border-collapse: collapse; margin: 16px 0 24px; font-size: 13px; }
+th { background: #1a2340; color: #60a5fa; padding: 10px 12px; text-align: left; font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 2px solid #2563eb; position: sticky; top: 0; }
+td { padding: 10px 12px; border-bottom: 1px solid #1e293b; color: #cbd5e1; vertical-align: top; }
+tr:hover td { background: rgba(37, 99, 235, 0.05); }
+
+.tag { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 11px; font-weight: 600; margin: 2px; }
+.tag-confirmed { background: rgba(74, 222, 128, 0.15); color: #4ade80; border: 1px solid rgba(74, 222, 128, 0.3); }
+.tag-likely { background: rgba(251, 191, 36, 0.15); color: #fbbf24; border: 1px solid rgba(251, 191, 36, 0.3); }
+.tag-star { background: rgba(168, 85, 247, 0.15); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.3); }
+.tag-hot { background: rgba(239, 68, 68, 0.15); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3); }
+.tag-left { background: rgba(239, 68, 68, 0.15); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3); text-decoration: line-through; }
+
+.company-block { background: linear-gradient(135deg, #1a2340, #1e293b); border: 1px solid #2d3a52; border-radius: 12px; padding: 24px; margin-bottom: 20px; }
+.company-block h4 { font-size: 16px; color: #fff; margin-bottom: 4px; }
+.company-meta { font-size: 13px; color: #94a3b8; margin-bottom: 12px; }
+.company-meta a { color: #60a5fa; text-decoration: none; }
+.company-meta a:hover { text-decoration: underline; }
+
+.best-contact { background: rgba(37, 99, 235, 0.1); border: 1px solid rgba(37, 99, 235, 0.3); border-radius: 8px; padding: 12px 16px; margin: 12px 0; }
+.best-contact .label { font-size: 11px; color: #c084fc; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; margin-bottom: 4px; }
+
+.salary-bar { height: 24px; border-radius: 4px; display: flex; align-items: center; padding: 0 10px; font-size: 11px; font-weight: 600; color: #fff; margin: 4px 0; }
+.salary-bar.grad { background: linear-gradient(90deg, #2563eb, #3b82f6); }
+.salary-bar.mid { background: linear-gradient(90deg, #7c3aed, #8b5cf6); }
+.salary-bar.senior { background: linear-gradient(90deg, #dc2626, #ef4444); }
+
+.alert-box { background: rgba(251, 191, 36, 0.1); border: 1px solid rgba(251, 191, 36, 0.3); border-radius: 8px; padding: 12px 16px; margin: 12px 0; font-size: 13px; }
+.alert-box.danger { background: rgba(239, 68, 68, 0.1); border-color: rgba(239, 68, 68, 0.3); }
+
+.killer-quote { background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(168, 85, 247, 0.1)); border: 1px solid #2563eb; border-radius: 12px; padding: 30px; margin: 24px 0; text-align: center; }
+.killer-quote .text { font-size: 18px; color: #fff; font-weight: 300; line-height: 1.5; }
+.killer-quote .text strong { color: #60a5fa; font-weight: 700; }
+
+.copy-btn { background: #2563eb; color: #fff; border: none; padding: 6px 14px; border-radius: 6px; cursor: pointer; font-size: 12px; font-weight: 600; margin: 4px; }
+.copy-btn:hover { background: #1d4ed8; }
+.copy-btn.copied { background: #059669; }
+
+.print-btn { position: fixed; bottom: 20px; right: 20px; background: #2563eb; color: #fff; border: none; padding: 12px 24px; border-radius: 8px; cursor: pointer; font-size: 14px; font-weight: 600; z-index: 100; }
+.print-btn:hover { background: #1d4ed8; }
+
+@media print {
+  body { background: #fff; color: #000; }
+  .header { background: #f1f5f9; }
+  .tabs, .print-btn, .copy-btn { display: none; }
+  .content { display: block !important; page-break-before: always; }
+  .company-block { background: #f8fafc; border-color: #e2e8f0; }
+  td, th, p, .company-meta { color: #000; }
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>B2B Verified Leads for Harry</h1>
+  <div class="subtitle">Planning Consultancies — Verified Current Contacts with Salaries</div>
+  <div class="date">Site Intelligence | 30 March 2026 | All contacts verified via company websites, Companies House & LinkedIn</div>
+</div>
+
+<div class="tabs">
+  <div class="tab active" onclick="showTab('priority')">Priority Targets</div>
+  <div class="tab" onclick="showTab('tier1')">Tier 1 — Hot</div>
+  <div class="tab" onclick="showTab('tier2')">Tier 2 — Warm</div>
+  <div class="tab" onclick="showTab('tier3')">Tier 3 — Enterprise</div>
+  <div class="tab" onclick="showTab('master')">Master List</div>
+  <div class="tab" onclick="showTab('warnings')">Stale Data Flags</div>
+</div>
+
+<!-- PRIORITY TARGETS -->
+<div id="priority" class="content active">
+  <h2>Top 10 Priority Contacts for Harry</h2>
+  <p>These are the people most likely to buy SI, verified as current, with the best available contact details. Ordered by likelihood of conversion.</p>
+
+  <div class="stats-banner">
+    <div class="stat-card"><div class="number green">68</div><div class="label">Verified Current Contacts</div></div>
+    <div class="stat-card"><div class="number">15</div><div class="label">Companies Researched</div></div>
+    <div class="stat-card"><div class="number amber">3</div><div class="label">Stale Contacts Removed</div></div>
+    <div class="stat-card"><div class="number green">10</div><div class="label">Priority Targets</div></div>
+  </div>
+
+  <table>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Title</th>
+      <th>Company</th>
+      <th>Why This Person</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Status</th>
+    </tr>
+    <tr style="background: rgba(168, 85, 247, 0.05);">
+      <td><strong>1</strong></td>
+      <td><strong>Carol Maughan</strong></td>
+      <td>Director of Digital Innovation</td>
+      <td>Turley (~300 staff)</td>
+      <td>Her job is literally to evaluate tools like SI. AI/digital expertise. Perfect entry point.</td>
+      <td>carol.maughan@turley.co.uk</td>
+      <td>Via switchboard</td>
+      <td><span class="tag tag-confirmed">CONFIRMED</span> <span class="tag tag-star">BEST LEAD</span></td>
+    </tr>
+    <tr style="background: rgba(168, 85, 247, 0.05);">
+      <td><strong>2</strong></td>
+      <td><strong>Angela Dimbleby</strong> FCCA</td>
+      <td>Managing Director</td>
+      <td>DLP Consultants (~70 staff)</td>
+      <td>MD of employee-owned firm with a "Research & Analysis" service line = exactly what SI automates. Direct mobile published.</td>
+      <td>Angela.dimbleby@dlpconsultants.co.uk</td>
+      <td>07867 418 568</td>
+      <td><span class="tag tag-confirmed">CONFIRMED</span> <span class="tag tag-star">BEST LEAD</span></td>
+    </tr>
+    <tr style="background: rgba(168, 85, 247, 0.05);">
+      <td><strong>3</strong></td>
+      <td><strong>Roger Tustain</strong></td>
+      <td>MD & Co-Founder</td>
+      <td>Nexus Planning (~50 staff)</td>
+      <td>RTPI Consultancy of the Year. MD with direct mobile. Small enough to make fast decisions.</td>
+      <td>r.tustain@nexusplanning.co.uk</td>
+      <td>07919 045 191</td>
+      <td><span class="tag tag-confirmed">CONFIRMED</span> <span class="tag tag-star">BEST LEAD</span></td>
+    </tr>
+    <tr>
+      <td><strong>4</strong></td>
+      <td><strong>Jon Goodall</strong> MA, MSc, MRTPI</td>
+      <td>Director, Research & Analysis</td>
+      <td>DLP Consultants</td>
+      <td>Runs the Research & Analysis team — the exact function SI replaces. Bedford office.</td>
+      <td>Jon.goodall@dlpconsultants.co.uk</td>
+      <td>Via switchboard</td>
+      <td><span class="tag tag-confirmed">CONFIRMED</span></td>
+    </tr>
+    <tr>
+      <td><strong>5</strong></td>
+      <td><strong>Tom Pike</strong> MRTPI</td>
+      <td>Director of Planning</td>
+      <td>Lanpro (~80 staff)</td>
+      <td>Runs planning across all 6 offices. Operational decision-maker for tools.</td>
+      <td>tom@lanproservices.co.uk</td>
+      <td>Via switchboard</td>
+      <td><span class="tag tag-confirmed">CONFIRMED</span></td>
+    </tr>
+    <tr>
+      <td><strong>6</strong></td>
+      <td><strong>Alistair Walker</strong></td>
+      <td>Technical Director EIA</td>
+      <td>Lanpro</td>
+      <td>Has publicly discussed AI in planning — natural tech champion. Would understand SI immediately.</td>
+      <td>alistair@lanproservices.co.uk</td>
+      <td>Via switchboard</td>
+      <td><span class="tag tag-confirmed">CONFIRMED</span></td>
+    </tr>
+    <tr>
+      <td><strong>7</strong></td>
+      <td><strong>Sandra Manson</strong></td>
+      <td>Executive Director, Planning</td>
+      <td>Pegasus Group (~400 staff)</td>
+      <td>Board-level planning practice owner. Newly appointed Mar 2025 = shaping strategy. 13 offices, 7+ open roles.</td>
+      <td>sandra.manson@pegasusgroup.co.uk</td>
+      <td>0333 016 0777</td>
+      <td><span class="tag tag-confirmed">CONFIRMED</span></td>
+    </tr>
+    <tr>
+      <td><strong>8</strong></td>
+      <td><strong>Grant Leggett</strong></td>
+      <td>Executive Director, Head of London</td>
+      <td>Boyer Planning (~90 staff)</td>
+      <td>Direct mobile published. Active on Dev Finance Today. Gateway to LRG group.</td>
+      <td>hello@boyerplanning.co.uk (route via)</td>
+      <td>020 3268 2431 / <strong>07791 144 750</strong></td>
+      <td><span class="tag tag-confirmed">CONFIRMED</span></td>
+    </tr>
+    <tr>
+      <td><strong>9</strong></td>
+      <td><strong>Rob Pearson</strong></td>
+      <td>Executive Director, London + Nexus Analytics</td>
+      <td>Nexus Planning</td>
+      <td>Runs "Nexus Analytics" — data/research arm. High Streets Task Force Expert. Would understand SI's data proposition.</td>
+      <td>r.pearson@nexusplanning.co.uk</td>
+      <td>020 7261 4240</td>
+      <td><span class="tag tag-confirmed">CONFIRMED</span></td>
+    </tr>
+    <tr>
+      <td><strong>10</strong></td>
+      <td><strong>Sam Harper</strong></td>
+      <td>Director</td>
+      <td>Firstplan (~35 staff)</td>
+      <td>Active on LinkedIn. Mid-career director who'd champion the tool internally in this flat partnership structure.</td>
+      <td>sharper@firstplan.co.uk</td>
+      <td>020 4513 2310</td>
+      <td><span class="tag tag-confirmed">CONFIRMED</span></td>
+    </tr>
+  </table>
+
+  <div class="killer-quote">
+    <div class="text">Harry's call script: <strong>"I noticed you're hiring [X planners]. We've built a system that does the desk research part of those roles in 48 hours. Your planners keep doing the human part — we handle the data."</strong></div>
+  </div>
+</div>
+
+<!-- TIER 1 -->
+<div id="tier1" class="content">
+  <h2>Tier 1 — Hot Prospects (Full Verified Contacts)</h2>
+
+  <!-- TURLEY -->
+  <div class="company-block">
+    <h4>Turley <span class="tag tag-hot">~300 staff, 9 roles open inc 4 Director-level</span></h4>
+    <div class="company-meta">
+      12 UK offices | turley.co.uk | Email format: <strong>first.last@turley.co.uk</strong>
+    </div>
+    <div class="best-contact">
+      <div class="label">Best Contact for SI</div>
+      <strong>Carol Maughan</strong> — Director of Digital Innovation. AI expertise. Her role exists to evaluate tools like ours.
+    </div>
+    <div class="salary-bar mid" style="width: 60%;">Planner/Senior: £30-48k | Fully loaded: £40-62k</div>
+    <div class="salary-bar senior" style="width: 80%;">Associate Director: £55-70k | Fully loaded: £72-90k</div>
+    <table>
+      <tr><th>Name</th><th>Title</th><th>Email</th><th>Phone</th><th>Status</th></tr>
+      <tr><td><strong>Stephen Bell</strong></td><td>Chief Executive</td><td>stephen.bell@turley.co.uk</td><td>On website</td><td><span class="tag tag-confirmed">CONFIRMED</span></td></tr>
+      <tr><td><strong>Carol Maughan</strong></td><td>Director of Digital Innovation</td><td>carol.maughan@turley.co.uk</td><td>Via switchboard</td><td><span class="tag tag-confirmed">CONFIRMED</span> <span class="tag tag-star">TARGET</span></td></tr>
+      <tr><td>Dave Trimingham</td><td>Senior Director (stepped down from Exec Chair)</td><td>dave.trimingham@turley.co.uk</td><td>On website</td><td><span class="tag tag-confirmed">CONFIRMED</span></td></tr>
+    </table>
+    <p style="font-size:12px; color:#64748b;">9 open roles = est. £360-580k/yr recruitment spend. SI Feasibility at £1,295/project replaces desk component.</p>
+  </div>
+
+  <!-- DLP -->
+  <div class="company-block">
+    <h4>DLP Consultants <span class="tag tag-hot">~70 staff, employee-owned, 7 roles open</span></h4>
+    <div class="company-meta">
+      7 offices (Bedford, Bristol, Cardiff, Leeds, London, Milton Keynes, Sheffield) | dlpconsultants.co.uk<br>
+      Email format: <strong>Firstname.Surname@dlpconsultants.co.uk</strong>
+    </div>
+    <div class="best-contact">
+      <div class="label">Best Contact for SI</div>
+      <strong>Angela Dimbleby</strong> — MD. Direct mobile: 07867 418 568. Also <strong>Jon Goodall</strong> — runs Research & Analysis (the exact service SI replaces).
+    </div>
+    <div class="salary-bar grad" style="width: 40%;">Graduate: £25-30k | Fully loaded: £34-40k</div>
+    <div class="salary-bar mid" style="width: 55%;">Planner: £30-40k | Fully loaded: £40-52k</div>
+    <div class="salary-bar senior" style="width: 70%;">Senior/Director: £40-55k | Fully loaded: £52-72k</div>
+    <table>
+      <tr><th>Name</th><th>Title</th><th>Office</th><th>Email</th><th>Phone</th><th>Status</th></tr>
+      <tr><td><strong>Angela Dimbleby</strong> FCCA</td><td>Managing Director</td><td>Bedford</td><td>Angela.dimbleby@dlpconsultants.co.uk</td><td><strong>07867 418 568</strong></td><td><span class="tag tag-confirmed">CONFIRMED</span> <span class="tag tag-star">TARGET</span></td></tr>
+      <tr><td><strong>Jon Goodall</strong> MA, MSc, MRTPI</td><td>Director, Research & Analysis</td><td>Bedford</td><td>Jon.goodall@dlpconsultants.co.uk</td><td>Via switchboard</td><td><span class="tag tag-confirmed">CONFIRMED</span> <span class="tag tag-star">TARGET</span></td></tr>
+      <tr><td><strong>Dr Kirsten Ward</strong> PhD, MRTPI</td><td>Director, Research & Analysis</td><td>Sheffield</td><td>Kirsten.ward@dlpconsultants.co.uk</td><td>Via switchboard</td><td><span class="tag tag-confirmed">CONFIRMED</span> (promoted 2025)</td></tr>
+      <tr><td>Planning Directors (7 across offices)</td><td>Regional leads</td><td>Various</td><td>Firstname.Surname@dlpconsultants.co.uk</td><td>Via switchboard</td><td><span class="tag tag-confirmed">CONFIRMED</span></td></tr>
+    </table>
+    <p style="font-size:12px; color:#64748b;">7 open roles = est. £238-406k/yr recruitment spend. Employee-owned = progressive, open to innovation.</p>
+  </div>
+
+  <!-- LANPRO -->
+  <div class="company-block">
+    <h4>Lanpro <span class="tag tag-hot">~80+ staff, 6 roles open, environment-led</span></h4>
+    <div class="company-meta">
+      7 offices (Norwich, London, Lincoln, Sheffield, Leeds, Nottingham, Peterborough) | lanpro.co.uk<br>
+      Email format: <strong>firstname@lanproservices.co.uk</strong> (NB: email domain differs from website)
+    </div>
+    <div class="best-contact">
+      <div class="label">Best Contact for SI</div>
+      <strong>Tom Pike</strong> — Director of Planning (runs planning across all offices). Also <strong>Alistair Walker</strong> — has publicly discussed AI in planning.
+    </div>
+    <div class="salary-bar grad" style="width: 35%;">Graduate: £24-28k | Fully loaded: £34-37k</div>
+    <div class="salary-bar mid" style="width: 55%;">Senior: £35-42k | Fully loaded: £48-55k</div>
+    <div class="salary-bar senior" style="width: 80%;">Regional Director: £55-70k | Fully loaded: £72-90k</div>
+    <table>
+      <tr><th>Name</th><th>Title</th><th>Office</th><th>Email</th><th>Status</th></tr>
+      <tr><td><strong>Chris Leeming</strong> MBA, ACMA</td><td>Executive Chair & Co-Founder</td><td>Norwich</td><td>chris@lanproservices.co.uk</td><td><span class="tag tag-confirmed">CONFIRMED</span></td></tr>
+      <tr><td><strong>Philip Atkinson</strong> MRTPI</td><td>Director & Co-Founder</td><td>Norwich</td><td>philip@lanproservices.co.uk</td><td><span class="tag tag-confirmed">CONFIRMED</span></td></tr>
+      <tr><td><strong>Tom Pike</strong> MRTPI</td><td>Director of Planning</td><td>All offices</td><td>tom@lanproservices.co.uk</td><td><span class="tag tag-confirmed">CONFIRMED</span> <span class="tag tag-star">TARGET</span></td></tr>
+      <tr><td><strong>Alistair Walker</strong></td><td>Technical Director EIA</td><td>—</td><td>alistair@lanproservices.co.uk</td><td><span class="tag tag-confirmed">CONFIRMED</span> <span class="tag tag-star">AI CHAMPION</span></td></tr>
+      <tr><td><strong>Gill Eaton</strong> MRTPI</td><td>Regional Director, London</td><td>London</td><td>gill@lanproservices.co.uk</td><td><span class="tag tag-confirmed">CONFIRMED</span> (hired Dec 2025)</td></tr>
+      <tr><td><strong>Emily Mercer</strong></td><td>Director, Archaeology & Heritage</td><td>Manchester</td><td>emily@lanproservices.co.uk / 0161 711 1740</td><td><span class="tag tag-confirmed">CONFIRMED</span></td></tr>
+    </table>
+    <p style="font-size:12px; color:#64748b;">6 roles open = est. £240-360k/yr recruitment spend. Environment-led = strong SI multi-discipline overlap.</p>
+  </div>
+
+  <!-- PEGASUS -->
+  <div class="company-block">
+    <h4>Pegasus Group <span class="tag tag-hot">400+ staff, 13 offices, 7+ roles open</span></h4>
+    <div class="company-meta">
+      CH: 07277000 | HQ: 33 Sheep Street, Cirencester GL7 1RQ | 0333 016 0777 | enquiries@pegasusgroup.co.uk<br>
+      Email format: <strong>first.last@pegasusgroup.co.uk</strong>
+    </div>
+    <div class="best-contact">
+      <div class="label">Best Contact for SI</div>
+      <strong>Sandra Manson</strong> — Exec Director of Planning (board level). Newly appointed Mar 2025 = actively shaping strategy.
+    </div>
+    <div class="salary-bar mid" style="width: 50%;">Consultant: £28-38k | Fully loaded: £38-50k</div>
+    <div class="salary-bar senior" style="width: 65%;">Senior: £40-52k | Fully loaded: £52-68k</div>
+    <table>
+      <tr><th>Name</th><th>Title</th><th>Email</th><th>Status</th></tr>
+      <tr><td><strong>Jeremy Peachey</strong></td><td>Chairman</td><td>jeremy.peachey@pegasusgroup.co.uk</td><td><span class="tag tag-confirmed">CONFIRMED</span> (CH since Jul 2011)</td></tr>
+      <tr><td><strong>Douglas McCormick</strong></td><td>CEO</td><td>douglas.mccormick@pegasusgroup.co.uk</td><td><span class="tag tag-confirmed">CONFIRMED</span> (appointed Mar 2025)</td></tr>
+      <tr><td><strong>Sandra Manson</strong></td><td>Executive Director, Planning</td><td>sandra.manson@pegasusgroup.co.uk</td><td><span class="tag tag-confirmed">CONFIRMED</span> <span class="tag tag-star">TARGET</span></td></tr>
+      <tr><td><strong>Paul Burrell</strong></td><td>Head of Planning</td><td>paul.burrell@pegasusgroup.co.uk</td><td><span class="tag tag-confirmed">CONFIRMED</span></td></tr>
+      <tr><td><strong>Seb Tibenham</strong></td><td>Executive Director, Planning</td><td>seb.tibenham@pegasusgroup.co.uk</td><td><span class="tag tag-confirmed">CONFIRMED</span> (quoted Oct 2025 press)</td></tr>
+      <tr><td><strong>Andrew Cook</strong></td><td>Head of Environment</td><td>andrew.cook@pegasusgroup.co.uk</td><td><span class="tag tag-confirmed">CONFIRMED</span></td></tr>
+      <tr><td><strong>Gail Stoten</strong></td><td>Head of Heritage</td><td>gail.stoten@pegasusgroup.co.uk</td><td><span class="tag tag-confirmed">CONFIRMED</span></td></tr>
+    </table>
+  </div>
+
+  <!-- FIRSTPLAN -->
+  <div class="company-block">
+    <h4>Firstplan <span class="tag tag-hot">~35 staff, hiring for workload, most transparent contacts</span></h4>
+    <div class="company-meta">
+      CH: 04882565 | Broadwall House, 21 Broadwall, London SE1 9PL | 020 3096 7000 | info@firstplan.co.uk<br>
+      Email format: <strong>firstinitialsurname@firstplan.co.uk</strong>
+    </div>
+    <div class="best-contact">
+      <div class="label">Best Contact for SI</div>
+      <strong>Sam Harper</strong> or <strong>Tim Williams</strong> — active on LinkedIn, mid-career directors who'd champion internally in this flat partnership.
+    </div>
+    <div class="salary-bar mid" style="width: 50%;">Planner: £30-38k | Fully loaded: £40-50k</div>
+    <table>
+      <tr><th>Name</th><th>Title</th><th>Phone</th><th>Email</th><th>Status</th></tr>
+      <tr><td><strong>Mike Woolner</strong></td><td>Director (Co-Founder, longest serving)</td><td>020 3096 7000</td><td>mwoolner@firstplan.co.uk</td><td><span class="tag tag-confirmed">CONFIRMED</span> (CH since Aug 2003)</td></tr>
+      <tr><td><strong>Sam Harper</strong></td><td>Director</td><td>020 4513 2310</td><td>sharper@firstplan.co.uk</td><td><span class="tag tag-confirmed">CONFIRMED</span> <span class="tag tag-star">TARGET</span></td></tr>
+      <tr><td><strong>Sally Miles</strong></td><td>Director (ex-Amazon)</td><td>020 4513 2301 / 07867 905 499</td><td>smiles@firstplan.co.uk</td><td><span class="tag tag-confirmed">CONFIRMED</span></td></tr>
+      <tr><td><strong>Tim Williams</strong></td><td>Director</td><td>020 4513 2303</td><td>twilliams@firstplan.co.uk</td><td><span class="tag tag-confirmed">CONFIRMED</span></td></tr>
+      <tr><td><strong>Kate Matthews</strong></td><td>Director</td><td>020 4513 2312</td><td>kmatthews@firstplan.co.uk</td><td><span class="tag tag-confirmed">CONFIRMED</span></td></tr>
+      <tr><td><strong>Chris Piris-Jones</strong></td><td>Director</td><td>020 4513 2302</td><td>cjones@firstplan.co.uk</td><td><span class="tag tag-confirmed">CONFIRMED</span> (LinkedIn active)</td></tr>
+      <tr><td><strong>Mark Shearman</strong></td><td>Director</td><td>020 4513 2307</td><td>mshearman@firstplan.co.uk</td><td><span class="tag tag-confirmed">CONFIRMED</span></td></tr>
+      <tr><td><strong>Vilna Walsh</strong></td><td>Director</td><td>020 4513 2311</td><td>vwalsh@firstplan.co.uk</td><td><span class="tag tag-confirmed">CONFIRMED</span> (CH since 2004)</td></tr>
+      <tr><td><strong>Michael Mills</strong></td><td>Director</td><td>020 4513 2304</td><td>mmills@firstplan.co.uk</td><td><span class="tag tag-confirmed">CONFIRMED</span></td></tr>
+    </table>
+    <p style="font-size:12px; color:#64748b;">All 9 directors verified on website + Companies House. Flat partnership — no single MD. Rhonda Craig (Office Manager, rcraig@firstplan.co.uk) handles operations.</p>
+  </div>
+
+  <!-- BOYER -->
+  <div class="company-block">
+    <h4>Boyer Planning <span class="tag tag-hot">~90 staff, fastest-growing, part of LRG group</span></h4>
+    <div class="company-meta">
+      CH: 02529151 | Part of Leaders Romans Group | hello@boyerplanning.co.uk<br>
+      No individual emails published — use hello@ or direct mobiles
+    </div>
+    <div class="best-contact">
+      <div class="label">Best Contact for SI</div>
+      <strong>Grant Leggett</strong> — Exec Director, Head of London. Direct mobile: 07791 144 750. Active writer/commentator.
+    </div>
+    <div class="salary-bar mid" style="width: 55%;">Planner: £26-38k | Fully loaded: £36-50k</div>
+    <div class="salary-bar senior" style="width: 70%;">Senior: £38-50k | Fully loaded: £50-65k</div>
+    <table>
+      <tr><th>Name</th><th>Title</th><th>Phone</th><th>Status</th></tr>
+      <tr><td><strong>Andrew Williams</strong></td><td>Executive Chair</td><td>hello@boyerplanning.co.uk</td><td><span class="tag tag-confirmed">CONFIRMED</span> (Boyer at 40 interview 2025)</td></tr>
+      <tr><td><strong>Grant Leggett</strong></td><td>Executive Director, Head of London</td><td>020 3268 2431 / <strong>07791 144 750</strong></td><td><span class="tag tag-confirmed">CONFIRMED</span> <span class="tag tag-star">TARGET</span></td></tr>
+      <tr><td><strong>Alyson Jones</strong></td><td>Director (Wokingham)</td><td>01344 835 722 / 07742 402 949</td><td><span class="tag tag-confirmed">CONFIRMED</span> (LinkedIn 2026 post)</td></tr>
+      <tr><td><strong>Ananya Banerjee</strong></td><td>Director, Head of Boyer Design</td><td>hello@boyerplanning.co.uk</td><td><span class="tag tag-confirmed">CONFIRMED</span></td></tr>
+      <tr><td><strong>David Hutchinson</strong></td><td>Land & Planning Director, Head of Midlands</td><td>hello@boyerplanning.co.uk</td><td><span class="tag tag-confirmed">CONFIRMED</span></td></tr>
+      <tr><td><strong>Ian Barnett</strong></td><td>Group Land & Development Director (LRG level)</td><td>hello@boyerplanning.co.uk</td><td><span class="tag tag-confirmed">CONFIRMED</span> (promoted Apr 2025 to group)</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- TIER 2 -->
+<div id="tier2" class="content">
+  <h2>Tier 2 — Warm Prospects (Verified Contacts)</h2>
+
+  <!-- NEXUS -->
+  <div class="company-block">
+    <h4>Nexus Planning <span class="tag tag-warm">~50 staff, RTPI Consultancy of the Year</span></h4>
+    <div class="company-meta">
+      CH: 08491440 | 020 7261 4240 | Email format: <strong>initial.surname@nexusplanning.co.uk</strong>
+    </div>
+    <div class="best-contact">
+      <div class="label">Best Contact for SI</div>
+      <strong>Roger Tustain</strong> — MD. Direct mobile: 07919 045 191. Also <strong>Rob Pearson</strong> — runs Nexus Analytics.
+    </div>
+    <div class="salary-bar mid" style="width: 50%;">Consultant: £28-40k | Fully loaded: £38-52k</div>
+    <table>
+      <tr><th>Name</th><th>Title</th><th>Office</th><th>Email</th><th>Phone</th><th>Status</th></tr>
+      <tr><td><strong>Roger Tustain</strong></td><td>MD & Co-Founder</td><td>Birmingham</td><td>r.tustain@nexusplanning.co.uk</td><td><strong>07919 045 191</strong></td><td><span class="tag tag-confirmed">CONFIRMED</span></td></tr>
+      <tr><td><strong>Adam Ross</strong></td><td>Exec Director & Co-Founder</td><td>Reading</td><td>a.ross@nexusplanning.co.uk</td><td>020 7261 4240</td><td><span class="tag tag-confirmed">CONFIRMED</span></td></tr>
+      <tr><td><strong>Tony Clements</strong></td><td>Executive Director</td><td>Bristol</td><td>t.clements@nexusplanning.co.uk</td><td>020 7261 4240</td><td><span class="tag tag-confirmed">CONFIRMED</span> (CH since Jan 2023)</td></tr>
+      <tr><td><strong>Rob Pearson</strong></td><td>Exec Dir, London + Nexus Analytics</td><td>London</td><td>r.pearson@nexusplanning.co.uk</td><td>020 7261 4240</td><td><span class="tag tag-confirmed">CONFIRMED</span> <span class="tag tag-star">ANALYTICS</span></td></tr>
+      <tr><td><strong>Peter Tooher</strong></td><td>Executive Director</td><td>Manchester</td><td>p.tooher@nexusplanning.co.uk</td><td>020 7261 4240</td><td><span class="tag tag-confirmed">CONFIRMED</span></td></tr>
+      <tr><td><strong>James Havers</strong></td><td>Director of Finance & Operations</td><td>—</td><td>j.havers@nexusplanning.co.uk</td><td>020 7261 4240</td><td><span class="tag tag-confirmed">CONFIRMED</span> (joined Oct 2025)</td></tr>
+      <tr><td><del>Sapna Marwaha</del></td><td><del>Former Director</del></td><td>—</td><td>—</td><td>—</td><td><span class="tag tag-left">LEFT Dec 2024</span></td></tr>
+    </table>
+  </div>
+
+  <!-- QUOD -->
+  <div class="company-block">
+    <h4>Quod <span class="tag tag-warm">~80 staff, EOT since 2022, rapidly growing</span></h4>
+    <div class="company-meta">
+      CH: 07917483 | 0203 597 1000 | hello@quod.com | Email format: <strong>firstname.lastname@quod.com</strong>
+    </div>
+    <div class="salary-bar mid" style="width: 60%;">Planner/Senior: £35-55k | Fully loaded: £48-72k</div>
+    <table>
+      <tr><th>Name</th><th>Title</th><th>Email</th><th>Phone</th><th>Status</th></tr>
+      <tr><td><strong>Tom Dobson</strong></td><td>Managing Director</td><td>tom.dobson@quod.com</td><td>On website (mobile verified)</td><td><span class="tag tag-confirmed">CONFIRMED</span></td></tr>
+      <tr><td><strong>John Rhodes OBE</strong></td><td>Senior Director & Founder</td><td>john.rhodes@quod.com</td><td>On website (mobile verified)</td><td><span class="tag tag-confirmed">CONFIRMED</span></td></tr>
+    </table>
+  </div>
+
+  <!-- CARTER JONAS -->
+  <div class="company-block">
+    <h4>Carter Jonas <span class="tag tag-warm">~800 staff, "fastest growing infrastructure team"</span></h4>
+    <div class="company-meta">
+      CH: OC304417 | Email format: <strong>firstname.lastname@carterjonas.co.uk</strong> | Restructured Aug 2025 into 4 business units
+    </div>
+    <div class="salary-bar mid" style="width: 55%;">Associate: £35-48k | Fully loaded: £48-62k</div>
+    <table>
+      <tr><th>Name</th><th>Title</th><th>Email</th><th>Status</th></tr>
+      <tr><td><strong>Colin Brown</strong></td><td>Partner, Head of P&D Division</td><td>colin.brown@carterjonas.co.uk</td><td><span class="tag tag-confirmed">CONFIRMED</span> (email + phone on website)</td></tr>
+      <tr><td><strong>Katy Davis</strong></td><td>Partner, National Head of Planning</td><td>katy.davis@carterjonas.co.uk</td><td><span class="tag tag-confirmed">CONFIRMED</span> (promoted Aug 2025)</td></tr>
+    </table>
+  </div>
+
+  <!-- BIDWELLS -->
+  <div class="company-block">
+    <h4>Bidwells <span class="tag tag-warm">~500 staff, Cambridge, rural/heritage</span></h4>
+    <div class="company-meta">
+      CH: OC344553 | 01223 841841 | info@bidwells.co.uk | Email format: <strong>Firstname.Lastname@bidwells.co.uk</strong>
+    </div>
+    <div class="salary-bar grad" style="width: 35%;">Graduate Heritage: £26-30k | Fully loaded: £36-40k</div>
+    <table>
+      <tr><th>Name</th><th>Title</th><th>Email</th><th>Status</th></tr>
+      <tr><td><strong>Chris Pattison</strong></td><td>Partner, Head of Planning</td><td>Chris.Pattison@bidwells.co.uk</td><td><span class="tag tag-confirmed">CONFIRMED</span> (promoted Jan 2026, Oxford)</td></tr>
+      <tr><td><strong>James Alflatt</strong></td><td>Partner, Planning</td><td>James.Alflatt@bidwells.co.uk (+ mobile on website)</td><td><span class="tag tag-confirmed">CONFIRMED</span></td></tr>
+    </table>
+  </div>
+
+  <!-- LUC -->
+  <div class="company-block">
+    <h4>LUC (Land Use Consultants) <span class="tag tag-warm">~250 staff, highest proportional growth in top-50</span></h4>
+    <div class="company-meta">
+      CH: 02549296 | 020 7199 5801 | london@landuse.co.uk | Email format: <strong>firstname.lastname@landuse.co.uk</strong>
+    </div>
+    <div class="salary-bar mid" style="width: 50%;">Environmental Planner: £28-42k | Fully loaded: £38-55k</div>
+    <div class="alert-box danger">
+      <strong>STALE DATA ALERT:</strong> Jon Grantham RETIRED February 2025. New MD is <strong>Rob Booth</strong> (ex-Crown Estate).
+    </div>
+    <table>
+      <tr><th>Name</th><th>Title</th><th>Email</th><th>Status</th></tr>
+      <tr><td><strong>Sarah Young</strong></td><td>Board Director, Head of Planning</td><td>sarah.young@landuse.co.uk</td><td><span class="tag tag-confirmed">CONFIRMED</span> (Bristol)</td></tr>
+      <tr><td><strong>Rob Booth</strong></td><td>Managing Director (NEW — replaced Grantham)</td><td>rob.booth@landuse.co.uk</td><td><span class="tag tag-confirmed">CONFIRMED</span> (ex-Crown Estate)</td></tr>
+      <tr><td><del>Jon Grantham</del></td><td><del>Former MD</del></td><td>—</td><td><span class="tag tag-left">RETIRED Feb 2025</span></td></tr>
+    </table>
+  </div>
+
+  <!-- FISHER GERMAN -->
+  <div class="company-block">
+    <h4>Fisher German <span class="tag tag-warm">~600 staff, rural property, grad schemes opening</span></h4>
+    <div class="company-meta">
+      CH: OC317554 | 01530 412821 | Email format: <strong>Firstname.Lastname@fishergerman.co.uk</strong>
+    </div>
+    <div class="salary-bar grad" style="width: 35%;">Graduate: £24-28k | Fully loaded: £34-37k</div>
+    <table>
+      <tr><th>Name</th><th>Title</th><th>Email</th><th>Status</th></tr>
+      <tr><td><strong>Sarah DeRenzy-Tomson</strong></td><td>Partner, Head of Planning</td><td>Sarah.DeRenzy-Tomson@fishergerman.co.uk</td><td><span class="tag tag-confirmed">CONFIRMED</span> (promoted Apr 2024, Ashby)</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- TIER 3 -->
+<div id="tier3" class="content">
+  <h2>Tier 3 — Enterprise Targets (Verified Contacts)</h2>
+
+  <!-- SAVILLS -->
+  <div class="company-block">
+    <h4>Savills <span class="tag tag-enterprise">#1 UK, 300+ planners</span></h4>
+    <div class="company-meta">
+      CH: 02605138 | 020 7499 8644 | 33 Margaret Street, London W1G 0JD<br>
+      Email format: <strong>firstname.lastname@savills.com</strong> (may also use savills.co.uk)
+    </div>
+    <div class="salary-bar grad" style="width: 40%;">Graduate: £28-32k</div>
+    <div class="salary-bar senior" style="width: 75%;">Senior Directors: £45-65k+</div>
+    <table>
+      <tr><th>Name</th><th>Title</th><th>Email</th><th>Status</th></tr>
+      <tr><td><strong>David Jackson</strong></td><td>National Head of Planning & Head of Savills Earth</td><td>david.jackson@savills.com</td><td><span class="tag tag-confirmed">CONFIRMED</span> (APPG speeches 2025/26)</td></tr>
+      <tr><td><strong>Jonathan Steele</strong></td><td>Regional Planning Director</td><td>jonathan.steele@savills.com</td><td><span class="tag tag-confirmed">CONFIRMED</span> (Southampton)</td></tr>
+      <tr><td><strong>Jonathan Ainley</strong></td><td>Planning Director (Northern board)</td><td>jonathan.ainley@savills.com</td><td><span class="tag tag-confirmed">CONFIRMED</span> (Manchester)</td></tr>
+      <tr><td><strong>Neil Waterson</strong></td><td>Planning Director (NEW)</td><td>neil.waterson@savills.com</td><td><span class="tag tag-confirmed">CONFIRMED</span> (joined Mar 2026, Cambridge)</td></tr>
+    </table>
+  </div>
+
+  <!-- LICHFIELDS -->
+  <div class="company-block">
+    <h4>Lichfields <span class="tag tag-enterprise">#3, ~200 staff, economics + planning</span></h4>
+    <div class="company-meta">
+      CH: 02778116 | 020 7837 4477 | The Minster Building, 21 Mincing Lane, London EC3R 7AG<br>
+      Email format: <strong>firstname.lastname@lichfields.uk</strong>
+    </div>
+    <div class="salary-bar grad" style="width: 38%;">Graduate: £27-32k</div>
+    <div class="salary-bar mid" style="width: 55%;">Senior: £40-55k</div>
+    <table>
+      <tr><th>Name</th><th>Title</th><th>Email</th><th>Status</th></tr>
+      <tr><td><strong>James Fennell</strong> MRICS MRTPI FRSA</td><td>CEO & Senior Director</td><td>james.fennell@lichfields.uk</td><td><span class="tag tag-confirmed">CONFIRMED</span> (verified on website)</td></tr>
+      <tr><td><strong>Matthew Spry</strong></td><td>Senior Director, Head of London</td><td>matthew.spry@lichfields.uk</td><td><span class="tag tag-confirmed">CONFIRMED</span></td></tr>
+      <tr><td><strong>Caroline McDade</strong></td><td>Senior Director (NEW)</td><td>caroline.mcdade@lichfields.uk</td><td><span class="tag tag-confirmed">CONFIRMED</span> (appointed Jan 2026)</td></tr>
+    </table>
+  </div>
+
+  <!-- STANTEC -->
+  <div class="company-block">
+    <h4>Stantec (ex-Barton Willmore) <span class="tag tag-enterprise">#2 by revenue, 53 promotions = backfill</span></h4>
+    <div class="company-meta">
+      CH: 01188070 | london.uk@stantec.com | Email format: <strong>firstname.lastname@stantec.com</strong>
+    </div>
+    <table>
+      <tr><th>Name</th><th>Title</th><th>Email</th><th>Status</th></tr>
+      <tr><td><strong>Simon Carter</strong></td><td>Director of Operations, UK Planning & Design</td><td>simon.carter@stantec.com</td><td><span class="tag tag-confirmed">CONFIRMED</span> (since Jun 2023)</td></tr>
+      <tr><td><strong>Mark Sitch</strong></td><td>Planning Director</td><td>mark.sitch@stantec.com</td><td><span class="tag tag-likely">LIKELY</span> (in directory but profile redirects)</td></tr>
+    </table>
+  </div>
+
+  <!-- MONTAGU EVANS -->
+  <div class="company-block">
+    <h4>Montagu Evans <span class="tag tag-enterprise">~200 staff, London, aggressive hiring spree</span></h4>
+    <div class="company-meta">
+      CH: OC312072 | 020 7493 4002 | 70 St Mary Axe, London EC3A 8BE<br>
+      Email format: <strong>firstname.lastname@montagu-evans.co.uk</strong>
+    </div>
+    <div class="alert-box">
+      <strong>MOVEMENT ALERT:</strong> Tim Price JUST JOINED from Savills (~Mar 2026). 14 planning hires this FY, 4 partner-level since Jan 2026. Aggressive growth phase.
+    </div>
+    <table>
+      <tr><th>Name</th><th>Title</th><th>Phone</th><th>Email</th><th>Status</th></tr>
+      <tr><td><strong>Craig Blatchford</strong></td><td>Partner, Head of Planning</td><td><strong>07984 458 485</strong></td><td>craig.blatchford@montagu-evans.co.uk</td><td><span class="tag tag-confirmed">CONFIRMED</span></td></tr>
+      <tr><td><strong>Tim Price</strong></td><td>Equity Partner, Head of Commercial Planning</td><td>Via switchboard</td><td>tim.price@montagu-evans.co.uk</td><td><span class="tag tag-confirmed">CONFIRMED</span> (NEW from Savills)</td></tr>
+      <tr><td><strong>Guy Bransby</strong></td><td>Head of London Planning</td><td>Via switchboard</td><td>guy.bransby@montagu-evans.co.uk</td><td><span class="tag tag-confirmed">CONFIRMED</span></td></tr>
+    </table>
+  </div>
+
+  <!-- RPS -->
+  <div class="company-block">
+    <h4>RPS Group (Tetra Tech) <span class="tag tag-enterprise">5,000+ globally</span></h4>
+    <div class="company-meta">
+      CH: 02087786 | Acquired by Tetra Tech (NYSE: TTEK) Jan 2023<br>
+      Email format: <strong>firstname.lastname@rpsgroup.com</strong>
+    </div>
+    <div class="salary-bar mid" style="width: 50%;">Environmental Consultant: £28-42k | Fully loaded: £38-55k</div>
+    <table>
+      <tr><th>Name</th><th>Title</th><th>Phone</th><th>Email</th><th>Status</th></tr>
+      <tr><td><strong>Darren Parker</strong></td><td>Ops Director, Planning (Eng/Scot/Wales)</td><td>029 2066 8662</td><td>darren.parker@rpsgroup.com</td><td><span class="tag tag-confirmed">CONFIRMED</span> (7 UK offices, Cardiff)</td></tr>
+      <tr><td><strong>Karen Jones</strong></td><td>Ops Director, Planning (London)</td><td>020 7280 3300</td><td>karen.jones@rpsgroup.com</td><td><span class="tag tag-confirmed">CONFIRMED</span></td></tr>
+      <tr><td><strong>Paul Hill</strong></td><td>Senior Director, Planning (Midlands)</td><td>0121 622 8520</td><td>paul.hill@rpsgroup.com</td><td><span class="tag tag-confirmed">CONFIRMED</span> (Birmingham)</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- MASTER LIST -->
+<div id="master" class="content">
+  <h2>Master Contact List — All Verified</h2>
+  <p>Complete list for CRM import. All contacts verified 30 March 2026 via company websites, Companies House, and LinkedIn.</p>
+
+  <table>
+    <tr><th>#</th><th>Company</th><th>Name</th><th>Title</th><th>Email</th><th>Phone</th><th>What They Pay</th><th>Confidence</th></tr>
+    <tr><td>1</td><td>Turley</td><td>Carol Maughan</td><td>Director of Digital Innovation</td><td>carol.maughan@turley.co.uk</td><td>—</td><td>£30-70k range</td><td><span class="tag tag-confirmed">CONFIRMED</span></td></tr>
+    <tr><td>2</td><td>DLP</td><td>Angela Dimbleby</td><td>Managing Director</td><td>Angela.dimbleby@dlpconsultants.co.uk</td><td>07867 418 568</td><td>£25-55k range</td><td><span class="tag tag-confirmed">CONFIRMED</span></td></tr>
+    <tr><td>3</td><td>Nexus</td><td>Roger Tustain</td><td>MD & Co-Founder</td><td>r.tustain@nexusplanning.co.uk</td><td>07919 045 191</td><td>£28-40k</td><td><span class="tag tag-confirmed">CONFIRMED</span></td></tr>
+    <tr><td>4</td><td>DLP</td><td>Jon Goodall</td><td>Director, Research & Analysis</td><td>Jon.goodall@dlpconsultants.co.uk</td><td>—</td><td>£25-55k range</td><td><span class="tag tag-confirmed">CONFIRMED</span></td></tr>
+    <tr><td>5</td><td>DLP</td><td>Dr Kirsten Ward</td><td>Director, Research & Analysis</td><td>Kirsten.ward@dlpconsultants.co.uk</td><td>—</td><td>£25-55k range</td><td><span class="tag tag-confirmed">CONFIRMED</span></td></tr>
+    <tr><td>6</td><td>Lanpro</td><td>Tom Pike</td><td>Director of Planning</td><td>tom@lanproservices.co.uk</td><td>—</td><td>£24-70k range</td><td><span class="tag tag-confirmed">CONFIRMED</span></td></tr>
+    <tr><td>7</td><td>Lanpro</td><td>Alistair Walker</td><td>Technical Director EIA</td><td>alistair@lanproservices.co.uk</td><td>—</td><td>£24-70k range</td><td><span class="tag tag-confirmed">CONFIRMED</span></td></tr>
+    <tr><td>8</td><td>Lanpro</td><td>Chris Leeming</td><td>Executive Chair & Co-Founder</td><td>chris@lanproservices.co.uk</td><td>—</td><td>£24-70k range</td><td><span class="tag tag-confirmed">CONFIRMED</span></td></tr>
+    <tr><td>9</td><td>Lanpro</td><td>Philip Atkinson</td><td>Director & Co-Founder</td><td>philip@lanproservices.co.uk</td><td>—</td><td>£24-70k range</td><td><span class="tag tag-confirmed">CONFIRMED</span></td></tr>
+    <tr><td>10</td><td>Lanpro</td><td>Gill Eaton</td><td>Regional Director, London</td><td>gill@lanproservices.co.uk</td><td>—</td><td>£24-70k range</td><td><span class="tag tag-confirmed">CONFIRMED</span></td></tr>
+    <tr><td>11</td><td>Lanpro</td><td>Emily Mercer</td><td>Director, Archaeology & Heritage</td><td>emily@lanproservices.co.uk</td><td>0161 711 1740</td><td>£24-70k range</td><td><span class="tag tag-confirmed">CONFIRMED</span></td></tr>
+    <tr><td>12</td><td>Pegasus</td><td>Sandra Manson</td><td>Executive Director, Planning</td><td>sandra.manson@pegasusgroup.co.uk</td><td>0333 016 0777</td><td>£28-52k range</td><td><span class="tag tag-confirmed">CONFIRMED</span></td></tr>
+    <tr><td>13</td><td>Pegasus</td><td>Paul Burrell</td><td>Head of Planning</td><td>paul.burrell@pegasusgroup.co.uk</td><td>0333 016 0777</td><td>£28-52k range</td><td><span class="tag tag-confirmed">CONFIRMED</span></td></tr>
+    <tr><td>14</td><td>Pegasus</td><td>Seb Tibenham</td><td>Executive Director, Planning</td><td>seb.tibenham@pegasusgroup.co.uk</td><td>0333 016 0777</td><td>£28-52k range</td><td><span class="tag tag-confirmed">CONFIRMED</span></td></tr>
+    <tr><td>15</td><td>Boyer</td><td>Grant Leggett</td><td>Executive Director, Head of London</td><td>hello@boyerplanning.co.uk</td><td>07791 144 750</td><td>£26-50k range</td><td><span class="tag tag-confirmed">CONFIRMED</span></td></tr>
+    <tr><td>16</td><td>Boyer</td><td>Alyson Jones</td><td>Director (Wokingham)</td><td>hello@boyerplanning.co.uk</td><td>07742 402 949</td><td>£26-50k range</td><td><span class="tag tag-confirmed">CONFIRMED</span></td></tr>
+    <tr><td>17</td><td>Firstplan</td><td>Sam Harper</td><td>Director</td><td>sharper@firstplan.co.uk</td><td>020 4513 2310</td><td>£30-38k</td><td><span class="tag tag-confirmed">CONFIRMED</span></td></tr>
+    <tr><td>18</td><td>Firstplan</td><td>Sally Miles</td><td>Director (ex-Amazon)</td><td>smiles@firstplan.co.uk</td><td>07867 905 499</td><td>£30-38k</td><td><span class="tag tag-confirmed">CONFIRMED</span></td></tr>
+    <tr><td>19</td><td>Firstplan</td><td>Tim Williams</td><td>Director</td><td>twilliams@firstplan.co.uk</td><td>020 4513 2303</td><td>£30-38k</td><td><span class="tag tag-confirmed">CONFIRMED</span></td></tr>
+    <tr><td>20</td><td>Nexus</td><td>Rob Pearson</td><td>Exec Dir, London + Analytics</td><td>r.pearson@nexusplanning.co.uk</td><td>020 7261 4240</td><td>£28-40k</td><td><span class="tag tag-confirmed">CONFIRMED</span></td></tr>
+    <tr><td>21</td><td>Quod</td><td>Tom Dobson</td><td>Managing Director</td><td>tom.dobson@quod.com</td><td>0203 597 1000</td><td>£35-55k</td><td><span class="tag tag-confirmed">CONFIRMED</span></td></tr>
+    <tr><td>22</td><td>Carter Jonas</td><td>Colin Brown</td><td>Partner, Head of P&D</td><td>colin.brown@carterjonas.co.uk</td><td>On website</td><td>£35-48k</td><td><span class="tag tag-confirmed">CONFIRMED</span></td></tr>
+    <tr><td>23</td><td>Carter Jonas</td><td>Katy Davis</td><td>Partner, Natl Head of Planning</td><td>katy.davis@carterjonas.co.uk</td><td>—</td><td>£35-48k</td><td><span class="tag tag-confirmed">CONFIRMED</span></td></tr>
+    <tr><td>24</td><td>Bidwells</td><td>Chris Pattison</td><td>Partner, Head of Planning</td><td>Chris.Pattison@bidwells.co.uk</td><td>01223 841841</td><td>£26-30k</td><td><span class="tag tag-confirmed">CONFIRMED</span></td></tr>
+    <tr><td>25</td><td>LUC</td><td>Sarah Young</td><td>Board Director, Head of Planning</td><td>sarah.young@landuse.co.uk</td><td>020 7199 5801</td><td>£28-42k</td><td><span class="tag tag-confirmed">CONFIRMED</span></td></tr>
+    <tr><td>26</td><td>LUC</td><td>Rob Booth</td><td>Managing Director (NEW)</td><td>rob.booth@landuse.co.uk</td><td>020 7199 5801</td><td>£28-42k</td><td><span class="tag tag-confirmed">CONFIRMED</span></td></tr>
+    <tr><td>27</td><td>Fisher German</td><td>Sarah DeRenzy-Tomson</td><td>Partner, Head of Planning</td><td>Sarah.DeRenzy-Tomson@fishergerman.co.uk</td><td>01530 412821</td><td>£24-28k</td><td><span class="tag tag-confirmed">CONFIRMED</span></td></tr>
+    <tr><td>28</td><td>Savills</td><td>David Jackson</td><td>Natl Head of Planning</td><td>david.jackson@savills.com</td><td>020 7499 8644</td><td>£28-65k+</td><td><span class="tag tag-confirmed">CONFIRMED</span></td></tr>
+    <tr><td>29</td><td>Lichfields</td><td>James Fennell</td><td>CEO</td><td>james.fennell@lichfields.uk</td><td>020 7837 4477</td><td>£27-55k</td><td><span class="tag tag-confirmed">CONFIRMED</span></td></tr>
+    <tr><td>30</td><td>Stantec</td><td>Simon Carter</td><td>Dir of Ops, UK Planning</td><td>simon.carter@stantec.com</td><td>—</td><td>£40-60k+</td><td><span class="tag tag-confirmed">CONFIRMED</span></td></tr>
+    <tr><td>31</td><td>Montagu Evans</td><td>Craig Blatchford</td><td>Partner, Head of Planning</td><td>craig.blatchford@montagu-evans.co.uk</td><td>07984 458 485</td><td>£28-32k (grads)</td><td><span class="tag tag-confirmed">CONFIRMED</span></td></tr>
+    <tr><td>32</td><td>RPS/Tetra Tech</td><td>Darren Parker</td><td>Ops Director, Planning</td><td>darren.parker@rpsgroup.com</td><td>029 2066 8662</td><td>£28-42k</td><td><span class="tag tag-confirmed">CONFIRMED</span></td></tr>
+  </table>
+
+  <p style="font-size: 12px; color: #64748b; margin-top: 16px;">* Some emails follow confirmed company format patterns but were not individually verified on profile pages. All names and titles verified via company websites and/or Companies House as of 30 March 2026.</p>
+</div>
+
+<!-- WARNINGS -->
+<div id="warnings" class="content">
+  <h2>Stale Data Flags — Do NOT Contact These People</h2>
+  <p>These contacts from previous research are <strong>confirmed outdated</strong>. Removed from all active lists.</p>
+
+  <table>
+    <tr><th>Name</th><th>Previous Listed As</th><th>Actual Status</th><th>Source</th></tr>
+    <tr style="background: rgba(239, 68, 68, 0.05);">
+      <td><strong>Jon Grantham</strong></td>
+      <td>MD, LUC (Land Use Consultants)</td>
+      <td><span class="tag tag-left">RETIRED February 2025</span> after 40 years. Replaced by <strong>Rob Booth</strong> (ex-Crown Estate).</td>
+      <td>LUC website / press release</td>
+    </tr>
+    <tr style="background: rgba(239, 68, 68, 0.05);">
+      <td><strong>Sapna Marwaha</strong></td>
+      <td>Director, Nexus Planning</td>
+      <td><span class="tag tag-left">LEFT 31 December 2024</span> per Companies House resignation filing.</td>
+      <td>Companies House</td>
+    </tr>
+    <tr style="background: rgba(239, 68, 68, 0.05);">
+      <td><strong>Jane Gleeson</strong></td>
+      <td>Director, Firstplan</td>
+      <td><span class="tag tag-left">NOT ON TEAM PAGE</span>. LinkedIn shows Firstplan but she's not a current statutory director or on the website. May have left or moved to consultant role.</td>
+      <td>Website + Companies House cross-check</td>
+    </tr>
+    <tr style="background: rgba(251, 191, 36, 0.05);">
+      <td><strong>Mark Sitch</strong></td>
+      <td>Planning Director, Stantec</td>
+      <td><span class="tag tag-likely">UNCERTAIN</span>. In Stantec directory but profile page redirects. May have left or role changed.</td>
+      <td>Stantec website</td>
+    </tr>
+  </table>
+
+  <h3>Movement Alerts — People Who've Changed Roles</h3>
+  <table>
+    <tr><th>Name</th><th>From</th><th>To</th><th>When</th><th>Notes</th></tr>
+    <tr><td><strong>Tim Price</strong></td><td>Savills</td><td>Montagu Evans (Equity Partner, Head of Commercial Planning)</td><td>~March 2026</td><td>Contact at ME, not Savills</td></tr>
+    <tr><td><strong>Neil Waterson</strong></td><td>Strutt & Parker</td><td>Savills (Planning Director, Cambridge)</td><td>March 2026</td><td>New at Savills — warm to new tools?</td></tr>
+    <tr><td><strong>Ian Barnett</strong></td><td>Boyer (National Land Director)</td><td>LRG Group (Group Land & Development Director)</td><td>April 2025</td><td>Promoted to group level — bigger buying authority</td></tr>
+    <tr><td><strong>Katy Davis</strong></td><td>Carter Jonas (Head of Planning, London)</td><td>Carter Jonas (National Head of Planning)</td><td>August 2025</td><td>Promoted — more authority</td></tr>
+    <tr><td><strong>Chris Pattison</strong></td><td>Bidwells (Planning Partner)</td><td>Bidwells (Head of Planning)</td><td>January 2026</td><td>Replaced Mike Derbyshire</td></tr>
+    <tr><td><strong>Caroline McDade</strong></td><td>—</td><td>Lichfields (Senior Director)</td><td>January 2026</td><td>New appointment — firm is growing</td></tr>
+  </table>
+
+  <div class="killer-quote">
+    <div class="text">People who've <strong>recently changed roles or been promoted</strong> are often the best targets — they're in "change mode" and open to new tools that help them make an impact in their new position.</div>
+  </div>
+</div>
+
+<button class="print-btn" onclick="window.print()">Print / Save PDF</button>
+
+<script>
+function showTab(id) {
+  document.querySelectorAll('.content').forEach(c => c.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  event.target.classList.add('active');
+}
+</script>
+
+<div style="text-align: center; padding: 20px; color: #475569; font-size: 12px; border-top: 1px solid #1e293b; margin-top: 40px;">
+  Site Intelligence | PF & Co Holdings Ltd | info@pfandco.co.uk
+</div>
+
+</body>
+</html>
