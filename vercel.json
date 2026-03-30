@@ -33,6 +33,8 @@
   ],
   "rewrites": [
     { "source": "/si/feasibility-check(/?)", "destination": "/si/feasibility-check/index.html" },
+    { "source": "/si/committee-reform(/?)", "destination": "/si/committee-reform/index.html" },
+    { "source": "/si/committee-reform/:page.html", "destination": "/si/committee-reform/:page.html" },
     { "source": "/demo/s(/?)", "destination": "/demo/s/index.html" },
     { "source": "/preapp/s(/?)", "destination": "/preapp/s/index.html" },
     { "source": "/discover(/?)", "destination": "/discover/index.html" },
