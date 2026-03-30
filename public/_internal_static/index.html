@@ -40,15 +40,71 @@
       border-radius: 12px;
       padding: 2rem;
       box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      margin-bottom: 1.5rem;
     }
     .welcome h2 {
       font-size: 1.25rem;
-      margin-bottom: 1rem;
+      margin-bottom: 0.75rem;
       color: #1a1a2e;
     }
     .welcome p {
       color: #4a5568;
       line-height: 1.6;
+    }
+    .pages {
+      background: #fff;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    .pages h2 {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      color: #1a1a2e;
+    }
+    .page-list {
+      list-style: none;
+    }
+    .page-list li {
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .page-list li:last-child {
+      border-bottom: none;
+    }
+    .page-list a {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 12px;
+      color: #1a1a2e;
+      text-decoration: none;
+      transition: background 0.15s;
+      border-radius: 8px;
+    }
+    .page-list a:hover {
+      background: #f0f4ff;
+    }
+    .page-icon {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, #1a1a2e, #2563eb);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .page-info .page-title {
+      font-weight: 600;
+      font-size: 1rem;
+      color: #1a1a2e;
+    }
+    .page-info .page-desc {
+      font-size: 0.85rem;
+      color: #64748b;
+      margin-top: 2px;
     }
     .footer {
       text-align: center;
@@ -66,7 +122,21 @@
   <div class="content">
     <div class="welcome">
       <h2>Welcome, Harry</h2>
-      <p>This is your private area. Pages shared here are only visible to you. Chris will send you links to specific pages as they become available.</p>
+      <p>This is your private area. Pages shared here are only visible to you.</p>
+    </div>
+    <div class="pages">
+      <h2>Shared Pages</h2>
+      <ul class="page-list">
+        <li>
+          <a href="/internal/b2b-recruitment-intelligence.html">
+            <div class="page-icon">&#x1F4CA;</div>
+            <div class="page-info">
+              <div class="page-title">B2B Recruitment Intelligence</div>
+              <div class="page-desc">Target firms, roles, and outreach strategy — 30 March 2026</div>
+            </div>
+          </a>
+        </li>
+      </ul>
     </div>
   </div>
   <div class="footer">
