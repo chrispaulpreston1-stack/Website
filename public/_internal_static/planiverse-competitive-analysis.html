@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Competitive Analysis: Planiverse (planiverse.uk) | Site Intelligence</title>
+<style>
+  @media print {
+    body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+    .no-print { display: none !important; }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; background: #f8f9fa; color: #1a1a2e; line-height: 1.6; }
+
+  .header { background: linear-gradient(135deg, #0f172a, #1e293b); color: #fff; padding: 2.5rem 3rem; }
+  .header h1 { font-size: 2rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.5rem; }
+  .header .subtitle { color: #94a3b8; font-size: 1rem; }
+  .header .meta { display: flex; gap: 2rem; margin-top: 1rem; font-size: 0.85rem; color: #64748b; }
+  .header .meta span { display: flex; align-items: center; gap: 0.4rem; }
+  .si-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(29,184,145,0.15); border: 1px solid rgba(29,184,145,0.3); color: #1db891; padding: 0.25rem 0.75rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.04em; }
+
+  .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+
+  .print-btn { position: fixed; top: 1rem; right: 1rem; z-index: 100; background: #0f172a; color: #fff; border: none; padding: 0.6rem 1.2rem; border-radius: 8px; cursor: pointer; font-size: 0.85rem; font-weight: 600; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+  .print-btn:hover { background: #1e293b; }
+
+  .toc { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem 2rem; margin-bottom: 2rem; }
+  .toc h2 { font-size: 1rem; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1rem; }
+  .toc ol { padding-left: 1.5rem; }
+  .toc li { margin-bottom: 0.4rem; font-size: 0.9rem; }
+  .toc a { color: #2563eb; text-decoration: none; }
+  .toc a:hover { text-decoration: underline; }
+
+  .section { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 2rem; margin-bottom: 1.5rem; }
+  .section h2 { font-size: 1.4rem; font-weight: 800; color: #0f172a; margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 2px solid #e2e8f0; }
+  .section h3 { font-size: 1.1rem; font-weight: 700; color: #334155; margin: 1.25rem 0 0.5rem; }
+  .section p { margin-bottom: 0.75rem; font-size: 0.95rem; }
+  .section ul, .section ol { padding-left: 1.5rem; margin-bottom: 0.75rem; }
+  .section li { margin-bottom: 0.4rem; font-size: 0.95rem; }
+
+  table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.88rem; }
+  th { background: #f1f5f9; font-weight: 700; text-align: left; padding: 0.6rem 0.75rem; border-bottom: 2px solid #e2e8f0; }
+  td { padding: 0.6rem 0.75rem; border-bottom: 1px solid #f1f5f9; vertical-align: top; }
+  tr:hover td { background: #fafbfc; }
+
+  .badge { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; }
+  .badge-green { background: #dcfce7; color: #166534; }
+  .badge-red { background: #fef2f2; color: #991b1b; }
+  .badge-amber { background: #fef3c7; color: #92400e; }
+  .badge-blue { background: #dbeafe; color: #1e40af; }
+  .badge-grey { background: #f1f5f9; color: #475569; }
+  .badge-teal { background: rgba(29,184,145,0.12); color: #0d6b4f; }
+
+  .verdict { background: linear-gradient(135deg, #f0fdf4, #ecfdf5); border: 1px solid #86efac; border-radius: 12px; padding: 1.5rem 2rem; margin: 1rem 0; }
+  .verdict h3 { color: #166534; margin-top: 0; }
+
+  .risk { background: #fffbeb; border: 1px solid #fcd34d; border-radius: 12px; padding: 1.5rem 2rem; margin: 1rem 0; }
+  .risk h3 { color: #92400e; margin-top: 0; }
+
+  .comparison-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 1rem 0; }
+  .comp-card { border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.25rem; }
+  .comp-card h4 { font-size: 1rem; font-weight: 700; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; }
+  .comp-card ul { padding-left: 1.25rem; }
+  .comp-card li { font-size: 0.88rem; margin-bottom: 0.3rem; }
+  .comp-planiverse { border-color: #1db891; }
+  .comp-planiverse h4 { color: #0d6b4f; }
+  .comp-si { border-color: #2563eb; }
+  .comp-si h4 { color: #1e40af; }
+
+  .highlight-box { background: #f8fafc; border-left: 4px solid #2563eb; padding: 1rem 1.25rem; margin: 1rem 0; border-radius: 0 8px 8px 0; }
+  .highlight-box.warning { border-left-color: #f59e0b; background: #fffbeb; }
+  .highlight-box.danger { border-left-color: #ef4444; background: #fef2f2; }
+  .highlight-box.success { border-left-color: #22c55e; background: #f0fdf4; }
+
+  .swot-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0; }
+  .swot-card { border-radius: 10px; padding: 1.25rem; }
+  .swot-card h4 { font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem; }
+  .swot-card ul { padding-left: 1.25rem; }
+  .swot-card li { font-size: 0.88rem; margin-bottom: 0.35rem; }
+  .swot-s { background: #f0fdf4; border: 1px solid #bbf7d0; }
+  .swot-s h4 { color: #166534; }
+  .swot-w { background: #fef2f2; border: 1px solid #fecaca; }
+  .swot-w h4 { color: #991b1b; }
+  .swot-o { background: #dbeafe; border: 1px solid #bfdbfe; }
+  .swot-o h4 { color: #1e40af; }
+  .swot-t { background: #fef3c7; border: 1px solid #fde68a; }
+  .swot-t h4 { color: #92400e; }
+
+  .footer { text-align: center; padding: 2rem; color: #94a3b8; font-size: 0.8rem; border-top: 1px solid #e2e8f0; margin-top: 2rem; }
+  .footer strong { color: #64748b; }
+
+  @media (max-width: 768px) {
+    .comparison-grid, .swot-grid { grid-template-columns: 1fr; }
+    .container { padding: 1rem; }
+    .header { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<button class="print-btn no-print" onclick="window.print()">Print / Save PDF</button>
+
+<div class="header">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1rem;">
+    <div>
+      <h1>Competitive Analysis: Planiverse</h1>
+      <p class="subtitle">planiverse.uk &mdash; "Planning Intelligence" / AI Feasibility Report Tool</p>
+    </div>
+    <div class="si-badge">Site Intelligence Competitive Intel</div>
+  </div>
+  <div class="meta">
+    <span>Date: 31 March 2026</span>
+    <span>Classification: Internal</span>
+    <span>Status: Full Technical Deep Dive Complete</span>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- TABLE OF CONTENTS -->
+<div class="toc">
+  <h2>Contents</h2>
+  <ol>
+    <li><a href="#s1">Executive Summary &amp; Threat Level</a></li>
+    <li><a href="#s2">Company &amp; Founder Background</a></li>
+    <li><a href="#s3">Product &amp; Features</a></li>
+    <li><a href="#s4">Pricing &amp; Business Model</a></li>
+    <li><a href="#s5">Technology Stack &amp; Data Sources</a></li>
+    <li><a href="#s6">Technical Deep Dive &amp; Security Assessment</a></li>
+    <li><a href="#s7">Report Structure Analysis (Sample Report)</a></li>
+    <li><a href="#s8">Go-To-Market Strategy</a></li>
+    <li><a href="#s9">Social Media &amp; Press Presence</a></li>
+    <li><a href="#s10">Competitor Landscape (Planiverse vs Others)</a></li>
+    <li><a href="#s11">Planiverse vs Site Intelligence: Head-to-Head</a></li>
+    <li><a href="#s12">SWOT Analysis (Planiverse)</a></li>
+    <li><a href="#s13">Strategic Implications for Site Intelligence</a></li>
+  </ol>
+</div>
+
+<!-- 1. EXECUTIVE SUMMARY -->
+<div class="section" id="s1">
+  <h2>1. Executive Summary &amp; Threat Level</h2>
+
+  <div class="highlight-box warning">
+    <strong>Threat Level: MEDIUM &mdash; Watch closely, not panic.</strong> Planiverse is a new entrant in public beta, offering free AI-powered planning decision analysis. It is NOT a competitor to Site Intelligence's core product (submission-ready interpreted reports with 23 datasets), but it IS competing for the same buyer's first touchpoint &mdash; the "should I bother?" question. If Planiverse gets product-market fit and scales, they could own the top-of-funnel screening conversation that currently leads to SI's Screening and Feasibility products.
+  </div>
+
+  <h3>What Planiverse Is</h3>
+  <p>An interactive, AI-powered planning decision analysis tool covering English councils. Users can search a map of planning applications, ask natural language questions about approval rates, get comparable decisions, and generate PDF feasibility reports. Currently in <span class="badge badge-teal">PUBLIC BETA (FREE)</span> with planned pricing of <span class="badge badge-blue">&pound;99/month</span> post-beta.</p>
+
+  <h3>What Planiverse Is NOT</h3>
+  <ul>
+    <li>Not a submission-ready report engine (no planning policy analysis, no NPPF clause mapping, no heritage/ecology/flood assessment)</li>
+    <li>Not a multi-discipline platform (planning decisions only &mdash; no environmental, geotechnical, transport, or design assessment)</li>
+    <li>Not backed by original data collection (relies entirely on PlanIt.org.uk scraped data + Anthropic Claude AI)</li>
+    <li>Not a replacement for professional planning advice (their own disclaimer says so)</li>
+  </ul>
+
+  <h3>Key Numbers</h3>
+  <table>
+    <tr><th>Metric</th><th>Value</th><th>Notes</th></tr>
+    <tr><td>Planning decisions in database</td><td><strong>33,000+</strong></td><td>Claims "millions" in meta description; 33k on homepage counter. Likely 33k recently loaded with more ingesting.</td></tr>
+    <tr><td>Councils covered</td><td><strong>"Every English council"</strong></td><td>Claims 485 in some contexts; England has ~308 LPAs</td></tr>
+    <tr><td>Current price</td><td><strong>Free (beta)</strong></td><td>No credit card required</td></tr>
+    <tr><td>Post-beta price</td><td><strong>From &pound;99/month</strong></td><td>Subscription model, not per-report</td></tr>
+    <tr><td>Company entity</td><td><strong>Lost Property One Limited</strong></td><td>Formerly W.J. Mitchell (Brighton) Ltd, incorporated 1975</td></tr>
+    <tr><td>Company number</td><td><strong>01232334</strong></td><td>Renamed 25 Oct 2024</td></tr>
+    <tr><td>Sole director</td><td><strong>Dino Thomas Buonaguidi</strong></td><td>Appointed 13 Aug 2024. Born Nov 1979, Hove-based.</td></tr>
+    <tr><td>Funding</td><td><strong>None identified</strong></td><td>No VC, no press, no Crunchbase profile</td></tr>
+    <tr><td>Team size</td><td><strong>1 (solo founder)</strong></td><td>No other team members identified anywhere</td></tr>
+  </table>
+</div>
+
+<!-- 2. COMPANY & FOUNDER -->
+<div class="section" id="s2">
+  <h2>2. Company &amp; Founder Background</h2>
+
+  <h3>Legal Entity</h3>
+  <table>
+    <tr><th>Field</th><th>Detail</th></tr>
+    <tr><td>Company name</td><td>Lost Property One Limited</td></tr>
+    <tr><td>Company number</td><td>01232334</td></tr>
+    <tr><td>Previous name</td><td>W.J. Mitchell (Brighton) Limited (4 Nov 1975 &ndash; 25 Oct 2024)</td></tr>
+    <tr><td>Status</td><td>Active</td></tr>
+    <tr><td>Registered address</td><td>Little Andsore, High Halden Road, Biddenden, Ashford, Kent TN27 8JG</td></tr>
+    <tr><td>SIC code</td><td>41201 &mdash; Construction of commercial buildings</td></tr>
+    <tr><td>Contact</td><td>hello@planiverse.uk</td></tr>
+  </table>
+
+  <div class="highlight-box warning">
+    <strong>Corporate structure note:</strong> This is a shelf company. W.J. Mitchell (Brighton) was a building contractor incorporated in 1975. The previous directors (the Mitchell family) all resigned. Dino Buonaguidi was appointed director on 13 Aug 2024, renamed the company on 25 Oct 2024, and appears to be running Planiverse through it. The Kent registered address appears to be the old Mitchell family address, not a Planiverse office. The SIC code (construction of commercial buildings) has not been updated to reflect the software/SaaS nature of the business.
+  </div>
+
+  <h3>Founder: Dino Thomas Buonaguidi</h3>
+  <ul>
+    <li><strong>Born:</strong> November 1979 (age 46)</li>
+    <li><strong>Nationality:</strong> British</li>
+    <li><strong>Residence:</strong> Hove, East Sussex (also previously Cotherstone Road, London SW2)</li>
+    <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/dino-buonaguidi-0bb4091b/">linkedin.com/in/dino-buonaguidi-0bb4091b/</a> (profile exists but limited public info)</li>
+    <li><strong>Twitter/X:</strong> <a href="https://x.com/dinobuonaguidi">@dinobuonaguidi</a> (24 posts, minimal activity)</li>
+    <li><strong>Mapbox username:</strong> <code>dinodino29</code> (exposed via client-side token in source code)</li>
+    <li><strong>Contact email:</strong> hello@planiverse.uk</li>
+  </ul>
+
+  <h3>Property Development Activity</h3>
+  <p>Buonaguidi appears to have used Lost Property One Limited to purchase/convert <strong>62 St George's Road, Kemp Town, Brighton</strong> into a 5-bedroom house &mdash; suggesting a personal interest in property development that motivated building the tool. This is a classic "scratch your own itch" founder story.</p>
+
+  <h3>Previous Company History</h3>
+  <p>Before Planiverse, Buonaguidi's Companies House record shows four directorships &mdash; all in hospitality:</p>
+  <table>
+    <tr><th>Company</th><th>Role</th><th>Period</th><th>Sector</th></tr>
+    <tr><td>Dirty Dishes Ltd</td><td>Director</td><td>May 2014 &ndash; (dissolved)</td><td>Hospitality</td></tr>
+    <tr><td>Popco Events Ltd</td><td>Director</td><td>Mar 2016 &ndash; Jan 2017</td><td>Events</td></tr>
+    <tr><td>The Vaults Bar Company Limited</td><td>Director</td><td>Mar 2017 &ndash; Jan 2023</td><td>Bars/hospitality</td></tr>
+    <tr><td>The Oyster Shack Restaurant Limited</td><td>Director</td><td>Apr 2018 &ndash; Jan 2019</td><td>Restaurant</td></tr>
+  </table>
+
+  <div class="highlight-box">
+    <strong>Assessment:</strong> This appears to be a career-switcher &mdash; hospitality/events background pivoting to proptech/planning. The Brighton/Hove base and property acquisition (converting 62 St George's Road, Kemp Town into a 5-bed house via Lost Property One) suggests a personal interest in property development that motivated building the tool. Related to Dave Buonaguidi (St. Luke's advertising agency co-founder, Karmarama, CPB London) but unclear if same family. No technical/engineering background visible.
+  </div>
+</div>
+
+<!-- 3. PRODUCT & FEATURES -->
+<div class="section" id="s3">
+  <h2>3. Product &amp; Features</h2>
+
+  <p>Planiverse offers <strong>six core tools</strong>, delivered through an interactive web application (not static reports):</p>
+
+  <table>
+    <tr><th>Feature</th><th>Description</th><th>SI Equivalent?</th></tr>
+    <tr>
+      <td><strong>Planning Permission Map</strong></td>
+      <td>Live interactive map showing all applications colour-coded by decision (green = approved, red = refused, amber = pending). Filter by type, date, ward, or custom area.</td>
+      <td><span class="badge badge-grey">None</span> (SI generates static maps in reports, not an interactive explorer)</td>
+    </tr>
+    <tr>
+      <td><strong>AI Feasibility Advisor</strong></td>
+      <td>Natural language chat interface. Ask questions like "What's the approval rate for two-storey rear extensions in this ward?" Powered by Anthropic Claude.</td>
+      <td><span class="badge badge-green">Surpassed</span> by SI's 125-agent content writer system generating interpreted narratives</td>
+    </tr>
+    <tr>
+      <td><strong>Comparable Decisions</strong></td>
+      <td>Auto-surfaces relevant precedents: same area, same application type, last 3 years. Links to original council portal.</td>
+      <td><span class="badge badge-green">Surpassed</span> by SI's 650+ verified case law database + appeal precedents</td>
+    </tr>
+    <tr>
+      <td><strong>Site-Finding</strong></td>
+      <td>AI identifies wards/streets with highest approval rates for your proposal type.</td>
+      <td><span class="badge badge-grey">No equivalent</span> &mdash; SI is report-focused, not site-sourcing</td>
+    </tr>
+    <tr>
+      <td><strong>Live Pipeline</strong></td>
+      <td>Tracks undecided applications. Monitor competitor submissions, spot opportunities.</td>
+      <td><span class="badge badge-grey">No equivalent</span> &mdash; SI reports on site constraints, not market monitoring</td>
+    </tr>
+    <tr>
+      <td><strong>Approval Rate Trends</strong></td>
+      <td>Analytics by ward, planning officer, application type, time period.</td>
+      <td><span class="badge badge-amber">Partial</span> &mdash; SI has LPA statistics in reports but not interactive dashboards</td>
+    </tr>
+  </table>
+
+  <h3>PDF Feasibility Reports</h3>
+  <p>Based on the sample report structure you described (21 Linersh Wood Road, Bramley), Planiverse also generates downloadable PDF reports. These appear to be generated via PDFShift (a third-party HTML-to-PDF service identified in their privacy policy).</p>
+</div>
+
+<!-- 4. PRICING -->
+<div class="section" id="s4">
+  <h2>4. Pricing &amp; Business Model</h2>
+
+  <table>
+    <tr><th>Phase</th><th>Price</th><th>Access</th></tr>
+    <tr><td><span class="badge badge-teal">Current (Beta)</span></td><td><strong>Free</strong></td><td>Full access, no credit card required</td></tr>
+    <tr><td><span class="badge badge-blue">Post-Beta (Planned)</span></td><td><strong>From &pound;99/month</strong></td><td>Professional subscription plans</td></tr>
+    <tr><td><span class="badge badge-grey">Early Beta Users</span></td><td>Preferential pricing</td><td>Loyalty discount for beta participants</td></tr>
+  </table>
+
+  <div class="highlight-box">
+    <strong>Business model: SaaS subscription</strong> &mdash; not per-report pricing. This is fundamentally different from SI's per-project model. At &pound;99/month, a user running 5+ projects/month gets unlimited analysis for ~&pound;20/project. But the output is analytical insight (approval rates, comparables) not a submission-ready report.
+  </div>
+
+  <h3>Pricing Comparison</h3>
+  <table>
+    <tr><th>Product</th><th>Price</th><th>What You Get</th></tr>
+    <tr><td>Planiverse (beta)</td><td>Free</td><td>Interactive analysis, AI chat, PDF report</td></tr>
+    <tr><td>Planiverse (planned)</td><td>&pound;99/mo</td><td>Same, unlimited</td></tr>
+    <tr><td>PlanningLens Pro Report</td><td>Not public</td><td>Ward-level approval data, trends, comparables</td></tr>
+    <tr><td>LandInsight</td><td>&pound;60&ndash;195/mo</td><td>Site sourcing platform, planning data layers</td></tr>
+    <tr><td><strong>SI Screening</strong></td><td><strong>&pound;199 one-off</strong></td><td>23-dataset constraint screen, traffic-light risk</td></tr>
+    <tr><td><strong>SI Feasibility</strong></td><td><strong>From &pound;695</strong></td><td>Full interpreted feasibility with policy analysis, 40+ report sections</td></tr>
+    <tr><td>Traditional consultant</td><td>&pound;1,500&ndash;5,000</td><td>Manual feasibility report, 2&ndash;4 weeks</td></tr>
+  </table>
+</div>
+
+<!-- 5. TECH STACK -->
+<div class="section" id="s5">
+  <h2>5. Technology Stack &amp; Data Sources</h2>
+
+  <h3>Confirmed Technology (from privacy policy, terms, and source code)</h3>
+  <table>
+    <tr><th>Layer</th><th>Technology</th><th>Purpose</th></tr>
+    <tr><td>AI Engine</td><td><strong>Anthropic Claude API</strong></td><td>AI feasibility advisor, narrative generation, chat</td></tr>
+    <tr><td>Planning Data</td><td><strong>PlanIt.org.uk</strong></td><td>Primary data source &mdash; scraped/API'd planning application data from local authority registers</td></tr>
+    <tr><td>Secondary Data</td><td>English local authority planning portals</td><td>Direct links back to original council records</td></tr>
+    <tr><td>Hosting</td><td><strong>Vercel</strong></td><td>Frontend hosting and serverless functions</td></tr>
+    <tr><td>Maps</td><td><strong>Mapbox</strong></td><td>Interactive map rendering (direct browser connection)</td></tr>
+    <tr><td>PDF Generation</td><td><strong>PDFShift</strong></td><td>HTML-to-PDF conversion for downloadable reports</td></tr>
+    <tr><td>Email</td><td><strong>Resend</strong></td><td>Transactional and marketing emails</td></tr>
+    <tr><td>Analytics</td><td><strong>Google Analytics</strong></td><td>GA4 tracking (G-NRKYWCGSWM)</td></tr>
+    <tr><td>Frontend</td><td>Vanilla JS / Canvas</td><td>Custom-built, no framework identified (hero canvas animation, Intersection Observer)</td></tr>
+    <tr><td>Backend API</td><td>Serverless (Vercel)</td><td>/api/auth/me, /api/stats endpoints visible in source</td></tr>
+  </table>
+
+  <h3>Data Source Assessment: PlanIt.org.uk</h3>
+  <p>PlanIt.org.uk is a free, community-built aggregator run by Andrew Speakman. It scrapes planning data from UK council portals using Python scrapers (UKPlanning library). Key facts:</p>
+  <ul>
+    <li>Covers approximately 417 planning authorities</li>
+    <li>~20 million applications in its database, 91% geocoded</li>
+    <li>Free API available &mdash; data dictionary and specs published</li>
+    <li>Data quality depends on scraping reliability &mdash; not all fields consistently populated</li>
+    <li>Updated regularly but not real-time &mdash; scraping cadence varies by authority</li>
+  </ul>
+
+  <div class="highlight-box danger">
+    <strong>Critical dependency risk:</strong> Planiverse's entire data pipeline depends on PlanIt.org.uk &mdash; a free, one-person operation. If PlanIt goes down, changes its API, or starts charging, Planiverse loses its data source. Compare this to SI's 21 enrichment modules pulling from multiple paid APIs (OS, EA, BGS, HMLR, etc.) with fallback chains.
+  </div>
+
+  <h3>What Planiverse Does NOT Have (Data Gaps)</h3>
+  <table>
+    <tr><th>Data Category</th><th>Planiverse</th><th>SI</th></tr>
+    <tr><td>Planning decisions / comparables</td><td class="badge-green" style="background:#dcfce7;color:#166534;">Yes</td><td style="background:#dcfce7;color:#166534;">Yes + 650 verified appeal cases</td></tr>
+    <tr><td>Planning policy (Local Plan, NPPF)</td><td style="background:#fef2f2;color:#991b1b;">No</td><td style="background:#dcfce7;color:#166534;">Yes &mdash; 361 NPPF clauses mapped</td></tr>
+    <tr><td>Planning constraints (Green Belt, Conservation Area, SSSI, etc.)</td><td style="background:#fef3c7;color:#92400e;">Mentions on report cover but unclear sourcing</td><td style="background:#dcfce7;color:#166534;">Yes &mdash; 23 constraint datasets</td></tr>
+    <tr><td>Flood risk (EA data)</td><td style="background:#fef2f2;color:#991b1b;">No</td><td style="background:#dcfce7;color:#166534;">Yes &mdash; EA Flood Zones, surface water</td></tr>
+    <tr><td>Ecology (habitat, protected species)</td><td style="background:#fef2f2;color:#991b1b;">No</td><td style="background:#dcfce7;color:#166534;">Yes &mdash; Living England, PHI, 13 layers</td></tr>
+    <tr><td>Heritage (listed buildings, scheduled monuments)</td><td style="background:#fef2f2;color:#991b1b;">No</td><td style="background:#dcfce7;color:#166534;">Yes &mdash; Historic England + NHLE</td></tr>
+    <tr><td>Geology / ground conditions (BGS)</td><td style="background:#fef2f2;color:#991b1b;">No</td><td style="background:#dcfce7;color:#166534;">Yes &mdash; BGS borehole + geology</td></tr>
+    <tr><td>Transport / highways</td><td style="background:#fef2f2;color:#991b1b;">No</td><td style="background:#dcfce7;color:#166534;">Yes</td></tr>
+    <tr><td>CIL / S106 calculations</td><td style="background:#fef2f2;color:#991b1b;">No</td><td style="background:#dcfce7;color:#166534;">Yes &mdash; 178 LPAs modelled</td></tr>
+    <tr><td>Viability / GDV / cost estimates</td><td style="background:#fef2f2;color:#991b1b;">No</td><td style="background:#dcfce7;color:#166534;">Yes &mdash; CDI cross-domain engine</td></tr>
+    <tr><td>Census / demographics</td><td style="background:#fef2f2;color:#991b1b;">No</td><td style="background:#dcfce7;color:#166534;">Yes</td></tr>
+    <tr><td>OS mapping / site boundaries</td><td style="background:#fef3c7;color:#92400e;">Mapbox basemap only</td><td style="background:#dcfce7;color:#166534;">Yes &mdash; OS MasterMap</td></tr>
+  </table>
+</div>
+
+<!-- 6. TECHNICAL DEEP DIVE & SECURITY -->
+<div class="section" id="s6">
+  <h2>6. Technical Deep Dive &amp; Security Assessment</h2>
+
+  <p>Full analysis of Planiverse's client-side JavaScript, API architecture, and security posture based on source code review of their production app at <code>planiverse.uk/app</code>.</p>
+
+  <h3>Frontend Architecture</h3>
+  <table>
+    <tr><th>Component</th><th>Implementation</th><th>Assessment</th></tr>
+    <tr><td>Framework</td><td>Vanilla JavaScript &mdash; no React, Vue, Angular, or Svelte</td><td><span class="badge badge-amber">Unusual for 2026</span> &mdash; suggests solo dev, no team scaling considerations</td></tr>
+    <tr><td>Map engine</td><td>Mapbox GL JS with vector tiles</td><td><span class="badge badge-green">Industry standard</span></td></tr>
+    <tr><td>Hero animation</td><td>HTML5 Canvas particle system with link detection, RequestAnimationFrame</td><td><span class="badge badge-grey">Cosmetic</span></td></tr>
+    <tr><td>Scroll effects</td><td>Intersection Observer API for lazy animations</td><td><span class="badge badge-grey">Standard</span></td></tr>
+    <tr><td>State management</td><td>Global JS arrays + Sets for filters, no store pattern</td><td><span class="badge badge-red">Fragile</span> &mdash; race conditions likely at scale</td></tr>
+    <tr><td>Search</td><td>Debounced inputs (120&ndash;240ms)</td><td><span class="badge badge-green">Good practice</span></td></tr>
+    <tr><td>Constraint layers</td><td>Lazy-loaded with viewport-based caching</td><td><span class="badge badge-green">Good practice</span></td></tr>
+    <tr><td>Navigation</td><td>History API for detail view routing</td><td><span class="badge badge-grey">Standard SPA pattern</span></td></tr>
+    <tr><td>CSS</td><td>Custom design system with CSS variables, dark theme (<code>--bg: #1a1a1f</code>)</td><td><span class="badge badge-green">Clean, consistent</span></td></tr>
+    <tr><td>Responsive</td><td>Mobile breakpoints at <code>max-width: 700px</code></td><td><span class="badge badge-grey">Basic mobile support</span></td></tr>
+  </table>
+
+  <h3>API Endpoints Discovered</h3>
+  <p>The following API routes were identified from client-side JavaScript source code:</p>
+  <table>
+    <tr><th>Endpoint</th><th>Method</th><th>Purpose</th><th>Security Notes</th></tr>
+    <tr><td><code>/api/auth/me</code></td><td>GET</td><td>Authentication check &mdash; returns current user</td><td>Session-based auth</td></tr>
+    <tr><td><code>/api/applications</code></td><td>GET</td><td>Paginated planning data with bbox filtering</td><td><span class="badge badge-amber">5,000 item limit per request</span></td></tr>
+    <tr><td><code>/api/analysis/{authority}</code></td><td>GET</td><td>Council-level statistics &amp; analytics</td><td>No visible rate limiting</td></tr>
+    <tr><td><code>/api/stats/overview</code></td><td>GET</td><td>Homepage statistics (33k decisions, etc.)</td><td>Publicly accessible</td></tr>
+    <tr><td><code>/api/stats</code></td><td>GET</td><td>General statistics endpoint</td><td>Publicly accessible</td></tr>
+    <tr><td><code>/api/constraints</code></td><td>GET</td><td>Spatial constraint data (conservation, flood, listed, Green Belt, AONB, Article 4)</td><td>Sourced from ArcGIS REST API (Esri services)</td></tr>
+    <tr><td><code>/api/subscribe</code></td><td>POST</td><td>Email newsletter subscription</td><td>Standard</td></tr>
+    <tr><td>AI chat endpoint</td><td>POST</td><td>Natural language queries routed to Anthropic Claude</td><td><span class="badge badge-red">Query params passed to AI &mdash; prompt injection surface</span></td></tr>
+    <tr><td>Report generation</td><td>POST</td><td>Triggers PDF generation via PDFShift</td><td>Rate limited to 20 AI questions per session</td></tr>
+  </table>
+
+  <h3>Data Flow Architecture</h3>
+  <div class="highlight-box">
+    <strong>Request flow:</strong> User query &rarr; Vercel serverless function &rarr; PlanIt.org.uk API (planning data) + ArcGIS REST API (boundaries/constraints) &rarr; Anthropic Claude API (AI analysis) &rarr; Response rendered in vanilla JS &rarr; PDFShift (report generation)
+  </div>
+  <ul>
+    <li><strong>Pagination:</strong> 5,000 items per request with bbox-based spatial filtering</li>
+    <li><strong>Caching:</strong> 24-hour server-side cache (mentioned in source), viewport-based constraint caching</li>
+    <li><strong>Stale data prevention:</strong> Sequence counters to discard out-of-order API responses</li>
+    <li><strong>GeoJSON:</strong> Feature collections for map rendering &mdash; no visible client-side validation</li>
+    <li><strong>Session storage:</strong> Persists selected council and map centre between page loads (sessionStorage, not localStorage)</li>
+  </ul>
+
+  <h3>Security Assessment</h3>
+  <table>
+    <tr><th>Finding</th><th>Severity</th><th>Detail</th></tr>
+    <tr>
+      <td>Mapbox access token exposed in client JS</td>
+      <td><span class="badge badge-amber">Medium</span></td>
+      <td>Token <code>pk.eyJ1IjoiZGlub2Rpbm8yOSI...</code> visible in source. Standard practice for Mapbox (public tokens are expected), but reveals username <code>dinodino29</code> and could be abused for quota consumption if not URL-restricted.</td>
+    </tr>
+    <tr>
+      <td>No visible API authentication on data endpoints</td>
+      <td><span class="badge badge-amber">Medium</span></td>
+      <td><code>/api/applications</code>, <code>/api/analysis/{authority}</code>, <code>/api/stats</code> appear callable without auth tokens. Could allow bulk scraping of their entire processed dataset.</td>
+    </tr>
+    <tr>
+      <td>AI prompt injection surface</td>
+      <td><span class="badge badge-red">High</span></td>
+      <td>User query parameters are passed directly to the AI chat endpoint (Anthropic Claude). No visible sanitisation or prompt hardening in client-side code. Could potentially extract system prompts or manipulate AI output.</td>
+    </tr>
+    <tr>
+      <td>No CORS headers visible</td>
+      <td><span class="badge badge-amber">Medium</span></td>
+      <td>API likely configured permissively. Third-party sites could potentially make cross-origin requests to their API.</td>
+    </tr>
+    <tr>
+      <td>No GeoJSON input validation</td>
+      <td><span class="badge badge-amber">Low-Medium</span></td>
+      <td>No client-side validation of GeoJSON responses before rendering. If API were compromised, could inject malicious payloads.</td>
+    </tr>
+    <tr>
+      <td>bcrypt password hashing</td>
+      <td><span class="badge badge-green">Good</span></td>
+      <td>Passwords stored with bcrypt (confirmed in privacy policy). Industry-standard practice.</td>
+    </tr>
+    <tr>
+      <td>HTTPS throughout</td>
+      <td><span class="badge badge-green">Good</span></td>
+      <td>All data transmitted over TLS. Standard for Vercel hosting.</td>
+    </tr>
+    <tr>
+      <td>Session-based auth (not JWT)</td>
+      <td><span class="badge badge-green">Acceptable</span></td>
+      <td>Uses sessionStorage rather than localStorage &mdash; slightly more secure as data doesn't persist across tabs/sessions.</td>
+    </tr>
+    <tr>
+      <td>AI usage quota</td>
+      <td><span class="badge badge-amber">Basic</span></td>
+      <td>20-question limit per session, unlocked via feedback survey. Easily bypassed by clearing session or creating new accounts.</td>
+    </tr>
+    <tr>
+      <td>Google Analytics tracking</td>
+      <td><span class="badge badge-grey">Standard</span></td>
+      <td>GA4 ID: <code>G-NRKYWCGSWM</code>. Standard implementation via gtag.</td>
+    </tr>
+  </table>
+
+  <h3>Constraint Data Sources (Reverse-Engineered)</h3>
+  <p>Planiverse claims to show 6 constraint layers. Based on source code analysis, these come from:</p>
+  <table>
+    <tr><th>Constraint</th><th>Source</th><th>Reliability</th></tr>
+    <tr><td>Conservation areas</td><td>ArcGIS REST API (Esri hosted)</td><td><span class="badge badge-amber">Depends on Esri data currency</span></td></tr>
+    <tr><td>Flood zones</td><td>ArcGIS REST API (Esri hosted)</td><td><span class="badge badge-amber">Not direct from EA &mdash; may be stale</span></td></tr>
+    <tr><td>Listed buildings</td><td>ArcGIS REST API (Esri hosted)</td><td><span class="badge badge-amber">Not direct from Historic England</span></td></tr>
+    <tr><td>Green Belt</td><td>ArcGIS REST API (Esri hosted)</td><td><span class="badge badge-amber">Generic boundary &mdash; no detailed assessment</span></td></tr>
+    <tr><td>AONB / National Landscape</td><td>ArcGIS REST API (Esri hosted)</td><td><span class="badge badge-amber">Boundary only &mdash; no policy analysis</span></td></tr>
+    <tr><td>Article 4 directions</td><td>ArcGIS REST API (Esri hosted)</td><td><span class="badge badge-red">Notoriously incomplete in national datasets</span></td></tr>
+  </table>
+
+  <div class="highlight-box danger">
+    <strong>Key weakness:</strong> ALL constraint data comes via ArcGIS REST API (Esri hosted services) &mdash; not from the original authoritative sources (EA, Historic England, Natural England, LPAs). This means Planiverse is showing constraint data that is at least one step removed from the source, with unknown update frequency. Compare to SI's direct API integrations with EA flood data, Historic England NHLE, BGS geology, etc.
+  </div>
+
+  <h3>Architecture Assessment: Solo Dev Indicators</h3>
+  <ul>
+    <li><strong>No framework:</strong> Vanilla JS is unusual for a 2026 web app and suggests either (a) deliberate minimalism or (b) a self-taught developer who built it incrementally without adopting a framework</li>
+    <li><strong>Global state:</strong> Global arrays and Sets for state management works for a prototype but won't scale if the codebase grows</li>
+    <li><strong>No visible testing:</strong> No test frameworks, no CI/CD indicators in the source</li>
+    <li><strong>Single deployment:</strong> Vercel default setup, no staging/production separation visible</li>
+    <li><strong>Empty roadmap:</strong> 0 features requested, 0 in progress, 0 shipped &mdash; suggests the roadmap page was built but never populated or promoted</li>
+    <li><strong>No robots.txt:</strong> Returns 404 &mdash; basic SEO/security config missing</li>
+    <li><strong>Sitemap:</strong> Only 13 URLs indexed, including a single Manchester authority page (test?)</li>
+  </ul>
+</div>
+
+<!-- 7. REPORT STRUCTURE -->
+<div class="section" id="s7">
+  <h2>7. Report Structure Analysis (Planiverse Sample Report)</h2>
+
+  <p>Based on the sample report for 21 Linersh Wood Road, Bramley, GU5 0EE &mdash; here is a section-by-section assessment:</p>
+
+  <table>
+    <tr><th>Report Section</th><th>What It Contains</th><th>Assessment</th></tr>
+    <tr><td>Cover Page</td><td>Green Belt warning, address, key stats (approval rate, comparables, decision time), risk summary</td><td><span class="badge badge-green">Good</span> &mdash; clear first impression, headline risk flagging</td></tr>
+    <tr><td>Constraints Page</td><td>Lists planning constraints affecting the site</td><td><span class="badge badge-amber">Shallow</span> &mdash; likely sourced from PlanIt/basic geocoding, not 23-dataset deep check</td></tr>
+    <tr><td>Executive Summary</td><td>AI verdict, top approval rates by type, top refusal reasons</td><td><span class="badge badge-green">Good</span> &mdash; useful headline summary for quick decisions</td></tr>
+    <tr><td>Site Overview</td><td>Street map + satellite</td><td><span class="badge badge-grey">Basic</span> &mdash; Mapbox tiles, no OS MasterMap, no boundary overlay</td></tr>
+    <tr><td>Proposal Element Breakdown</td><td>Per-element ward approval rates</td><td><span class="badge badge-green">Interesting</span> &mdash; granular analysis SI does not replicate in this exact form</td></tr>
+    <tr><td>"What Can You Build Here?"</td><td>Approval rates by dev type within 500m</td><td><span class="badge badge-green">Good</span> &mdash; useful screening question, well-framed</td></tr>
+    <tr><td>Key Risks</td><td>5 policy-based risks with NPPF citations</td><td><span class="badge badge-amber">AI-generated</span> &mdash; NPPF citations likely from Claude's training data, not verified database. Risk of hallucination.</td></tr>
+    <tr><td>Planning Intelligence Interpretation</td><td>AI narrative combining data points</td><td><span class="badge badge-amber">Unverifiable</span> &mdash; AI-generated synthesis, no clear methodology</td></tr>
+    <tr><td>Recommendations</td><td>AI-generated recommendations</td><td><span class="badge badge-amber">Generic</span> &mdash; likely formulaic based on risk factors</td></tr>
+    <tr><td>Decision Speed Distribution</td><td>Chart of how long council takes</td><td><span class="badge badge-green">Good</span> &mdash; useful operational metric SI doesn't include</td></tr>
+    <tr><td>Comparable Decisions Table + Map</td><td>List of similar decisions with locations</td><td><span class="badge badge-green">Strong</span> &mdash; verifiable, linked to council portals</td></tr>
+    <tr><td>Planning History at Address</td><td>Previous applications at this site</td><td><span class="badge badge-green">Good</span> &mdash; standard feature, well-presented</td></tr>
+    <tr><td>Neighbourhood Activity</td><td>Recent decisions within 200m, pending applications</td><td><span class="badge badge-green">Good</span> &mdash; contextual intelligence</td></tr>
+    <tr><td>About the LPA</td><td>Ward-level analysis, approval by application type</td><td><span class="badge badge-green">Good</span> &mdash; useful benchmarking</td></tr>
+    <tr><td>Seasonal Approval Patterns</td><td>Time-of-year trends</td><td><span class="badge badge-amber">Novelty</span> &mdash; statistically dubious at ward level with small samples</td></tr>
+    <tr><td>AI Feasibility Assessment</td><td>Detailed element-by-element analysis</td><td><span class="badge badge-amber">AI-generated</span> &mdash; no planning policy backing, no case law</td></tr>
+    <tr><td>Next Steps Checklist</td><td>Action items</td><td><span class="badge badge-grey">Generic</span> &mdash; likely same for every report</td></tr>
+    <tr><td>Data Sources &amp; Methodology</td><td>Transparency section</td><td><span class="badge badge-green">Good practice</span> &mdash; important for credibility</td></tr>
+  </table>
+
+  <div class="verdict">
+    <h3>Report Verdict</h3>
+    <p>The Planiverse report is <strong>a good screening tool</strong> &mdash; well-designed, visually clear, and useful for the "is this worth pursuing?" question. However, it is fundamentally a <strong>statistical analysis of past decisions</strong>, not a planning feasibility assessment. It cannot tell you:</p>
+    <ul>
+      <li>Whether the site is in a flood zone and what FRA would be required</li>
+      <li>Whether there are protected species or habitats requiring ecology surveys</li>
+      <li>Whether the Local Plan allocates the site for a specific use</li>
+      <li>What CIL/S106 contributions would be due and how they affect viability</li>
+      <li>Whether heritage constraints would trigger pre-app or HIA requirements</li>
+      <li>What the actual planning policy framework says about this type of development here</li>
+      <li>Whether ground conditions require contamination assessment or specific foundations</li>
+    </ul>
+    <p>The NPPF citations in the "Key Risks" section are particularly risky &mdash; Claude's training data may produce plausible but incorrect paragraph references, especially post-December 2024 NPPF revision.</p>
+  </div>
+</div>
+
+<!-- 8. GO-TO-MARKET -->
+<div class="section" id="s8">
+  <h2>8. Go-To-Market Strategy</h2>
+
+  <h3>Target Segments (from homepage messaging)</h3>
+  <table>
+    <tr><th>Segment</th><th>Pitch</th><th>Channel</th></tr>
+    <tr><td><strong>Sole practitioners / small developers</strong></td><td>"The same planning intelligence that enterprise tools charge thousands for"</td><td>Word of mouth, beta users, content marketing</td></tr>
+    <tr><td><strong>Independent architects</strong></td><td>"Brief clients accurately on planning risk with verified council data"</td><td>LinkedIn, community engagement</td></tr>
+    <tr><td><strong>Planning consultants</strong></td><td>"Find comparable permission decisions in minutes, not hours"</td><td>Direct comparison to manual workflow</td></tr>
+    <tr><td><strong>Homeowners</strong></td><td>"Know your chances before you spend on an application"</td><td>SEO, Mumsnet-style communities</td></tr>
+  </table>
+
+  <h3>Positioning</h3>
+  <ul>
+    <li><strong>Anti-consultant:</strong> "Your consultant charges &pound;3,000+ for what data could tell you in seconds"</li>
+    <li><strong>Anti-black-box:</strong> "Unlike black-box reports, every statistic links to the original council record"</li>
+    <li><strong>Democratisation:</strong> Making enterprise-grade data accessible to independents</li>
+    <li><strong>Interactive vs static:</strong> "An interactive planning advisor, not a static PDF"</li>
+  </ul>
+
+  <h3>Current GTM Status</h3>
+  <ul>
+    <li><span class="badge badge-teal">Free beta</span> &mdash; building user base before monetisation</li>
+    <li>No visible paid advertising or PR campaign</li>
+    <li>No press coverage found in any publication</li>
+    <li>No Product Hunt launch, no Hacker News discussion</li>
+    <li>Building email waitlist for authority-specific updates</li>
+    <li>Scotland and Wales expansion planned but not yet delivered</li>
+  </ul>
+
+  <div class="highlight-box">
+    <strong>Assessment:</strong> Very early stage. The GTM appears to be "build it, make it free, hope people find it." No distribution engine, no content marketing, no partnerships, no channel strategy visible. This is typical of a solo technical founder in beta &mdash; product-first, growth later.
+  </div>
+</div>
+
+<!-- 9. SOCIAL MEDIA & PRESS -->
+<div class="section" id="s9">
+  <h2>9. Social Media &amp; Press Presence</h2>
+
+  <table>
+    <tr><th>Platform</th><th>Presence</th><th>Activity</th></tr>
+    <tr><td>LinkedIn (Company)</td><td><span class="badge badge-red">Not found</span></td><td>No company page for Planiverse identified. A "Planiversity" page exists but is unrelated.</td></tr>
+    <tr><td>LinkedIn (Personal)</td><td><span class="badge badge-amber">Exists</span></td><td>Dino Buonaguidi has a personal LinkedIn profile but with minimal public information.</td></tr>
+    <tr><td>Twitter/X (Company)</td><td><span class="badge badge-red">Not found</span></td><td>@ThePlanverse exists but is unrelated (315 posts, created Nov 2021, different entity).</td></tr>
+    <tr><td>Twitter/X (Personal)</td><td><span class="badge badge-amber">Exists</span></td><td>@dinobuonaguidi &mdash; 24 posts total, minimal activity.</td></tr>
+    <tr><td>Instagram</td><td><span class="badge badge-red">Not found</span></td><td>No presence identified.</td></tr>
+    <tr><td>Product Hunt</td><td><span class="badge badge-red">Not listed</span></td><td>No launch.</td></tr>
+    <tr><td>Hacker News</td><td><span class="badge badge-red">No discussion</span></td><td>No Show HN post or mention.</td></tr>
+    <tr><td>Press Coverage</td><td><span class="badge badge-red">None found</span></td><td>No articles in any publication &mdash; not in proptech press, not in planning trade press, not in local Brighton press.</td></tr>
+    <tr><td>Blog</td><td><span class="badge badge-red">No blog</span></td><td>/blog returns 404</td></tr>
+    <tr><td>User Reviews</td><td><span class="badge badge-red">None</span></td><td>Not on G2, Capterra, Trustpilot, or any review platform.</td></tr>
+  </table>
+
+  <div class="highlight-box">
+    <strong>Assessment:</strong> Essentially zero public presence beyond the product itself. This is either (a) an extremely early-stage product that hasn't started marketing, or (b) a side project that hasn't been commercialised yet. Either way, it means Planiverse has near-zero brand awareness in the market right now.
+  </div>
+</div>
+
+<!-- 10. COMPETITOR LANDSCAPE -->
+<div class="section" id="s10">
+  <h2>10. Competitor Landscape (Planiverse vs Others in Planning Intelligence)</h2>
+
+  <table>
+    <tr><th>Competitor</th><th>Focus</th><th>Price</th><th>Data Depth</th><th>AI</th><th>Funding</th></tr>
+    <tr>
+      <td><strong>Planiverse</strong></td>
+      <td>Planning decision analytics, AI feasibility</td>
+      <td>Free (beta) / &pound;99/mo</td>
+      <td>Planning decisions only (via PlanIt)</td>
+      <td>Anthropic Claude</td>
+      <td>None (bootstrapped)</td>
+    </tr>
+    <tr>
+      <td><strong>PlanningLens</strong></td>
+      <td>Approval rate analysis, ward data</td>
+      <td>Free check + Pro Reports</td>
+      <td>190+ councils, Jan 2020+</td>
+      <td>None visible</td>
+      <td>None visible</td>
+    </tr>
+    <tr>
+      <td><strong>PlanningHub</strong></td>
+      <td>AI planning insights, constraint analysis</td>
+      <td>Not public</td>
+      <td>Planning + constraints</td>
+      <td>LLM-based</td>
+      <td>&pound;300k (Fuel Ventures + UKRI grants), Geovation accelerator</td>
+    </tr>
+    <tr>
+      <td><strong>Searchland</strong></td>
+      <td>Site sourcing, planning data</td>
+      <td>&pound;195/mo+</td>
+      <td>Multi-layer (planning, ownership, constraints)</td>
+      <td>Minimal</td>
+      <td>Funded</td>
+    </tr>
+    <tr>
+      <td><strong>LandInsight</strong></td>
+      <td>Site sourcing, ownership, planning</td>
+      <td>&pound;60&ndash;195/mo</td>
+      <td>Multi-layer (HMLR, planning, constraints)</td>
+      <td>Minimal</td>
+      <td>Funded (LandTech)</td>
+    </tr>
+    <tr>
+      <td><strong>Martello</strong></td>
+      <td>Conveyancing environmental searches</td>
+      <td>&pound;57&ndash;63/report</td>
+      <td>Environmental data (conveyancing)</td>
+      <td>AI analysis</td>
+      <td>&pound;1.2m seed (Fuel Ventures)</td>
+    </tr>
+    <tr>
+      <td><strong>Site Intelligence</strong></td>
+      <td>Full planning feasibility reports</td>
+      <td>&pound;199&ndash;&pound;9,995</td>
+      <td>23 datasets, 125 agents, 17-layer QA</td>
+      <td>Claude-powered content writers</td>
+      <td>Bootstrapped</td>
+    </tr>
+  </table>
+
+  <div class="highlight-box success">
+    <strong>Key insight:</strong> Planiverse occupies the "quick check" layer that sits BELOW SI's Screening product (&pound;199). It's more comparable to a free tool that answers "is this worth looking at?" rather than "what are all the risks?". The closest competitor to Planiverse is PlanningLens, which offers similar approval-rate analytics. Neither is close to SI's depth.
+  </div>
+</div>
+
+<!-- 11. HEAD TO HEAD -->
+<div class="section" id="s11">
+  <h2>11. Planiverse vs Site Intelligence: Head-to-Head</h2>
+
+  <div class="comparison-grid">
+    <div class="comp-card comp-planiverse">
+      <h4>Planiverse Advantages Over SI</h4>
+      <ul>
+        <li><strong>Free (currently)</strong> &mdash; zero barrier to entry</li>
+        <li><strong>Interactive map explorer</strong> &mdash; visual, explorable, not a static PDF</li>
+        <li><strong>Instant results</strong> &mdash; no waiting for report generation</li>
+        <li><strong>Natural language chat</strong> &mdash; ask anything about planning in an area</li>
+        <li><strong>Site-finding capability</strong> &mdash; "where should I build?" question SI doesn't answer</li>
+        <li><strong>Live pipeline tracking</strong> &mdash; competitor monitoring SI doesn't offer</li>
+        <li><strong>Comparable decisions mapped</strong> &mdash; spatial visualisation of precedents</li>
+        <li><strong>Per-element breakdown</strong> &mdash; ward approval rates by proposal element is novel</li>
+        <li><strong>Decision speed distribution</strong> &mdash; practical metric SI doesn't include</li>
+        <li><strong>Subscription model</strong> &mdash; unlimited use, good for frequent users</li>
+        <li><strong>Transparency</strong> &mdash; every stat links to original council record</li>
+      </ul>
+    </div>
+    <div class="comp-card comp-si">
+      <h4>SI Advantages Over Planiverse</h4>
+      <ul>
+        <li><strong>23 data sources</strong> vs Planiverse's 1 (PlanIt only)</li>
+        <li><strong>Submission-ready reports</strong> &mdash; not just screening analysis</li>
+        <li><strong>Planning policy analysis</strong> &mdash; actual Local Plan and NPPF assessment</li>
+        <li><strong>650 verified appeal cases</strong> vs AI-generated NPPF citations</li>
+        <li><strong>Environmental assessment</strong> &mdash; flood, ecology, geology, contamination</li>
+        <li><strong>Heritage assessment</strong> &mdash; listed buildings, conservation areas, scheduled monuments</li>
+        <li><strong>CIL/S106 calculations</strong> &mdash; 178 LPAs modelled</li>
+        <li><strong>Viability assessment</strong> &mdash; GDV, costs, margins</li>
+        <li><strong>Transport / highways</strong> &mdash; access, parking, trip generation</li>
+        <li><strong>17-layer QA pipeline</strong> &mdash; not relying on AI hallucination alone</li>
+        <li><strong>125 specialised agents</strong> vs one general-purpose Claude chat</li>
+        <li><strong>40+ report types</strong> including summaries for different audiences</li>
+        <li><strong>Professional credibility</strong> &mdash; reports can be submitted with applications</li>
+        <li><strong>Cross-domain intelligence</strong> &mdash; cost cascades, programme risks, design compression</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>The Critical Question: Are They Competing for the Same Customer?</h3>
+
+  <div class="highlight-box">
+    <strong>Partially, yes.</strong> Both target small developers and independent architects asking "should I pursue this site?" But they answer different questions at different depths:
+    <ul style="margin-top:0.5rem;">
+      <li><strong>Planiverse answers:</strong> "Based on past decisions nearby, what are my statistical odds?" (screening question)</li>
+      <li><strong>SI answers:</strong> "Based on every relevant constraint, policy, and precedent, what are the actual planning risks and how do I mitigate them?" (feasibility question)</li>
+    </ul>
+    <p style="margin-top:0.5rem;">The danger is not that Planiverse replaces SI. The danger is that a developer uses Planiverse's free tool, gets a "75% approval rate" figure, and decides that's enough to proceed &mdash; skipping the SI Screening or Feasibility product entirely. Planiverse could capture the intent before SI sees it.</p>
+  </div>
+</div>
+
+<!-- 12. SWOT -->
+<div class="section" id="s12">
+  <h2>12. SWOT Analysis (Planiverse)</h2>
+
+  <div class="swot-grid">
+    <div class="swot-card swot-s">
+      <h4>Strengths</h4>
+      <ul>
+        <li>Clean, modern UI &mdash; best-in-class design for planning tools</li>
+        <li>Free beta removes all purchase friction</li>
+        <li>Interactive map is compelling &mdash; visual, explorable</li>
+        <li>Transparency: every claim linked to source record</li>
+        <li>AI chat interface is accessible to non-technical users</li>
+        <li>Addresses a real pain point (manual council portal searching)</li>
+        <li>Low marginal cost per user (PlanIt API is free)</li>
+        <li>PDF reports give tangible output</li>
+      </ul>
+    </div>
+    <div class="swot-card swot-w">
+      <h4>Weaknesses</h4>
+      <ul>
+        <li>Single data source dependency (PlanIt.org.uk)</li>
+        <li>No planning policy analysis &mdash; statistics only</li>
+        <li>AI-generated NPPF citations risk hallucination</li>
+        <li>Solo founder, no team, no visible technical co-founder</li>
+        <li>No funding &mdash; limited runway for growth</li>
+        <li>Zero brand awareness &mdash; no press, no social media presence</li>
+        <li>Hospitality background, no planning domain expertise</li>
+        <li>Reports not submission-ready</li>
+        <li>33,000 decisions is a tiny fraction of PlanIt's 20M+ records</li>
+        <li>Shelf company structure looks unprofessional to due-diligence-aware buyers</li>
+        <li>England only (competitors cover Scotland/Wales)</li>
+      </ul>
+    </div>
+    <div class="swot-card swot-o">
+      <h4>Opportunities</h4>
+      <ul>
+        <li>First-mover in "free planning AI" &mdash; could capture top-of-funnel</li>
+        <li>Freemium-to-paid conversion at &pound;99/mo is attractive unit economics</li>
+        <li>Could integrate more data sources over time</li>
+        <li>Government push for digital planning creates tailwinds</li>
+        <li>Partnership potential with existing platforms (Searchland, LandInsight)</li>
+        <li>B2B API licensing to other proptech tools</li>
+        <li>Mumsnet/Reddit SEO for homeowner segment</li>
+      </ul>
+    </div>
+    <div class="swot-card swot-t">
+      <h4>Threats (to Planiverse)</h4>
+      <ul>
+        <li>Funded competitors (PlanningHub, Martello) could out-execute</li>
+        <li>PlanIt.org.uk data source could change terms or go offline</li>
+        <li>planning.data.gov.uk (government) could make PlanIt redundant</li>
+        <li>Anthropic API costs could make free tier unsustainable</li>
+        <li>LandInsight/Searchland could add AI features overnight</li>
+        <li>Professional liability risk if users rely on AI-generated planning advice</li>
+        <li>SI or other report providers could add interactive screening layer</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- 13. STRATEGIC IMPLICATIONS -->
+<div class="section" id="s13">
+  <h2>13. Strategic Implications for Site Intelligence</h2>
+
+  <h3>What Planiverse Gets Right (and SI Should Learn From)</h3>
+  <ol>
+    <li><strong>The "Will the council approve it?" framing</strong> &mdash; simple, buyer-centric question. SI should use this language in marketing.</li>
+    <li><strong>Interactive map explorer</strong> &mdash; this is compelling UX that SI's static PDF model lacks. Consider an interactive screening tool as a lead-gen funnel.</li>
+    <li><strong>Comparable decisions visualisation</strong> &mdash; mapping nearby approvals/refusals spatially is more powerful than listing them. SI's reports could benefit from this presentation.</li>
+    <li><strong>Per-element approval breakdown</strong> &mdash; showing ward-specific rates for "rear extension" vs "loft conversion" vs "new dwelling" is genuinely useful granularity.</li>
+    <li><strong>Decision speed metrics</strong> &mdash; practical information SI doesn't currently include. Worth adding to the LPA analysis section.</li>
+    <li><strong>Transparency claims</strong> &mdash; "every stat links to the original record" is a powerful trust signal. SI should emphasise its source provenance more prominently.</li>
+    <li><strong>Free entry point</strong> &mdash; Planiverse is training users to expect free planning intelligence. SI needs a free or very low-cost entry point to compete for attention.</li>
+  </ol>
+
+  <h3>Recommended SI Responses</h3>
+
+  <div class="risk">
+    <h3>Defensive Actions (Short-term)</h3>
+    <ul>
+      <li><strong>Add comparable decision statistics to SI Screening reports</strong> &mdash; approval rates by type within the ward. This data is available via PlanIt API or planning.data.gov.uk. Low effort, high impact.</li>
+      <li><strong>Add LPA decision speed metrics</strong> &mdash; average determination time by application type. Available from the same data sources.</li>
+      <li><strong>Emphasise depth advantage in marketing</strong> &mdash; "23 datasets vs 1" and "submission-ready vs screening only" messaging.</li>
+      <li><strong>Create a free planning risk check</strong> &mdash; even a simple "enter your postcode, see your constraints" tool would capture the top-of-funnel intent that Planiverse is targeting.</li>
+    </ul>
+  </div>
+
+  <div class="verdict">
+    <h3>Offensive Actions (Medium-term)</h3>
+    <ul>
+      <li><strong>Build an interactive site screening tool on the website</strong> &mdash; map-based, constraint-aware, free to use. Capture the email. Upsell to Screening (&pound;199) and Feasibility (from &pound;695).</li>
+      <li><strong>Publish planning approval rate content</strong> &mdash; per-council, per-ward approval rates as SEO content. This is the exact traffic Planiverse is trying to capture.</li>
+      <li><strong>Position against Planiverse directly</strong> &mdash; "Statistical odds are not planning advice. Here's what approval rates don't tell you." (blog post / LinkedIn content)</li>
+      <li><strong>Partner with PlanIt.org.uk</strong> &mdash; integrate comparable decision data into SI reports. Add the interactive element Planiverse has, but backed by SI's 23-dataset depth.</li>
+    </ul>
+  </div>
+
+  <h3>What NOT to Worry About</h3>
+  <ul>
+    <li><strong>Planiverse replacing SI's core product:</strong> It cannot. It has no policy analysis, no environmental data, no viability, no submission-ready output. The gap is enormous.</li>
+    <li><strong>Price competition:</strong> At &pound;99/month vs SI's &pound;695+ per report, they serve different needs. Nobody is choosing between them for the same purchase.</li>
+    <li><strong>Scale threat:</strong> Solo founder, no funding, no team, no press. This is not a well-resourced competitor. It could die quietly or get acqui-hired.</li>
+  </ul>
+
+  <h3>The Real Risk</h3>
+  <div class="highlight-box danger">
+    <strong>The real risk is not Planiverse specifically &mdash; it's the category.</strong> Free AI planning tools are inevitable. If not Planiverse, then PlanningLens, PlanningHub, or someone else will own the "quick free check" layer. SI needs to either own that layer (with a free screening tool) or ensure its paid products are so clearly superior that the free tools serve as a marketing funnel rather than a substitute. The worst outcome is a developer using Planiverse, getting "78% approval rate", and never discovering that their site has a contaminated land designation, a Grade II listed building within the setting, and a &pound;45,000 CIL liability.
+  </div>
+</div>
+
+</div>
+
+<div class="footer">
+  <strong>PF &amp; Co Holdings Ltd</strong> trading as <strong>Site Intelligence</strong><br>
+  Competitive intelligence report &mdash; 31 March 2026 &mdash; Internal use only<br>
+  Research compiled via web scraping, Companies House, privacy policy analysis, terms of service review, client-side source code audit, API endpoint discovery, and security assessment.
+</div>
+
+</body>
+</html>
