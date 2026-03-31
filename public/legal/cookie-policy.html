@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+
+<html lang="en-GB">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GDPR-09 — Cookie Policy | PF &amp; Co Holdings Ltd</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+  :root {
+    --navy: #0f172a;
+    --slate: #1e293b;
+    --orange: #f97316;
+    --text: #f1f5f9;
+    --muted: #94a3b8;
+    --white: #ffffff;
+    --light-bg: #f8fafc;
+    --border: #e2e8f0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Roboto', Arial, sans-serif;
+    color: #1a1a2e;
+    line-height: 1.7;
+    background: var(--white);
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Watermark removed - Final version */
+
+  .header {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--slate) 100%);
+    color: var(--text);
+    padding: 2.5rem 3rem;
+    position: relative;
+  }
+
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+  }
+
+  .brand {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 1.4rem;
+    letter-spacing: 0.5px;
+  }
+
+  .brand span { color: var(--orange); }
+
+  .draft-badge {
+    background: var(--orange);
+    color: var(--white);
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.4rem 1rem;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .doc-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+  }
+
+  .doc-subtitle {
+    color: var(--muted);
+    font-size: 1rem;
+    font-weight: 300;
+  }
+
+  .meta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.5rem 2rem;
+    background: rgba(255,255,255,0.05);
+    padding: 1rem 1.5rem;
+    border-radius: 6px;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .meta-grid dt { color: var(--muted); font-weight: 400; }
+  .meta-grid dd { color: var(--text); font-weight: 500; margin-bottom: 0.3rem; }
+
+  .content { max-width: 900px; margin: 0 auto; padding: 2rem 3rem 4rem; position: relative; z-index: 1; }
+
+  h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--navy);
+    margin: 2.5rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--orange);
+  }
+
+  h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--slate);
+    margin: 1.8rem 0 0.8rem;
+  }
+
+  p { margin-bottom: 1rem; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.2rem 0 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  thead th {
+    background: var(--navy);
+    color: var(--white);
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    text-align: left;
+    padding: 0.7rem 1rem;
+    font-size: 0.85rem;
+    letter-spacing: 0.3px;
+  }
+
+  tbody td {
+    padding: 0.7rem 1rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+
+  tbody tr:nth-child(even) { background: var(--light-bg); }
+
+  ol, ul { margin: 0.5rem 0 1rem 1.5rem; }
+  li { margin-bottom: 0.4rem; }
+
+  code {
+    background: var(--light-bg);
+    border: 1px solid var(--border);
+    padding: 0.1rem 0.4rem;
+    border-radius: 3px;
+    font-size: 0.85em;
+  }
+
+  .footer {
+    background: var(--navy);
+    color: var(--muted);
+    padding: 2rem 3rem;
+    font-size: 0.8rem;
+    text-align: center;
+    margin-top: 3rem;
+  }
+
+  .footer strong { color: var(--text); }
+
+  .print-btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: var(--orange);
+    color: var(--white);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(249,115,22,0.3);
+    z-index: 1000;
+    transition: background 0.2s;
+  }
+
+  .print-btn:hover { background: #ea580c; }
+
+  @media print {
+    .print-btn { display: none; }
+    body::before { display: none; }
+    .header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .content { padding: 1rem 0; }
+  }
+</style>
+</head>
+<body>
+<div class="header">
+<div class="header-top">
+<div class="brand">PF &amp; CO HOLDINGS LTD <span>| Site Intelligence</span></div>
+
+</div>
+<div class="doc-title">Cookie Policy</div>
+<div class="doc-subtitle">GDPR-09 | Client-Facing Policy Document</div>
+<dl class="meta-grid">
+<dt>Document Reference</dt>
+<dd>GDPR-09-CP-2026-v1.0</dd>
+<dt>Data Controller</dt>
+<dd>PF &amp; Co Holdings Ltd (16649319)</dd>
+<dt>ICO Registration</dt>
+<dd>C1899309</dd>
+<dt>Classification</dt>
+<dd>Public — Client-Facing</dd>
+<dt>Author</dt>
+<dd>Chris Preston, Director</dd>
+<dt>Date</dt>
+<dd>31 March 2026</dd>
+<dt>Next Review</dt>
+<dd>31 March 2027</dd>
+<dt>Related Documents</dt>
+<dd>GDPR-08 (Privacy Policy)</dd>
+</dl>
+</div>
+<div class="content">
+<h2>1. What Are Cookies</h2>
+<p>Cookies are small text files that are placed on your computer, phone, or tablet when you visit a website. They help the website work properly, remember your preferences, and provide us with information about how the site is used.</p>
+<p>Cookies are not harmful. They cannot access other information on your device and they do not contain viruses.</p>
+<p>This Cookie Policy explains which cookies our website at <a href="https://www.pfandco.co.uk">www.pfandco.co.uk</a> uses, why we use them, and how you can manage your preferences.</p>
+<h2>2. How We Use Cookies</h2>
+<p>Our website uses cookies for the following purposes:</p>
+<ul>
+<li><strong>Making the website work</strong> — essential cookies that the site needs to function correctly</li>
+<li><strong>Understanding how visitors use the site</strong> — analytics cookies that help us improve our content and user experience</li>
+<li><strong>Processing payments</strong> — cookies set by our payment provider (Stripe) when you use our checkout pages</li>
+<li><strong>Providing interactive features</strong> — cookies or local storage used by embedded third-party widgets</li>
+</ul>
+<h2>3. Types of Cookies We Use</h2>
+<h3>3.1 Essential Cookies (Strictly Necessary)</h3>
+<p>These cookies are required for the website to function. Without them, the site would not work properly. <strong>You cannot opt out of essential cookies</strong> because they are necessary to provide you with the service you have requested.</p>
+<table>
+<thead>
+<tr>
+<th>Cookie / Storage</th>
+<th>Purpose</th>
+<th>Duration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cookie_consent</code></td>
+<td>Stores your cookie consent preference so we do not ask you again on every page</td>
+<td>1 year</td>
+</tr>
+<tr>
+<td><code>__vercel_live_token</code></td>
+<td>Vercel deployment — used during preview/staging deployments for authenticated access. Not present on the public production site.</td>
+<td>Session</td>
+</tr>
+</tbody>
+</table>
+<p>Our website is built with React and hosted on Vercel. Unlike traditional server-rendered sites, single-page applications generally do not set server-side session cookies. The essential cookies listed above are the only ones strictly required for the site to operate.</p>
+<h3>3.2 Analytics Cookies</h3>
+<p>These cookies help us understand how visitors use our website — for example, which pages are most popular and how people navigate between pages. This information helps us improve the website. The data collected is aggregated and does not identify individual visitors.</p>
+<h3>3.2.1 Google Analytics</h3>
+<table>
+<thead>
+<tr>
+<th>Cookie</th>
+<th>Purpose</th>
+<th>Duration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>_ga</code></td>
+<td>Google Analytics — distinguishes unique visitors by assigning a randomly generated number</td>
+<td>2 years</td>
+</tr>
+<tr>
+<td><code>_ga_*</code></td>
+<td>Google Analytics 4 — maintains session state</td>
+<td>2 years</td>
+</tr>
+<tr>
+<td><code>_gid</code></td>
+<td>Google Analytics — distinguishes visitors over a 24-hour period</td>
+<td>24 hours</td>
+</tr>
+<tr>
+<td><code>_gat</code></td>
+<td>Google Analytics — throttles request rate to limit data collection on high-traffic sites</td>
+<td>1 minute</td>
+</tr>
+</tbody>
+</table>
+
+<h3>3.2.2 Vercel Analytics</h3>
+<p>Our hosting provider (Vercel) offers a built-in analytics service. If enabled, Vercel Analytics is designed to be privacy-focused and does not use traditional cookies. It collects page view and performance data using a lightweight script without storing persistent identifiers on your device.</p>
+
+<p><strong>Note:</strong> The legal framework for cookie consent in the UK is subject to ongoing legislative reform. We monitor regulatory developments and will update this policy as required. Regardless of any future exemptions that may apply to simple analytics cookies, we believe in giving you a clear choice about whether these cookies are placed on your device. You can opt out at any time (see Section 5 below).</p>
+<h3>3.3 Payment Cookies (Stripe)</h3>
+<p>When you use our checkout pages to make a payment, our payment provider Stripe may set cookies on your device. These cookies are necessary for the payment process to function securely.</p>
+<table>
+<thead>
+<tr>
+<th>Cookie</th>
+<th>Purpose</th>
+<th>Duration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>__stripe_mid</code></td>
+<td>Stripe fraud prevention — identifies your device to help detect fraudulent transactions</td>
+<td>1 year</td>
+</tr>
+<tr>
+<td><code>__stripe_sid</code></td>
+<td>Stripe session — maintains your payment session during the checkout process</td>
+<td>30 minutes</td>
+</tr>
+</tbody>
+</table>
+<p>Stripe cookies are only set when you navigate to a checkout or payment page. If you do not make a purchase, no Stripe cookies will be placed on your device. For more information, see the <a href="https://stripe.com/gb/privacy" rel="noopener" target="_blank">Stripe Privacy Policy</a>.</p>
+<h3>3.4 Third-Party Cookies and Embedded Content</h3>
+<p>When we embed content from other services, those services may place their own cookies on your device. We do not control these cookies.</p>
+<table>
+<thead>
+<tr>
+<th>Service</th>
+<th>Purpose</th>
+<th>More Information</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Google Maps</strong></td>
+<td>When we embed location maps on our site, Google may set cookies to provide the mapping service</td>
+<td><a href="https://policies.google.com/privacy" rel="noopener" target="_blank">Google Privacy Policy</a></td>
+</tr>
+<tr>
+<td><strong>ElevenLabs</strong></td>
+<td>Conversational AI voice widget embedded on the site for customer interaction. May use local storage or session data to maintain the conversation state.</td>
+<td><a href="https://elevenlabs.io/privacy-policy" rel="noopener" target="_blank">ElevenLabs Privacy Policy</a></td>
+</tr>
+</tbody>
+</table>
+<p>Third-party cookies are only set if you interact with the embedded content (for example, by using the voice widget or interacting with a map). If you do not interact with the embedded content, no third-party cookies will be set.</p>
+
+<h2>4. Cookie Consent</h2>
+<p>When you first visit our website, you will see a cookie banner that gives you the option to:</p>
+<ul>
+<li><strong>Accept All Cookies</strong> — essential, analytics, payment, and third-party cookies will be used</li>
+<li><strong>Essential Only</strong> — only strictly necessary cookies will be used; analytics and third-party cookies will not be set</li>
+<li><strong>Manage Preferences</strong> — choose which categories of non-essential cookies you want to allow</li>
+</ul>
+<p>You can change your cookie preferences at any time by clicking the cookie settings link in the footer of our website.</p>
+<p><strong>Essential cookies cannot be disabled</strong> because they are necessary for the website to function.</p>
+<h2>5. How to Manage Cookies</h2>
+<p>In addition to using our cookie consent banner, you can control and delete cookies through your browser settings. Each browser handles cookies slightly differently.</p>
+<h3>Google Chrome</h3>
+<ol>
+<li>Open Chrome and click the three-dot menu in the top-right corner</li>
+<li>Go to <strong>Settings</strong> &gt; <strong>Privacy and security</strong> &gt; <strong>Cookies and other site data</strong></li>
+<li>Choose your preferred cookie settings</li>
+<li>To delete existing cookies: <strong>Settings</strong> &gt; <strong>Privacy and security</strong> &gt; <strong>Clear browsing data</strong> &gt; tick <strong>Cookies and other site data</strong> &gt; click <strong>Clear data</strong></li>
+</ol>
+<p>More information: <a href="https://support.google.com/chrome/answer/95647" rel="noopener" target="_blank">Google Chrome cookie help</a></p>
+<h3>Mozilla Firefox</h3>
+<ol>
+<li>Open Firefox and click the three-line menu in the top-right corner</li>
+<li>Go to <strong>Settings</strong> &gt; <strong>Privacy &amp; Security</strong></li>
+<li>Under <strong>Cookies and Site Data</strong>, choose your preferred settings</li>
+<li>To delete existing cookies: click <strong>Clear Data</strong> and tick <strong>Cookies and Site Data</strong></li>
+</ol>
+<p>More information: <a href="https://support.mozilla.org/en-US/kb/cookies-information-websites-store-on-your-computer" rel="noopener" target="_blank">Mozilla Firefox cookie help</a></p>
+<h3>Apple Safari</h3>
+<ol>
+<li>Open Safari and go to <strong>Safari</strong> &gt; <strong>Settings</strong> (or <strong>Preferences</strong>)</li>
+<li>Click the <strong>Privacy</strong> tab</li>
+<li>Choose your preferred cookie settings under <strong>Cookies and website data</strong></li>
+<li>To delete existing cookies: click <strong>Manage Website Data</strong> and remove cookies as desired</li>
+</ol>
+<p>More information: <a href="https://support.apple.com/en-gb/guide/safari/sfri11471/mac" rel="noopener" target="_blank">Apple Safari cookie help</a></p>
+<h3>Microsoft Edge</h3>
+<ol>
+<li>Open Edge and click the three-dot menu in the top-right corner</li>
+<li>Go to <strong>Settings</strong> &gt; <strong>Cookies and site permissions</strong> &gt; <strong>Manage and delete cookies and site data</strong></li>
+<li>Choose your preferred cookie settings</li>
+<li>To delete existing cookies: <strong>Settings</strong> &gt; <strong>Privacy, search, and services</strong> &gt; <strong>Clear browsing data</strong> &gt; tick <strong>Cookies and other site data</strong> &gt; click <strong>Clear now</strong></li>
+</ol>
+<p>More information: <a href="https://support.microsoft.com/en-us/microsoft-edge/manage-cookies-in-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" rel="noopener" target="_blank">Microsoft Edge cookie help</a></p>
+<h3>Important Note</h3>
+<p>If you choose to block all cookies (including essential cookies), some parts of our website may not work properly. If you delete cookies, any preferences you have set (including your cookie consent choice) will be lost and you will need to set them again when you next visit.</p>
+<h2>6. Third-Party Cookies</h2>
+<p>We do not sell or share cookie data with third parties for advertising purposes. The third-party cookies described in this policy are set by service providers we use to operate our website (analytics, payments, embedded content). Each provider has its own privacy policy governing how it handles data collected through its cookies.</p>
+<p>Some browsers offer a "Do Not Track" (DNT) setting. There is currently no industry standard for how websites should respond to DNT signals. We do not currently respond to DNT signals, but we do respect the cookie preferences you set through our cookie consent banner.</p>
+<h2>7. Changes to This Policy</h2>
+<p>We review this Cookie Policy at least once a year and will update it if we add or remove cookies, change our technology stack, or if the law changes. The "Last updated" date at the top of this page shows when the policy was last revised.</p>
+<h3>Review Log</h3>
+<table>
+<thead>
+<tr>
+<th>Review Date</th>
+<th>Reviewer</th>
+<th>Changes Made</th>
+<th>Next Review</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>31 March 2026</td>
+<td>Chris Preston</td>
+<td>Complete rewrite for new React/Vite site on Vercel. Removed WordPress and Cloudflare cookies. Added Stripe payment cookies, ElevenLabs widget, Vercel Analytics. Updated entity to PF &amp; Co Holdings Ltd.</td>
+<td>31 March 2027</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>8. Contact Us</h2>
+<p>For more information about how we handle your personal data, please read our <a href="https://www.pfandco.co.uk/privacy-policy">Privacy Policy</a> (GDPR-08).</p>
+<p>If you have any questions about this Cookie Policy, please contact us:</p>
+<p>
+<strong>PF &amp; Co Holdings Ltd</strong><br/>
+    2 Queens Drive, Guildford, GU2 9PP<br/><br/>
+<strong>Email:</strong> <a href="mailto:info@pfandco.co.uk">info@pfandco.co.uk</a><br/>
+<strong>Telephone:</strong> +44 (0)1483 363210
+  </p>
+<p><em>This Cookie Policy applies to the website at <a href="https://www.pfandco.co.uk">www.pfandco.co.uk</a>, operated by PF &amp; Co Holdings Ltd (trading as Site Intelligence).</em></p>
+</div>
+<div class="footer">
+<strong>PF &amp; Co Holdings Ltd</strong> | Company No. 16649319 | ICO Registration: C1899309<br/>
+  2 Queens Drive, Guildford, GU2 9PP | info@pfandco.co.uk | +44 1483 363210<br/>
+  Trading as <strong>Site Intelligence</strong><br/><br/>
+<em>This document is the property of PF &amp; Co Holdings Ltd. It is confidential and not intended for distribution without written approval.</em>
+</div>
+<button class="print-btn" onclick="window.print()">Print / Save PDF</button>
+</body>
+</html>

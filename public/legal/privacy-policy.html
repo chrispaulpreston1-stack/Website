@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+
+<html lang="en-GB">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GDPR-08 — Privacy Policy | PF &amp; Co Holdings Ltd</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+  :root {
+    --navy: #0f172a;
+    --slate: #1e293b;
+    --orange: #f97316;
+    --text: #f1f5f9;
+    --muted: #94a3b8;
+    --white: #ffffff;
+    --light-bg: #f8fafc;
+    --border: #e2e8f0;
+    --hunt-bg: #fce4ec;
+    --hunt-border: #e91e63;
+    --schneier-bg: #e3f2fd;
+    --schneier-border: #2196f3;
+    --janca-bg: #e8f5e9;
+    --janca-border: #4caf50;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Roboto', Arial, sans-serif;
+    color: #1a1a2e;
+    line-height: 1.7;
+    background: var(--white);
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Watermark removed - Final version */
+
+  .header {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--slate) 100%);
+    color: var(--text);
+    padding: 2.5rem 3rem;
+    position: relative;
+  }
+
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+  }
+
+  .brand {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 1.4rem;
+    letter-spacing: 0.5px;
+  }
+
+  .brand span { color: var(--orange); }
+
+  .draft-badge {
+    background: var(--orange);
+    color: var(--white);
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.4rem 1rem;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .doc-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+  }
+
+  .doc-subtitle {
+    color: var(--muted);
+    font-size: 1rem;
+    font-weight: 300;
+  }
+
+  .meta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.5rem 2rem;
+    background: rgba(255,255,255,0.05);
+    padding: 1rem 1.5rem;
+    border-radius: 6px;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .meta-grid dt { color: var(--muted); font-weight: 400; }
+  .meta-grid dd { color: var(--text); font-weight: 500; margin-bottom: 0.3rem; }
+
+  .content { max-width: 900px; margin: 0 auto; padding: 2rem 3rem 4rem; position: relative; z-index: 1; }
+
+  h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--navy);
+    margin: 2.5rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--orange);
+  }
+
+  h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--slate);
+    margin: 1.8rem 0 0.8rem;
+  }
+
+  p { margin-bottom: 1rem; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.2rem 0 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  thead th {
+    background: var(--navy);
+    color: var(--white);
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    text-align: left;
+    padding: 0.7rem 1rem;
+    font-size: 0.85rem;
+    letter-spacing: 0.3px;
+  }
+
+  tbody td {
+    padding: 0.7rem 1rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+
+  tbody tr:nth-child(even) { background: var(--light-bg); }
+
+  .security-note {
+    padding: 1rem 1.2rem;
+    margin: 1.5rem 0;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.9rem;
+  }
+
+  .security-note.hunt { background: var(--hunt-bg); border-left: 4px solid var(--hunt-border); }
+  .security-note.schneier { background: var(--schneier-bg); border-left: 4px solid var(--schneier-border); }
+  .security-note.janca { background: var(--janca-bg); border-left: 4px solid var(--janca-border); }
+
+  .security-note::before {
+    display: block;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    margin-bottom: 0.4rem;
+  }
+
+  .security-note.hunt::before { content: 'SECURITY — TROY HUNT (DATA BREACH)'; color: var(--hunt-border); }
+  .security-note.schneier::before { content: 'SECURITY — BRUCE SCHNEIER (ARCHITECTURE)'; color: var(--schneier-border); }
+  .security-note.janca::before { content: 'SECURITY — TANYA JANCA (SECURE CODE)'; color: var(--janca-border); }
+
+  ol, ul { margin: 0.5rem 0 1rem 1.5rem; }
+  li { margin-bottom: 0.4rem; }
+
+  .article-ref {
+    display: inline-block;
+    background: var(--navy);
+    color: var(--white);
+    font-size: 0.75rem;
+    font-family: 'Oswald', sans-serif;
+    padding: 0.15rem 0.5rem;
+    border-radius: 3px;
+    margin-left: 0.3rem;
+    vertical-align: middle;
+  }
+
+  .footer {
+    background: var(--navy);
+    color: var(--muted);
+    padding: 2rem 3rem;
+    font-size: 0.8rem;
+    text-align: center;
+    margin-top: 3rem;
+  }
+
+  .footer strong { color: var(--text); }
+
+  .print-btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: var(--orange);
+    color: var(--white);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(249,115,22,0.3);
+    z-index: 1000;
+    transition: background 0.2s;
+  }
+
+  .print-btn:hover { background: #ea580c; }
+
+  @media print {
+    .print-btn { display: none; }
+    body::before { display: none; }
+    .header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .content { padding: 1rem 0; }
+  }
+</style>
+</head>
+<body>
+<div class="header">
+<div class="header-top">
+<div class="brand">PF &amp; CO HOLDINGS LTD <span>| Site Intelligence</span></div>
+
+</div>
+<div class="doc-title">Privacy Policy</div>
+<div class="doc-subtitle">GDPR-08 | Public-Facing Privacy Policy for Website Deployment</div>
+<dl class="meta-grid">
+<dt>Document Reference</dt>
+<dd>GDPR-08-PP-2026-v1.0</dd>
+<dt>Data Controller</dt>
+<dd>PF &amp; Co Holdings Ltd (16649319)</dd>
+<dt>ICO Registration</dt>
+<dd>C1899309</dd>
+<dt>Classification</dt>
+<dd>Public — Approved</dd>
+<dt>Author</dt>
+<dd>Chris Preston, Director</dd>
+<dt>Last Updated</dt>
+<dd>31 March 2026</dd>
+<dt>Next Review</dt>
+<dd>31 March 2027</dd>
+<dt>Related Documents</dt>
+<dd>GDPR-01 (Retention), GDPR-02 (Erasure SOP), GDPR-04 (Sub-Processors), GDPR-06 (ROPA), GDPR-07 (Transfers), GDPR-09 (Cookies)</dd>
+</dl>
+</div>
+<div class="content">
+<!-- ============================================================ -->
+<!-- SECTION 1 — WHO WE ARE                                       -->
+<!-- ============================================================ -->
+<h2>1. Who We Are</h2>
+<p>PF &amp; Co Holdings Ltd is a technology and engineering holding company. We trade under the name <strong>Site Intelligence</strong> for our planning intelligence and engineering report products.</p>
+<p>Engineering services are delivered through our operating company, <strong>PF &amp; Co Construction Ltd</strong> (Company No. 12463571). PF &amp; Co Holdings Ltd is the <strong>data controller</strong> for all personal data we collect and process. This means we decide how and why your personal data is used.</p>
+<table>
+<thead>
+<tr>
+<th>Detail</th>
+<th>Information</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Registered company name</td>
+<td><strong>PF &amp; Co Holdings Ltd</strong></td>
+</tr>
+<tr>
+<td>Company number</td>
+<td>16649319</td>
+</tr>
+<tr>
+<td>Registered in</td>
+<td>England and Wales</td>
+</tr>
+<tr>
+<td>Registered office</td>
+<td>2 Queens Drive, Guildford, GU2 9PP</td>
+</tr>
+<tr>
+<td>Operating company</td>
+<td>PF &amp; Co Construction Ltd (12463571)</td>
+</tr>
+<tr>
+<td>Telephone</td>
+<td>+44 (0)1483 363210</td>
+</tr>
+<tr>
+<td>Email</td>
+<td>info@pfandco.co.uk</td>
+</tr>
+<tr>
+<td>Website</td>
+<td><a href="https://www.pfandco.co.uk">www.pfandco.co.uk</a></td>
+</tr>
+<tr>
+<td>ICO registration</td>
+<td>C1899309</td>
+</tr>
+</tbody>
+</table>
+<p>We are registered with the Information Commissioner's Office (ICO) under registration number <strong>C1899309</strong>, as required by the Data Protection Act 2018.</p>
+
+<!-- ============================================================ -->
+<!-- SECTION 2 — ABOUT THIS POLICY                                -->
+<!-- ============================================================ -->
+<h2>2. About This Policy</h2>
+<p>This Privacy Policy explains what personal data we collect, how we use it, who we share it with, how long we keep it, and what rights you have. It applies to:</p>
+<ul>
+<li>Clients and prospective clients</li>
+<li>Website visitors</li>
+<li>People whose data we obtain from publicly available sources as part of our engineering and planning work</li>
+<li>Third parties who correspond with us</li>
+</ul>
+<p>We have written this policy in plain English so that it is easy to understand. If you have any questions, please contact us using the details in Section 1.</p>
+<!-- ============================================================ -->
+<!-- SECTION 3 — WHAT PERSONAL DATA WE COLLECT                    -->
+<!-- ============================================================ -->
+<h2>3. What Personal Data We Collect</h2>
+<p>We collect different types of personal data depending on how you interact with us.</p>
+<h3>3.1 Client Contact Data</h3>
+<p>Your name, postal address, email address, telephone number, and any other contact details you provide when you instruct us or make an enquiry.</p>
+<h3>3.2 Project and Site Data</h3>
+<p>The address and location of the property or site you ask us to assess, including postcode, grid references, What3Words references, and any other site identification details. This may also include property ownership details, planning history, and building characteristics.</p>
+<h3>3.3 Site Photographs and Imagery</h3>
+<p>Photographs taken during site visits, which may include images of the property, its surroundings, and occasionally people present on or near the site. We may also obtain street-level imagery from Google Street View and Mapillary, and satellite imagery from Copernicus, to supplement our assessments.</p>
+<h3>3.4 Financial and Payment Data</h3>
+<p>Bank details, invoicing information, and payment records necessary to process fees for our services. Payment card data is collected and processed by our payment service providers (Stripe and GoCardless) and is never stored on our systems. See Section 10 for details.</p>
+<h3>3.5 Website Usage Data</h3>
+<p>Information about how you use our website, including pages visited, time spent on pages, and how you arrived at our site. This data is collected through cookies and similar technologies. See our Cookie Policy (GDPR-09) for details.</p>
+<h3>3.6 Marketing Consent Data</h3>
+<p>Records of any consent you have given or withdrawn for us to send you marketing communications.</p>
+<h3>3.7 Correspondence Data</h3>
+<p>Emails, letters, WhatsApp messages, and other communications between you and us relating to our services or your project.</p>
+<!-- ============================================================ -->
+<!-- SECTION 4 — HOW WE COLLECT YOUR DATA                         -->
+<!-- ============================================================ -->
+<h2>4. How We Collect Your Data</h2>
+<p>We collect personal data in the following ways:</p>
+<h3>4.1 Directly From You</h3>
+<p>When you contact us by telephone, email, WhatsApp, or through our website contact form; when you instruct us to carry out engineering or consultancy services; and when you visit our offices.</p>
+<h3>4.2 From Our Website</h3>
+<p>When you browse our website, submit a form, or interact with our online content. See our Cookie Policy (GDPR-09) for details of the cookies we use.</p>
+<h3>4.3 From Site Visits</h3>
+<p>When we visit a property or site to carry out surveys, inspections, or observations as part of our engineering services.</p>
+<h3>4.4 From Publicly Available Sources</h3>
+<p>As part of our engineering and planning intelligence work, we routinely obtain data from publicly available sources. Our automated enrichment pipeline gathers data from the following sources to inform our assessments and reports:</p>
+<table>
+<thead>
+<tr>
+<th>Data Source</th>
+<th>Data Obtained</th>
+<th>Licence / Basis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Local authority planning portals</strong></td>
+<td>Planning application history, officer reports, decision notices</td>
+<td>Public register (open data)</td>
+</tr>
+<tr>
+<td><strong>EPC Register</strong></td>
+<td>Energy Performance Certificate data</td>
+<td>Open Government Licence</td>
+</tr>
+<tr>
+<td><strong>British Geological Survey (BGS)</strong></td>
+<td>Geological data, borehole records, bedrock and superficial geology</td>
+<td>Open Government Licence</td>
+</tr>
+<tr>
+<td><strong>Environment Agency (EA)</strong></td>
+<td>Flood risk zones, surface water risk, historic flooding, LIDAR data</td>
+<td>Open Government Licence</td>
+</tr>
+<tr>
+<td><strong>Historic England</strong></td>
+<td>National Heritage List for England (listed buildings, scheduled monuments, conservation areas)</td>
+<td>Open Government Licence</td>
+</tr>
+<tr>
+<td><strong>Natural England</strong></td>
+<td>Ecological designations, SSSIs, Living England habitat data, agricultural land classification</td>
+<td>Open Government Licence</td>
+</tr>
+<tr>
+<td><strong>HM Land Registry</strong></td>
+<td>Title and ownership information (where commissioned by you), sold price data</td>
+<td>Open Government Licence / commissioned</td>
+</tr>
+<tr>
+<td><strong>Ordnance Survey (OS Data Hub)</strong></td>
+<td>Mapping data, basemaps for site location and constraint maps</td>
+<td>OS OpenData Licence / OS Data Hub API</td>
+</tr>
+<tr>
+<td><strong>National Biodiversity Network (NBN) Atlas</strong></td>
+<td>Species records and ecological data</td>
+<td>Open data (various licences)</td>
+</tr>
+<tr>
+<td><strong>PropertyData</strong></td>
+<td>Sold property comparables, market intelligence, area statistics</td>
+<td>Commercial licence</td>
+</tr>
+<tr>
+<td><strong>MapTiler</strong></td>
+<td>Mapping tiles for report visualisations</td>
+<td>Commercial licence</td>
+</tr>
+<tr>
+<td><strong>Copernicus / Sentinel</strong></td>
+<td>Satellite imagery for site context and environmental analysis</td>
+<td>EU Copernicus Open Licence</td>
+</tr>
+<tr>
+<td><strong>What3Words</strong></td>
+<td>Three-word address references for site identification</td>
+<td>Commercial API licence</td>
+</tr>
+<tr>
+<td><strong>NOMIS (ONS)</strong></td>
+<td>Census demographics, housing data, affordability ratios, employment data</td>
+<td>Open Government Licence</td>
+</tr>
+<tr>
+<td><strong>Department for Transport (DfT)</strong></td>
+<td>Road traffic count data (AADT, count points)</td>
+<td>Open Government Licence</td>
+</tr>
+<tr>
+<td><strong>DEFRA</strong></td>
+<td>Air quality background concentrations, MAGIC environmental data</td>
+<td>Open Government Licence</td>
+</tr>
+<tr>
+<td><strong>Coal Authority</strong></td>
+<td>Coal mining risk data and past mining activity</td>
+<td>Open Government Licence</td>
+</tr>
+<tr>
+<td><strong>Postcodes.io</strong></td>
+<td>Postcode lookups, ward, parish, constituency data</td>
+<td>Open data</td>
+</tr>
+<tr>
+<td><strong>Google Street View</strong></td>
+<td>Street-level imagery for site context</td>
+<td>Google Maps Platform licence</td>
+</tr>
+<tr>
+<td><strong>Mapillary</strong></td>
+<td>Street-level imagery (crowdsourced)</td>
+<td>CC BY-SA licence</td>
+</tr>
+</tbody>
+</table>
+<p>This data is used to inform our engineering assessments and reports. Where this data relates to your property or site, it forms part of the project record.</p>
+<h3>4.5 From Third-Party Referrals</h3>
+<p>When an architect, builder, planning consultant, or other professional refers you to us, they may provide us with your name, contact details, and basic project information.</p>
+<!-- ============================================================ -->
+<!-- SECTION 5 — WHY WE USE YOUR DATA AND OUR LEGAL BASIS         -->
+<!-- ============================================================ -->
+<h2>5. Why We Use Your Data and Our Legal Basis</h2>
+<p>Under the UK General Data Protection Regulation (UK GDPR), we must have a lawful basis for processing your personal data. The table below sets out each purpose for which we process data and the corresponding lawful basis.</p>
+<table>
+<thead>
+<tr>
+<th>Purpose</th>
+<th>Lawful Basis</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Providing engineering services</strong> — carrying out site feasibility assessments, planning intelligence reports, flood risk assessments, desk studies, structural design, and other services you commission</td>
+<td><strong>Contractual necessity</strong> <span class="article-ref">Art. 6(1)(b)</span></td>
+<td>We need to process your data to perform the contract we have with you, or to take steps at your request before entering into a contract</td>
+</tr>
+<tr>
+<td><strong>AI-assisted report preparation</strong> — using artificial intelligence tools to research publicly available data, draft report content, and format documents (see Section 6)</td>
+<td><strong>Contractual necessity</strong> <span class="article-ref">Art. 6(1)(b)</span> and <strong>Legitimate interests</strong> <span class="article-ref">Art. 6(1)(f)</span></td>
+<td>AI processing is integral to delivering the services you have commissioned. It is also in our legitimate interest to use efficient tools to deliver high-quality reports. This does not override your rights</td>
+</tr>
+<tr>
+<td><strong>Business administration</strong> — managing our files, scheduling, internal records, quality assurance, and project management</td>
+<td><strong>Legitimate interests</strong> <span class="article-ref">Art. 6(1)(f)</span></td>
+<td>It is in our legitimate interest to run our business efficiently. This does not override your rights</td>
+</tr>
+<tr>
+<td><strong>Financial and tax records</strong> — invoicing, payment processing, corporation tax records, and financial reporting</td>
+<td><strong>Legal obligation</strong> <span class="article-ref">Art. 6(1)(c)</span></td>
+<td>We are required by law to keep financial records under the Companies Act 2006 and HMRC requirements</td>
+</tr>
+<tr>
+<td><strong>CDM and building safety records</strong> — records required under the Construction (Design and Management) Regulations 2015 and the Building Safety Act 2022</td>
+<td><strong>Legal obligation</strong> <span class="article-ref">Art. 6(1)(c)</span></td>
+<td>We are required by law to create and retain certain health and safety records</td>
+</tr>
+<tr>
+<td><strong>Marketing communications</strong> — sending you information about our services, blog posts, or project updates</td>
+<td><strong>Consent</strong> <span class="article-ref">Art. 6(1)(a)</span> or <strong>Legitimate interests</strong> <span class="article-ref">Art. 6(1)(f)</span></td>
+<td>Where you have given consent, we rely on that consent. For existing clients, we may rely on legitimate interests to send relevant service information, with an easy opt-out in every communication</td>
+</tr>
+<tr>
+<td><strong>Website analytics</strong> — understanding how visitors use our website to improve our content and user experience</td>
+<td><strong>Legitimate interests</strong> <span class="article-ref">Art. 6(1)(f)</span></td>
+<td>It is in our legitimate interest to understand how our website is used so we can improve it. This does not override your rights</td>
+</tr>
+<tr>
+<td><strong>Responding to enquiries</strong> — replying to your questions, requests, or complaints</td>
+<td><strong>Legitimate interests</strong> <span class="article-ref">Art. 6(1)(f)</span> or <strong>Contractual necessity</strong> <span class="article-ref">Art. 6(1)(b)</span></td>
+<td>Depending on the nature of your enquiry, we process your data either to perform a contract or because it is in our legitimate interest to respond to communications</td>
+</tr>
+<tr>
+<td><strong>Professional indemnity insurance</strong> — providing information to our insurers in the event of a claim or potential claim</td>
+<td><strong>Legitimate interests</strong> <span class="article-ref">Art. 6(1)(f)</span></td>
+<td>It is in our legitimate interest to maintain insurance and defend claims. This does not override your rights</td>
+</tr>
+<tr>
+<td><strong>Legal claims</strong> — establishing, exercising, or defending legal claims</td>
+<td><strong>Legitimate interests</strong> <span class="article-ref">Art. 6(1)(f)</span></td>
+<td>It is in our legitimate interest to protect our legal rights</td>
+</tr>
+</tbody>
+</table>
+
+<!-- ============================================================ -->
+<!-- SECTION 6 — USE OF ARTIFICIAL INTELLIGENCE                   -->
+<!-- ============================================================ -->
+<h2>6. Use of Artificial Intelligence</h2>
+<p>This section explains how we use artificial intelligence (AI) tools in our work and what that means for your personal data.</p>
+<h3>6.1 How We Use AI</h3>
+<p>PF &amp; Co Holdings Ltd uses AI tools to assist in the preparation of planning intelligence reports, site feasibility assessments, and other technical documents. Our system operates <strong>68 specialised AI agents</strong>, each focused on a specific domain such as flood risk, heritage, ecology, transport, or market analysis. These agents research publicly available data, draft report content, and format documents to produce comprehensive assessments.</p>
+<p>AI is used at every stage of report production, from initial data gathering through to quality assurance. This enables us to deliver thorough, multi-disciplinary assessments that would otherwise require large teams of specialists.</p>
+<h3>6.2 What Data May Be Processed by AI</h3>
+<p>When we prepare reports and assessments for your project, the following types of data may be processed through AI systems:</p>
+<ul>
+<li>Your name and contact details (as they appear in the report)</li>
+<li>The property or site address, postcode, and geographic coordinates</li>
+<li>Site characteristics and project details (proposal description, dwelling count, floor areas)</li>
+<li>Data obtained from publicly available sources (planning history, geological data, flood risk data, heritage records, ecology, census demographics, market data)</li>
+<li>Site photographs and street-level imagery (for analysis and description)</li>
+</ul>
+<h3>6.3 Human Oversight</h3>
+<p><strong>All AI outputs are reviewed, verified, and approved by qualified professionals before any report is issued.</strong> AI tools do not make autonomous decisions about your project. Every assessment, conclusion, and recommendation in our reports reflects the professional judgment of the engineer or consultant responsible for your project.</p>
+<p>Our reports pass through a multi-layer quality assurance pipeline before issue, including automated compliance checks, cross-domain consistency validation, and human review.</p>
+<p>PF &amp; Co Holdings Ltd retains full professional responsibility for all deliverables, regardless of the tools used in their preparation.</p>
+<h3>6.4 Our AI Service Provider</h3>
+<p>Our primary AI service provider is <strong>Anthropic Inc.</strong>, based in San Francisco, United States. The classification of AI service providers under UK GDPR (whether they act as a "data processor" or a "joint controller") is an evolving area of law. The Information Commissioner's Office (ICO) has indicated that where an AI provider exercises a degree of independent determination over how data is processed, a joint controller relationship may exist under Article 26 of UK GDPR.</p>
+<p>We have taken the following steps to protect your data regardless of the precise legal classification:</p>
+<ul>
+<li>We have a Data Processing Addendum in place with Anthropic Inc. that includes the UK GDPR Approved Addendum for UK data transfers</li>
+<li>Anthropic Inc. is contractually required to implement appropriate security measures</li>
+<li>Anthropic Inc. has committed not to use your data for its own purposes, including training AI models</li>
+<li>Data submitted via the API is automatically deleted by Anthropic within 7 days</li>
+</ul>
+<p>We keep this position under review and will update our arrangements if the ICO issues definitive guidance or if our legal classification of Anthropic's role changes.</p>
+<h3>6.5 Data Protection Impact Assessment</h3>
+<p>We have conducted a <strong>Data Protection Impact Assessment (DPIA)</strong> for our use of AI tools in the preparation of engineering and planning intelligence reports, as required by Article 35 of UK GDPR where processing is likely to result in a high risk to individuals' rights and freedoms. The DPIA is documented internally as GDPR-11 and is reviewed annually. A summary of this assessment is available on request.</p>
+<h3>6.6 Your Rights Regarding AI Processing</h3>
+<p>You have the right to:</p>
+<ul>
+<li>Be informed that AI tools are used in our work (which this section provides)</li>
+<li>Request information about how AI was used in your specific project</li>
+<li>Object to the use of AI in your project, though this may affect our ability to deliver services within quoted timescales and fees</li>
+<li>Request human review of any AI-assisted output (which is already our standard practice)</li>
+</ul>
+<!-- ============================================================ -->
+<!-- SECTION 7 — HOW LONG WE KEEP YOUR DATA                      -->
+<!-- ============================================================ -->
+<h2>7. How Long We Keep Your Data</h2>
+<p>We keep your personal data only for as long as we need it. The retention periods below are based on legal requirements, professional obligations, and industry best practice. Full details are set out in our Data Retention Policy (GDPR-01), which is available on request.</p>
+<table>
+<thead>
+<tr>
+<th>Data Category</th>
+<th>Retention Period</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Engineering reports and calculations</td>
+<td><strong>15 years</strong> from project completion</td>
+<td>Limitation Act 1980, Latent Damage Act 1986 (15-year longstop), and Building Safety Act 2022</td>
+</tr>
+<tr>
+<td>Structural drawings</td>
+<td><strong>15 years</strong> from project completion</td>
+<td>As above</td>
+</tr>
+<tr>
+<td>Client contact details</td>
+<td>Duration of engagement <strong>plus 6 years</strong></td>
+<td>Contractual limitation period</td>
+</tr>
+<tr>
+<td>Site photographs</td>
+<td><strong>15 years</strong> from project completion</td>
+<td>May be relevant to latent damage claims</td>
+</tr>
+<tr>
+<td>Enrichment data (flood risk, geology, heritage, ecology, demographics, market data)</td>
+<td><strong>15 years</strong> from project completion</td>
+<td>Forms part of the engineering record; supports report conclusions</td>
+</tr>
+<tr>
+<td>Financial records (invoices, receipts)</td>
+<td><strong>6 years</strong> from end of financial year</td>
+<td>Companies Act 2006 and HMRC requirements</td>
+</tr>
+<tr>
+<td>CDM health and safety records</td>
+<td><strong>Life of the building</strong>, or 15 years if demolished</td>
+<td>CDM 2015 Regulation 12</td>
+</tr>
+<tr>
+<td>Building Safety Act records</td>
+<td><strong>30 years</strong> from project completion</td>
+<td>Building Safety Act 2022 retrospective limitation provisions</td>
+</tr>
+<tr>
+<td>Marketing consent records</td>
+<td>Duration of consent <strong>plus 2 years</strong></td>
+<td>Evidence of PECR compliance</td>
+</tr>
+<tr>
+<td>Website analytics data</td>
+<td><strong>26 months</strong></td>
+<td>ICO guidance on proportionate retention</td>
+</tr>
+<tr>
+<td>AI processing logs</td>
+<td><strong>6 years</strong> (our records); <strong>7 days</strong> (at Anthropic)</td>
+<td>Professional indemnity insurance claims period</td>
+</tr>
+<tr>
+<td>General correspondence</td>
+<td><strong>6 years</strong> from last communication</td>
+<td>Contractual limitation period</td>
+</tr>
+<tr>
+<td>Abandoned/cancelled projects (no report issued)</td>
+<td><strong>2 years</strong> from last client contact</td>
+<td>Limited ongoing legitimate interest in potential reactivation</td>
+</tr>
+<tr>
+<td>Demo/test projects (internal only)</td>
+<td><strong>30 days</strong> from creation</td>
+<td>No ongoing purpose; data minimisation</td>
+</tr>
+</tbody>
+</table>
+<p>When a retention period expires, we will securely delete or anonymise your data. Where data is held in both electronic and paper format, both copies will be dealt with.</p>
+<h3>7.1 Why We May Need to Keep Some Data Longer</h3>
+<p>Engineering records may need to be retained beyond the standard period if:</p>
+<ul>
+<li>A claim or dispute is ongoing or anticipated</li>
+<li>We are required to do so by a court order or regulatory body</li>
+<li>The records relate to a building that is still standing and subject to Building Safety Act provisions</li>
+<li>Our professional indemnity insurer requires retention for the duration of the policy</li>
+</ul>
+<!-- ============================================================ -->
+<!-- SECTION 8 — WHO WE SHARE YOUR DATA WITH                      -->
+<!-- ============================================================ -->
+<h2>8. Who We Share Your Data With</h2>
+<p>We do not sell your personal data. We share your data only where necessary and only with the recipients described below. A full, maintained register of our sub-processors is held internally as the Sub-Processor Register (GDPR-04) and is available on request.</p>
+<h3>8.1 Technology Service Providers</h3>
+<table>
+<thead>
+<tr>
+<th>Provider</th>
+<th>Location</th>
+<th>Purpose</th>
+<th>Safeguard</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Anthropic Inc.</strong></td>
+<td>United States</td>
+<td>AI-assisted report preparation (see Section 6)</td>
+<td>DPA with UK Addendum; data auto-deleted within 7 days</td>
+</tr>
+<tr>
+<td><strong>Stripe</strong></td>
+<td>United States</td>
+<td>Payment processing (see Section 10)</td>
+<td>UK-US Data Bridge; PCI DSS Level 1 certified</td>
+</tr>
+<tr>
+<td><strong>GoCardless</strong></td>
+<td>United Kingdom</td>
+<td>Direct debit payment processing (see Section 10)</td>
+<td>UK-based; FCA authorised</td>
+</tr>
+<tr>
+<td><strong>Resend</strong></td>
+<td>United States</td>
+<td>Transactional email delivery (see Section 11)</td>
+<td>DPA in place; UK-US Data Bridge</td>
+</tr>
+<tr>
+<td><strong>Vercel</strong></td>
+<td>United States</td>
+<td>Website hosting and analytics</td>
+<td>DPA in place; UK-US Data Bridge</td>
+</tr>
+<tr>
+<td><strong>ElevenLabs</strong></td>
+<td>United States</td>
+<td>Voice AI for audio content (blog narration only; no client data processed)</td>
+<td>DPA in place</td>
+</tr>
+</tbody>
+</table>
+<h3>8.2 Mapping and Imagery Providers</h3>
+<table>
+<thead>
+<tr>
+<th>Provider</th>
+<th>Location</th>
+<th>Purpose</th>
+<th>Safeguard</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ordnance Survey (OS Data Hub)</strong></td>
+<td>United Kingdom</td>
+<td>Mapping basemaps for site location and constraint maps</td>
+<td>UK-based; OS OpenData Licence</td>
+</tr>
+<tr>
+<td><strong>MapTiler</strong></td>
+<td>Luxembourg (EU)</td>
+<td>Mapping tiles for report visualisations</td>
+<td>EU-based; UK adequacy decision applies</td>
+</tr>
+<tr>
+<td><strong>Google Street View</strong></td>
+<td>United States</td>
+<td>Street-level imagery for site context photographs</td>
+<td>Google Maps Platform Terms; UK-US Data Bridge</td>
+</tr>
+<tr>
+<td><strong>Mapillary (Meta)</strong></td>
+<td>United States</td>
+<td>Street-level imagery (crowdsourced)</td>
+<td>DPA in place</td>
+</tr>
+<tr>
+<td><strong>Copernicus / Sentinel</strong></td>
+<td>European Union</td>
+<td>Satellite imagery for site context and environmental analysis</td>
+<td>EU-based; UK adequacy decision applies</td>
+</tr>
+</tbody>
+</table>
+<h3>8.3 Professional and Regulatory Recipients</h3>
+<table>
+<thead>
+<tr>
+<th>Recipient</th>
+<th>Purpose</th>
+<th>Basis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Building Control bodies</strong></td>
+<td>Where we submit structural calculations or reports on your behalf</td>
+<td>Legal obligation / contractual necessity</td>
+</tr>
+<tr>
+<td><strong>Local planning authorities</strong></td>
+<td>Where we submit planning documents on your behalf</td>
+<td>Legal obligation / contractual necessity</td>
+</tr>
+<tr>
+<td><strong>Professional indemnity insurers</strong></td>
+<td>In the event of a claim or potential claim against us</td>
+<td>Legitimate interests (defending legal claims)</td>
+</tr>
+<tr>
+<td><strong>Your other appointed professionals</strong></td>
+<td>Sharing project information with your architect, builder, or other consultants at your instruction</td>
+<td>Contractual necessity</td>
+</tr>
+<tr>
+<td><strong>Legal and professional advisers</strong></td>
+<td>Where we need legal or professional advice</td>
+<td>Legitimate interests</td>
+</tr>
+<tr>
+<td><strong>Law enforcement or regulators</strong></td>
+<td>Where we are required to do so by law</td>
+<td>Legal obligation</td>
+</tr>
+</tbody>
+</table>
+
+<!-- ============================================================ -->
+<!-- SECTION 9 — INTERNATIONAL DATA TRANSFERS                     -->
+<!-- ============================================================ -->
+<h2>9. International Data Transfers</h2>
+<p>Some of our service providers are based outside the United Kingdom. This means your personal data may be transferred internationally. The following providers involve transfers to countries outside the UK:</p>
+<table>
+<thead>
+<tr>
+<th>Provider</th>
+<th>Country</th>
+<th>Transfer Safeguard</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Anthropic Inc.</strong> (AI processing)</td>
+<td>United States</td>
+<td>UK Extension to the EU-US Data Privacy Framework ("UK-US Data Bridge") and/or Standard Contractual Clauses with UK Addendum; DPA in place</td>
+</tr>
+<tr>
+<td><strong>Stripe</strong> (payments)</td>
+<td>United States</td>
+<td>UK-US Data Bridge; Standard Contractual Clauses; PCI DSS Level 1</td>
+</tr>
+<tr>
+<td><strong>Resend</strong> (email)</td>
+<td>United States</td>
+<td>UK-US Data Bridge; DPA in place</td>
+</tr>
+<tr>
+<td><strong>Vercel</strong> (hosting)</td>
+<td>United States</td>
+<td>UK-US Data Bridge; DPA in place</td>
+</tr>
+<tr>
+<td><strong>Google</strong> (Street View)</td>
+<td>United States</td>
+<td>UK-US Data Bridge; Google Data Processing Terms</td>
+</tr>
+<tr>
+<td><strong>Mapillary / Meta</strong> (imagery)</td>
+<td>United States</td>
+<td>UK-US Data Bridge; DPA in place</td>
+</tr>
+<tr>
+<td><strong>ElevenLabs</strong> (voice AI)</td>
+<td>United States</td>
+<td>DPA in place (no client personal data processed)</td>
+</tr>
+<tr>
+<td><strong>MapTiler</strong> (mapping)</td>
+<td>Luxembourg (EU)</td>
+<td>UK adequacy decision for the EU (effective since 28 June 2021)</td>
+</tr>
+<tr>
+<td><strong>Copernicus</strong> (satellite)</td>
+<td>European Union</td>
+<td>UK adequacy decision for the EU</td>
+</tr>
+</tbody>
+</table>
+<p>Where we transfer data to the United States, we rely on one or more of the following safeguards:</p>
+<ul>
+<li><strong>UK Extension to the EU-US Data Privacy Framework</strong> (the "UK-US Data Bridge") — where the US provider is certified under the Data Privacy Framework, the UK Secretary of State has made a data bridge finding permitting these transfers</li>
+<li><strong>Standard Contractual Clauses</strong> (International Data Transfer Agreement or UK Addendum to EU SCCs) — approved contractual terms that provide appropriate safeguards under Article 46(2)(c) of UK GDPR</li>
+<li><strong>Data Processing Agreements</strong> — binding agreements that require the recipient to protect your data to UK GDPR standards</li>
+</ul>
+<p>Where we transfer data to the European Union, the UK government has made an <strong>adequacy decision</strong> under Section 17A of the Data Protection Act 2018, meaning no additional safeguards are required.</p>
+<p>We have conducted a Transfer Impact Assessment (documented internally as GDPR-07) for all international transfers. A copy of the safeguards we have in place is available on request by contacting us at the details set out in Section 1.</p>
+<!-- ============================================================ -->
+<!-- SECTION 10 — PAYMENT PROCESSING                              -->
+<!-- ============================================================ -->
+<h2>10. Payment Processing</h2>
+<p>We use third-party payment processors to handle payments for our services. We do not store your payment card details on our systems.</p>
+<h3>10.1 Stripe</h3>
+<p><strong>Stripe, Inc.</strong> (United States) processes card payments on our behalf. When you pay by credit or debit card, your card details are submitted directly to Stripe's secure payment infrastructure. Stripe is certified to <strong>PCI DSS Level 1</strong>, the highest level of payment card industry security. We receive only a confirmation of payment and a truncated card reference (last four digits) — we never see or store your full card number.</p>
+<p>Stripe's privacy policy: <a href="https://stripe.com/gb/privacy">stripe.com/gb/privacy</a></p>
+<h3>10.2 GoCardless</h3>
+<p><strong>GoCardless Ltd</strong> (United Kingdom) processes direct debit payments on our behalf. When you set up a direct debit, GoCardless collects your bank account details (sort code and account number) directly. GoCardless is authorised by the Financial Conduct Authority (FCA) under the Payment Services Regulations 2017. We receive confirmation of payment status but do not store your full bank account details.</p>
+<p>GoCardless's privacy policy: <a href="https://gocardless.com/privacy">gocardless.com/privacy</a></p>
+<h3>10.3 What Payment Data We Hold</h3>
+<p>We retain the following payment-related data for our own records:</p>
+<ul>
+<li>Your name and email address (for invoicing)</li>
+<li>Invoice amounts and dates</li>
+<li>Payment confirmation references</li>
+<li>Truncated card reference (last four digits) or direct debit mandate reference</li>
+</ul>
+<p>This data is retained for 6 years from the end of the financial year in which the transaction occurred, in accordance with our obligations under the Companies Act 2006 and HMRC requirements. See Section 7 and our Data Retention Policy (GDPR-01) for full details.</p>
+<!-- ============================================================ -->
+<!-- SECTION 11 — EMAIL SERVICE                                   -->
+<!-- ============================================================ -->
+<h2>11. Email Service</h2>
+<p>We use <strong>Resend</strong> (United States) to send transactional emails, including:</p>
+<ul>
+<li>Order confirmations and payment receipts</li>
+<li>Report delivery notifications</li>
+<li>Project status updates</li>
+<li>Responses to enquiries submitted through our website</li>
+</ul>
+<p>When we send you an email via Resend, your email address and the message content are processed by Resend's infrastructure. Resend acts as a data processor on our behalf under a Data Processing Agreement. Resend does not use your data for its own marketing purposes.</p>
+<p>We do not use Resend for marketing emails. Marketing communications (where you have opted in) are sent separately and always include an unsubscribe link.</p>
+<p>Resend's privacy policy: <a href="https://resend.com/legal/privacy-policy">resend.com/legal/privacy-policy</a></p>
+<!-- ============================================================ -->
+<!-- SECTION 12 — SITE PHOTOGRAPHY                                -->
+<!-- ============================================================ -->
+<h2>12. Site Photography</h2>
+<p>When we visit a site, we may take photographs for the purpose of our engineering assessment.</p>
+<h3>How We Handle Site Photographs</h3>
+<ul>
+<li>We photograph the property, its structure, and its surroundings for engineering purposes</li>
+<li>We avoid photographing identifiable individuals where possible</li>
+<li>Where people are visible in photographs, we will blur faces before the photographs are included in reports or shared externally, unless we have consent to include them</li>
+<li>We strip GPS metadata from photographs before they are shared externally, unless location data is necessary for the engineering assessment</li>
+<li>Vehicle registration plates visible in photographs will be obscured where reasonably practicable</li>
+<li>Site photographs are retained for the periods set out in Section 7</li>
+</ul>
+<h3>Photographs Used for Marketing</h3>
+<p>We may use anonymised site photographs (showing completed work, structural details, or construction processes, with no identifiable individuals) for our portfolio, website, or social media. We will always seek your permission before using photographs of your property for marketing purposes.</p>
+<!-- ============================================================ -->
+<!-- SECTION 13 — YOUR RIGHTS                                     -->
+<!-- ============================================================ -->
+<h2>13. Your Rights</h2>
+<p>Under UK GDPR, you have the following rights in relation to your personal data:</p>
+<h3>13.1 Right of Access <span class="article-ref">Art. 15</span></h3>
+<p>You have the right to request a copy of the personal data we hold about you. This is commonly known as a "Subject Access Request" (SAR). We will respond within one calendar month.</p>
+<h3>13.2 Right to Rectification <span class="article-ref">Art. 16</span></h3>
+<p>You have the right to ask us to correct any personal data that is inaccurate or to complete any data that is incomplete.</p>
+<h3>13.3 Right to Erasure <span class="article-ref">Art. 17</span></h3>
+<p>You have the right to ask us to delete your personal data. However, this right is not absolute. Please see Section 14 below for important information about how this right interacts with our professional record-keeping obligations.</p>
+<h3>13.4 Right to Restriction of Processing <span class="article-ref">Art. 18</span></h3>
+<p>You have the right to ask us to limit how we use your data in certain circumstances, for example while we are considering a request for rectification or an objection you have raised.</p>
+<h3>13.5 Right to Data Portability <span class="article-ref">Art. 20</span></h3>
+<p>Where we process your data on the basis of consent or contractual necessity, and the processing is carried out by automated means, you have the right to receive your data in a structured, commonly used, and machine-readable format.</p>
+<h3>13.6 Right to Object <span class="article-ref">Art. 21</span></h3>
+<p>You have the right to object to our processing of your personal data where we rely on legitimate interests as the lawful basis. We will stop processing unless we can demonstrate compelling legitimate grounds that override your interests, rights, and freedoms, or where the processing is necessary for legal claims.</p>
+<p>You have an absolute right to object to the use of your data for direct marketing at any time.</p>
+<h3>13.7 Right to Withdraw Consent</h3>
+<p>Where we process your data on the basis of your consent (for example, marketing communications), you have the right to withdraw that consent at any time. Withdrawal of consent does not affect the lawfulness of processing carried out before the withdrawal.</p>
+<h3>13.8 Rights Related to Automated Decision-Making</h3>
+<p>We do not make decisions based solely on automated processing that produce legal effects or similarly significantly affect you. Our AI-assisted report preparation always involves human review and oversight (see Section 6.3). You have the right to request human intervention in any assessment.</p>
+<h3>13.9 How to Exercise Your Rights</h3>
+<p>To exercise any of these rights, please contact us:</p>
+<ul>
+<li><strong>Email</strong>: info@pfandco.co.uk</li>
+<li><strong>Telephone</strong>: +44 (0)1483 363210</li>
+<li><strong>Post</strong>: PF &amp; Co Holdings Ltd, 2 Queens Drive, Guildford, GU2 9PP</li>
+</ul>
+<p>We will respond to your request within one calendar month. In exceptional circumstances, we may extend this by a further two months, but we will let you know within the first month if this is necessary and explain why.</p>
+<p>We will not charge a fee for responding to your request unless the request is manifestly unfounded or excessive, in which case we may charge a reasonable fee or refuse the request.</p>
+<!-- ============================================================ -->
+<!-- SECTION 14 — RIGHT TO ERASURE AND PROFESSIONAL RECORD-KEEPING -->
+<!-- ============================================================ -->
+<h2>14. Right to Erasure and Professional Record-Keeping</h2>
+<p>Engineering records serve an important public safety function. We want to be transparent about situations where we may need to retain project data even after you request its deletion.</p>
+<p>Under Article 17(3) of the UK GDPR, the right to erasure does not apply where processing is necessary for:</p>
+<ul>
+<li><strong>The establishment, exercise, or defence of legal claims</strong> (Article 17(3)(e)) — Engineering defects can emerge years or even decades after construction. We retain project records for the limitation periods set out in Section 7 so that we can respond to any claims or enquiries about our work.</li>
+<li><strong>Compliance with a legal obligation</strong> (Article 17(3)(b)) — Certain records must be kept under the Construction (Design and Management) Regulations 2015, the Building Safety Act 2022, and tax legislation.</li>
+</ul>
+<h3>What Happens If You Request Erasure</h3>
+<p>If you ask us to delete your personal data, we will:</p>
+<ol>
+<li><strong>Delete</strong> any marketing and contact data that we do not need for ongoing legal or professional purposes</li>
+<li><strong>Restrict processing</strong> of project data that we are required to retain — this means we will store it securely but will not actively use it</li>
+<li><strong>Inform you</strong> in writing which data has been deleted and which data we are retaining, together with the reasons and the date on which we expect to be able to delete it</li>
+<li><strong>Set a review date</strong> and delete the retained data as soon as the retention period expires</li>
+</ol>
+<p>Full details of our erasure procedure are documented in our Erasure SOP (GDPR-02), which is available on request.</p>
+<!-- ============================================================ -->
+<!-- SECTION 15 — CHILDREN'S DATA                                 -->
+<!-- ============================================================ -->
+<h2>15. Children's Data</h2>
+<p>Our services are directed at adults. We do not knowingly collect personal data from children under the age of 13. If you believe we have inadvertently collected data from a child under 13, please contact us and we will delete it promptly.</p>
+<!-- ============================================================ -->
+<!-- SECTION 16 — COOKIES                                         -->
+<!-- ============================================================ -->
+<h2>16. Cookies</h2>
+<p>Our website uses cookies and similar technologies. For full details of the cookies we use, their purposes, and how to manage your cookie preferences, please see our Cookie Policy (GDPR-09), available on our website.</p>
+<!-- ============================================================ -->
+<!-- SECTION 17 — HOW TO COMPLAIN                                 -->
+<!-- ============================================================ -->
+<h2>17. How to Complain</h2>
+<p>If you are unhappy with how we have handled your personal data, you have the right to complain to the Information Commissioner's Office (ICO):</p>
+<ul>
+<li><strong>Website</strong>: <a href="https://ico.org.uk">ico.org.uk</a></li>
+<li><strong>Helpline</strong>: 0303 123 1113</li>
+<li><strong>Post</strong>: Information Commissioner's Office, Wycliffe House, Water Lane, Wilmslow, Cheshire SK9 5AF</li>
+</ul>
+<p>We would appreciate the opportunity to address your concerns before you contact the ICO. Please contact us first using the details in Section 1, and we will do our best to resolve the matter.</p>
+<!-- ============================================================ -->
+<!-- SECTION 18 — CHANGES TO THIS POLICY                          -->
+<!-- ============================================================ -->
+<h2>18. Changes to This Policy</h2>
+<p>We review this Privacy Policy at least once a year to ensure it remains accurate and up to date. If we make significant changes, we will update the "Last updated" date at the top of this page.</p>
+<p>Where changes are material (for example, a new category of data sharing or a change to our lawful basis for processing), we will take reasonable steps to notify affected individuals, such as posting a notice on our website or, where appropriate, contacting you directly.</p>
+<!-- ============================================================ -->
+<!-- SECTION 19 — CONTACT US                                      -->
+<!-- ============================================================ -->
+<h2>19. Contact Us</h2>
+<p>For any questions about this Privacy Policy or how we handle your personal data, please contact:</p>
+<p>
+<strong>Data Protection Enquiries</strong><br/>
+    PF &amp; Co Holdings Ltd<br/>
+    2 Queens Drive, Guildford, GU2 9PP
+  </p>
+<p>
+<strong>Email</strong>: info@pfandco.co.uk<br/>
+<strong>Telephone</strong>: +44 (0)1483 363210<br/>
+<strong>Website</strong>: <a href="https://www.pfandco.co.uk">www.pfandco.co.uk</a>
+</p>
+<p><em>This Privacy Policy applies to PF &amp; Co Holdings Ltd (trading as Site Intelligence), with engineering services delivered through PF &amp; Co Construction Ltd (Company No. 12463571). It does not cover third-party websites linked from our site — please refer to their own privacy policies.</em></p>
+</div>
+<div class="footer">
+<strong>PF &amp; Co Holdings Ltd</strong> | Company No. 16649319 | ICO Registration: C1899309<br/>
+  2 Queens Drive, Guildford, GU2 9PP | info@pfandco.co.uk | +44 1483 363210<br/>
+  Trading as <strong>Site Intelligence</strong> | Operating company: PF &amp; Co Construction Ltd (12463571)<br/><br/>
+<em>This document is the property of PF &amp; Co Holdings Ltd. It is confidential and not intended for distribution without written approval.</em>
+</div>
+<button class="print-btn" onclick="window.print()">Print / Save PDF</button>
+</body>
+</html>

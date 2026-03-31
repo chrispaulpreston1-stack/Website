@@ -31,7 +31,6 @@ const OrderPage = lazy(() => import('./pages/new/OrderPage'));
 const BlogArticle = lazy(() => import('./pages/BlogArticle'));
 const OrderReport = lazy(() => import('./pages/OrderReport'));
 const OrderSuccess = lazy(() => import('./pages/OrderSuccess'));
-const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
 const TermsOfService = lazy(() => import('./pages/TermsOfService'));
 
 /* ------------------------------------------------------------------ */
@@ -42,6 +41,14 @@ const LoadingSpinner = () => (
     <div className="w-8 h-8 border-3 border-[#27ae60] border-t-transparent rounded-full animate-spin" />
   </div>
 );
+
+/* ------------------------------------------------------------------ */
+/*  Redirect to static file (for legal pages served from public/)      */
+/* ------------------------------------------------------------------ */
+function RedirectToStatic({ url }: { url: string }) {
+  useEffect(() => { window.location.href = url; }, [url]);
+  return <LoadingSpinner />;
+}
 
 /* ------------------------------------------------------------------ */
 /*  NAV LINKS                                                          */
@@ -230,9 +237,12 @@ function Footer() {
               ))}
               <div className="mt-4 pt-3 border-t border-white/[0.06] flex flex-col">
                 <span className="text-[0.6875rem] font-semibold uppercase tracking-wider text-[#4b5563] mb-1">Legal</span>
-                <Link to="/privacy-policy" className="py-1.5 text-sm text-[#6b7280] hover:text-white transition-colors">
+                <a href="/legal/privacy-policy.html" className="py-1.5 text-sm text-[#6b7280] hover:text-white transition-colors">
                   Privacy Policy
-                </Link>
+                </a>
+                <a href="/legal/cookie-policy.html" className="py-1.5 text-sm text-[#6b7280] hover:text-white transition-colors">
+                  Cookie Policy
+                </a>
                 <Link to="/terms-of-service" className="py-1.5 text-sm text-[#6b7280] hover:text-white transition-colors">
                   Terms of Service
                 </Link>
@@ -289,7 +299,9 @@ export default function AppRedesign() {
                 <Route path="/order" element={<OrderPage />} />
                 <Route path="/order-report" element={<OrderReport />} />
                 <Route path="/order-success" element={<OrderSuccess />} />
-                <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                <Route path="/privacy-policy" element={<RedirectToStatic url="/legal/privacy-policy.html" />} />
+                <Route path="/cookie-policy" element={<RedirectToStatic url="/legal/cookie-policy.html" />} />
+                <Route path="/cookies" element={<RedirectToStatic url="/legal/cookie-policy.html" />} />
                 <Route path="/terms-of-service" element={<TermsOfService />} />
 
                 {/* --- Redirects --- */}
