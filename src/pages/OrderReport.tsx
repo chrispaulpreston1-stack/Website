@@ -332,9 +332,9 @@ const OrderReport = () => {
                 <div>
                   <h3 className="font-bold text-brand-primary text-sm mb-1">AI-Assisted Reports</h3>
                   <p className="text-xs text-brand-primary/60 leading-relaxed">
-                    Our reports are produced using a multi-agent AI system that interrogates 60+ authoritative data sources,
-                    with every output reviewed through a 24-category QA pipeline and engineering oversight.{' '}
-                    <a href="/ai-compliance" className="text-brand-accent font-medium hover:underline">Learn more about our AI methodology.</a>
+                    Our reports are produced using an AI-assisted system that interrogates 80+ authoritative data sources,
+                    with every output reviewed through 200+ automated quality checks and engineering oversight.{' '}
+                    <a href="/trust" className="text-brand-accent font-medium hover:underline">Learn more about our methodology.</a>
                   </p>
                 </div>
               </div>
