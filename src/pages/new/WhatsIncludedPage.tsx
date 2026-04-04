@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import {
   Star,
@@ -61,6 +62,7 @@ interface ReportItem {
   desc: string;
   trigger?: string;
   intel?: string;
+  article?: string;
 }
 
 const alwaysIncluded: ReportItem[] = [
@@ -69,15 +71,15 @@ const alwaysIncluded: ReportItem[] = [
   { icon: <Map size={18} />, name: 'Phase 1 Contaminated Land', desc: 'BGS geology, historic land use, contamination risk assessment', intel: 'BGS geology + borehole records + historic land use + EA contaminated land register + 6 geohazard categories' },
   { icon: <Layers size={18} />, name: 'Geotechnical Desk Study', desc: 'Ground conditions, shrink-swell, made ground assessment', intel: 'BGS bedrock + superficial geology + GeoSure hazards + radon data + borehole logs + SOILSCAPES' },
   { icon: <Leaf size={18} />, name: 'Preliminary Ecological Appraisal', desc: 'Desktop ecology screening, designated sites, habitat mapping', intel: 'SSSI Impact Risk Zones + priority habitats + NBN species records + CIEEM methodology + NE standing advice' },
-  { icon: <Trees size={18} />, name: 'BNG Screening Statement', desc: 'Biodiversity net gain baseline assessment', intel: 'Priority Habitat Inventory + habitat mapping + Environment Act 2021 provisions + BNG Metric guidance' },
+  { icon: <Trees size={18} />, name: 'BNG Screening Statement', desc: 'Biodiversity net gain baseline assessment', intel: 'Priority Habitat Inventory + habitat mapping + Environment Act 2021 provisions + BNG Metric guidance', article: '/insights/bng-first-year-mandatory-biodiversity-net-gain' },
   { icon: <Calculator size={18} />, name: 'CIL Liability Assessment', desc: 'Community Infrastructure Levy calculation and exemptions', intel: "Your LPA's published charging schedule + indexation + exemption analysis + S106 obligation scan" },
   { icon: <LayoutGrid size={18} />, name: 'Executive Summaries', desc: 'Developer, Architect, Technical, Finance, and Risk overviews -- the 5-minute read' },
   { icon: <ArrowDown size={18} />, name: 'Next Steps', desc: 'Clear action plan -- what to do, who to hire, what to commission next' },
 ];
 
 const triggeredReports: ReportItem[] = [
-  { icon: <Droplets size={18} />, name: 'Flood Risk Assessment', desc: 'Sequential test, exception test, mitigation strategy', trigger: 'Flood Zone 2/3 or site over 1 hectare', intel: 'EA flood maps + surface water + reservoir risk + climate change allowances + appeal Sequential Test decisions' },
-  { icon: <Landmark size={18} />, name: 'Heritage Statement', desc: 'Significance assessment and impact on setting', trigger: 'Listed building, conservation area, or heritage setting', intel: 'NHLE database + conservation areas + Historic England GPA3 methodology + 850+ appeal precedents on heritage harm' },
+  { icon: <Droplets size={18} />, name: 'Flood Risk Assessment', desc: 'Sequential test, exception test, mitigation strategy', trigger: 'Flood Zone 2/3 or site over 1 hectare', intel: 'EA flood maps + surface water + reservoir risk + climate change allowances + appeal Sequential Test decisions', article: '/insights/flood-risk-assessment-complete-guide' },
+  { icon: <Landmark size={18} />, name: 'Heritage Statement', desc: 'Significance assessment and impact on setting', trigger: 'Listed building, conservation area, or heritage setting', intel: 'NHLE database + conservation areas + Historic England GPA3 methodology + 850+ appeal precedents on heritage harm', article: '/insights/heritage-harm-balancing-exercise-case-law' },
   { icon: <Bus size={18} />, name: 'Transport Statement', desc: 'Trip generation, access, parking, sustainability', trigger: '10+ dwellings', intel: 'DfT traffic counts + STATS19 accidents + bus/rail timetables + Manual for Streets + LTN 1/20' },
   { icon: <BarChart3 size={18} />, name: 'Drainage Strategy', desc: 'SuDS hierarchy, attenuation, discharge rates', trigger: 'Major development' },
   { icon: <Wind size={18} />, name: 'Air Quality Assessment', desc: 'Exposure assessment, mitigation measures', trigger: 'Near Air Quality Management Area' },
@@ -135,6 +137,11 @@ function ReportCard({ item, accent }: { item: ReportItem; accent: 'green' | 'blu
       {item.intel && (
         <div className="mt-2 pt-2 border-t border-[#f0f1f5] text-[0.7rem] text-[#9ca3af] leading-relaxed">
           <span className="font-semibold text-[#b0b8cc]">Draws from:</span> {item.intel}
+          {item.article && (
+            <Link to={item.article} className="block mt-1.5 text-[#27ae60] font-semibold hover:underline" onClick={(e) => e.stopPropagation()}>
+              Read our guide &rarr;
+            </Link>
+          )}
         </div>
       )}
     </motion.div>

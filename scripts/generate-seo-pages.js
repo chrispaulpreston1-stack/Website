@@ -360,6 +360,12 @@ function generate() {
   const allRoutes = [...routes, ...blogRoutes];
   console.log(`SEO: Found ${blogRoutes.length} blog articles to pre-render`);
 
+  // Safety check: blog count should never drop unexpectedly
+  if (blogRoutes.length < 3) {
+    console.error(`SEO WARNING: Only ${blogRoutes.length} blog routes found — regex may be broken. Expected 3+.`);
+    console.error('Check that blogPosts.ts slug/title/excerpt/image fields match the regex pattern.');
+  }
+
   for (const route of allRoutes) {
     // Skip homepage — it's already index.html
     if (route.path === '/') {
