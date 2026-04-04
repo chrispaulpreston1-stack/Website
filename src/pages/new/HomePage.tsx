@@ -67,22 +67,25 @@ const FadeUp = ({
 /*  Stats data                                                         */
 /* ------------------------------------------------------------------ */
 const stats = [
-  { end: 76, suffix: '+', label: 'Data sources & APIs' },
+  { end: 80, suffix: '+', label: 'Data sources & APIs' },
   { end: 48, suffix: 'hr', label: 'Turnaround' },
-  { end: 650, suffix: '+', label: 'Verified case law refs' },
-  { end: 34, suffix: '+', label: 'QA pipeline layers' },
-  { end: 302, suffix: '', label: 'LPAs covered' },
+  { end: 850, suffix: '+', label: 'Verified case law refs' },
+  { end: 200, suffix: '+', label: 'Automated quality checks' },
+  { end: 307, suffix: '', label: 'LPAs covered' },
 ];
 
 const dataBadges = [
   'Environment Agency',
   'British Geological Survey',
   'Historic England',
+  'Natural England',
   'DEFRA',
   'Ordnance Survey',
-  'Office for National Statistics',
-  'Natural England',
+  'Dept for Transport',
   'HM Land Registry',
+  'Coal Authority',
+  'ONS',
+  'Planning Data (DLUHC)',
 ];
 
 /* ------------------------------------------------------------------ */
@@ -375,7 +378,7 @@ export default function HomePage() {
     <>
       <Helmet>
         <title>Site Intelligence | Planning Reports in 48 Hours</title>
-        <meta name="description" content="Complete planning intelligence for any development site in England. 76+ data sources, 34-layer QA, 48-hour delivery. From £199." />
+        <meta name="description" content="Complete planning intelligence for any development site in England. 80+ data sources, 200+ automated quality checks, 48-hour delivery. From £199." />
         <meta property="og:title" content="Site Intelligence | Planning Reports in 48 Hours" />
         <meta property="og:description" content="Every desktop planning report your application needs, delivered in 48 hours." />
         <meta property="og:type" content="website" />
@@ -391,7 +394,7 @@ export default function HomePage() {
                 "name": "What is Site Intelligence?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Site Intelligence is a planning intelligence service that delivers complete desktop planning reports for any development site in England within 48 hours. We cover all 302 Local Planning Authorities and generate up to 36+ reports per site, from feasibility and flood risk to heritage, ecology, transport, and contaminated land."
+                  "text": "Site Intelligence is a planning intelligence service that delivers complete desktop planning reports for any development site in England within 48 hours. We cover all 307 Local Planning Authorities and generate up to 38+ reports per site, from feasibility and flood risk to heritage, ecology, transport, and contaminated land."
                 }
               },
               {
@@ -399,7 +402,7 @@ export default function HomePage() {
                 "name": "How long does a planning feasibility report take?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Our Feasibility Intelligence pack is delivered within 48 hours of ordering. Site Screening reports are delivered same-day. We use 76+ authoritative government data sources and automated analysis to deliver reports significantly faster than traditional consultants, who typically take 8\u201312 weeks."
+                  "text": "Our Feasibility Intelligence pack is delivered within 48 hours of ordering. Site Screening reports are delivered same-day. We use 80+ authoritative government data sources and automated analysis to deliver reports significantly faster than traditional consultants, who typically take 8\u201312 weeks."
                 }
               },
               {
@@ -423,7 +426,7 @@ export default function HomePage() {
                 "name": "Do you cover my area in England?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Yes. We cover every site in England across all 302 Local Planning Authorities. Our data sources include the Environment Agency, British Geological Survey, Historic England, Natural England, DEFRA, Ordnance Survey, ONS, and HM Land Registry."
+                  "text": "Yes. We cover every site in England across all 307 Local Planning Authorities. Our data sources include the Environment Agency, British Geological Survey, Historic England, Natural England, DEFRA, Ordnance Survey, ONS, and HM Land Registry."
                 }
               }
             ]
@@ -481,12 +484,12 @@ export default function HomePage() {
           >
             <span className="flex items-center gap-2 text-[#b0b8cc]/60 text-xs sm:text-[0.85rem]">
               <Star size={14} className="text-[#27ae60]/60 shrink-0" fill="rgba(39,174,96,0.6)" />
-              76+ data sources
+              80+ data sources
             </span>
             <span className="hidden sm:block w-px h-4 bg-white/10" />
             <span className="flex items-center gap-2 text-[#b0b8cc]/60 text-xs sm:text-[0.85rem]">
               <CheckCircle2 size={14} className="text-[#27ae60]/60 shrink-0" />
-              34-layer QA
+              200+ automated quality checks
             </span>
             <span className="hidden sm:block w-px h-4 bg-white/10" />
             <span className="flex items-center gap-2 text-[#b0b8cc]/60 text-xs sm:text-[0.85rem]">
@@ -527,7 +530,7 @@ export default function HomePage() {
                 icon: <ShieldCheck size={36} />,
                 num: 2,
                 title: 'We detect constraints automatically',
-                desc: 'Our system cross-references 76+ authoritative data sources and 34 constraint checkers to determine exactly what your site needs.',
+                desc: 'Our system cross-references 80+ authoritative data sources and runs 200+ quality checks to determine exactly what your site needs.',
               },
               {
                 icon: <FileText size={36} />,

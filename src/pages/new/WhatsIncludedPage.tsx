@@ -60,24 +60,25 @@ interface ReportItem {
   name: string;
   desc: string;
   trigger?: string;
+  intel?: string;
 }
 
 const alwaysIncluded: ReportItem[] = [
-  { icon: <Star size={18} />, name: 'Site Feasibility Report', desc: 'Complete site appraisal with constraints, opportunities, and risks' },
-  { icon: <FileText size={18} />, name: 'Client Decision Pack', desc: 'Options, viability overview, and recommendation' },
-  { icon: <Map size={18} />, name: 'Phase 1 Contaminated Land', desc: 'BGS geology, historic land use, contamination risk assessment' },
-  { icon: <Layers size={18} />, name: 'Geotechnical Desk Study', desc: 'Ground conditions, shrink-swell, made ground assessment' },
-  { icon: <Leaf size={18} />, name: 'Preliminary Ecological Appraisal', desc: 'Desktop ecology screening, designated sites, habitat mapping' },
-  { icon: <Trees size={18} />, name: 'BNG Screening Statement', desc: 'Biodiversity net gain baseline assessment' },
-  { icon: <Calculator size={18} />, name: 'CIL Liability Assessment', desc: 'Community Infrastructure Levy calculation and exemptions' },
+  { icon: <Star size={18} />, name: 'Site Feasibility Report', desc: 'Complete site appraisal with constraints, opportunities, and risks', intel: 'All constraint data + development economics + comparable sales + LPA decision patterns + appeal risk analysis' },
+  { icon: <FileText size={18} />, name: 'Client Decision Pack', desc: 'Options, viability overview, and recommendation', intel: 'BCIS-informed costings + Land Registry comparables + cross-domain risk intelligence' },
+  { icon: <Map size={18} />, name: 'Phase 1 Contaminated Land', desc: 'BGS geology, historic land use, contamination risk assessment', intel: 'BGS geology + borehole records + historic land use + EA contaminated land register + 6 geohazard categories' },
+  { icon: <Layers size={18} />, name: 'Geotechnical Desk Study', desc: 'Ground conditions, shrink-swell, made ground assessment', intel: 'BGS bedrock + superficial geology + GeoSure hazards + radon data + borehole logs + SOILSCAPES' },
+  { icon: <Leaf size={18} />, name: 'Preliminary Ecological Appraisal', desc: 'Desktop ecology screening, designated sites, habitat mapping', intel: 'SSSI Impact Risk Zones + priority habitats + NBN species records + CIEEM methodology + NE standing advice' },
+  { icon: <Trees size={18} />, name: 'BNG Screening Statement', desc: 'Biodiversity net gain baseline assessment', intel: 'Priority Habitat Inventory + habitat mapping + Environment Act 2021 provisions + BNG Metric guidance' },
+  { icon: <Calculator size={18} />, name: 'CIL Liability Assessment', desc: 'Community Infrastructure Levy calculation and exemptions', intel: "Your LPA's published charging schedule + indexation + exemption analysis + S106 obligation scan" },
   { icon: <LayoutGrid size={18} />, name: 'Executive Summaries', desc: 'Developer, Architect, Technical, Finance, and Risk overviews -- the 5-minute read' },
   { icon: <ArrowDown size={18} />, name: 'Next Steps', desc: 'Clear action plan -- what to do, who to hire, what to commission next' },
 ];
 
 const triggeredReports: ReportItem[] = [
-  { icon: <Droplets size={18} />, name: 'Flood Risk Assessment', desc: 'Sequential test, exception test, mitigation strategy', trigger: 'Flood Zone 2/3 or site over 1 hectare' },
-  { icon: <Landmark size={18} />, name: 'Heritage Statement', desc: 'Significance assessment and impact on setting', trigger: 'Listed building, conservation area, or heritage setting' },
-  { icon: <Bus size={18} />, name: 'Transport Statement', desc: 'Trip generation, access, parking, sustainability', trigger: '10+ dwellings' },
+  { icon: <Droplets size={18} />, name: 'Flood Risk Assessment', desc: 'Sequential test, exception test, mitigation strategy', trigger: 'Flood Zone 2/3 or site over 1 hectare', intel: 'EA flood maps + surface water + reservoir risk + climate change allowances + appeal Sequential Test decisions' },
+  { icon: <Landmark size={18} />, name: 'Heritage Statement', desc: 'Significance assessment and impact on setting', trigger: 'Listed building, conservation area, or heritage setting', intel: 'NHLE database + conservation areas + Historic England GPA3 methodology + 850+ appeal precedents on heritage harm' },
+  { icon: <Bus size={18} />, name: 'Transport Statement', desc: 'Trip generation, access, parking, sustainability', trigger: '10+ dwellings', intel: 'DfT traffic counts + STATS19 accidents + bus/rail timetables + Manual for Streets + LTN 1/20' },
   { icon: <BarChart3 size={18} />, name: 'Drainage Strategy', desc: 'SuDS hierarchy, attenuation, discharge rates', trigger: 'Major development' },
   { icon: <Wind size={18} />, name: 'Air Quality Assessment', desc: 'Exposure assessment, mitigation measures', trigger: 'Near Air Quality Management Area' },
   { icon: <Volume2 size={18} />, name: 'Noise Impact Assessment', desc: 'Noise climate, mitigation, internal levels', trigger: 'Near road, rail, or commercial noise' },
@@ -131,6 +132,11 @@ function ReportCard({ item, accent }: { item: ReportItem; accent: 'green' | 'blu
           {item.trigger}
         </span>
       )}
+      {item.intel && (
+        <div className="mt-2 pt-2 border-t border-[#f0f1f5] text-[0.7rem] text-[#9ca3af] leading-relaxed">
+          <span className="font-semibold text-[#b0b8cc]">Draws from:</span> {item.intel}
+        </div>
+      )}
     </motion.div>
   );
 }
@@ -157,10 +163,10 @@ export default function WhatsIncludedPage() {
   return (
     <>
       <Helmet>
-        <title>What's Included | 36+ Planning Reports Tailored to Your Site</title>
-        <meta name="description" content="36+ desktop planning reports auto-selected by your site constraints. Flood risk, heritage, ecology, transport, contamination and more. 76+ data sources." />
+        <title>What's Included | 38+ Planning Reports Tailored to Your Site</title>
+        <meta name="description" content="38+ desktop planning reports auto-selected by your site constraints. Flood risk, heritage, ecology, transport, contamination and more. 80+ data sources." />
         <meta property="og:title" content="What's Included — Site Intelligence" />
-        <meta property="og:description" content="36+ reports tailored to your site. Constraint-triggered selection from 76+ data sources." />
+        <meta property="og:description" content="38+ reports tailored to your site. Constraint-triggered selection from 80+ data sources." />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://www.pfandco.co.uk/og-image.png" />
         <link rel="canonical" href="https://www.pfandco.co.uk/whats-included" />
@@ -174,7 +180,7 @@ export default function WhatsIncludedPage() {
                 "name": "How many reports do I get?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Up to 36+ reports, tailored to your site. You always receive the core reports (feasibility, contaminated land, geotechnical, ecology, BNG, CIL, executive summaries). Additional reports are triggered automatically when your site\u2019s constraints require them."
+                  "text": "Up to 38+ reports, tailored to your site. You always receive the core reports (feasibility, contaminated land, geotechnical, ecology, BNG, CIL, executive summaries). Additional reports are triggered automatically when your site\u2019s constraints require them."
                 }
               },
               {
@@ -182,7 +188,7 @@ export default function WhatsIncludedPage() {
                 "name": "What data sources do you use?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "We draw from 76+ authoritative government sources including the Environment Agency, British Geological Survey, Historic England, Natural England, DEFRA, Ordnance Survey, ONS, DfT, and HM Land Registry."
+                  "text": "We draw from 80+ authoritative government sources including the Environment Agency, British Geological Survey, Historic England, Natural England, DEFRA, Ordnance Survey, ONS, DfT, and HM Land Registry."
                 }
               },
               {
@@ -198,7 +204,7 @@ export default function WhatsIncludedPage() {
                 "name": "What is a constraint-triggered report?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "When you order a pack, our system analyses your site against 76+ data sources and automatically determines which reports are needed. For example, a site near a listed building triggers a heritage impact assessment; a site in Flood Zone 2 or 3 triggers a sequential test and flood risk assessment. You never choose individual reports \u2014 you choose a product and get everything your site requires."
+                  "text": "When you order a pack, our system analyses your site against 80+ data sources and automatically determines which reports are needed. For example, a site near a listed building triggers a heritage impact assessment; a site in Flood Zone 2 or 3 triggers a sequential test and flood risk assessment. You never choose individual reports \u2014 you choose a product and get everything your site requires."
                 }
               },
               {
@@ -258,7 +264,7 @@ export default function WhatsIncludedPage() {
           </FadeUp>
           <FadeUp delay={0.2}>
             <div className="mt-8">
-              <span className="inline-block text-6xl md:text-7xl font-extrabold text-[#27ae60] leading-none">36+</span>
+              <span className="inline-block text-6xl md:text-7xl font-extrabold text-[#27ae60] leading-none">38+</span>
               <br />
               <span className="text-sm text-[#8892a8] uppercase tracking-widest font-semibold">Reports available, tailored to your site</span>
             </div>

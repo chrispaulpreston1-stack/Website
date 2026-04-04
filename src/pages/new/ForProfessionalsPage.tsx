@@ -69,7 +69,7 @@ const valueCards = [
   {
     icon: <ShieldCheck size={28} />,
     title: 'Consistent quality',
-    desc: 'Every report passes a 34-layer QA pipeline. Every number traced to source. No variation between projects.',
+    desc: 'Every report passes 200+ automated quality checks. Every number traced to source. No variation between projects.',
   },
   {
     icon: <Scale size={28} />,
@@ -118,7 +118,7 @@ export default function ForProfessionalsPage() {
                 "name": "How does this replace multiple planning consultants?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Instead of briefing separate consultants for flood risk, ecology, heritage, transport, contaminated land, and geotechnical assessments, you place one order. Our system analyses the site against 76+ data sources and generates every desktop report needed, delivered as a single coordinated pack within 48 hours."
+                  "text": "Instead of briefing separate consultants for flood risk, ecology, heritage, transport, contaminated land, and geotechnical assessments, you place one order. Our system analyses the site against 80+ data sources and generates every desktop report needed, delivered as a single coordinated pack within 48 hours."
                 }
               },
               {
@@ -126,7 +126,7 @@ export default function ForProfessionalsPage() {
                 "name": "Are the reports accepted by planning officers?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Yes. Our reports are desktop assessments that reference the same authoritative government data sources planning officers use \u2014 Environment Agency, Natural England, Historic England, BGS, and more. Every report includes full source traceability so officers can verify any data point. Reports are validated against 650+ case law precedents."
+                  "text": "Yes. Our reports are desktop assessments that reference the same authoritative government data sources planning officers use \u2014 Environment Agency, Natural England, Historic England, BGS, and more. Every report includes full source traceability so officers can verify any data point. Reports are validated against 850+ case law precedents."
                 }
               },
               {
@@ -231,6 +231,44 @@ export default function ForProfessionalsPage() {
                   <div className="text-[#27ae60] mb-3.5">{card.icon}</div>
                   <h3 className="text-[1.2rem] font-semibold text-[#27ae60] mb-2.5">{card.title}</h3>
                   <p className="text-[1.0625rem] text-[#6b7280] leading-relaxed">{card.desc}</p>
+                </motion.div>
+              </FadeUp>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ---------- WHY PROFESSIONALS TRUST IT ---------- */}
+      <section className="py-16 md:py-[120px] bg-gradient-to-b from-[#f7f8fc] to-white">
+        <div className="max-w-[1120px] mx-auto px-6">
+          <FadeUp>
+            <div className="text-center max-w-[660px] mx-auto mb-14">
+              <h2 className="text-3xl md:text-[2.75rem] font-bold leading-tight tracking-tight">
+                Why professionals trust the analysis
+              </h2>
+              <div className="w-12 h-[3px] bg-gradient-to-r from-[#27ae60] to-[#2ecc71] rounded mx-auto my-5" />
+              <p className="text-[1.0625rem] text-[#6b7280] leading-relaxed">
+                Speed means nothing if the analysis isn't technically sound. Here's why chartered planners, architects, and developers rely on our intelligence.
+              </p>
+            </div>
+          </FadeUp>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-8">
+            {[
+              { title: 'NPPF December 2024 verified', desc: 'Every policy reference is verified against the current NPPF. We don\'t cite outdated paragraph numbers or superseded policy. When the NPPF changes, our reports update.' },
+              { title: 'Your council\'s local plan', desc: 'Reports reference your LPA\'s adopted development plan policies -- not generic national guidance. We know what your specific council requires.' },
+              { title: '850+ verified appeal precedents', desc: 'Risk assessments are informed by real inspector decisions on sites with similar constraints -- verified against BAILII and PINS databases. Not generic warnings.' },
+              { title: 'PPG methodology compliance', desc: 'Assessments follow Planning Practice Guidance step-by-step methodology -- the same frameworks that statutory consultees and planning officers use.' },
+              { title: 'Professional standards', desc: 'Desktop methodology follows CIEEM (ecology), CIfA (archaeology), IAQM (air quality), Historic England GPA3 (heritage), Manual for Streets, and RICS/BCIS (costings).' },
+              { title: 'Compare it yourself', desc: 'Request a sample for a site you already know. Compare our output against what you\'d expect from a traditional consultant. That\'s the best test.' },
+            ].map((item, i) => (
+              <FadeUp key={item.title} delay={i * 0.06}>
+                <motion.div
+                  whileHover={{ y: -1, boxShadow: '0 4px 16px rgba(0,0,0,0.06)' }}
+                  className="p-6 bg-white border border-[#e2e5ed] rounded-xl text-[0.9375rem] text-[#6b7280] transition-all"
+                >
+                  <strong className="text-[#2c2c3a] block mb-1">{item.title}</strong>
+                  {item.desc}
                 </motion.div>
               </FadeUp>
             ))}

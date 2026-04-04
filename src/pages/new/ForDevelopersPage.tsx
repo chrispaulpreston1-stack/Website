@@ -83,7 +83,8 @@ const products: Product[] = [
       'All constraint-triggered technical reports included',
       '20+ map overlays covering every planning constraint layer',
       'Indicative site layout with dwelling positions',
-      'Elemental cost plan with site-specific abnormals identified',
+      'BCIS-informed development costings with site-specific abnormals identified',
+      'Cross-referenced against 850+ verified appeal precedents',
     ],
     ideal: 'Due diligence before site acquisition or option agreement',
     price: 'From \u00A3695',
@@ -198,7 +199,7 @@ export default function ForDevelopersPage() {
                 "name": "What area do you cover?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "We cover every site in England \u2014 all 302 Local Planning Authorities."
+                  "text": "We cover every site in England \u2014 all 307 Local Planning Authorities."
                 }
               },
               {
@@ -230,7 +231,7 @@ export default function ForDevelopersPage() {
                 "name": "Do I need a site visit for a desktop planning study?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "No. All our reports are Tier 1 desktop assessments using 76+ authoritative government data sources including the Environment Agency, British Geological Survey, Historic England, Natural England, and Ordnance Survey. Desktop studies are the standard starting point for planning applications and are accepted by all 302 English LPAs."
+                  "text": "No. All our reports are Tier 1 desktop assessments using 80+ authoritative government data sources including the Environment Agency, British Geological Survey, Historic England, Natural England, and Ordnance Survey. Desktop studies are the standard starting point for planning applications and are accepted by all 307 English LPAs."
                 }
               },
               {
@@ -238,7 +239,7 @@ export default function ForDevelopersPage() {
                 "name": "How is this different from hiring a planning consultant?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Traditional planning consultants typically charge \u00a317,000\u2013\u00a352,000 for desktop reports on a 15-unit scheme and take 8\u201312 weeks. We deliver the same desktop intelligence in 48 hours from \u00a3695, with automated QA that checks every report against 650+ verified case law precedents. You still need an architect for drawings and may need specialist surveys for protected species or ground investigation."
+                  "text": "Traditional planning consultants typically charge \u00a317,000\u2013\u00a352,000 for desktop reports on a 15-unit scheme and take 8\u201312 weeks. We deliver the same desktop intelligence in 48 hours from \u00a3695, with automated QA that checks every report against 850+ verified case law precedents. You still need an architect for drawings and may need specialist surveys for protected species or ground investigation."
                 }
               }
             ]

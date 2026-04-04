@@ -226,7 +226,7 @@ export default function OrderPage() {
                 "name": "What happens after I pay?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "You receive an immediate order confirmation email. Our system begins analysing your site against 76+ government data sources, generating every report your site\u2019s constraints require. Your complete report pack is delivered as a PDF bundle to your email within the stated turnaround time."
+                  "text": "You receive an immediate order confirmation email. Our system begins analysing your site against 80+ government data sources, generating every report your site\u2019s constraints require. Your complete report pack is delivered as a PDF bundle to your email within the stated turnaround time."
                 }
               },
               {
@@ -590,6 +590,11 @@ export default function OrderPage() {
                     </motion.div>
                   );
                 })}
+              </div>
+
+              {/* Trust bar */}
+              <div className="mt-6 text-center text-[0.8rem] text-[#9ca3af] leading-relaxed">
+                Every report backed by <strong className="text-[#6b7280]">80+ government data sources</strong> &bull; <strong className="text-[#6b7280]">850+ verified appeal precedents</strong> &bull; <strong className="text-[#6b7280]">200+ automated quality checks</strong> &bull; <strong className="text-[#6b7280]">307 LPAs across England</strong>
               </div>
 
               <div className="mt-10 flex justify-between">
