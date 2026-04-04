@@ -260,7 +260,7 @@ export default function ForProfessionalsPage() {
               { title: '850+ verified appeal precedents', desc: 'Risk assessments are informed by real inspector decisions on sites with similar constraints -- verified against BAILII and PINS databases. Not generic warnings.' },
               { title: 'PPG methodology compliance', desc: 'Assessments follow Planning Practice Guidance step-by-step methodology -- the same frameworks that statutory consultees and planning officers use.' },
               { title: 'Professional standards', desc: 'Desktop methodology follows CIEEM (ecology), CIfA (archaeology), IAQM (air quality), Historic England GPA3 (heritage), Manual for Streets, and RICS/BCIS (costings).' },
-              { title: 'Compare it yourself', desc: 'Request a sample for a site you already know. Compare our output against what you\'d expect from a traditional consultant. That\'s the best test.' },
+              { title: 'Chartered sign-off available', desc: 'Need documents signed by a chartered professional? We can arrange independent review and sign-off by accredited consultants (CGeol, MCIEEM, CIWEM, MCIfA, MCIHT) for submissions that require it.' },
             ].map((item, i) => (
               <FadeUp key={item.title} delay={i * 0.06}>
                 <motion.div

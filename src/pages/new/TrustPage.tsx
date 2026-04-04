@@ -337,6 +337,14 @@ export default function TrustPage() {
               Plus 150+ additional technical guidance documents from government bodies and professional institutions, referenced where relevant to your site's specific constraints.
             </p>
           </FadeUp>
+
+          <FadeUp delay={0.4}>
+            <div className="mt-8 p-6 rounded-xl bg-gradient-to-r from-[#f0fdf4] to-[#ecfdf5] border border-[#bbf7d0] text-center">
+              <p className="text-[0.9375rem] text-[#2c2c3a]">
+                <strong>Chartered sign-off available.</strong> If your submission requires documents signed by a chartered professional, we can arrange independent review and sign-off of our desktop reports by accredited consultants — CGeol, MCIEEM, CIWEM, MCIfA, or MCIHT.
+              </p>
+            </div>
+          </FadeUp>
         </div>
       </section>
 

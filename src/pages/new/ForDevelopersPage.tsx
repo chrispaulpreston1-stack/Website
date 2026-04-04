@@ -453,7 +453,7 @@ export default function ForDevelopersPage() {
                 <h3 className="text-xl font-semibold mb-6">Site Intelligence</h3>
                 {[
                   { scheme: '15-unit scheme', cost: 'From \u00A32,495 in 48 hours' },
-                  { scheme: '50-unit scheme', cost: 'From \u00A32,495 in 48 hours' },
+                  { scheme: '50-unit scheme', cost: 'From \u00A33,495 in 48 hours' },
                   { scheme: 'Single new build', cost: 'From \u00A3695 in 48 hours' },
                 ].map((r) => (
                   <div key={r.scheme} className="py-3.5 border-b border-black/[0.06] last:border-b-0 text-[0.9375rem]">
@@ -489,6 +489,11 @@ export default function ForDevelopersPage() {
               <p className="mt-5 font-medium text-[#2c2c3a] text-[1.0625rem]">
                 We tell you exactly which specialist surveys your site needs — saving you from commissioning unnecessary ones.
               </p>
+              <div className="mt-6 p-5 rounded-xl bg-gradient-to-r from-[#f0fdf4] to-[#ecfdf5] border border-[#bbf7d0]">
+                <p className="text-[0.9375rem] text-[#2c2c3a]">
+                  <strong>Need chartered sign-off?</strong> If your submission requires documents signed by a chartered professional (CGeol, MCIEEM, CIWEM, MCIfA, or MCIHT), we can arrange independent review and sign-off of our desktop reports by accredited consultants. Ask us when ordering.
+                </p>
+              </div>
             </div>
           </FadeUp>
         </div>
