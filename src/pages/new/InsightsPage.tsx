@@ -129,7 +129,7 @@ export default function InsightsPage() {
 
       {/* ---------- FILTER TABS ---------- */}
       <section className="bg-white border-b border-[#e2e5ed] sticky top-[67px] z-40">
-        <div className="max-w-[1120px] mx-auto px-6 py-3 flex gap-2 overflow-x-auto">
+        <div className="max-w-[1120px] mx-auto px-6 py-3 flex flex-wrap gap-2">
           <button
             onClick={() => setFilter(null)}
             className={`px-4 py-2.5 rounded-full text-xs font-semibold transition-all whitespace-nowrap ${
