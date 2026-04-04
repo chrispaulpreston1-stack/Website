@@ -491,7 +491,8 @@ export default function ForDevelopersPage() {
               </p>
               <div className="mt-6 p-5 rounded-xl bg-gradient-to-r from-[#f0fdf4] to-[#ecfdf5] border border-[#bbf7d0]">
                 <p className="text-[0.9375rem] text-[#2c2c3a]">
-                  <strong>Need chartered sign-off?</strong> If your submission requires documents signed by a chartered professional (CGeol, MCIEEM, CIWEM, MCIfA, or MCIHT), we can arrange independent review and sign-off of our desktop reports by accredited consultants. Ask us when ordering.
+                  <strong>Chartered sign-off available</strong> <span className="text-[0.8125rem] text-[#6b7280]">(optional extra)</span><br />
+                  If your submission requires documents signed by a chartered professional, we can arrange independent review and sign-off by accredited consultants (CGeol, MCIEEM, CIWEM, MCIfA, or MCIHT). You receive your reports within 48 hours so you can start using the intelligence immediately — sign-off typically follows within a few additional working days.
                 </p>
               </div>
             </div>

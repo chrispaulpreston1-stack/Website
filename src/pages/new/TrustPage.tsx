@@ -341,7 +341,8 @@ export default function TrustPage() {
           <FadeUp delay={0.4}>
             <div className="mt-8 p-6 rounded-xl bg-gradient-to-r from-[#f0fdf4] to-[#ecfdf5] border border-[#bbf7d0] text-center">
               <p className="text-[0.9375rem] text-[#2c2c3a]">
-                <strong>Chartered sign-off available.</strong> If your submission requires documents signed by a chartered professional, we can arrange independent review and sign-off of our desktop reports by accredited consultants — CGeol, MCIEEM, CIWEM, MCIfA, or MCIHT.
+                <strong>Chartered sign-off available</strong> <span className="text-[0.8125rem] text-[#6b7280]">(optional extra)</span><br />
+                If your submission requires documents signed by a chartered professional, we can arrange independent review and sign-off by accredited consultants — CGeol, MCIEEM, CIWEM, MCIfA, or MCIHT. You receive your reports within 48 hours so you can start using the intelligence immediately. Sign-off typically follows within a few additional working days.
               </p>
             </div>
           </FadeUp>
